@@ -8,7 +8,6 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -38,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
@@ -141,8 +141,19 @@ fun ScouterReadout(
                 )
             }
             .clip(shape)
-            .drawBehind { drawScouterPanel(surge, aura, numberColor) }
-            .border(1.5.dp, aura.copy(alpha = 0.35f + 0.25f * breath), shape)
+            .drawBehind {
+                drawScouterPanel(surge, aura, numberColor)
+                // Border drawn here, not with Modifier.border, so the breathing
+                // only redraws the panel instead of recomposing it every frame.
+                val stroke = 1.5.dp.toPx()
+                drawRoundRect(
+                    color = aura.copy(alpha = 0.35f + 0.25f * breath),
+                    topLeft = Offset(stroke / 2, stroke / 2),
+                    size = Size(size.width - stroke, size.height - stroke),
+                    cornerRadius = CornerRadius(24.dp.toPx() - stroke / 2),
+                    style = Stroke(stroke),
+                )
+            }
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,

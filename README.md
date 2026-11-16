@@ -8,7 +8,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | Milestone | What | State |
 |---|---|---|
 | 1 | Project setup, Room schema, habits CRUD, daily check-off, power level | Done |
-| 2 | Streaks, transformations, healing beans, reminders | Not started |
+| 2 | Streaks, transformations, healing beans, reminders | Done |
 | 3 | Sagas, spirit bombs, time chamber | Not started |
 | 4 | Mentors, bonds, reactions, techniques | Not started |
 | 5 | Story chapters, wish orbs, rival | Not started |
@@ -38,9 +38,32 @@ installs over an older one and keeps your data, whichever machine built it.
 
 With a USB cable and developer mode on: `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
 
+## How streaks work
+
+- A day counts once it is over. The app records each finished day as perfect
+  (everything scheduled was done), a rest day (nothing was scheduled), or missed.
+  The record uses your habits as they were that day, so editing a habit later
+  never changes past days.
+- The overall streak is the run of perfect days. Rest days don't add to it and
+  don't break it. Today adds one as soon as everything scheduled is done.
+- Each habit also has its own streak: its check-offs since the last scheduled
+  day it was missed.
+- Forms unlock when the overall streak reaches 7, 30 and 100 days, and stay
+  unlocked if the streak later ends.
+- A healing bean is earned at every 7th day of a streak (3 at most). After a
+  missed day the app offers to spend one, in the app and in a notification at
+  8 in the morning. A covered day keeps the streak going but doesn't add to it.
+
+## Reminders
+
+Each habit can have a reminder time. On its scheduled days, a notification
+appears at that time if the habit isn't done yet. Reminders are run by Android's
+WorkManager, which can deliver a few minutes late when the phone is saving
+battery.
+
 ## Tuning
 
-All points, multipliers and animation timings are in
+All points, multipliers, streak thresholds, bean limits and animation timings are in
 [`app/src/main/java/com/saiyanhabits/GameConfig.kt`](app/src/main/java/com/saiyanhabits/GameConfig.kt).
 Points are stored with each check-off, so a change only affects check-offs made afterwards.
 
@@ -49,9 +72,10 @@ Points are stored with each check-off, so a change only affects check-offs made 
 ```
 app/src/main/java/com/saiyanhabits/
   GameConfig.kt      tuning numbers
-  domain/            rules with no Android code: points, schedules, mentors
-  data/              Room entities, DAOs, database, repository
-  ui/                Compose screens (home, habits), theme, shared components
+  domain/            rules with no Android code: points, schedules, streaks, beans, forms
+  data/              Room entities, DAOs, database, migrations, repository
+  reminders/         notifications and the WorkManager jobs behind them
+  ui/                Compose screens (home, habits), navigation, theme, shared components
 app/schemas/         Room schema per database version, for migrations
 app/src/test/        unit tests
 ```

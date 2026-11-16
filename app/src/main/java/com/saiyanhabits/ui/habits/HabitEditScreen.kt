@@ -389,7 +389,7 @@ private fun ReminderTimeDialog(initialMinutes: Int, onConfirm: (Int) -> Unit, on
         is24Hour = DateFormat.is24HourFormat(LocalContext.current),
     )
     Dialog(onDismissRequest = onDismiss) {
-        Surface(shape = RoundedCornerShape(28.dp), color = SaiyanColors.PanelRaised) {
+        Surface(shape = RoundedCornerShape(28.dp), color = SaiyanColors.Panel) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),

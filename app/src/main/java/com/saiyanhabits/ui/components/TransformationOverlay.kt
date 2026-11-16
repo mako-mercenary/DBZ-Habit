@@ -156,9 +156,9 @@ private fun DrawScope.drawPowerUp(t: Float, aura: Color, spark: Color, lightning
     drawRect(
         Brush.radialGradient(
             colors = listOf(
-                Color.White.copy(alpha = 0.55f * visible),
-                aura.copy(alpha = 0.6f * visible),
-                aura.copy(alpha = 0.12f * visible),
+                Color.White.copy(alpha = 0.9f * visible),
+                aura.copy(alpha = 0.8f * visible),
+                aura.copy(alpha = 0.15f * visible),
                 Color.Transparent,
             ),
             center = center,
