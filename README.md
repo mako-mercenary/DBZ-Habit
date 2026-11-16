@@ -9,7 +9,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 |---|---|---|
 | 1 | Project setup, Room schema, habits CRUD, daily check-off, power level | Done |
 | 2 | Streaks, transformations, healing beans, reminders | Done |
-| 3 | Sagas, spirit bombs, time chamber | Not started |
+| 3 | Sagas, spirit bombs, time chamber | Done |
 | 4 | Mentors, bonds, reactions, techniques | Not started |
 | 5 | Story chapters, wish orbs, rival | Not started |
 | 6 | Art manifest, gallery swap, `ART_LIST.md`, polish and animations | Not started |
@@ -54,6 +54,28 @@ With a USB cable and developer mode on: `adb install -r app/build/outputs/apk/de
   missed day the app offers to spend one, in the app and in a notification at
   8 in the morning. A covered day keeps the streak going but doesn't add to it.
 
+## Long tasks
+
+- **Sagas** are long goals fought as a boss. You list milestones and give each
+  a damage value from 1 to 5; the boss's HP is the total. Finishing a milestone
+  deals its damage and pays 10 points per damage. At 0 HP the saga is won and
+  pays a victory bonus of 100 plus 20 per HP.
+- **Spirit bombs** are long tasks measured by amount (minutes, pages,
+  sessions, or anything you type). A bomb has a size (100, 250 or 500 points)
+  that is paid out in proportion as it fills. Throwing a full bomb finishes the
+  task and pays half its size again.
+- **The time chamber** is a 25 or 50 minute focus timer spent on one thing. When
+  it ends, the progress it logs is worth 1.5x points:
+  - on a habit, it checks the habit off for today and adds half its points again
+    (once per habit per day);
+  - on a saga milestone, it charges the milestone, which then pays 1.5x when it
+    lands, and asks whether it is finished;
+  - on a spirit bomb counted in minutes or sessions, it logs the session by
+    itself; for any other unit it asks how much you got through.
+
+  The timer runs as a foreground service with a countdown notification, so it
+  keeps going with the screen off or the app closed.
+
 ## Reminders
 
 Each habit can have a reminder time. On its scheduled days, a notification
@@ -63,7 +85,7 @@ battery.
 
 ## Tuning
 
-All points, multipliers, streak thresholds, bean limits and animation timings are in
+All points, multipliers, streak thresholds, bean limits, saga and spirit bomb payouts, timer lengths and animation timings are in
 [`app/src/main/java/com/saiyanhabits/GameConfig.kt`](app/src/main/java/com/saiyanhabits/GameConfig.kt).
 Points are stored with each check-off, so a change only affects check-offs made afterwards.
 
@@ -72,10 +94,13 @@ Points are stored with each check-off, so a change only affects check-offs made 
 ```
 app/src/main/java/com/saiyanhabits/
   GameConfig.kt      tuning numbers
-  domain/            rules with no Android code: points, schedules, streaks, beans, forms
-  data/              Room entities, DAOs, database, migrations, repository
+  domain/            rules with no Android code: points, schedules, streaks, beans, forms,
+                     boss fights, spirit bombs
+  data/              Room entities, DAOs, database, migrations, repositories
   reminders/         notifications and the WorkManager jobs behind them
-  ui/                Compose screens (home, habits), navigation, theme, shared components
+  chamber/           the time chamber: session state and its foreground service
+  ui/                Compose screens (home, habits, sagas, time chamber), navigation,
+                     theme, shared components
 app/schemas/         Room schema per database version, for migrations
 app/src/test/        unit tests
 ```

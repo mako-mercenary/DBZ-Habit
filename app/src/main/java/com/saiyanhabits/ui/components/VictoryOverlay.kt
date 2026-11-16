@@ -70,30 +70,34 @@ fun VictoryOverlay(sagaName: String, boss: Boss, bonus: Int, onDismiss: () -> Un
                 val t = progress.value
                 drawRect(Color.Black.copy(alpha = 0.9f * (t / 0.1f).coerceIn(0f, 1f)))
                 val reach = max(size.width, size.height)
-                // Rays turning slowly behind the text.
+                // Soft glow behind the text.
+                drawRect(
+                    Brush.radialGradient(
+                        listOf(SaiyanColors.Orange.copy(alpha = 0.32f), Color.Transparent),
+                        center = center,
+                        radius = reach * 0.45f,
+                    ),
+                )
+                // Rays turning slowly around the text. They start away from the
+                // centre so they never run through the words.
                 val rays = 16
                 for (i in 0 until rays) {
                     val angle = i * 2f * PI.toFloat() / rays + t * 0.6f
-                    val length = reach * (0.25f + 0.55f * t) * (if (i % 2 == 0) 1f else 0.7f)
+                    val direction = Offset(cos(angle), sin(angle))
+                    val start = center + direction * (reach * 0.3f)
+                    val end = center + direction * (reach * (0.45f + 0.5f * t) * (if (i % 2 == 0) 1f else 0.8f))
                     drawLine(
                         brush = Brush.linearGradient(
-                            listOf((if (i % 2 == 0) SaiyanColors.Orange else tint).copy(alpha = 0.55f), Color.Transparent),
-                            start = center,
-                            end = center + Offset(cos(angle), sin(angle)) * length,
+                            listOf((if (i % 2 == 0) SaiyanColors.Orange else tint).copy(alpha = 0.6f), Color.Transparent),
+                            start = start,
+                            end = end,
                         ),
-                        start = center,
-                        end = center + Offset(cos(angle), sin(angle)) * length,
+                        start = start,
+                        end = end,
                         strokeWidth = 10.dp.toPx(),
                         cap = StrokeCap.Round,
                     )
                 }
-                drawCircle(
-                    Brush.radialGradient(
-                        listOf(SaiyanColors.Orange.copy(alpha = 0.5f), Color.Transparent),
-                        center = center,
-                        radius = reach * 0.5f,
-                    ),
-                )
                 val flash = (1f - t / 0.18f).coerceIn(0f, 1f)
                 if (flash > 0f) drawRect(Color.White.copy(alpha = 0.7f * flash))
             }

@@ -349,7 +349,7 @@ private fun Finished(
                             Text("Not yet")
                         }
                         Button(onClick = { onMilestoneFinished(true) }, modifier = Modifier.weight(1f)) {
-                            Text("Yes, land the hit")
+                            Text("Yes, hit")
                         }
                     }
                 }
