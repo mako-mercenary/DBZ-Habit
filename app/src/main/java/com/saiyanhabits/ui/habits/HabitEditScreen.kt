@@ -1,0 +1,334 @@
+package com.saiyanhabits.ui.habits
+
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.saiyanhabits.GameConfig
+import com.saiyanhabits.R
+import com.saiyanhabits.data.HabitEntity
+import com.saiyanhabits.domain.Gravity
+import com.saiyanhabits.domain.HabitCategory
+import com.saiyanhabits.domain.PowerCalculator
+import com.saiyanhabits.domain.WeekSchedule
+import com.saiyanhabits.domain.mentorFor
+import com.saiyanhabits.ui.components.SectionLabel
+import com.saiyanhabits.ui.theme.SaiyanColors
+import com.saiyanhabits.ui.theme.color
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.format.TextStyle
+import java.util.Locale
+
+private const val MAX_NAME_LENGTH = 60
+private val DifficultyNames = mapOf(1 to "Easy", 2 to "Medium", 3 to "Hard")
+
+/**
+ * Add a habit ([initial] is null) or edit an existing one.
+ * [otherHardestName] is the habit that currently holds the "hardest" flag, if it is not this one.
+ */
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@Composable
+fun HabitEditScreen(
+    initial: HabitEntity?,
+    otherHardestName: String?,
+    onSave: (HabitEntity) -> Unit,
+    onDelete: (HabitEntity) -> Unit,
+    onBack: () -> Unit,
+) {
+    var name by rememberSaveable { mutableStateOf(initial?.name.orEmpty()) }
+    var category by rememberSaveable { mutableStateOf(initial?.category ?: HabitCategory.DAILY_BASICS) }
+    var difficulty by rememberSaveable { mutableIntStateOf(initial?.difficulty ?: GameConfig.DEFAULT_DIFFICULTY) }
+    var days by rememberSaveable { mutableIntStateOf(initial?.scheduleDays ?: WeekSchedule.EVERY_DAY) }
+    var hardest by rememberSaveable { mutableStateOf(initial?.isHardest ?: false) }
+    var confirmingDelete by rememberSaveable { mutableStateOf(false) }
+
+    val canSave = name.isNotBlank() && days != WeekSchedule.NONE
+    val mentor = mentorFor(category, hardest)
+
+    Scaffold(
+        modifier = Modifier.imePadding(),
+        topBar = {
+            TopAppBar(
+                title = { Text(if (initial == null) "New habit" else "Edit habit") },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(painterResource(R.drawable.ic_back), contentDescription = "Back")
+                    }
+                },
+                actions = {
+                    if (initial != null) {
+                        TextButton(onClick = { confirmingDelete = true }) {
+                            Text("Delete", color = SaiyanColors.Danger)
+                        }
+                    }
+                },
+            )
+        },
+        bottomBar = {
+            Button(
+                onClick = {
+                    val base = initial ?: HabitEntity(
+                        name = "",
+                        category = category,
+                        difficulty = difficulty,
+                        scheduleDays = days,
+                        createdAtEpochDay = LocalDate.now().toEpochDay(),
+                    )
+                    onSave(
+                        base.copy(
+                            name = name.trim(),
+                            category = category,
+                            difficulty = difficulty,
+                            scheduleDays = days,
+                            isHardest = hardest,
+                        ),
+                    )
+                },
+                enabled = canSave,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .navigationBarsPadding()
+                    .padding(horizontal = 16.dp, vertical = 12.dp)
+                    .height(52.dp),
+            ) {
+                Text(if (initial == null) "Add habit" else "Save changes")
+            }
+        },
+    ) { padding ->
+        Column(
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+                .padding(padding)
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+        ) {
+            SectionLabel("Name")
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it.take(MAX_NAME_LENGTH) },
+                placeholder = { Text("e.g. 20 push-ups") },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(
+                    capitalization = KeyboardCapitalization.Sentences,
+                    imeAction = ImeAction.Done,
+                ),
+                shape = RoundedCornerShape(14.dp),
+                modifier = Modifier.fillMaxWidth(),
+            )
+
+            Spacer(Modifier.height(6.dp))
+            SectionLabel("Category")
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                HabitCategory.entries.forEach { option ->
+                    FilterChip(
+                        selected = category == option,
+                        onClick = { category = option },
+                        label = { Text(option.label) },
+                    )
+                }
+            }
+            Text(
+                "Mentor: ${mentor.displayName}",
+                style = MaterialTheme.typography.bodySmall,
+                color = mentor.color,
+            )
+
+            Spacer(Modifier.height(6.dp))
+            SectionLabel("Difficulty")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                for (level in GameConfig.MIN_DIFFICULTY..GameConfig.MAX_DIFFICULTY) {
+                    ChoiceTile(
+                        selected = difficulty == level,
+                        onClick = { difficulty = level },
+                        title = DifficultyNames[level] ?: "Level $level",
+                        caption = "+${PowerCalculator.completionPoints(level, Gravity.NORMAL)} points",
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(6.dp))
+            SectionLabel("Days")
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                DayOfWeek.entries.forEach { day ->
+                    DayToggle(
+                        day = day,
+                        selected = WeekSchedule.isScheduled(days, day),
+                        onClick = { days = WeekSchedule.toggle(days, day) },
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+            }
+            Text(
+                if (days == WeekSchedule.NONE) "Pick at least one day." else WeekSchedule.describe(days),
+                style = MaterialTheme.typography.bodySmall,
+                color = if (days == WeekSchedule.NONE) SaiyanColors.Danger else SaiyanColors.TextDim,
+            )
+
+            Spacer(Modifier.height(6.dp))
+            Surface(
+                shape = RoundedCornerShape(16.dp),
+                color = SaiyanColors.Panel,
+                border = BorderStroke(1.dp, SaiyanColors.Outline),
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text("My hardest habit", style = MaterialTheme.typography.titleMedium)
+                        Text(
+                            when {
+                                hardest && otherHardestName != null ->
+                                    "Takes the title from \"$otherHardestName\". Vegeta trains this one."
+                                hardest -> "Vegeta trains this one."
+                                else -> "Only one habit can hold this title. Vegeta trains it."
+                            },
+                            style = MaterialTheme.typography.bodySmall,
+                            color = SaiyanColors.TextDim,
+                        )
+                    }
+                    Switch(
+                        checked = hardest,
+                        onCheckedChange = { hardest = it },
+                        modifier = Modifier.padding(start = 12.dp),
+                    )
+                }
+            }
+            Spacer(Modifier.height(16.dp))
+        }
+    }
+
+    if (confirmingDelete && initial != null) {
+        AlertDialog(
+            onDismissRequest = { confirmingDelete = false },
+            title = { Text("Delete this habit?") },
+            text = {
+                Text("\"${initial.name}\" leaves your lists. The power you earned from it stays.")
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    confirmingDelete = false
+                    onDelete(initial)
+                }) { Text("Delete", color = SaiyanColors.Danger) }
+            },
+            dismissButton = {
+                TextButton(onClick = { confirmingDelete = false }) { Text("Cancel") }
+            },
+        )
+    }
+}
+
+@Composable
+private fun ChoiceTile(
+    selected: Boolean,
+    onClick: () -> Unit,
+    title: String,
+    caption: String,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        onClick = onClick,
+        shape = RoundedCornerShape(14.dp),
+        color = if (selected) MaterialTheme.colorScheme.primaryContainer else SaiyanColors.Panel,
+        border = BorderStroke(
+            width = if (selected) 2.dp else 1.dp,
+            color = if (selected) SaiyanColors.Orange else SaiyanColors.Outline,
+        ),
+        modifier = modifier.semantics {
+            role = Role.RadioButton
+            this.selected = selected
+        },
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
+        ) {
+            Text(title, style = MaterialTheme.typography.titleMedium)
+            Text(
+                caption,
+                style = MaterialTheme.typography.bodySmall,
+                color = if (selected) SaiyanColors.Orange else SaiyanColors.TextDim,
+            )
+        }
+    }
+}
+
+@Composable
+private fun DayToggle(
+    day: DayOfWeek,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val fullName = day.getDisplayName(TextStyle.FULL, Locale.getDefault())
+    Surface(
+        onClick = onClick,
+        shape = CircleShape,
+        color = if (selected) SaiyanColors.Blue else SaiyanColors.Panel,
+        contentColor = if (selected) MaterialTheme.colorScheme.onSecondary else SaiyanColors.TextDim,
+        border = BorderStroke(1.dp, if (selected) SaiyanColors.Blue else SaiyanColors.Outline),
+        modifier = modifier
+            .aspectRatio(1f)
+            .semantics {
+                role = Role.Checkbox
+                this.selected = selected
+                contentDescription = fullName
+            },
+    ) {
+        Text(
+            text = day.getDisplayName(TextStyle.NARROW, Locale.getDefault()),
+            style = MaterialTheme.typography.titleMedium,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = 10.dp),
+        )
+    }
+}
