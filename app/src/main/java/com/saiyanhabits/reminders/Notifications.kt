@@ -1,6 +1,7 @@
 package com.saiyanhabits.reminders
 
 import android.Manifest
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -13,6 +14,9 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.saiyanhabits.MainActivity
 import com.saiyanhabits.R
+import com.saiyanhabits.chamber.ChamberOutcome
+import com.saiyanhabits.chamber.ChamberSession
+import com.saiyanhabits.chamber.TimeChamberService
 import com.saiyanhabits.data.HabitEntity
 import com.saiyanhabits.domain.BeanOffer
 import com.saiyanhabits.domain.mentorFor
@@ -20,7 +24,11 @@ import com.saiyanhabits.domain.mentorFor
 object Notifications {
     private const val CHANNEL_REMINDERS = "habit_reminders"
     private const val CHANNEL_STREAK = "streak"
+    private const val CHANNEL_CHAMBER = "time_chamber"
+    private const val CHANNEL_CHAMBER_DONE = "time_chamber_done"
     private const val BEAN_OFFER_ID = 1
+    const val CHAMBER_RUNNING_ID = 2
+    private const val CHAMBER_FINISHED_ID = 3
 
     // Habit ids start at 1, so reminders get ids from 1001 up and never collide with the fixed ids.
     private fun reminderId(habitId: Long): Int = 1000 + (habitId % 1_000_000).toInt()
@@ -34,6 +42,14 @@ object Notifications {
         manager.createNotificationChannel(
             NotificationChannel(CHANNEL_STREAK, "Streak", NotificationManager.IMPORTANCE_DEFAULT)
                 .apply { description = "The morning offer to save your streak with a healing bean." },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(CHANNEL_CHAMBER, "Time chamber countdown", NotificationManager.IMPORTANCE_LOW)
+                .apply { description = "Shows the time left while a focus session runs." },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(CHANNEL_CHAMBER_DONE, "Time chamber finished", NotificationManager.IMPORTANCE_HIGH)
+                .apply { description = "Tells you when a focus session is over." },
         )
     }
 
@@ -76,8 +92,49 @@ object Notifications {
         NotificationManagerCompat.from(context).cancel(BEAN_OFFER_ID)
     }
 
-    private fun show(context: Context, id: Int, builder: NotificationCompat.Builder) {
-        if (!areEnabled(context)) return
+    /** The always-there notification of a running session, with a live countdown. */
+    fun chamberRunning(context: Context, session: ChamberSession?): Notification {
+        val giveUp = PendingIntent.getService(
+            context,
+            0,
+            Intent(context, TimeChamberService::class.java).setAction(TimeChamberService.ACTION_GIVE_UP),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+        val builder = NotificationCompat.Builder(context, CHANNEL_CHAMBER)
+            .setContentTitle("Time chamber")
+            .setOngoing(true)
+            .setOnlyAlertOnce(true)
+            .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
+        if (session != null) {
+            builder
+                .setContentText("Training: ${session.target.label}")
+                .setWhen(session.endsAtMillis)
+                .setShowWhen(true)
+                .setUsesChronometer(true)
+                .setChronometerCountDown(true)
+                .addAction(0, "Give up", giveUp)
+        }
+        return styled(context, builder).setAutoCancel(false).build()
+    }
+
+    fun showChamberFinished(context: Context, session: ChamberSession, outcome: ChamberOutcome) {
+        val text = outcome.lines.joinToString(" ")
+        show(
+            context,
+            CHAMBER_FINISHED_ID,
+            NotificationCompat.Builder(context, CHANNEL_CHAMBER_DONE)
+                .setContentTitle("${session.minutes}-minute session complete")
+                .setContentText(text)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(text)),
+        )
+    }
+
+    fun cancelChamberFinished(context: Context) {
+        NotificationManagerCompat.from(context).cancel(CHAMBER_FINISHED_ID)
+    }
+
+    /** Icon, colour and "tap to open the app" shared by every notification. */
+    private fun styled(context: Context, builder: NotificationCompat.Builder): NotificationCompat.Builder {
         val openApp = PendingIntent.getActivity(
             context,
             0,
@@ -85,12 +142,16 @@ object Notifications {
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
-        val notification = builder
+        return builder
             .setSmallIcon(R.drawable.ic_notification)
             .setColor(0xFFFF8A1F.toInt())
             .setContentIntent(openApp)
             .setAutoCancel(true)
-            .build()
+    }
+
+    private fun show(context: Context, id: Int, builder: NotificationCompat.Builder) {
+        if (!areEnabled(context)) return
+        val notification = styled(context, builder).build()
         try {
             NotificationManagerCompat.from(context).notify(id, notification)
         } catch (_: SecurityException) {

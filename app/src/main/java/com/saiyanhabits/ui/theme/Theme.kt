@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.saiyanhabits.domain.Boss
 import com.saiyanhabits.domain.Mentor
 
 object SaiyanColors {
@@ -49,6 +50,17 @@ val Mentor.color: Color
         Mentor.PICCOLO -> Color(0xFF5FD38D)
         Mentor.BULMA -> Color(0xFF4FD1E0)
         Mentor.VEGETA -> Color(0xFF6C8CFF)
+    }
+
+/** Colour of each boss's placeholder figure, aura and HP bar. */
+val Boss.color: Color
+    get() = when (this) {
+        Boss.RADITZ -> Color(0xFFD9694A)
+        Boss.NAPPA -> Color(0xFFD9B13B)
+        Boss.FRIEZA -> Color(0xFFB678F0)
+        Boss.CELL -> Color(0xFF74D05F)
+        Boss.BUU -> Color(0xFFFF82B8)
+        Boss.BROLY -> Color(0xFF3FE0A8)
     }
 
 private val ColorScheme = darkColorScheme(

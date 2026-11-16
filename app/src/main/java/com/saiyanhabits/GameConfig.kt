@@ -47,7 +47,47 @@ object GameConfig {
     /** Hour of the morning (0-23) when the app checks for a missed day and offers a bean. */
     const val MORNING_CHECK_HOUR = 8
 
+    // ---- Sagas (boss fights) ----
+
+    /** A milestone's weight is the damage it deals. Weights run from 1 to this. */
+    const val MAX_MILESTONE_WEIGHT = 5
+
+    /** Points for finishing a milestone = this x its weight. */
+    const val MILESTONE_POINTS_PER_WEIGHT = 10
+
+    /** Power bonus for defeating a boss = base + per-HP x the boss's total HP. */
+    const val SAGA_VICTORY_BONUS_BASE = 100
+    const val SAGA_VICTORY_BONUS_PER_HP = 20
+
+    // ---- Spirit bombs ----
+
+    /**
+     * Total points a spirit bomb pays out as it fills, by size: small, medium,
+     * large. Each bit of progress pays its share.
+     */
+    val SPIRIT_BOMB_SIZE_POINTS = listOf(100, 250, 500)
+
+    /** Extra bonus for throwing a full bomb, as a percentage of its size points. */
+    const val SPIRIT_BOMB_THROW_BONUS_PERCENT = 50
+
+    // ---- Time chamber (focus timer) ----
+
+    /** Session lengths on offer, in minutes. */
+    val FOCUS_SESSION_MINUTES = listOf(25, 50)
+
+    /** Progress logged by a finished session is worth this many times its normal points. */
+    const val FOCUS_POINT_MULTIPLIER = 1.5
+
     // ---- Animation timing (milliseconds) ----
+
+    /** Boss flinch and damage number when a milestone lands. */
+    const val BOSS_HIT_MILLIS = 900
+
+    /** Full-screen victory when a boss reaches 0 HP. */
+    const val VICTORY_MILLIS = 1900
+
+    /** Spirit bomb leaving the screen when it is thrown. */
+    const val BOMB_THROW_MILLIS = 1300
 
     /** Length of the full-screen power-up when a new form unlocks. */
     const val TRANSFORMATION_MILLIS = 1900

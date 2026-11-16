@@ -30,3 +30,57 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
         )
     }
 }
+
+/** Milestone 3: sagas, spirit bombs, the power ledger and time chamber sessions. */
+val MIGRATION_2_3 = object : Migration(2, 3) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `sagas` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`name` TEXT NOT NULL, `boss` TEXT NOT NULL, `status` TEXT NOT NULL, `createdAtEpochDay` " +
+                "INTEGER NOT NULL, `finishedAtEpochDay` INTEGER, `victoryBonus` INTEGER NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `saga_milestones` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT " +
+                "NULL, `sagaId` INTEGER NOT NULL, `name` TEXT NOT NULL, `weight` INTEGER NOT NULL, " +
+                "`position` INTEGER NOT NULL, `focusSessions` INTEGER NOT NULL, `completedAtEpochDay` " +
+                "INTEGER, `damageDealt` INTEGER NOT NULL, `points` INTEGER NOT NULL, FOREIGN " +
+                "KEY(`sagaId`) REFERENCES `sagas`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        )
+        db.execSQL(
+            "CREATE INDEX IF NOT EXISTS `index_saga_milestones_sagaId` ON `saga_milestones` " +
+                "(`sagaId`)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `spirit_bombs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT " +
+                "NULL, `name` TEXT NOT NULL, `unit` TEXT NOT NULL, `target` INTEGER NOT NULL, `progress` " +
+                "INTEGER NOT NULL, `size` INTEGER NOT NULL, `status` TEXT NOT NULL, `createdAtEpochDay` " +
+                "INTEGER NOT NULL, `finishedAtEpochDay` INTEGER)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `bomb_logs` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`bombId` INTEGER NOT NULL, `amount` INTEGER NOT NULL, `epochDay` INTEGER NOT NULL, " +
+                "`createdAtMillis` INTEGER NOT NULL, `viaTimeChamber` INTEGER NOT NULL, FOREIGN " +
+                "KEY(`bombId`) REFERENCES `spirit_bombs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_bomb_logs_bombId` ON `bomb_logs` (`bombId`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `power_events` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT " +
+                "NULL, `epochDay` INTEGER NOT NULL, `points` INTEGER NOT NULL, `source` TEXT NOT NULL, " +
+                "`sourceId` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE INDEX IF NOT EXISTS `index_power_events_source_sourceId` ON `power_events` " +
+                "(`source`, `sourceId`)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_power_events_epochDay` ON `power_events` (`epochDay`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `focus_sessions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT " +
+                "NULL, `epochDay` INTEGER NOT NULL, `minutes` INTEGER NOT NULL, `targetType` TEXT NOT " +
+                "NULL, `targetId` INTEGER NOT NULL, `finishedAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE INDEX IF NOT EXISTS `index_focus_sessions_epochDay` ON `focus_sessions` " +
+                "(`epochDay`)",
+        )
+    }
+}

@@ -57,9 +57,6 @@ interface CompletionDao {
     @Query("SELECT * FROM completions WHERE epochDay = :epochDay")
     fun observeForDay(epochDay: Long): Flow<List<CompletionEntity>>
 
-    @Query("SELECT COALESCE(SUM(points), 0) FROM completions")
-    fun observeTotalPoints(): Flow<Long>
-
     @Query("SELECT * FROM completions WHERE epochDay BETWEEN :fromDay AND :toDay")
     suspend fun getBetween(fromDay: Long, toDay: Long): List<CompletionEntity>
 

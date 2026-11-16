@@ -4,6 +4,11 @@
     <!-- Habit reminders and the morning healing-bean offer. Asked for when a reminder is first set. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <!-- The time chamber: a foreground service that keeps the countdown going with the screen off. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:name=".SaiyanApp"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".chamber.TimeChamberService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Countdown for a focus timer the user started" />
+        </service>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
 package com.saiyanhabits
 
 import android.app.Application
+import com.saiyanhabits.chamber.TimeChamber
 import com.saiyanhabits.data.AppDatabase
 import com.saiyanhabits.data.HabitRepository
+import com.saiyanhabits.data.QuestRepository
 import com.saiyanhabits.reminders.Notifications
 import com.saiyanhabits.reminders.ReminderScheduler
 import kotlinx.coroutines.CoroutineScope
@@ -15,7 +17,11 @@ class SaiyanApp : Application() {
 
     val habitRepository: HabitRepository by lazy { HabitRepository(database) }
 
+    val questRepository: QuestRepository by lazy { QuestRepository(database) }
+
     val reminders: ReminderScheduler by lazy { ReminderScheduler(this) }
+
+    val timeChamber: TimeChamber by lazy { TimeChamber(this, habitRepository, questRepository) }
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
@@ -25,6 +31,7 @@ class SaiyanApp : Application() {
         appScope.launch {
             habitRepository.syncDays()
             reminders.ensureScheduled(habitRepository.getActiveHabits())
+            timeChamber.restore()
         }
     }
 }

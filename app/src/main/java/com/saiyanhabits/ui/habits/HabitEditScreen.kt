@@ -74,6 +74,7 @@ import com.saiyanhabits.domain.ReminderTimes
 import com.saiyanhabits.domain.WeekSchedule
 import com.saiyanhabits.domain.mentorFor
 import com.saiyanhabits.reminders.Notifications
+import com.saiyanhabits.ui.components.ChoiceTile
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
 import com.saiyanhabits.ui.theme.color
@@ -404,41 +405,6 @@ private fun ReminderTimeDialog(initialMinutes: Int, onConfirm: (Int) -> Unit, on
                     }
                 }
             }
-        }
-    }
-}
-
-@Composable
-private fun ChoiceTile(
-    selected: Boolean,
-    onClick: () -> Unit,
-    title: String,
-    caption: String,
-    modifier: Modifier = Modifier,
-) {
-    Surface(
-        onClick = onClick,
-        shape = RoundedCornerShape(14.dp),
-        color = if (selected) MaterialTheme.colorScheme.primaryContainer else SaiyanColors.Panel,
-        border = BorderStroke(
-            width = if (selected) 2.dp else 1.dp,
-            color = if (selected) SaiyanColors.Orange else SaiyanColors.Outline,
-        ),
-        modifier = modifier.semantics {
-            role = Role.RadioButton
-            this.selected = selected
-        },
-    ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
-        ) {
-            Text(title, style = MaterialTheme.typography.titleMedium)
-            Text(
-                caption,
-                style = MaterialTheme.typography.bodySmall,
-                color = if (selected) SaiyanColors.Orange else SaiyanColors.TextDim,
-            )
         }
     }
 }

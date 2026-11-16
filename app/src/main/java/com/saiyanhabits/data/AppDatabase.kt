@@ -12,19 +12,27 @@ import androidx.room.RoomDatabase
         DayRecordEntity::class,
         HabitMissEntity::class,
         PlayerStateEntity::class,
+        SagaEntity::class,
+        MilestoneEntity::class,
+        SpiritBombEntity::class,
+        BombLogEntity::class,
+        PowerEventEntity::class,
+        FocusSessionEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun habitDao(): HabitDao
     abstract fun completionDao(): CompletionDao
     abstract fun streakDao(): StreakDao
+    abstract fun questDao(): QuestDao
+    abstract fun powerDao(): PowerDao
 
     companion object {
         fun create(context: Context): AppDatabase =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "saiyan_habits.db")
-                .addMigrations(MIGRATION_1_2)
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                 .build()
     }
 }

@@ -6,8 +6,10 @@ import com.saiyanhabits.domain.DayOutcome
 import com.saiyanhabits.domain.DayResult
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.PowerCalculator
+import com.saiyanhabits.domain.PowerSource
 import com.saiyanhabits.domain.ScheduledHabit
 import com.saiyanhabits.domain.StreakRules
+import com.saiyanhabits.domain.WeekSchedule
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -23,6 +25,15 @@ sealed interface GameEvent {
     data class BeanEarned(val beans: Int) : GameEvent
 }
 
+/** What a time chamber session did for a habit. */
+data class FocusHabitResult(
+    val habitName: String,
+    /** Points for the check-off the session made, or 0 if it made none. */
+    val checkOffPoints: Int,
+    /** The focus bonus added, or 0 if today's was already earned. */
+    val focusBonus: Int,
+)
+
 class HabitRepository(
     private val db: AppDatabase,
     private val today: () -> LocalDate = LocalDate::now,
@@ -31,10 +42,11 @@ class HabitRepository(
     private val habitDao = db.habitDao()
     private val completionDao = db.completionDao()
     private val streakDao = db.streakDao()
+    private val powerDao = db.powerDao()
 
     val activeHabits: Flow<List<HabitEntity>> = habitDao.observeActive()
 
-    val powerLevel: Flow<Long> = completionDao.observeTotalPoints().map(PowerCalculator::powerLevel)
+    val powerLevel: Flow<Long> = powerDao.observeTotalPoints().map(PowerCalculator::powerLevel)
 
     /** Current streak per habit id. A habit that is missing has a streak of 0. */
     val habitStreaks: Flow<Map<Long, Int>> = completionDao.observeHabitStreaks()
@@ -95,25 +107,46 @@ class HabitRepository(
         val todayDay = today().toEpochDay()
         if (date.toEpochDay() != todayDay) return@celebrating 0
         syncDaysInTransaction(todayDay)
-        val points = PowerCalculator.completionPoints(habit.difficulty, gravity)
-        val rowId = completionDao.insert(
-            CompletionEntity(
-                habitId = habit.id,
-                epochDay = todayDay,
-                gravity = gravity,
-                points = points,
-                completedAtMillis = nowMillis(),
-            ),
-        )
-        if (rowId == -1L) return@celebrating 0
-        events += checkMilestones(todayDay)
+        val points = insertCompletion(habit, todayDay, gravity)
+        if (points > 0) events += checkMilestones(todayDay)
         points
     }
 
-    /** Takes back a check-off made by mistake, along with its points. */
+    /**
+     * Applies a finished time chamber session to a habit: checks it off for
+     * today if it is scheduled and not done yet, and adds the focus bonus on
+     * top of its points, once per habit per day. Null if the habit is gone.
+     */
+    suspend fun completeViaTimeChamber(habitId: Long): FocusHabitResult? = celebrating { events ->
+        val habit = habitDao.getById(habitId)
+        if (habit == null || habit.archived) return@celebrating null
+        val date = today()
+        val todayDay = date.toEpochDay()
+        syncDaysInTransaction(todayDay)
+
+        var checkOffPoints = 0
+        val existing = completionDao.getBetween(todayDay, todayDay).firstOrNull { it.habitId == habitId }
+        if (existing == null && WeekSchedule.isScheduled(habit.scheduleDays, date)) {
+            checkOffPoints = insertCompletion(habit, todayDay, Gravity.NORMAL)
+            events += checkMilestones(todayDay)
+        }
+
+        val basis = existing?.points ?: PowerCalculator.completionPoints(habit.difficulty, Gravity.NORMAL)
+        val alreadyEarned = powerDao.countOnDay(PowerSource.FOCUS_HABIT, habitId, todayDay) > 0
+        val bonus = if (alreadyEarned) 0 else PowerCalculator.focusBonus(basis)
+        if (bonus > 0) {
+            powerDao.insert(PowerEventEntity(0, todayDay, bonus, PowerSource.FOCUS_HABIT, habitId, nowMillis()))
+        }
+        FocusHabitResult(habit.name, checkOffPoints, bonus)
+    }
+
+    /** Takes back a check-off made by mistake, along with its points and any time chamber bonus. */
     suspend fun undoCompletion(habitId: Long, date: LocalDate) {
         if (date != today()) return
-        completionDao.delete(habitId, date.toEpochDay())
+        db.withTransaction {
+            completionDao.delete(habitId, date.toEpochDay())
+            powerDao.deleteOnDay(PowerSource.FOCUS_HABIT, habitId, date.toEpochDay())
+        }
     }
 
     /** The bean offer waiting for an answer, if any. */
@@ -152,6 +185,21 @@ class HabitRepository(
         }
         events.forEach { _events.emit(it) }
         return result
+    }
+
+    /** Records a check-off. Returns its points, or 0 if the habit was already checked off that day. */
+    private suspend fun insertCompletion(habit: HabitEntity, epochDay: Long, gravity: Gravity): Int {
+        val points = PowerCalculator.completionPoints(habit.difficulty, gravity)
+        val rowId = completionDao.insert(
+            CompletionEntity(
+                habitId = habit.id,
+                epochDay = epochDay,
+                gravity = gravity,
+                points = points,
+                completedAtMillis = nowMillis(),
+            ),
+        )
+        return if (rowId == -1L) 0 else points
     }
 
     private suspend fun syncDaysInTransaction(todayDay: Long) {
