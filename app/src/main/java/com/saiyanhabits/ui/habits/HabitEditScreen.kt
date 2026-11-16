@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -219,9 +220,12 @@ fun HabitEditScreen(
                 border = BorderStroke(1.dp, SaiyanColors.Outline),
                 modifier = Modifier.fillMaxWidth(),
             ) {
+                // The whole row flips the switch, not just the switch itself.
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                    modifier = Modifier
+                        .toggleable(value = hardest, role = Role.Switch, onValueChange = { hardest = it })
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
                 ) {
                     Column(Modifier.weight(1f)) {
                         Text("My hardest habit", style = MaterialTheme.typography.titleMedium)
@@ -238,7 +242,7 @@ fun HabitEditScreen(
                     }
                     Switch(
                         checked = hardest,
-                        onCheckedChange = { hardest = it },
+                        onCheckedChange = null,
                         modifier = Modifier.padding(start = 12.dp),
                     )
                 }
