@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.saiyanhabits.domain.DayOutcome
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.HabitCategory
 
@@ -18,7 +19,7 @@ data class HabitEntity(
     val scheduleDays: Int,
     /** At most one habit has this set. Vegeta trains that one. */
     val isHardest: Boolean = false,
-    /** Reminder time as minutes after midnight, or null for no reminder. Reminders arrive in milestone 2. */
+    /** Reminder time as minutes after midnight, or null for no reminder. */
     val reminderMinutes: Int? = null,
     /**
      * Habits are never deleted from the database, only archived. Their past
@@ -54,3 +55,51 @@ data class CompletionEntity(
     val points: Int,
     val completedAtMillis: Long,
 )
+
+/**
+ * How one finished day went. Written once the day is over, from the habits and
+ * check-offs as they stood then, so editing a habit later never rewrites history.
+ */
+@Entity(tableName = "day_records")
+data class DayRecordEntity(
+    @PrimaryKey val epochDay: Long,
+    val scheduledCount: Int,
+    val completedCount: Int,
+    val outcome: DayOutcome,
+)
+
+/**
+ * A habit that was scheduled on a finished day and not done. A habit's own
+ * streak is its check-offs since its latest row here.
+ */
+@Entity(
+    tableName = "habit_misses",
+    primaryKeys = ["habitId", "epochDay"],
+    foreignKeys = [
+        ForeignKey(
+            entity = HabitEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["habitId"],
+            onDelete = ForeignKey.RESTRICT,
+        ),
+    ],
+    indices = [Index(value = ["epochDay"])],
+)
+data class HabitMissEntity(
+    val habitId: Long,
+    val epochDay: Long,
+)
+
+/** Player-wide progress. There is only ever one row, with id 0. */
+@Entity(tableName = "player_state")
+data class PlayerStateEntity(
+    @PrimaryKey val id: Int = 0,
+    val healingBeans: Int = 0,
+    /** Highest form unlocked so far (0 = base form). Never goes down. */
+    val highestForm: Int = 0,
+    /** The day a streak last earned a bean, so one day cannot earn two. */
+    val lastBeanAwardEpochDay: Long? = null,
+)
+
+/** Query result: a habit's current streak. */
+data class HabitStreak(val habitId: Long, val streak: Int)

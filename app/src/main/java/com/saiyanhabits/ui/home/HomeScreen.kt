@@ -6,15 +6,18 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -42,12 +45,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.saiyanhabits.GameConfig
 import com.saiyanhabits.R
 import com.saiyanhabits.data.HabitEntity
+import com.saiyanhabits.domain.BeanOffer
+import com.saiyanhabits.domain.Forms
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.PowerCalculator
 import com.saiyanhabits.domain.mentorFor
@@ -56,6 +64,7 @@ import com.saiyanhabits.ui.components.ScouterReadout
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
 import com.saiyanhabits.ui.theme.color
+import com.saiyanhabits.ui.theme.formAura
 import kotlinx.coroutines.launch
 import java.time.format.DateTimeFormatter
 import java.util.Locale
@@ -83,13 +92,30 @@ fun HomeScreen(
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
+            .statusBarsPadding(),
     ) {
         item(key = "date") {
             SectionLabel(state.date.format(HeaderDate), Modifier.padding(start = 4.dp))
         }
         item(key = "power") {
-            ScouterReadout(powerLevel = state.powerLevel, gains = viewModel.gains)
+            ScouterReadout(
+                powerLevel = state.powerLevel,
+                gains = viewModel.gains,
+                formName = Forms.name(state.form),
+                aura = formAura(state.form),
+                numberColor = if (state.form == Forms.BASE) SaiyanColors.Orange else formAura(state.form),
+            )
+        }
+        item(key = "stats") {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                modifier = Modifier.height(IntrinsicSize.Min),
+            ) {
+                StreakCard(state, Modifier.weight(1f).fillMaxHeight())
+                BeansCard(state, Modifier.weight(1f).fillMaxHeight())
+            }
         }
         item(key = "progress") {
             TodayProgress(done = state.doneCount, total = state.today.size)
@@ -140,6 +166,15 @@ fun HomeScreen(
         }
     }
 
+    state.beanOffer?.let { offer ->
+        BeanOfferDialog(
+            offer = offer,
+            beans = state.beans,
+            onAccept = viewModel::acceptBeanOffer,
+            onDecline = viewModel::declineBeanOffer,
+        )
+    }
+
     undoing?.let { entry ->
         AlertDialog(
             onDismissRequest = { undoing = null },
@@ -161,6 +196,126 @@ fun HomeScreen(
             },
         )
     }
+}
+
+@Composable
+private fun StatCard(label: String, modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+    Surface(
+        shape = RoundedCornerShape(18.dp),
+        color = SaiyanColors.Panel,
+        border = BorderStroke(1.dp, SaiyanColors.Outline),
+        modifier = modifier,
+    ) {
+        Column(Modifier.padding(horizontal = 14.dp, vertical = 12.dp)) {
+            SectionLabel(label)
+            Spacer(Modifier.height(6.dp))
+            content()
+        }
+    }
+}
+
+@Composable
+private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
+    StatCard("Streak", modifier) {
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(
+                "${state.overallStreak}",
+                style = MaterialTheme.typography.headlineMedium,
+                color = if (state.overallStreak > 0) SaiyanColors.Orange else SaiyanColors.TextDim,
+            )
+            Spacer(Modifier.width(6.dp))
+            Text(
+                if (state.overallStreak == 1) "day" else "days",
+                style = MaterialTheme.typography.bodyMedium,
+                color = SaiyanColors.TextDim,
+                modifier = Modifier.padding(bottom = 5.dp),
+            )
+        }
+        Spacer(Modifier.height(4.dp))
+        val nextAt = state.nextFormAt
+        if (nextAt == null) {
+            Text("Every form unlocked", style = MaterialTheme.typography.bodySmall, color = SaiyanColors.TextDim)
+        } else {
+            Text(
+                "${Forms.name(state.form + 1)} at $nextAt",
+                style = MaterialTheme.typography.bodySmall,
+                color = SaiyanColors.TextDim,
+            )
+            Spacer(Modifier.height(6.dp))
+            LinearProgressIndicator(
+                progress = { (state.overallStreak.toFloat() / nextAt).coerceIn(0f, 1f) },
+                color = formAura(state.form + 1),
+                trackColor = SaiyanColors.PanelRaised,
+                drawStopIndicator = {},
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(4.dp)
+                    .clip(CircleShape),
+            )
+        }
+    }
+}
+
+@Composable
+private fun BeansCard(state: HomeUiState, modifier: Modifier = Modifier) {
+    val capacity = GameConfig.MAX_HEALING_BEANS
+    StatCard("Healing beans", modifier) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .height(36.dp)
+                .semantics { contentDescription = "${state.beans} of $capacity healing beans" },
+        ) {
+            repeat(capacity) { index ->
+                val held = index < state.beans
+                Box(
+                    Modifier
+                        .size(width = 18.dp, height = 26.dp)
+                        .clip(RoundedCornerShape(50))
+                        .then(
+                            if (held) {
+                                Modifier.background(SaiyanColors.Bean)
+                            } else {
+                                Modifier.border(1.5.dp, SaiyanColors.Outline, RoundedCornerShape(50))
+                            },
+                        ),
+                )
+            }
+        }
+        Spacer(Modifier.height(4.dp))
+        Text(
+            when {
+                state.beans >= capacity -> "Pouch is full"
+                state.daysUntilNextBean == 1 -> "Next bean in 1 perfect day"
+                else -> "Next bean in ${state.daysUntilNextBean} perfect days"
+            },
+            style = MaterialTheme.typography.bodySmall,
+            color = SaiyanColors.TextDim,
+        )
+    }
+}
+
+@Composable
+private fun BeanOfferDialog(offer: BeanOffer, beans: Int, onAccept: () -> Unit, onDecline: () -> Unit) {
+    val one = offer.cost == 1
+    AlertDialog(
+        // A yes or no is needed: tapping outside or pressing back leaves it up.
+        onDismissRequest = {},
+        title = { Text(if (one) "You missed a day" else "You missed ${offer.cost} days") },
+        text = {
+            Text(
+                (if (one) "Eat a healing bean" else "Eat ${offer.cost} healing beans") +
+                    " to keep your ${offer.streakSaved}-day streak alive? You have $beans.",
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = onAccept) { Text(if (one) "Eat a bean" else "Eat ${offer.cost} beans") }
+        },
+        dismissButton = {
+            TextButton(onClick = onDecline) { Text("Let the streak end", color = SaiyanColors.TextDim) }
+        },
+    )
 }
 
 @Composable
@@ -225,12 +380,13 @@ private fun TodayHabitRow(entry: TodayHabit, onClick: () -> Unit) {
                     overflow = TextOverflow.Ellipsis,
                 )
                 Spacer(Modifier.height(2.dp))
+                val streak = if (entry.streak > 0) " · ${entry.streak}-day streak" else ""
                 Text(
                     text = if (done != null) {
-                        "${done.gravity.label} · +${done.points}"
+                        "${done.gravity.label} · +${done.points}$streak"
                     } else {
                         val base = PowerCalculator.completionPoints(habit.difficulty, Gravity.NORMAL)
-                        "${mentor.displayName} · +$base and up"
+                        "${mentor.displayName} · +$base and up$streak"
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = if (done != null) SaiyanColors.Orange else SaiyanColors.TextDim,

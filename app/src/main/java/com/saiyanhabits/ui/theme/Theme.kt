@@ -21,6 +21,24 @@ object SaiyanColors {
     val TextHigh = Color(0xFFF2F5FF)
     val TextDim = Color(0xFF9AA6C4)
     val Danger = Color(0xFFFF5A5F)
+    val Bean = Color(0xFF7BD66B)
+    val Gold = Color(0xFFFFD23F)
+}
+
+/** Aura colour of each form (0 = base form). */
+fun formAura(form: Int): Color = when (form) {
+    0 -> SaiyanColors.Blue
+    1 -> SaiyanColors.Gold
+    2 -> Color(0xFFFFE066)
+    else -> Color(0xFFFFF1A8)
+}
+
+/** Second colour for sparks and lightning in each form. */
+fun formSpark(form: Int): Color = when (form) {
+    0 -> Color(0xFFBFE0FF)
+    1 -> SaiyanColors.Orange
+    2 -> Color(0xFF7FD4FF)
+    else -> Color.White
 }
 
 /** Accent colour used wherever a mentor's habits show up. */

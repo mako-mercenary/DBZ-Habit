@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Habit reminders and the morning healing-bean offer. Asked for when a reminder is first set. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".SaiyanApp"
         android:icon="@mipmap/ic_launcher"

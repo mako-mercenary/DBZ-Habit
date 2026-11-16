@@ -28,7 +28,29 @@ object GameConfig {
     const val GRAVITY_10X_MULTIPLIER = 2
     const val GRAVITY_100X_MULTIPLIER = 3
 
+    // ---- Streaks and transformations ----
+
+    /**
+     * Overall streak (days in a row with every scheduled habit done) needed to
+     * unlock form 1, form 2, form 3. Once unlocked, a form is kept for good.
+     */
+    val FORM_STREAK_THRESHOLDS = listOf(7, 30, 100)
+
+    // ---- Healing beans ----
+
+    /** One bean is earned each time the overall streak reaches a multiple of this. */
+    const val BEAN_STREAK_INTERVAL = 7
+
+    /** Most beans that can be held at once. */
+    const val MAX_HEALING_BEANS = 3
+
+    /** Hour of the morning (0-23) when the app checks for a missed day and offers a bean. */
+    const val MORNING_CHECK_HOUR = 8
+
     // ---- Animation timing (milliseconds) ----
+
+    /** Length of the full-screen power-up when a new form unlocks. */
+    const val TRANSFORMATION_MILLIS = 1900
 
     /** How long the power level takes to count up after a check-off. */
     const val POWER_COUNT_UP_MILLIS = 900

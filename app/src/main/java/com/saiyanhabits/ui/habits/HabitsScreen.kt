@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -42,11 +43,12 @@ import com.saiyanhabits.ui.theme.color
 @Composable
 fun HabitsScreen(
     habits: List<HabitEntity>?,
+    streaks: Map<Long, Int>,
     onAdd: () -> Unit,
     onEdit: (HabitEntity) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Box(modifier.fillMaxSize()) {
+    Box(modifier.fillMaxSize().statusBarsPadding()) {
         LazyColumn(
             // Bottom padding leaves room for the floating button over the last row.
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 96.dp),
@@ -72,7 +74,7 @@ fun HabitsScreen(
                     )
                 }
                 else -> items(habits, key = { it.id }) { habit ->
-                    HabitRow(habit = habit, onClick = { onEdit(habit) })
+                    HabitRow(habit = habit, streak = streaks[habit.id] ?: 0, onClick = { onEdit(habit) })
                 }
             }
         }
@@ -92,7 +94,7 @@ fun HabitsScreen(
 }
 
 @Composable
-private fun HabitRow(habit: HabitEntity, onClick: () -> Unit) {
+private fun HabitRow(habit: HabitEntity, streak: Int, onClick: () -> Unit) {
     val mentor = mentorFor(habit.category, habit.isHardest)
     Surface(
         onClick = onClick,
@@ -107,7 +109,7 @@ private fun HabitRow(habit: HabitEntity, onClick: () -> Unit) {
         ) {
             Box(
                 Modifier
-                    .size(width = 6.dp, height = 52.dp)
+                    .size(width = 6.dp, height = 56.dp)
                     .clip(CircleShape)
                     .background(mentor.color),
             )
@@ -130,6 +132,17 @@ private fun HabitRow(habit: HabitEntity, onClick: () -> Unit) {
                     style = MaterialTheme.typography.bodySmall,
                     color = SaiyanColors.TextDim,
                 )
+                val reminder = habit.reminderMinutes
+                if (streak > 0 || reminder != null) {
+                    Text(
+                        listOfNotNull(
+                            if (streak > 0) "$streak-day streak" else null,
+                            reminder?.let { "Reminder ${formatReminderTime(it)}" },
+                        ).joinToString(" · "),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (streak > 0) SaiyanColors.Orange else SaiyanColors.TextDim,
+                    )
+                }
             }
             if (habit.isHardest) {
                 Spacer(Modifier.width(10.dp))

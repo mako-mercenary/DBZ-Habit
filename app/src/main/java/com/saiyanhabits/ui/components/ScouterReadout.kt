@@ -3,7 +3,12 @@ package com.saiyanhabits.ui.components
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -34,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TransformOrigin
@@ -58,13 +64,17 @@ import kotlin.math.sin
 /**
  * The big power level display. When [powerLevel] rises it counts up with a
  * glow, and each value from [gains] floats up as a "+points" label. Tapping
- * the readout skips the animation.
+ * the readout skips the animation. [aura] is the current form's colour: it
+ * glows behind the panel and breathes slowly.
  */
 @Composable
 fun ScouterReadout(
     powerLevel: Long,
     gains: Flow<Int>,
     modifier: Modifier = Modifier,
+    formName: String? = null,
+    aura: Color = SaiyanColors.Blue,
+    numberColor: Color = SaiyanColors.Orange,
 ) {
     val scope = rememberCoroutineScope()
 
@@ -107,12 +117,32 @@ fun ScouterReadout(
     // 0 at rest, swells to 1 mid count-up, back to 0.
     val surge = if (countTime < 1f) sin(PI * countTime).toFloat() else 0f
 
+    val breath by rememberInfiniteTransition(label = "aura").animateFloat(
+        initialValue = 0f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(2400, easing = FastOutSlowInEasing), RepeatMode.Reverse),
+        label = "breath",
+    )
+
     val shape = RoundedCornerShape(24.dp)
     Box(
         modifier = modifier
             .fillMaxWidth()
+            // The aura spills out past the panel's edges, so it is drawn before the clip.
+            .drawBehind {
+                drawOval(
+                    brush = Brush.radialGradient(
+                        colors = listOf(aura.copy(alpha = 0.20f + 0.14f * breath + 0.3f * surge), Color.Transparent),
+                        center = center,
+                        radius = size.width * 0.62f,
+                    ),
+                    topLeft = Offset(-size.width * 0.12f, -size.height * 0.28f),
+                    size = Size(size.width * 1.24f, size.height * 1.56f),
+                )
+            }
             .clip(shape)
-            .drawBehind { drawScouterPanel(surge) }
+            .drawBehind { drawScouterPanel(surge, aura, numberColor) }
+            .border(1.5.dp, aura.copy(alpha = 0.35f + 0.25f * breath), shape)
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
@@ -130,7 +160,7 @@ fun ScouterReadout(
                     Modifier
                         .size(8.dp)
                         .clip(CircleShape)
-                        .drawBehind { drawRect(SaiyanColors.Blue) },
+                        .drawBehind { drawRect(aura) },
                 )
                 Spacer(Modifier.width(8.dp))
                 Text(
@@ -138,7 +168,7 @@ fun ScouterReadout(
                     style = MaterialTheme.typography.labelMedium,
                     fontFamily = FontFamily.Monospace,
                     letterSpacing = 3.sp,
-                    color = SaiyanColors.Blue,
+                    color = aura,
                 )
             }
             Spacer(Modifier.height(6.dp))
@@ -151,7 +181,7 @@ fun ScouterReadout(
                     else -> 38.sp
                 },
                 fontWeight = FontWeight.Black,
-                color = SaiyanColors.Orange,
+                color = numberColor,
                 maxLines = 1,
                 softWrap = false,
                 modifier = Modifier.graphicsLayer {
@@ -161,6 +191,14 @@ fun ScouterReadout(
                     transformOrigin = TransformOrigin(0f, 0.5f)
                 },
             )
+            if (formName != null) {
+                Text(
+                    text = formName.uppercase(),
+                    style = MaterialTheme.typography.labelMedium,
+                    letterSpacing = 2.sp,
+                    color = aura,
+                )
+            }
         }
 
         val label = gainLabel
@@ -186,20 +224,20 @@ fun ScouterReadout(
     }
 }
 
-private fun DrawScope.drawScouterPanel(surge: Float) {
+private fun DrawScope.drawScouterPanel(surge: Float, aura: Color, energy: Color) {
     drawRect(SaiyanColors.Panel)
 
     // Blue wash from the top-left, orange energy from behind the number.
     drawRect(
         Brush.linearGradient(
-            colors = listOf(SaiyanColors.Blue.copy(alpha = 0.16f), Color.Transparent),
+            colors = listOf(aura.copy(alpha = 0.16f), Color.Transparent),
             start = Offset.Zero,
             end = Offset(size.width * 0.7f, size.height),
         ),
     )
     drawRect(
         Brush.radialGradient(
-            colors = listOf(SaiyanColors.Orange.copy(alpha = 0.14f + 0.38f * surge), Color.Transparent),
+            colors = listOf(energy.copy(alpha = 0.14f + 0.38f * surge), Color.Transparent),
             center = Offset(size.width * 0.3f, size.height * 0.65f),
             radius = size.width * (0.55f + 0.25f * surge),
         ),
@@ -215,7 +253,7 @@ private fun DrawScope.drawScouterPanel(surge: Float) {
 
     // Targeting reticle on the right.
     val centre = Offset(size.width - 54.dp.toPx(), size.height / 2f)
-    val ring = SaiyanColors.Blue.copy(alpha = 0.35f + 0.4f * surge)
+    val ring = aura.copy(alpha = 0.35f + 0.4f * surge)
     val radius = 30.dp.toPx() * (1f + 0.12f * surge)
     val stroke = Stroke(width = 1.5.dp.toPx())
     drawCircle(ring, radius, centre, style = stroke)

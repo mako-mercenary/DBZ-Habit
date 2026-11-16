@@ -1,6 +1,12 @@
 package com.saiyanhabits.ui.habits
 
+import android.Manifest
+import android.os.Build
+import android.text.format.DateFormat
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -13,6 +19,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
@@ -32,15 +39,19 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TimePicker
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -51,23 +62,30 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import com.saiyanhabits.GameConfig
 import com.saiyanhabits.R
 import com.saiyanhabits.data.HabitEntity
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.HabitCategory
 import com.saiyanhabits.domain.PowerCalculator
+import com.saiyanhabits.domain.ReminderTimes
 import com.saiyanhabits.domain.WeekSchedule
 import com.saiyanhabits.domain.mentorFor
+import com.saiyanhabits.reminders.Notifications
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
 import com.saiyanhabits.ui.theme.color
 import java.time.DayOfWeek
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.time.format.TextStyle
 import java.util.Locale
 
 private const val MAX_NAME_LENGTH = 60
+private const val DEFAULT_REMINDER_MINUTES = 8 * 60
 private val DifficultyNames = mapOf(1 to "Easy", 2 to "Medium", 3 to "Hard")
 
 /**
@@ -88,6 +106,19 @@ fun HabitEditScreen(
     var difficulty by rememberSaveable { mutableIntStateOf(initial?.difficulty ?: GameConfig.DEFAULT_DIFFICULTY) }
     var days by rememberSaveable { mutableIntStateOf(initial?.scheduleDays ?: WeekSchedule.EVERY_DAY) }
     var hardest by rememberSaveable { mutableStateOf(initial?.isHardest ?: false) }
+    var reminderMinutes by rememberSaveable { mutableStateOf(initial?.reminderMinutes) }
+    var pickingTime by rememberSaveable { mutableStateOf(false) }
+
+    val context = LocalContext.current
+    var notificationsAllowed by remember { mutableStateOf(Notifications.areEnabled(context)) }
+    LifecycleResumeEffect(Unit) {
+        // The user may have just come back from the system settings.
+        notificationsAllowed = Notifications.areEnabled(context)
+        onPauseOrDispose { }
+    }
+    val askForNotifications = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { notificationsAllowed = Notifications.areEnabled(context) }
     var confirmingDelete by rememberSaveable { mutableStateOf(false) }
 
     val canSave = name.isNotBlank() && days != WeekSchedule.NONE
@@ -129,6 +160,7 @@ fun HabitEditScreen(
                             difficulty = difficulty,
                             scheduleDays = days,
                             isHardest = hardest,
+                            reminderMinutes = reminderMinutes,
                         ),
                     )
                 },
@@ -247,8 +279,29 @@ fun HabitEditScreen(
                     )
                 }
             }
+
+            ReminderRow(
+                reminderMinutes = reminderMinutes,
+                notificationsAllowed = notificationsAllowed,
+                onPick = { pickingTime = true },
+                onClear = { reminderMinutes = null },
+            )
             Spacer(Modifier.height(16.dp))
         }
+    }
+
+    if (pickingTime) {
+        ReminderTimeDialog(
+            initialMinutes = reminderMinutes ?: DEFAULT_REMINDER_MINUTES,
+            onConfirm = { minutes ->
+                reminderMinutes = minutes
+                pickingTime = false
+                if (!notificationsAllowed && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    askForNotifications.launch(Manifest.permission.POST_NOTIFICATIONS)
+                }
+            },
+            onDismiss = { pickingTime = false },
+        )
     }
 
     if (confirmingDelete && initial != null) {
@@ -268,6 +321,90 @@ fun HabitEditScreen(
                 TextButton(onClick = { confirmingDelete = false }) { Text("Cancel") }
             },
         )
+    }
+}
+
+/** A reminder time in the phone's own style, e.g. "7:30 AM" or "07:30". */
+fun formatReminderTime(minutesAfterMidnight: Int): String =
+    ReminderTimes.toLocalTime(minutesAfterMidnight)
+        .format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
+
+@Composable
+private fun ReminderRow(
+    reminderMinutes: Int?,
+    notificationsAllowed: Boolean,
+    onPick: () -> Unit,
+    onClear: () -> Unit,
+) {
+    Surface(
+        shape = RoundedCornerShape(16.dp),
+        color = SaiyanColors.Panel,
+        border = BorderStroke(1.dp, SaiyanColors.Outline),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .clickable(onClickLabel = "Set reminder time", onClick = onPick)
+                .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 12.dp),
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text("Reminder", style = MaterialTheme.typography.titleMedium)
+                Text(
+                    when {
+                        reminderMinutes == null -> "Off. Tap to pick a time."
+                        notificationsAllowed -> "On scheduled days, if it isn't done yet."
+                        else -> "Notifications are turned off for Saiyan Habits, so this can't show. " +
+                            "Allow them in your phone's settings."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (reminderMinutes != null && !notificationsAllowed) {
+                        SaiyanColors.Danger
+                    } else {
+                        SaiyanColors.TextDim
+                    },
+                )
+            }
+            if (reminderMinutes != null) {
+                Text(
+                    formatReminderTime(reminderMinutes),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = SaiyanColors.Blue,
+                    modifier = Modifier.padding(start = 12.dp),
+                )
+                TextButton(onClick = onClear) { Text("Remove", color = SaiyanColors.TextDim) }
+            } else {
+                Spacer(Modifier.width(8.dp))
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ReminderTimeDialog(initialMinutes: Int, onConfirm: (Int) -> Unit, onDismiss: () -> Unit) {
+    val pickerState = rememberTimePickerState(
+        initialHour = initialMinutes / 60,
+        initialMinute = initialMinutes % 60,
+        is24Hour = DateFormat.is24HourFormat(LocalContext.current),
+    )
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(shape = RoundedCornerShape(28.dp), color = SaiyanColors.PanelRaised) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 8.dp),
+            ) {
+                SectionLabel("Remind me at", Modifier.fillMaxWidth())
+                Spacer(Modifier.height(16.dp))
+                TimePicker(state = pickerState)
+                Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
+                    TextButton(onClick = onDismiss) { Text("Cancel") }
+                    TextButton(onClick = { onConfirm(pickerState.hour * 60 + pickerState.minute) }) {
+                        Text("Set reminder")
+                    }
+                }
+            }
+        }
     }
 }
 
