@@ -12,8 +12,8 @@ android {
         applicationId = "com.saiyanhabits"
         minSdk = 26
         targetSdk = 36
-        versionCode = 7
-        versionName = "1.0.0"
+        versionCode = 8
+        versionName = "1.1.0"
     }
 
     signingConfigs {

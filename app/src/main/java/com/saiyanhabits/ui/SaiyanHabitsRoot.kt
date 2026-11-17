@@ -222,6 +222,7 @@ fun SaiyanHabitsRoot() {
         )
         Scaffold(
             containerColor = Color.Transparent,
+            contentColor = SaiyanColors.TextHigh,
             // Each screen handles the status bar itself; the bottom bar handles the navigation bar.
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
             snackbarHost = { SnackbarHost(snackbars) },

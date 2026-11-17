@@ -99,16 +99,18 @@ fun DbzPanel(
     } else {
         Modifier
     }
+    // Minimum sizes pass through, so content fills a panel given a fixed width and centring works.
     Box(
         modifier = modifier
             .drawBehind { drawPanel(style, shape) }
             .then(clickable),
+        propagateMinConstraints = true,
     ) {
         if (watermark != null) {
             Box(Modifier.matchParentSize().clip(shape)) { watermark() }
         }
         CompositionLocalProvider(LocalContentColor provides SaiyanColors.TextHigh) {
-            Box(if (style.dim) Modifier.alpha(0.75f) else Modifier) { content() }
+            Box(if (style.dim) Modifier.alpha(0.75f) else Modifier, propagateMinConstraints = true) { content() }
         }
     }
 }

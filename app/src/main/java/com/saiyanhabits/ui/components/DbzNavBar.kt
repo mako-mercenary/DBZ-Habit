@@ -69,8 +69,9 @@ fun DbzNavBar(items: List<NavItem>, modifier: Modifier = Modifier) {
             alpha = 0.9f,
             modifier = Modifier
                 .align(Alignment.BottomStart)
-                .offset(x = (-14).dp, y = 6.dp)
-                .size(width = 76.dp, height = 46.dp),
+                .navigationBarsPadding()
+                .offset(x = (-24).dp, y = 16.dp)
+                .size(width = 64.dp, height = 38.dp),
         )
         ArtImage(
             key = ArtKey.CLOUD_ORNAMENT,
@@ -78,8 +79,9 @@ fun DbzNavBar(items: List<NavItem>, modifier: Modifier = Modifier) {
             alpha = 0.9f,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .offset(x = 14.dp, y = 6.dp)
-                .size(width = 76.dp, height = 46.dp)
+                .navigationBarsPadding()
+                .offset(x = 24.dp, y = 16.dp)
+                .size(width = 64.dp, height = 38.dp)
                 .graphicsLayer { scaleX = -1f },
         )
         Row(

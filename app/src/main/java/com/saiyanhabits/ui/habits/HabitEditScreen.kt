@@ -1,5 +1,8 @@
 package com.saiyanhabits.ui.habits
 
+import com.saiyanhabits.ui.components.OutlinedText
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material3.TopAppBarDefaults
 import com.saiyanhabits.ui.components.DbzPrimaryButton
 import com.saiyanhabits.ui.components.PanelStyle
 import com.saiyanhabits.ui.components.DbzPanel
@@ -130,9 +133,19 @@ fun HabitEditScreen(
 
     Scaffold(
         modifier = Modifier.imePadding(),
+        // Transparent, so the app's background shows through.
+        containerColor = Color.Transparent,
+        contentColor = SaiyanColors.TextHigh,
         topBar = {
             TopAppBar(
-                title = { Text(if (initial == null) "New habit" else "Edit habit") },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
+                title = {
+                    OutlinedText(
+                        (if (initial == null) "New habit" else "Edit habit").uppercase(),
+                        MaterialTheme.typography.titleLarge,
+                        outlineWidth = 4.dp,
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(painterResource(R.drawable.ic_back), contentDescription = "Back")

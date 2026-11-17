@@ -100,6 +100,7 @@ fun SubScreen(
         modifier = Modifier.imePadding(),
         // Transparent, so the app's background shows through.
         containerColor = Color.Transparent,
+        contentColor = SaiyanColors.TextHigh,
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),

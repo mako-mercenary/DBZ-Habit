@@ -141,6 +141,15 @@ The story text is in `app/src/main/assets/dialogue/story.json`, in the same
 line format as the bond scenes, and is checked by the unit tests (one chapter
 per unlock, 120 to 400 words each, known speakers).
 
+## Look
+
+Royal-blue panels in bevelled gold frames, slanted gold label tabs, and chunky
+outlined lettering in the Bangers display font (see [CREDITS.md](CREDITS.md)).
+The frames, tabs, watermarks and the green scouter screen are drawn in code in
+`ui/components/DbzFrames.kt`, `ScouterReadout.kt` and `DbzNavBar.kt`, so they fit
+any size; colours are in `ui/theme/Theme.kt`. The home background image shows
+behind every screen.
+
 ## Art
 
 Every image is listed in `app/src/main/assets/art/manifest.json`, which maps a

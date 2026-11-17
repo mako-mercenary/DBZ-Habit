@@ -395,6 +395,7 @@ private fun NewChapterCard(chapter: StoryChapter, onClick: () -> Unit) {
                         "Chapter ${chapter.number}: ${chapter.title}",
                         MaterialTheme.typography.titleLarge,
                         outlineWidth = 4.dp,
+                        maxLines = 2,
                     )
                 }
                 Spacer(Modifier.width(8.dp))
