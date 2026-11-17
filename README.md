@@ -10,7 +10,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 1 | Project setup, Room schema, habits CRUD, daily check-off, power level | Done |
 | 2 | Streaks, transformations, healing beans, reminders | Done |
 | 3 | Sagas, spirit bombs, time chamber | Done |
-| 4 | Mentors, bonds, reactions, techniques | Not started |
+| 4 | Mentors, bonds, reactions, techniques | Done |
 | 5 | Story chapters, wish orbs, rival | Not started |
 | 6 | Art manifest, gallery swap, `ART_LIST.md`, polish and animations | Not started |
 | 7 | Data export/import, final debug APK | Not started |
@@ -76,6 +76,50 @@ With a USB cable and developer mode on: `adb install -r app/build/outputs/apk/de
   The timer runs as a foreground service with a countdown notification, so it
   keeps going with the screen off or the app closed.
 
+## Mentors and bonds
+
+Every habit is trained by a mentor: its category's, or Vegeta for the one habit
+flagged as hardest.
+
+- Each check-off gives that mentor 10 bond XP. Bond levels run from 1 to 10.
+- Each level from 2 up unlocks a short scene, readable on the Bonds tab.
+- Levels 3, 6 and 9 unlock a technique:
+
+  | Mentor | Level 3 | Level 6 | Level 9 |
+  |---|---|---|---|
+  | Roshi | +20% points on his habits | 4th healing bean slot | Master's Day Off: excuse one of today's habits (every 14 days) |
+  | Goku | +20% points on his habits | Kaio-ken: double check-off points for the rest of the day (every 7 days) | Double spirit bomb throw bonus |
+  | Piccolo | +20% points on his habits | Time chamber pays 2x instead of 1.5x | A healing bean every 5 streak days instead of 7 |
+  | Bulma | +20% points on her habits | +25% points on saga milestones | +50% victory bonus |
+  | Vegeta | +30% points on the hardest habit | 100x gravity pays 4x instead of 3x | Every assist deals double damage |
+
+- From bond level 5 a mentor assists in boss fights, adding 1 bonus damage to
+  every milestone hit. Bonus damage is worth points (10 per damage, and it
+  counts towards the victory bonus) but does not shorten the fight: the boss
+  still falls when the last milestone lands.
+- One mentor speaks on the home screen each day. Mentors with habits take turns.
+  What they talk about, in order of priority: a boss defeated today, a streak
+  milestone reached today, a comeback after a missed day, a missed day, or
+  nothing in particular.
+
+### Editing the dialogue
+
+All mentor lines are in `app/src/main/assets/dialogue/`, one JSON file per
+mentor. Edit, rebuild, done.
+
+- `reactions` holds the home-screen one-liners, a list per trigger:
+  `missed_day`, `comeback`, `streak_milestone`, `boss_defeated`, `idle`.
+  A mentor's lines for a trigger are used one per day in order, so a list of 8
+  takes 8 days to repeat. `{streak}` is replaced by the streak length in
+  `streak_milestone` lines, `{boss}` by the boss's name in `boss_defeated` lines.
+- `scenes` holds the bond scenes, one per `level` from 2 to 10, each with a
+  `title` and `lines`. A line's `speaker` is the mentor's name in capitals,
+  `YOU` or `NARRATOR`.
+
+`./gradlew testDebugUnitTest` checks every file: valid JSON, at least 8 lines
+per trigger, a scene of 3 to 6 lines for every level, known speakers and
+placeholders. A mistake is reported with its line number.
+
 ## Reminders
 
 Each habit can have a reminder time. On its scheduled days, a notification
@@ -85,7 +129,7 @@ battery.
 
 ## Tuning
 
-All points, multipliers, streak thresholds, bean limits, saga and spirit bomb payouts, timer lengths and animation timings are in
+All points, multipliers, streak thresholds, bean limits, saga and spirit bomb payouts, timer lengths, bond levels, technique strengths and animation timings are in
 [`app/src/main/java/com/saiyanhabits/GameConfig.kt`](app/src/main/java/com/saiyanhabits/GameConfig.kt).
 Points are stored with each check-off, so a change only affects check-offs made afterwards.
 
@@ -95,12 +139,13 @@ Points are stored with each check-off, so a change only affects check-offs made 
 app/src/main/java/com/saiyanhabits/
   GameConfig.kt      tuning numbers
   domain/            rules with no Android code: points, schedules, streaks, beans, forms,
-                     boss fights, spirit bombs
+                     boss fights, spirit bombs, bonds, techniques, mentor reactions
   data/              Room entities, DAOs, database, migrations, repositories
   reminders/         notifications and the WorkManager jobs behind them
   chamber/           the time chamber: session state and its foreground service
-  ui/                Compose screens (home, habits, sagas, time chamber), navigation,
-                     theme, shared components
+  ui/                Compose screens (home, habits, sagas, time chamber, bonds),
+                     navigation, theme, shared components
+app/src/main/assets/dialogue/   mentor one-liners and bond scenes, one JSON file per mentor
 app/schemas/         Room schema per database version, for migrations
 app/src/test/        unit tests
 ```
