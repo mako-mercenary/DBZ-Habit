@@ -8,3 +8,6 @@ To redo a crop: `tools/crop_portrait.py <source> <out.png> <preview.png> <left> 
 takes a square of `size` pixels from (`left`, `top`) and scales it to 512 x 512
 (negative values add transparent margin). For a source with a solid black
 background, first run `tools/remove_bg.py <source> <cut.png>`.
+
+For full figures (bosses, the dragon): `tools/fit_figure.py <source> <out.png> <preview.png> <width> <height>`
+trims the empty edges and centres the figure in the target size.
