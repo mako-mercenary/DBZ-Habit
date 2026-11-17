@@ -10,6 +10,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -33,12 +34,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.PathMeasure
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.graphicsLayer
@@ -48,6 +44,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.saiyanhabits.GameConfig
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.data.WishEntity
 import com.saiyanhabits.ui.theme.SaiyanColors
 import kotlinx.coroutines.delay
@@ -58,7 +55,6 @@ import kotlin.math.cos
 import kotlin.math.sin
 
 private val DragonGreen = Color(0xFF3FBF6A)
-private val DragonBelly = Color(0xFFD9E27A)
 
 /**
  * The dragon, summoned with a full set of wish orbs. The sky goes dark, the
@@ -104,6 +100,24 @@ fun DragonOverlay(
                 onClickLabel = "Skip",
             ) { scope.launch { rise.snapTo(1f) } },
     ) {
+        // The dragon rises out of the ring of orbs, which sits at mid-screen.
+        ArtImage(
+            key = ArtKey.DRAGON,
+            contentDescription = "The dragon",
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = 24.dp)
+                .fillMaxWidth(0.8f)
+                .aspectRatio(ArtKey.DRAGON.width.toFloat() / ArtKey.DRAGON.height)
+                .graphicsLayer {
+                    val grown = ((rise.value - 0.3f) / 0.6f).coerceIn(0f, 1f)
+                    alpha = grown
+                    translationY = size.height * 0.35f * (1f - grown)
+                    val scale = 0.7f + 0.3f * grown
+                    scaleX = scale
+                    scaleY = scale
+                },
+        )
         Surface(
             shape = RoundedCornerShape(24.dp),
             color = SaiyanColors.Panel.copy(alpha = 0.96f),
@@ -220,50 +234,6 @@ private fun DrawScope.drawSummoning(t: Float) {
                     center = ring,
                 )
             }
-        }
-    }
-
-    // The dragon: a body that winds upward from the orbs, drawn as far as it has risen.
-    val grown = ((t - 0.3f) / 0.6f).coerceIn(0f, 1f)
-    if (grown > 0f) {
-        val headY = size.height * 0.13f
-        val body = Path()
-        val steps = 48
-        for (i in 0..steps) {
-            val f = i / steps.toFloat()
-            val x = ring.x + sin(f * 3.2f * PI.toFloat()) * size.width * 0.3f * (1f - 0.45f * f)
-            val y = ring.y - f * (ring.y - headY)
-            if (i == 0) body.moveTo(x, y) else body.lineTo(x, y)
-        }
-        val measure = PathMeasure().apply { setPath(body, false) }
-        val shown = Path()
-        measure.getSegment(0f, measure.length * grown, shown, true)
-        val thick = size.width * 0.085f
-        drawPath(shown, DragonGreen, style = Stroke(thick, cap = StrokeCap.Round, join = StrokeJoin.Round))
-        drawPath(shown, DragonBelly.copy(alpha = 0.8f), style = Stroke(thick * 0.28f, cap = StrokeCap.Round, join = StrokeJoin.Round))
-
-        // Head at the leading end: horns, whiskers and two red eyes.
-        val head = measure.getPosition(measure.length * grown)
-        val headRadius = thick * 0.85f
-        for (side in listOf(-1f, 1f)) {
-            drawLine(
-                DragonBelly,
-                head + Offset(side * headRadius * 0.5f, -headRadius * 0.5f),
-                head + Offset(side * headRadius * 1.3f, -headRadius * 1.9f),
-                strokeWidth = thick * 0.16f,
-                cap = StrokeCap.Round,
-            )
-            drawLine(
-                DragonGreen,
-                head + Offset(side * headRadius * 0.8f, headRadius * 0.3f),
-                head + Offset(side * headRadius * 2.2f, headRadius * 1.1f),
-                strokeWidth = thick * 0.08f,
-                cap = StrokeCap.Round,
-            )
-        }
-        drawCircle(DragonGreen, headRadius, head)
-        for (side in listOf(-1f, 1f)) {
-            drawCircle(Color(0xFFFF3B30), headRadius * 0.17f, head + Offset(side * headRadius * 0.42f, -headRadius * 0.15f))
         }
     }
 

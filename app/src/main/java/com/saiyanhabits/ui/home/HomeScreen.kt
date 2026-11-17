@@ -1,7 +1,9 @@
 package com.saiyanhabits.ui.home
 
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -37,6 +39,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -45,8 +48,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
@@ -59,6 +62,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.saiyanhabits.GameConfig
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.R
 import com.saiyanhabits.data.HabitEntity
 import com.saiyanhabits.domain.BeanOffer
@@ -69,6 +73,7 @@ import com.saiyanhabits.data.mentor
 import com.saiyanhabits.domain.Perks
 import com.saiyanhabits.domain.RivalStanding
 import com.saiyanhabits.domain.StoryChapter
+import com.saiyanhabits.ui.components.ArtImage
 import com.saiyanhabits.ui.components.EmptyPanel
 import com.saiyanhabits.ui.components.MentorPortrait
 import com.saiyanhabits.ui.components.MeterBar
@@ -109,10 +114,27 @@ fun HomeScreen(
     var choosingGravityFor by remember { mutableStateOf<HabitEntity?>(null) }
     var undoing by remember { mutableStateOf<TodayHabit?>(null) }
 
+    Box(modifier.fillMaxSize()) {
+    ArtImage(
+        key = ArtKey.BACKGROUND_HOME,
+        contentDescription = null,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.fillMaxSize(),
+    )
+    // A scrim so the cards stay readable over any picture.
+    Box(
+        Modifier
+            .fillMaxSize()
+            .background(
+                Brush.verticalGradient(
+                    listOf(SaiyanColors.Night.copy(alpha = 0.45f), SaiyanColors.Night.copy(alpha = 0.8f)),
+                ),
+            ),
+    )
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .statusBarsPadding(),
     ) {
@@ -139,6 +161,7 @@ fun HomeScreen(
                 formName = Forms.name(state.form),
                 aura = formAura(state.form),
                 numberColor = if (state.form == Forms.BASE) SaiyanColors.Orange else formAura(state.form),
+                avatarForm = state.form,
             )
         }
         state.mentorLine?.let { line ->
@@ -190,6 +213,7 @@ fun HomeScreen(
         }
         item(key = "rival") { RivalCard(state.rival) }
         item(key = "orbs") { WishOrbsCard(state.wishOrbs, hasWaitingWish, onSummon, onOpenSettings) }
+    }
     }
 
     choosingGravityFor?.let { habit ->
@@ -434,26 +458,15 @@ private fun RivalCard(rival: RivalStanding) {
     }
 }
 
-/** Placeholder rival art: a shadowy head and shoulders with red eyes. */
+/** The rival's picture, cropped to a circle. */
 @Composable
 private fun RivalFigure(modifier: Modifier = Modifier) {
-    Canvas(modifier) {
-        val radius = size.minDimension / 2f
-        drawCircle(SaiyanColors.Danger.copy(alpha = 0.16f), radius)
-        val shadow = Color(0xFF2A2F42)
-        drawCircle(shadow, radius * 0.36f, Offset(center.x, center.y - radius * 0.2f))
-        drawArc(
-            color = shadow,
-            startAngle = 180f,
-            sweepAngle = 180f,
-            useCenter = true,
-            topLeft = Offset(center.x - radius * 0.7f, center.y + radius * 0.28f),
-            size = Size(radius * 1.4f, radius * 1.3f),
-        )
-        for (side in listOf(-1f, 1f)) {
-            drawCircle(SaiyanColors.Danger, radius * 0.06f, Offset(center.x + side * radius * 0.14f, center.y - radius * 0.22f))
-        }
-    }
+    ArtImage(
+        key = ArtKey.RIVAL,
+        contentDescription = "Rival",
+        contentScale = ContentScale.Crop,
+        modifier = modifier.clip(CircleShape),
+    )
 }
 
 @Composable
@@ -508,6 +521,11 @@ private fun WishOrbsCard(orbs: Int, hasWaitingWish: Boolean, onSummon: () -> Uni
 
 @Composable
 private fun MentorLineCard(line: MentorLine) {
+    Crossfade(targetState = line, label = "mentor line") { shown -> MentorLineCardContent(shown) }
+}
+
+@Composable
+private fun MentorLineCardContent(line: MentorLine) {
     val mentor = line.mentor
     Surface(
         shape = RoundedCornerShape(18.dp),
@@ -569,12 +587,27 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
     val mentor = habit.mentor
     val done = entry.completion
     val faded = done != null || entry.excused
+    // A short swell when the habit goes from not done to done, not on first showing.
+    val bump = remember { Animatable(1f) }
+    var wasDone by remember { mutableStateOf(done != null) }
+    LaunchedEffect(done != null) {
+        if (done != null && !wasDone) {
+            bump.snapTo(1.05f)
+            bump.animateTo(1f, spring(dampingRatio = 0.35f, stiffness = 320f))
+        }
+        wasDone = done != null
+    }
     Surface(
         onClick = onClick,
         shape = RoundedCornerShape(18.dp),
         color = if (faded) SaiyanColors.Panel.copy(alpha = 0.6f) else SaiyanColors.Panel,
         border = BorderStroke(1.dp, if (done != null) SaiyanColors.Orange.copy(alpha = 0.45f) else SaiyanColors.Outline),
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .graphicsLayer {
+                scaleX = bump.value
+                scaleY = bump.value
+            },
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,

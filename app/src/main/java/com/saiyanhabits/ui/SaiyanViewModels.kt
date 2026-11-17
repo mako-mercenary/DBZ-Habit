@@ -9,6 +9,7 @@ import com.saiyanhabits.ui.chamber.ChamberViewModel
 import com.saiyanhabits.ui.habits.HabitsViewModel
 import com.saiyanhabits.ui.home.HomeViewModel
 import com.saiyanhabits.ui.quests.QuestsViewModel
+import com.saiyanhabits.ui.settings.ArtViewModel
 import com.saiyanhabits.ui.settings.WishesViewModel
 import com.saiyanhabits.ui.story.StoryViewModel
 
@@ -21,5 +22,6 @@ fun saiyanViewModelFactory(app: SaiyanApp): ViewModelProvider.Factory = viewMode
     initializer { BondsViewModel(app.bondRepository, app.habitRepository, app.dialogue) }
     initializer { StoryViewModel(app.storyRepository, app.habitRepository) }
     initializer { WishesViewModel(app.wishRepository) }
+    initializer { ArtViewModel(app.art) }
     initializer { ChamberViewModel(app.timeChamber, app.habitRepository, app.questRepository) }
 }

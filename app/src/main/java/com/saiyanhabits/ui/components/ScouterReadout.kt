@@ -75,6 +75,8 @@ fun ScouterReadout(
     formName: String? = null,
     aura: Color = SaiyanColors.Blue,
     numberColor: Color = SaiyanColors.Orange,
+    /** Which of the player's portraits sits inside the reticle: 0 is the base form. */
+    avatarForm: Int = 0,
 ) {
     val scope = rememberCoroutineScope()
 
@@ -211,6 +213,15 @@ fun ScouterReadout(
                 )
             }
         }
+
+        // Inside the reticle, which is drawn 54 dp in from the right edge of the panel.
+        PlayerPortrait(
+            form = avatarForm,
+            modifier = Modifier
+                .align(Alignment.CenterEnd)
+                .padding(end = 2.dp)
+                .size(56.dp),
+        )
 
         val label = gainLabel
         if (label != null && gainProgress.value < 1f) {

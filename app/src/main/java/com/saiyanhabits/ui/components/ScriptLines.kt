@@ -22,7 +22,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.saiyanhabits.domain.Mentor
 import com.saiyanhabits.domain.SceneLine
 import com.saiyanhabits.ui.theme.SaiyanColors
 import com.saiyanhabits.ui.theme.color
@@ -32,7 +31,7 @@ import com.saiyanhabits.ui.theme.color
  * their portrait, the player answers from the right, narration runs between.
  */
 @Composable
-fun ColumnScope.ScriptLines(lines: List<SceneLine>) {
+fun ColumnScope.ScriptLines(lines: List<SceneLine>, playerForm: Int = 0) {
     lines.forEach { line ->
         val speaker = line.mentor
         when {
@@ -40,15 +39,15 @@ fun ColumnScope.ScriptLines(lines: List<SceneLine>) {
                 name = speaker.displayName,
                 text = line.text,
                 nameColor = speaker.color,
-                alignment = Alignment.CenterStart,
-                portrait = speaker,
+                mine = false,
+                portrait = { MentorPortrait(speaker, Modifier.size(40.dp)) },
             )
             line.speaker == "YOU" -> SpeechBubble(
                 name = "You",
                 text = line.text,
                 nameColor = SaiyanColors.Blue,
-                alignment = Alignment.CenterEnd,
-                portrait = null,
+                mine = true,
+                portrait = { PlayerPortrait(playerForm, Modifier.size(40.dp)) },
             )
             else -> Text(
                 line.text,
@@ -64,24 +63,29 @@ fun ColumnScope.ScriptLines(lines: List<SceneLine>) {
     }
 }
 
+/** One line: a portrait beside a bubble. The player's ([mine]) sit on the right, portrait outside. */
 @Composable
-private fun SpeechBubble(name: String, text: String, nameColor: Color, alignment: Alignment, portrait: Mentor?) {
-    Box(Modifier.fillMaxWidth(), contentAlignment = alignment) {
+private fun SpeechBubble(name: String, text: String, nameColor: Color, mine: Boolean, portrait: @Composable () -> Unit) {
+    Box(Modifier.fillMaxWidth(), contentAlignment = if (mine) Alignment.CenterEnd else Alignment.CenterStart) {
         Row(verticalAlignment = Alignment.Top) {
-            if (portrait != null) {
-                MentorPortrait(portrait, Modifier.size(40.dp))
+            if (!mine) {
+                portrait()
                 Spacer(Modifier.width(8.dp))
             }
             Surface(
                 shape = RoundedCornerShape(16.dp),
-                color = if (portrait != null) SaiyanColors.Panel else SaiyanColors.BlueDeep.copy(alpha = 0.5f),
+                color = if (mine) SaiyanColors.BlueDeep.copy(alpha = 0.5f) else SaiyanColors.Panel,
                 border = BorderStroke(1.dp, SaiyanColors.Outline),
-                modifier = Modifier.widthIn(max = 280.dp),
+                modifier = Modifier.widthIn(max = 260.dp),
             ) {
                 Column(Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
                     Text(name, style = MaterialTheme.typography.labelMedium, color = nameColor)
                     Text(text, style = MaterialTheme.typography.bodyLarge)
                 }
+            }
+            if (mine) {
+                Spacer(Modifier.width(8.dp))
+                portrait()
             }
         }
     }

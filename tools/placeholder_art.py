@@ -1,0 +1,356 @@
+#!/usr/bin/env python3
+"""
+Generates the placeholder art, the art manifest and ART_LIST.md.
+
+All of it is original: coloured silhouettes for portraits, simple shapes for
+bosses, a gradient for the background. Run from the repository root:
+
+    python3 tools/placeholder_art.py
+
+It overwrites every placeholder PNG in app/src/main/assets/art/. Your own
+images with the same names are placeholders no more, so copy them aside
+first if you ever rerun it.
+"""
+import json
+import math
+import os
+import random
+import sys
+
+from PIL import Image, ImageChops, ImageDraw
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ART = os.path.join(ROOT, "app", "src", "main", "assets", "art")
+SS = 2  # supersampling for smooth edges
+
+NIGHT = (10, 13, 22)
+INK = (12, 15, 26)
+ORANGE = (255, 138, 31)
+ORANGE_DEEP = (232, 93, 4)
+BLUE = (46, 155, 255)
+GOLD = (255, 210, 63)
+TEXT_DIM = (154, 166, 196)
+
+MENTORS = {
+    "roshi": (255, 200, 87),
+    "goku": (255, 138, 31),
+    "piccolo": (95, 211, 141),
+    "bulma": (79, 209, 224),
+    "vegeta": (108, 140, 255),
+}
+BOSSES = {
+    # name: (colour, star points, pinch)
+    "raditz": ((217, 105, 74), 3, 0.55),
+    "nappa": ((217, 177, 59), 4, 1.0),
+    "frieza": ((182, 120, 240), 6, 1.0),
+    "cell": ((116, 208, 95), 5, 0.72),
+    "buu": ((255, 130, 184), 28, 1.0),
+    "broly": ((63, 224, 168), 8, 0.72),
+}
+
+# key, used for, width, height, shown as
+KEYS = [
+    *[(f"mentor_{m}_portrait", f"{m.capitalize()}'s portrait: the home-screen line, the Bonds tab, scenes and the story, assists in boss fights.", 512, 512, "circle") for m in MENTORS],
+    *[(f"boss_{b}", f"{b.capitalize() if b != 'buu' else 'Majin Buu'} in the boss picker, on saga cards, in the fight and on the victory screen.", 1024, 1024, "free") for b in BOSSES],
+    ("rival_figure", "The rival (last week's you) on the home screen.", 512, 512, "circle"),
+    ("dragon", "The dragon rising when it is summoned with seven wish orbs.", 1024, 1536, "free"),
+    ("player_portrait", "You, in base form: inside the scouter on the home screen, and your lines in scenes and the story.", 512, 512, "circle"),
+    ("player_form_1", "You as Super Saiyan (form 1), inside the scouter once the form is unlocked.", 512, 512, "circle"),
+    ("player_form_2", "You as Super Saiyan 2 (form 2).", 512, 512, "circle"),
+    ("player_form_3", "You as Super Saiyan 3 (form 3).", 512, 512, "circle"),
+    ("background_home", "Behind the home screen. A dark scrim is drawn over it so the cards stay readable.", 1080, 2340, "full"),
+    ("app_icon", "The launcher icon's foreground. Android shows the middle 288 x 288 and crops the edges. Swapped by file and rebuild only.", 432, 432, "icon"),
+]
+
+
+def canvas(w, h, bg=(0, 0, 0, 0)):
+    return Image.new("RGBA", (w * SS, h * SS), bg)
+
+
+def finish(img, path, supersampled=True):
+    if supersampled:
+        w, h = img.size
+        img = img.resize((w // SS, h // SS), Image.LANCZOS)
+    img.save(path, "PNG", optimize=True)
+    print(f"  {os.path.relpath(path, ROOT)}  {img.size[0]}x{img.size[1]}")
+
+
+def rgba(color, alpha=255):
+    return (*color, alpha)
+
+
+def glow(img, center, radius, color, alpha=120, steps=40):
+    """A soft radial glow, drawn as fading concentric circles on its own layer."""
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    for i in range(steps, 0, -1):
+        r = radius * i / steps
+        a = int(alpha * (1 - i / steps) ** 2)
+        d.ellipse([center[0] - r, center[1] - r, center[0] + r, center[1] + r], fill=rgba(color, a))
+    return Image.alpha_composite(img, layer)
+
+
+def circle_mask(size, center, radius):
+    mask = Image.new("L", size, 0)
+    ImageDraw.Draw(mask).ellipse([center[0] - radius, center[1] - radius, center[0] + radius, center[1] + radius], fill=255)
+    return mask
+
+
+def silhouette(color, hair=None, extras=None, aura=None, size=512):
+    """Head and shoulders in one colour, clipped to a circle. Hair and extras are drawn on top."""
+    s = size * SS
+    img = canvas(size, size)
+    cx = cy = s // 2
+    r = s // 2
+    img = glow(img, (cx, cy), r, color, alpha=70)
+    if aura:
+        ring = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        ImageDraw.Draw(ring).ellipse([cx - r + 8 * SS, cy - r + 8 * SS, cx + r - 8 * SS, cy + r - 8 * SS], outline=rgba(aura, 200), width=10 * SS)
+        img = Image.alpha_composite(img, ring)
+
+    figure = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(figure)
+    d.ellipse([cx - 200 * SS, cy + 80 * SS, cx + 200 * SS, cy + 470 * SS], fill=rgba(color))  # shoulders
+    head_r = 88 * SS
+    head_c = (cx, cy - 45 * SS)
+    d.ellipse([head_c[0] - head_r, head_c[1] - head_r, head_c[0] + head_r, head_c[1] + head_r], fill=rgba(color))
+    if hair:
+        hair(d, head_c, head_r, color)
+    if extras:
+        extras(d, head_c, head_r)
+    figure.putalpha(ImageChops.multiply(figure.getchannel("A"), circle_mask(img.size, (cx, cy), r)))
+    return Image.alpha_composite(img, figure)
+
+
+def spikes(count, height, width_factor=1.0, lean=0.0):
+    """Hair as a row of triangles on top of the head."""
+    def draw(d, head_c, head_r, color):
+        x0 = head_c[0] - head_r * 0.95 * width_factor
+        x1 = head_c[0] + head_r * 0.95 * width_factor
+        base_y = head_c[1] - head_r * 0.35
+        step = (x1 - x0) / count
+        pts = [(x0, base_y + head_r * 0.3)]
+        for i in range(count):
+            left = x0 + i * step
+            tip_x = left + step / 2 + lean * head_r
+            tip_y = base_y - height * head_r * (0.75 + 0.25 * math.sin(i * 1.7))
+            pts += [(tip_x, tip_y), (left + step, base_y + head_r * 0.1 if i % 2 else base_y)]
+        pts.append((x1, base_y + head_r * 0.3))
+        d.polygon(pts, fill=rgba(color))
+    return draw
+
+
+def sunglasses(d, head_c, head_r):
+    y = head_c[1] - head_r * 0.15
+    d.rounded_rectangle([head_c[0] - head_r * 0.8, y - head_r * 0.16, head_c[0] + head_r * 0.8, y + head_r * 0.16], radius=head_r * 0.12, fill=rgba(INK))
+
+
+def piccolo_ears(d, head_c, head_r, color):
+    for side in (-1, 1):
+        d.polygon([
+            (head_c[0] + side * head_r * 0.85, head_c[1] - head_r * 0.2),
+            (head_c[0] + side * head_r * 1.6, head_c[1] - head_r * 0.55),
+            (head_c[0] + side * head_r * 0.85, head_c[1] + head_r * 0.35),
+        ], fill=rgba(color))
+        # antennae
+        d.line([(head_c[0] + side * head_r * 0.3, head_c[1] - head_r * 0.9), (head_c[0] + side * head_r * 0.55, head_c[1] - head_r * 1.5)], fill=rgba(color), width=int(head_r * 0.12))
+        d.ellipse([head_c[0] + side * head_r * 0.55 - head_r * 0.1, head_c[1] - head_r * 1.6, head_c[0] + side * head_r * 0.55 + head_r * 0.1, head_c[1] - head_r * 1.4], fill=rgba(color))
+
+
+def bob(d, head_c, head_r, color):
+    d.ellipse([head_c[0] - head_r * 1.25, head_c[1] - head_r * 1.35, head_c[0] + head_r * 1.25, head_c[1] + head_r * 0.55], fill=rgba(color))
+    # the face shows as a lighter inner oval
+    d.ellipse([head_c[0] - head_r * 0.8, head_c[1] - head_r * 0.75, head_c[0] + head_r * 0.8, head_c[1] + head_r * 0.95], fill=rgba(tuple(min(255, c + 40) for c in color)))
+
+
+def long_hair(d, head_c, head_r, color):
+    d.polygon([
+        (head_c[0] - head_r * 1.1, head_c[1] + head_r * 2.4),
+        (head_c[0] - head_r * 1.0, head_c[1] - head_r * 0.6),
+        (head_c[0] - head_r * 0.5, head_c[1] - head_r * 1.5),
+        (head_c[0], head_c[1] - head_r * 1.1),
+        (head_c[0] + head_r * 0.5, head_c[1] - head_r * 1.5),
+        (head_c[0] + head_r * 1.0, head_c[1] - head_r * 0.6),
+        (head_c[0] + head_r * 1.1, head_c[1] + head_r * 2.4),
+    ], fill=rgba(color))
+    d.ellipse([head_c[0] - head_r * 0.7, head_c[1] - head_r * 0.6, head_c[0] + head_r * 0.7, head_c[1] + head_r], fill=rgba(tuple(min(255, c + 40) for c in color)))
+
+
+def lightning(d, head_c, head_r):
+    for side in (-1, 1):
+        x = head_c[0] + side * head_r * 1.9
+        y = head_c[1] - head_r * 0.4
+        pts = [(x, y - head_r), (x - side * head_r * 0.25, y - head_r * 0.3), (x + side * head_r * 0.1, y - head_r * 0.25), (x - side * head_r * 0.2, y + head_r * 0.6)]
+        d.line(pts, fill=rgba((191, 224, 255)), width=int(head_r * 0.1), joint="curve")
+
+
+def star_points(center, radius, points, pinch):
+    pts = []
+    for i in range(points * 2):
+        r = radius if i % 2 == 0 else radius * pinch * math.cos(math.pi / points)
+        a = -math.pi / 2 + i * math.pi / points
+        pts.append((center[0] + r * math.cos(a), center[1] + r * math.sin(a)))
+    return pts
+
+
+def boss(color, points, pinch, size=1024):
+    s = size * SS
+    img = canvas(size, size)
+    c = (s // 2, s // 2)
+    img = glow(img, c, s // 2, color, alpha=120)
+    d = ImageDraw.Draw(img)
+    body = s * 0.31
+    pts = star_points(c, body, points, pinch)
+    d.polygon(pts, fill=rgba(INK), outline=rgba(color), width=int(s * 0.035))
+    # eyes: two slanted slits
+    eye_y = c[1] - body * 0.08
+    reach = body * 0.34
+    for side in (-1, 1):
+        d.line([(c[0] + side * reach * 0.35, eye_y + reach * 0.22), (c[0] + side * reach, eye_y - reach * 0.12)], fill=rgba((255, 255, 255)), width=int(s * 0.03))
+    return img
+
+
+def rival(size=512):
+    s = size * SS
+    img = canvas(size, size)
+    c = (s // 2, s // 2)
+    img = glow(img, c, s // 2, (255, 90, 95), alpha=60)
+    d = ImageDraw.Draw(img)
+    shadow = (42, 47, 66)
+    d.ellipse([c[0] - 200 * SS, c[1] + 80 * SS, c[0] + 200 * SS, c[1] + 470 * SS], fill=rgba(shadow))
+    d.ellipse([c[0] - 88 * SS, c[1] - 133 * SS, c[0] + 88 * SS, c[1] + 43 * SS], fill=rgba(shadow))
+    spikes(6, 1.1, 1.05)(d, (c[0], c[1] - 45 * SS), 88 * SS, shadow)
+    for side in (-1, 1):
+        d.ellipse([c[0] + side * 32 * SS - 9 * SS, c[1] - 62 * SS, c[0] + side * 32 * SS + 9 * SS, c[1] - 44 * SS], fill=rgba((255, 59, 48)))
+    img.putalpha(ImageChops.multiply(img.getchannel("A"), circle_mask(img.size, c, s // 2)))
+    return img
+
+
+def dragon(w=1024, h=1536):
+    img = canvas(w, h)
+    W, H = img.size
+    d = ImageDraw.Draw(img)
+    green = (63, 191, 106)
+    belly = (217, 226, 122)
+    pts = []
+    steps = 60
+    for i in range(steps + 1):
+        f = i / steps
+        x = W / 2 + math.sin(f * 3.2 * math.pi) * W * 0.3 * (1 - 0.45 * f)
+        y = H * 0.93 - f * (H * 0.93 - H * 0.12)
+        pts.append((x, y))
+    thick = int(W * 0.085)
+    d.line(pts, fill=rgba(green), width=thick, joint="curve")
+    d.line(pts, fill=rgba(belly, 210), width=int(thick * 0.28), joint="curve")
+    head = pts[-1]
+    hr = thick * 0.85
+    for side in (-1, 1):
+        d.line([(head[0] + side * hr * 0.5, head[1] - hr * 0.5), (head[0] + side * hr * 1.3, head[1] - hr * 1.9)], fill=rgba(belly), width=int(thick * 0.16))
+        d.line([(head[0] + side * hr * 0.8, head[1] + hr * 0.3), (head[0] + side * hr * 2.2, head[1] + hr * 1.1)], fill=rgba(green), width=int(thick * 0.08))
+    d.ellipse([head[0] - hr, head[1] - hr, head[0] + hr, head[1] + hr], fill=rgba(green))
+    for side in (-1, 1):
+        er = hr * 0.17
+        d.ellipse([head[0] + side * hr * 0.42 - er, head[1] - hr * 0.15 - er, head[0] + side * hr * 0.42 + er, head[1] - hr * 0.15 + er], fill=rgba((255, 59, 48)))
+    return img
+
+
+def background(w=1080, h=2340):
+    # Vertical gradient: deep blue at the top down to night at the bottom.
+    top, bottom = (18, 26, 51), NIGHT
+    column = Image.new("RGB", (1, h))
+    for y in range(h):
+        f = y / (h - 1)
+        column.putpixel((0, y), tuple(int(top[i] + (bottom[i] - top[i]) * f) for i in range(3)))
+    img = column.resize((w, h)).convert("RGBA")
+    img = glow(img, (int(w * 0.2), int(h * 0.22)), int(w * 0.9), ORANGE, alpha=38, steps=60)
+    img = glow(img, (int(w * 0.85), int(h * 0.7)), int(w * 0.8), BLUE, alpha=34, steps=60)
+    d = ImageDraw.Draw(img)
+    rng = random.Random(7)
+    for _ in range(160):
+        x, y = rng.randrange(w), rng.randrange(h)
+        r = rng.choice([1, 1, 1, 2])
+        a = rng.randrange(60, 170)
+        d.ellipse([x - r, y - r, x + r, y + r], fill=(220, 230, 255, a))
+    return img
+
+
+def app_icon(size=432):
+    img = canvas(size, size)
+    s = size * SS
+    d = ImageDraw.Draw(img)
+    c = s / 2
+    # Blue ring
+    r = s * 0.23
+    d.ellipse([c - r, c - r, c + r, c + r], outline=rgba(BLUE), width=int(s * 0.035))
+    # Flame
+    def flame(scale, color, dy=0):
+        pts = []
+        for ang in range(0, 360, 6):
+            a = math.radians(ang)
+            # a teardrop: narrow at the top, round at the bottom
+            rr = scale * (0.55 + 0.45 * math.sin(a))
+            if ang in range(60, 120):
+                rr *= 1.25
+            pts.append((c + rr * math.cos(a - math.pi / 2) * 0.75, c + dy + rr * math.sin(a - math.pi / 2) * 1.0))
+        d.polygon(pts, fill=rgba(color))
+    flame(s * 0.2, ORANGE, s * 0.02)
+    flame(s * 0.1, (255, 217, 168), s * 0.07)
+    return img
+
+
+def main():
+    os.makedirs(ART, exist_ok=True)
+    print("Placeholders:")
+    manifest = {}
+    for key, _, w, h, _ in KEYS:
+        manifest[key] = f"{key}.png"
+    for name, color in MENTORS.items():
+        hair = {"roshi": None, "goku": spikes(5, 1.5, 1.05), "piccolo": piccolo_ears, "bulma": bob, "vegeta": spikes(4, 2.1, 0.8)}[name]
+        extras = sunglasses if name == "roshi" else None
+        finish(silhouette(color, hair, extras), os.path.join(ART, f"mentor_{name}_portrait.png"))
+    for name, (color, points, pinch) in BOSSES.items():
+        finish(boss(color, points, pinch), os.path.join(ART, f"boss_{name}.png"))
+    finish(rival(), os.path.join(ART, "rival_figure.png"))
+    finish(dragon(), os.path.join(ART, "dragon.png"))
+    finish(silhouette(BLUE, spikes(5, 1.0, 0.95)), os.path.join(ART, "player_portrait.png"))
+    finish(silhouette(GOLD, spikes(5, 1.6, 1.0), aura=GOLD), os.path.join(ART, "player_form_1.png"))
+    finish(silhouette((255, 224, 102), spikes(5, 1.9, 1.0), lightning, aura=(127, 212, 255)), os.path.join(ART, "player_form_2.png"))
+    finish(silhouette((255, 241, 168), long_hair, aura=(255, 255, 255)), os.path.join(ART, "player_form_3.png"))
+    finish(background(), os.path.join(ART, "background_home.png"), supersampled=False)
+    finish(app_icon(), os.path.join(ART, "app_icon.png"))
+
+    with open(os.path.join(ART, "manifest.json"), "w") as f:
+        json.dump(manifest, f, indent=2)
+        f.write("\n")
+    print("  manifest.json")
+
+    lines = [
+        "# Art list",
+        "",
+        "Every image the app uses, by key. To replace one, put a PNG with the same",
+        "filename in `app/src/main/assets/art/` and rebuild, or pick an image from your",
+        "phone under Settings > Art (the launcher icon is file-and-rebuild only).",
+        "",
+        "Sizes are the recommended size in pixels. Larger images are scaled down",
+        "when picked in the app; files in the assets folder are used as they are.",
+        "\"Circle\" means the image is shown cropped to a circle, so keep the subject",
+        "centred. \"Free\" images are shown whole on a transparent background.",
+        "",
+        "| Key | File | Used for | Size | Shown as |",
+        "|---|---|---|---|---|",
+    ]
+    for key, used, w, h, shape in KEYS:
+        lines.append(f"| `{key}` | `{manifest[key]}` | {used} | {w} × {h} | {shape} |")
+    lines += [
+        "",
+        "The placeholders are generated by `tools/placeholder_art.py`; rerunning it",
+        "overwrites every file above, so keep your own art elsewhere too.",
+        "",
+    ]
+    with open(os.path.join(ROOT, "ART_LIST.md"), "w") as f:
+        f.write("\n".join(lines))
+    print("  ART_LIST.md")
+
+
+if __name__ == "__main__":
+    main()

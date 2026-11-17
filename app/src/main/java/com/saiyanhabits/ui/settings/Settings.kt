@@ -75,6 +75,7 @@ fun SettingsScreen(
     wishes: List<WishEntity>,
     onAddWish: (String) -> Unit,
     onRemoveWish: (Long) -> Unit,
+    onOpenArt: () -> Unit,
     onBack: () -> Unit,
 ) {
     val waiting = wishes.filter { it.grantedAtEpochDay == null }
@@ -129,6 +130,15 @@ fun SettingsScreen(
                 )
             }
         }
+
+        Spacer(Modifier.height(12.dp))
+        SectionLabel("Art")
+        Text(
+            "Use your own pictures for the mentors, bosses, your portrait and more.",
+            style = MaterialTheme.typography.bodyMedium,
+            color = SaiyanColors.TextDim,
+        )
+        OutlinedButton(onClick = onOpenArt, modifier = Modifier.fillMaxWidth()) { Text("Choose images") }
 
         Spacer(Modifier.height(12.dp))
         NotificationSettings()

@@ -11,23 +11,31 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.ColorMatrix
+import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.translate
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.domain.Boss
 import com.saiyanhabits.ui.theme.SaiyanColors
 import com.saiyanhabits.ui.theme.color
@@ -36,24 +44,11 @@ import kotlin.math.cos
 import kotlin.math.min
 import kotlin.math.sin
 
-/** Outline of each placeholder boss: a star with this many points and this much pinch. */
-private data class BossShape(val points: Int, val pinch: Float)
-
-private val Boss.shape: BossShape
-    get() = when (this) {
-        Boss.RADITZ -> BossShape(points = 3, pinch = 0.55f)
-        Boss.NAPPA -> BossShape(points = 4, pinch = 1f)
-        Boss.FRIEZA -> BossShape(points = 6, pinch = 1f)
-        Boss.CELL -> BossShape(points = 5, pinch = 0.72f)
-        Boss.BUU -> BossShape(points = 28, pinch = 1f)
-        Boss.BROLY -> BossShape(points = 8, pinch = 0.72f)
-    }
-
 /**
- * Placeholder boss art: a coloured shape with eyes, inside an aura.
+ * A boss, inside its aura.
  *
  * [hit] runs from 0 to 1 while the boss is taking a hit (flash and shake) and
- * is 1 at rest. A [defeated] boss is drawn greyed out.
+ * is 1 at rest. A [defeated] boss is shown greyed out.
  */
 @Composable
 fun BossFigure(
@@ -63,56 +58,45 @@ fun BossFigure(
     defeated: Boolean = false,
 ) {
     val tint = if (defeated) SaiyanColors.TextDim else boss.color
-    Canvas(modifier.semantics { contentDescription = boss.displayName }) {
-        val radius = min(size.width, size.height) / 2f
-        val recoil = (1f - hit).coerceIn(0f, 1f)
-        val shake = sin(hit * 40f) * recoil * radius * 0.12f
-
-        drawCircle(
-            Brush.radialGradient(
-                listOf(tint.copy(alpha = if (defeated) 0.12f else 0.38f + 0.3f * recoil), Color.Transparent),
-                center = center,
+    val recoil = (1f - hit).coerceIn(0f, 1f)
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = modifier.drawBehind {
+            val radius = size.minDimension / 2f
+            drawCircle(
+                Brush.radialGradient(
+                    listOf(tint.copy(alpha = if (defeated) 0.12f else 0.38f + 0.3f * recoil), Color.Transparent),
+                    center = center,
+                    radius = radius,
+                ),
                 radius = radius,
-            ),
+            )
+        },
+    ) {
+        ArtImage(
+            key = ArtKey.boss(boss),
+            contentDescription = boss.displayName,
+            contentScale = ContentScale.Fit,
+            alpha = if (defeated) 0.6f else 1f,
+            colorFilter = if (defeated) ColorFilter.colorMatrix(ColorMatrix().apply { setToSaturation(0f) }) else null,
+            modifier = Modifier
+                .fillMaxSize(0.86f)
+                .graphicsLayer {
+                    translationX = sin(hit * 40f) * recoil * size.width * 0.12f
+                    val squash = 1f - 0.08f * recoil
+                    scaleX = squash
+                    scaleY = squash
+                    // Lets the flash below tint only the image's own pixels.
+                    compositingStrategy = CompositingStrategy.Offscreen
+                }
+                .drawWithContent {
+                    drawContent()
+                    if (recoil > 0f) {
+                        drawRect(Color.White.copy(alpha = 0.85f * recoil * recoil), blendMode = BlendMode.SrcAtop)
+                    }
+                },
         )
-
-        translate(left = shake) {
-            val bodyRadius = radius * 0.62f * (1f - 0.08f * recoil)
-            val outline = starPath(center, bodyRadius, boss.shape)
-            drawPath(outline, Color(0xFF0C0F1A))
-            drawPath(outline, tint, style = Stroke(width = radius * 0.07f))
-
-            // Two slanted eyes.
-            val eyeY = center.y - bodyRadius * 0.08f
-            val eyeReach = bodyRadius * 0.34f
-            val eyeStroke = radius * 0.06f
-            for (side in listOf(-1f, 1f)) {
-                drawLine(
-                    color = if (defeated) tint else Color.White,
-                    start = Offset(center.x + side * eyeReach * 0.35f, eyeY + eyeReach * 0.22f),
-                    end = Offset(center.x + side * eyeReach, eyeY - eyeReach * 0.12f),
-                    strokeWidth = eyeStroke,
-                    cap = StrokeCap.Round,
-                )
-            }
-            // White flash at the moment of impact.
-            if (recoil > 0f) drawPath(outline, Color.White.copy(alpha = 0.85f * recoil * recoil))
-        }
     }
-}
-
-private fun starPath(center: Offset, radius: Float, shape: BossShape): Path {
-    val path = Path()
-    val corners = shape.points * 2
-    for (i in 0 until corners) {
-        val r = if (i % 2 == 0) radius else radius * shape.pinch * cos(PI / shape.points).toFloat()
-        val angle = -PI / 2 + i * PI / shape.points
-        val x = center.x + r * cos(angle).toFloat()
-        val y = center.y + r * sin(angle).toFloat()
-        if (i == 0) path.moveTo(x, y) else path.lineTo(x, y)
-    }
-    path.close()
-    return path
 }
 
 /** A bar that drains or fills smoothly as [fraction] changes. */

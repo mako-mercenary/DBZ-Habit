@@ -46,6 +46,7 @@ import com.saiyanhabits.GameConfig
 import com.saiyanhabits.R
 import com.saiyanhabits.SaiyanApp
 import com.saiyanhabits.data.GameEvent
+import com.saiyanhabits.data.PlayerStateEntity
 import com.saiyanhabits.data.QuestEvent
 import com.saiyanhabits.domain.BondRules
 import com.saiyanhabits.domain.Mentor
@@ -69,6 +70,8 @@ import com.saiyanhabits.ui.quests.QuestsViewModel
 import com.saiyanhabits.ui.quests.SagaDetailScreen
 import com.saiyanhabits.ui.quests.SagaEditScreen
 import com.saiyanhabits.ui.quests.SagasScreen
+import com.saiyanhabits.ui.settings.ArtScreen
+import com.saiyanhabits.ui.settings.ArtViewModel
 import com.saiyanhabits.ui.settings.SettingsScreen
 import com.saiyanhabits.ui.settings.WishesViewModel
 import com.saiyanhabits.ui.story.ChapterScreen
@@ -85,6 +88,7 @@ private object Routes {
     const val BONDS = "bonds"
     const val STORY = "story"
     const val SETTINGS = "settings"
+    const val ART = "art"
 
     const val CHAPTER_ARG = "chapter"
     const val CHAPTER = "chapter/{$CHAPTER_ARG}"
@@ -144,6 +148,9 @@ fun SaiyanHabitsRoot() {
     val wishesViewModel: WishesViewModel = viewModel(factory = factory)
     val wishes by wishesViewModel.wishes.collectAsStateWithLifecycle()
     val waitingWishes = wishes.filter { it.grantedAtEpochDay == null }
+    val artViewModel: ArtViewModel = viewModel(factory = factory)
+    // The player's form picks which of their portraits scenes and chapters show.
+    val player by app.habitRepository.playerState.collectAsStateWithLifecycle(initialValue = PlayerStateEntity())
 
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -270,7 +277,7 @@ fun SaiyanHabitsRoot() {
                     } else {
                         // Opening a chapter is what counts as reading it.
                         LaunchedEffect(number) { storyViewModel.markRead(number) }
-                        ChapterScreen(chapter = status.chapter, onBack = { close() })
+                        ChapterScreen(chapter = status.chapter, playerForm = player.highestForm, onBack = { close() })
                     }
                 }
                 composable(Routes.SETTINGS) {
@@ -278,7 +285,19 @@ fun SaiyanHabitsRoot() {
                         wishes = wishes,
                         onAddWish = wishesViewModel::add,
                         onRemoveWish = wishesViewModel::remove,
+                        onOpenArt = { navController.navigate(Routes.ART) },
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
+                    )
+                }
+                composable(Routes.ART) {
+                    val overridden by artViewModel.overridden.collectAsStateWithLifecycle()
+                    val message by artViewModel.message.collectAsStateWithLifecycle()
+                    ArtScreen(
+                        overridden = overridden,
+                        message = message,
+                        onPick = artViewModel::pick,
+                        onReset = artViewModel::reset,
+                        onBack = { navController.popBackStack(Routes.ART, inclusive = true) },
                     )
                 }
                 composable(Routes.BONDS) {
@@ -320,7 +339,7 @@ fun SaiyanHabitsRoot() {
                     if (scene == null || !BondRules.isSceneUnlocked(level, loaded.bond(mentor).level)) {
                         LaunchedEffect(Unit) { close() }
                     } else {
-                        SceneScreen(mentor = mentor, scene = scene, onBack = { close() })
+                        SceneScreen(mentor = mentor, scene = scene, playerForm = player.highestForm, onBack = { close() })
                     }
                 }
                 composable(Routes.NEW_SAGA) {

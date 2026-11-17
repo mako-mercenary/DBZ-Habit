@@ -1,0 +1,21 @@
+{
+  "mentor_roshi_portrait": "mentor_roshi_portrait.png",
+  "mentor_goku_portrait": "mentor_goku_portrait.png",
+  "mentor_piccolo_portrait": "mentor_piccolo_portrait.png",
+  "mentor_bulma_portrait": "mentor_bulma_portrait.png",
+  "mentor_vegeta_portrait": "mentor_vegeta_portrait.png",
+  "boss_raditz": "boss_raditz.png",
+  "boss_nappa": "boss_nappa.png",
+  "boss_frieza": "boss_frieza.png",
+  "boss_cell": "boss_cell.png",
+  "boss_buu": "boss_buu.png",
+  "boss_broly": "boss_broly.png",
+  "rival_figure": "rival_figure.png",
+  "dragon": "dragon.png",
+  "player_portrait": "player_portrait.png",
+  "player_form_1": "player_form_1.png",
+  "player_form_2": "player_form_2.png",
+  "player_form_3": "player_form_3.png",
+  "background_home": "background_home.png",
+  "app_icon": "app_icon.png"
+}

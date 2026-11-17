@@ -12,8 +12,8 @@ android {
         applicationId = "com.saiyanhabits"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
-        versionName = "0.5.0"
+        versionCode = 6
+        versionName = "0.6.0"
     }
 
     signingConfigs {
@@ -41,6 +41,33 @@ android {
 
     buildFeatures {
         compose = true
+    }
+}
+
+// The launcher icon's foreground is assets/art/app_icon.png, like every other
+// image. This copies it into a generated resource folder for each build.
+abstract class SyncAppIcon : DefaultTask() {
+    @get:InputFile
+    abstract val icon: RegularFileProperty
+
+    @get:OutputDirectory
+    abstract val outputDir: DirectoryProperty
+
+    @TaskAction
+    fun copy() {
+        val dir = outputDir.get().asFile.resolve("mipmap-xxxhdpi")
+        dir.mkdirs()
+        icon.get().asFile.copyTo(dir.resolve("ic_launcher_foreground.png"), overwrite = true)
+    }
+}
+
+val syncAppIcon = tasks.register<SyncAppIcon>("syncAppIcon") {
+    icon.set(layout.projectDirectory.file("src/main/assets/art/app_icon.png"))
+}
+
+androidComponents {
+    onVariants { variant ->
+        variant.sources.res?.addGeneratedSourceDirectory(syncAppIcon, SyncAppIcon::outputDir)
     }
 }
 

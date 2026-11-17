@@ -1,36 +1,31 @@
 package com.saiyanhabits.ui.components
 
-import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.drawscope.clipPath
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.geometry.Rect
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.domain.Mentor
-import com.saiyanhabits.ui.theme.color
-import kotlin.math.min
 
-/** Placeholder mentor art: a head-and-shoulders silhouette in the mentor's colour, inside a circle. */
+/** A mentor's portrait, cropped to a circle. */
 @Composable
 fun MentorPortrait(mentor: Mentor, modifier: Modifier = Modifier) {
-    val tint = mentor.color
-    Canvas(modifier.semantics { contentDescription = mentor.displayName }) {
-        val radius = min(size.width, size.height) / 2f
-        val circle = Path().apply { addOval(Rect(center, radius)) }
-        drawCircle(tint.copy(alpha = 0.18f), radius)
-        clipPath(circle) {
-            // Shoulders: a wide oval sitting below the centre, cut off by the circle.
-            drawOval(
-                color = tint,
-                topLeft = Offset(center.x - radius * 0.78f, center.y + radius * 0.30f),
-                size = Size(radius * 1.56f, radius * 1.5f),
-            )
-            // Head.
-            drawCircle(tint, radius * 0.34f, Offset(center.x, center.y - radius * 0.18f))
-        }
-    }
+    ArtImage(
+        key = ArtKey.mentor(mentor),
+        contentDescription = mentor.displayName,
+        modifier = modifier.clip(CircleShape),
+        contentScale = ContentScale.Crop,
+    )
+}
+
+/** The player's portrait for a form (0 is the base form), cropped to a circle. */
+@Composable
+fun PlayerPortrait(form: Int, modifier: Modifier = Modifier) {
+    ArtImage(
+        key = ArtKey.playerForm(form),
+        contentDescription = "You",
+        modifier = modifier.clip(CircleShape),
+        contentScale = ContentScale.Crop,
+    )
 }

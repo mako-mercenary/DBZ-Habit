@@ -121,10 +121,10 @@ fun StoryScreen(chapters: List<ChapterStatus>?, onOpen: (Int) -> Unit, onBack: (
 
 /** One chapter, read top to bottom. */
 @Composable
-fun ChapterScreen(chapter: StoryChapter, onBack: () -> Unit) {
+fun ChapterScreen(chapter: StoryChapter, playerForm: Int, onBack: () -> Unit) {
     SubScreen(title = chapter.title, onBack = onBack) {
         Text("Chapter ${chapter.number}", style = MaterialTheme.typography.labelLarge, color = SaiyanColors.Orange)
-        ScriptLines(chapter.lines)
+        ScriptLines(chapter.lines, playerForm)
         Spacer(Modifier.height(16.dp))
     }
 }

@@ -317,14 +317,14 @@ private fun SceneRow(level: Int, title: String, unlocked: Boolean, onClick: () -
 
 /** A bond scene, read top to bottom like a script. */
 @Composable
-fun SceneScreen(mentor: Mentor, scene: BondScene, onBack: () -> Unit) {
+fun SceneScreen(mentor: Mentor, scene: BondScene, playerForm: Int, onBack: () -> Unit) {
     SubScreen(title = scene.title, onBack = onBack) {
         Text(
             "${mentor.displayName} · Bond level ${scene.level}",
             style = MaterialTheme.typography.labelLarge,
             color = mentor.color,
         )
-        ScriptLines(scene.lines)
+        ScriptLines(scene.lines, playerForm)
         Spacer(Modifier.height(16.dp))
     }
 }
