@@ -14,6 +14,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 5 | Story chapters, wish orbs, rival | Done |
 | 6 | Art manifest, gallery swap, `ART_LIST.md`, polish and animations | Done |
 | 7 | Data export/import, final debug APK | Done |
+| 8 | History screen, weekly recap | Done |
 
 ## Build
 
@@ -140,6 +141,23 @@ placeholders. A mistake is reported with its line number.
 The story text is in `app/src/main/assets/dialogue/story.json`, in the same
 line format as the bond scenes, and is checked by the unit tests (one chapter
 per unlock, 120 to 400 words each, known speakers).
+
+## History and the weekly recap
+
+- **History** (the calendar icon on the home screen) shows your best and
+  current streak, perfect days, and the share of scheduled habits you've done.
+  Below that is a calendar: gold for a perfect day, green for a day saved by a
+  bean, red for a missed day, faint for a rest day. Tap a day to see what you
+  checked off and the power it earned. Then a chart of your power level over
+  the last 30 or 90 days, or since you started.
+- **Weekly recap.** The first time you open the app in a new week, last week's
+  recap opens by itself: each day's colour, power gained against your rival
+  (the week before), whether you earned a wish orb, your most-trained habit,
+  the mentor who trained you most, and any saga milestones, bosses and spirit
+  bombs. It only appears if something happened that week, and only once. You
+  can open it again from History.
+
+The "strong week" threshold for the recap headline is in `GameConfig.kt`.
 
 ## Look
 

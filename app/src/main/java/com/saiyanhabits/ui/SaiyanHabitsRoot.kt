@@ -70,6 +70,13 @@ import com.saiyanhabits.ui.components.VictoryOverlay
 import com.saiyanhabits.ui.habits.HabitEditScreen
 import com.saiyanhabits.ui.habits.HabitsScreen
 import com.saiyanhabits.ui.habits.HabitsViewModel
+import com.saiyanhabits.ui.history.HistoryScreen
+import com.saiyanhabits.ui.history.HistoryViewModel
+import com.saiyanhabits.ui.history.RecapScreen
+import com.saiyanhabits.domain.WeekRecap
+import com.saiyanhabits.domain.Weeks
+import androidx.compose.runtime.produceState
+import androidx.compose.runtime.rememberCoroutineScope
 import com.saiyanhabits.ui.home.HomeScreen
 import com.saiyanhabits.ui.home.HomeViewModel
 import com.saiyanhabits.ui.quests.BombDetailScreen
@@ -98,6 +105,11 @@ private object Routes {
     const val STORY = "story"
     const val SETTINGS = "settings"
     const val ART = "art"
+    const val HISTORY = "history"
+
+    const val WEEK_ARG = "week"
+    const val RECAP = "recap/{$WEEK_ARG}"
+    fun recap(weekStart: Long) = "recap/$weekStart"
 
     const val CHAPTER_ARG = "chapter"
     const val CHAPTER = "chapter/{$CHAPTER_ARG}"
@@ -159,6 +171,7 @@ fun SaiyanHabitsRoot() {
     val waitingWishes = wishes.filter { it.grantedAtEpochDay == null }
     val artViewModel: ArtViewModel = viewModel(factory = factory)
     val dataViewModel: DataViewModel = viewModel(factory = factory)
+    val historyViewModel: HistoryViewModel = viewModel(factory = factory)
     // The player's form picks which of their portraits scenes and chapters show.
     val player by app.habitRepository.playerState.collectAsStateWithLifecycle(initialValue = PlayerStateEntity())
 
@@ -171,6 +184,18 @@ fun SaiyanHabitsRoot() {
     var defeated by remember { mutableStateOf<QuestEvent.SagaDefeated?>(null) }
     var bondLevelUp by remember { mutableStateOf<BondLevelUpNotice?>(null) }
     var summoning by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
+
+    // The weekly recap opens by itself the first time the app comes to the front
+    // in a new week, over the home screen only, so it never interrupts an editor.
+    LifecycleResumeEffect(app) {
+        val job = scope.launch {
+            app.habitRepository.syncDays()
+            val week = app.historyRepository.dueRecapWeek() ?: return@launch
+            if (navController.currentDestination?.route == Routes.HOME) navController.navigate(Routes.recap(week))
+        }
+        onPauseOrDispose { job.cancel() }
+    }
 
     LaunchedEffect(app) {
         app.questRepository.events.collect { event ->
@@ -257,6 +282,10 @@ fun SaiyanHabitsRoot() {
                         hasWaitingWish = waitingWishes.isNotEmpty(),
                         onAddHabit = { navController.navigate(Routes.habitEditor()) },
                         onOpenStory = { navController.navigate(Routes.STORY) },
+                        onOpenHistory = {
+                            historyViewModel.reset()
+                            navController.navigate(Routes.HISTORY)
+                        },
                         onOpenChapter = { navController.navigate(Routes.chapter(it)) },
                         onOpenSettings = { navController.navigate(Routes.SETTINGS) },
                         onSummon = { summoning = true },
@@ -322,6 +351,32 @@ fun SaiyanHabitsRoot() {
                         onCancelImport = dataViewModel::cancelImport,
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
                     )
+                }
+                composable(Routes.HISTORY) {
+                    val state by historyViewModel.uiState.collectAsStateWithLifecycle()
+                    val home by homeViewModel.uiState.collectAsStateWithLifecycle()
+                    HistoryScreen(
+                        state = state,
+                        currentStreak = home?.overallStreak ?: 0,
+                        onPrevMonth = { state?.let { historyViewModel.showMonth(it.month.minusMonths(1)) } },
+                        onNextMonth = { state?.let { historyViewModel.showMonth(it.month.plusMonths(1)) } },
+                        onSelectDay = historyViewModel::select,
+                        onRange = historyViewModel::setRange,
+                        onOpenRecap = {
+                            val today = java.time.LocalDate.now().toEpochDay()
+                            navController.navigate(Routes.recap(Weeks.startOf(today) - Weeks.DAYS))
+                        },
+                        onBack = { navController.popBackStack(Routes.HISTORY, inclusive = true) },
+                    )
+                }
+                composable(
+                    route = Routes.RECAP,
+                    arguments = listOf(navArgument(Routes.WEEK_ARG) { type = NavType.LongType }),
+                ) { entry ->
+                    val week = entry.arguments?.getLong(Routes.WEEK_ARG) ?: return@composable
+                    val recap by produceState<WeekRecap?>(null, week) { value = app.historyRepository.recap(week) }
+                    LaunchedEffect(week) { app.historyRepository.markRecapShown(week) }
+                    RecapScreen(recap = recap, onDone = { navController.popBackStack(Routes.RECAP, inclusive = true) })
                 }
                 composable(Routes.ART) {
                     val overridden by artViewModel.overridden.collectAsStateWithLifecycle()

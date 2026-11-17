@@ -126,5 +126,8 @@ data class WishEntity(
 /** Query result: power earned on one day. */
 data class DayPoints(val epochDay: Long, val points: Int)
 
+/** Query result: how many power events came from one source. */
+data class SourceCount(val source: com.saiyanhabits.domain.PowerSource, val count: Int)
+
 /** Query result: a habit's current streak. */
 data class HabitStreak(val habitId: Long, val streak: Int)

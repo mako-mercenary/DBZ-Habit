@@ -156,6 +156,11 @@ object GameConfig {
     /** Orbs needed to summon the dragon. One is earned per perfect week, and no more are held than this. */
     const val WISH_ORBS_NEEDED = 7
 
+    // ---- Weekly recap ----
+
+    /** Perfect days that make a week a "strong week" in the Monday recap. */
+    const val RECAP_STRONG_WEEK_PERFECT_DAYS = 5
+
     // ---- Animation timing (milliseconds) ----
 
     /** The dragon rising when it is summoned. */

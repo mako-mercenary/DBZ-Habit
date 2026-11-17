@@ -34,6 +34,16 @@ interface PowerDao {
     )
     fun observeDailyPoints(fromDay: Long, toDay: Long): Flow<List<DayPoints>>
 
+    /** Power events between two days (inclusive), counted by where they came from. */
+    @Query(
+        """
+        SELECT source AS source, COUNT(*) AS count FROM power_events
+        WHERE epochDay BETWEEN :fromDay AND :toDay
+        GROUP BY source
+        """,
+    )
+    suspend fun countBySource(fromDay: Long, toDay: Long): List<SourceCount>
+
     @Insert
     suspend fun insert(event: PowerEventEntity): Long
 

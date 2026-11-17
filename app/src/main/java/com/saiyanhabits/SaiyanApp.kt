@@ -8,6 +8,7 @@ import com.saiyanhabits.data.BackupRepository
 import com.saiyanhabits.data.BondRepository
 import com.saiyanhabits.data.DialogueRepository
 import com.saiyanhabits.data.HabitRepository
+import com.saiyanhabits.data.HistoryRepository
 import com.saiyanhabits.data.QuestRepository
 import com.saiyanhabits.data.StoryRepository
 import com.saiyanhabits.data.WishRepository
@@ -26,6 +27,8 @@ class SaiyanApp : Application() {
     val questRepository: QuestRepository by lazy { QuestRepository(database) }
 
     val bondRepository: BondRepository by lazy { BondRepository(database) }
+
+    val historyRepository: HistoryRepository by lazy { HistoryRepository(this, database) }
 
     val dialogue: DialogueRepository by lazy { DialogueRepository(this) }
 

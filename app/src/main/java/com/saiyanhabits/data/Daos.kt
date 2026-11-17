@@ -22,6 +22,10 @@ abstract class HabitDao {
     @Query("SELECT * FROM habits WHERE id = :id")
     abstract suspend fun getById(id: Long): HabitEntity?
 
+    /** Every habit, archived ones included, for naming past check-offs. */
+    @Query("SELECT * FROM habits ORDER BY id")
+    abstract suspend fun getAll(): List<HabitEntity>
+
     @Insert
     protected abstract suspend fun insert(habit: HabitEntity): Long
 
@@ -111,6 +115,13 @@ interface StreakDao {
 
     @Query("SELECT * FROM day_records WHERE epochDay BETWEEN :fromDay AND :toDay ORDER BY epochDay")
     suspend fun getRecordsBetween(fromDay: Long, toDay: Long): List<DayRecordEntity>
+
+    /** Every finished day on record, oldest first. */
+    @Query("SELECT * FROM day_records ORDER BY epochDay")
+    fun observeAllRecords(): Flow<List<DayRecordEntity>>
+
+    @Query("SELECT * FROM day_records ORDER BY epochDay")
+    suspend fun getAllRecords(): List<DayRecordEntity>
 
     /** The latest finished days whatever their outcome, newest first. */
     @Query("SELECT * FROM day_records ORDER BY epochDay DESC LIMIT 14")

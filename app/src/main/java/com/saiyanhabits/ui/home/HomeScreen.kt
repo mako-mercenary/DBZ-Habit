@@ -114,6 +114,7 @@ fun HomeScreen(
     hasWaitingWish: Boolean,
     onAddHabit: () -> Unit,
     onOpenStory: () -> Unit,
+    onOpenHistory: () -> Unit,
     onOpenChapter: (Int) -> Unit,
     onOpenSettings: () -> Unit,
     onSummon: () -> Unit,
@@ -146,6 +147,9 @@ fun HomeScreen(
                     outlineWidth = 4.dp,
                     modifier = Modifier.weight(1f).padding(start = 4.dp),
                 )
+                IconButton(onClick = onOpenHistory) {
+                    Icon(painterResource(R.drawable.ic_history), contentDescription = "History", tint = Color.White)
+                }
                 IconButton(onClick = onOpenStory) {
                     Icon(painterResource(R.drawable.ic_story), contentDescription = "Story", tint = Color.White)
                 }
