@@ -33,6 +33,30 @@ while queue:
     for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
         if 0 <= nx < w and 0 <= ny < h and not seen[ny * w + nx]:
             queue.append((nx, ny))
+# Black pockets enclosed by other shapes (say, inside a loop of lightning) are
+# background too when they are large; small ones are pupils and lettering.
+POCKET = 1500
+for sy in range(h):
+    for sx in range(w):
+        i = sy * w + sx
+        if seen[i] or not dark(sx, sy):
+            continue
+        component = []
+        stack = [(sx, sy)]
+        seen[i] = 1
+        while stack:
+            x, y = stack.pop()
+            component.append((x, y))
+            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                if 0 <= nx < w and 0 <= ny < h:
+                    j = ny * w + nx
+                    if not seen[j] and dark(nx, ny):
+                        seen[j] = 1
+                        stack.append((nx, ny))
+        if len(component) >= POCKET:
+            for x, y in component:
+                bgp[x, y] = 255
+    # pixels that are not dark were already marked seen above or are skipped
 # Keep the black outline that hugs the figure: only clear background more than 2 px from it.
 figure = Image.eval(bg, lambda v: 255 - v)
 grown = figure.filter(ImageFilter.MaxFilter(5))
