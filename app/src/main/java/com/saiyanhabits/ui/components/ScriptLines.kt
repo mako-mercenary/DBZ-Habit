@@ -72,10 +72,8 @@ private fun SpeechBubble(name: String, text: String, nameColor: Color, mine: Boo
                 portrait()
                 Spacer(Modifier.width(8.dp))
             }
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = if (mine) SaiyanColors.BlueDeep.copy(alpha = 0.5f) else SaiyanColors.Panel,
-                border = BorderStroke(1.dp, SaiyanColors.Outline),
+            DbzPanel(
+                style = if (mine) PanelStyle.Selected else PanelStyle.Blue,
                 modifier = Modifier.widthIn(max = 260.dp),
             ) {
                 Column(Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {

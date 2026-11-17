@@ -3,6 +3,7 @@ package com.saiyanhabits.ui.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -386,4 +387,52 @@ fun GoldRing(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
                 )
             },
     ) { content() }
+}
+
+/** The main action button: orange with a gold frame. Same shape of call as Material's Button. */
+@Composable
+fun DbzPrimaryButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    content: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit,
+) {
+    DbzPanel(
+        modifier = modifier,
+        style = if (enabled) PanelStyle.Orange else PanelStyle.Dim,
+        onClick = onClick,
+        enabled = enabled,
+        corner = 14.dp,
+    ) { ButtonContent(content) }
+}
+
+/** A secondary button: blue with a gold frame. Same shape of call as Material's OutlinedButton. */
+@Composable
+fun DbzSecondaryButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    content: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit,
+) {
+    DbzPanel(
+        modifier = modifier,
+        style = if (enabled) PanelStyle.Blue else PanelStyle.Dim,
+        onClick = onClick,
+        enabled = enabled,
+        corner = 14.dp,
+    ) { ButtonContent(content) }
+}
+
+@Composable
+private fun ButtonContent(content: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit) {
+    androidx.compose.material3.ProvideTextStyle(MaterialTheme.typography.labelLarge.copy(color = Color.White)) {
+        androidx.compose.foundation.layout.Row(
+            horizontalArrangement = androidx.compose.foundation.layout.Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .defaultMinSize(minHeight = 48.dp)
+                .padding(horizontal = 16.dp, vertical = 10.dp),
+            content = content,
+        )
+    }
 }

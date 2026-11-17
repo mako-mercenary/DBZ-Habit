@@ -1,5 +1,6 @@
 package com.saiyanhabits.ui.home
 
+import com.saiyanhabits.ui.components.DbzPrimaryButton
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -225,7 +226,7 @@ fun HomeScreen(
         ModalBottomSheet(
             onDismissRequest = { choosingGravityFor = null },
             sheetState = sheetState,
-            containerColor = SaiyanColors.Panel,
+            containerColor = Color(0xFF12296B),
         ) {
             GravityChooser(
                 habit = habit,
@@ -516,7 +517,7 @@ private fun WishOrbsCard(orbs: Int, hasWaitingWish: Boolean, onSummon: () -> Uni
         when {
             ready && hasWaitingWish -> {
                 Spacer(Modifier.height(8.dp))
-                Button(onClick = onSummon, modifier = Modifier.fillMaxWidth()) { Text("Summon the dragon") }
+                DbzPrimaryButton(onClick = onSummon, modifier = Modifier.fillMaxWidth()) { Text("Summon the dragon") }
             }
             !hasWaitingWish -> TextButton(onClick = onOpenSettings) {
                 Text(if (ready) "Write a wish" else "Write a wish for later")

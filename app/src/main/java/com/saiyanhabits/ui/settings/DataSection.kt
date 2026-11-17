@@ -1,5 +1,6 @@
 package com.saiyanhabits.ui.settings
 
+import com.saiyanhabits.ui.components.DbzSecondaryButton
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -116,12 +117,12 @@ fun DataSection(state: DataUiState, onExport: (Uri) -> Unit, onImport: (Uri) -> 
         color = SaiyanColors.TextDim,
     )
     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-        OutlinedButton(
+        DbzSecondaryButton(
             onClick = { exporter.launch("saiyan-habits-${LocalDate.now()}.json") },
             enabled = !state.busy,
             modifier = Modifier.weight(1f),
         ) { Text("Export data") }
-        OutlinedButton(
+        DbzSecondaryButton(
             // Any file: phones and cloud drives label .json files inconsistently, and the
             // import checks the contents itself.
             onClick = { importer.launch(arrayOf("*/*")) },

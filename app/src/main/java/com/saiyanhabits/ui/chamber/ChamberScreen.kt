@@ -1,5 +1,10 @@
 package com.saiyanhabits.ui.chamber
 
+import com.saiyanhabits.ui.components.ScreenTitle
+import com.saiyanhabits.ui.components.DbzSecondaryButton
+import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import android.Manifest
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -84,9 +89,8 @@ fun ChamberScreen(viewModel: ChamberViewModel, focusMultiplier: Double, modifier
             .verticalScroll(rememberScrollState())
             .padding(16.dp),
     ) {
-        Text(
+        ScreenTitle(
             "Time chamber",
-            style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(start = 4.dp, bottom = 4.dp),
         )
         when (val current = state) {
@@ -148,9 +152,9 @@ private fun Setup(targets: ChamberTargets, focusMultiplier: Double, onStart: (In
     TargetGroup("Saga milestones", targets.milestones, chosen, onChoose = { chosenKey = it.key })
     TargetGroup("Spirit bombs", targets.bombs, chosen, onChoose = { chosenKey = it.key })
 
-    Button(
+    DbzPrimaryButton(
         onClick = {
-            val target = chosen ?: return@Button
+            val target = chosen ?: return@DbzPrimaryButton
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !Notifications.areEnabled(context)) {
                 // The countdown still runs if this is refused; it just has no notification.
                 askForNotifications.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -183,11 +187,9 @@ private fun TargetGroup(
     )
     targets.forEach { target ->
         val selected = target == chosen
-        Surface(
+        DbzPanel(
+            style = if (selected) PanelStyle.Selected else PanelStyle.Blue,
             onClick = { onChoose(target) },
-            shape = RoundedCornerShape(14.dp),
-            color = if (selected) MaterialTheme.colorScheme.primaryContainer else SaiyanColors.Panel,
-            border = BorderStroke(if (selected) 2.dp else 1.dp, if (selected) SaiyanColors.Orange else SaiyanColors.Outline),
             modifier = Modifier
                 .fillMaxWidth()
                 .semantics {
@@ -272,7 +274,7 @@ private fun Running(session: ChamberSession, onGiveUp: () -> Unit) {
         textAlign = TextAlign.Center,
         modifier = Modifier.fillMaxWidth(),
     )
-    OutlinedButton(
+    DbzSecondaryButton(
         onClick = { confirmingGiveUp = true },
         modifier = Modifier
             .fillMaxWidth()
@@ -303,10 +305,8 @@ private fun Finished(
     onMilestoneFinished: (Boolean) -> Unit,
     onDone: () -> Unit,
 ) {
-    Surface(
-        shape = RoundedCornerShape(20.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Orange.copy(alpha = 0.6f)),
+    DbzPanel(
+        style = PanelStyle.Selected,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(20.dp)) {
@@ -334,7 +334,7 @@ private fun Finished(
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier.weight(1f),
                         )
-                        Button(
+                        DbzPrimaryButton(
                             onClick = { amountText.toIntOrNull()?.let(onBombAmount) },
                             enabled = (amountText.toIntOrNull() ?: 0) > 0,
                             modifier = Modifier.height(52.dp),
@@ -345,10 +345,10 @@ private fun Finished(
                     Spacer(Modifier.height(4.dp))
                     Text("Is \"${followUp.name}\" finished?", style = MaterialTheme.typography.titleSmall)
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        OutlinedButton(onClick = { onMilestoneFinished(false) }, modifier = Modifier.weight(1f)) {
+                        DbzSecondaryButton(onClick = { onMilestoneFinished(false) }, modifier = Modifier.weight(1f)) {
                             Text("Not yet")
                         }
-                        Button(onClick = { onMilestoneFinished(true) }, modifier = Modifier.weight(1f)) {
+                        DbzPrimaryButton(onClick = { onMilestoneFinished(true) }, modifier = Modifier.weight(1f)) {
                             Text("Yes, hit")
                         }
                     }
@@ -357,7 +357,7 @@ private fun Finished(
             }
         }
     }
-    Button(
+    DbzPrimaryButton(
         onClick = onDone,
         modifier = Modifier
             .fillMaxWidth()

@@ -1,5 +1,7 @@
 package com.saiyanhabits.ui.quests
 
+import com.saiyanhabits.ui.components.DbzSecondaryButton
+import com.saiyanhabits.ui.components.DbzPrimaryButton
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.tween
@@ -264,7 +266,7 @@ fun BombDetailScreen(
                     shape = RoundedCornerShape(14.dp),
                     modifier = Modifier.weight(1f),
                 )
-                Button(
+                DbzPrimaryButton(
                     onClick = {
                         amountText.toIntOrNull()?.let(onLog)
                         amountText = ""
@@ -275,7 +277,7 @@ fun BombDetailScreen(
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 listOf(1, 5, 10, 25).forEach { quick ->
-                    OutlinedButton(onClick = { onLog(quick) }, modifier = Modifier.weight(1f)) { Text("+$quick") }
+                    DbzSecondaryButton(onClick = { onLog(quick) }, modifier = Modifier.weight(1f)) { Text("+$quick") }
                 }
             }
         }

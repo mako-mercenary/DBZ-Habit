@@ -1,5 +1,10 @@
 package com.saiyanhabits.ui.bonds
 
+import com.saiyanhabits.ui.components.MentorWatermark
+import com.saiyanhabits.ui.components.ScreenTitle
+import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -62,7 +67,7 @@ fun BondsScreen(state: BondsUiState?, onOpenMentor: (Mentor) -> Unit, modifier: 
     ) {
         item(key = "title") {
             Column(Modifier.padding(start = 4.dp, bottom = 4.dp)) {
-                Text("Bonds", style = MaterialTheme.typography.headlineMedium)
+                ScreenTitle("Bonds")
                 Text(
                     "Checking off a habit builds the bond with the mentor who trains it. " +
                         "New bond levels unlock scenes and techniques.",
@@ -81,11 +86,10 @@ fun BondsScreen(state: BondsUiState?, onOpenMentor: (Mentor) -> Unit, modifier: 
 @Composable
 private fun BondCard(bond: Bond, onClick: () -> Unit) {
     val mentor = bond.mentor
-    Surface(
+    DbzPanel(
+        watermark = { MentorWatermark(mentor) },
+        style = PanelStyle.Blue,
         onClick = onClick,
-        shape = RoundedCornerShape(18.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(14.dp)) {
@@ -203,14 +207,12 @@ fun MentorScreen(
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text("It stops counting for today. Ready again after ${Technique.DAY_OFF.cooldownDays} days.")
                     state.excusable.forEach { habit ->
-                        Surface(
+                        DbzPanel(
+                            style = PanelStyle.Blue,
                             onClick = {
                                 confirming = null
                                 onUseDayOff(habit.id)
                             },
-                            shape = RoundedCornerShape(12.dp),
-                            color = SaiyanColors.Panel,
-                            border = BorderStroke(1.dp, SaiyanColors.Outline),
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             Text(
@@ -241,10 +243,8 @@ private fun TechniqueCard(
     onUse: () -> Unit,
 ) {
     val tint = technique.mentor.color
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = if (unlocked) SaiyanColors.Panel else SaiyanColors.Panel.copy(alpha = 0.5f),
-        border = BorderStroke(1.dp, if (unlocked) tint.copy(alpha = 0.6f) else SaiyanColors.Outline),
+    DbzPanel(
+        style = if (unlocked) PanelStyle.Blue else PanelStyle.Dim,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(Modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
@@ -277,7 +277,7 @@ private fun TechniqueCard(
                         style = MaterialTheme.typography.labelLarge,
                         color = SaiyanColors.TextDim,
                     )
-                    else -> Button(onClick = onUse) { Text("Use") }
+                    else -> DbzPrimaryButton(onClick = onUse) { Text("Use") }
                 }
             }
         }
@@ -286,12 +286,10 @@ private fun TechniqueCard(
 
 @Composable
 private fun SceneRow(level: Int, title: String, unlocked: Boolean, onClick: () -> Unit) {
-    Surface(
+    DbzPanel(
+        style = if (unlocked) PanelStyle.Blue else PanelStyle.Dim,
         onClick = onClick,
         enabled = unlocked,
-        shape = RoundedCornerShape(14.dp),
-        color = if (unlocked) SaiyanColors.Panel else SaiyanColors.Panel.copy(alpha = 0.5f),
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(

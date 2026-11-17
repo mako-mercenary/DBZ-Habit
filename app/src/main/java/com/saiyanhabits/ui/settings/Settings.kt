@@ -1,5 +1,9 @@
 package com.saiyanhabits.ui.settings
 
+import com.saiyanhabits.ui.components.DbzSecondaryButton
+import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import android.content.Intent
 import android.provider.Settings
 import androidx.compose.foundation.BorderStroke
@@ -108,7 +112,7 @@ fun SettingsScreen(
                 shape = RoundedCornerShape(14.dp),
                 modifier = Modifier.weight(1f),
             )
-            Button(
+            DbzPrimaryButton(
                 onClick = {
                     onAddWish(draft)
                     draft = ""
@@ -143,7 +147,7 @@ fun SettingsScreen(
             style = MaterialTheme.typography.bodyMedium,
             color = SaiyanColors.TextDim,
         )
-        OutlinedButton(onClick = onOpenArt, modifier = Modifier.fillMaxWidth()) { Text("Choose images") }
+        DbzSecondaryButton(onClick = onOpenArt, modifier = Modifier.fillMaxWidth()) { Text("Choose images") }
 
         Spacer(Modifier.height(12.dp))
         DataSection(data, onExport, onImport, onConfirmImport, onCancelImport)
@@ -156,10 +160,8 @@ fun SettingsScreen(
 
 @Composable
 private fun WishRow(text: String, detail: String?, trailing: @Composable () -> Unit = {}) {
-    Surface(
-        shape = RoundedCornerShape(14.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
+    DbzPanel(
+        style = PanelStyle.Blue,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(
@@ -198,7 +200,7 @@ private fun NotificationSettings() {
         style = MaterialTheme.typography.bodyMedium,
         color = if (allowed) SaiyanColors.TextDim else SaiyanColors.Danger,
     )
-    OutlinedButton(
+    DbzSecondaryButton(
         onClick = {
             context.startActivity(
                 Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)

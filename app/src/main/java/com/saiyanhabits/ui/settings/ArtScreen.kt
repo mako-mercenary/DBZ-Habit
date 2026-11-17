@@ -1,5 +1,8 @@
 package com.saiyanhabits.ui.settings
 
+import com.saiyanhabits.ui.components.DbzSecondaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
@@ -121,10 +124,8 @@ fun ArtScreen(overridden: Set<ArtKey>, message: String?, onPick: (ArtKey, Uri) -
 
 @Composable
 private fun ArtRow(key: ArtKey, custom: Boolean, onPick: () -> Unit, onReset: () -> Unit) {
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, if (custom) SaiyanColors.Orange.copy(alpha = 0.6f) else SaiyanColors.Outline),
+    DbzPanel(
+        style = if (custom) PanelStyle.Selected else PanelStyle.Blue,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(12.dp)) {
@@ -150,7 +151,7 @@ private fun ArtRow(key: ArtKey, custom: Boolean, onPick: () -> Unit, onReset: ()
             }
             if (key.isSwappableInApp) {
                 Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                    OutlinedButton(onClick = onPick) { Text(if (custom) "Change" else "Pick") }
+                    DbzSecondaryButton(onClick = onPick) { Text(if (custom) "Change" else "Pick") }
                     if (custom) TextButton(onClick = onReset) { Text("Reset", color = SaiyanColors.TextDim) }
                 }
             }

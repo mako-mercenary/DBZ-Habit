@@ -1,5 +1,9 @@
 package com.saiyanhabits.ui.quests
 
+import com.saiyanhabits.ui.components.DbzSecondaryButton
+import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
@@ -120,11 +124,9 @@ fun SagaEditScreen(
         ) {
             Boss.entries.forEach { option ->
                 val selected = boss == option
-                Surface(
+                DbzPanel(
+                    style = if (selected) PanelStyle.Selected else PanelStyle.Blue,
                     onClick = { boss = option },
-                    shape = RoundedCornerShape(14.dp),
-                    color = if (selected) option.color.copy(alpha = 0.16f) else SaiyanColors.Panel,
-                    border = BorderStroke(if (selected) 2.dp else 1.dp, if (selected) option.color else SaiyanColors.Outline),
                     modifier = Modifier.weight(1f),
                 ) {
                     Column(
@@ -162,10 +164,8 @@ fun SagaEditScreen(
 private fun MilestoneInput(onAdd: (MilestoneDraft) -> Unit) {
     var name by rememberSaveable { mutableStateOf("") }
     var weight by rememberSaveable { mutableIntStateOf(1) }
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
+    DbzPanel(
+        style = PanelStyle.Blue,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(12.dp)) {
@@ -191,7 +191,7 @@ private fun MilestoneInput(onAdd: (MilestoneDraft) -> Unit) {
                     )
                 }
             }
-            Button(
+            DbzPrimaryButton(
                 onClick = {
                     onAdd(MilestoneDraft(name.trim(), weight))
                     name = ""
@@ -229,23 +229,20 @@ private fun MilestoneRow(
             trailing()
         }
     }
-    val shape = RoundedCornerShape(14.dp)
-    val border = BorderStroke(1.dp, SaiyanColors.Outline)
-    val color = if (done) SaiyanColors.Panel.copy(alpha = 0.5f) else SaiyanColors.Panel
-    if (onClick != null) {
-        Surface(onClick = onClick, shape = shape, color = color, border = border, modifier = Modifier.fillMaxWidth(), content = content)
-    } else {
-        Surface(shape = shape, color = color, border = border, modifier = Modifier.fillMaxWidth(), content = content)
-    }
+    DbzPanel(
+        onClick = onClick,
+        style = if (done) PanelStyle.Dim else PanelStyle.Blue,
+        corner = 14.dp,
+        modifier = Modifier.fillMaxWidth(),
+        content = content,
+    )
 }
 
 /** The mentors fighting alongside, and what they add to each hit. */
 @Composable
 private fun AssistRow(perks: Perks) {
-    Surface(
-        shape = RoundedCornerShape(14.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Gold.copy(alpha = 0.5f)),
+    DbzPanel(
+        style = PanelStyle.Blue,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(
@@ -391,7 +388,7 @@ fun SagaDetailScreen(
                             }
                         }
                         Spacer(Modifier.width(2.dp))
-                        Button(onClick = { striking = milestone }) { Text("Hit") }
+                        DbzPrimaryButton(onClick = { striking = milestone }) { Text("Hit") }
                         Spacer(Modifier.width(6.dp))
                     },
                 )
@@ -402,7 +399,7 @@ fun SagaDetailScreen(
                     addingMilestone = false
                 })
             } else {
-                OutlinedButton(onClick = { addingMilestone = true }, modifier = Modifier.fillMaxWidth()) {
+                DbzSecondaryButton(onClick = { addingMilestone = true }, modifier = Modifier.fillMaxWidth()) {
                     Text("Add a milestone")
                 }
             }

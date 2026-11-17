@@ -1,5 +1,7 @@
 package com.saiyanhabits.ui.story
 
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -79,12 +81,14 @@ fun StoryScreen(chapters: List<ChapterStatus>?, onOpen: (Int) -> Unit, onBack: (
             color = SaiyanColors.TextDim,
         )
         chapters.orEmpty().forEach { status ->
-            Surface(
+            DbzPanel(
+                style = when {
+                    status.isNew -> PanelStyle.Selected
+                    status.unlocked -> PanelStyle.Blue
+                    else -> PanelStyle.Dim
+                },
                 onClick = { onOpen(status.chapter.number) },
                 enabled = status.unlocked,
-                shape = RoundedCornerShape(16.dp),
-                color = if (status.unlocked) SaiyanColors.Panel else SaiyanColors.Panel.copy(alpha = 0.5f),
-                border = BorderStroke(1.dp, if (status.isNew) SaiyanColors.Orange else SaiyanColors.Outline),
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Row(

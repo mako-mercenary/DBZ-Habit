@@ -1,5 +1,9 @@
 package com.saiyanhabits.ui.habits
 
+import com.saiyanhabits.ui.components.MentorWatermark
+import com.saiyanhabits.ui.components.ScreenTitle
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -56,9 +60,8 @@ fun HabitsScreen(
             modifier = Modifier.fillMaxSize(),
         ) {
             item(key = "title") {
-                Text(
+                ScreenTitle(
                     "Habits",
-                    style = MaterialTheme.typography.headlineMedium,
                     modifier = Modifier.padding(start = 4.dp, bottom = 4.dp),
                 )
             }
@@ -96,11 +99,10 @@ fun HabitsScreen(
 @Composable
 private fun HabitRow(habit: HabitEntity, streak: Int, onClick: () -> Unit) {
     val mentor = mentorFor(habit.category, habit.isHardest)
-    Surface(
+    DbzPanel(
+        style = PanelStyle.Blue,
+        watermark = { MentorWatermark(mentor) },
         onClick = onClick,
-        shape = RoundedCornerShape(18.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(

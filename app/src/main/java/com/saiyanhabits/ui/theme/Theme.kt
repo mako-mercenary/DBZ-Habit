@@ -109,8 +109,9 @@ private val ColorScheme = darkColorScheme(
     surfaceContainerLowest = SaiyanColors.Night,
     surfaceContainerLow = SaiyanColors.Panel,
     surfaceContainer = SaiyanColors.Panel,
-    surfaceContainerHigh = SaiyanColors.PanelRaised,
-    surfaceContainerHighest = SaiyanColors.PanelRaised,
+    // Dialogs, sheets and menus: the deep blue of the panels.
+    surfaceContainerHigh = Color(0xFF12296B),
+    surfaceContainerHighest = Color(0xFF12296B),
     outline = SaiyanColors.Outline,
     outlineVariant = SaiyanColors.Outline,
     error = SaiyanColors.Danger,

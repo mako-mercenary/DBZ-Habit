@@ -1,5 +1,8 @@
 package com.saiyanhabits.ui.quests
 
+import com.saiyanhabits.ui.components.ScreenTitle
+import com.saiyanhabits.ui.components.DbzPanel
+import com.saiyanhabits.ui.components.DbzSecondaryButton
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -61,9 +64,8 @@ fun SagasScreen(
             .statusBarsPadding(),
     ) {
         item(key = "title") {
-            Text(
+            ScreenTitle(
                 "Sagas",
-                style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(start = 4.dp, bottom = 4.dp),
             )
         }
@@ -79,7 +81,7 @@ fun SagasScreen(
             SagaCard(saga, onClick = { onOpenSaga(saga.saga.id) })
         }
         item(key = "new-saga") {
-            OutlinedButton(onClick = onNewSaga, modifier = Modifier.fillMaxWidth()) { Text("New saga") }
+            DbzSecondaryButton(onClick = onNewSaga, modifier = Modifier.fillMaxWidth()) { Text("New saga") }
         }
 
         item(key = "bombs") { SectionLabel("Spirit bombs", Modifier.padding(start = 4.dp, top = 12.dp)) }
@@ -92,7 +94,7 @@ fun SagasScreen(
             BombCard(bomb, onClick = { onOpenBomb(bomb.id) })
         }
         item(key = "new-bomb") {
-            OutlinedButton(onClick = onNewBomb, modifier = Modifier.fillMaxWidth()) { Text("New spirit bomb") }
+            DbzSecondaryButton(onClick = onNewBomb, modifier = Modifier.fillMaxWidth()) { Text("New spirit bomb") }
         }
 
         if (overview.defeatedSagas.isNotEmpty() || overview.thrownBombs.isNotEmpty()) {
@@ -127,14 +129,7 @@ private fun Hint(text: String) {
 
 @Composable
 private fun QuestCard(onClick: () -> Unit, content: @Composable () -> Unit) {
-    Surface(
-        onClick = onClick,
-        shape = RoundedCornerShape(18.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
-        modifier = Modifier.fillMaxWidth(),
-        content = content,
-    )
+    DbzPanel(onClick = onClick, modifier = Modifier.fillMaxWidth(), content = content)
 }
 
 @Composable

@@ -1,5 +1,8 @@
 package com.saiyanhabits.ui.habits
 
+import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.DbzPanel
 import android.Manifest
 import android.os.Build
 import android.text.format.DateFormat
@@ -145,7 +148,7 @@ fun HabitEditScreen(
             )
         },
         bottomBar = {
-            Button(
+            DbzPrimaryButton(
                 onClick = {
                     val base = initial ?: HabitEntity(
                         name = "",
@@ -247,10 +250,8 @@ fun HabitEditScreen(
             )
 
             Spacer(Modifier.height(6.dp))
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = SaiyanColors.Panel,
-                border = BorderStroke(1.dp, SaiyanColors.Outline),
+            DbzPanel(
+                style = PanelStyle.Blue,
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 // The whole row flips the switch, not just the switch itself.
@@ -337,10 +338,8 @@ private fun ReminderRow(
     onPick: () -> Unit,
     onClear: () -> Unit,
 ) {
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
+    DbzPanel(
+        style = PanelStyle.Blue,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Row(

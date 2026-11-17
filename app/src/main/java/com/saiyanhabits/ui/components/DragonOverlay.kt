@@ -127,10 +127,8 @@ fun DragonOverlay(
                     transformOrigin = TransformOrigin(0.5f, ORB_RING_DOWN)
                 },
         )
-        Surface(
-            shape = RoundedCornerShape(24.dp),
-            color = SaiyanColors.Panel.copy(alpha = 0.96f),
-            border = BorderStroke(1.dp, DragonGreen.copy(alpha = 0.7f)),
+        DbzPanel(
+            style = PanelStyle.Blue,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
@@ -154,7 +152,7 @@ fun DragonOverlay(
                             style = MaterialTheme.typography.bodyMedium,
                             color = SaiyanColors.TextDim,
                         )
-                        Button(onClick = onDismiss, modifier = Modifier.fillMaxWidth()) { Text("Farewell") }
+                        DbzPrimaryButton(onClick = onDismiss, modifier = Modifier.fillMaxWidth()) { Text("Farewell") }
                     }
                     asked != null -> {
                         Text("IS THIS YOUR WISH?", style = MaterialTheme.typography.labelLarge, letterSpacing = 3.sp, color = DragonGreen)
@@ -164,7 +162,7 @@ fun DragonOverlay(
                             style = MaterialTheme.typography.bodyMedium,
                             color = SaiyanColors.TextDim,
                         )
-                        Button(
+                        DbzPrimaryButton(
                             onClick = {
                                 onGrant(asked.id)
                                 granted = asked
@@ -183,16 +181,14 @@ fun DragonOverlay(
                             style = MaterialTheme.typography.bodyMedium,
                             color = SaiyanColors.TextDim,
                         )
-                        Button(onClick = onWriteWish, modifier = Modifier.fillMaxWidth()) { Text("Write a wish") }
+                        DbzPrimaryButton(onClick = onWriteWish, modifier = Modifier.fillMaxWidth()) { Text("Write a wish") }
                     }
                     else -> {
                         Text("SPEAK YOUR WISH", style = MaterialTheme.typography.labelLarge, letterSpacing = 3.sp, color = DragonGreen)
                         choices.forEach { wish ->
-                            Surface(
+                            DbzPanel(
+                                style = PanelStyle.Blue,
                                 onClick = { confirming = wish },
-                                shape = RoundedCornerShape(14.dp),
-                                color = SaiyanColors.PanelRaised,
-                                border = BorderStroke(1.dp, SaiyanColors.Outline),
                                 modifier = Modifier.fillMaxWidth(),
                             ) {
                                 Text(
