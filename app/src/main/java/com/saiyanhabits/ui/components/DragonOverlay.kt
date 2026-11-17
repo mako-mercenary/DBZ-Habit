@@ -99,7 +99,7 @@ fun DragonOverlay(
         modifier = Modifier
             .fillMaxSize()
             .drawBehind {
-                val imageHeight = size.width * ArtKey.DRAGON.height / ArtKey.DRAGON.width
+                val imageHeight = size.width * DRAGON_WIDTH * ArtKey.DRAGON.height / ArtKey.DRAGON.width
                 drawSummoning(rise.value, ring = Offset(size.width / 2f, statusTop + imageHeight * ORB_RING_DOWN))
             }
             .clickable(
@@ -114,7 +114,7 @@ fun DragonOverlay(
             modifier = Modifier
                 .align(Alignment.TopCenter)
                 .statusBarsPadding()
-                .fillMaxWidth()
+                .fillMaxWidth(DRAGON_WIDTH)
                 .aspectRatio(ArtKey.DRAGON.width.toFloat() / ArtKey.DRAGON.height)
                 .graphicsLayer {
                     // Fades in after the second flash, rising a little and swelling to full size.
@@ -254,6 +254,9 @@ private fun DrawScope.drawSummoning(t: Float, ring: Offset) {
         }
     }
 }
+
+/** The dragon image's width as a share of the screen's: a little under full, so its ring of orbs clears the wish panel. */
+private const val DRAGON_WIDTH = 0.9f
 
 /** How far down the dragon image its ring of orbs sits, as a fraction of the image's height. */
 private const val ORB_RING_DOWN = 0.85f

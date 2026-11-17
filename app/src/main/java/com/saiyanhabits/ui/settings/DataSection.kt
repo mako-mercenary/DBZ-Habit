@@ -122,7 +122,9 @@ fun DataSection(state: DataUiState, onExport: (Uri) -> Unit, onImport: (Uri) -> 
             modifier = Modifier.weight(1f),
         ) { Text("Export data") }
         OutlinedButton(
-            onClick = { importer.launch(arrayOf("application/json", "text/plain", "application/octet-stream")) },
+            // Any file: phones and cloud drives label .json files inconsistently, and the
+            // import checks the contents itself.
+            onClick = { importer.launch(arrayOf("*/*")) },
             enabled = !state.busy,
             modifier = Modifier.weight(1f),
         ) { Text("Import data") }
