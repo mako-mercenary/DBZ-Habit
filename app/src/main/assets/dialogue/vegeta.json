@@ -1,0 +1,267 @@
+{
+  "mentor": "VEGETA",
+  "reactions": {
+    "missed_day": [
+      "You skipped a day. Pathetic. I trained twice to make up for the embarrassment of knowing you.",
+      "So that's your limit. I expected little, and you delivered less.",
+      "A missed day. Is that what passes for effort on this planet?",
+      "While you rested, I got stronger. That gap you feel? I put it there.",
+      "Don't give me reasons. A warrior has results or he has nothing.",
+      "You call yourself my rival and then vanish for a day. Insulting.",
+      "Tch. Weakness. Get up. I refuse to be chased by someone who stops.",
+      "One day of nothing. I've seen whole armies fall from less."
+    ],
+    "comeback": [
+      "Hmph. So you crawled back. Fine. At least you're not a quitter.",
+      "You returned. Don't expect applause. This is the minimum.",
+      "Tch. I'd started to think you'd given up. I would have been disappointed. Slightly.",
+      "Getting back up is the only thing I respect. Do it again whenever necessary.",
+      "Good. I had nobody worth beating while you were gone.",
+      "So there's some pride in you after all.",
+      "You fell and stood up. That's a Saiyan habit. Where did you learn it?",
+      "Don't thank me. I didn't wait for you. I simply noticed you were back."
+    ],
+    "streak_milestone": [
+      "{streak} days. Don't get smug. I've held a streak since before you could count.",
+      "{streak} days without stopping. Hmph. That's almost a warrior's discipline.",
+      "{streak}. You're persistent. An irritating quality in a rival. Keep it.",
+      "A {streak}-day streak. I'll admit it: I didn't think you'd last three.",
+      "{streak} days. You're still beneath me. But the distance is no longer funny.",
+      "{streak}. Tch. Now I'll have to train harder. I hope you're pleased with yourself.",
+      "{streak} days of the hardest thing you do. That takes pride. I recognise pride.",
+      "{streak}. Not bad. If you repeat that to anyone I'll deny it."
+    ],
+    "boss_defeated": [
+      "You beat {boss}. I'd have done it faster. But you did it.",
+      "{boss} was a weakling. Still, you didn't hesitate. Good.",
+      "Hmph. {boss} is dust. Don't look so pleased, it's unbecoming.",
+      "So you finished {boss} off. Finishing is the part most fighters lack the nerve for.",
+      "{boss} is gone. One less fool between me and a proper challenge. You, perhaps.",
+      "You won. I watched all of it. I was not bored.",
+      "A real victory. Enjoy it for one night. A prince allows himself one night.",
+      "{boss} defeated. You're beginning to be worth my time."
+    ],
+    "idle": [
+      "The hardest thing first. Everything after it is beneath you.",
+      "Don't look at me for encouragement. Look at the work.",
+      "I train at a hundred times gravity. What's your excuse today?",
+      "You chose the hard road. Good. Easy roads are crowded with nobodies.",
+      "Pride isn't a feeling. It's what you do when nobody is making you.",
+      "Tch. Stop stalling. The dread is worse than the task.",
+      "I'm ahead of you. I intend to stay there. Prove me wrong.",
+      "Do it or don't. But don't stand there deciding all day."
+    ]
+  },
+  "scenes": [
+    {
+      "level": 2,
+      "title": "First Words",
+      "lines": [
+        {
+          "speaker": "VEGETA",
+          "text": "You. You're the one Kakarot is wasting his time on?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "I'm here to train on the hardest thing I've got."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Hmph. Everyone says that on the first day."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Stay out of my way. If you're still here in a week, I may learn your name."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "The Gravity Room",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "The gravity room door hisses open. Vegeta is mid-set, drenched."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Still here. I'm surprised."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Can I train in there?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "At your level? It would fold you like paper."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "...Start at ten times. Stand in the corner. Don't speak."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "One Step Ahead",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "Why do you push so hard? Who are you trying to beat?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "That's none of your concern."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "There's a man who is always one step ahead of me. Always. I've hated him for years."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "It's the best thing that ever happened to my training. Tell no one."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "An Observation",
+      "lines": [
+        {
+          "speaker": "VEGETA",
+          "text": "You fought well yesterday. Sloppy footwork. But you didn't back away."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Was that a compliment?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "It was an observation. Don't be greedy."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Next time something big stands in your way, I'll be there. I want to see it for myself."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "Turn It Up",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Vegeta reaches past you and turns the dial. The room groans."
+        },
+        {
+          "speaker": "YOU",
+          "text": "That's more than I asked for."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "You asked for what you could survive. I set it to what you can become."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "A rival who trains at a comfortable setting is no rival. Stand up."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "title": "Pride",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "You talk about pride a lot."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Because it's all I had, once. No home. No throne. No one left who knew my name."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Pride meant I still got up and trained. Every day. For nobody."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "You have that too. I didn't expect it from someone like you."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "title": "A Draw",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "You both lie flat on the gravity room floor, unable to move."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Hmph. You kept up."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Barely."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "'Barely' is how every level of mine began."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Same time tomorrow. Don't be late. I dislike waiting for you."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "title": "Everything at Once",
+      "lines": [
+        {
+          "speaker": "VEGETA",
+          "text": "There's a technique I use when nothing else is left. All of it, in one blow. No holding back."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why are you telling me?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Because when you fight beside the others, you hold back. I've watched you do it."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Stop. When we stand with you, we all hit harder. I'll see to it personally."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "title": "Rival",
+      "lines": [
+        {
+          "speaker": "VEGETA",
+          "text": "I'm going to say this once."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "When you first came here I thought you were nothing. A hobbyist."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "You took the hardest thing you had and did it until it wasn't hard. That is the only strength I respect."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Thank you, Vegeta."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Don't thank me. Surpass me. Then we'll talk."
+        }
+      ]
+    }
+  ]
+}

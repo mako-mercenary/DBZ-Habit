@@ -1,0 +1,271 @@
+{
+  "mentor": "ROSHI",
+  "reactions": {
+    "missed_day": [
+      "You skipped yesterday? Even my turtle showed up, and he had to cross an ocean.",
+      "A missed day is a pebble in your shoe. Take it out now, before it becomes the whole walk.",
+      "I napped through training once. Woke up forty years older. Don't nap through training.",
+      "Yesterday is gone, and it took your excuse with it. Today starts at zero for everyone.",
+      "Ho ho! Caught you slacking. Don't worry, I only tell the turtle.",
+      "The shell on your back doesn't get lighter by ignoring it. Pick it up.",
+      "One empty day won't undo you. Two in a row starts a habit of its own.",
+      "I'm not angry. I'm old. Old people are just disappointed, loudly."
+    ],
+    "comeback": [
+      "There you are! I told the turtle you'd be back. He owes me a fish.",
+      "Falling off the path is easy. Climbing back on is the real technique.",
+      "Back at it! Good. The island was getting quiet enough to hear my own thoughts. Dreadful.",
+      "The best students aren't the ones who never miss. They're the ones who come back.",
+      "Ho ho, look who remembered where the training ground is.",
+      "A day lost, a day returned. I'd call that even, if I could still do sums.",
+      "You came back before I finished my nap. That's quicker than most.",
+      "Now that's the spirit. Yesterday was rest. Let's agree to call it that."
+    ],
+    "streak_milestone": [
+      "{streak} days without a gap! In my day we called that 'Tuesday'. But it's still very good.",
+      "{streak} days straight. You're starting to move like someone who means it.",
+      "Ho ho! {streak} days. Keep this up and I'll have to invent harder training.",
+      "{streak} in a row. A river cuts stone the same way: by showing up.",
+      "{streak} days! I'd do a backflip, but my back has opinions.",
+      "A {streak}-day streak. The turtle is impressed, and he's seen empires rise.",
+      "{streak} days. Don't count them too proudly. Just make it one more tomorrow.",
+      "{streak} days of the basics. That's how every master I ever knew began."
+    ],
+    "boss_defeated": [
+      "{boss} is down! I knew you had it. I had a small nap during, but I knew.",
+      "You beat {boss} one step at a time. That's the only way anyone beats anything.",
+      "Ho ho! {boss} never saw the milk deliveries coming.",
+      "A big enemy is only a pile of small ones. You've just proved it with {boss}.",
+      "{boss}, defeated by my student! I'll be telling this story for years. Slightly improved.",
+      "Well fought. Now eat something. Victories don't digest on an empty stomach.",
+      "{boss} has fallen. Enjoy tonight. Tomorrow, the basics again.",
+      "You finished what you started. Rarer than any fancy technique, that."
+    ],
+    "idle": [
+      "Work hard, study well, eat and sleep plenty. That's the Turtle School way.",
+      "The basics aren't the part before the real training. They are the real training.",
+      "Start with the small thing. The big thing is made of those.",
+      "A little every day beats a lot once in a while. Ask anyone who brushes their teeth.",
+      "Morning! The sun got up on time. No reason you shouldn't.",
+      "Don't train to impress me. I'm very easy to impress. Train so tomorrow is easier.",
+      "Carry today's shell. Tomorrow's will wait its turn.",
+      "Ho ho! Another day on the island. Let's see what you do with it."
+    ]
+  },
+  "scenes": [
+    {
+      "level": 2,
+      "title": "The Milk Round",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "Your first real lesson: deliver the milk. Every house on the island, before breakfast."
+        },
+        {
+          "speaker": "YOU",
+          "text": "How is that martial arts?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "It isn't. It's getting up when you said you would. Martial arts comes after."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Also, I'm out of milk."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "The Shell",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "Here. Twenty kilos of turtle shell. Wear it for everything."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Everything?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Sleeping is optional. I'm not a monster."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "You won't notice the day it stops feeling heavy. That's how getting stronger works: quietly."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Why the Basics",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "When do I learn something that looks impressive?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Ho ho. I once had a student who only wanted the flashy moves."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Wonderful to watch. Fell over in a strong wind."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "The dull things you do every day are the roots. Nobody claps for roots. Trees don't mind."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "The Nap",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "You find Roshi asleep in a deck chair, a magazine over his face."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Master, shouldn't you be training too?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "I am. Rest is half of it. You youngsters always skip that half."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Push hard, then stop properly. A bow that's always strung goes slack."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Next time you face something big, wake me. I'll come along. After my drink."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "The Pouch",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "Hold out your hand. These are healing beans. One of them undoes a very bad day."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why trust me with more of them now?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Because you've stopped using them as an excuse. Now they're only a safety net."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Bad days come for everyone. The trick is to have planned for them."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "title": "An Old Story",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "I trained under a master too, you know. A terrifying man. Never smiled."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What did he teach you?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "That I didn't want to teach like him. So I tell jokes."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "But the work underneath is the same work. It always is."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "title": "The Tide",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Evening. The two of you watch the tide come in."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "It comes in a little, goes out a little. Looks like it's getting nowhere."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Then you look up and the whole beach is under water."
+        },
+        {
+          "speaker": "YOU",
+          "text": "That's my training."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Ho ho! Took you long enough."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "title": "A Day Off",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "Today's lesson: nothing."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Nothing?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "You've earned the right to skip one without it meaning anything. That's a real skill, and a late one."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "A beginner who rests is quitting. A master who rests is resting. The difference is every day before it."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Go on. The island will still be here."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "title": "Graduation",
+      "lines": [
+        {
+          "speaker": "ROSHI",
+          "text": "I've nothing left to teach you. That's not quite true, but it sounds good, doesn't it?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "Then what happens now?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "The same thing as yesterday. Milk, shell, basics. Only now nobody has to tell you."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "That's all a master is: a student who kept going after the teacher stopped watching."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Ho ho. Don't make that face. Come on, I'll buy lunch. You're paying."
+        }
+      ]
+    }
+  ]
+}

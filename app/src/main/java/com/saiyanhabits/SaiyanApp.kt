@@ -3,6 +3,8 @@ package com.saiyanhabits
 import android.app.Application
 import com.saiyanhabits.chamber.TimeChamber
 import com.saiyanhabits.data.AppDatabase
+import com.saiyanhabits.data.BondRepository
+import com.saiyanhabits.data.DialogueRepository
 import com.saiyanhabits.data.HabitRepository
 import com.saiyanhabits.data.QuestRepository
 import com.saiyanhabits.reminders.Notifications
@@ -18,6 +20,10 @@ class SaiyanApp : Application() {
     val habitRepository: HabitRepository by lazy { HabitRepository(database) }
 
     val questRepository: QuestRepository by lazy { QuestRepository(database) }
+
+    val bondRepository: BondRepository by lazy { BondRepository(database) }
+
+    val dialogue: DialogueRepository by lazy { DialogueRepository(this) }
 
     val reminders: ReminderScheduler by lazy { ReminderScheduler(this) }
 

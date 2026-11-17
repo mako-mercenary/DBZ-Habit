@@ -18,8 +18,10 @@ import androidx.room.RoomDatabase
         BombLogEntity::class,
         PowerEventEntity::class,
         FocusSessionEntity::class,
+        TechniqueUseEntity::class,
+        HabitExcuseEntity::class,
     ],
-    version = 3,
+    version = 4,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -28,11 +30,12 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun streakDao(): StreakDao
     abstract fun questDao(): QuestDao
     abstract fun powerDao(): PowerDao
+    abstract fun bondDao(): BondDao
 
     companion object {
         fun create(context: Context): AppDatabase =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "saiyan_habits.db")
-                .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
                 .build()
     }
 }

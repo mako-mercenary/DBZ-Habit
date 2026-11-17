@@ -105,6 +105,10 @@ interface StreakDao {
     @Query(OPEN_RECORDS)
     suspend fun getOpenRecords(): List<DayRecordEntity>
 
+    /** The latest finished days whatever their outcome, newest first. */
+    @Query("SELECT * FROM day_records ORDER BY epochDay DESC LIMIT 14")
+    fun observeRecentRecords(): Flow<List<DayRecordEntity>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRecords(records: List<DayRecordEntity>)
 

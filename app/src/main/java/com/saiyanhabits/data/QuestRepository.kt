@@ -3,6 +3,7 @@ package com.saiyanhabits.data
 import androidx.room.withTransaction
 import com.saiyanhabits.domain.Boss
 import com.saiyanhabits.domain.ChamberTargetType
+import com.saiyanhabits.domain.Mentor
 import com.saiyanhabits.domain.PowerCalculator
 import com.saiyanhabits.domain.PowerSource
 import com.saiyanhabits.domain.QuestStatus
@@ -21,7 +22,11 @@ sealed interface QuestEvent {
 /** What one milestone hit did. */
 data class StrikeResult(
     val milestoneName: String,
+    /** The milestone's own damage: what came off the boss's HP. */
     val damage: Int,
+    /** Bonus damage from assisting mentors, on top of [damage]. */
+    val assistDamage: Int,
+    val assists: List<Mentor>,
     val points: Int,
     /** True when the hit earned the time chamber multiplier. */
     val charged: Boolean,
@@ -133,9 +138,10 @@ class QuestRepository(
             if (milestone.isDone || saga.status != QuestStatus.ACTIVE) return@withTransaction null
 
             val day = today().toEpochDay()
+            val perks = db.readPerks(day)
             val charged = milestone.focusSessions > 0
-            val damage = SagaRules.damageFor(milestone.weight)
-            val points = SagaRules.milestonePoints(milestone.weight, charged)
+            val damage = SagaRules.damageFor(milestone.weight, perks.assistDamage)
+            val points = SagaRules.milestonePoints(milestone.weight, charged, perks)
             questDao.updateMilestone(
                 milestone.copy(completedAtEpochDay = day, damageDealt = damage, points = points),
             )
@@ -145,14 +151,27 @@ class QuestRepository(
             val hpAfter = SagaRules.remainingHp(states)
             var bonus: Int? = null
             if (SagaRules.isDefeated(states)) {
-                bonus = SagaRules.victoryBonus(SagaRules.totalHp(states))
+                bonus = SagaRules.victoryBonus(
+                    totalHp = SagaRules.totalHp(states),
+                    bonusDamage = SagaRules.bonusDamage(states),
+                    boostPercent = perks.victoryBoostPercent,
+                )
                 questDao.updateSaga(
                     saga.copy(status = QuestStatus.DONE, finishedAtEpochDay = day, victoryBonus = bonus),
                 )
                 powerDao.insert(PowerEventEntity(0, day, bonus, PowerSource.SAGA_VICTORY, saga.id, nowMillis()))
                 defeated = QuestEvent.SagaDefeated(saga.name, saga.boss, bonus)
             }
-            StrikeResult(milestone.name, damage, points, charged, hpAfter, bonus)
+            StrikeResult(
+                milestoneName = milestone.name,
+                damage = milestone.weight,
+                assistDamage = damage - milestone.weight,
+                assists = perks.assistMentors,
+                points = points,
+                charged = charged,
+                hpAfter = hpAfter,
+                victoryBonus = bonus,
+            )
         }
         defeated?.let { _events.emit(it) }
         return result
@@ -192,7 +211,11 @@ class QuestRepository(
             val day = today().toEpochDay()
             val after = bomb.progress + applied
             val points = SpiritBombRules.pointsForProgress(bomb.size, bomb.target, bomb.progress, after)
-            val bonus = if (viaTimeChamber) PowerCalculator.focusBonus(points) else 0
+            val bonus = if (viaTimeChamber) {
+                PowerCalculator.focusBonus(points, db.readPerks(day).focusMultiplier)
+            } else {
+                0
+            }
             val logId = questDao.insertBombLog(BombLogEntity(0, bombId, applied, day, nowMillis(), viaTimeChamber))
             if (points + bonus > 0) {
                 powerDao.insert(PowerEventEntity(0, day, points + bonus, PowerSource.BOMB_LOG, logId, nowMillis()))
@@ -218,7 +241,7 @@ class QuestRepository(
             return@withTransaction null
         }
         val day = today().toEpochDay()
-        val bonus = SpiritBombRules.throwBonus(bomb.size)
+        val bonus = SpiritBombRules.throwBonus(bomb.size, db.readPerks(day).bombThrowMultiplier)
         questDao.updateBomb(bomb.copy(status = QuestStatus.DONE, finishedAtEpochDay = day))
         powerDao.insert(PowerEventEntity(0, day, bonus, PowerSource.BOMB_THROW, bomb.id, nowMillis()))
         bonus

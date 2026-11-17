@@ -1,0 +1,263 @@
+{
+  "mentor": "PICCOLO",
+  "reactions": {
+    "missed_day": [
+      "You were absent yesterday. Don't explain. Sit.",
+      "A lapse. Note it, then drop it. Regret is wasted focus.",
+      "The mind wanders. Bring it back. Same with the day.",
+      "Yesterday is not my concern. Today is.",
+      "You broke the pattern. Start a new one. Now.",
+      "I waited. You did not come. I'm still waiting.",
+      "Missing once is nothing. Getting comfortable with it is everything.",
+      "Hmph. No lecture. Begin."
+    ],
+    "comeback": [
+      "You returned. Good.",
+      "Hmph. So you can be taught.",
+      "Coming back is harder than starting. I noticed.",
+      "No ceremony. You're here. That is enough.",
+      "The lapse is over. Don't carry it into the session.",
+      "Better. Again tomorrow.",
+      "You sat down without being told. Progress.",
+      "A mind that returns is a trained mind. That is all training is."
+    ],
+    "streak_milestone": [
+      "{streak} days. Acceptable.",
+      "{streak} days unbroken. You're becoming difficult to distract.",
+      "{streak}. I stopped counting. You shouldn't.",
+      "{streak} days. The weight is the same. You are not.",
+      "Hmph. {streak}. Don't let it make you careless.",
+      "{streak} days of quiet work. Few manage ten.",
+      "{streak}. I expected less of you. I was wrong.",
+      "A {streak}-day streak. Don't look at me. Keep going."
+    ],
+    "boss_defeated": [
+      "{boss} is finished. Clean work.",
+      "You stayed patient against {boss}. That won it.",
+      "Hmph. {boss} underestimated you. I no longer do.",
+      "Done. Don't celebrate long. There's always another.",
+      "You saw where {boss} was weak and kept at it. Good eyes.",
+      "{boss} fell to discipline, not luck. Remember which.",
+      "A long fight, well held. I have nothing to correct.",
+      "Good. Now rest your mind. It did most of the fighting."
+    ],
+    "idle": [
+      "Sit. Breathe. Then work.",
+      "Less talk. More focus.",
+      "One task. All of your attention. Nothing else exists.",
+      "The noise in your head is not an order. Ignore it.",
+      "Don't wait to feel ready. Ready comes after you begin.",
+      "Your enemy today is the urge to check something else.",
+      "Stillness first. Speed later.",
+      "I'm watching. Don't perform. Work."
+    ]
+  },
+  "scenes": [
+    {
+      "level": 2,
+      "title": "The Waterfall",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Piccolo sits beneath a waterfall. He does not open his eyes."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Sit."
+        },
+        {
+          "speaker": "YOU",
+          "text": "For how long?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Until you stop asking."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Weights",
+      "lines": [
+        {
+          "speaker": "PICCOLO",
+          "text": "Put these on. Cape and all."
+        },
+        {
+          "speaker": "YOU",
+          "text": "They weigh a ton. How do you think in these?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "That's the point. Learn to focus while something drags at you."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Something always will."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "The Wrong Question",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "How do I stop getting distracted?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "You don't."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "You get distracted. You notice. You return. A thousand times a day."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "The returning is the exercise. Stop treating it as failure."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "One Point",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Piccolo raises two fingers to his forehead and holds them there. Minutes pass."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Nothing's happening."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Everything is happening. I'm gathering it to one point."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Scattered effort scratches. Gathered effort pierces."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "The next time you fight, I'll stand with you."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "The Storm",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "A storm breaks over the wasteland. Piccolo does not move."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Shouldn't we take shelter?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Can you hold your mind still out here?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "...Yes."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Then an hour of your work is worth more than an hour of anyone else's. Stay."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "title": "A Student",
+      "lines": [
+        {
+          "speaker": "PICCOLO",
+          "text": "I trained a child once. Small. Cried constantly."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What happened to him?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "He stopped crying. Then he became stronger than me."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "I was harder on him than he deserved. I won't apologise. But I remember."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "title": "Silence",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "You sit together for an hour. Neither of you speaks."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Hm."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "You didn't fidget. First time."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "title": "Regrowth",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "I've seen you lose an arm and grow it back. Does it hurt?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Yes."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "It takes energy and it takes focus. But what's lost comes back, if you don't panic."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Your bad days work the same way. You recover faster now. I've been watching."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "title": "Equal",
+      "lines": [
+        {
+          "speaker": "PICCOLO",
+          "text": "Stand up."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Is the session over?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "The lessons are. You have a quiet mind. I can't improve on it."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "You did well. I won't say it twice."
+        }
+      ]
+    }
+  ]
+}

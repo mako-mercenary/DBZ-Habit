@@ -1,0 +1,255 @@
+{
+  "mentor": "BULMA",
+  "reactions": {
+    "missed_day": [
+      "Nothing logged yesterday. Zero. I checked twice because I assumed it was a bug.",
+      "You skipped a day. Fine. But a project that stops moving starts rusting, so move.",
+      "I don't do pep talks. I do deadlines. You just missed one.",
+      "A gap in the data. I hate gaps in the data. Fix it today.",
+      "Yesterday you built nothing. Do you know how many things I built yesterday? Don't answer.",
+      "Stalled engines don't restart themselves. Turn the key.",
+      "I had my whole schedule arranged around you being useful. Rude.",
+      "One missed day is noise. Don't let it turn into a trend line."
+    ],
+    "comeback": [
+      "Oh good, you're back online. I was about to file a report.",
+      "See, that's the thing about smart people: they recover fast. Keep proving me right.",
+      "Finally. I kept your workbench exactly how you left it. A mess.",
+      "A restart after a stall. Honestly the hardest bit of engineering there is.",
+      "Back at it. Good. I wasn't worried. I was mildly inconvenienced.",
+      "There we go. Progress bar's moving again. I love a moving progress bar.",
+      "You picked it back up. Most people leave things in a drawer for six years.",
+      "Welcome back, genius. Slightly-less-than-me genius. Still counts."
+    ],
+    "streak_milestone": [
+      "{streak} days running. That's not luck, that's a system. I approve of systems.",
+      "{streak} days straight! I'd say I'm surprised, but I ran the numbers on you ages ago.",
+      "A {streak}-day streak. Do you know how rare that is? I do. I have a chart.",
+      "{streak} days of actual output. Half the scientists I know can't manage three.",
+      "{streak} in a row. Keep this up and I might let you touch the expensive equipment.",
+      "{streak} days. Consistent, reliable, well built. I'm describing you, not the car.",
+      "{streak}! Okay, I'm impressed. Write that down, I won't say it again.",
+      "{streak} days. This is what a good design looks like when it's running."
+    ],
+    "boss_defeated": [
+      "{boss} is scrap! You broke the problem into parts and took the parts apart. Textbook.",
+      "You finished the whole thing. Do you know how many half-built machines are in my garage? Don't look.",
+      "{boss}, defeated by planning. My favourite weapon.",
+      "Ha! {boss} never stood a chance against a proper list of milestones.",
+      "Done and shipped. That's the difference between an idea and an invention.",
+      "{boss} is down and I only had to help a little. Fine, I didn't help. Still.",
+      "A big project, start to finish. That's worth more than a hundred clever starts.",
+      "Now that was smart work. Take the evening off. Tomorrow, something bigger."
+    ],
+    "idle": [
+      "What are we building today? And don't say 'nothing'.",
+      "Small piece, done properly, every day. That's how you get a spaceship.",
+      "If it's too big to start, it's not a task, it's a category. Break it down.",
+      "I've had three ideas since breakfast. You only need to finish one.",
+      "Clever beats strong. Finished beats clever.",
+      "Stop admiring the plan and pick up a wrench.",
+      "The boring part of the project is still the project.",
+      "Come on, I haven't got all day. Well, I have, but I've got plans for it."
+    ]
+  },
+  "scenes": [
+    {
+      "level": 2,
+      "title": "The Workshop",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Bulma's workshop. Every surface holds something half taken apart."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Don't touch that. Or that. Definitely not that."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What can I touch?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "The broom. Everyone starts on the broom. Even me, for about a day."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Blueprints",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "You want to know why your projects stall? You try to hold the whole thing in your head."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Where else would I hold it?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "On paper, like a civilised person. Draw it, split it, number the pieces."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Your head is for solving problems. It's a terrible filing cabinet."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Forty-One Tries",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "I built this radar when I was sixteen. It finds things nobody else can find."
+        },
+        {
+          "speaker": "YOU",
+          "text": "That's incredible."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "I know. But it took forty-one tries. The first forty found my own fridge."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Nobody ever asks about the forty. They should. That's where the work was."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "A Loan",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "Here. Take this earpiece next time you go up against something big."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What does it do?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "It lets me yell advice at you from a safe distance."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "What? That's help. I'm helping. You're welcome."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "Capsules",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Bulma throws a capsule. A full motorbike appears in a puff of smoke."
+        },
+        {
+          "speaker": "YOU",
+          "text": "How does a bike fit in something that small?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You pack it properly. Most of any big thing is air and bad organisation."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Same with your milestones. Pack them tighter and each one lands harder."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "title": "Late Night",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Two in the morning. Bulma is still at the bench."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You should sleep."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "I should. But I can see how it ends now, and I never sleep when I can see how it ends."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "That's the good part, by the way. Everything before it is just getting here."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "title": "An Admission",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "Can I tell you something? I get bored. Fast. I've abandoned more things than you've ever started."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You? But you finish everything."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "I finish what I ship. The rest is in a warehouse I don't talk about."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You're steadier than me. Don't let it go to your head. But it's true."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "title": "The Better Radar",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "I rebuilt the radar. Longer range, half the size."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why improve it? The old one worked."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Because 'worked' isn't the finish line. It's where the fun starts."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Take it. When you bring something big down, this makes sure you get everything it was worth."
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "title": "Partner",
+      "lines": [
+        {
+          "speaker": "BULMA",
+          "text": "I've got a new project. Biggest thing I've ever tried. I want you on it."
+        },
+        {
+          "speaker": "YOU",
+          "text": "As your assistant?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "As my partner. I've seen your work. It holds up."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Don't make it weird. Grab that end. And still don't touch that."
+        }
+      ]
+    }
+  ]
+}

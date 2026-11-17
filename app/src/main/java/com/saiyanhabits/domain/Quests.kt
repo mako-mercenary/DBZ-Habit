@@ -39,11 +39,23 @@ object SagaRules {
     /** A boss's full HP: the weights of all the saga's milestones added up. */
     fun totalHp(milestones: List<MilestoneState>): Int = milestones.sumOf { it.weight }
 
-    /** Damage a milestone deals when it is finished: its weight. */
-    fun damageFor(weight: Int): Int = weight.coerceAtLeast(0)
+    /**
+     * Damage a milestone deals when it is finished: its weight, plus
+     * [assistDamage] from mentors who have joined the fight.
+     */
+    fun damageFor(weight: Int, assistDamage: Int = 0): Int = weight.coerceAtLeast(0) + assistDamage.coerceAtLeast(0)
 
+    /**
+     * HP knocked off so far: the weights of the finished milestones. Assist
+     * damage is extra on top and never shortens the fight, so the boss only
+     * falls when every milestone is done.
+     */
     fun damageTaken(milestones: List<MilestoneState>): Int =
-        milestones.filter { it.done }.sumOf { it.damageDealt }
+        milestones.filter { it.done }.sumOf { it.weight }
+
+    /** Extra damage the assists have dealt so far, beyond the milestones' own weights. */
+    fun bonusDamage(milestones: List<MilestoneState>): Int =
+        milestones.filter { it.done }.sumOf { (it.damageDealt - it.weight).coerceAtLeast(0) }
 
     /** HP the boss has left. Never below zero. */
     fun remainingHp(milestones: List<MilestoneState>): Int =
@@ -54,17 +66,25 @@ object SagaRules {
         milestones.isNotEmpty() && remainingHp(milestones) == 0
 
     /**
-     * Points for finishing a milestone. A [charged] milestone (one that had a
-     * time chamber session spent on it) earns the focus multiplier.
+     * Points for finishing a milestone: a set amount per point of damage,
+     * assist damage included. A [charged] milestone (one that had a time
+     * chamber session spent on it) earns the focus multiplier on top.
      */
-    fun milestonePoints(weight: Int, charged: Boolean): Int {
-        val base = GameConfig.MILESTONE_POINTS_PER_WEIGHT * weight.coerceAtLeast(0)
-        return if (charged) base + PowerCalculator.focusBonus(base) else base
+    fun milestonePoints(weight: Int, charged: Boolean, perks: Perks = Perks.NONE): Int {
+        val damage = damageFor(weight, perks.assistDamage)
+        val base = PowerCalculator.boosted(GameConfig.MILESTONE_POINTS_PER_WEIGHT * damage, perks.milestoneBoostPercent)
+        return if (charged) base + PowerCalculator.focusBonus(base, perks.focusMultiplier) else base
     }
 
-    /** The power bonus for bringing a boss with [totalHp] down to zero. */
-    fun victoryBonus(totalHp: Int): Int =
-        GameConfig.SAGA_VICTORY_BONUS_BASE + GameConfig.SAGA_VICTORY_BONUS_PER_HP * totalHp.coerceAtLeast(0)
+    /**
+     * The power bonus for bringing a boss with [totalHp] down to zero.
+     * [bonusDamage] dealt by assists along the way counts like extra HP.
+     */
+    fun victoryBonus(totalHp: Int, bonusDamage: Int = 0, boostPercent: Int = 0): Int = PowerCalculator.boosted(
+        GameConfig.SAGA_VICTORY_BONUS_BASE +
+            GameConfig.SAGA_VICTORY_BONUS_PER_HP * (totalHp.coerceAtLeast(0) + bonusDamage.coerceAtLeast(0)),
+        boostPercent,
+    )
 }
 
 /** Spirit bomb rules. Pure functions, no Android. */
@@ -102,7 +122,8 @@ object SpiritBombRules {
     fun isReadyToThrow(progress: Int, target: Int): Boolean = target > 0 && progress >= target
 
     /** Bonus for throwing a full bomb. */
-    fun throwBonus(size: Int): Int = sizePoints(size) * GameConfig.SPIRIT_BOMB_THROW_BONUS_PERCENT / 100
+    fun throwBonus(size: Int, multiplier: Int = 1): Int =
+        sizePoints(size) * GameConfig.SPIRIT_BOMB_THROW_BONUS_PERCENT / 100 * multiplier.coerceAtLeast(1)
 
     /** True when a time chamber session can log its own length to a bomb with this unit. */
     fun isMinutesUnit(unit: String): Boolean = unit.trim().lowercase() in setOf("minutes", "minute", "min", "mins")

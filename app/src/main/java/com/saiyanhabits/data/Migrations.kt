@@ -84,3 +84,47 @@ val MIGRATION_2_3 = object : Migration(2, 3) {
         )
     }
 }
+
+/**
+ * Milestone 4: bond XP on check-offs, technique uses and excused habits.
+ * Check-offs made before bonds existed are credited to the mentor who trains
+ * the habit now, so earlier training counts towards the bonds.
+ */
+val MIGRATION_3_4 = object : Migration(3, 4) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `completions` ADD COLUMN `mentor` TEXT")
+        db.execSQL("ALTER TABLE `completions` ADD COLUMN `bondXp` INTEGER NOT NULL DEFAULT 0")
+        db.execSQL(
+            """
+            UPDATE completions SET
+                bondXp = $BACKFILL_BOND_XP,
+                mentor = (
+                    SELECT CASE
+                        WHEN h.isHardest = 1 THEN 'VEGETA'
+                        WHEN h.category = 'DAILY_BASICS' THEN 'ROSHI'
+                        WHEN h.category = 'WORKOUT' THEN 'GOKU'
+                        WHEN h.category = 'FOCUS' THEN 'PICCOLO'
+                        WHEN h.category = 'PROJECTS' THEN 'BULMA'
+                    END
+                    FROM habits h WHERE h.id = completions.habitId
+                )
+            """.trimIndent(),
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `technique_uses` (`technique` TEXT NOT NULL, " +
+                "`lastUsedEpochDay` INTEGER NOT NULL, PRIMARY KEY(`technique`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `habit_excuses` (`habitId` INTEGER NOT NULL, `epochDay` " +
+                "INTEGER NOT NULL, PRIMARY KEY(`habitId`, `epochDay`), FOREIGN KEY(`habitId`) REFERENCES " +
+                "`habits`(`id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        )
+        db.execSQL(
+            "CREATE INDEX IF NOT EXISTS `index_habit_excuses_epochDay` ON `habit_excuses` " +
+                "(`epochDay`)",
+        )
+    }
+}
+
+/** Bond XP credited per old check-off. Fixed here so the migration never changes after release. */
+private const val BACKFILL_BOND_XP = 10

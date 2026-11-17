@@ -1,0 +1,267 @@
+{
+  "mentor": "GOKU",
+  "reactions": {
+    "missed_day": [
+      "Hey, you weren't here yesterday! I ended up sparring with a rock. The rock lost, but still.",
+      "Missed a day? That's okay! It just means today's gonna feel extra good.",
+      "Aw, I saved you a spot and everything. Come on, let's make up for it!",
+      "You know what's great about a skipped workout? You're really well rested for this one.",
+      "Yesterday's gone. I can't even remember what I had for breakfast yesterday. Let's go!",
+      "I get it, some days your body says no. Today we ask it again, nicely.",
+      "No training yesterday? Your muscles are probably bored. Let's fix that.",
+      "Don't beat yourself up. Save the beating for the training dummy!"
+    ],
+    "comeback": [
+      "You're back! I knew it! Okay, okay, where were we?",
+      "See? You didn't lose anything. It's all still in there. Feel that?",
+      "Ha! That's what I like to see. Getting knocked down just means a running start.",
+      "Yes! Welcome back! I was about to come drag you out here myself.",
+      "One day off and you came back hungrier. That's a fighter's instinct.",
+      "Look at you go! Yesterday who? Never heard of it.",
+      "That first one back is the hardest. And you just did it. Wanna do another?",
+      "This is my favourite part: when you show up even though it'd be easy not to."
+    ],
+    "streak_milestone": [
+      "{streak} days in a row! Whoa! You're getting stronger so fast it's making me excited!",
+      "{streak} days! Can you feel it? You couldn't have done today's training back at the start.",
+      "A {streak}-day streak! Okay, now I really want to spar with you.",
+      "{streak} days! That's amazing! ...So, one more?",
+      "Wow, {streak} already? Time flies when you're having fun getting sore.",
+      "{streak} straight! You know what that calls for? A huge meal. Then more training.",
+      "{streak} days and you're not even slowing down. I love this!",
+      "{streak}! Keep going! I wanna see how far this goes just as much as you do."
+    ],
+    "boss_defeated": [
+      "You beat {boss}! That was awesome! Did you see the look on that face?",
+      "{boss} was really strong, huh? That's the best kind to beat.",
+      "Ha ha! {boss} is down! Man, now I'm all fired up. Who's next?",
+      "You did it! I knew you would, but watching it was way better.",
+      "{boss}, done! You kept hitting till it was over. Nothing fancy. Perfect.",
+      "That was a great fight! I almost jumped in, but it was yours to win.",
+      "Beating {boss} means there's somebody even stronger out there. Isn't that exciting?",
+      "Victory! Let's eat! Then let's find something harder!"
+    ],
+    "idle": [
+      "Morning! Great day for training. They all are, though.",
+      "Hey, let's do one more than yesterday. Just one!",
+      "I'm so hungry. Let's train first, though. Food tastes better after.",
+      "The best part of getting strong is there's always a next level.",
+      "You don't have to win today. You just have to show up and try hard.",
+      "Ready? I've been ready since sunrise. I couldn't sleep, I was too excited.",
+      "Tired's okay. Tired means it's working!",
+      "Come on, come on! Daylight's burning and I've got energy to spare."
+    ]
+  },
+  "scenes": [
+    {
+      "level": 2,
+      "title": "One More",
+      "lines": [
+        {
+          "speaker": "GOKU",
+          "text": "Okay, that's the set! ...Wanna do one more?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "You said that was the last one."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "It was! This is a new last one."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "The one after you wanted to stop is the one that counts. It's my favourite."
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Breakfast",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Goku is on his ninth bowl of rice."
+        },
+        {
+          "speaker": "YOU",
+          "text": "How can you train after eating that much?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "How can you train without it? You've gotta put something in to get something out!"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Eat big, sleep big, train big. It's not complicated. People just make it complicated."
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Losing",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "Have you ever lost a fight?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Oh, tons! Some really bad ones."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "But every time, I found out exactly what I was missing. You can't buy that anywhere."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Win and you feel good. Lose and you get a to-do list. Both are pretty great."
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "Sparring",
+      "lines": [
+        {
+          "speaker": "GOKU",
+          "text": "Hey! Let's spar. For real this time."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I can't beat you."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "So? I'm not asking you to beat me. I'm asking you to try as hard as you can and see what happens."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You last eleven seconds. Goku is delighted."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Eleven! Last month you wouldn't have seen the first one coming. Next real fight you're in, I've got your back."
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "The Limit",
+      "lines": [
+        {
+          "speaker": "GOKU",
+          "text": "There's this thing I do when I really need it. Push everything to double for a little while."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why not do it all the time?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Ha, because it wrecks you! You get one big day, then you pay for it."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "So pick the day. That's the whole trick. I'll show you."
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "title": "Why",
+      "lines": [
+        {
+          "speaker": "YOU",
+          "text": "Why do you train so hard? You're already the strongest person I know."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Hm. I never really thought about it."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "I guess I just like finding out what I can do. And then it turns out I can do a bit more."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "If I stopped, I'd never know what the next one felt like. That'd bug me forever."
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "title": "A Bad Day",
+      "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Goku is sitting on a rock, unusually still."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Are you alright?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Yeah. Training went badly today. Everything felt heavy."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Happens to me too, you know. I just do the easy version on those days, so the streak in my head doesn't break."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "A bad workout still counts. Don't tell Vegeta I said that."
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "title": "Everyone's Energy",
+      "lines": [
+        {
+          "speaker": "GOKU",
+          "text": "The biggest thing I can do, I can't do alone. I have to ask for a little energy from everybody."
+        },
+        {
+          "speaker": "YOU",
+          "text": "And they just give it?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Mostly! People want to help, if you ask and it's for something that matters."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "All those tiny bits add up to something huge. Kinda like your training, huh?"
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "title": "Keeping Up",
+      "lines": [
+        {
+          "speaker": "GOKU",
+          "text": "Hey, I've been meaning to say. You're not really my student any more."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Did I do something wrong?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "No way! It's just, students follow. You've been keeping up."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "So I'm gonna train extra hard now. I don't wanna get left behind!"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "...One more?"
+        }
+      ]
+    }
+  ]
+}

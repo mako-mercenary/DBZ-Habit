@@ -1,5 +1,6 @@
 package com.saiyanhabits.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
@@ -7,6 +8,7 @@ import androidx.room.PrimaryKey
 import com.saiyanhabits.domain.DayOutcome
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.HabitCategory
+import com.saiyanhabits.domain.Mentor
 
 @Entity(tableName = "habits")
 data class HabitEntity(
@@ -54,6 +56,10 @@ data class CompletionEntity(
     /** Points awarded, fixed at check-off time so later GameConfig changes don't rewrite history. */
     val points: Int,
     val completedAtMillis: Long,
+    /** The mentor who trained the habit at the time, and so earned the bond XP. Null on check-offs with none. */
+    val mentor: Mentor? = null,
+    /** Bond XP this check-off gave [mentor]. A mentor's bond XP is the sum of these. */
+    @ColumnInfo(defaultValue = "0") val bondXp: Int = 0,
 )
 
 /**

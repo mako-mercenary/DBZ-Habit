@@ -58,14 +58,18 @@ object StreakRules {
     /**
      * Works out how each day from [fromDay] to [toDay] (inclusive) went.
      * [completedByDay] maps a day to the ids of the habits checked off that day.
+     * [excusedByDay] maps a day to the habits excused that day (Master's Day
+     * Off): those do not count as scheduled.
      */
     fun planDays(
         habits: List<ScheduledHabit>,
         completedByDay: Map<Long, Set<Long>>,
         fromDay: Long,
         toDay: Long,
+        excusedByDay: Map<Long, Set<Long>> = emptyMap(),
     ): List<DayPlan> = (fromDay..toDay).map { day ->
-        val scheduled = scheduledOn(habits, day).map { it.id }
+        val excused = excusedByDay[day].orEmpty()
+        val scheduled = scheduledOn(habits, day).map { it.id }.filterNot { it in excused }
         val completed = completedByDay[day].orEmpty()
         DayPlan(day, scheduled, scheduled.filterNot { it in completed })
     }
@@ -112,15 +116,16 @@ object StreakRules {
         return if (ifCovered > asIs) BeanOffer(missed.sorted(), ifCovered) else null
     }
 
-    /** True when reaching [streak] earns a healing bean. */
-    fun earnsBean(streak: Int): Boolean =
-        streak > 0 && streak % GameConfig.BEAN_STREAK_INTERVAL == 0
+    /** True when reaching [streak] earns a healing bean: at every multiple of [interval]. */
+    fun earnsBean(streak: Int, interval: Int = GameConfig.BEAN_STREAK_INTERVAL): Boolean =
+        streak > 0 && streak % interval == 0
 
+    /** Beans held after earning one. Never fewer than before, never raised past [capacity]. */
     fun beansAfterEarning(beans: Int, capacity: Int = GameConfig.MAX_HEALING_BEANS): Int =
-        (beans + 1).coerceAtMost(capacity)
+        (beans + 1).coerceAtMost(capacity.coerceAtLeast(beans))
 
-    fun daysUntilNextBean(streak: Int): Int =
-        GameConfig.BEAN_STREAK_INTERVAL - streak.coerceAtLeast(0) % GameConfig.BEAN_STREAK_INTERVAL
+    fun daysUntilNextBean(streak: Int, interval: Int = GameConfig.BEAN_STREAK_INTERVAL): Int =
+        interval - streak.coerceAtLeast(0) % interval
 
     /** The highest form a streak of this length unlocks (0 = base form). */
     fun formForStreak(streak: Int): Int = GameConfig.FORM_STREAK_THRESHOLDS.count { streak >= it }

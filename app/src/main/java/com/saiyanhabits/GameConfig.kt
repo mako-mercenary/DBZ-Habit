@@ -78,6 +78,67 @@ object GameConfig {
     /** Progress logged by a finished session is worth this many times its normal points. */
     const val FOCUS_POINT_MULTIPLIER = 1.5
 
+    // ---- Mentor bonds ----
+
+    /** Bond XP a mentor gains each time one of their habits is checked off. */
+    const val BOND_XP_PER_CHECK_OFF = 10
+
+    /**
+     * Total bond XP needed to reach each bond level, starting with level 1.
+     * The number of entries is the highest level.
+     */
+    val BOND_LEVEL_XP = listOf(0, 30, 80, 150, 250, 400, 600, 850, 1150, 1500)
+
+    /** Bond level from which a mentor joins boss fights as an assist. */
+    const val ASSIST_MIN_BOND_LEVEL = 5
+
+    /** Bonus damage each assisting mentor adds to a milestone hit. */
+    const val ASSIST_DAMAGE_PER_MENTOR = 1
+
+    /** Overall streak lengths the mentors comment on. */
+    val STREAK_REACTION_MILESTONES = listOf(3, 7, 14, 21, 30, 50, 75, 100, 150, 200, 365)
+
+    // ---- Techniques (perks unlocked at bond levels 3, 6 and 9) ----
+
+    val TECHNIQUE_BOND_LEVELS = listOf(3, 6, 9)
+
+    /** Roshi, Goku, Piccolo and Bulma level 3: extra points on the habits that mentor trains, in percent. */
+    const val TECHNIQUE_HABIT_BOOST_PERCENT = 20
+
+    /** Vegeta level 3: extra points on the hardest habit, in percent. */
+    const val TECHNIQUE_HARDEST_BOOST_PERCENT = 30
+
+    /** Roshi level 6: extra healing bean slots. */
+    const val TECHNIQUE_EXTRA_BEAN_SLOTS = 1
+
+    /** Roshi level 9: days before a habit can be excused again. */
+    const val TECHNIQUE_DAY_OFF_COOLDOWN_DAYS = 14
+
+    /** Goku level 6: what check-off points are multiplied by on the day it is used, and days before it can be used again. */
+    const val TECHNIQUE_KAIOKEN_MULTIPLIER = 2
+    const val TECHNIQUE_KAIOKEN_COOLDOWN_DAYS = 7
+
+    /** Goku level 9: what the spirit bomb throw bonus is multiplied by. */
+    const val TECHNIQUE_BOMB_THROW_MULTIPLIER = 2
+
+    /** Piccolo level 6: replaces FOCUS_POINT_MULTIPLIER. */
+    const val TECHNIQUE_FOCUS_POINT_MULTIPLIER = 2.0
+
+    /** Piccolo level 9: replaces BEAN_STREAK_INTERVAL. */
+    const val TECHNIQUE_BEAN_STREAK_INTERVAL = 5
+
+    /** Bulma level 6: extra points on saga milestones, in percent. */
+    const val TECHNIQUE_MILESTONE_BOOST_PERCENT = 25
+
+    /** Bulma level 9: extra victory bonus, in percent. */
+    const val TECHNIQUE_VICTORY_BOOST_PERCENT = 50
+
+    /** Vegeta level 6: replaces GRAVITY_100X_MULTIPLIER. */
+    const val TECHNIQUE_GRAVITY_100X_MULTIPLIER = 4
+
+    /** Vegeta level 9: what every assist's bonus damage is multiplied by. */
+    const val TECHNIQUE_ASSIST_DAMAGE_MULTIPLIER = 2
+
     // ---- Animation timing (milliseconds) ----
 
     /** Boss flinch and damage number when a milestone lands. */
