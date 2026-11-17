@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -277,17 +278,28 @@ fun BoxScope.OrbWatermark(modifier: Modifier = Modifier) {
     )
 }
 
-/** One of the art images, faint, in a card's corner. */
+/**
+ * One of the art images, faint, at the card's right edge. With [cornerStamp]
+ * it sits in the bottom-right corner instead, partly cut off by the card's
+ * edge, to keep clear of content in the middle of the card.
+ */
 @Composable
-fun BoxScope.ArtWatermark(key: com.saiyanhabits.art.ArtKey, modifier: Modifier = Modifier) {
+fun BoxScope.ArtWatermark(key: com.saiyanhabits.art.ArtKey, modifier: Modifier = Modifier, cornerStamp: Boolean = false) {
     ArtImage(
         key = key,
         contentDescription = null,
-        alpha = 0.16f,
-        modifier = modifier
-            .align(Alignment.CenterEnd)
-            .padding(end = 10.dp)
-            .size(76.dp),
+        alpha = if (cornerStamp) 0.13f else 0.16f,
+        modifier = if (cornerStamp) {
+            modifier
+                .align(Alignment.BottomEnd)
+                .offset(x = 18.dp, y = 22.dp)
+                .size(92.dp)
+        } else {
+            modifier
+                .align(Alignment.CenterEnd)
+                .padding(end = 10.dp)
+                .size(76.dp)
+        },
     )
 }
 

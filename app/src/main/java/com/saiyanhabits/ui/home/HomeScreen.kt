@@ -334,7 +334,7 @@ private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
 @Composable
 private fun BeansCard(state: HomeUiState, modifier: Modifier = Modifier) {
     val capacity = state.beanCapacity
-    StatCard("Healing beans", modifier, watermark = { ArtWatermark(ArtKey.EMBLEM_CAPSULE) }) {
+    StatCard("Healing beans", modifier, watermark = { ArtWatermark(ArtKey.EMBLEM_CAPSULE, cornerStamp = true) }) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
