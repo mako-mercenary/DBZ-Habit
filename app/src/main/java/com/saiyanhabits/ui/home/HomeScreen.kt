@@ -1,6 +1,7 @@
 package com.saiyanhabits.ui.home
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +26,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
@@ -42,6 +45,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.painterResource
@@ -60,8 +67,11 @@ import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.PowerCalculator
 import com.saiyanhabits.data.mentor
 import com.saiyanhabits.domain.Perks
+import com.saiyanhabits.domain.RivalStanding
+import com.saiyanhabits.domain.StoryChapter
 import com.saiyanhabits.ui.components.EmptyPanel
 import com.saiyanhabits.ui.components.MentorPortrait
+import com.saiyanhabits.ui.components.MeterBar
 import com.saiyanhabits.ui.components.ScouterReadout
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
@@ -77,7 +87,15 @@ private val HeaderDate = DateTimeFormatter.ofPattern("EEEE, MMM d", Locale.getDe
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
+    /** An unlocked story chapter that has not been read yet, if any. */
+    newChapter: StoryChapter?,
+    /** True when at least one wish is written down and waiting. */
+    hasWaitingWish: Boolean,
     onAddHabit: () -> Unit,
+    onOpenStory: () -> Unit,
+    onOpenChapter: (Int) -> Unit,
+    onOpenSettings: () -> Unit,
+    onSummon: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -99,7 +117,20 @@ fun HomeScreen(
             .statusBarsPadding(),
     ) {
         item(key = "date") {
-            SectionLabel(state.date.format(HeaderDate), Modifier.padding(start = 4.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                SectionLabel(state.date.format(HeaderDate), Modifier.weight(1f).padding(start = 4.dp))
+                IconButton(onClick = onOpenStory) {
+                    Icon(painterResource(R.drawable.ic_story), contentDescription = "Story", tint = SaiyanColors.TextDim)
+                }
+                IconButton(onClick = onOpenSettings) {
+                    Icon(painterResource(R.drawable.ic_settings), contentDescription = "Settings", tint = SaiyanColors.TextDim)
+                }
+            }
+        }
+        if (newChapter != null) {
+            item(key = "chapter") {
+                NewChapterCard(newChapter, onClick = { onOpenChapter(newChapter.number) })
+            }
         }
         item(key = "power") {
             ScouterReadout(
@@ -157,6 +188,8 @@ fun HomeScreen(
                 )
             }
         }
+        item(key = "rival") { RivalCard(state.rival) }
+        item(key = "orbs") { WishOrbsCard(state.wishOrbs, hasWaitingWish, onSummon, onOpenSettings) }
     }
 
     choosingGravityFor?.let { habit ->
@@ -330,6 +363,147 @@ private fun BeanOfferDialog(offer: BeanOffer, beans: Int, onAccept: () -> Unit, 
             TextButton(onClick = onDecline) { Text("Let the streak end", color = SaiyanColors.TextDim) }
         },
     )
+}
+
+@Composable
+private fun NewChapterCard(chapter: StoryChapter, onClick: () -> Unit) {
+    Surface(
+        onClick = onClick,
+        shape = RoundedCornerShape(18.dp),
+        color = MaterialTheme.colorScheme.primaryContainer,
+        border = BorderStroke(1.dp, SaiyanColors.Orange),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
+            Column(Modifier.weight(1f)) {
+                Text("NEW STORY CHAPTER", style = MaterialTheme.typography.labelMedium, color = SaiyanColors.Orange)
+                Text(
+                    "Chapter ${chapter.number}: ${chapter.title}",
+                    style = MaterialTheme.typography.titleMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            Text("Read", style = MaterialTheme.typography.labelLarge, color = SaiyanColors.Orange)
+        }
+    }
+}
+
+/** Last week's power gain as the rival, and how this week compares. */
+@Composable
+private fun RivalCard(rival: RivalStanding) {
+    val leading = rival.beaten || rival.lead >= 0
+    val tint = if (!rival.hasRival) SaiyanColors.TextDim else if (leading) SaiyanColors.Bean else SaiyanColors.Danger
+    StatCard("Rival: last week's you", Modifier.fillMaxWidth()) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RivalFigure(Modifier.size(52.dp))
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Row(verticalAlignment = Alignment.Bottom) {
+                    Column(Modifier.weight(1f)) {
+                        Text("Rival", style = MaterialTheme.typography.bodySmall, color = SaiyanColors.TextDim)
+                        Text(
+                            if (rival.hasRival) "+${rival.rivalTotal}" else "None yet",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = SaiyanColors.Danger.copy(alpha = if (rival.hasRival) 1f else 0.5f),
+                        )
+                    }
+                    Column(Modifier.weight(1f)) {
+                        Text("You, this week", style = MaterialTheme.typography.bodySmall, color = SaiyanColors.TextDim)
+                        Text("+${rival.mine}", style = MaterialTheme.typography.titleLarge, color = SaiyanColors.Orange)
+                    }
+                }
+                Spacer(Modifier.height(6.dp))
+                if (rival.hasRival) {
+                    MeterBar(rival.mine.toFloat() / maxOf(rival.rivalTotal, rival.mine, 1), tint)
+                    Spacer(Modifier.height(4.dp))
+                }
+                Text(
+                    when {
+                        !rival.hasRival -> "This week's gain becomes next week's rival."
+                        rival.beaten -> "Rival beaten: ${rival.mine - rival.rivalTotal} past all of last week."
+                        rival.lead > 0 -> "Ahead: ${rival.lead} more than last week had by this day."
+                        rival.lead < 0 -> "Behind: ${-rival.lead} short of where last week was by this day."
+                        else -> "Level with last week at this point."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = tint,
+                )
+            }
+        }
+    }
+}
+
+/** Placeholder rival art: a shadowy head and shoulders with red eyes. */
+@Composable
+private fun RivalFigure(modifier: Modifier = Modifier) {
+    Canvas(modifier) {
+        val radius = size.minDimension / 2f
+        drawCircle(SaiyanColors.Danger.copy(alpha = 0.16f), radius)
+        val shadow = Color(0xFF2A2F42)
+        drawCircle(shadow, radius * 0.36f, Offset(center.x, center.y - radius * 0.2f))
+        drawArc(
+            color = shadow,
+            startAngle = 180f,
+            sweepAngle = 180f,
+            useCenter = true,
+            topLeft = Offset(center.x - radius * 0.7f, center.y + radius * 0.28f),
+            size = Size(radius * 1.4f, radius * 1.3f),
+        )
+        for (side in listOf(-1f, 1f)) {
+            drawCircle(SaiyanColors.Danger, radius * 0.06f, Offset(center.x + side * radius * 0.14f, center.y - radius * 0.22f))
+        }
+    }
+}
+
+@Composable
+private fun WishOrbsCard(orbs: Int, hasWaitingWish: Boolean, onSummon: () -> Unit, onOpenSettings: () -> Unit) {
+    val needed = GameConfig.WISH_ORBS_NEEDED
+    val ready = orbs >= needed
+    StatCard("Wish orbs", Modifier.fillMaxWidth()) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.semantics { contentDescription = "$orbs of $needed wish orbs" },
+        ) {
+            repeat(needed) { index ->
+                val held = index < orbs
+                Box(
+                    Modifier
+                        .size(26.dp)
+                        .clip(CircleShape)
+                        .then(
+                            if (held) {
+                                Modifier.background(
+                                    Brush.radialGradient(listOf(Color(0xFFFFE9A8), SaiyanColors.Orange, SaiyanColors.OrangeDeep)),
+                                )
+                            } else {
+                                Modifier.border(1.5.dp, SaiyanColors.Outline, CircleShape)
+                            },
+                        ),
+                )
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(
+            when {
+                ready && hasWaitingWish -> "All $needed gathered. The dragon will grant one wish."
+                ready -> "All $needed gathered. Write a wish first, then summon the dragon."
+                else -> "$orbs of $needed. A perfect week, Monday to Sunday, earns one."
+            },
+            style = MaterialTheme.typography.bodySmall,
+            color = if (ready) SaiyanColors.Orange else SaiyanColors.TextDim,
+        )
+        when {
+            ready && hasWaitingWish -> {
+                Spacer(Modifier.height(8.dp))
+                Button(onClick = onSummon, modifier = Modifier.fillMaxWidth()) { Text("Summon the dragon") }
+            }
+            !hasWaitingWish -> TextButton(onClick = onOpenSettings) {
+                Text(if (ready) "Write a wish" else "Write a wish for later")
+            }
+        }
+    }
 }
 
 @Composable

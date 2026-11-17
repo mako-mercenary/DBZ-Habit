@@ -2,7 +2,6 @@ package com.saiyanhabits.ui.bonds
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -14,7 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,8 +29,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.saiyanhabits.GameConfig
@@ -44,6 +40,7 @@ import com.saiyanhabits.domain.Mentor
 import com.saiyanhabits.domain.Technique
 import com.saiyanhabits.ui.components.MentorPortrait
 import com.saiyanhabits.ui.components.MeterBar
+import com.saiyanhabits.ui.components.ScriptLines
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.components.SubScreen
 import com.saiyanhabits.ui.theme.SaiyanColors
@@ -327,64 +324,7 @@ fun SceneScreen(mentor: Mentor, scene: BondScene, onBack: () -> Unit) {
             style = MaterialTheme.typography.labelLarge,
             color = mentor.color,
         )
-        scene.lines.forEach { line ->
-            val speaker = line.mentor
-            when {
-                speaker != null -> SpeechBubble(
-                    name = speaker.displayName,
-                    text = line.text,
-                    nameColor = speaker.color,
-                    alignment = Alignment.CenterStart,
-                    portrait = speaker,
-                )
-                line.speaker == "YOU" -> SpeechBubble(
-                    name = "You",
-                    text = line.text,
-                    nameColor = SaiyanColors.Blue,
-                    alignment = Alignment.CenterEnd,
-                    portrait = null,
-                )
-                else -> Text(
-                    line.text,
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontStyle = FontStyle.Italic,
-                    color = SaiyanColors.TextDim,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 6.dp, horizontal = 12.dp),
-                )
-            }
-        }
+        ScriptLines(scene.lines)
         Spacer(Modifier.height(16.dp))
-    }
-}
-
-@Composable
-private fun SpeechBubble(
-    name: String,
-    text: String,
-    nameColor: androidx.compose.ui.graphics.Color,
-    alignment: Alignment,
-    portrait: Mentor?,
-) {
-    Box(Modifier.fillMaxWidth(), contentAlignment = alignment) {
-        Row(verticalAlignment = Alignment.Top) {
-            if (portrait != null) {
-                MentorPortrait(portrait, Modifier.size(40.dp))
-                Spacer(Modifier.width(8.dp))
-            }
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = if (portrait != null) SaiyanColors.Panel else SaiyanColors.BlueDeep.copy(alpha = 0.5f),
-                border = BorderStroke(1.dp, SaiyanColors.Outline),
-                modifier = Modifier.widthIn(max = 280.dp),
-            ) {
-                Column(Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
-                    Text(name, style = MaterialTheme.typography.labelMedium, color = nameColor)
-                    Text(text, style = MaterialTheme.typography.bodyLarge)
-                }
-            }
-        }
     }
 }

@@ -18,6 +18,9 @@ import com.saiyanhabits.domain.MentorDialogue
 import com.saiyanhabits.domain.Perks
 import com.saiyanhabits.domain.ReactionContext
 import com.saiyanhabits.domain.ReactionRules
+import com.saiyanhabits.domain.RivalRules
+import com.saiyanhabits.domain.RivalStanding
+import com.saiyanhabits.domain.Weeks
 import com.saiyanhabits.domain.StreakRules
 import com.saiyanhabits.domain.WeekSchedule
 import com.saiyanhabits.reminders.ReminderScheduler
@@ -71,6 +74,9 @@ data class HomeUiState(
     val beanOffer: BeanOffer?,
     /** The perks in force, for showing what a check-off will pay. */
     val perks: Perks,
+    val wishOrbs: Int,
+    /** This week's power gain against last week's. */
+    val rival: RivalStanding,
     /** What a mentor has to say today, or null if the dialogue files gave nothing. */
     val mentorLine: MentorLine?,
 ) {
@@ -78,6 +84,14 @@ data class HomeUiState(
     val counted: List<TodayHabit> get() = today.filterNot { it.excused }
     val doneCount: Int get() = counted.count { it.isDone }
 }
+
+/** The habit-side inputs to the home screen, bundled so they travel as one flow. */
+private data class HabitInputs(
+    val habits: List<HabitEntity>,
+    val completions: List<CompletionEntity>,
+    val power: Long,
+    val dailyPoints: Map<Long, Int>,
+)
 
 /** The bond-side inputs to the home screen, bundled so they travel as one flow. */
 private data class BondInputs(
@@ -104,7 +118,14 @@ class HomeViewModel(
     val uiState: StateFlow<HomeUiState?> = today
         .flatMapLatest { date ->
             combine(
-                combine(repository.activeHabits, repository.completionsOn(date), repository.powerLevel, ::Triple),
+                combine(
+                    repository.activeHabits,
+                    repository.completionsOn(date),
+                    repository.powerLevel,
+                    // Last week and this one, for the rival.
+                    repository.dailyPoints(LocalDate.ofEpochDay(Weeks.startOf(date.toEpochDay()) - Weeks.DAYS), date),
+                    ::HabitInputs,
+                ),
                 combine(repository.openDays, repository.playerState, repository.habitStreaks, ::Triple),
                 combine(
                     bonds.perks,
@@ -114,7 +135,7 @@ class HomeViewModel(
                     dialogues,
                     ::BondInputs,
                 ),
-            ) { (habits, completions, power), (openDays, player, habitStreaks), bond ->
+            ) { (habits, completions, power, dailyPoints), (openDays, player, habitStreaks), bond ->
                 val byHabit = completions.associateBy { it.habitId }
                 val todays = habits
                     .filter { WeekSchedule.isScheduled(it.scheduleDays, date) }
@@ -136,6 +157,8 @@ class HomeViewModel(
                     daysUntilNextBean = StreakRules.daysUntilNextBean(streak, perks.beanStreakInterval),
                     beanOffer = StreakRules.beanOffer(openDays, player.healingBeans),
                     perks = perks,
+                    wishOrbs = player.wishOrbs,
+                    rival = RivalRules.standing(dailyPoints, date.toEpochDay()),
                     mentorLine = mentorLine(
                         context = ReactionContext(
                             epochDay = date.toEpochDay(),

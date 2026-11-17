@@ -55,6 +55,7 @@ import com.saiyanhabits.ui.bonds.MentorScreen
 import com.saiyanhabits.ui.bonds.SceneScreen
 import com.saiyanhabits.ui.chamber.ChamberScreen
 import com.saiyanhabits.ui.chamber.ChamberViewModel
+import com.saiyanhabits.ui.components.DragonOverlay
 import com.saiyanhabits.ui.components.TransformationOverlay
 import com.saiyanhabits.ui.components.VictoryOverlay
 import com.saiyanhabits.ui.habits.HabitEditScreen
@@ -68,6 +69,11 @@ import com.saiyanhabits.ui.quests.QuestsViewModel
 import com.saiyanhabits.ui.quests.SagaDetailScreen
 import com.saiyanhabits.ui.quests.SagaEditScreen
 import com.saiyanhabits.ui.quests.SagasScreen
+import com.saiyanhabits.ui.settings.SettingsScreen
+import com.saiyanhabits.ui.settings.WishesViewModel
+import com.saiyanhabits.ui.story.ChapterScreen
+import com.saiyanhabits.ui.story.StoryScreen
+import com.saiyanhabits.ui.story.StoryViewModel
 import kotlinx.coroutines.launch
 
 /** Navigation routes. */
@@ -77,6 +83,12 @@ private object Routes {
     const val SAGAS = "sagas"
     const val CHAMBER = "chamber"
     const val BONDS = "bonds"
+    const val STORY = "story"
+    const val SETTINGS = "settings"
+
+    const val CHAPTER_ARG = "chapter"
+    const val CHAPTER = "chapter/{$CHAPTER_ARG}"
+    fun chapter(number: Int) = "chapter/$number"
 
     const val MENTOR_ARG = "mentor"
     const val MENTOR = "mentor/{$MENTOR_ARG}"
@@ -127,6 +139,11 @@ fun SaiyanHabitsRoot() {
     val chamberViewModel: ChamberViewModel = viewModel(factory = factory)
     val bondsViewModel: BondsViewModel = viewModel(factory = factory)
     val perks by bondsViewModel.perks.collectAsStateWithLifecycle()
+    val storyViewModel: StoryViewModel = viewModel(factory = factory)
+    val chapters by storyViewModel.chapters.collectAsStateWithLifecycle()
+    val wishesViewModel: WishesViewModel = viewModel(factory = factory)
+    val wishes by wishesViewModel.wishes.collectAsStateWithLifecycle()
+    val waitingWishes = wishes.filter { it.grantedAtEpochDay == null }
 
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -136,6 +153,7 @@ fun SaiyanHabitsRoot() {
     var shake by remember { mutableStateOf(Offset.Zero) }
     var defeated by remember { mutableStateOf<QuestEvent.SagaDefeated?>(null) }
     var bondLevelUp by remember { mutableStateOf<BondLevelUpNotice?>(null) }
+    var summoning by remember { mutableStateOf(false) }
 
     LaunchedEffect(app) {
         app.questRepository.events.collect { event ->
@@ -153,6 +171,11 @@ fun SaiyanHabitsRoot() {
                 // never hold up the events behind them.
                 is GameEvent.BeanEarned -> launch {
                     snackbars.showSnackbar("Healing bean earned. You hold ${event.beans} of ${event.capacity}.")
+                }
+                is GameEvent.OrbEarned -> launch {
+                    snackbars.showSnackbar(
+                        "A perfect week! Wish orb earned: ${event.orbs} of ${GameConfig.WISH_ORBS_NEEDED}.",
+                    )
                 }
                 is GameEvent.BondLevelUp -> bondLevelUp = BondLevelUpNotice(
                     mentor = event.mentor,
@@ -195,7 +218,13 @@ fun SaiyanHabitsRoot() {
                 composable(Routes.HOME) {
                     HomeScreen(
                         viewModel = homeViewModel,
+                        newChapter = chapters?.firstOrNull { it.isNew }?.chapter,
+                        hasWaitingWish = waitingWishes.isNotEmpty(),
                         onAddHabit = { navController.navigate(Routes.habitEditor()) },
+                        onOpenStory = { navController.navigate(Routes.STORY) },
+                        onOpenChapter = { navController.navigate(Routes.chapter(it)) },
+                        onOpenSettings = { navController.navigate(Routes.SETTINGS) },
+                        onSummon = { summoning = true },
                     )
                 }
                 composable(Routes.HABITS) {
@@ -220,6 +249,37 @@ fun SaiyanHabitsRoot() {
                 }
                 composable(Routes.CHAMBER) {
                     ChamberScreen(viewModel = chamberViewModel, focusMultiplier = perks.focusMultiplier)
+                }
+                composable(Routes.STORY) {
+                    StoryScreen(
+                        chapters = chapters,
+                        onOpen = { navController.navigate(Routes.chapter(it)) },
+                        onBack = { navController.popBackStack(Routes.STORY, inclusive = true) },
+                    )
+                }
+                composable(
+                    route = Routes.CHAPTER,
+                    arguments = listOf(navArgument(Routes.CHAPTER_ARG) { type = NavType.IntType }),
+                ) { entry ->
+                    val number = entry.arguments?.getInt(Routes.CHAPTER_ARG) ?: return@composable
+                    val close = { navController.popBackStack(Routes.CHAPTER, inclusive = true) }
+                    val loaded = chapters ?: return@composable
+                    val status = loaded.firstOrNull { it.chapter.number == number }
+                    if (status == null || !status.unlocked) {
+                        LaunchedEffect(Unit) { close() }
+                    } else {
+                        // Opening a chapter is what counts as reading it.
+                        LaunchedEffect(number) { storyViewModel.markRead(number) }
+                        ChapterScreen(chapter = status.chapter, onBack = { close() })
+                    }
+                }
+                composable(Routes.SETTINGS) {
+                    SettingsScreen(
+                        wishes = wishes,
+                        onAddWish = wishesViewModel::add,
+                        onRemoveWish = wishesViewModel::remove,
+                        onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
+                    )
                 }
                 composable(Routes.BONDS) {
                     val state by bondsViewModel.uiState.collectAsStateWithLifecycle()
@@ -401,6 +461,18 @@ fun SaiyanHabitsRoot() {
                     navController.navigate(Routes.mentor(notice.mentor))
                 },
                 onDismiss = { bondLevelUp = null },
+            )
+        }
+
+        if (summoning) {
+            DragonOverlay(
+                waiting = waitingWishes,
+                onGrant = wishesViewModel::grant,
+                onWriteWish = {
+                    summoning = false
+                    navController.navigate(Routes.SETTINGS)
+                },
+                onDismiss = { summoning = false },
             )
         }
 
