@@ -25,6 +25,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.saiyanhabits.ui.theme.SaiyanColors
+import com.saiyanhabits.ui.components.NavItem
+import com.saiyanhabits.ui.components.DbzNavBar
+import com.saiyanhabits.ui.components.ArtImage
+import com.saiyanhabits.art.ArtKey
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
@@ -196,22 +204,39 @@ fun SaiyanHabitsRoot() {
     }
 
     Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
+        // Your background behind every screen, under a scrim so the cards stay readable.
+        ArtImage(
+            key = ArtKey.BACKGROUND_HOME,
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize(),
+        )
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(
+                    Brush.verticalGradient(
+                        listOf(SaiyanColors.Night.copy(alpha = 0.35f), SaiyanColors.Night.copy(alpha = 0.75f)),
+                    ),
+                ),
+        )
         Scaffold(
+            containerColor = Color.Transparent,
             // Each screen handles the status bar itself; the bottom bar handles the navigation bar.
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
             snackbarHost = { SnackbarHost(snackbars) },
             bottomBar = {
                 if (Tab.entries.any { it.route == currentRoute }) {
-                    NavigationBar {
-                        Tab.entries.forEach { tab ->
-                            NavigationBarItem(
+                    DbzNavBar(
+                        Tab.entries.map { tab ->
+                            NavItem(
+                                label = tab.label,
+                                icon = tab.icon,
                                 selected = currentRoute == tab.route,
                                 onClick = { navController.switchTab(tab.route) },
-                                icon = { Icon(painterResource(tab.icon), contentDescription = null) },
-                                label = { Text(tab.label) },
                             )
-                        }
-                    }
+                        },
+                    )
                 }
             },
             modifier = Modifier.graphicsLayer {

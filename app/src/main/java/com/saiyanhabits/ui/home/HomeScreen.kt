@@ -4,6 +4,21 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.BorderStroke
+import com.saiyanhabits.ui.components.TabLabel
+import com.saiyanhabits.ui.components.RibbonButton
+import com.saiyanhabits.ui.components.PanelStyle
+import com.saiyanhabits.ui.components.OutlinedText
+import com.saiyanhabits.ui.components.OrbWatermark
+import com.saiyanhabits.ui.components.MentorWatermark
+import com.saiyanhabits.ui.components.KanjiWatermark
+import com.saiyanhabits.ui.components.GoldRing
+import com.saiyanhabits.ui.components.GoldLettering
+import com.saiyanhabits.ui.components.DbzPanel
+import com.saiyanhabits.ui.components.Bean
+import com.saiyanhabits.ui.components.ArtWatermark
+import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -115,22 +130,6 @@ fun HomeScreen(
     var undoing by remember { mutableStateOf<TodayHabit?>(null) }
 
     Box(modifier.fillMaxSize()) {
-    ArtImage(
-        key = ArtKey.BACKGROUND_HOME,
-        contentDescription = null,
-        contentScale = ContentScale.Crop,
-        modifier = Modifier.fillMaxSize(),
-    )
-    // A scrim so the cards stay readable over any picture.
-    Box(
-        Modifier
-            .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    listOf(SaiyanColors.Night.copy(alpha = 0.45f), SaiyanColors.Night.copy(alpha = 0.8f)),
-                ),
-            ),
-    )
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -140,12 +139,17 @@ fun HomeScreen(
     ) {
         item(key = "date") {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                SectionLabel(state.date.format(HeaderDate), Modifier.weight(1f).padding(start = 4.dp))
+                OutlinedText(
+                    state.date.format(HeaderDate).uppercase(),
+                    MaterialTheme.typography.titleLarge,
+                    outlineWidth = 4.dp,
+                    modifier = Modifier.weight(1f).padding(start = 4.dp),
+                )
                 IconButton(onClick = onOpenStory) {
-                    Icon(painterResource(R.drawable.ic_story), contentDescription = "Story", tint = SaiyanColors.TextDim)
+                    Icon(painterResource(R.drawable.ic_story), contentDescription = "Story", tint = Color.White)
                 }
                 IconButton(onClick = onOpenSettings) {
-                    Icon(painterResource(R.drawable.ic_settings), contentDescription = "Settings", tint = SaiyanColors.TextDim)
+                    Icon(painterResource(R.drawable.ic_settings), contentDescription = "Settings", tint = Color.White)
                 }
             }
         }
@@ -160,7 +164,6 @@ fun HomeScreen(
                 gains = viewModel.gains,
                 formName = Forms.name(state.form),
                 aura = formAura(state.form),
-                numberColor = if (state.form == Forms.BASE) SaiyanColors.Orange else formAura(state.form),
                 avatarForm = state.form,
             )
         }
@@ -270,14 +273,14 @@ fun HomeScreen(
 }
 
 @Composable
-private fun StatCard(label: String, modifier: Modifier = Modifier, content: @Composable () -> Unit) {
-    Surface(
-        shape = RoundedCornerShape(18.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
-        modifier = modifier,
-    ) {
-        Column(Modifier.padding(horizontal = 14.dp, vertical = 12.dp)) {
+private fun StatCard(
+    label: String,
+    modifier: Modifier = Modifier,
+    watermark: (@Composable BoxScope.() -> Unit)? = null,
+    content: @Composable () -> Unit,
+) {
+    DbzPanel(modifier = modifier, watermark = watermark) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 12.dp)) {
             SectionLabel(label)
             Spacer(Modifier.height(6.dp))
             content()
@@ -287,19 +290,19 @@ private fun StatCard(label: String, modifier: Modifier = Modifier, content: @Com
 
 @Composable
 private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
-    StatCard("Streak", modifier) {
+    StatCard("Streak", modifier, watermark = { OrbWatermark() }) {
         Row(verticalAlignment = Alignment.Bottom) {
-            Text(
+            OutlinedText(
                 "${state.overallStreak}",
-                style = MaterialTheme.typography.headlineMedium,
-                color = if (state.overallStreak > 0) SaiyanColors.Orange else SaiyanColors.TextDim,
+                MaterialTheme.typography.displaySmall.copy(fontSize = 46.sp, lineHeight = 48.sp),
+                fill = if (state.overallStreak > 0) GoldLettering else Brush.verticalGradient(listOf(SaiyanColors.TextDim, SaiyanColors.TextDim)),
+                outlineWidth = 5.dp,
             )
-            Spacer(Modifier.width(6.dp))
+            Spacer(Modifier.width(8.dp))
             Text(
-                if (state.overallStreak == 1) "day" else "days",
-                style = MaterialTheme.typography.bodyMedium,
-                color = SaiyanColors.TextDim,
-                modifier = Modifier.padding(bottom = 5.dp),
+                if (state.overallStreak == 1) "DAY" else "DAYS",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(bottom = 6.dp),
             )
         }
         Spacer(Modifier.height(4.dp))
@@ -316,11 +319,11 @@ private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
             LinearProgressIndicator(
                 progress = { (state.overallStreak.toFloat() / nextAt).coerceIn(0f, 1f) },
                 color = formAura(state.form + 1),
-                trackColor = SaiyanColors.PanelRaised,
+                trackColor = Color(0xFF0A1A44),
                 drawStopIndicator = {},
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(4.dp)
+                    .height(6.dp)
                     .clip(CircleShape),
             )
         }
@@ -330,7 +333,7 @@ private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
 @Composable
 private fun BeansCard(state: HomeUiState, modifier: Modifier = Modifier) {
     val capacity = state.beanCapacity
-    StatCard("Healing beans", modifier) {
+    StatCard("Healing beans", modifier, watermark = { ArtWatermark(ArtKey.EMBLEM_CAPSULE) }) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
@@ -338,21 +341,7 @@ private fun BeansCard(state: HomeUiState, modifier: Modifier = Modifier) {
                 .height(36.dp)
                 .semantics { contentDescription = "${state.beans} of $capacity healing beans" },
         ) {
-            repeat(capacity) { index ->
-                val held = index < state.beans
-                Box(
-                    Modifier
-                        .size(width = 18.dp, height = 26.dp)
-                        .clip(RoundedCornerShape(50))
-                        .then(
-                            if (held) {
-                                Modifier.background(SaiyanColors.Bean)
-                            } else {
-                                Modifier.border(1.5.dp, SaiyanColors.Outline, RoundedCornerShape(50))
-                            },
-                        ),
-                )
-            }
+            repeat(capacity) { index -> Bean(held = index < state.beans) }
         }
         Spacer(Modifier.height(4.dp))
         Text(
@@ -391,25 +380,42 @@ private fun BeanOfferDialog(offer: BeanOffer, beans: Int, onAccept: () -> Unit, 
 
 @Composable
 private fun NewChapterCard(chapter: StoryChapter, onClick: () -> Unit) {
-    Surface(
-        onClick = onClick,
-        shape = RoundedCornerShape(18.dp),
-        color = MaterialTheme.colorScheme.primaryContainer,
-        border = BorderStroke(1.dp, SaiyanColors.Orange),
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
-            Column(Modifier.weight(1f)) {
-                Text("NEW STORY CHAPTER", style = MaterialTheme.typography.labelMedium, color = SaiyanColors.Orange)
-                Text(
-                    "Chapter ${chapter.number}: ${chapter.title}",
-                    style = MaterialTheme.typography.titleMedium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
+    // The cloud and the orb sit over the banner's corners, so they're drawn outside its frame.
+    Box(Modifier.fillMaxWidth().padding(top = 14.dp)) {
+        DbzPanel(onClick = onClick, style = PanelStyle.Orange, modifier = Modifier.fillMaxWidth()) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth().padding(start = 14.dp, end = 14.dp, top = 12.dp, bottom = 14.dp),
+            ) {
+                Column(Modifier.weight(1f)) {
+                    TabLabel("New story chapter", Modifier.padding(start = 34.dp))
+                    Spacer(Modifier.height(6.dp))
+                    OutlinedText(
+                        "Chapter ${chapter.number}: ${chapter.title}",
+                        MaterialTheme.typography.titleLarge,
+                        outlineWidth = 4.dp,
+                    )
+                }
+                Spacer(Modifier.width(8.dp))
+                RibbonButton("Read", onClick = onClick)
             }
-            Text("Read", style = MaterialTheme.typography.labelLarge, color = SaiyanColors.Orange)
         }
+        ArtImage(
+            key = ArtKey.CLOUD_ORNAMENT,
+            contentDescription = null,
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .offset(x = (-10).dp, y = (-16).dp)
+                .size(width = 64.dp, height = 40.dp),
+        )
+        ArtImage(
+            key = ArtKey.APP_ICON,
+            contentDescription = null,
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .offset(x = 8.dp, y = (-22).dp)
+                .size(54.dp),
+        )
     }
 }
 
@@ -418,7 +424,7 @@ private fun NewChapterCard(chapter: StoryChapter, onClick: () -> Unit) {
 private fun RivalCard(rival: RivalStanding) {
     val leading = rival.beaten || rival.lead >= 0
     val tint = if (!rival.hasRival) SaiyanColors.TextDim else if (leading) SaiyanColors.Bean else SaiyanColors.Danger
-    StatCard("Rival: last week's you", Modifier.fillMaxWidth()) {
+    StatCard("Rival: last week's you", Modifier.fillMaxWidth(), watermark = { KanjiWatermark("敵") }) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             RivalFigure(Modifier.size(52.dp))
             Spacer(Modifier.width(12.dp))
@@ -527,18 +533,14 @@ private fun MentorLineCard(line: MentorLine) {
 @Composable
 private fun MentorLineCardContent(line: MentorLine) {
     val mentor = line.mentor
-    Surface(
-        shape = RoundedCornerShape(18.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, mentor.color.copy(alpha = 0.5f)),
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(12.dp)) {
-            MentorPortrait(mentor, Modifier.size(48.dp))
+    DbzPanel(modifier = Modifier.fillMaxWidth(), watermark = { MentorWatermark(mentor) }) {
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth().padding(12.dp)) {
+            GoldRing { MentorPortrait(mentor, Modifier.size(64.dp)) }
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Text(mentor.displayName.uppercase(), style = MaterialTheme.typography.labelMedium, color = mentor.color)
-                Text(line.text, style = MaterialTheme.typography.bodyMedium)
+                TabLabel(mentor.displayName)
+                Spacer(Modifier.height(4.dp))
+                Text(line.text, style = MaterialTheme.typography.bodyLarge, color = Color.White)
             }
         }
     }
@@ -548,13 +550,14 @@ private fun MentorLineCardContent(line: MentorLine) {
 private fun TodayProgress(done: Int, total: Int, doublePoints: Boolean) {
     Column(Modifier.padding(top = 8.dp, start = 4.dp, end = 4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            SectionLabel("Today's training", Modifier.weight(1f))
+            Box(Modifier.weight(1f)) { SectionLabel("Today's training") }
             if (total > 0) {
                 val allDone = done == total
-                Text(
+                OutlinedText(
                     text = if (allDone) "ALL DONE" else "$done / $total",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = if (allDone) SaiyanColors.Orange else SaiyanColors.TextHigh,
+                    style = MaterialTheme.typography.titleLarge,
+                    fill = if (allDone) GoldLettering else Brush.verticalGradient(listOf(Color.White, Color.White)),
+                    outlineWidth = 4.dp,
                 )
             }
         }
@@ -597,11 +600,10 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
         }
         wasDone = done != null
     }
-    Surface(
+    DbzPanel(
         onClick = onClick,
-        shape = RoundedCornerShape(18.dp),
-        color = if (faded) SaiyanColors.Panel.copy(alpha = 0.6f) else SaiyanColors.Panel,
-        border = BorderStroke(1.dp, if (done != null) SaiyanColors.Orange.copy(alpha = 0.45f) else SaiyanColors.Outline),
+        style = if (entry.excused) PanelStyle.Dim else PanelStyle.Blue,
+        watermark = { MentorWatermark(mentor) },
         modifier = Modifier
             .fillMaxWidth()
             .graphicsLayer {
@@ -611,11 +613,11 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(start = 14.dp, end = 14.dp, top = 14.dp, bottom = 14.dp),
+            modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 14.dp, top = 14.dp, bottom = 14.dp),
         ) {
             Box(
                 Modifier
-                    .size(width = 6.dp, height = 40.dp)
+                    .size(width = 7.dp, height = 44.dp)
                     .clip(CircleShape)
                     .background(mentor.color.copy(alpha = if (faded) 0.45f else 1f)),
             )
@@ -623,8 +625,8 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
             Column(Modifier.weight(1f)) {
                 Text(
                     text = habit.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = if (faded) SaiyanColors.TextDim else SaiyanColors.TextHigh,
+                    style = MaterialTheme.typography.titleLarge,
+                    color = if (entry.excused) SaiyanColors.TextDim else Color.White,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )
@@ -639,8 +641,8 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
                             "${mentor.displayName} · +$base and up$streak"
                         }
                     },
-                    style = MaterialTheme.typography.bodySmall,
-                    color = if (done != null) SaiyanColors.Orange else SaiyanColors.TextDim,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = if (done != null) Color(0xFFFFB347) else SaiyanColors.TextDim,
                 )
             }
             if (!entry.excused || done != null) {
@@ -656,13 +658,17 @@ private fun CheckMark(checked: Boolean, description: String) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .size(40.dp)
+            .size(46.dp)
             .clip(CircleShape)
             .then(
                 if (checked) {
-                    Modifier.background(SaiyanColors.Orange)
+                    Modifier
+                        .background(Brush.verticalGradient(listOf(Color(0xFFFFB13B), SaiyanColors.OrangeDeep)))
+                        .border(2.5.dp, SaiyanColors.FrameGold, CircleShape)
                 } else {
-                    Modifier.border(2.dp, SaiyanColors.TextDim, CircleShape)
+                    Modifier
+                        .background(Color(0x33000000))
+                        .border(2.5.dp, SaiyanColors.FrameGold.copy(alpha = 0.8f), CircleShape)
                 },
             ),
     ) {
@@ -670,7 +676,8 @@ private fun CheckMark(checked: Boolean, description: String) {
             Icon(
                 painter = painterResource(R.drawable.ic_check),
                 contentDescription = description,
-                tint = MaterialTheme.colorScheme.onPrimary,
+                tint = SaiyanColors.TabInk,
+                modifier = Modifier.size(28.dp),
             )
         }
     }
@@ -700,29 +707,32 @@ private fun GravityChooser(habit: HabitEntity, perks: Perks, onChoose: (Gravity)
                 Gravity.X10 -> SaiyanColors.Orange
                 Gravity.X100 -> SaiyanColors.Danger
             }
-            Surface(
+            DbzPanel(
                 onClick = { onChoose(gravity) },
-                shape = RoundedCornerShape(16.dp),
-                color = SaiyanColors.PanelRaised,
-                border = BorderStroke(1.5.dp, accent.copy(alpha = 0.7f)),
+                style = when (gravity) {
+                    Gravity.NORMAL -> PanelStyle.Blue
+                    Gravity.X10 -> PanelStyle.Selected
+                    Gravity.X100 -> PanelStyle.Orange
+                },
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 14.dp),
                 ) {
                     Column(Modifier.weight(1f)) {
                         Text(gravity.label, style = MaterialTheme.typography.titleMedium)
                         Text(
                             gravity.hint,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = SaiyanColors.TextDim,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.White.copy(alpha = 0.85f),
                         )
                     }
-                    Text(
+                    OutlinedText(
                         "+${PowerCalculator.completionPoints(habit.difficulty, gravity, habit.mentor, perks)}",
-                        style = MaterialTheme.typography.headlineSmall,
-                        color = accent,
+                        MaterialTheme.typography.headlineMedium,
+                        fill = GoldLettering,
+                        outlineWidth = 4.dp,
                     )
                 }
             }

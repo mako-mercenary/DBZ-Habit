@@ -59,6 +59,9 @@ KEYS = [
     ("player_form_2", "You as Super Saiyan 2 (form 2).", 512, 512, "circle"),
     ("player_form_3", "You as Super Saiyan 3 (form 3).", 512, 512, "circle"),
     ("background_home", "Behind the home screen. A dark scrim is drawn over it so the cards stay readable.", 1080, 2340, "full"),
+    ("scouter_device", "The scouter's earpiece, on the right end of the power level readout. Upright, on a transparent background.", 280, 560, "free"),
+    ("cloud_ornament", "A flying cloud, used as a decoration on the new story chapter banner and the corners of the bottom bar. Transparent background; drawn mirrored on the right.", 600, 360, "free"),
+    ("emblem_capsule", "A faint emblem in the corner of the healing beans card and of Bulma's cards. Transparent background; shown at low opacity.", 512, 512, "free"),
     ("app_icon", "The launcher icon's foreground. Android shows the middle 288 x 288 and crops the edges. Swapped by file and rebuild only.", 432, 432, "icon"),
 ]
 
@@ -310,6 +313,47 @@ def app_icon(size=432):
     return img
 
 
+def scouter_device(w=280, h=560):
+    img = canvas(w, h)
+    W, H = img.size
+    d = ImageDraw.Draw(img)
+    # A white earpiece housing with a dark band and a red lens light.
+    d.rounded_rectangle([W * 0.2, H * 0.06, W * 0.95, H * 0.94], radius=W * 0.3, fill=rgba((236, 240, 246)), outline=rgba((40, 44, 56)), width=int(W * 0.04))
+    d.rounded_rectangle([W * 0.05, H * 0.3, W * 0.32, H * 0.7], radius=W * 0.1, fill=rgba((40, 44, 56)))
+    d.rounded_rectangle([W * 0.5, H * 0.38, W * 0.8, H * 0.62], radius=W * 0.06, fill=rgba((214, 38, 38)), outline=rgba((40, 44, 56)), width=int(W * 0.03))
+    d.ellipse([W * 0.56, H * 0.41, W * 0.66, H * 0.47], fill=rgba((255, 160, 160)))
+    return img
+
+
+def cloud_ornament(w=600, h=360):
+    img = canvas(w, h)
+    W, H = img.size
+    d = ImageDraw.Draw(img)
+    gold, edge = (255, 214, 64), (170, 110, 0)
+    puffs = [(0.2, 0.62, 0.17), (0.38, 0.45, 0.22), (0.6, 0.48, 0.2), (0.78, 0.6, 0.15), (0.5, 0.68, 0.18), (0.3, 0.72, 0.13)]
+    for cx, cy, r in puffs:
+        R = r * W
+        d.ellipse([cx * W - R - 6 * SS, cy * H - R - 6 * SS, cx * W + R + 6 * SS, cy * H + R + 6 * SS], fill=rgba(edge))
+    for cx, cy, r in puffs:
+        R = r * W
+        d.ellipse([cx * W - R, cy * H - R, cx * W + R, cy * H + R], fill=rgba(gold))
+    for cx, cy, r in puffs[:4]:
+        R = r * W * 0.45
+        d.arc([cx * W - R, cy * H - R, cx * W + R, cy * H + R], start=200, end=340, fill=rgba(edge), width=int(5 * SS))
+    return img
+
+
+def emblem_capsule(size=512):
+    img = canvas(size, size)
+    S = size * SS
+    d = ImageDraw.Draw(img)
+    # An original emblem: a ring around a capsule pill.
+    d.ellipse([S * 0.08, S * 0.08, S * 0.92, S * 0.92], outline=rgba((255, 255, 255)), width=int(S * 0.06))
+    d.rounded_rectangle([S * 0.28, S * 0.4, S * 0.72, S * 0.6], radius=S * 0.1, outline=rgba((255, 255, 255)), width=int(S * 0.05))
+    d.line([S * 0.5, S * 0.4, S * 0.5, S * 0.6], fill=rgba((255, 255, 255)), width=int(S * 0.04))
+    return img
+
+
 def main():
     os.makedirs(ART, exist_ok=True)
     print("Placeholders:")
@@ -330,6 +374,9 @@ def main():
     finish(silhouette((255, 241, 168), long_hair, aura=(255, 255, 255)), os.path.join(ART, "player_form_3.png"))
     finish(background(), os.path.join(ART, "background_home.png"), supersampled=False)
     finish(app_icon(), os.path.join(ART, "app_icon.png"))
+    finish(scouter_device(), os.path.join(ART, "scouter_device.png"))
+    finish(cloud_ornament(), os.path.join(ART, "cloud_ornament.png"))
+    finish(emblem_capsule(), os.path.join(ART, "emblem_capsule.png"))
 
     with open(os.path.join(ART, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)

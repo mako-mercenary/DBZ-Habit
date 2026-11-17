@@ -6,6 +6,12 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import com.saiyanhabits.R
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import com.saiyanhabits.domain.Boss
 import com.saiyanhabits.domain.Mentor
@@ -20,10 +26,28 @@ object SaiyanColors {
     val PanelRaised = Color(0xFF1B2236)
     val Outline = Color(0xFF2B3552)
     val TextHigh = Color(0xFFF2F5FF)
-    val TextDim = Color(0xFF9AA6C4)
+    val TextDim = Color(0xFFB4C1E4)
     val Danger = Color(0xFFFF5A5F)
     val Bean = Color(0xFF7BD66B)
     val Gold = Color(0xFFFFD23F)
+
+    // The gold-framed panels and banners.
+    val FrameDark = Color(0xFF3A2200)
+    val FrameGoldLight = Color(0xFFFFF0A0)
+    val FrameGold = Color(0xFFF5B800)
+    val FrameGoldDark = Color(0xFFB06A00)
+    val PanelBlueTop = Color(0xFF1D4BA6)
+    val PanelBlueBottom = Color(0xFF0B1F5C)
+    val BannerOrangeTop = Color(0xFFFF9D1E)
+    val BannerOrangeBottom = Color(0xFFE0500A)
+    val ScouterGreenTop = Color(0xFF1C9A2E)
+    val ScouterGreenBottom = Color(0xFF07501A)
+    val ScouterLine = Color(0xFF8CFF6A)
+    val TabGoldTop = Color(0xFFFFE54D)
+    val TabGoldBottom = Color(0xFFF2B000)
+    val TabInk = Color(0xFF1C1200)
+    val RibbonRedTop = Color(0xFFFF4A3A)
+    val RibbonRedBottom = Color(0xFFB8120E)
 }
 
 /** Aura colour of each form (0 = base form). */
@@ -95,20 +119,39 @@ private val ColorScheme = darkColorScheme(
 
 private val Base = Typography()
 
-/** Chunky type: the default family, pushed to heavy weights for anything that is a title or label. */
+/** The display face: Bangers, a chunky comic-style italic (SIL Open Font License; see CREDITS.md). */
+val DisplayFont = FontFamily(Font(R.font.bangers))
+
+/** A hard drop shadow under display text, for the punchy look. */
+private val Punch = Shadow(color = Color(0xCC000000), offset = Offset(0f, 3f), blurRadius = 0f)
+
+private fun display(base: TextStyle, size: Int, spacing: Float = 0.6f) = base.copy(
+    fontFamily = DisplayFont,
+    fontWeight = FontWeight.Normal,
+    fontSize = size.sp,
+    lineHeight = (size * 1.15f).sp,
+    letterSpacing = spacing.sp,
+    shadow = Punch,
+)
+
+/**
+ * Titles, headings and labels in the display face; body text stays in the
+ * phone's own font so longer lines read easily.
+ */
 private val ChunkyTypography = Typography(
-    displayLarge = Base.displayLarge.copy(fontWeight = FontWeight.Black),
-    displayMedium = Base.displayMedium.copy(fontWeight = FontWeight.Black),
-    displaySmall = Base.displaySmall.copy(fontWeight = FontWeight.Black),
-    headlineLarge = Base.headlineLarge.copy(fontWeight = FontWeight.Black),
-    headlineMedium = Base.headlineMedium.copy(fontWeight = FontWeight.Black),
-    headlineSmall = Base.headlineSmall.copy(fontWeight = FontWeight.Black),
-    titleLarge = Base.titleLarge.copy(fontWeight = FontWeight.ExtraBold),
-    titleMedium = Base.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
-    titleSmall = Base.titleSmall.copy(fontWeight = FontWeight.Bold),
-    labelLarge = Base.labelLarge.copy(fontWeight = FontWeight.ExtraBold, letterSpacing = 0.6.sp),
-    labelMedium = Base.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.8.sp),
-    labelSmall = Base.labelSmall.copy(fontWeight = FontWeight.Bold, letterSpacing = 1.sp),
+    displayLarge = display(Base.displayLarge, 60),
+    displayMedium = display(Base.displayMedium, 48),
+    displaySmall = display(Base.displaySmall, 38),
+    headlineLarge = display(Base.headlineLarge, 34),
+    headlineMedium = display(Base.headlineMedium, 30),
+    headlineSmall = display(Base.headlineSmall, 26),
+    titleLarge = display(Base.titleLarge, 24),
+    titleMedium = display(Base.titleMedium, 20),
+    titleSmall = display(Base.titleSmall, 17),
+    labelLarge = display(Base.labelLarge, 17, 1f),
+    labelMedium = display(Base.labelMedium, 15, 1.2f),
+    labelSmall = display(Base.labelSmall, 13, 1.2f),
+    bodyLarge = Base.bodyLarge.copy(fontWeight = FontWeight.Medium),
 )
 
 @Composable

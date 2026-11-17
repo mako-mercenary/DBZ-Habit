@@ -31,6 +31,9 @@ enum class ArtKey(val key: String, val label: String, val width: Int, val height
     PLAYER_FORM_3("player_form_3", "You, Super Saiyan 3", 512, 512, ArtShape.CIRCLE),
     BACKGROUND_HOME("background_home", "Home background", 1080, 2340, ArtShape.FULL),
     APP_ICON("app_icon", "Launcher icon", 432, 432, ArtShape.ICON),
+    SCOUTER_DEVICE("scouter_device", "Scouter earpiece", 280, 560, ArtShape.FREE),
+    CLOUD_ORNAMENT("cloud_ornament", "Cloud ornament", 600, 360, ArtShape.FREE),
+    EMBLEM_CAPSULE("emblem_capsule", "Capsule emblem", 512, 512, ArtShape.FREE),
     ;
 
     /** True for images the app loads while running; the launcher icon is baked in at build time. */

@@ -13,6 +13,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
@@ -33,19 +34,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.saiyanhabits.ui.theme.SaiyanColors
 
-/** Small all-caps heading above a group of content. */
+/** The slanted gold tab that heads a card or a group of content. */
 @Composable
 fun SectionLabel(text: String, modifier: Modifier = Modifier) {
-    Text(
-        text = text.uppercase(),
-        style = MaterialTheme.typography.labelMedium,
-        color = SaiyanColors.TextDim,
-        modifier = modifier,
-    )
+    TabLabel(text, modifier)
+}
+
+/** A screen's big title, in outlined display lettering. */
+@Composable
+fun ScreenTitle(text: String, modifier: Modifier = Modifier) {
+    OutlinedText(text.uppercase(), MaterialTheme.typography.headlineMedium, modifier = modifier, outlineWidth = 5.dp)
 }
 
 /** Panel shown where a list would be, with one thing to do next. */
@@ -57,15 +60,12 @@ fun EmptyPanel(
     actionLabel: String? = null,
     onAction: () -> Unit = {},
 ) {
-    Surface(
-        shape = RoundedCornerShape(20.dp),
-        color = SaiyanColors.Panel,
-        border = BorderStroke(1.dp, SaiyanColors.Outline),
-        modifier = modifier.fillMaxWidth(),
-    ) {
+    DbzPanel(modifier = modifier.fillMaxWidth(), watermark = { OrbWatermark() }) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(horizontal = 24.dp, vertical = 28.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp, vertical = 28.dp),
         ) {
             Text(title, style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center)
             Spacer(Modifier.height(8.dp))
@@ -77,7 +77,7 @@ fun EmptyPanel(
             )
             if (actionLabel != null) {
                 Spacer(Modifier.height(20.dp))
-                Button(onClick = onAction) { Text(actionLabel) }
+                DbzButton(actionLabel, onClick = onAction)
             }
         }
     }
@@ -98,9 +98,12 @@ fun SubScreen(
 ) {
     Scaffold(
         modifier = Modifier.imePadding(),
+        // Transparent, so the app's background shows through.
+        containerColor = Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text(title, maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
+                title = { OutlinedText(title.uppercase(), MaterialTheme.typography.titleLarge, outlineWidth = 4.dp) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(painterResource(R.drawable.ic_back), contentDescription = "Back")
@@ -125,17 +128,15 @@ fun SubScreen(
 /** The one main action of a screen, pinned above the navigation bar. */
 @Composable
 fun BottomActionButton(text: String, onClick: () -> Unit, enabled: Boolean = true) {
-    Button(
+    DbzButton(
+        text = text,
         onClick = onClick,
         enabled = enabled,
         modifier = Modifier
             .fillMaxWidth()
             .navigationBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 12.dp)
-            .height(52.dp),
-    ) {
-        Text(text)
-    }
+            .padding(horizontal = 16.dp, vertical = 10.dp),
+    )
 }
 
 /** One option in a row of mutually exclusive choices. */
@@ -147,14 +148,10 @@ fun ChoiceTile(
     caption: String,
     modifier: Modifier = Modifier,
 ) {
-    Surface(
+    DbzPanel(
         onClick = onClick,
-        shape = RoundedCornerShape(14.dp),
-        color = if (selected) MaterialTheme.colorScheme.primaryContainer else SaiyanColors.Panel,
-        border = BorderStroke(
-            width = if (selected) 2.dp else 1.dp,
-            color = if (selected) SaiyanColors.Orange else SaiyanColors.Outline,
-        ),
+        style = if (selected) PanelStyle.Selected else PanelStyle.Blue,
+        corner = 14.dp,
         modifier = modifier.semantics {
             role = Role.RadioButton
             this.selected = selected
@@ -162,13 +159,15 @@ fun ChoiceTile(
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 12.dp, horizontal = 4.dp),
         ) {
-            Text(title, style = MaterialTheme.typography.titleMedium)
+            Text(title, style = MaterialTheme.typography.titleMedium, color = if (selected) SaiyanColors.Gold else SaiyanColors.TextHigh)
             Text(
                 caption,
                 style = MaterialTheme.typography.bodySmall,
-                color = if (selected) SaiyanColors.Orange else SaiyanColors.TextDim,
+                color = if (selected) Color(0xFFFFD27A) else SaiyanColors.TextDim,
             )
         }
     }
