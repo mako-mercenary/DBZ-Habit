@@ -7,9 +7,9 @@ bosses, a gradient for the background. Run from the repository root:
 
     python3 tools/placeholder_art.py
 
-It overwrites every placeholder PNG in app/src/main/assets/art/. Your own
-images with the same names are placeholders no more, so copy them aside
-first if you ever rerun it.
+It only creates images that are missing, so your own art is never touched.
+Pass --force to overwrite every image with a fresh placeholder. The manifest
+and ART_LIST.md are always rewritten.
 """
 import json
 import math
@@ -53,7 +53,7 @@ KEYS = [
     *[(f"mentor_{m}_portrait", f"{m.capitalize()}'s portrait: the home-screen line, the Bonds tab, scenes and the story, assists in boss fights.", 512, 512, "circle") for m in MENTORS],
     *[(f"boss_{b}", f"{b.capitalize() if b != 'buu' else 'Majin Buu'} in the boss picker, on saga cards, in the fight and on the victory screen.", 1024, 1024, "free") for b in BOSSES],
     ("rival_figure", "The rival (last week's you) on the home screen.", 512, 512, "circle"),
-    ("dragon", "The dragon rising when it is summoned with seven wish orbs.", 1024, 1536, "free"),
+    ("dragon", "The whole summoning scene: the dragon rising above a ring of the seven orbs, on a transparent background. Shown full-width at the top of the screen; put the ring about 85% of the way down, where the app adds a golden glow.", 1024, 1536, "free"),
     ("player_portrait", "You, in base form: inside the scouter on the home screen, and your lines in scenes and the story.", 512, 512, "circle"),
     ("player_form_1", "You as Super Saiyan (form 1), inside the scouter once the form is unlocked.", 512, 512, "circle"),
     ("player_form_2", "You as Super Saiyan 2 (form 2).", 512, 512, "circle"),
@@ -67,7 +67,13 @@ def canvas(w, h, bg=(0, 0, 0, 0)):
     return Image.new("RGBA", (w * SS, h * SS), bg)
 
 
+FORCE = "--force" in sys.argv
+
+
 def finish(img, path, supersampled=True):
+    if os.path.exists(path) and not FORCE:
+        print(f"  {os.path.relpath(path, ROOT)}  kept (already there)")
+        return
     if supersampled:
         w, h = img.size
         img = img.resize((w // SS, h // SS), Image.LANCZOS)
@@ -237,12 +243,18 @@ def dragon(w=1024, h=1536):
     for i in range(steps + 1):
         f = i / steps
         x = W / 2 + math.sin(f * 3.2 * math.pi) * W * 0.3 * (1 - 0.45 * f)
-        y = H * 0.93 - f * (H * 0.93 - H * 0.12)
+        y = H * 0.85 - f * (H * 0.85 - H * 0.1)
         pts.append((x, y))
     thick = int(W * 0.085)
     d.line(pts, fill=rgba(green), width=thick, joint="curve")
     d.line(pts, fill=rgba(belly, 210), width=int(thick * 0.28), joint="curve")
     head = pts[-1]
+    ring_c = (W / 2, H * 0.85)
+    for i in range(7):
+        a = -math.pi / 2 + i * 2 * math.pi / 7
+        cx, cy = ring_c[0] + math.cos(a) * W * 0.3, ring_c[1] + math.sin(a) * W * 0.12
+        orb = W * 0.06
+        d.ellipse([cx - orb, cy - orb, cx + orb, cy + orb], fill=rgba(ORANGE), outline=rgba(ORANGE_DEEP), width=int(orb * 0.12))
     hr = thick * 0.85
     for side in (-1, 1):
         d.line([(head[0] + side * hr * 0.5, head[1] - hr * 0.5), (head[0] + side * hr * 1.3, head[1] - hr * 1.9)], fill=rgba(belly), width=int(thick * 0.16))

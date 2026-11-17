@@ -23,7 +23,7 @@ centred. "Free" images are shown whole on a transparent background.
 | `boss_buu` | `boss_buu.png` | Majin Buu in the boss picker, on saga cards, in the fight and on the victory screen. | 1024 × 1024 | free |
 | `boss_broly` | `boss_broly.png` | Broly in the boss picker, on saga cards, in the fight and on the victory screen. | 1024 × 1024 | free |
 | `rival_figure` | `rival_figure.png` | The rival (last week's you) on the home screen. | 512 × 512 | circle |
-| `dragon` | `dragon.png` | The dragon rising when it is summoned with seven wish orbs. | 1024 × 1536 | free |
+| `dragon` | `dragon.png` | The whole summoning scene: the dragon rising above a ring of the seven orbs, on a transparent background. Shown full-width at the top of the screen; put the ring about 85% of the way down, where the app adds a golden glow. | 1024 × 1536 | free |
 | `player_portrait` | `player_portrait.png` | You, in base form: inside the scouter on the home screen, and your lines in scenes and the story. | 512 × 512 | circle |
 | `player_form_1` | `player_form_1.png` | You as Super Saiyan (form 1), inside the scouter once the form is unlocked. | 512 × 512 | circle |
 | `player_form_2` | `player_form_2.png` | You as Super Saiyan 2 (form 2). | 512 × 512 | circle |

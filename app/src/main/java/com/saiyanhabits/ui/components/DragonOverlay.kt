@@ -13,7 +13,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -37,8 +40,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.drawscope.scale
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -49,10 +54,7 @@ import com.saiyanhabits.data.WishEntity
 import com.saiyanhabits.ui.theme.SaiyanColors
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlin.math.PI
 import kotlin.math.abs
-import kotlin.math.cos
-import kotlin.math.sin
 
 private val DragonGreen = Color(0xFF3FBF6A)
 
@@ -90,32 +92,39 @@ fun DragonOverlay(
     }
     BackHandler(onBack = onDismiss)
 
+    // The image is the whole scene: the dragon rising above its ring of orbs.
+    // The golden glow is drawn under where that ring sits.
+    val statusTop = WindowInsets.statusBars.getTop(LocalDensity.current).toFloat()
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .drawBehind { drawSummoning(rise.value) }
+            .drawBehind {
+                val imageHeight = size.width * ArtKey.DRAGON.height / ArtKey.DRAGON.width
+                drawSummoning(rise.value, ring = Offset(size.width / 2f, statusTop + imageHeight * ORB_RING_DOWN))
+            }
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
                 onClickLabel = "Skip",
             ) { scope.launch { rise.snapTo(1f) } },
     ) {
-        // The dragon rises out of the ring of orbs, which sits at mid-screen.
         ArtImage(
             key = ArtKey.DRAGON,
             contentDescription = "The dragon",
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .padding(top = 24.dp)
-                .fillMaxWidth(0.8f)
+                .statusBarsPadding()
+                .fillMaxWidth()
                 .aspectRatio(ArtKey.DRAGON.width.toFloat() / ArtKey.DRAGON.height)
                 .graphicsLayer {
-                    val grown = ((rise.value - 0.3f) / 0.6f).coerceIn(0f, 1f)
+                    // Fades in after the second flash, rising a little and swelling to full size.
+                    val grown = ((rise.value - 0.3f) / 0.55f).coerceIn(0f, 1f)
                     alpha = grown
-                    translationY = size.height * 0.35f * (1f - grown)
-                    val scale = 0.7f + 0.3f * grown
+                    translationY = size.height * 0.06f * (1f - grown)
+                    val scale = 0.9f + 0.1f * grown
                     scaleX = scale
                     scaleY = scale
+                    transformOrigin = TransformOrigin(0.5f, ORB_RING_DOWN)
                 },
         )
         Surface(
@@ -205,8 +214,11 @@ fun DragonOverlay(
     }
 }
 
-/** Placeholder dragon art, drawn in code: dark sky, lit orbs, a green serpent rising from them. */
-private fun DrawScope.drawSummoning(t: Float) {
+/**
+ * Behind the dragon image: the sky turning dark, two lightning flashes, and
+ * golden light swelling up from where the image's ring of orbs sits.
+ */
+private fun DrawScope.drawSummoning(t: Float, ring: Offset) {
     val sky = (t / 0.15f).coerceIn(0f, 1f)
     drawRect(Color(0xFF02040A).copy(alpha = 0.97f * sky))
 
@@ -214,51 +226,34 @@ private fun DrawScope.drawSummoning(t: Float) {
     val flash = maxOf(1f - abs(t - 0.2f) / 0.04f, 1f - abs(t - 0.33f) / 0.03f).coerceIn(0f, 1f)
     if (flash > 0f) drawRect(Color.White.copy(alpha = 0.55f * flash))
 
-    val ring = Offset(size.width / 2f, size.height * 0.5f)
-    val ringRadius = size.width * 0.17f
-    val orbRadius = size.width * 0.045f
-
-    // Light pouring up out of the orbs: a tall soft glow, cut off below the ring.
-    val beam = ((t - 0.15f) / 0.25f).coerceIn(0f, 1f)
-    if (beam > 0f) {
-        val halfWidth = ringRadius * 1.5f
+    // Light from the orbs: a wide glow on the ground and a tall soft column above it.
+    val light = ((t - 0.1f) / 0.3f).coerceIn(0f, 1f)
+    if (light > 0f) {
+        val radius = size.width * 0.45f
+        drawCircle(
+            brush = Brush.radialGradient(
+                listOf(SaiyanColors.Gold.copy(alpha = 0.45f * light), Color.Transparent),
+                center = ring,
+                radius = radius,
+            ),
+            radius = radius,
+            center = ring,
+        )
         clipRect(top = 0f, bottom = ring.y) {
-            scale(scaleX = 1f, scaleY = 2.8f, pivot = ring) {
+            scale(scaleX = 0.6f, scaleY = 3f, pivot = ring) {
                 drawCircle(
                     brush = Brush.radialGradient(
-                        listOf(SaiyanColors.Gold.copy(alpha = 0.45f * beam), Color.Transparent),
+                        listOf(SaiyanColors.Gold.copy(alpha = 0.3f * light), Color.Transparent),
                         center = ring,
-                        radius = halfWidth,
+                        radius = radius,
                     ),
-                    radius = halfWidth,
+                    radius = radius,
                     center = ring,
                 )
             }
         }
     }
-
-    // The seven orbs, in a ring, glowing brighter as the sky darkens.
-    val count = GameConfig.WISH_ORBS_NEEDED
-    for (i in 0 until count) {
-        val angle = -PI.toFloat() / 2f + i * 2f * PI.toFloat() / count
-        val at = ring + Offset(cos(angle), sin(angle)) * ringRadius
-        drawCircle(
-            Brush.radialGradient(
-                listOf(SaiyanColors.Gold.copy(alpha = 0.55f * sky), Color.Transparent),
-                center = at,
-                radius = orbRadius * 2.6f,
-            ),
-            radius = orbRadius * 2.6f,
-            center = at,
-        )
-        drawCircle(
-            Brush.radialGradient(
-                listOf(Color(0xFFFFE9A8), SaiyanColors.Orange, SaiyanColors.OrangeDeep),
-                center = at - Offset(orbRadius * 0.3f, orbRadius * 0.3f),
-                radius = orbRadius * 1.4f,
-            ),
-            radius = orbRadius,
-            center = at,
-        )
-    }
 }
+
+/** How far down the dragon image its ring of orbs sits, as a fraction of the image's height. */
+private const val ORB_RING_DOWN = 0.85f
