@@ -17,7 +17,7 @@ class DialogueTest {
     fun `reads objects, arrays, text, numbers, booleans and null`() {
         val parsed = MiniJson.parse("""{"a": [1, 2.5, -3], "b": "hi", "c": true, "d": false, "e": null, "f": {}}""")
         assertEquals(
-            mapOf("a" to listOf(1.0, 2.5, -3.0), "b" to "hi", "c" to true, "d" to false, "e" to null, "f" to emptyMap<String, Any?>()),
+            mapOf("a" to listOf(1L, 2.5, -3L), "b" to "hi", "c" to true, "d" to false, "e" to null, "f" to emptyMap<String, Any?>()),
             parsed,
         )
     }

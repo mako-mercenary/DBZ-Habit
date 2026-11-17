@@ -76,6 +76,11 @@ fun SettingsScreen(
     onAddWish: (String) -> Unit,
     onRemoveWish: (Long) -> Unit,
     onOpenArt: () -> Unit,
+    data: DataUiState,
+    onExport: (android.net.Uri) -> Unit,
+    onImport: (android.net.Uri) -> Unit,
+    onConfirmImport: () -> Unit,
+    onCancelImport: () -> Unit,
     onBack: () -> Unit,
 ) {
     val waiting = wishes.filter { it.grantedAtEpochDay == null }
@@ -139,6 +144,9 @@ fun SettingsScreen(
             color = SaiyanColors.TextDim,
         )
         OutlinedButton(onClick = onOpenArt, modifier = Modifier.fillMaxWidth()) { Text("Choose images") }
+
+        Spacer(Modifier.height(12.dp))
+        DataSection(data, onExport, onImport, onConfirmImport, onCancelImport)
 
         Spacer(Modifier.height(12.dp))
         NotificationSettings()

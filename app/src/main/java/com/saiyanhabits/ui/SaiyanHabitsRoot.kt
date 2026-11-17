@@ -72,6 +72,7 @@ import com.saiyanhabits.ui.quests.SagaEditScreen
 import com.saiyanhabits.ui.quests.SagasScreen
 import com.saiyanhabits.ui.settings.ArtScreen
 import com.saiyanhabits.ui.settings.ArtViewModel
+import com.saiyanhabits.ui.settings.DataViewModel
 import com.saiyanhabits.ui.settings.SettingsScreen
 import com.saiyanhabits.ui.settings.WishesViewModel
 import com.saiyanhabits.ui.story.ChapterScreen
@@ -149,6 +150,7 @@ fun SaiyanHabitsRoot() {
     val wishes by wishesViewModel.wishes.collectAsStateWithLifecycle()
     val waitingWishes = wishes.filter { it.grantedAtEpochDay == null }
     val artViewModel: ArtViewModel = viewModel(factory = factory)
+    val dataViewModel: DataViewModel = viewModel(factory = factory)
     // The player's form picks which of their portraits scenes and chapters show.
     val player by app.habitRepository.playerState.collectAsStateWithLifecycle(initialValue = PlayerStateEntity())
 
@@ -281,11 +283,17 @@ fun SaiyanHabitsRoot() {
                     }
                 }
                 composable(Routes.SETTINGS) {
+                    val dataState by dataViewModel.state.collectAsStateWithLifecycle()
                     SettingsScreen(
                         wishes = wishes,
                         onAddWish = wishesViewModel::add,
                         onRemoveWish = wishesViewModel::remove,
                         onOpenArt = { navController.navigate(Routes.ART) },
+                        data = dataState,
+                        onExport = dataViewModel::export,
+                        onImport = dataViewModel::check,
+                        onConfirmImport = dataViewModel::confirmImport,
+                        onCancelImport = dataViewModel::cancelImport,
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
                     )
                 }

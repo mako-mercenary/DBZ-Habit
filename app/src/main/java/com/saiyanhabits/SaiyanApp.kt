@@ -4,6 +4,7 @@ import android.app.Application
 import com.saiyanhabits.art.ArtRepository
 import com.saiyanhabits.chamber.TimeChamber
 import com.saiyanhabits.data.AppDatabase
+import com.saiyanhabits.data.BackupRepository
 import com.saiyanhabits.data.BondRepository
 import com.saiyanhabits.data.DialogueRepository
 import com.saiyanhabits.data.HabitRepository
@@ -33,6 +34,8 @@ class SaiyanApp : Application() {
     val wishRepository: WishRepository by lazy { WishRepository(database) }
 
     val art: ArtRepository by lazy { ArtRepository(this) }
+
+    val backupRepository: BackupRepository by lazy { BackupRepository(this, database) }
 
     val reminders: ReminderScheduler by lazy { ReminderScheduler(this) }
 

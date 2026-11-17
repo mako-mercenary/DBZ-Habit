@@ -5,7 +5,7 @@ package com.saiyanhabits.domain
  * parsing code runs in the app and in plain unit tests, without an extra library.
  *
  * Objects become Map<String, Any?>, arrays List<Any?>, strings String,
- * numbers Double, plus Boolean and null.
+ * whole numbers Long and other numbers Double, plus Boolean and null.
  */
 object MiniJson {
 
@@ -126,10 +126,12 @@ object MiniJson {
             }
         }
 
-        private fun readNumber(): Double {
+        private fun readNumber(): Number {
             val start = pos
             while (pos < text.length && (text[pos].isDigit() || text[pos] in "+-.eE")) pos++
-            return text.substring(start, pos).toDoubleOrNull() ?: fail("Bad number")
+            val literal = text.substring(start, pos)
+            // Whole numbers stay exact (timestamps in milliseconds need all their digits).
+            return literal.toLongOrNull() ?: literal.toDoubleOrNull() ?: fail("Bad number")
         }
 
         private fun readWord(word: String, value: Any?): Any? {
