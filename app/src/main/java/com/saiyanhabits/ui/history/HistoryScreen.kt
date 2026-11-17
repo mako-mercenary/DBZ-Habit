@@ -18,7 +18,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -193,7 +198,13 @@ private fun CalendarPanel(
 private fun DayPanel(detail: com.saiyanhabits.data.DayDetail) {
     val date = LocalDate.ofEpochDay(detail.epochDay)
     val isToday = date == LocalDate.now()
-    DbzPanel(Modifier.fillMaxWidth(), style = PanelStyle.Selected) {
+    // The panel opens below the calendar, so scroll it into view when a day is picked.
+    val requester = remember { BringIntoViewRequester() }
+    LaunchedEffect(detail.epochDay) {
+        withFrameNanos { }
+        requester.bringIntoView()
+    }
+    DbzPanel(Modifier.fillMaxWidth().bringIntoViewRequester(requester), style = PanelStyle.Selected) {
         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             TabLabel(if (isToday) "Today" else date.format(DayTitle))
             val record = detail.record
@@ -206,7 +217,10 @@ private fun DayPanel(detail: com.saiyanhabits.data.DayDetail) {
                 style = MaterialTheme.typography.titleMedium,
             )
             if (record != null && record.scheduled > 0) {
-                Text("${record.completed} of ${record.scheduled} scheduled habits done", color = SaiyanColors.TextDim)
+                Text(
+                    "${record.completed} of ${record.scheduled} scheduled " + (if (record.scheduled == 1) "habit" else "habits") + " done",
+                    color = SaiyanColors.TextDim,
+                )
             }
             Text(
                 if (detail.points > 0) "+${"%,d".format(detail.points)} power" else "No power earned",
