@@ -20,6 +20,20 @@ interface PowerDao {
     )
     fun observeTotalPoints(): Flow<Long>
 
+    /** Power earned per day between two days (inclusive). Days with none are left out. */
+    @Query(
+        """
+        SELECT epochDay AS epochDay, SUM(points) AS points FROM (
+            SELECT epochDay, points FROM completions
+            UNION ALL
+            SELECT epochDay, points FROM power_events
+        )
+        WHERE epochDay BETWEEN :fromDay AND :toDay
+        GROUP BY epochDay
+        """,
+    )
+    fun observeDailyPoints(fromDay: Long, toDay: Long): Flow<List<DayPoints>>
+
     @Insert
     suspend fun insert(event: PowerEventEntity): Long
 

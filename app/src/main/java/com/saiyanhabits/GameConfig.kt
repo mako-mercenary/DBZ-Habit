@@ -139,7 +139,27 @@ object GameConfig {
     /** Vegeta level 9: what every assist's bonus damage is multiplied by. */
     const val TECHNIQUE_ASSIST_DAMAGE_MULTIPLIER = 2
 
+    // ---- Story ----
+
+    /**
+     * Power level at which each story chapter unlocks: chapter 1, chapter 2,
+     * and so on. One more chapter follows the last entry: the finale, which
+     * unlocks by form instead.
+     */
+    val STORY_CHAPTER_POWER_LEVELS = listOf(5, 100, 300, 700, 1500, 3000, 6000)
+
+    /** Form that unlocks the final chapter. */
+    const val STORY_FINAL_CHAPTER_FORM = 3
+
+    // ---- Wish orbs ----
+
+    /** Orbs needed to summon the dragon. One is earned per perfect week, and no more are held than this. */
+    const val WISH_ORBS_NEEDED = 7
+
     // ---- Animation timing (milliseconds) ----
+
+    /** The dragon rising when it is summoned. */
+    const val DRAGON_SUMMON_MILLIS = 2000
 
     /** Boss flinch and damage number when a milestone lands. */
     const val BOSS_HIT_MILLIS = 900

@@ -53,17 +53,49 @@ object DialogueParser {
 
         return MentorDialogue(mentor, reactions, scenes)
     }
-
-    @Suppress("UNCHECKED_CAST")
-    private fun Any?.asObject(what: String): Map<String, Any?> =
-        this as? Map<String, Any?> ?: throw IllegalArgumentException("Expected $what to be an object")
-
-    private fun Any?.asArray(what: String): List<Any?> =
-        this as? List<Any?> ?: throw IllegalArgumentException("Expected $what to be a list")
-
-    private fun Any?.asString(what: String): String =
-        this as? String ?: throw IllegalArgumentException("Expected $what to be text")
-
-    private fun Any?.asInt(what: String): Int =
-        (this as? Number)?.toInt() ?: throw IllegalArgumentException("Expected $what to be a number")
 }
+
+/** A story chapter: a short scene told in lines, like a bond scene. */
+data class StoryChapter(val number: Int, val title: String, val lines: List<SceneLine>) {
+    /** Number of words to read, for keeping chapters short. */
+    val wordCount: Int get() = lines.sumOf { line -> line.text.split(Regex("\\s+")).count { it.isNotBlank() } }
+}
+
+/**
+ * Reads the story file (assets/dialogue/story.json).
+ * Throws IllegalArgumentException with a readable message if the file is malformed.
+ */
+object StoryParser {
+
+    fun parse(json: String): List<StoryChapter> {
+        val root = MiniJson.parse(json).asObject("the file")
+        return root["chapters"].asArray("\"chapters\"").map { chapterJson ->
+            val chapter = chapterJson.asObject("a chapter")
+            val number = chapter["number"].asInt("chapter number")
+            StoryChapter(
+                number = number,
+                title = chapter["title"].asString("title of chapter $number"),
+                lines = chapter["lines"].asArray("lines of chapter $number").map { lineJson ->
+                    val line = lineJson.asObject("a line of chapter $number")
+                    SceneLine(
+                        speaker = line["speaker"].asString("speaker in chapter $number"),
+                        text = line["text"].asString("text in chapter $number"),
+                    )
+                },
+            )
+        }.sortedBy { it.number }
+    }
+}
+
+@Suppress("UNCHECKED_CAST")
+private fun Any?.asObject(what: String): Map<String, Any?> =
+    this as? Map<String, Any?> ?: throw IllegalArgumentException("Expected $what to be an object")
+
+private fun Any?.asArray(what: String): List<Any?> =
+    this as? List<Any?> ?: throw IllegalArgumentException("Expected $what to be a list")
+
+private fun Any?.asString(what: String): String =
+    this as? String ?: throw IllegalArgumentException("Expected $what to be text")
+
+private fun Any?.asInt(what: String): Int =
+    (this as? Number)?.toInt() ?: throw IllegalArgumentException("Expected $what to be a number")

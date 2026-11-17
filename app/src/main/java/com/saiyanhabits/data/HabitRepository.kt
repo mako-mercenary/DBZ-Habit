@@ -11,7 +11,10 @@ import com.saiyanhabits.domain.mentorFor
 import com.saiyanhabits.domain.PowerCalculator
 import com.saiyanhabits.domain.PowerSource
 import com.saiyanhabits.domain.ScheduledHabit
+import com.saiyanhabits.domain.StoryRules
 import com.saiyanhabits.domain.StreakRules
+import com.saiyanhabits.domain.Weeks
+import com.saiyanhabits.domain.WishRules
 import com.saiyanhabits.domain.WeekSchedule
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -29,6 +32,9 @@ sealed interface GameEvent {
 
     /** A check-off took the bond with [mentor] up to [level]. */
     data class BondLevelUp(val mentor: Mentor, val level: Int) : GameEvent
+
+    /** A perfect week earned a wish orb; [orbs] is how many are now held. */
+    data class OrbEarned(val orbs: Int) : GameEvent
 }
 
 /** What a time chamber session did for a habit. */
@@ -90,13 +96,26 @@ class HabitRepository(
      * the streak for missed days that no bean can save. Safe to call any time,
      * as often as you like.
      */
-    suspend fun syncDays() {
-        db.withTransaction { syncDaysInTransaction(today().toEpochDay()) }
+    suspend fun syncDays() = celebrating { events ->
+        syncDaysInTransaction(today().toEpochDay(), events)
+    }
+
+    /** Power earned per day between two dates (inclusive). Days with none are missing from the map. */
+    fun dailyPoints(from: LocalDate, to: LocalDate): Flow<Map<Long, Int>> =
+        powerDao.observeDailyPoints(from.toEpochDay(), to.toEpochDay())
+            .map { rows -> rows.associate { it.epochDay to it.points } }
+
+    suspend fun markChapterRead(chapter: Int) {
+        db.withTransaction {
+            val state = streakDao.getPlayerState() ?: PlayerStateEntity()
+            val read = StoryRules.markRead(state.chaptersRead, chapter)
+            if (read != state.chaptersRead) streakDao.savePlayerState(state.copy(chaptersRead = read))
+        }
     }
 
     suspend fun saveHabit(habit: HabitEntity): Long = celebrating { events ->
         val todayDay = today().toEpochDay()
-        syncDaysInTransaction(todayDay)
+        syncDaysInTransaction(todayDay, events)
         val id = habitDao.save(habit)
         events += checkMilestones(todayDay)
         id
@@ -104,7 +123,7 @@ class HabitRepository(
 
     suspend fun archiveHabit(id: Long) = celebrating { events ->
         val todayDay = today().toEpochDay()
-        syncDaysInTransaction(todayDay)
+        syncDaysInTransaction(todayDay, events)
         habitDao.archive(id)
         events += checkMilestones(todayDay)
     }
@@ -117,7 +136,7 @@ class HabitRepository(
     suspend fun complete(habit: HabitEntity, date: LocalDate, gravity: Gravity): Int = celebrating { events ->
         val todayDay = today().toEpochDay()
         if (date.toEpochDay() != todayDay) return@celebrating 0
-        syncDaysInTransaction(todayDay)
+        syncDaysInTransaction(todayDay, events)
         val points = insertCompletion(habit, todayDay, gravity, events)
         if (points > 0) events += checkMilestones(todayDay)
         points
@@ -133,7 +152,7 @@ class HabitRepository(
         if (habit == null || habit.archived) return@celebrating null
         val date = today()
         val todayDay = date.toEpochDay()
-        syncDaysInTransaction(todayDay)
+        syncDaysInTransaction(todayDay, events)
 
         var checkOffPoints = 0
         val existing = completionDao.getBetween(todayDay, todayDay).firstOrNull { it.habitId == habitId }
@@ -242,7 +261,7 @@ class HabitRepository(
         return points
     }
 
-    private suspend fun syncDaysInTransaction(todayDay: Long) {
+    private suspend fun syncDaysInTransaction(todayDay: Long, events: MutableList<GameEvent>) {
         val habits = habitDao.getActive()
         val firstDay = streakDao.latestRecordedDay()?.plus(1)
             ?: habits.minOfOrNull { it.createdAtEpochDay }
@@ -279,6 +298,26 @@ class HabitRepository(
                 streakDao.setOutcome(missed.map { it.epochDay }, DayOutcome.BROKEN)
             }
         }
+
+        awardWishOrbs(todayDay, events)
+    }
+
+    /** Judges each week that has finished since the last one judged, and awards an orb per perfect week. */
+    private suspend fun awardWishOrbs(todayDay: Long, events: MutableList<GameEvent>) {
+        val before = streakDao.getPlayerState() ?: PlayerStateEntity()
+        val weeks = WishRules.weeksToJudge(before.lastOrbWeekEpochDay, streakDao.firstRecordedDay(), todayDay)
+        if (weeks.isEmpty()) return
+        var state = before
+        for (weekStart in weeks) {
+            val outcomes = streakDao.getRecordsBetween(weekStart, weekStart + Weeks.DAYS - 1).map { it.outcome }
+            if (WishRules.isPerfectWeek(outcomes)) {
+                val orbs = WishRules.orbsAfterPerfectWeek(state.wishOrbs)
+                if (orbs > state.wishOrbs) events += GameEvent.OrbEarned(orbs)
+                state = state.copy(wishOrbs = orbs)
+            }
+            state = state.copy(lastOrbWeekEpochDay = weekStart)
+        }
+        streakDao.savePlayerState(state)
     }
 
     /** If today is perfect, hands out whatever the streak has now earned. */

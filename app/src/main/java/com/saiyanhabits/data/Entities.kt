@@ -105,7 +105,26 @@ data class PlayerStateEntity(
     val highestForm: Int = 0,
     /** The day a streak last earned a bean, so one day cannot earn two. */
     val lastBeanAwardEpochDay: Long? = null,
+    /** Story chapters that have been read, one bit per chapter. See StoryRules. */
+    @ColumnInfo(defaultValue = "0") val chaptersRead: Int = 0,
+    /** Wish orbs held, 0 to GameConfig.WISH_ORBS_NEEDED. */
+    @ColumnInfo(defaultValue = "0") val wishOrbs: Int = 0,
+    /** Monday of the last week judged for a wish orb, so no week is judged twice. */
+    val lastOrbWeekEpochDay: Long? = null,
 )
+
+/** A real-life reward typed in to be claimed from the dragon. */
+@Entity(tableName = "wishes")
+data class WishEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val text: String,
+    val createdAtEpochDay: Long,
+    /** Null until the wish has been granted. */
+    val grantedAtEpochDay: Long? = null,
+)
+
+/** Query result: power earned on one day. */
+data class DayPoints(val epochDay: Long, val points: Int)
 
 /** Query result: a habit's current streak. */
 data class HabitStreak(val habitId: Long, val streak: Int)

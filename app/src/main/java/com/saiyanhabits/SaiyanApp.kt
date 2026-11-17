@@ -7,6 +7,8 @@ import com.saiyanhabits.data.BondRepository
 import com.saiyanhabits.data.DialogueRepository
 import com.saiyanhabits.data.HabitRepository
 import com.saiyanhabits.data.QuestRepository
+import com.saiyanhabits.data.StoryRepository
+import com.saiyanhabits.data.WishRepository
 import com.saiyanhabits.reminders.Notifications
 import com.saiyanhabits.reminders.ReminderScheduler
 import kotlinx.coroutines.CoroutineScope
@@ -24,6 +26,10 @@ class SaiyanApp : Application() {
     val bondRepository: BondRepository by lazy { BondRepository(database) }
 
     val dialogue: DialogueRepository by lazy { DialogueRepository(this) }
+
+    val storyRepository: StoryRepository by lazy { StoryRepository(this) }
+
+    val wishRepository: WishRepository by lazy { WishRepository(database) }
 
     val reminders: ReminderScheduler by lazy { ReminderScheduler(this) }
 

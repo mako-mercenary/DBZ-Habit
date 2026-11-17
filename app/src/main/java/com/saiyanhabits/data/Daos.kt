@@ -105,6 +105,13 @@ interface StreakDao {
     @Query(OPEN_RECORDS)
     suspend fun getOpenRecords(): List<DayRecordEntity>
 
+    /** The earliest finished day on record, or null if no day has been recorded yet. */
+    @Query("SELECT MIN(epochDay) FROM day_records")
+    suspend fun firstRecordedDay(): Long?
+
+    @Query("SELECT * FROM day_records WHERE epochDay BETWEEN :fromDay AND :toDay ORDER BY epochDay")
+    suspend fun getRecordsBetween(fromDay: Long, toDay: Long): List<DayRecordEntity>
+
     /** The latest finished days whatever their outcome, newest first. */
     @Query("SELECT * FROM day_records ORDER BY epochDay DESC LIMIT 14")
     fun observeRecentRecords(): Flow<List<DayRecordEntity>>
@@ -130,4 +137,24 @@ interface StreakDao {
     @Upsert
     suspend fun savePlayerState(state: PlayerStateEntity)
 
+}
+
+@Dao
+interface WishDao {
+
+    /** Every wish: those still waiting first, then granted ones, newest first. */
+    @Query("SELECT * FROM wishes ORDER BY grantedAtEpochDay IS NOT NULL, grantedAtEpochDay DESC, id")
+    fun observeAll(): Flow<List<WishEntity>>
+
+    @Query("SELECT * FROM wishes WHERE id = :id")
+    suspend fun get(id: Long): WishEntity?
+
+    @Insert
+    suspend fun insert(wish: WishEntity): Long
+
+    @Update
+    suspend fun update(wish: WishEntity)
+
+    @Query("DELETE FROM wishes WHERE id = :id AND grantedAtEpochDay IS NULL")
+    suspend fun deleteWaiting(id: Long)
 }

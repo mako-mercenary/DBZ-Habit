@@ -128,3 +128,16 @@ val MIGRATION_3_4 = object : Migration(3, 4) {
 
 /** Bond XP credited per old check-off. Fixed here so the migration never changes after release. */
 private const val BACKFILL_BOND_XP = 10
+
+/** Milestone 5: story chapters read, wish orbs and wishes. */
+val MIGRATION_4_5 = object : Migration(4, 5) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `player_state` ADD COLUMN `chaptersRead` INTEGER NOT NULL DEFAULT 0")
+        db.execSQL("ALTER TABLE `player_state` ADD COLUMN `wishOrbs` INTEGER NOT NULL DEFAULT 0")
+        db.execSQL("ALTER TABLE `player_state` ADD COLUMN `lastOrbWeekEpochDay` INTEGER")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `wishes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`text` TEXT NOT NULL, `createdAtEpochDay` INTEGER NOT NULL, `grantedAtEpochDay` INTEGER)",
+        )
+    }
+}
