@@ -52,10 +52,12 @@ import com.saiyanhabits.data.MilestoneEntity
 import com.saiyanhabits.data.SagaWithMilestones
 import com.saiyanhabits.data.StrikeResult
 import com.saiyanhabits.domain.Boss
+import com.saiyanhabits.domain.Perks
 import com.saiyanhabits.domain.QuestStatus
 import com.saiyanhabits.domain.SagaRules
 import com.saiyanhabits.ui.components.BossFigure
 import com.saiyanhabits.ui.components.BottomActionButton
+import com.saiyanhabits.ui.components.MentorPortrait
 import com.saiyanhabits.ui.components.MeterBar
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.components.SubScreen
@@ -237,10 +239,43 @@ private fun MilestoneRow(
     }
 }
 
+/** The mentors fighting alongside, and what they add to each hit. */
+@Composable
+private fun AssistRow(perks: Perks) {
+    Surface(
+        shape = RoundedCornerShape(14.dp),
+        color = SaiyanColors.Panel,
+        border = BorderStroke(1.dp, SaiyanColors.Gold.copy(alpha = 0.5f)),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+        ) {
+            perks.assistMentors.forEach { MentorPortrait(it, Modifier.size(32.dp)) }
+            Column(Modifier.weight(1f)) {
+                Text(
+                    "Assists: " + perks.assistMentors.joinToString(", ") { it.displayName },
+                    style = MaterialTheme.typography.labelLarge,
+                    color = SaiyanColors.Gold,
+                )
+                Text(
+                    "+${perks.assistDamage} bonus damage on every hit. It adds points, not speed: " +
+                        "the boss still falls when the last milestone lands.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SaiyanColors.TextDim,
+                )
+            }
+        }
+    }
+}
+
 /** The boss fight: the boss, its HP, and the milestones left to land. Also shows a finished saga. */
 @Composable
 fun SagaDetailScreen(
     saga: SagaWithMilestones,
+    perks: Perks,
     onStrike: (milestoneId: Long, onHit: (StrikeResult) -> Unit) -> Unit,
     onAddMilestone: (MilestoneDraft) -> Unit,
     onRemoveMilestone: (Long) -> Unit,
@@ -283,18 +318,25 @@ fun SagaDetailScreen(
             BossFigure(boss, Modifier.size(200.dp), hit = hit.value, defeated = !active)
             val shown = lastHit
             if (shown != null && hit.value < 1f) {
-                Text(
-                    "-${shown.damage}",
-                    style = MaterialTheme.typography.displaySmall,
-                    color = SaiyanColors.Danger,
+                Column(
+                    horizontalAlignment = Alignment.End,
                     modifier = Modifier
                         .align(Alignment.TopEnd)
-                        .padding(end = 40.dp)
+                        .padding(end = 32.dp)
                         .graphicsLayer {
                             translationY = 60.dp.toPx() * (1f - hit.value)
                             alpha = ((1f - hit.value) / 0.3f).coerceIn(0f, 1f)
                         },
-                )
+                ) {
+                    Text("-${shown.damage}", style = MaterialTheme.typography.displaySmall, color = SaiyanColors.Danger)
+                    if (shown.assistDamage > 0) {
+                        Text(
+                            "+${shown.assistDamage} assist",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = SaiyanColors.Gold,
+                        )
+                    }
+                }
             }
         }
         Text(
@@ -326,15 +368,21 @@ fun SagaDetailScreen(
             )
         }
 
+        if (active && perks.assistMentors.isNotEmpty()) {
+            AssistRow(perks)
+        }
+
         if (active) {
             Spacer(Modifier.height(6.dp))
             SectionLabel("Milestones to land")
             open.forEach { milestone ->
                 val charged = milestone.focusSessions > 0
-                val points = SagaRules.milestonePoints(milestone.weight, charged)
+                val points = SagaRules.milestonePoints(milestone.weight, charged, perks)
+                val assist = if (perks.assistDamage > 0) " +${perks.assistDamage} assist" else ""
                 MilestoneRow(
                     name = milestone.name,
-                    detail = "${milestone.weight} damage · +$points" + if (charged) " (charged in the time chamber)" else "",
+                    detail = "${milestone.weight} damage$assist · +$points" +
+                        if (charged) " (charged in the time chamber)" else "",
                     onClick = { striking = milestone },
                     trailing = {
                         if (open.size > 1) {

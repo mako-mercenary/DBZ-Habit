@@ -2,10 +2,13 @@ package com.saiyanhabits.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -14,6 +17,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -25,8 +29,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -40,6 +47,12 @@ import com.saiyanhabits.R
 import com.saiyanhabits.SaiyanApp
 import com.saiyanhabits.data.GameEvent
 import com.saiyanhabits.data.QuestEvent
+import com.saiyanhabits.domain.BondRules
+import com.saiyanhabits.domain.Mentor
+import com.saiyanhabits.ui.bonds.BondsScreen
+import com.saiyanhabits.ui.bonds.BondsViewModel
+import com.saiyanhabits.ui.bonds.MentorScreen
+import com.saiyanhabits.ui.bonds.SceneScreen
 import com.saiyanhabits.ui.chamber.ChamberScreen
 import com.saiyanhabits.ui.chamber.ChamberViewModel
 import com.saiyanhabits.ui.components.TransformationOverlay
@@ -55,6 +68,7 @@ import com.saiyanhabits.ui.quests.QuestsViewModel
 import com.saiyanhabits.ui.quests.SagaDetailScreen
 import com.saiyanhabits.ui.quests.SagaEditScreen
 import com.saiyanhabits.ui.quests.SagasScreen
+import kotlinx.coroutines.launch
 
 /** Navigation routes. */
 private object Routes {
@@ -62,6 +76,15 @@ private object Routes {
     const val HABITS = "habits"
     const val SAGAS = "sagas"
     const val CHAMBER = "chamber"
+    const val BONDS = "bonds"
+
+    const val MENTOR_ARG = "mentor"
+    const val MENTOR = "mentor/{$MENTOR_ARG}"
+    fun mentor(mentor: Mentor) = "mentor/${mentor.name}"
+
+    const val SCENE_LEVEL_ARG = "level"
+    const val SCENE = "scene/{$MENTOR_ARG}/{$SCENE_LEVEL_ARG}"
+    fun scene(mentor: Mentor, level: Int) = "scene/${mentor.name}/$level"
 
     const val NEW_SAGA = "new-saga"
     const val SAGA_ID_ARG = "sagaId"
@@ -90,6 +113,7 @@ private enum class Tab(val route: String, val label: String, @DrawableRes val ic
     HABITS(Routes.HABITS, "Habits", R.drawable.ic_habits),
     SAGAS(Routes.SAGAS, "Sagas", R.drawable.ic_sagas),
     CHAMBER(Routes.CHAMBER, "Chamber", R.drawable.ic_chamber),
+    BONDS(Routes.BONDS, "Bonds", R.drawable.ic_bonds),
 }
 
 @Composable
@@ -101,6 +125,8 @@ fun SaiyanHabitsRoot() {
     val habitsViewModel: HabitsViewModel = viewModel(factory = factory)
     val questsViewModel: QuestsViewModel = viewModel(factory = factory)
     val chamberViewModel: ChamberViewModel = viewModel(factory = factory)
+    val bondsViewModel: BondsViewModel = viewModel(factory = factory)
+    val perks by bondsViewModel.perks.collectAsStateWithLifecycle()
 
     val navController = rememberNavController()
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -109,6 +135,7 @@ fun SaiyanHabitsRoot() {
     var unlocked by remember { mutableStateOf<GameEvent.FormUnlocked?>(null) }
     var shake by remember { mutableStateOf(Offset.Zero) }
     var defeated by remember { mutableStateOf<QuestEvent.SagaDefeated?>(null) }
+    var bondLevelUp by remember { mutableStateOf<BondLevelUpNotice?>(null) }
 
     LaunchedEffect(app) {
         app.questRepository.events.collect { event ->
@@ -122,8 +149,15 @@ fun SaiyanHabitsRoot() {
         app.habitRepository.events.collect { event ->
             when (event) {
                 is GameEvent.FormUnlocked -> unlocked = event
-                is GameEvent.BeanEarned -> snackbars.showSnackbar(
-                    "Healing bean earned. You hold ${event.beans} of ${GameConfig.MAX_HEALING_BEANS}.",
+                // Snackbars wait for the one before, so they get their own coroutine and
+                // never hold up the events behind them.
+                is GameEvent.BeanEarned -> launch {
+                    snackbars.showSnackbar("Healing bean earned. You hold ${event.beans} of ${event.capacity}.")
+                }
+                is GameEvent.BondLevelUp -> bondLevelUp = BondLevelUpNotice(
+                    mentor = event.mentor,
+                    level = event.level,
+                    sceneTitle = app.dialogue.all()[event.mentor]?.scene(event.level)?.title,
                 )
             }
         }
@@ -185,7 +219,49 @@ fun SaiyanHabitsRoot() {
                     )
                 }
                 composable(Routes.CHAMBER) {
-                    ChamberScreen(viewModel = chamberViewModel)
+                    ChamberScreen(viewModel = chamberViewModel, focusMultiplier = perks.focusMultiplier)
+                }
+                composable(Routes.BONDS) {
+                    val state by bondsViewModel.uiState.collectAsStateWithLifecycle()
+                    LifecycleResumeEffect(Unit) {
+                        bondsViewModel.refreshToday()
+                        onPauseOrDispose { }
+                    }
+                    BondsScreen(state = state, onOpenMentor = { navController.navigate(Routes.mentor(it)) })
+                }
+                composable(Routes.MENTOR) { entry ->
+                    val mentor = entry.mentorArg() ?: return@composable
+                    val state by bondsViewModel.uiState.collectAsStateWithLifecycle()
+                    LifecycleResumeEffect(Unit) {
+                        bondsViewModel.refreshToday()
+                        onPauseOrDispose { }
+                    }
+                    state?.let {
+                        MentorScreen(
+                            mentor = mentor,
+                            state = it,
+                            onOpenScene = { level -> navController.navigate(Routes.scene(mentor, level)) },
+                            onUseKaioken = bondsViewModel::useKaioken,
+                            onUseDayOff = bondsViewModel::useDayOff,
+                            onBack = { navController.popBackStack(Routes.MENTOR, inclusive = true) },
+                        )
+                    }
+                }
+                composable(
+                    route = Routes.SCENE,
+                    arguments = listOf(navArgument(Routes.SCENE_LEVEL_ARG) { type = NavType.IntType }),
+                ) { entry ->
+                    val mentor = entry.mentorArg() ?: return@composable
+                    val level = entry.arguments?.getInt(Routes.SCENE_LEVEL_ARG) ?: return@composable
+                    val state by bondsViewModel.uiState.collectAsStateWithLifecycle()
+                    val close = { navController.popBackStack(Routes.SCENE, inclusive = true) }
+                    val loaded = state ?: return@composable
+                    val scene = loaded.dialogues[mentor]?.scene(level)
+                    if (scene == null || !BondRules.isSceneUnlocked(level, loaded.bond(mentor).level)) {
+                        LaunchedEffect(Unit) { close() }
+                    } else {
+                        SceneScreen(mentor = mentor, scene = scene, onBack = { close() })
+                    }
                 }
                 composable(Routes.NEW_SAGA) {
                     SagaEditScreen(
@@ -214,6 +290,7 @@ fun SaiyanHabitsRoot() {
                         saga == null -> LaunchedEffect(Unit) { close() }
                         else -> SagaDetailScreen(
                             saga = saga,
+                            perks = perks,
                             onStrike = questsViewModel::strike,
                             onAddMilestone = { questsViewModel.addMilestone(sagaId, it) },
                             onRemoveMilestone = questsViewModel::removeMilestone,
@@ -316,6 +393,17 @@ fun SaiyanHabitsRoot() {
             )
         }
 
+        bondLevelUp?.let { notice ->
+            BondLevelUpDialog(
+                notice = notice,
+                onView = {
+                    bondLevelUp = null
+                    navController.navigate(Routes.mentor(notice.mentor))
+                },
+                onDismiss = { bondLevelUp = null },
+            )
+        }
+
         defeated?.let { event ->
             VictoryOverlay(
                 sagaName = event.sagaName,
@@ -325,6 +413,35 @@ fun SaiyanHabitsRoot() {
             )
         }
     }
+}
+
+/** What to tell the player when a bond level is gained. */
+private data class BondLevelUpNotice(val mentor: Mentor, val level: Int, val sceneTitle: String?)
+
+@Composable
+private fun BondLevelUpDialog(notice: BondLevelUpNotice, onView: () -> Unit, onDismiss: () -> Unit) {
+    val mentor = notice.mentor
+    val technique = BondRules.techniqueUnlockedAt(mentor, notice.level)
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Bond level ${notice.level} with ${mentor.displayName}") },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (notice.sceneTitle != null) Text("New scene: \"${notice.sceneTitle}\".")
+                if (technique != null) Text("New technique: ${technique.title}. ${technique.description}")
+                if (notice.level == GameConfig.ASSIST_MIN_BOND_LEVEL) {
+                    Text("${mentor.displayName} now joins your boss fights and adds bonus damage to every hit.")
+                }
+            }
+        },
+        confirmButton = { TextButton(onClick = onView) { Text("Go and see") } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Later") } },
+    )
+}
+
+private fun NavBackStackEntry.mentorArg(): Mentor? {
+    val name = arguments?.getString(Routes.MENTOR_ARG)
+    return Mentor.entries.firstOrNull { it.name == name }
 }
 
 /** Bottom-bar navigation: one copy of each tab, and each tab remembers where it was. */

@@ -58,8 +58,10 @@ import com.saiyanhabits.domain.BeanOffer
 import com.saiyanhabits.domain.Forms
 import com.saiyanhabits.domain.Gravity
 import com.saiyanhabits.domain.PowerCalculator
-import com.saiyanhabits.domain.mentorFor
+import com.saiyanhabits.data.mentor
+import com.saiyanhabits.domain.Perks
 import com.saiyanhabits.ui.components.EmptyPanel
+import com.saiyanhabits.ui.components.MentorPortrait
 import com.saiyanhabits.ui.components.ScouterReadout
 import com.saiyanhabits.ui.components.SectionLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
@@ -108,6 +110,9 @@ fun HomeScreen(
                 numberColor = if (state.form == Forms.BASE) SaiyanColors.Orange else formAura(state.form),
             )
         }
+        state.mentorLine?.let { line ->
+            item(key = "mentor") { MentorLineCard(line) }
+        }
         item(key = "stats") {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -118,7 +123,11 @@ fun HomeScreen(
             }
         }
         item(key = "progress") {
-            TodayProgress(done = state.doneCount, total = state.today.size)
+            TodayProgress(
+                done = state.doneCount,
+                total = state.counted.size,
+                doublePoints = state.perks.doublePointsToday,
+            )
         }
         when {
             state.hasNoHabits -> item(key = "empty") {
@@ -138,8 +147,12 @@ fun HomeScreen(
             else -> items(state.today, key = { it.habit.id }) { entry ->
                 TodayHabitRow(
                     entry = entry,
+                    perks = state.perks,
                     onClick = {
-                        if (entry.isDone) undoing = entry else choosingGravityFor = entry.habit
+                        when {
+                            entry.isDone -> undoing = entry
+                            !entry.excused -> choosingGravityFor = entry.habit
+                        }
                     },
                 )
             }
@@ -156,6 +169,7 @@ fun HomeScreen(
         ) {
             GravityChooser(
                 habit = habit,
+                perks = state.perks,
                 onChoose = { gravity ->
                     haptics.performHapticFeedback(HapticFeedbackType.LongPress)
                     viewModel.complete(habit, gravity)
@@ -258,7 +272,7 @@ private fun StreakCard(state: HomeUiState, modifier: Modifier = Modifier) {
 
 @Composable
 private fun BeansCard(state: HomeUiState, modifier: Modifier = Modifier) {
-    val capacity = GameConfig.MAX_HEALING_BEANS
+    val capacity = state.beanCapacity
     StatCard("Healing beans", modifier) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -319,7 +333,27 @@ private fun BeanOfferDialog(offer: BeanOffer, beans: Int, onAccept: () -> Unit, 
 }
 
 @Composable
-private fun TodayProgress(done: Int, total: Int) {
+private fun MentorLineCard(line: MentorLine) {
+    val mentor = line.mentor
+    Surface(
+        shape = RoundedCornerShape(18.dp),
+        color = SaiyanColors.Panel,
+        border = BorderStroke(1.dp, mentor.color.copy(alpha = 0.5f)),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(12.dp)) {
+            MentorPortrait(mentor, Modifier.size(48.dp))
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text(mentor.displayName.uppercase(), style = MaterialTheme.typography.labelMedium, color = mentor.color)
+                Text(line.text, style = MaterialTheme.typography.bodyMedium)
+            }
+        }
+    }
+}
+
+@Composable
+private fun TodayProgress(done: Int, total: Int, doublePoints: Boolean) {
     Column(Modifier.padding(top = 8.dp, start = 4.dp, end = 4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             SectionLabel("Today's training", Modifier.weight(1f))
@@ -331,6 +365,13 @@ private fun TodayProgress(done: Int, total: Int) {
                     color = if (allDone) SaiyanColors.Orange else SaiyanColors.TextHigh,
                 )
             }
+        }
+        if (doublePoints) {
+            Text(
+                "Kaio-ken is active: check-offs pay ${GameConfig.TECHNIQUE_KAIOKEN_MULTIPLIER}x today.",
+                style = MaterialTheme.typography.bodySmall,
+                color = SaiyanColors.Orange,
+            )
         }
         if (total > 0) {
             Spacer(Modifier.height(8.dp))
@@ -349,14 +390,15 @@ private fun TodayProgress(done: Int, total: Int) {
 }
 
 @Composable
-private fun TodayHabitRow(entry: TodayHabit, onClick: () -> Unit) {
+private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) {
     val habit = entry.habit
-    val mentor = mentorFor(habit.category, habit.isHardest)
+    val mentor = habit.mentor
     val done = entry.completion
+    val faded = done != null || entry.excused
     Surface(
         onClick = onClick,
         shape = RoundedCornerShape(18.dp),
-        color = if (done != null) SaiyanColors.Panel.copy(alpha = 0.6f) else SaiyanColors.Panel,
+        color = if (faded) SaiyanColors.Panel.copy(alpha = 0.6f) else SaiyanColors.Panel,
         border = BorderStroke(1.dp, if (done != null) SaiyanColors.Orange.copy(alpha = 0.45f) else SaiyanColors.Outline),
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -368,32 +410,36 @@ private fun TodayHabitRow(entry: TodayHabit, onClick: () -> Unit) {
                 Modifier
                     .size(width = 6.dp, height = 40.dp)
                     .clip(CircleShape)
-                    .background(mentor.color.copy(alpha = if (done != null) 0.45f else 1f)),
+                    .background(mentor.color.copy(alpha = if (faded) 0.45f else 1f)),
             )
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(
                     text = habit.name,
                     style = MaterialTheme.typography.titleMedium,
-                    color = if (done != null) SaiyanColors.TextDim else SaiyanColors.TextHigh,
+                    color = if (faded) SaiyanColors.TextDim else SaiyanColors.TextHigh,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )
                 Spacer(Modifier.height(2.dp))
                 val streak = if (entry.streak > 0) " · ${entry.streak}-day streak" else ""
                 Text(
-                    text = if (done != null) {
-                        "${done.gravity.label} · +${done.points}$streak"
-                    } else {
-                        val base = PowerCalculator.completionPoints(habit.difficulty, Gravity.NORMAL)
-                        "${mentor.displayName} · +$base and up$streak"
+                    text = when {
+                        done != null -> "${done.gravity.label} · +${done.points}$streak"
+                        entry.excused -> "Day off today · streak safe"
+                        else -> {
+                            val base = PowerCalculator.completionPoints(habit.difficulty, Gravity.NORMAL, mentor, perks)
+                            "${mentor.displayName} · +$base and up$streak"
+                        }
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = if (done != null) SaiyanColors.Orange else SaiyanColors.TextDim,
                 )
             }
-            Spacer(Modifier.width(12.dp))
-            CheckMark(checked = done != null, description = if (done != null) "Done" else "Not done")
+            if (!entry.excused || done != null) {
+                Spacer(Modifier.width(12.dp))
+                CheckMark(checked = done != null, description = if (done != null) "Done" else "Not done")
+            }
         }
     }
 }
@@ -424,7 +470,7 @@ private fun CheckMark(checked: Boolean, description: String) {
 }
 
 @Composable
-private fun GravityChooser(habit: HabitEntity, onChoose: (Gravity) -> Unit) {
+private fun GravityChooser(habit: HabitEntity, perks: Perks, onChoose: (Gravity) -> Unit) {
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
@@ -467,7 +513,7 @@ private fun GravityChooser(habit: HabitEntity, onChoose: (Gravity) -> Unit) {
                         )
                     }
                     Text(
-                        "+${PowerCalculator.completionPoints(habit.difficulty, gravity)}",
+                        "+${PowerCalculator.completionPoints(habit.difficulty, gravity, habit.mentor, perks)}",
                         style = MaterialTheme.typography.headlineSmall,
                         color = accent,
                     )

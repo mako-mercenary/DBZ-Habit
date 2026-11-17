@@ -72,7 +72,7 @@ import kotlinx.coroutines.delay
 
 /** The Time Chamber tab: set up a focus session, watch it count down, read what it logged. */
 @Composable
-fun ChamberScreen(viewModel: ChamberViewModel, modifier: Modifier = Modifier) {
+fun ChamberScreen(viewModel: ChamberViewModel, focusMultiplier: Double, modifier: Modifier = Modifier) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val targets by viewModel.targets.collectAsStateWithLifecycle()
 
@@ -90,7 +90,7 @@ fun ChamberScreen(viewModel: ChamberViewModel, modifier: Modifier = Modifier) {
             modifier = Modifier.padding(start = 4.dp, bottom = 4.dp),
         )
         when (val current = state) {
-            ChamberState.Idle -> targets?.let { Setup(it, onStart = viewModel::start) }
+            ChamberState.Idle -> targets?.let { Setup(it, focusMultiplier, onStart = viewModel::start) }
             is ChamberState.Running -> Running(current.session, onGiveUp = viewModel::giveUp)
             is ChamberState.Finished -> Finished(
                 session = current.session,
@@ -104,7 +104,7 @@ fun ChamberScreen(viewModel: ChamberViewModel, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun Setup(targets: ChamberTargets, onStart: (Int, ChamberTarget) -> Unit) {
+private fun Setup(targets: ChamberTargets, focusMultiplier: Double, onStart: (Int, ChamberTarget) -> Unit) {
     var minutes by rememberSaveable { mutableIntStateOf(GameConfig.FOCUS_SESSION_MINUTES.first()) }
     // Remembered by type and id, and looked up again each time, so a target that
     // has since been finished or deleted drops out of the selection.
@@ -116,7 +116,7 @@ private fun Setup(targets: ChamberTargets, onStart: (Int, ChamberTarget) -> Unit
 
     Text(
         "A focus session spent on one thing. When the timer ends it logs your progress there, " +
-            "worth ${GameConfig.FOCUS_POINT_MULTIPLIER}x the usual points.",
+            "worth ${focusMultiplier}x the usual points.",
         style = MaterialTheme.typography.bodyMedium,
         color = SaiyanColors.TextDim,
         modifier = Modifier.padding(horizontal = 4.dp),

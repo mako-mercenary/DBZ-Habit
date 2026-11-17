@@ -108,6 +108,23 @@ class StreakRulesTest {
     }
 
     @Test
+    fun `an excused habit does not count that day`() {
+        val habits = listOf(everyDay(1), everyDay(2))
+        val completed = mapOf(monday to setOf(1L), tuesday to setOf(1L))
+        val plans = StreakRules.planDays(habits, completed, monday, tuesday, excusedByDay = mapOf(monday to setOf(2L)))
+        // Monday: habit 2 excused, habit 1 done. Tuesday: no excuse, habit 2 missed.
+        assertEquals(listOf(PERFECT, MISSED), plans.map { it.outcome })
+        assertEquals(listOf(1L), plans[0].scheduledHabitIds)
+        assertEquals(listOf(2L), plans[1].missedHabitIds)
+    }
+
+    @Test
+    fun `a day whose only habit is excused is a rest day`() {
+        val plans = StreakRules.planDays(listOf(everyDay(1)), emptyMap(), monday, monday, mapOf(monday to setOf(1L)))
+        assertEquals(REST, plans.single().outcome)
+    }
+
+    @Test
     fun `no days are planned when the range is empty`() {
         assertTrue(StreakRules.planDays(listOf(everyDay(1)), emptyMap(), thursday, monday).isEmpty())
     }
@@ -172,6 +189,24 @@ class StreakRulesTest {
         assertEquals(3, StreakRules.beansAfterEarning(2))
         assertEquals(3, StreakRules.beansAfterEarning(3))
         assertEquals(3, GameConfig.MAX_HEALING_BEANS)
+    }
+
+    @Test
+    fun `a shorter bean interval earns beans more often`() {
+        assertEquals(listOf(5, 10, 15, 20), (0..20).filter { StreakRules.earnsBean(it, interval = 5) })
+        assertEquals(5, StreakRules.daysUntilNextBean(0, interval = 5))
+        assertEquals(2, StreakRules.daysUntilNextBean(8, interval = 5))
+    }
+
+    @Test
+    fun `an extra bean slot raises the limit to four`() {
+        assertEquals(4, StreakRules.beansAfterEarning(3, capacity = 4))
+        assertEquals(4, StreakRules.beansAfterEarning(4, capacity = 4))
+    }
+
+    @Test
+    fun `earning a bean never takes beans away`() {
+        assertEquals(4, StreakRules.beansAfterEarning(4, capacity = 3))
     }
 
     @Test

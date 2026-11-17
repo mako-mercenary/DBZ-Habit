@@ -147,7 +147,7 @@ class TimeChamber(
             ChamberTargetType.MILESTONE -> {
                 if (quests.chargeMilestone(target.id)) {
                     ChamberOutcome(
-                        lines = listOf("\"${target.label}\" is charged: it will pay 1.5x points when it lands."),
+                        lines = listOf("\"${target.label}\" is charged: it will pay extra points when it lands."),
                         followUp = ChamberFollowUp.MilestoneFinished(target.id, target.label),
                     )
                 } else {

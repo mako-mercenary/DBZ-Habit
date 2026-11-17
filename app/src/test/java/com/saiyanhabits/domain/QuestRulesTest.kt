@@ -50,10 +50,35 @@ class QuestRulesTest {
     }
 
     @Test
-    fun `HP never goes below zero`() {
-        val overkill = listOf(MilestoneState(weight = 2, damageDealt = 10, done = true))
-        assertEquals(0, SagaRules.remainingHp(overkill))
-        assertTrue(SagaRules.isDefeated(overkill))
+    fun `assist damage is extra and never shortens the fight`() {
+        // Two assists add 2 to each hit: 5 and 4 damage dealt against 5 HP of milestones done.
+        val fight = listOf(
+            MilestoneState(weight = 3, damageDealt = 5, done = true),
+            MilestoneState(weight = 2, damageDealt = 4, done = true),
+            MilestoneState(weight = 4, damageDealt = 0, done = false),
+        )
+        assertEquals(9, SagaRules.totalHp(fight))
+        assertEquals(5, SagaRules.damageTaken(fight))
+        assertEquals(4, SagaRules.bonusDamage(fight))
+        assertEquals(4, SagaRules.remainingHp(fight))
+        assertFalse(SagaRules.isDefeated(fight))
+    }
+
+    @Test
+    fun `each assisting mentor adds one damage to a hit`() {
+        assertEquals(3, SagaRules.damageFor(weight = 3))
+        assertEquals(5, SagaRules.damageFor(weight = 3, assistDamage = 2))
+        val twoAssists = Perks(assistMentors = listOf(Mentor.GOKU, Mentor.PICCOLO))
+        assertEquals(2, twoAssists.assistDamage)
+        // 10 points per point of damage: (3 + 2) x 10.
+        assertEquals(50, SagaRules.milestonePoints(weight = 3, charged = false, perks = twoAssists))
+        assertEquals(75, SagaRules.milestonePoints(weight = 3, charged = true, perks = twoAssists))
+    }
+
+    @Test
+    fun `assist damage dealt along the way raises the victory bonus`() {
+        assertEquals(100 + 20 * 10, SagaRules.victoryBonus(totalHp = 10, bonusDamage = 0))
+        assertEquals(100 + 20 * 14, SagaRules.victoryBonus(totalHp = 10, bonusDamage = 4))
     }
 
     @Test
