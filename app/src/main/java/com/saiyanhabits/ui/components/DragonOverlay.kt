@@ -39,6 +39,8 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.clipRect
+import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -202,18 +204,23 @@ private fun DrawScope.drawSummoning(t: Float) {
     val ringRadius = size.width * 0.17f
     val orbRadius = size.width * 0.045f
 
-    // Light pouring up out of the orbs.
+    // Light pouring up out of the orbs: a tall soft glow, cut off below the ring.
     val beam = ((t - 0.15f) / 0.25f).coerceIn(0f, 1f)
     if (beam > 0f) {
-        drawRect(
-            brush = Brush.verticalGradient(
-                listOf(Color.Transparent, SaiyanColors.Gold.copy(alpha = 0.35f * beam)),
-                startY = 0f,
-                endY = ring.y,
-            ),
-            topLeft = Offset(ring.x - ringRadius * 1.3f, 0f),
-            size = androidx.compose.ui.geometry.Size(ringRadius * 2.6f, ring.y),
-        )
+        val halfWidth = ringRadius * 1.5f
+        clipRect(top = 0f, bottom = ring.y) {
+            scale(scaleX = 1f, scaleY = 2.8f, pivot = ring) {
+                drawCircle(
+                    brush = Brush.radialGradient(
+                        listOf(SaiyanColors.Gold.copy(alpha = 0.45f * beam), Color.Transparent),
+                        center = ring,
+                        radius = halfWidth,
+                    ),
+                    radius = halfWidth,
+                    center = ring,
+                )
+            }
+        }
     }
 
     // The dragon: a body that winds upward from the orbs, drawn as far as it has risen.

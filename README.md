@@ -11,7 +11,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 2 | Streaks, transformations, healing beans, reminders | Done |
 | 3 | Sagas, spirit bombs, time chamber | Done |
 | 4 | Mentors, bonds, reactions, techniques | Done |
-| 5 | Story chapters, wish orbs, rival | Not started |
+| 5 | Story chapters, wish orbs, rival | Done |
 | 6 | Art manifest, gallery swap, `ART_LIST.md`, polish and animations | Not started |
 | 7 | Data export/import, final debug APK | Not started |
 
@@ -120,6 +120,27 @@ mentor. Edit, rebuild, done.
 per trigger, a scene of 3 to 6 lines for every level, known speakers and
 placeholders. A mistake is reported with its line number.
 
+## Story, wish orbs and the rival
+
+- **Story.** Eight chapters, reached from the book icon on the home screen.
+  Chapter 1 is open from the start; chapters 2 to 7 unlock at power levels
+  100, 300, 700, 1,500, 3,000 and 6,000; chapter 8 unlocks at form 3. A newly
+  unlocked chapter is announced on the home screen. Opening a chapter counts
+  as reading it.
+- **Wish orbs.** Write real-life rewards as wishes under Settings. Each
+  perfect week (Monday to Sunday, every scheduled habit done on every day, at
+  least one day with something scheduled; a day saved by a bean does not count)
+  earns an orb, up to seven. Weeks are judged once they have finished. With
+  seven orbs, summon the dragon from the home screen and claim one wish; the
+  orbs reset.
+- **Rival.** The home screen shows last week's power gain as a rival figure.
+  Mid-week it compares this week so far with where last week stood by the same
+  weekday; once this week passes last week's whole total, the rival is beaten.
+
+The story text is in `app/src/main/assets/dialogue/story.json`, in the same
+line format as the bond scenes, and is checked by the unit tests (one chapter
+per unlock, 120 to 400 words each, known speakers).
+
 ## Reminders
 
 Each habit can have a reminder time. On its scheduled days, a notification
@@ -129,7 +150,7 @@ battery.
 
 ## Tuning
 
-All points, multipliers, streak thresholds, bean limits, saga and spirit bomb payouts, timer lengths, bond levels, technique strengths and animation timings are in
+All points, multipliers, streak thresholds, bean limits, saga and spirit bomb payouts, timer lengths, bond levels, technique strengths, story unlock levels, the orb count and animation timings are in
 [`app/src/main/java/com/saiyanhabits/GameConfig.kt`](app/src/main/java/com/saiyanhabits/GameConfig.kt).
 Points are stored with each check-off, so a change only affects check-offs made afterwards.
 
@@ -139,13 +160,15 @@ Points are stored with each check-off, so a change only affects check-offs made 
 app/src/main/java/com/saiyanhabits/
   GameConfig.kt      tuning numbers
   domain/            rules with no Android code: points, schedules, streaks, beans, forms,
-                     boss fights, spirit bombs, bonds, techniques, mentor reactions
+                     boss fights, spirit bombs, bonds, techniques, mentor reactions,
+                     story unlocks, wish orbs, the rival
   data/              Room entities, DAOs, database, migrations, repositories
   reminders/         notifications and the WorkManager jobs behind them
   chamber/           the time chamber: session state and its foreground service
-  ui/                Compose screens (home, habits, sagas, time chamber, bonds),
-                     navigation, theme, shared components
-app/src/main/assets/dialogue/   mentor one-liners and bond scenes, one JSON file per mentor
+  ui/                Compose screens (home, habits, sagas, time chamber, bonds, story,
+                     settings), navigation, theme, shared components
+app/src/main/assets/dialogue/   mentor one-liners and bond scenes (one JSON file per
+                                mentor) and the story chapters (story.json)
 app/schemas/         Room schema per database version, for migrations
 app/src/test/        unit tests
 ```
