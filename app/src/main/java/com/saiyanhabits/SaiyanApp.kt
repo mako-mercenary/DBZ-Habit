@@ -33,6 +33,8 @@ class SaiyanApp : Application() {
 
     val historyRepository: HistoryRepository by lazy { HistoryRepository(this, database) }
 
+    val fighterRepository: com.saiyanhabits.data.FighterRepository by lazy { com.saiyanhabits.data.FighterRepository(database) }
+
     val achievementRepository: com.saiyanhabits.data.AchievementRepository by lazy {
         com.saiyanhabits.data.AchievementRepository(this, database, habitRepository)
     }

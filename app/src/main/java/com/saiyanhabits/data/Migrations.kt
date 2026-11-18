@@ -160,3 +160,14 @@ val MIGRATION_5_6 = object : Migration(5, 6) {
         )
     }
 }
+
+/** Milestone 10: the zeni ledger, for prizes and purchases. */
+val MIGRATION_6_7 = object : Migration(6, 7) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `zeni_ledger` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `amount` INTEGER NOT NULL, `reason` TEXT NOT NULL, " +
+                "`createdAtMillis` INTEGER NOT NULL)",
+        )
+    }
+}

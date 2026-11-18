@@ -63,6 +63,21 @@ data class HabitCountEntity(
     val count: Int,
 )
 
+/**
+ * Zeni that didn't come from training: prizes in (positive), purchases out
+ * (negative). Zeni from training is worked out from the check-offs and days
+ * already recorded, so it isn't stored here.
+ */
+@Entity(tableName = "zeni_ledger")
+data class ZeniEntryEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    val amount: Long,
+    /** What it was for, e.g. "Roshi Cup prize" or "Hoverbike". */
+    val reason: String,
+    val createdAtMillis: Long,
+)
+
 /** A line written about a day. */
 @Entity(tableName = "day_notes")
 data class DayNoteEntity(

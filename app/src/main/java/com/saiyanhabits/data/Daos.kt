@@ -260,3 +260,14 @@ interface AchievementDao {
     @Query("SELECT (SELECT COALESCE(SUM(points), 0) FROM completions) + (SELECT COALESCE(SUM(points), 0) FROM power_events)")
     suspend fun totalPoints(): Long
 }
+
+@Dao
+interface ZeniDao {
+
+    /** The sum of every prize and purchase. */
+    @Query("SELECT COALESCE(SUM(amount), 0) FROM zeni_ledger")
+    fun observeLedgerTotal(): Flow<Long>
+
+    @Insert
+    suspend fun insert(entry: ZeniEntryEntity): Long
+}

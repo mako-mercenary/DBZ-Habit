@@ -108,6 +108,7 @@ private object Routes {
     const val ART = "art"
     const val HISTORY = "history"
     const val ACHIEVEMENTS = "achievements"
+    const val STATUS = "status"
 
     const val WEEK_ARG = "week"
     const val RECAP = "recap/{$WEEK_ARG}"
@@ -152,7 +153,7 @@ private enum class Tab(val route: String, val label: String, @DrawableRes val ic
     HABITS(Routes.HABITS, "Habits", R.drawable.ic_habits),
     SAGAS(Routes.SAGAS, "Sagas", R.drawable.ic_sagas),
     CHAMBER(Routes.CHAMBER, "Chamber", R.drawable.ic_chamber),
-    BONDS(Routes.BONDS, "Bonds", R.drawable.ic_bonds),
+    BONDS(Routes.BONDS, "Team", R.drawable.ic_bonds),
 }
 
 @Composable
@@ -188,6 +189,7 @@ fun SaiyanHabitsRoot() {
     var summoning by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
     val achievements by app.achievementRepository.state.collectAsStateWithLifecycle(initialValue = null)
+    val fighter by app.fighterRepository.state.collectAsStateWithLifecycle(initialValue = null)
 
     // Announce achievements as they unlock.
     LaunchedEffect(achievements) {
@@ -307,8 +309,10 @@ fun SaiyanHabitsRoot() {
                         .collectAsStateWithLifecycle(initialValue = null)
                     HomeScreen(
                         title = achievements?.title,
-                        achievementCount = achievements?.unlocked?.size ?: 0,
+                        level = fighter?.sheet?.level,
+                        zeni = fighter?.zeni,
                         onOpenAchievements = { navController.navigate(Routes.ACHIEVEMENTS) },
+                        onOpenStatus = { navController.navigate(Routes.STATUS) },
                         todayNote = todayNote,
                         onSaveNote = { text -> scope.launch { app.historyRepository.saveNote(homeDate.toEpochDay(), text) } },
                         viewModel = homeViewModel,
@@ -401,6 +405,12 @@ fun SaiyanHabitsRoot() {
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
                     )
                 }
+                composable(Routes.STATUS) {
+                    com.saiyanhabits.ui.bonds.StatusScreen(
+                        state = fighter,
+                        onBack = { navController.popBackStack(Routes.STATUS, inclusive = true) },
+                    )
+                }
                 composable(Routes.ACHIEVEMENTS) {
                     AchievementsScreen(
                         state = achievements,
@@ -451,7 +461,12 @@ fun SaiyanHabitsRoot() {
                         bondsViewModel.refreshToday()
                         onPauseOrDispose { }
                     }
-                    BondsScreen(state = state, onOpenMentor = { navController.navigate(Routes.mentor(it)) })
+                    BondsScreen(
+                        state = state,
+                        fighter = fighter,
+                        onOpenStatus = { navController.navigate(Routes.STATUS) },
+                        onOpenMentor = { navController.navigate(Routes.mentor(it)) },
+                    )
                 }
                 composable(Routes.MENTOR) { entry ->
                     val mentor = entry.mentorArg() ?: return@composable
