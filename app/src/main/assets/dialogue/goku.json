@@ -102,6 +102,23 @@
     "It's getting late, but I've still got energy. You too?",
     "Don't go to bed yet! There's still training to finish!"
   ],
+  "game": [
+    "Okay, okay, hold it, then let go! Big cast, big fish!",
+    "Shh... I think something's coming...",
+    "There! It's biting! Now!",
+    "Don't pull too hard, you'll snap it! Easy, easy...",
+    "Ha, I usually just jump in. But this is fun too!",
+    "Patience! That's the hard part. For me, anyway.",
+    "The river's full of them today. I can feel it!",
+    "Reel when it rests, let go when it runs!"
+  ],
+  "game_done": [
+    "Whoa! Look at that one! We're eating good tonight!",
+    "Nice catch! Wanna go again? I wanna go again.",
+    "That's a big one! Well, for you. I once caught one bigger than a house.",
+    "Yes! Fishing is the best training. Don't tell Piccolo.",
+    "Ha! It put up a fight, huh? You did great."
+  ],
   "scenes": [
     {
       "level": 2,

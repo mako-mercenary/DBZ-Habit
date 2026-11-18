@@ -9,6 +9,7 @@ fun GameHost(game: MiniGame, onBack: () -> Unit) {
     when (game) {
         MiniGame.HOVER_BIKE -> HoverBikeScreen(onBack)
         MiniGame.MEDITATION -> MeditationScreen(onBack)
+        MiniGame.FISHING -> FishingScreen(onBack)
         else -> ComingSoon(game, onBack)
     }
 }
