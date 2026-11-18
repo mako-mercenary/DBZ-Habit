@@ -102,6 +102,30 @@
     "Before the day ends: one more thing. Then cocoa.",
     "The day's nearly done. Make sure you are too."
   ],
+  "game": [
+    "Ho ho, a game of chess! Sit down, sit down. Mind the turtle.",
+    "Chess is like training. Every move you rush, you pay for later.",
+    "Hmm... interesting. Very interesting. Wait, whose turn is it?",
+    "In my day we played with real boulders. Very slow games.",
+    "Think two moves ahead. Three, if you've had your tea.",
+    "Don't fall in love with your queen. She doesn't love you back.",
+    "A pawn is just a soldier who hasn't trained enough yet.",
+    "You moved fast. Bold. Possibly foolish. We'll see.",
+    "Control the centre, young one. Like the turtle controls the beach.",
+    "Ho ho! Didn't see that coming, did you?"
+  ],
+  "game_done": [
+    "You beat me! Fair and square. I may have been napping. A little.",
+    "Well played! The student surpasses the master. At chess, anyway.",
+    "Ho ho, you got me. Rematch tomorrow, once I've had my nap.",
+    "Checkmate. Hmph. Don't tell the turtle."
+  ],
+  "game_lost": [
+    "Ho ho! The old man still has it. Again?",
+    "Checkmate. Don't sulk, every loss is a lesson.",
+    "You fought well. Next time, guard your king like it's your lunch.",
+    "Mate! Ho ho ho. Come back when you've trained some more."
+  ],
   "scenes": [
     {
       "level": 2,
