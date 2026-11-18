@@ -25,6 +25,22 @@ object WeekSchedule {
 
     fun toggle(mask: Int, day: DayOfWeek): Int = mask xor bit(day)
 
+    /**
+     * How often a habit is done, e.g. "Every day", "3 times a week" or
+     * "Weekdays · 8 glasses each day".
+     */
+    fun describeHabit(mask: Int, weeklyTarget: Int?, dailyTarget: Int, unit: String): String {
+        val often = when (weeklyTarget) {
+            null -> describe(mask)
+            1 -> "Once a week"
+            2 -> "Twice a week"
+            else -> "$weeklyTarget times a week"
+        }
+        if (dailyTarget <= 1) return often
+        val what = unit.trim().ifBlank { "times" }
+        return "$often · $dailyTarget $what each time"
+    }
+
     /** Short text for a schedule, e.g. "Every day" or "Mon, Wed, Fri". */
     fun describe(mask: Int): String = when (mask and EVERY_DAY) {
         NONE -> "No days"

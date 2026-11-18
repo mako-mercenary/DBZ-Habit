@@ -23,6 +23,8 @@ import com.saiyanhabits.domain.RivalStanding
 import com.saiyanhabits.domain.Weeks
 import com.saiyanhabits.domain.StreakRules
 import com.saiyanhabits.domain.WeekSchedule
+import com.saiyanhabits.domain.WeeklyGoals
+import com.saiyanhabits.data.toScheduled
 import com.saiyanhabits.reminders.ReminderScheduler
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
@@ -48,6 +50,17 @@ data class TodayHabit(
     val streak: Int,
     /** True when Master's Day Off was used on it today: it no longer counts for today. */
     val excused: Boolean = false,
+    /**
+     * True when it counts towards today being perfect. Always true for a habit
+     * scheduled today; for a weekly goal, only when it is due today or done today.
+     */
+    val countsToday: Boolean = true,
+    /** For a counted habit: how many so far today. */
+    val count: Int = 0,
+    /** For a weekly goal: check-offs this week, today included. */
+    val weekDone: Int = 0,
+    /** For a weekly goal: this week's target. Null for other habits. */
+    val weekTarget: Int? = null,
 ) {
     val isDone: Boolean get() = completion != null
 }
@@ -80,17 +93,19 @@ data class HomeUiState(
     /** What a mentor has to say today, or null if the dialogue files gave nothing. */
     val mentorLine: MentorLine?,
 ) {
-    /** Today's habits that still count: everything not excused. */
-    val counted: List<TodayHabit> get() = today.filterNot { it.excused }
+    /** Today's habits that count towards a perfect day: not excused, and due today. */
+    val counted: List<TodayHabit> get() = today.filter { !it.excused && it.countsToday }
     val doneCount: Int get() = counted.count { it.isDone }
 }
 
 /** The habit-side inputs to the home screen, bundled so they travel as one flow. */
 private data class HabitInputs(
     val habits: List<HabitEntity>,
-    val completions: List<CompletionEntity>,
+    /** This week's check-offs, today's included. */
+    val weekCompletions: List<CompletionEntity>,
     val power: Long,
     val dailyPoints: Map<Long, Int>,
+    val counts: Map<Long, Int>,
 )
 
 /** The bond-side inputs to the home screen, bundled so they travel as one flow. */
@@ -120,10 +135,11 @@ class HomeViewModel(
             combine(
                 combine(
                     repository.activeHabits,
-                    repository.completionsOn(date),
+                    repository.completionsBetween(LocalDate.ofEpochDay(Weeks.startOf(date.toEpochDay())), date),
                     repository.powerLevel,
                     // Last week and this one, for the rival.
                     repository.dailyPoints(LocalDate.ofEpochDay(Weeks.startOf(date.toEpochDay()) - Weeks.DAYS), date),
+                    repository.countsOn(date),
                     ::HabitInputs,
                 ),
                 combine(repository.openDays, repository.playerState, repository.habitStreaks, ::Triple),
@@ -135,11 +151,28 @@ class HomeViewModel(
                     dialogues,
                     ::BondInputs,
                 ),
-            ) { (habits, completions, power, dailyPoints), (openDays, player, habitStreaks), bond ->
-                val byHabit = completions.associateBy { it.habitId }
+            ) { (habits, weekCompletions, power, dailyPoints, counts), (openDays, player, habitStreaks), bond ->
+                val day = date.toEpochDay()
+                val byHabit = weekCompletions.filter { it.epochDay == day }.associateBy { it.habitId }
+                val week = weekCompletions.groupBy({ it.epochDay }, { it.habitId }).mapValues { it.value.toSet() }
+                val countsToday = StreakRules.countedOn(habits.map { it.toScheduled() }, day, week).toSet()
                 val todays = habits
-                    .filter { WeekSchedule.isScheduled(it.scheduleDays, date) }
-                    .map { TodayHabit(it, byHabit[it.id], habitStreaks[it.id] ?: 0, excused = it.id in bond.excused) }
+                    .filter { if (it.isWeekly) it.createdAtEpochDay <= day else WeekSchedule.isScheduled(it.scheduleDays, date) }
+                    .map { habit ->
+                        val done = byHabit[habit.id]
+                        TodayHabit(
+                            habit = habit,
+                            completion = done,
+                            streak = habitStreaks[habit.id] ?: 0,
+                            excused = habit.id in bond.excused,
+                            countsToday = habit.id in countsToday,
+                            count = if (done != null) habit.dailyTarget else counts[habit.id] ?: 0,
+                            weekDone = weekCompletions.count { it.habitId == habit.id },
+                            weekTarget = if (habit.isWeekly) WeeklyGoals.targetFor(habit.toScheduled(), day) else null,
+                        )
+                    }
+                    // Weekly goals that can wait go last.
+                    .sortedBy { !it.countsToday }
                 val counted = todays.filterNot { it.excused }
                 val todayPerfect = counted.isNotEmpty() && counted.all { it.isDone }
                 val streak = StreakRules.streak(openDays.map { it.outcome }, todayPerfect)
@@ -226,6 +259,17 @@ class HomeViewModel(
                 refreshToday()
             }
         }
+    }
+
+    /** One more of a counted habit, short of its target. */
+    fun addToCount(habit: HabitEntity) {
+        val date = today.value
+        viewModelScope.launch { if (repository.addToCount(habit, date) == null) refreshToday() }
+    }
+
+    fun removeFromCount(habit: HabitEntity) {
+        val date = today.value
+        viewModelScope.launch { repository.removeFromCount(habit, date) }
     }
 
     fun undo(habit: HabitEntity) {

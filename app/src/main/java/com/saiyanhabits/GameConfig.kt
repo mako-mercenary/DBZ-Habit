@@ -22,6 +22,16 @@ object GameConfig {
     const val MAX_DIFFICULTY = 3
     const val DEFAULT_DIFFICULTY = 1
 
+    // ---- Flexible habits ----
+
+    /** Most times a week a weekly-target habit can ask for (every day is a habit on all 7 days). */
+    const val MAX_WEEKLY_TARGET = 6
+    const val DEFAULT_WEEKLY_TARGET = 3
+
+    /** Most a counted habit can ask for in a day, e.g. 8 glasses of water. */
+    const val MAX_DAILY_TARGET = 50
+    const val DEFAULT_DAILY_TARGET = 8
+
     // ---- Gravity training (point multipliers) ----
 
     const val GRAVITY_NORMAL_MULTIPLIER = 1

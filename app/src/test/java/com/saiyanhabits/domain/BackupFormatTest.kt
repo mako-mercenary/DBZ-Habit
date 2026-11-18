@@ -73,9 +73,23 @@ class BackupFormatTest {
     }
 
     @Test
-    fun `exports from other database versions are refused`() {
-        assertTrue(BackupFormat.problems(sample, currentVersion = 6, columns = emptyMap()).single().contains("older version"))
+    fun `exports from too old or newer database versions are refused`() {
+        val tooOld = sample.copy(databaseVersion = BackupFormat.OLDEST_IMPORTABLE_VERSION - 1)
+        assertTrue(BackupFormat.problems(tooOld, currentVersion = 6, columns = emptyMap()).single().contains("older version"))
         assertTrue(BackupFormat.problems(sample, currentVersion = 4, columns = emptyMap()).single().contains("newer version"))
+    }
+
+    @Test
+    fun `an export from an older version that only lacks new tables and columns is accepted`() {
+        val columns = mapOf(
+            "habits" to setOf("id", "name", "reminderMinutes", "isHardest", "archived", "weeklyTarget", "dailyTarget", "unit"),
+            "completions" to setOf("id", "completedAtMillis", "points"),
+            "wishes" to setOf("id", "text"),
+            "focus" to setOf("ratio"),
+            "day_notes" to setOf("epochDay", "text"),
+        )
+        assertEquals(5, sample.databaseVersion)
+        assertEquals(emptyList<String>(), BackupFormat.problems(sample, currentVersion = 6, columns = columns))
     }
 
     @Test

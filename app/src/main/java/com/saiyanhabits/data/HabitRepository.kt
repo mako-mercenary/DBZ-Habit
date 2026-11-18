@@ -16,6 +16,7 @@ import com.saiyanhabits.domain.StreakRules
 import com.saiyanhabits.domain.Weeks
 import com.saiyanhabits.domain.WishRules
 import com.saiyanhabits.domain.WeekSchedule
+import com.saiyanhabits.domain.WeeklyGoals
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -56,6 +57,7 @@ class HabitRepository(
     private val streakDao = db.streakDao()
     private val powerDao = db.powerDao()
     private val bondDao = db.bondDao()
+    private val countDao = db.countDao()
 
     val activeHabits: Flow<List<HabitEntity>> = habitDao.observeActive()
 
@@ -83,6 +85,63 @@ class HabitRepository(
 
     fun completionsOn(date: LocalDate): Flow<List<CompletionEntity>> =
         completionDao.observeForDay(date.toEpochDay())
+
+    /** Check-offs from [from] to [to], both included. */
+    fun completionsBetween(from: LocalDate, to: LocalDate): Flow<List<CompletionEntity>> =
+        completionDao.observeBetween(from.toEpochDay(), to.toEpochDay())
+
+    /** How far each counted habit has got on [date], by habit id. */
+    fun countsOn(date: LocalDate): Flow<Map<Long, Int>> =
+        countDao.observeForDay(date.toEpochDay()).map { rows -> rows.associate { it.habitId to it.count } }
+
+    /**
+     * Adds one to a counted habit's count for today, short of its target: the
+     * last one is a check-off, made with [complete]. Returns the new count, or
+     * null if nothing changed (it would reach the target, it is done, or the
+     * day has changed).
+     */
+    suspend fun addToCount(habit: HabitEntity, date: LocalDate): Int? = db.withTransaction {
+        val day = today().toEpochDay()
+        if (date.toEpochDay() != day || !habit.isCounted) return@withTransaction null
+        val count = countDao.get(habit.id, day) ?: 0
+        if (count + 1 >= habit.dailyTarget) return@withTransaction null
+        countDao.save(HabitCountEntity(habit.id, day, count + 1))
+        count + 1
+    }
+
+    /** Takes one off a counted habit's count for today, unless it is already checked off. */
+    suspend fun removeFromCount(habit: HabitEntity, date: LocalDate) {
+        db.withTransaction {
+            val day = today().toEpochDay()
+            if (date.toEpochDay() != day) return@withTransaction
+            if (completionDao.getBetween(day, day).any { it.habitId == habit.id }) return@withTransaction
+            val count = countDao.get(habit.id, day) ?: 0
+            if (count > 0) countDao.save(HabitCountEntity(habit.id, day, count - 1))
+        }
+    }
+
+    /**
+     * True when [habit] still wants doing today, for its reminder: not done yet,
+     * and scheduled today, or for a weekly goal, short of this week's target.
+     */
+    suspend fun needsDoingToday(habit: HabitEntity): Boolean {
+        val date = today()
+        val day = date.toEpochDay()
+        val week = completedByDay(Weeks.startOf(day), day)
+        if (habit.id in week[day].orEmpty()) return false
+        val scheduled = habit.toScheduled()
+        return if (habit.isWeekly) {
+            WeeklyGoals.doneBefore(habit.id, day, week) < WeeklyGoals.targetFor(scheduled, day)
+        } else {
+            StreakRules.scheduledOn(listOf(scheduled), day).isNotEmpty()
+        }
+    }
+
+    /** Ids of the habits checked off each day from [from] to [to]. */
+    private suspend fun completedByDay(from: Long, to: Long): Map<Long, Set<Long>> =
+        completionDao.getBetween(from, to)
+            .groupBy({ it.epochDay }, { it.habitId })
+            .mapValues { it.value.toSet() }
 
     suspend fun getHabit(id: Long): HabitEntity? = habitDao.getById(id)
 
@@ -138,7 +197,10 @@ class HabitRepository(
         if (date.toEpochDay() != todayDay) return@celebrating 0
         syncDaysInTransaction(todayDay, events)
         val points = insertCompletion(habit, todayDay, gravity, events)
-        if (points > 0) events += checkMilestones(todayDay)
+        if (points > 0) {
+            if (habit.isCounted) countDao.save(HabitCountEntity(habit.id, todayDay, habit.dailyTarget))
+            events += checkMilestones(todayDay)
+        }
         points
     }
 
@@ -156,8 +218,10 @@ class HabitRepository(
 
         var checkOffPoints = 0
         val existing = completionDao.getBetween(todayDay, todayDay).firstOrNull { it.habitId == habitId }
-        if (existing == null && WeekSchedule.isScheduled(habit.scheduleDays, date)) {
+        if (existing == null && (habit.isWeekly || WeekSchedule.isScheduled(habit.scheduleDays, date))) {
             checkOffPoints = insertCompletion(habit, todayDay, Gravity.NORMAL, events)
+            // A whole session on a counted habit finishes it for the day.
+            if (habit.isCounted) countDao.save(HabitCountEntity(habit.id, todayDay, habit.dailyTarget))
             events += checkMilestones(todayDay)
         }
 
@@ -179,6 +243,11 @@ class HabitRepository(
         db.withTransaction {
             completionDao.delete(habitId, date.toEpochDay())
             powerDao.deleteOnDay(PowerSource.FOCUS_HABIT, habitId, date.toEpochDay())
+            // A counted habit goes back to one short of its target.
+            val habit = habitDao.getById(habitId)
+            if (habit != null && habit.isCounted) {
+                countDao.save(HabitCountEntity(habitId, date.toEpochDay(), habit.dailyTarget - 1))
+            }
         }
     }
 
@@ -268,7 +337,8 @@ class HabitRepository(
             ?: return
         val lastDay = todayDay - 1
         if (firstDay <= lastDay) {
-            val completedByDay = completionDao.getBetween(firstDay, lastDay)
+            // From the Monday, so weekly goals know what was done earlier in the week.
+            val completedByDay = completionDao.getBetween(Weeks.startOf(firstDay), lastDay)
                 .groupBy({ it.epochDay }, { it.habitId })
                 .mapValues { it.value.toSet() }
             val excusedByDay = bondDao.getExcusesBetween(firstDay, lastDay)
@@ -323,10 +393,11 @@ class HabitRepository(
     /** If today is perfect, hands out whatever the streak has now earned. */
     private suspend fun checkMilestones(todayDay: Long): List<GameEvent> {
         val excused = bondDao.getExcusesBetween(todayDay, todayDay).map { it.habitId }.toSet()
-        val scheduled = StreakRules.scheduledOn(habitDao.getActive().map { it.toScheduled() }, todayDay)
-            .filterNot { it.id in excused }
-        val completed = completionDao.getBetween(todayDay, todayDay).map { it.habitId }.toSet()
-        if (!StreakRules.isPerfect(scheduled.map { it.id }, completed)) return emptyList()
+        val week = completedByDay(Weeks.startOf(todayDay), todayDay)
+        val scheduled = StreakRules.countedOn(habitDao.getActive().map { it.toScheduled() }, todayDay, week)
+            .filterNot { it in excused }
+        val completed = week[todayDay].orEmpty()
+        if (!StreakRules.isPerfect(scheduled, completed)) return emptyList()
 
         val streak = StreakRules.streak(streakDao.getOpenRecords().map { it.outcome }, todayPerfect = true)
         val before = streakDao.getPlayerState() ?: PlayerStateEntity()
@@ -353,7 +424,7 @@ class HabitRepository(
     }
 }
 
-internal fun HabitEntity.toScheduled() = ScheduledHabit(id, scheduleDays, createdAtEpochDay)
+internal fun HabitEntity.toScheduled() = ScheduledHabit(id, scheduleDays, createdAtEpochDay, weeklyTarget)
 
 /** The mentor who trains this habit: Vegeta for the hardest one, otherwise its category's mentor. */
 val HabitEntity.mentor: Mentor get() = mentorFor(category, isHardest)

@@ -5,6 +5,7 @@ import com.saiyanhabits.domain.BondRules
 import com.saiyanhabits.domain.Mentor
 import com.saiyanhabits.domain.Perks
 import com.saiyanhabits.domain.StreakRules
+import com.saiyanhabits.domain.Weeks
 import com.saiyanhabits.domain.Technique
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -53,9 +54,11 @@ class BondRepository(
         val date = today()
         val day = date.toEpochDay()
         val habit = db.habitDao().getById(habitId)
+        val week = db.completionDao().getBetween(Weeks.startOf(day), day)
+            .groupBy({ it.epochDay }, { it.habitId }).mapValues { it.value.toSet() }
         val scheduledToday = habit != null && !habit.archived &&
-            StreakRules.scheduledOn(listOf(habit.toScheduled()), day).isNotEmpty()
-        val doneToday = db.completionDao().getBetween(day, day).any { it.habitId == habitId }
+            habitId in StreakRules.countedOn(listOf(habit.toScheduled()), day, week)
+        val doneToday = habitId in week[day].orEmpty()
         if (!scheduledToday || doneToday) return@withTransaction false
         if (!markUsed(Technique.DAY_OFF)) return@withTransaction false
         bondDao.insertExcuse(HabitExcuseEntity(habitId, day))

@@ -92,6 +92,7 @@ import java.time.format.TextStyle
 import java.util.Locale
 
 private const val MAX_NAME_LENGTH = 60
+private const val MAX_UNIT_LENGTH = 20
 private const val DEFAULT_REMINDER_MINUTES = 8 * 60
 private val DifficultyNames = mapOf(1 to "Easy", 2 to "Medium", 3 to "Hard")
 
@@ -113,6 +114,13 @@ fun HabitEditScreen(
     var difficulty by rememberSaveable { mutableIntStateOf(initial?.difficulty ?: GameConfig.DEFAULT_DIFFICULTY) }
     var days by rememberSaveable { mutableIntStateOf(initial?.scheduleDays ?: WeekSchedule.EVERY_DAY) }
     var hardest by rememberSaveable { mutableStateOf(initial?.isHardest ?: false) }
+    var weekly by rememberSaveable { mutableStateOf(initial?.weeklyTarget != null) }
+    var weeklyTarget by rememberSaveable { mutableIntStateOf(initial?.weeklyTarget ?: GameConfig.DEFAULT_WEEKLY_TARGET) }
+    var counted by rememberSaveable { mutableStateOf((initial?.dailyTarget ?: 1) > 1) }
+    var dailyTarget by rememberSaveable {
+        mutableIntStateOf(initial?.dailyTarget?.takeIf { it > 1 } ?: GameConfig.DEFAULT_DAILY_TARGET)
+    }
+    var unit by rememberSaveable { mutableStateOf(initial?.unit.orEmpty()) }
     var reminderMinutes by rememberSaveable { mutableStateOf(initial?.reminderMinutes) }
     var pickingTime by rememberSaveable { mutableStateOf(false) }
 
@@ -128,7 +136,7 @@ fun HabitEditScreen(
     ) { notificationsAllowed = Notifications.areEnabled(context) }
     var confirmingDelete by rememberSaveable { mutableStateOf(false) }
 
-    val canSave = name.isNotBlank() && days != WeekSchedule.NONE
+    val canSave = name.isNotBlank() && (weekly || days != WeekSchedule.NONE)
     val mentor = mentorFor(category, hardest)
 
     Scaffold(
@@ -175,9 +183,13 @@ fun HabitEditScreen(
                             name = name.trim(),
                             category = category,
                             difficulty = difficulty,
-                            scheduleDays = days,
+                            // A weekly goal can be done on any day.
+                            scheduleDays = if (weekly) WeekSchedule.EVERY_DAY else days,
                             isHardest = hardest,
                             reminderMinutes = reminderMinutes,
+                            weeklyTarget = if (weekly) weeklyTarget else null,
+                            dailyTarget = if (counted) dailyTarget else 1,
+                            unit = if (counted) unit.trim() else "",
                         ),
                     )
                 },
@@ -245,22 +257,94 @@ fun HabitEditScreen(
             }
 
             Spacer(Modifier.height(6.dp))
-            SectionLabel("Days")
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                DayOfWeek.entries.forEach { day ->
-                    DayToggle(
-                        day = day,
-                        selected = WeekSchedule.isScheduled(days, day),
-                        onClick = { days = WeekSchedule.toggle(days, day) },
-                        modifier = Modifier.weight(1f),
-                    )
-                }
+            SectionLabel("How often")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                ChoiceTile(
+                    selected = !weekly,
+                    onClick = { weekly = false },
+                    title = "Set days",
+                    caption = "on the days you pick",
+                    modifier = Modifier.weight(1f),
+                )
+                ChoiceTile(
+                    selected = weekly,
+                    onClick = { weekly = true },
+                    title = "Times a week",
+                    caption = "on any days",
+                    modifier = Modifier.weight(1f),
+                )
             }
-            Text(
-                if (days == WeekSchedule.NONE) "Pick at least one day." else WeekSchedule.describe(days),
-                style = MaterialTheme.typography.bodySmall,
-                color = if (days == WeekSchedule.NONE) SaiyanColors.Danger else SaiyanColors.TextDim,
-            )
+            if (weekly) {
+                Stepper(
+                    value = weeklyTarget,
+                    range = 1..GameConfig.MAX_WEEKLY_TARGET,
+                    label = if (weeklyTarget == 1) "time a week" else "times a week",
+                    onChange = { weeklyTarget = it },
+                )
+                Text(
+                    "Do it on any days. It only becomes due when the rest of the week leaves no room, " +
+                        "and a goal that slips counts as one missed day.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SaiyanColors.TextDim,
+                )
+            } else {
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    DayOfWeek.entries.forEach { day ->
+                        DayToggle(
+                            day = day,
+                            selected = WeekSchedule.isScheduled(days, day),
+                            onClick = { days = WeekSchedule.toggle(days, day) },
+                            modifier = Modifier.weight(1f),
+                        )
+                    }
+                }
+                Text(
+                    if (days == WeekSchedule.NONE) "Pick at least one day." else WeekSchedule.describe(days),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (days == WeekSchedule.NONE) SaiyanColors.Danger else SaiyanColors.TextDim,
+                )
+            }
+
+            Spacer(Modifier.height(6.dp))
+            SectionLabel("Each time")
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                ChoiceTile(
+                    selected = !counted,
+                    onClick = { counted = false },
+                    title = "Once",
+                    caption = "one check-off",
+                    modifier = Modifier.weight(1f),
+                )
+                ChoiceTile(
+                    selected = counted,
+                    onClick = { counted = true },
+                    title = "A count",
+                    caption = "e.g. 8 glasses",
+                    modifier = Modifier.weight(1f),
+                )
+            }
+            if (counted) {
+                Stepper(
+                    value = dailyTarget,
+                    range = 2..GameConfig.MAX_DAILY_TARGET,
+                    label = unit.trim().ifBlank { "times" },
+                    onChange = { dailyTarget = it },
+                )
+                OutlinedTextField(
+                    value = unit,
+                    onValueChange = { unit = it.take(MAX_UNIT_LENGTH) },
+                    label = { Text("What you count") },
+                    placeholder = { Text("e.g. glasses") },
+                    singleLine = true,
+                    shape = RoundedCornerShape(14.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Text(
+                    "Tap the habit on the home screen once for each. The last one checks it off.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SaiyanColors.TextDim,
+                )
+            }
 
             Spacer(Modifier.height(6.dp))
             DbzPanel(
@@ -296,6 +380,7 @@ fun HabitEditScreen(
             }
 
             ReminderRow(
+                weekly = weekly,
                 reminderMinutes = reminderMinutes,
                 notificationsAllowed = notificationsAllowed,
                 onPick = { pickingTime = true },
@@ -346,6 +431,7 @@ fun formatReminderTime(minutesAfterMidnight: Int): String =
 
 @Composable
 private fun ReminderRow(
+    weekly: Boolean,
     reminderMinutes: Int?,
     notificationsAllowed: Boolean,
     onPick: () -> Unit,
@@ -366,6 +452,7 @@ private fun ReminderRow(
                 Text(
                     when {
                         reminderMinutes == null -> "Off. Tap to pick a time."
+                        notificationsAllowed && weekly -> "Each day until this week's goal is reached."
                         notificationsAllowed -> "On scheduled days, if it isn't done yet."
                         else -> "Notifications are turned off for Saiyan Habits, so this can't show. " +
                             "Allow them in your phone's settings."
@@ -449,5 +536,29 @@ private fun DayToggle(
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(top = 10.dp),
         )
+    }
+}
+
+/** A number with minus and plus buttons, e.g. "- 3 times a week +". */
+@Composable
+private fun Stepper(value: Int, range: IntRange, label: String, onChange: (Int) -> Unit) {
+    DbzPanel(style = PanelStyle.Blue, modifier = Modifier.fillMaxWidth()) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp),
+        ) {
+            IconButton(onClick = { onChange((value - 1).coerceIn(range)) }, enabled = value > range.first) {
+                Text("−", style = MaterialTheme.typography.headlineMedium, color = if (value > range.first) Color.White else SaiyanColors.TextDim)
+            }
+            Text(
+                "$value $label",
+                style = MaterialTheme.typography.titleLarge,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.weight(1f),
+            )
+            IconButton(onClick = { onChange((value + 1).coerceIn(range)) }, enabled = value < range.last) {
+                Text("+", style = MaterialTheme.typography.headlineMedium, color = if (value < range.last) Color.White else SaiyanColors.TextDim)
+            }
+        }
     }
 }

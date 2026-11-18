@@ -62,6 +62,9 @@ interface CompletionDao {
     fun observeForDay(epochDay: Long): Flow<List<CompletionEntity>>
 
     @Query("SELECT * FROM completions WHERE epochDay BETWEEN :fromDay AND :toDay")
+    fun observeBetween(fromDay: Long, toDay: Long): Flow<List<CompletionEntity>>
+
+    @Query("SELECT * FROM completions WHERE epochDay BETWEEN :fromDay AND :toDay")
     suspend fun getBetween(fromDay: Long, toDay: Long): List<CompletionEntity>
 
     /**
@@ -168,4 +171,33 @@ interface WishDao {
 
     @Query("DELETE FROM wishes WHERE id = :id AND grantedAtEpochDay IS NULL")
     suspend fun deleteWaiting(id: Long)
+}
+
+@Dao
+interface CountDao {
+
+    @Query("SELECT * FROM habit_counts WHERE epochDay = :epochDay")
+    fun observeForDay(epochDay: Long): Flow<List<HabitCountEntity>>
+
+    @Query("SELECT count FROM habit_counts WHERE habitId = :habitId AND epochDay = :epochDay")
+    suspend fun get(habitId: Long, epochDay: Long): Int?
+
+    @Upsert
+    suspend fun save(count: HabitCountEntity)
+}
+
+@Dao
+interface NoteDao {
+
+    @Query("SELECT * FROM day_notes ORDER BY epochDay")
+    fun observeAll(): Flow<List<DayNoteEntity>>
+
+    @Query("SELECT * FROM day_notes WHERE epochDay = :epochDay")
+    fun observe(epochDay: Long): Flow<DayNoteEntity?>
+
+    @Upsert
+    suspend fun save(note: DayNoteEntity)
+
+    @Query("DELETE FROM day_notes WHERE epochDay = :epochDay")
+    suspend fun delete(epochDay: Long)
 }

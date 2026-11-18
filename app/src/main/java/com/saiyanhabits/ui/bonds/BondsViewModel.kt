@@ -1,5 +1,7 @@
 package com.saiyanhabits.ui.bonds
 
+import com.saiyanhabits.data.toScheduled
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.saiyanhabits.data.Bond
@@ -62,13 +64,14 @@ class BondsViewModel(
         .flatMapLatest { date ->
             val excusable = combine(
                 habits.activeHabits,
-                habits.completionsOn(date),
+                habits.completionsBetween(java.time.LocalDate.ofEpochDay(com.saiyanhabits.domain.Weeks.startOf(date.toEpochDay())), date),
                 bonds.excusedOn(date),
             ) { active, completions, excused ->
-                val done = completions.map { it.habitId }.toSet()
-                active.filter {
-                    WeekSchedule.isScheduled(it.scheduleDays, date) && it.id !in done && it.id !in excused
-                }
+                val day = date.toEpochDay()
+                val week = completions.groupBy({ it.epochDay }, { it.habitId }).mapValues { it.value.toSet() }
+                val done = week[day].orEmpty()
+                val due = com.saiyanhabits.domain.StreakRules.countedOn(active.map { it.toScheduled() }, day, week).toSet()
+                active.filter { it.id in due && it.id !in done && it.id !in excused }
             }
             combine(bonds.bonds, bonds.techniqueUses, dialogues, excusable) { bondList, uses, lines, canExcuse ->
                 BondsUiState(date.toEpochDay(), bondList, uses, lines, canExcuse)

@@ -141,3 +141,22 @@ val MIGRATION_4_5 = object : Migration(4, 5) {
         )
     }
 }
+
+/** Milestone 9: habits done a number of times a week or a number of times a day, and day notes. */
+val MIGRATION_5_6 = object : Migration(5, 6) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `habits` ADD COLUMN `weeklyTarget` INTEGER DEFAULT NULL")
+        db.execSQL("ALTER TABLE `habits` ADD COLUMN `dailyTarget` INTEGER NOT NULL DEFAULT 1")
+        db.execSQL("ALTER TABLE `habits` ADD COLUMN `unit` TEXT NOT NULL DEFAULT ''")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `habit_counts` (`habitId` INTEGER NOT NULL, `epochDay` INTEGER NOT NULL, " +
+                "`count` INTEGER NOT NULL, PRIMARY KEY(`habitId`, `epochDay`), FOREIGN KEY(`habitId`) REFERENCES " +
+                "`habits`(`id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_habit_counts_epochDay` ON `habit_counts` (`epochDay`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `day_notes` (`epochDay` INTEGER NOT NULL, `text` TEXT NOT NULL, " +
+                "PRIMARY KEY(`epochDay`))",
+        )
+    }
+}

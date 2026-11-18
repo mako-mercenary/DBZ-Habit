@@ -28,7 +28,7 @@ class BackupRepository(private val context: Context, private val db: AppDatabase
 
     /** Tables in an order where every row's parents come before it: restored in this order, cleared in reverse. */
     private val tableOrder = listOf(
-        "habits", "completions", "day_records", "habit_misses", "habit_excuses", "player_state",
+        "habits", "habit_counts", "day_notes", "completions", "day_records", "habit_misses", "habit_excuses", "player_state",
         "technique_uses", "wishes", "sagas", "saga_milestones", "spirit_bombs", "bomb_logs",
         "power_events", "focus_sessions",
     )

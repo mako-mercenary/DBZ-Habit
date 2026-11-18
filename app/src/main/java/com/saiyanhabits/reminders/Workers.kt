@@ -5,7 +5,6 @@ import androidx.work.CoroutineWorker
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkerParameters
 import com.saiyanhabits.SaiyanApp
-import com.saiyanhabits.domain.WeekSchedule
 import java.time.LocalDateTime
 import java.util.concurrent.TimeUnit
 
@@ -19,14 +18,10 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         if (habit == null || habit.archived || habit.reminderMinutes == null) return Result.success()
 
         val now = LocalDateTime.now()
-        val today = now.toLocalDate()
         // The phone may have been off: a reminder that comes out hours late is just noise.
         val lateBy = System.currentTimeMillis() - inputData.getLong(KEY_DUE_AT_MILLIS, 0)
         val onTime = lateBy < TimeUnit.HOURS.toMillis(MAX_LATE_HOURS)
-        if (onTime &&
-            WeekSchedule.isScheduled(habit.scheduleDays, today) &&
-            !app.habitRepository.isCompletedOn(habitId, today)
-        ) {
+        if (onTime && app.habitRepository.needsDoingToday(habit)) {
             Notifications.showHabitReminder(applicationContext, habit)
         }
 

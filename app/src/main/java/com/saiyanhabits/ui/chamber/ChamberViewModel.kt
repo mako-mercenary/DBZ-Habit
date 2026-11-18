@@ -44,7 +44,7 @@ class ChamberViewModel(
         val today = LocalDate.now()
         ChamberTargets(
             habits = activeHabits
-                .filter { WeekSchedule.isScheduled(it.scheduleDays, today) }
+                .filter { it.isWeekly || WeekSchedule.isScheduled(it.scheduleDays, today) }
                 .map { ChamberTarget(ChamberTargetType.HABIT, it.id, it.name) },
             milestones = sagas.flatMap { saga ->
                 saga.milestones.filterNot { it.isDone }

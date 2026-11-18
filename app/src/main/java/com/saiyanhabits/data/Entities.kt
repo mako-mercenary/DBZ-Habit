@@ -29,6 +29,45 @@ data class HabitEntity(
      */
     val archived: Boolean = false,
     val createdAtEpochDay: Long,
+    /**
+     * For a habit done a number of times a week on any days: that number.
+     * Null for a habit done on the days in [scheduleDays].
+     */
+    @ColumnInfo(defaultValue = "NULL") val weeklyTarget: Int? = null,
+    /** How many of it make a day's check-off: 1 for an ordinary habit, 8 for "8 glasses of water". */
+    @ColumnInfo(defaultValue = "1") val dailyTarget: Int = 1,
+    /** What [dailyTarget] counts, e.g. "glasses". Blank for an ordinary habit. */
+    @ColumnInfo(defaultValue = "") val unit: String = "",
+) {
+    val isWeekly: Boolean get() = weeklyTarget != null
+    val isCounted: Boolean get() = dailyTarget > 1
+}
+
+/** How far a counted habit has got on one day. The check-off itself is made when the count reaches the target. */
+@Entity(
+    tableName = "habit_counts",
+    primaryKeys = ["habitId", "epochDay"],
+    foreignKeys = [
+        ForeignKey(
+            entity = HabitEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["habitId"],
+            onDelete = ForeignKey.RESTRICT,
+        ),
+    ],
+    indices = [Index(value = ["epochDay"])],
+)
+data class HabitCountEntity(
+    val habitId: Long,
+    val epochDay: Long,
+    val count: Int,
+)
+
+/** A line written about a day. */
+@Entity(tableName = "day_notes")
+data class DayNoteEntity(
+    @PrimaryKey val epochDay: Long,
+    val text: String,
 )
 
 /** One check-off of one habit on one day. */

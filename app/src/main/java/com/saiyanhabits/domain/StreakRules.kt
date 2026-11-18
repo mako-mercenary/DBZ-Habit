@@ -15,7 +15,49 @@ import java.time.LocalDate
 enum class DayOutcome { PERFECT, REST, MISSED, BEAN_COVERED, BROKEN }
 
 /** The parts of a habit the streak rules care about. */
-data class ScheduledHabit(val id: Long, val scheduleDays: Int, val createdAtEpochDay: Long)
+data class ScheduledHabit(
+    val id: Long,
+    val scheduleDays: Int,
+    val createdAtEpochDay: Long,
+    /** Times a week on any days, or null for a habit done on [scheduleDays]. */
+    val weeklyTarget: Int? = null,
+)
+
+/**
+ * Habits done a number of times a week, on any days. Pure functions, no Android.
+ *
+ * Such a habit is "due" on a day only when the rest of the week has exactly
+ * enough days left for it: 3 times a week with 1 done by Saturday makes it
+ * due on Saturday. Done then, it is due again on Sunday; missed, the goal can
+ * no longer be reached and it stops being due, so a goal that slips costs one
+ * missed day, the same as a missed daily habit, and the streak rules need
+ * nothing new. On any other day it can still be done, and counts like any
+ * other check-off.
+ */
+object WeeklyGoals {
+
+    /** The target for the week [epochDay] falls in: the weekly target, cut down in the week the habit was made. */
+    fun targetFor(habit: ScheduledHabit, epochDay: Long): Int {
+        val target = habit.weeklyTarget ?: return 0
+        val weekStart = Weeks.startOf(epochDay)
+        val available = weekStart + Weeks.DAYS - maxOf(weekStart, habit.createdAtEpochDay)
+        return target.coerceAtMost(available.toInt()).coerceAtLeast(0)
+    }
+
+    /** Days from [epochDay] to the Sunday, both counted. */
+    fun daysLeft(epochDay: Long): Int = (Weeks.startOf(epochDay) + Weeks.DAYS - epochDay).toInt()
+
+    /** True when [habit] must be done on [epochDay] to reach this week's target, with [doneBefore] done earlier in the week. */
+    fun isDue(habit: ScheduledHabit, epochDay: Long, doneBefore: Int): Boolean {
+        if (habit.weeklyTarget == null || habit.createdAtEpochDay > epochDay) return false
+        val remaining = targetFor(habit, epochDay) - doneBefore
+        return remaining > 0 && remaining == daysLeft(epochDay)
+    }
+
+    /** Check-offs of [habitId] in the week of [epochDay], before that day. */
+    fun doneBefore(habitId: Long, epochDay: Long, completedByDay: Map<Long, Set<Long>>): Int =
+        (Weeks.startOf(epochDay) until epochDay).count { habitId in completedByDay[it].orEmpty() }
+}
 
 /** A finished day: which habits were scheduled and which of those were not done. */
 data class DayPlan(
@@ -43,12 +85,31 @@ object StreakRules {
         else -> DayOutcome.MISSED
     }
 
-    /** Habits that count on [epochDay]: scheduled for that weekday and already created by then. */
+    /**
+     * Habits set for certain weekdays that are scheduled on [epochDay] and were
+     * already created by then. Weekly-target habits are left out: see [countedOn].
+     */
     fun scheduledOn(habits: List<ScheduledHabit>, epochDay: Long): List<ScheduledHabit> {
         val date = LocalDate.ofEpochDay(epochDay)
         return habits.filter {
-            it.createdAtEpochDay <= epochDay && WeekSchedule.isScheduled(it.scheduleDays, date)
+            it.weeklyTarget == null && it.createdAtEpochDay <= epochDay && WeekSchedule.isScheduled(it.scheduleDays, date)
         }
+    }
+
+    /**
+     * The ids of the habits that count on [epochDay]: those scheduled that
+     * weekday, plus weekly-target habits that are due that day or were done
+     * that day. [completedByDay] must cover the week of [epochDay] up to it.
+     */
+    fun countedOn(habits: List<ScheduledHabit>, epochDay: Long, completedByDay: Map<Long, Set<Long>>): List<Long> {
+        val doneThatDay = completedByDay[epochDay].orEmpty()
+        val weekly = habits.filter { habit ->
+            habit.weeklyTarget != null && habit.createdAtEpochDay <= epochDay && (
+                habit.id in doneThatDay ||
+                    WeeklyGoals.isDue(habit, epochDay, WeeklyGoals.doneBefore(habit.id, epochDay, completedByDay))
+                )
+        }
+        return scheduledOn(habits, epochDay).map { it.id } + weekly.map { it.id }
     }
 
     /** A day is perfect when something was scheduled and all of it was done. */
@@ -57,7 +118,8 @@ object StreakRules {
 
     /**
      * Works out how each day from [fromDay] to [toDay] (inclusive) went.
-     * [completedByDay] maps a day to the ids of the habits checked off that day.
+     * [completedByDay] maps a day to the ids of the habits checked off that day;
+     * for weekly-target habits it must start from the Monday of [fromDay]'s week.
      * [excusedByDay] maps a day to the habits excused that day (Master's Day
      * Off): those do not count as scheduled.
      */
@@ -69,7 +131,7 @@ object StreakRules {
         excusedByDay: Map<Long, Set<Long>> = emptyMap(),
     ): List<DayPlan> = (fromDay..toDay).map { day ->
         val excused = excusedByDay[day].orEmpty()
-        val scheduled = scheduledOn(habits, day).map { it.id }.filterNot { it in excused }
+        val scheduled = countedOn(habits, day, completedByDay).filterNot { it in excused }
         val completed = completedByDay[day].orEmpty()
         DayPlan(day, scheduled, scheduled.filterNot { it in completed })
     }

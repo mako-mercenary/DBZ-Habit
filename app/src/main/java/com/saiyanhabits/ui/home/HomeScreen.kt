@@ -64,6 +64,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.graphics.Brush
@@ -213,9 +214,16 @@ fun HomeScreen(
                     onClick = {
                         when {
                             entry.isDone -> undoing = entry
-                            !entry.excused -> choosingGravityFor = entry.habit
+                            entry.excused -> Unit
+                            // A counted habit goes up one at a time; the last one is the check-off.
+                            entry.habit.isCounted && entry.count + 1 < entry.habit.dailyTarget -> {
+                                haptics.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                viewModel.addToCount(entry.habit)
+                            }
+                            else -> choosingGravityFor = entry.habit
                         }
                     },
+                    onMinus = { viewModel.removeFromCount(entry.habit) },
                 )
             }
         }
@@ -591,7 +599,7 @@ private fun TodayProgress(done: Int, total: Int, doublePoints: Boolean) {
 }
 
 @Composable
-private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) {
+private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit, onMinus: () -> Unit) {
     val habit = entry.habit
     val mentor = habit.mentor
     val done = entry.completion
@@ -650,12 +658,73 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit) 
                     style = MaterialTheme.typography.bodyMedium,
                     color = if (done != null) Color(0xFFFFB347) else SaiyanColors.TextDim,
                 )
+                entry.weekTarget?.let { target ->
+                    Text(
+                        text = when {
+                            entry.weekDone >= target -> "${entry.weekDone} of $target this week · goal reached"
+                            entry.countsToday && done == null -> "${entry.weekDone} of $target this week · due today"
+                            else -> "${entry.weekDone} of $target this week"
+                        },
+                        style = MaterialTheme.typography.bodySmall,
+                        color = when {
+                            entry.weekDone >= target -> SaiyanColors.Bean
+                            entry.countsToday && done == null -> Color(0xFFFFB347)
+                            else -> SaiyanColors.TextDim
+                        },
+                    )
+                }
+                if (habit.isCounted && done == null) {
+                    Text(
+                        text = "${entry.count} of ${habit.dailyTarget}${habit.unit.takeIf { it.isNotBlank() }?.let { " $it" } ?: ""} · tap to add one",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = SaiyanColors.TextDim,
+                    )
+                }
+            }
+            if (habit.isCounted && done == null && entry.count > 0 && !entry.excused) {
+                Spacer(Modifier.width(6.dp))
+                IconButton(onClick = onMinus, modifier = Modifier.size(40.dp)) {
+                    Text("−", style = MaterialTheme.typography.headlineSmall, color = SaiyanColors.TextDim)
+                }
             }
             if (!entry.excused || done != null) {
                 Spacer(Modifier.width(12.dp))
-                CheckMark(checked = done != null, description = if (done != null) "Done" else "Not done")
+                if (habit.isCounted && done == null) {
+                    CountRing(count = entry.count, target = habit.dailyTarget)
+                } else {
+                    CheckMark(checked = done != null, description = if (done != null) "Done" else "Not done")
+                }
             }
         }
+    }
+}
+
+/** A counted habit's progress: the count in a gold ring that fills as it goes. */
+@Composable
+private fun CountRing(count: Int, target: Int) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .size(46.dp)
+            .semantics { contentDescription = "$count of $target" }
+            .drawBehind {
+                val stroke = 4.dp.toPx()
+                val inset = stroke / 2
+                val arcSize = androidx.compose.ui.geometry.Size(size.width - stroke, size.height - stroke)
+                drawCircle(Color(0x33000000))
+                drawArc(
+                    SaiyanColors.FrameGold.copy(alpha = 0.35f), 0f, 360f, false,
+                    topLeft = androidx.compose.ui.geometry.Offset(inset, inset), size = arcSize,
+                    style = androidx.compose.ui.graphics.drawscope.Stroke(stroke),
+                )
+                drawArc(
+                    SaiyanColors.FrameGold, -90f, 360f * count / target.coerceAtLeast(1), false,
+                    topLeft = androidx.compose.ui.geometry.Offset(inset, inset), size = arcSize,
+                    style = androidx.compose.ui.graphics.drawscope.Stroke(stroke, cap = androidx.compose.ui.graphics.StrokeCap.Round),
+                )
+            },
+    ) {
+        Text("$count", style = MaterialTheme.typography.titleMedium, color = Color.White)
     }
 }
 

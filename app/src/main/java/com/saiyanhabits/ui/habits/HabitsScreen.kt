@@ -130,7 +130,7 @@ private fun HabitRow(habit: HabitEntity, streak: Int, onClick: () -> Unit) {
                     color = mentor.color,
                 )
                 Text(
-                    "${WeekSchedule.describe(habit.scheduleDays)} · Difficulty ${habit.difficulty}",
+                    "${WeekSchedule.describeHabit(habit.scheduleDays, habit.weeklyTarget, habit.dailyTarget, habit.unit)} · Difficulty ${habit.difficulty}",
                     style = MaterialTheme.typography.bodySmall,
                     color = SaiyanColors.TextDim,
                 )

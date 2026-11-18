@@ -24,6 +24,13 @@ object BackupFormat {
     const val APP = "saiyan-habits"
     const val FORMAT = 1
 
+    /**
+     * The oldest database version an export can come from and still be
+     * restored. Later versions only added tables and columns that have
+     * defaults, so an older export's rows still fit.
+     */
+    const val OLDEST_IMPORTABLE_VERSION = 5
+
     fun encode(backup: Backup): String {
         val out = StringBuilder()
         out.append("{\n")
@@ -95,7 +102,7 @@ object BackupFormat {
         if (backup.databaseVersion > currentVersion) {
             return listOf("This export was made by a newer version of the app. Update the app first.")
         }
-        if (backup.databaseVersion < currentVersion) {
+        if (backup.databaseVersion < OLDEST_IMPORTABLE_VERSION) {
             return listOf(
                 "This export was made by an older version of the app (database version " +
                     "${backup.databaseVersion}, this one is $currentVersion), so it can't be restored here.",
