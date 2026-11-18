@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Makes the placeholder song for Vegeta's rhythm game and the music manifest.
+"""Makes a placeholder song for Vegeta's rhythm game and adds it to the manifest.
+
+Not needed once real songs are in; kept for testing the game without them.
 
 Writes a 60-second synthesised drum-and-bass beat (120 BPM) to
 app/src/main/assets/music/training_beat.wav, then makes sure manifest.json

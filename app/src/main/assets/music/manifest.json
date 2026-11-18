@@ -1,14 +1,14 @@
 [
   {
-    "title": "Training beat",
-    "file": "training_beat.wav"
-  },
-  {
     "title": "Happy",
     "file": "happy.mp3"
   },
   {
     "title": "Move Forward Fearlessly",
     "file": "move_forward_fearlessly.mp3"
+  },
+  {
+    "title": "Battle of the Best",
+    "file": "battle_of_the_best.mp3"
   }
 ]
