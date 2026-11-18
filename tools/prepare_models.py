@@ -12,7 +12,8 @@ Two kinds of model end up in app/src/main/assets/models/:
   vehicles show their rear, buildings their front. Vehicles lose their
   wheels: they hover, over a glowing pad the game puts under them.
 * Made here from simple shapes: the hover bike, a stand-in rider, dragon
-  balls, boost orbs, a dome, hover pads, the road strip and the ground.
+  balls, boost orbs, a dome, the soft shadows under hover vehicles, the road
+  strip and the ground.
 
     python3 tools/prepare_models.py KENNEY_DIR KAYKIT_DIR
 
@@ -340,7 +341,7 @@ class Builder:
                 cap_idx += [0, j + 1, j + 2] if sign > 0 else [0, j + 2, j + 1]
             self.add(cap_pos, [axis_n] * len(cap_pos), cap_idx, color, **kw)
 
-    def save(self, path, texture=None, uv_quads=None):
+    def save(self, path, texture=None, uv_quads=None, blend=False):
         gltf = {"asset": {"version": "2.0", "generator": "saiyan-habits prepare_models.py"},
                 "scene": 0, "scenes": [{"nodes": []}], "nodes": [], "meshes": [], "materials": [], "accessors": []}
         binary = bytearray()
@@ -366,12 +367,15 @@ class Builder:
             gltf["nodes"].append({"mesh": len(gltf["meshes"]) - 1})
             gltf["scenes"][0]["nodes"].append(len(gltf["nodes"]) - 1)
         if texture is not None:
-            add_textured_quads(gltf, binary, texture, uv_quads)
+            add_textured_quads(gltf, binary, texture, uv_quads, blend)
         write_glb(path, gltf, binary)
 
 
-def add_textured_quads(gltf, binary, image, quads):
-    """Adds flat ground quads carrying [image]: each quad is (x0, x1, z0, z1, u0, u1, v0, v1, y)."""
+def add_textured_quads(gltf, binary, image, quads, blend=False):
+    """
+    Adds flat ground quads carrying [image], facing up: each quad is
+    (x0, x1, z0, z1, u0, u1, v0, v1, y). With [blend], the image's alpha shows through.
+    """
     buf = io.BytesIO()
     image.save(buf, "PNG")
     img_view = append_view(gltf, binary, buf.getvalue())
@@ -384,7 +388,9 @@ def add_textured_quads(gltf, binary, image, quads):
         pos += [(x0, y, z0), (x1, y, z0), (x1, y, z1), (x0, y, z1)]
         nor += [(0, 1, 0)] * 4
         uv += [(u0, v0), (u1, v0), (u1, v1), (u0, v1)]
-        idx += [b, b + 2, b + 1, b, b + 3, b + 2]
+        # Wound so the face points up whichever way the corners run.
+        up = (x1 - x0) * (z0 - z1) > 0
+        idx += [b, b + 1, b + 2, b, b + 2, b + 3] if up else [b, b + 2, b + 1, b, b + 3, b + 2]
     p = np.array(pos, dtype=np.float32)
     acc = gltf["accessors"]
     acc.append({"bufferView": append_view(gltf, binary, p.tobytes(), 34962), "componentType": 5126, "count": len(p),
@@ -395,8 +401,13 @@ def add_textured_quads(gltf, binary, image, quads):
                 "componentType": 5126, "count": len(p), "type": "VEC2"})
     acc.append({"bufferView": append_view(gltf, binary, np.array(idx, dtype=np.uint32).tobytes(), 34963),
                 "componentType": 5125, "count": len(idx), "type": "SCALAR"})
-    gltf["materials"].append({"pbrMetallicRoughness": {"baseColorTexture": {"index": len(gltf["textures"]) - 1},
-                                                       "metallicFactor": 0.0, "roughnessFactor": 0.9}})
+    material = {"pbrMetallicRoughness": {"baseColorTexture": {"index": len(gltf["textures"]) - 1},
+                                         "metallicFactor": 0.0, "roughnessFactor": 0.9}}
+    if blend:
+        material["alphaMode"] = "BLEND"
+        material["extensions"] = {"KHR_materials_unlit": {}}
+        gltf.setdefault("extensionsUsed", []).append("KHR_materials_unlit")
+    gltf["materials"].append(material)
     gltf["meshes"].append({"primitives": [{"attributes": {"POSITION": len(acc) - 4, "NORMAL": len(acc) - 3, "TEXCOORD_0": len(acc) - 2},
                                            "indices": len(acc) - 1, "material": len(gltf["materials"]) - 1}]})
     gltf["nodes"].append({"mesh": len(gltf["meshes"]) - 1})
@@ -466,11 +477,22 @@ def make_robot():
     return b
 
 
-def make_pad(width, length):
-    """The glow under a hover vehicle: a flat, bright cyan disc."""
-    b = Builder()
-    b.sphere((0, 0.05, 0), 0.5, CYAN, emissive=2.5, scale=(width, 0.08, length))
-    return b
+def shadow_texture():
+    """A soft dark blob, fading out to the edge, with a faint cyan glow from the hover jets in the middle."""
+    n = 128
+    yy, xx = np.mgrid[0:n, 0:n]
+    r = np.hypot(xx - (n - 1) / 2, yy - (n - 1) / 2) / (n / 2)
+    alpha = np.clip(1 - r, 0, 1) ** 1.4 * 0.75
+    glow = np.clip(1 - r / 0.45, 0, 1) ** 2
+    rgb = np.stack([glow * 90, glow * 190, glow * 230], axis=-1)
+    img = np.dstack([rgb, alpha * 255]).astype(np.uint8)
+    return Image.fromarray(img, "RGBA")
+
+
+def save_shadow(name, width, length):
+    """The shadow a hover vehicle casts on the road: a blob a bit bigger than its footprint."""
+    w, l = width / 2, length / 2
+    Builder().save(OUT / f"{name}.glb", shadow_texture(), [(-w, w, l, -l, 0, 1, 1, 0, 0.09)], blend=True)
 
 
 def make_ground():
@@ -525,9 +547,9 @@ def pavement_texture():
 def save_road():
     # The road (10 m) plus a kerb's width, 20 m long, from z = 0 back to z = -20.
     b = Builder()
-    b.save(OUT / "road.glb", road_texture(), [(-5.4, 5.4, 0, -20, 0, 1, 1, 0, 0.0)])
+    b.save(OUT / "road.glb", road_texture(), [(-5.4, 5.4, 0, -20, 0, 1, 1, 0, 0.03)])
     pav = Builder()
-    pav.save(OUT / "pavement.glb", pavement_texture(), [(-2, 2, 0, -20, 0, 1, 5, 0, 0.02)])
+    pav.save(OUT / "pavement.glb", pavement_texture(), [(-2, 2, 0, -20, 0, 1, 5, 0, 0.06)])
 
 
 def main():
@@ -537,10 +559,11 @@ def main():
     report = take_kenney(sys.argv[1]) | take_kaykit(sys.argv[2])
     for name, builder in [("bike", make_bike()), ("rider", make_rider()), ("dragon_ball", make_dragon_ball()),
                           ("boost", make_boost()), ("capsule_dome", make_dome()), ("robot", make_robot()),
-                          ("ground", make_ground()), ("pad_car", make_pad(2.0, 3.8)),
-                          ("pad_truck", make_pad(2.4, 5.8))]:
+                          ("ground", make_ground())]:
         builder.save(OUT / f"{name}.glb")
     save_road()
+    save_shadow("pad_car", 3.0, 5.6)
+    save_shadow("pad_truck", 3.8, 8.2)
     for name, size in sorted(report.items()):
         print(f"{name:16s} {size}")
     total = sum(p.stat().st_size for p in OUT.glob("*.glb"))

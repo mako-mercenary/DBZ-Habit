@@ -88,7 +88,7 @@ class HoverBikeWorld {
     private val padCar = Pool("pad_car", 20)
     private val padTruck = Pool("pad_truck", 9)
     private val palms = listOf("palm_tall", "palm_detailed", "palm_bend").map { Pool(it, 9) }
-    private val lights = Pool("street_light", 18)
+    private val lights = Pool("street_light", 10)
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
         cars + trucks + buildings + palms
@@ -164,7 +164,10 @@ class HoverBikeWorld {
                 place(buildings[kind], x, 0f, -ahead, yaw = if (side < 0) 90f else -90f)
                 val palm = palms[Math.floorMod(h ushr 7, palms.size)]
                 place(palm, side * (half + 3.4f), 0f, -(ahead + BLOCK / 2), yaw = Math.floorMod(h ushr 9, 360).toFloat())
-                place(lights, side * (half + 0.7f), 0f, -(ahead + 4f), yaw = if (side < 0) -90f else 90f)
+                // A street light every other block, alternating sides.
+                if (Math.floorMod(b, 2) == (if (side < 0) 0 else 1)) {
+                    place(lights, side * (half + 0.7f), 0f, -(ahead + 4f), yaw = if (side < 0) -90f else 90f)
+                }
             }
         }
 
