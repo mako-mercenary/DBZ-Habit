@@ -165,7 +165,8 @@ fun RhythmScreen(onBack: () -> Unit) {
                 step = Step.RESULT
                 scope.launch {
                     previousBest = bestFor(song!!, level)
-                    result = app.gameRepository.record(MiniGame.RHYTHM, score, "${song!!.file}|${level.name}")
+                    // A song with nothing hit isn't counted.
+                    result = if (score > 0) app.gameRepository.record(MiniGame.RHYTHM, score, "${song!!.file}|${level.name}") else null
                 }
             },
         )

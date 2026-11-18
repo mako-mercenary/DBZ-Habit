@@ -104,7 +104,7 @@ import kotlinx.coroutines.launch
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-private val HeaderDate = DateTimeFormatter.ofPattern("EEEE, MMM d", Locale.getDefault())
+private val HeaderDate = DateTimeFormatter.ofPattern("EEE, MMM d", Locale.getDefault())
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
