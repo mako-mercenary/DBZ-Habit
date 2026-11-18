@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import com.google.android.filament.Renderer
 import com.google.android.filament.View
 import com.saiyanhabits.domain.games.HoverBike
 import com.saiyanhabits.domain.games.HoverBikeState
@@ -22,6 +23,7 @@ import io.github.sceneview.rememberEngine
 import io.github.sceneview.rememberEnvironment
 import io.github.sceneview.rememberEnvironmentLoader
 import io.github.sceneview.rememberModelLoader
+import io.github.sceneview.rememberRenderer
 import io.github.sceneview.rememberView
 import kotlin.math.floor
 import kotlin.math.sin
@@ -36,6 +38,13 @@ private const val SCENERY_AHEAD = 190f
 private const val BLOCK = 24f
 private const val CAM_HEIGHT = 3.1f
 private const val CAM_BACK = 7.5f
+
+/**
+ * Where things land on screen, as shares of its width and height from the top
+ * left: the horizon, and the ground under the bike. The 2D skyline and rider
+ * are drawn to match.
+ */
+data class ScreenPoints(val horizonY: Float = 0.4f, val bikeX: Float = 0.5f, val bikeY: Float = 0.85f, val bikeSideways: Float = 0f)
 
 /** A model loaded once, with [count] copies that can each be placed anywhere. */
 internal class Pool(val file: String, val count: Int) {
@@ -79,6 +88,9 @@ class HoverBikeWorld {
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights) + cars + trucks + buildings + palms
 
+    /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
+    var showModelRider = true
+
     /** True once every model has loaded. */
     var ready = false
         private set
@@ -113,9 +125,12 @@ class HoverBikeWorld {
             isVisible = true
         }
 
-    /** Moves everything to match [state]: the bike at z = 0, things ahead at negative z. */
-    fun update(state: HoverBikeState, lean: Float, clock: Float, camera: CameraNode) {
-        if (!ready) return
+    /**
+     * Moves everything to match [state]: the bike at z = 0, things ahead at
+     * negative z. Returns where the horizon and the bike are on screen.
+     */
+    fun update(state: HoverBikeState, lean: Float, clock: Float, camera: CameraNode): ScreenPoints? {
+        if (!ready) return null
         all.forEach { it.reset() }
         val bikeX = (state.bikeX - 0.5f) * ROAD_WIDTH
         val camX = bikeX * 0.75f
@@ -168,7 +183,7 @@ class HoverBikeWorld {
 
         // The bike and rider: hovering, leaning into turns, flashing after a hit.
         val flashing = state.invulnerable > 0f && ((state.invulnerable * 10).toInt() % 2 == 0)
-        if (!flashing) {
+        if (!flashing && showModelRider) {
             val bob = 0.25f + sin(clock * 6f) * 0.04f
             place(bike, bikeX, bob, 0f, roll = -lean * 14f, yaw = -lean * 6f)
             place(rider, bikeX, bob, 0f, roll = -lean * 18f, yaw = -lean * 6f)
@@ -179,6 +194,30 @@ class HoverBikeWorld {
         val shake = if (state.boosting) sin(clock * 60f) * 0.04f else 0f
         camera.position = Position(camX + shake, CAM_HEIGHT, CAM_BACK)
         camera.lookAt(Position(camX * 0.9f, 1.1f, -14f))
+        return screenPoints(camera, bikeX)
+    }
+
+    private val viewMatrix = DoubleArray(16)
+    private val projection = DoubleArray(16)
+
+    /** Projects the far horizon and the ground under the bike through the camera. */
+    private fun screenPoints(camera: CameraNode, bikeX: Float): ScreenPoints? {
+        val cam = camera.camera
+        cam.getViewMatrix(viewMatrix)
+        cam.getProjectionMatrix(projection)
+        val horizon = project(camera.position.x.toDouble(), 0.0, -100_000.0) ?: return null
+        val bike = project(bikeX.toDouble(), 0.0, 0.0) ?: return null
+        return ScreenPoints(horizonY = horizon.second, bikeX = bike.first, bikeY = bike.second, bikeSideways = bikeX)
+    }
+
+    /** A world point as shares of the screen from the top left, or null if it is behind the camera. */
+    private fun project(x: Double, y: Double, z: Double): Pair<Float, Float>? {
+        val v = DoubleArray(4)
+        for (i in 0 until 4) v[i] = viewMatrix[i] * x + viewMatrix[4 + i] * y + viewMatrix[8 + i] * z + viewMatrix[12 + i]
+        val c = DoubleArray(4)
+        for (i in 0 until 4) c[i] = projection[i] * v[0] + projection[4 + i] * v[1] + projection[8 + i] * v[2] + projection[12 + i] * v[3]
+        if (c[3] <= 1e-6) return null
+        return ((c[0] / c[3] + 1) / 2).toFloat() to ((1 - c[1] / c[3]) / 2).toFloat()
     }
 
     private fun hash(a: Int, b: Int): Int {
@@ -191,7 +230,12 @@ class HoverBikeWorld {
 
 /** The 3D view of the run. [world] is moved by the game loop; this only shows it. */
 @Composable
-fun HoverBikeScene(world: HoverBikeWorld, onCamera: (CameraNode) -> Unit, modifier: Modifier = Modifier) {
+fun HoverBikeScene(
+    world: HoverBikeWorld,
+    onCamera: (CameraNode) -> Unit,
+    modifier: Modifier = Modifier,
+    fogColor: FloatArray = floatArrayOf(0.72f, 0.85f, 0.97f),
+) {
     val engine = rememberEngine()
     val modelLoader = rememberModelLoader(engine)
     val environmentLoader = rememberEnvironmentLoader(engine)
@@ -202,15 +246,25 @@ fun HoverBikeScene(world: HoverBikeWorld, onCamera: (CameraNode) -> Unit, modifi
     }
     remember(camera) { onCamera(camera); true }
     val loaded = remember(modelLoader) { world.load(modelLoader); world.instances }
-    remember(view) {
-        // Haze in the distance, the colour of the sky at the horizon.
+    // Clear to transparent so the skyline drawn behind the scene shows through.
+    val renderer = rememberRenderer(engine)
+    remember(renderer, view) {
+        renderer.clearOptions = Renderer.ClearOptions().apply {
+            clear = true
+            clearColor = doubleArrayOf(0.0, 0.0, 0.0, 0.0)
+        }
+        view.blendMode = View.BlendMode.TRANSLUCENT
+        true
+    }
+    remember(view, fogColor.toList()) {
+        // Haze in the distance, the colour of the skyline's foot, so far buildings fade into it.
         view.fogOptions = View.FogOptions().apply {
             enabled = true
             distance = 60f
-            maximumOpacity = 0.85f
+            maximumOpacity = 1f
             density = 0.02f
             heightFalloff = 0.05f
-            color = floatArrayOf(0.72f, 0.85f, 0.97f)
+            color = fogColor
         }
         true
     }
@@ -221,6 +275,7 @@ fun HoverBikeScene(world: HoverBikeWorld, onCamera: (CameraNode) -> Unit, modifi
         modelLoader = modelLoader,
         environmentLoader = environmentLoader,
         view = view,
+        renderer = renderer,
         isOpaque = false,
         environment = rememberEnvironment(environmentLoader, isOpaque = false),
         frameRatePolicy = FrameRatePolicy.Continuous(),

@@ -57,7 +57,15 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asAndroidBitmap
+import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntSize
+import com.saiyanhabits.GameConfig
 import com.saiyanhabits.R
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.SaiyanApp
 import com.saiyanhabits.data.PlayResult
 import com.saiyanhabits.domain.Mentor
@@ -102,6 +110,13 @@ fun HoverBikeScreen(onBack: () -> Unit) {
     var radio by remember { mutableStateOf<String?>(null) }
     val lines by produceState(emptyList<String>()) { value = app.dialogue.all()[Mentor.BULMA]?.game.orEmpty() }
     val world = remember { HoverBikeWorld() }
+    var points by remember { mutableStateOf(ScreenPoints()) }
+    // The 2D art: the rider over the scene and the skyline behind it; both can be swapped in Settings > Art.
+    val artVersion by app.art.version.collectAsState()
+    val rider by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_RIDER) }
+    val skyline by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_SKYLINE) }
+    val haze = remember(skyline) { skyline?.let { footColour(it) } ?: Color(0xFFB8DCF7) }
+    world.showModelRider = rider == null
     var camera by remember { mutableStateOf<io.github.sceneview.node.CameraNode?>(null) }
     val tilt = rememberTilt(enabled = phase == Phase.RIDING && useTilt)
     val view = LocalView.current
@@ -132,7 +147,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             lean += (steer - lean) * (dt * 8f).coerceAtMost(1f)
             val before = state
             state = HoverBike.step(state, dt, steer, random)
-            camera?.let { world.update(state, lean, clock, it) }
+            camera?.let { cam -> world.update(state, lean, clock, cam)?.let { points = it } }
             if (state.balls > before.balls) sounds?.play(SoundKey.CHECK_OFF, 0.5f)
             if (state.hearts < before.hearts && !state.crashed) sounds?.play(SoundKey.BOSS_HIT, 0.7f)
             if (state.boosting && !before.boosting) sounds?.play(SoundKey.BOMB_THROW, 0.6f)
@@ -157,7 +172,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
         val cam = camera ?: return@LaunchedEffect
         while (phase != Phase.RIDING) {
             withFrameNanos { }
-            world.update(state, lean, clock, cam)
+            world.update(state, lean, clock, cam)?.let { points = it }
         }
     }
 
@@ -166,7 +181,14 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             .fillMaxSize()
             .background(Brush.verticalGradient(listOf(Color(0xFF2E7BE6), Color(0xFF8CCBFF), Color(0xFFB8DCF7)))),
     ) {
-        HoverBikeScene(world, onCamera = { camera = it }, modifier = Modifier.fillMaxSize())
+        skyline?.let { Skyline(it, points, haze) }
+        HoverBikeScene(
+            world,
+            onCamera = { camera = it },
+            modifier = Modifier.fillMaxSize(),
+            fogColor = floatArrayOf(haze.red, haze.green, haze.blue),
+        )
+        rider?.let { RiderSprite(it, points, state, lean, clock) }
         Box(
             Modifier
                 .fillMaxSize()
@@ -244,6 +266,73 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             Phase.RIDING -> Unit
         }
     }
+}
+
+/**
+ * The far-off skyline, drawn behind the 3D street with its foot just below the
+ * horizon. It fills the sky above and slides a little as the bike steers.
+ */
+@Composable
+private fun Skyline(image: ImageBitmap, points: ScreenPoints, haze: Color) {
+    Canvas(Modifier.fillMaxSize()) {
+        val foot = size.height * (points.horizonY + GameConfig.BIKE_SKYLINE_OVERLAP)
+        val aspect = image.width.toFloat() / image.height
+        // Tall enough to reach the top, and wide enough to slide without showing an edge.
+        val height = maxOf(foot, size.width * 1.3f / aspect)
+        val width = height * aspect
+        val slide = -points.bikeSideways * GameConfig.BIKE_SKYLINE_PARALLAX * size.width
+        drawImage(
+            image,
+            dstOffset = IntOffset(((size.width - width) / 2 + slide).toInt(), (foot - height).toInt()),
+            dstSize = IntSize(width.toInt(), height.toInt()),
+        )
+        // Haze below the skyline's foot, where the ground ends before the horizon.
+        drawRect(haze, topLeft = Offset(0f, foot - 1f), size = Size(size.width, size.height * 0.08f))
+    }
+}
+
+/** The rider on the bike, from behind: standing on the bike's spot on the road, tilting into turns. */
+@Composable
+private fun RiderSprite(image: ImageBitmap, points: ScreenPoints, state: HoverBikeState, lean: Float, clock: Float) {
+    val flashing = state.invulnerable > 0f && ((state.invulnerable * 10).toInt() % 2 == 0)
+    Canvas(Modifier.fillMaxSize()) {
+        val width = size.width * GameConfig.BIKE_SPRITE_WIDTH
+        val height = width * image.height / image.width
+        val x = size.width * points.bikeX
+        val ground = size.height * points.bikeY
+        val bob = kotlin.math.sin(clock * 6f) * size.height * 0.004f
+        // A soft shadow on the road under the bike.
+        drawOval(
+            Color(0x55000000),
+            topLeft = Offset(x - width * 0.3f, ground - width * 0.05f),
+            size = Size(width * 0.6f, width * 0.1f),
+        )
+        if (flashing) return@Canvas
+        val bottom = ground - width * 0.06f + bob
+        rotate(lean * GameConfig.BIKE_SPRITE_LEAN_DEGREES, pivot = Offset(x, bottom)) {
+            drawImage(
+                image,
+                dstOffset = IntOffset((x - width / 2).toInt(), (bottom - height).toInt()),
+                dstSize = IntSize(width.toInt(), height.toInt()),
+            )
+        }
+    }
+}
+
+/** The average colour along the bottom of [image], for the haze that joins it to the street. */
+private fun footColour(image: ImageBitmap): Color {
+    val bitmap = image.asAndroidBitmap()
+    var r = 0L; var g = 0L; var b = 0L; var n = 0
+    val rows = (bitmap.height * 0.03f).toInt().coerceAtLeast(1)
+    for (y in bitmap.height - rows until bitmap.height) {
+        for (x in 0 until bitmap.width step 8) {
+            val p = bitmap.getPixel(x, y)
+            if ((p ushr 24) < 128) continue
+            r += (p shr 16) and 0xFF; g += (p shr 8) and 0xFF; b += p and 0xFF; n++
+        }
+    }
+    if (n == 0) return Color(0xFFB8DCF7)
+    return Color((r / n).toInt(), (g / n).toInt(), (b / n).toInt())
 }
 
 /** Bulma's portrait and hearts on the left; score, dragon balls, distance and pause on the right. */

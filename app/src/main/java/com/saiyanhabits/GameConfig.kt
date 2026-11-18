@@ -219,4 +219,16 @@ object GameConfig {
 
     /** How long the floating "+points" label stays on screen. */
     const val POWER_GAIN_LABEL_MILLIS = 1200
+
+    /** Hover-bike run: the rider sprite's width as a share of the screen width. */
+    const val BIKE_SPRITE_WIDTH = 0.5f
+
+    /** Hover-bike run: how far the rider sprite tilts at full steer, in degrees. */
+    const val BIKE_SPRITE_LEAN_DEGREES = 9f
+
+    /** Hover-bike run: how far below the horizon the skyline's foot sits, as a share of the screen height. */
+    const val BIKE_SKYLINE_OVERLAP = 0.015f
+
+    /** Hover-bike run: how far the skyline slides per metre the bike moves sideways, as a share of the screen width. */
+    const val BIKE_SKYLINE_PARALLAX = 0.012f
 }

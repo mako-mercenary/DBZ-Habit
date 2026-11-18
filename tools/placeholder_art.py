@@ -62,6 +62,8 @@ KEYS = [
     ("scouter_device", "The scouter's earpiece, on the right end of the power level readout. Upright, on a transparent background.", 280, 560, "free"),
     ("cloud_ornament", "A flying cloud, used as a decoration on the new story chapter banner and the corners of the bottom bar. Transparent background; drawn mirrored on the right.", 600, 360, "free"),
     ("emblem_capsule", "A faint emblem in the corner of the healing beans card and of Bulma's cards. Transparent background; shown at low opacity.", 512, 512, "free"),
+    ("bike_rider", "The hover-bike run: the rider on the bike, seen from behind, on a transparent background. Drawn over the 3D road, following the steering and tilting into turns; put the bottom of the bike on the bottom edge and keep it centred. The placeholder is a plain stand-in rider.", 768, 768, "free"),
+    ("bike_skyline", "The hover-bike run: the city skyline far away, behind the 3D street. Wide, with the horizon on the bottom edge; the sky above can be any height. It slides a little as you steer, so keep the middle the busiest part.", 2048, 1024, "free"),
     ("app_icon", "The launcher icon's foreground. Android shows the middle 288 x 288 and crops the edges. Swapped by file and rebuild only.", 432, 432, "icon"),
 ]
 
@@ -354,6 +356,68 @@ def emblem_capsule(size=512):
     return img
 
 
+def bike_rider(size=768):
+    """A plain stand-in rider on a hover bike, seen from behind. Not any particular character."""
+    img = canvas(size, size)
+    S = size * SS
+    img = glow(img, (S * 0.5, S * 0.86), S * 0.2, (90, 220, 255), alpha=200)
+    d = ImageDraw.Draw(img)
+    ink = rgba((30, 34, 44))
+    w = int(S * 0.012)
+    # Rider: a grey jacket, dark trousers, a round white helmet.
+    d.rounded_rectangle([S * 0.36, S * 0.5, S * 0.64, S * 0.7], radius=S * 0.06, fill=rgba((60, 66, 84)), outline=ink, width=w)
+    d.rounded_rectangle([S * 0.38, S * 0.28, S * 0.62, S * 0.54], radius=S * 0.08, fill=rgba((120, 130, 150)), outline=ink, width=w)
+    for side in (-1, 1):
+        d.line([S * (0.5 + side * 0.11), S * 0.34, S * (0.5 + side * 0.2), S * 0.47], fill=rgba((120, 130, 150)), width=int(S * 0.05))
+    d.ellipse([S * 0.42, S * 0.12, S * 0.58, S * 0.3], fill=rgba((240, 242, 246)), outline=ink, width=w)
+    d.rectangle([S * 0.44, S * 0.2, S * 0.56, S * 0.23], fill=rgba((80, 170, 230)))
+    # Bike: a white body with two side pods and a thruster.
+    d.rounded_rectangle([S * 0.3, S * 0.6, S * 0.7, S * 0.84], radius=S * 0.07, fill=rgba((236, 238, 242)), outline=ink, width=w)
+    for side in (-1, 1):
+        x0 = 0.5 + side * 0.2
+        d.rounded_rectangle([S * min(x0, x0 + side * 0.12), S * 0.62, S * max(x0, x0 + side * 0.12), S * 0.82], radius=S * 0.04, fill=rgba((214, 96, 150)), outline=ink, width=w)
+        d.line([S * (0.5 + side * 0.17), S * 0.47, S * (0.5 + side * 0.24), S * 0.45], fill=ink, width=int(S * 0.02))
+    d.ellipse([S * 0.41, S * 0.8, S * 0.59, S * 0.95], fill=rgba((40, 44, 56)), outline=ink, width=w)
+    d.ellipse([S * 0.44, S * 0.83, S * 0.56, S * 0.92], fill=rgba((150, 235, 255)))
+    return img
+
+
+def bike_skyline(w=2048, h=1024):
+    """A far-off city: towers and domes against the sky, hazy at the bottom."""
+    top, bottom = (58, 132, 230), (196, 226, 248)
+    column = Image.new("RGB", (1, h))
+    for y in range(h):
+        f = y / (h - 1)
+        column.putpixel((0, y), tuple(int(top[i] + (bottom[i] - top[i]) * f) for i in range(3)))
+    img = column.resize((w, h)).convert("RGBA")
+    d = ImageDraw.Draw(img)
+    rng = random.Random(11)
+    for _ in range(9):  # clouds
+        cx, cy = rng.randrange(w), rng.randrange(int(h * 0.05), int(h * 0.4))
+        for _ in range(6):
+            r = rng.randrange(30, 70)
+            ox, oy = rng.randrange(-90, 90), rng.randrange(-20, 20)
+            d.ellipse([cx + ox - r * 1.6, cy + oy - r, cx + ox + r * 1.6, cy + oy + r], fill=(255, 255, 255, 200))
+    for layer, (shade, lo, hi) in enumerate([((150, 180, 215), 0.35, 0.75), ((175, 200, 228), 0.25, 0.55)]):
+        x = -40
+        while x < w:
+            bw = rng.randrange(50, 130)
+            top_y = h * (1 - rng.uniform(lo, hi) * (0.6 + 0.8 * math.exp(-((x - w / 2) / (w * 0.3)) ** 2)) * 0.6)
+            if rng.random() < 0.25:
+                d.ellipse([x, top_y, x + bw * 1.6, h + (h - top_y)], fill=shade + (255,))
+                x += int(bw * 1.6)
+            else:
+                d.rectangle([x, top_y, x + bw, h], fill=shade + (255,))
+                for wy in range(int(top_y) + 14, h, 26):
+                    d.line([x + 8, wy, x + bw - 8, wy], fill=tuple(c + 18 for c in shade) + (255,), width=6)
+                x += bw + rng.randrange(4, 30)
+    haze = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(haze)
+    for y in range(int(h * 0.7), h):
+        hd.line([0, y, w, y], fill=bottom + (int(230 * max(0.0, (y - h * 0.7) / (h * 0.3)) ** 1.5),))
+    return Image.alpha_composite(img, haze)
+
+
 def main():
     os.makedirs(ART, exist_ok=True)
     print("Placeholders:")
@@ -377,6 +441,8 @@ def main():
     finish(scouter_device(), os.path.join(ART, "scouter_device.png"))
     finish(cloud_ornament(), os.path.join(ART, "cloud_ornament.png"))
     finish(emblem_capsule(), os.path.join(ART, "emblem_capsule.png"))
+    finish(bike_rider(), os.path.join(ART, "bike_rider.png"))
+    finish(bike_skyline(), os.path.join(ART, "bike_skyline.png"), supersampled=False)
 
     with open(os.path.join(ART, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)
@@ -406,6 +472,14 @@ def main():
         "overwrites every file above, so keep your own art elsewhere too.",
         "",
     ]
+    # Keep any sections written by hand after the table (such as the 3D models).
+    old = os.path.join(ROOT, "ART_LIST.md")
+    if os.path.exists(old):
+        text = open(old).read()
+        at = text.find("\n## ")
+        if at >= 0:
+            lines.append(text[at + 1:].rstrip("\n"))
+            lines.append("")
     with open(os.path.join(ROOT, "ART_LIST.md"), "w") as f:
         f.write("\n".join(lines))
     print("  ART_LIST.md")
