@@ -3,10 +3,12 @@
 
     python3 tools/remove_checker.py SOURCE OUT.png            # a grey-and-white checkerboard
     python3 tools/remove_checker.py SOURCE OUT.png --dark 100 # a dark backdrop with a glow
+    python3 tools/remove_checker.py SOURCE OUT.png --dark 95 --any-tint  # ...a blue glow too
 
 With --dark, the background is every pixel no brighter than the limit (0-255)
 that is connected to the border: a black backdrop and the dim glow around the
-figure, as long as it isn't tinted blue (dark navy parts of the figure stay).
+figure, as long as it isn't tinted blue (dark navy parts of the figure stay);
+--any-tint drops that exception, for a blue glow around a brighter figure.
 That also eats the figure's dark outline, so a ring of a few pixels
 around what is kept is put back, outline and all.
 
@@ -30,13 +32,15 @@ def checker_mask(rgb):
     return light & grey
 
 
-def dark_mask(rgb, limit):
+def dark_mask(rgb, limit, any_tint=False):
     """
     Near-black pixels, and pixels no brighter than [limit] in any channel that aren't
     tinted blue: a black or warm backdrop and glow, but not the navy of a car's underside.
     """
     rgb = rgb.astype(np.int16)
     bright = rgb.max(axis=2)
+    if any_tint:
+        return bright <= limit
     return (bright <= 35) | ((bright <= limit) & (rgb[:, :, 2] - rgb[:, :, 0] <= 8))
 
 
@@ -77,12 +81,16 @@ def flood_from_border(candidates):
 
 
 def main():
-    if len(sys.argv) not in (3, 5) or (len(sys.argv) == 5 and sys.argv[3] != "--dark"):
+    args = sys.argv[1:]
+    any_tint = "--any-tint" in args
+    args = [a for a in args if a != "--any-tint"]
+    if len(args) not in (2, 4) or (len(args) == 4 and args[2] != "--dark"):
         sys.exit(__doc__)
+    sys.argv = [sys.argv[0]] + args
     img = Image.open(sys.argv[1]).convert("RGBA")
     rgb = np.array(img)[:, :, :3]
     if len(sys.argv) == 5:
-        background = flood_from_border(dark_mask(rgb, int(sys.argv[4])))
+        background = flood_from_border(dark_mask(rgb, int(sys.argv[4]), any_tint))
         background &= ~grow(~background, 4)  # keep the outline ring
     else:
         background = flood_from_border(checker_mask(rgb))
