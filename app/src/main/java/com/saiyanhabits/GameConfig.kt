@@ -226,6 +226,9 @@ object GameConfig {
     /** Hover-bike run: how far the rider sprite tilts at full steer, in degrees. */
     const val BIKE_SPRITE_LEAN_DEGREES = 9f
 
+    /** Hover-bike run: the skyline's width as a share of the screen width; the extra lets it slide. */
+    const val BIKE_SKYLINE_WIDTH = 1.3f
+
     /** Hover-bike run: how far below the horizon the skyline's foot sits, as a share of the screen height. */
     const val BIKE_SKYLINE_OVERLAP = 0.015f
 

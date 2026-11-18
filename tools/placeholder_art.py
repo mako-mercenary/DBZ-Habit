@@ -63,7 +63,7 @@ KEYS = [
     ("cloud_ornament", "A flying cloud, used as a decoration on the new story chapter banner and the corners of the bottom bar. Transparent background; drawn mirrored on the right.", 600, 360, "free"),
     ("emblem_capsule", "A faint emblem in the corner of the healing beans card and of Bulma's cards. Transparent background; shown at low opacity.", 512, 512, "free"),
     ("bike_rider", "The hover-bike run: the rider on the bike, seen from behind, on a transparent background. Drawn over the 3D road, following the steering and tilting into turns; put the bottom of the bike on the bottom edge and keep it centred. The placeholder is a plain stand-in rider.", 768, 768, "free"),
-    ("bike_skyline", "The hover-bike run: the city skyline far away, behind the 3D street. Wide, with the horizon on the bottom edge; the sky above can be any height. It slides a little as you steer, so keep the middle the busiest part.", 2048, 1024, "free"),
+    ("bike_skyline", "The hover-bike run: the city far away, behind the 3D street. A wide strip (4:1) with the horizon on the bottom edge; it is shown about 1.3 screens wide and slides a little as you steer, so keep the middle the busiest part. The sky above it is filled with a gradient matched to its top edge.", 2048, 512, "free"),
     ("app_icon", "The launcher icon's foreground. Android shows the middle 288 x 288 and crops the edges. Swapped by file and rebuild only.", 432, 432, "icon"),
 ]
 
@@ -382,7 +382,7 @@ def bike_rider(size=768):
     return img
 
 
-def bike_skyline(w=2048, h=1024):
+def bike_skyline(w=2048, h=512):
     """A far-off city: towers and domes against the sky, hazy at the bottom."""
     top, bottom = (58, 132, 230), (196, 226, 248)
     column = Image.new("RGB", (1, h))

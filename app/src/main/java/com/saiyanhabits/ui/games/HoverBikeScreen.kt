@@ -116,6 +116,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
     val rider by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_RIDER) }
     val skyline by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_SKYLINE) }
     val haze = remember(skyline) { skyline?.let { footColour(it) } ?: Color(0xFFB8DCF7) }
+    val sky = remember(skyline) { skyline?.let { edgeColour(it, bottom = false) } ?: Color(0xFF3A84E6) }
     world.showModelRider = rider == null
     var camera by remember { mutableStateOf<io.github.sceneview.node.CameraNode?>(null) }
     val tilt = rememberTilt(enabled = phase == Phase.RIDING && useTilt)
@@ -181,7 +182,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             .fillMaxSize()
             .background(Brush.verticalGradient(listOf(Color(0xFF2E7BE6), Color(0xFF8CCBFF), Color(0xFFB8DCF7)))),
     ) {
-        skyline?.let { Skyline(it, points, haze) }
+        skyline?.let { Skyline(it, points, haze, sky) }
         HoverBikeScene(
             world,
             onCamera = { camera = it },
@@ -270,20 +271,24 @@ fun HoverBikeScreen(onBack: () -> Unit) {
 
 /**
  * The far-off skyline, drawn behind the 3D street with its foot just below the
- * horizon. It fills the sky above and slides a little as the bike steers.
+ * horizon, a little wider than the screen so it can slide as the bike steers.
+ * Above it, a gradient carries its top edge's colour up to the top of the screen.
  */
 @Composable
-private fun Skyline(image: ImageBitmap, points: ScreenPoints, haze: Color) {
+private fun Skyline(image: ImageBitmap, points: ScreenPoints, haze: Color, sky: Color) {
     Canvas(Modifier.fillMaxSize()) {
         val foot = size.height * (points.horizonY + GameConfig.BIKE_SKYLINE_OVERLAP)
-        val aspect = image.width.toFloat() / image.height
-        // Tall enough to reach the top, and wide enough to slide without showing an edge.
-        val height = maxOf(foot, size.width * 1.3f / aspect)
-        val width = height * aspect
+        val width = size.width * GameConfig.BIKE_SKYLINE_WIDTH
+        val height = width * image.height / image.width
+        val top = foot - height
+        if (top > 0f) {
+            val deeper = Color(sky.red * 0.7f, sky.green * 0.75f, sky.blue * 0.9f)
+            drawRect(Brush.verticalGradient(listOf(deeper, sky), startY = 0f, endY = top), size = Size(size.width, top + 2f))
+        }
         val slide = -points.bikeSideways * GameConfig.BIKE_SKYLINE_PARALLAX * size.width
         drawImage(
             image,
-            dstOffset = IntOffset(((size.width - width) / 2 + slide).toInt(), (foot - height).toInt()),
+            dstOffset = IntOffset(((size.width - width) / 2 + slide).toInt(), top.toInt()),
             dstSize = IntSize(width.toInt(), height.toInt()),
         )
         // Haze below the skyline's foot, where the ground ends before the horizon.
@@ -320,11 +325,15 @@ private fun RiderSprite(image: ImageBitmap, points: ScreenPoints, state: HoverBi
 }
 
 /** The average colour along the bottom of [image], for the haze that joins it to the street. */
-private fun footColour(image: ImageBitmap): Color {
+private fun footColour(image: ImageBitmap): Color = edgeColour(image, bottom = true)
+
+/** The average colour along the top or bottom 3% of [image], ignoring see-through pixels. */
+private fun edgeColour(image: ImageBitmap, bottom: Boolean): Color {
     val bitmap = image.asAndroidBitmap()
     var r = 0L; var g = 0L; var b = 0L; var n = 0
     val rows = (bitmap.height * 0.03f).toInt().coerceAtLeast(1)
-    for (y in bitmap.height - rows until bitmap.height) {
+    val ys = if (bottom) bitmap.height - rows until bitmap.height else 0 until rows
+    for (y in ys) {
         for (x in 0 until bitmap.width step 8) {
             val p = bitmap.getPixel(x, y)
             if ((p ushr 24) < 128) continue

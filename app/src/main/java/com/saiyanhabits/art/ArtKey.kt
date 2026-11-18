@@ -35,7 +35,7 @@ enum class ArtKey(val key: String, val label: String, val width: Int, val height
     CLOUD_ORNAMENT("cloud_ornament", "Cloud ornament", 600, 360, ArtShape.FREE),
     EMBLEM_CAPSULE("emblem_capsule", "Capsule emblem", 512, 512, ArtShape.FREE),
     BIKE_RIDER("bike_rider", "Rider on the hover bike, from behind", 768, 768, ArtShape.FREE),
-    BIKE_SKYLINE("bike_skyline", "City skyline", 2048, 1024, ArtShape.FREE),
+    BIKE_SKYLINE("bike_skyline", "City skyline", 2048, 512, ArtShape.FREE),
     ;
 
     /** True for images the app loads while running; the launcher icon is baked in at build time. */
