@@ -707,8 +707,16 @@ private fun TodayHabitRow(entry: TodayHabit, perks: Perks, onClick: () -> Unit, 
             }
             if (habit.isCounted && done == null && entry.count > 0 && !entry.excused) {
                 Spacer(Modifier.width(6.dp))
-                IconButton(onClick = onMinus, modifier = Modifier.size(40.dp)) {
-                    Text("−", style = MaterialTheme.typography.headlineSmall, color = SaiyanColors.TextDim)
+                // Takes one off the count.
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .size(34.dp)
+                        .clip(CircleShape)
+                        .border(2.dp, SaiyanColors.FrameGold.copy(alpha = 0.7f), CircleShape)
+                        .clickable(onClickLabel = "Take one off", onClick = onMinus),
+                ) {
+                    Box(Modifier.size(width = 14.dp, height = 3.dp).clip(CircleShape).background(Color.White))
                 }
             }
             if (!entry.excused || done != null) {
