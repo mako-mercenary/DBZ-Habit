@@ -98,6 +98,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
 
     private val cutOutCars = cutOuts(ArtKey.bikeCars, 5, width = GameConfig.BIKE_CUTOUT_CAR_WIDTH)
     private val cutOutPalm = cutOuts(listOf(ArtKey.BIKE_PALM), 18, height = GameConfig.BIKE_CUTOUT_PALM_HEIGHT).firstOrNull()
+    private val cutOutPeople = cutOuts(ArtKey.bikePeople, 12, height = GameConfig.BIKE_CUTOUT_PERSON_HEIGHT)
 
     /** Building pictures with how wide each stands, in metres. */
     private val cutOutBuildings: List<Pair<Pool, Float>> = ArtKey.bikeBuildings.mapIndexedNotNull { i, key ->
@@ -106,7 +107,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     }
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
-        cars + trucks + buildings + palms + cutOutBuildings.map { it.first } + cutOutCars + listOfNotNull(cutOutPalm)
+        cars + trucks + buildings + palms + cutOutBuildings.map { it.first } + cutOutCars + listOfNotNull(cutOutPalm) + cutOutPeople
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -194,6 +195,13 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
                 } else {
                     val palm = palms[Math.floorMod(h ushr 7, palms.size)]
                     place(palm, palmX, 0f, palmZ, yaw = Math.floorMod(h ushr 9, 360).toFloat())
+                }
+                // Now and then someone on the pavement, just scenery; they turn to face you.
+                if (cutOutPeople.isNotEmpty() && Math.floorMod(h ushr 11, 100) < GameConfig.BIKE_PEOPLE_PER_100_BLOCKS) {
+                    val person = cutOutPeople[Math.floorMod(h ushr 13, cutOutPeople.size)]
+                    val px = side * (half + 1.2f + Math.floorMod(h ushr 15, 3) * 0.8f)
+                    val pz = -(ahead + 3f + Math.floorMod(h ushr 17, 16))
+                    place(person, px, 0.06f, pz, yaw = facing(px, pz, camX))
                 }
                 // A street light every other block, alternating sides.
                 if (Math.floorMod(b, 2) == (if (side < 0) 0 else 1)) {

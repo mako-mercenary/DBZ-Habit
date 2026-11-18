@@ -249,4 +249,10 @@ object GameConfig {
 
     /** Hover-bike run: how tall a palm tree picture stands, in metres. */
     const val BIKE_CUTOUT_PALM_HEIGHT = 8f
+
+    /** Hover-bike run: how tall a pedestrian picture stands, in metres. */
+    const val BIKE_CUTOUT_PERSON_HEIGHT = 1.75f
+
+    /** Hover-bike run: out of every 100 block sides, how many have someone on the pavement. */
+    const val BIKE_PEOPLE_PER_100_BLOCKS = 60
 }
