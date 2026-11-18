@@ -11,3 +11,10 @@ background, first run `tools/remove_bg.py <source> <cut.png>`.
 
 For full figures (bosses, the dragon): `tools/fit_figure.py <source> <out.png> <preview.png> <width> <height>`
 trims the empty edges and centres the figure in the target size.
+
+For pictures that arrive with their background painted in:
+`tools/remove_checker.py <source> <cut.png>` clears a grey-and-white
+checkerboard (used for `bike_building_1`), and
+`tools/remove_checker.py <source> <cut.png> --dark <limit>` clears a black
+backdrop with a glow (`bike_car_1` at 100, `bike_car_2` at 150). Then trim to
+the figure and fit it inside the key's size, keeping its proportions.

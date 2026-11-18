@@ -32,11 +32,12 @@ def checker_mask(rgb):
 
 def dark_mask(rgb, limit):
     """
-    Pixels no brighter than [limit] in any channel that aren't tinted blue: a black
-    or warm backdrop and glow, but not the dark navy of a car's underside.
+    Near-black pixels, and pixels no brighter than [limit] in any channel that aren't
+    tinted blue: a black or warm backdrop and glow, but not the navy of a car's underside.
     """
     rgb = rgb.astype(np.int16)
-    return (rgb.max(axis=2) <= limit) & (rgb[:, :, 2] - rgb[:, :, 0] <= 8)
+    bright = rgb.max(axis=2)
+    return (bright <= 35) | ((bright <= limit) & (rgb[:, :, 2] - rgb[:, :, 0] <= 8))
 
 
 def grow(mask, pixels):
