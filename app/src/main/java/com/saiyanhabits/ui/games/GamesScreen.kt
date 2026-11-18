@@ -117,11 +117,3 @@ fun GameResultCard(
         }
     }
 }
-
-/** For games not built yet. */
-@Composable
-fun ComingSoon(game: MiniGame, onBack: () -> Unit) {
-    SubScreen(title = game.title, onBack = onBack) {
-        Text("Coming soon.", color = SaiyanColors.TextDim)
-    }
-}

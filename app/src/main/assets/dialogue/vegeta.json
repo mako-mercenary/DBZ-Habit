@@ -102,6 +102,28 @@
     "Finish what you started today. No excuses.",
     "I'm still training. Are you?"
   ],
+  "game": [
+    "The gravity room. Try not to be crushed in the first ten seconds.",
+    "Keep the rhythm, or the gravity keeps you.",
+    "Tch. Sloppy. Again!",
+    "Ten times gravity and you're still standing? Interesting.",
+    "Fifty times. Now we're training.",
+    "A hundred times gravity. Don't you dare drop the combo now.",
+    "You missed. A Saiyan doesn't miss twice.",
+    "Faster! Your enemies won't wait for you to find the beat."
+  ],
+  "game_done": [
+    "Hmph. You survived the gravity room. Barely acceptable.",
+    "Not bad. I've seen worse. From Kakarot.",
+    "You kept the rhythm. Now keep it outside this room too.",
+    "Tch. Fine. That was... respectable."
+  ],
+  "game_lost": [
+    "Pathetic. The gravity flattened you.",
+    "You call that training? Again, until you stop flinching.",
+    "Too slow. Feel the beat or get crushed by it.",
+    "Get up. We go again."
+  ],
   "scenes": [
     {
       "level": 2,

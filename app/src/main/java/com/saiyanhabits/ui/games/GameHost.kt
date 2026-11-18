@@ -11,6 +11,6 @@ fun GameHost(game: MiniGame, onBack: () -> Unit) {
         MiniGame.MEDITATION -> MeditationScreen(onBack)
         MiniGame.FISHING -> FishingScreen(onBack)
         MiniGame.CHESS -> ChessScreen(onBack)
-        else -> ComingSoon(game, onBack)
+        MiniGame.RHYTHM -> RhythmScreen(onBack)
     }
 }
