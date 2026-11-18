@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -109,6 +110,10 @@ private val HeaderDate = DateTimeFormatter.ofPattern("EEEE, MMM d", Locale.getDe
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
+    /** The title earned with achievements, once known. */
+    title: String?,
+    achievementCount: Int,
+    onOpenAchievements: () -> Unit,
     /** The line written about today, if any. */
     todayNote: String?,
     onSaveNote: (String) -> Unit,
@@ -187,6 +192,9 @@ fun HomeScreen(
                 aura = formAura(state.form),
                 avatarForm = state.form,
             )
+        }
+        if (title != null) {
+            item(key = "title") { TitleStrip(title, achievementCount, onOpenAchievements) }
         }
         state.mentorLine?.let { line ->
             item(key = "mentor") { MentorLineCard(line) }
@@ -847,5 +855,40 @@ private fun NoteCard(note: String?, onClick: () -> Unit) {
                 )
             }
         }
+    }
+}
+
+/** The title earned with achievements, under the power level. Opens the achievements. */
+@Composable
+private fun TitleStrip(title: String, count: Int, onClick: () -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(12.dp))
+            .clickable(onClickLabel = "See achievements", onClick = onClick)
+            .padding(horizontal = 8.dp, vertical = 2.dp),
+    ) {
+        com.saiyanhabits.ui.history.Medal(unlocked = true, modifier = Modifier.size(26.dp), ring = 2.dp)
+        Spacer(Modifier.width(10.dp))
+        OutlinedText(
+            title.uppercase(),
+            MaterialTheme.typography.titleLarge,
+            fill = GoldLettering,
+            outlineWidth = 4.dp,
+            modifier = Modifier.weight(1f),
+        )
+        Text(
+            "$count / ${com.saiyanhabits.domain.Achievement.entries.size}",
+            style = MaterialTheme.typography.titleSmall,
+            color = Color.White,
+        )
+        Spacer(Modifier.width(4.dp))
+        Icon(
+            painterResource(R.drawable.ic_back),
+            contentDescription = null,
+            tint = Color.White,
+            modifier = Modifier.size(18.dp).graphicsLayer { scaleX = -1f },
+        )
     }
 }

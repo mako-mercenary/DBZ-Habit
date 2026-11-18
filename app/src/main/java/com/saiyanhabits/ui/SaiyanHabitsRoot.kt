@@ -71,6 +71,7 @@ import com.saiyanhabits.ui.habits.HabitEditScreen
 import com.saiyanhabits.ui.habits.HabitsScreen
 import com.saiyanhabits.ui.habits.HabitsViewModel
 import com.saiyanhabits.ui.history.HistoryScreen
+import com.saiyanhabits.ui.history.AchievementsScreen
 import com.saiyanhabits.ui.history.HistoryViewModel
 import com.saiyanhabits.ui.history.RecapScreen
 import com.saiyanhabits.domain.WeekRecap
@@ -106,6 +107,7 @@ private object Routes {
     const val SETTINGS = "settings"
     const val ART = "art"
     const val HISTORY = "history"
+    const val ACHIEVEMENTS = "achievements"
 
     const val WEEK_ARG = "week"
     const val RECAP = "recap/{$WEEK_ARG}"
@@ -185,6 +187,21 @@ fun SaiyanHabitsRoot() {
     var bondLevelUp by remember { mutableStateOf<BondLevelUpNotice?>(null) }
     var summoning by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
+    val achievements by app.achievementRepository.state.collectAsStateWithLifecycle(initialValue = null)
+
+    // Announce achievements as they unlock.
+    LaunchedEffect(achievements) {
+        val state = achievements ?: return@LaunchedEffect
+        when (val news = app.achievementRepository.takeNews(state)) {
+            null -> Unit
+            is com.saiyanhabits.data.AchievementNews.Backdated -> launch {
+                snackbars.showSnackbar("Your past training already earned ${news.count} achievements. Tap your title to see them.")
+            }
+            is com.saiyanhabits.data.AchievementNews.Unlocked -> news.achievements.forEach { achievement ->
+                launch { snackbars.showSnackbar("Achievement unlocked: ${achievement.title}") }
+            }
+        }
+    }
 
     // The weekly recap opens by itself the first time the app comes to the front
     // in a new week, over the home screen only, so it never interrupts an editor.
@@ -280,6 +297,9 @@ fun SaiyanHabitsRoot() {
                     val todayNote by remember(homeDate) { app.historyRepository.note(homeDate.toEpochDay()) }
                         .collectAsStateWithLifecycle(initialValue = null)
                     HomeScreen(
+                        title = achievements?.title,
+                        achievementCount = achievements?.unlocked?.size ?: 0,
+                        onOpenAchievements = { navController.navigate(Routes.ACHIEVEMENTS) },
                         todayNote = todayNote,
                         onSaveNote = { text -> scope.launch { app.historyRepository.saveNote(homeDate.toEpochDay(), text) } },
                         viewModel = homeViewModel,
@@ -355,6 +375,12 @@ fun SaiyanHabitsRoot() {
                         onConfirmImport = dataViewModel::confirmImport,
                         onCancelImport = dataViewModel::cancelImport,
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
+                    )
+                }
+                composable(Routes.ACHIEVEMENTS) {
+                    AchievementsScreen(
+                        state = achievements,
+                        onBack = { navController.popBackStack(Routes.ACHIEVEMENTS, inclusive = true) },
                     )
                 }
                 composable(Routes.HISTORY) {

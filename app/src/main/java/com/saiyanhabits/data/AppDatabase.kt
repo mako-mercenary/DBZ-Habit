@@ -37,6 +37,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun wishDao(): WishDao
     abstract fun countDao(): CountDao
     abstract fun noteDao(): NoteDao
+    abstract fun achievementDao(): AchievementDao
 
     companion object {
         fun create(context: Context): AppDatabase =

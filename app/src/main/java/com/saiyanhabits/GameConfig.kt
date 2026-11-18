@@ -171,6 +171,21 @@ object GameConfig {
     /** Perfect days that make a week a "strong week" in the Monday recap. */
     const val RECAP_STRONG_WEEK_PERFECT_DAYS = 5
 
+    // ---- Achievements ----
+
+    /** Titles, earned by the number of achievements unlocked, lowest first. */
+    val TITLES = listOf(
+        0 to "Trainee",
+        3 to "Fighter",
+        7 to "Warrior",
+        12 to "Elite warrior",
+        18 to "Champion",
+        25 to "Legendary warrior",
+    )
+
+    /** The title for unlocking every achievement in the game. */
+    const val TOP_TITLE = "Mightiest in the universe"
+
     // ---- Animation timing (milliseconds) ----
 
     /** The dragon rising when it is summoned. */

@@ -204,3 +204,45 @@ interface NoteDao {
     @Query("DELETE FROM day_notes WHERE epochDay = :epochDay")
     suspend fun delete(epochDay: Long)
 }
+
+@Dao
+interface AchievementDao {
+
+    /**
+     * A number that changes whenever anything achievements look at does, so
+     * observing it re-checks them at the right moments.
+     */
+    @Query(
+        """
+        SELECT (SELECT COUNT(*) FROM completions)
+             + (SELECT COALESCE(SUM(points), 0) FROM power_events)
+             + (SELECT COUNT(*) FROM power_events)
+             + (SELECT COUNT(*) FROM day_records) * 7
+             + (SELECT COUNT(*) FROM day_records WHERE outcome = 'BEAN_COVERED') * 13
+             + (SELECT COUNT(*) FROM wishes WHERE grantedAtEpochDay IS NOT NULL) * 17
+             + (SELECT COUNT(*) FROM day_notes) * 19
+             + (SELECT COUNT(*) FROM focus_sessions) * 23
+             + (SELECT COALESCE(SUM(chaptersRead * 29 + highestForm * 31), 0) FROM player_state)
+             + (SELECT COUNT(*) FROM sagas WHERE status = 'DONE') * 37
+        """,
+    )
+    fun observeChanges(): Flow<Long>
+
+    @Query("SELECT COUNT(*) FROM completions")
+    suspend fun checkOffs(): Int
+
+    @Query("SELECT COUNT(*) FROM focus_sessions")
+    suspend fun chamberSessions(): Int
+
+    @Query("SELECT boss FROM sagas WHERE status = 'DONE'")
+    suspend fun defeatedBosses(): List<com.saiyanhabits.domain.Boss>
+
+    @Query("SELECT COUNT(*) FROM wishes WHERE grantedAtEpochDay IS NOT NULL")
+    suspend fun wishesGranted(): Int
+
+    @Query("SELECT COUNT(*) FROM day_notes")
+    suspend fun notesWritten(): Int
+
+    @Query("SELECT (SELECT COALESCE(SUM(points), 0) FROM completions) + (SELECT COALESCE(SUM(points), 0) FROM power_events)")
+    suspend fun totalPoints(): Long
+}

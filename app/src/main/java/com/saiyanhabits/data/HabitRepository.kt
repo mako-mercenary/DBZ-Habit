@@ -390,14 +390,24 @@ class HabitRepository(
         streakDao.savePlayerState(state)
     }
 
+    /** The overall streak as the home screen shows it: finished days, plus today once it is perfect. */
+    suspend fun currentStreak(): Int = db.withTransaction {
+        val todayDay = today().toEpochDay()
+        StreakRules.streak(streakDao.getOpenRecords().map { it.outcome }, isPerfect(todayDay))
+    }
+
+    /** True when everything that counts on [day] is done, and something did. */
+    private suspend fun isPerfect(day: Long): Boolean {
+        val excused = bondDao.getExcusesBetween(day, day).map { it.habitId }.toSet()
+        val week = completedByDay(Weeks.startOf(day), day)
+        val scheduled = StreakRules.countedOn(habitDao.getActive().map { it.toScheduled() }, day, week)
+            .filterNot { it in excused }
+        return StreakRules.isPerfect(scheduled, week[day].orEmpty())
+    }
+
     /** If today is perfect, hands out whatever the streak has now earned. */
     private suspend fun checkMilestones(todayDay: Long): List<GameEvent> {
-        val excused = bondDao.getExcusesBetween(todayDay, todayDay).map { it.habitId }.toSet()
-        val week = completedByDay(Weeks.startOf(todayDay), todayDay)
-        val scheduled = StreakRules.countedOn(habitDao.getActive().map { it.toScheduled() }, todayDay, week)
-            .filterNot { it in excused }
-        val completed = week[todayDay].orEmpty()
-        if (!StreakRules.isPerfect(scheduled, completed)) return emptyList()
+        if (!isPerfect(todayDay)) return emptyList()
 
         val streak = StreakRules.streak(streakDao.getOpenRecords().map { it.outcome }, todayPerfect = true)
         val before = streakDao.getPlayerState() ?: PlayerStateEntity()
