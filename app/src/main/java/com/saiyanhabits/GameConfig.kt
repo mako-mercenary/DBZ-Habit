@@ -189,46 +189,6 @@ object GameConfig {
     /** The title for unlocking every achievement in the game. */
     const val TOP_TITLE = "Mightiest in the universe"
 
-    // ---- Your fighter (the RPG) ----
-
-    /**
-     * Level from power level: level = 1 + the square root of (power level / this),
-     * up to MAX_LEVEL. 16 gives about level 10 after two weeks and 50 after a year.
-     */
-    const val LEVEL_POWER_DIVISOR = 16.0
-    const val MAX_LEVEL = 99
-
-    /** Every stat starts here at level 1 and gains this much per level. */
-    const val STAT_BASE = 8
-    const val STAT_GROWTH_PER_LEVEL = 0.9
-
-    /** Each bond level above 1 adds this to the stats that mentor trains. */
-    const val BOND_STAT_BONUS_PER_LEVEL = 3
-
-    /** Highest any stat can go. */
-    const val STAT_CAP = 255
-
-    /** HP = base + per level + per point of Vitality, up to the cap. */
-    const val HP_BASE = 180
-    const val HP_PER_LEVEL = 80
-    const val HP_PER_VITALITY = 10
-    const val HP_CAP = 9999
-
-    /** Ki (for techniques) = base + per level + per point of the Ki stat, up to the cap. */
-    const val KI_BASE = 20
-    const val KI_PER_LEVEL = 6
-    const val KI_PER_KI_STAT = 2
-    const val KI_CAP = 999
-
-    // ---- Zeni ----
-
-    /** Zeni paid for every point of power earned (check-offs, sagas, spirit bombs, the time chamber). */
-    const val ZENI_PER_POWER_POINT = 1
-
-    /** Extra zeni for a perfect day and for a perfect week. */
-    const val ZENI_PERFECT_DAY = 50
-    const val ZENI_PERFECT_WEEK = 300
-
     // ---- Animation timing (milliseconds) ----
 
     /** The dragon rising when it is summoned. */

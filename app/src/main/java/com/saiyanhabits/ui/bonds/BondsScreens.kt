@@ -55,15 +55,9 @@ import com.saiyanhabits.ui.theme.color
 internal val Mentor.trains: String
     get() = HabitCategory.entries.firstOrNull { it.mentor == this }?.label ?: "Your hardest habit"
 
-/** The Team tab: your fighter, then every mentor and how close you are. */
+/** The Bonds tab: every mentor and how close you are. */
 @Composable
-fun BondsScreen(
-    state: BondsUiState?,
-    fighter: com.saiyanhabits.data.FighterState?,
-    onOpenStatus: () -> Unit,
-    onOpenMentor: (Mentor) -> Unit,
-    modifier: Modifier = Modifier,
-) {
+fun BondsScreen(state: BondsUiState?, onOpenMentor: (Mentor) -> Unit, modifier: Modifier = Modifier) {
     LazyColumn(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -73,20 +67,16 @@ fun BondsScreen(
     ) {
         item(key = "title") {
             Column(Modifier.padding(start = 4.dp, bottom = 4.dp)) {
-                ScreenTitle("Team")
+                ScreenTitle("Bonds")
                 Text(
-                    "Your training levels you up. Checking off a habit also builds the bond with the mentor " +
-                        "who trains it, which raises your stats and unlocks scenes and techniques.",
+                    "Checking off a habit builds the bond with the mentor who trains it. " +
+                        "New bond levels unlock scenes and techniques.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = SaiyanColors.TextDim,
                 )
             }
         }
-        if (fighter != null) {
-            item(key = "fighter") { FighterCard(fighter, onClick = onOpenStatus) }
-        }
         if (state == null) return@LazyColumn
-        item(key = "mentors") { SectionLabel("Mentors") }
         items(state.bonds, key = { it.mentor.name }) { bond ->
             BondCard(bond, onClick = { onOpenMentor(bond.mentor) })
         }

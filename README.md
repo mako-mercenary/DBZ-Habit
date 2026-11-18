@@ -16,7 +16,6 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 7 | Data export/import, final debug APK | Done |
 | 8 | History screen, weekly recap | Done |
 | 9 | Flexible habits, day notes, achievements, widget, evening nudge, more mentor lines, sound | Done |
-| 10 | RPG foundations: level, stats, zeni (see [DESIGN.md](DESIGN.md) for the RPG plan) | Done |
 
 ## Build
 
@@ -94,24 +93,6 @@ In the habit editor:
 
   The timer runs as a foreground service with a countdown notification, so it
   keeps going with the screen off or the app closed.
-
-## Your fighter and zeni
-
-The app is becoming an RPG; [DESIGN.md](DESIGN.md) has the whole plan. The rule
-it follows: only real training makes you stronger.
-
-- **Level** comes from your power level: 1 + the square root of (power level / 16),
-  up to 99. That's about level 10 after two weeks and 50 after a year.
-- **Stats** (Strength, Speed, Vitality, Ki, Spirit, Luck) grow with your level,
-  and each mentor's bond adds to the stats they train: Goku Strength, Roshi
-  Vitality, Piccolo Ki and Spirit, Bulma Luck, Vegeta Speed. HP and ki follow.
-- **Zeni:** every point of power also pays a zeni, plus 50 for a perfect day
-  and 300 for a perfect week. It's worked out from what's already recorded, so
-  past training counts and an undone check-off takes its zeni back. Prizes and
-  purchases (coming with the tournaments and the shop) go in a ledger.
-
-Your level and zeni show under the power level on the home screen; the Team
-tab (formerly Bonds) opens your full status.
 
 ## Mentors and bonds
 

@@ -112,11 +112,8 @@ fun HomeScreen(
     viewModel: HomeViewModel,
     /** The title earned with achievements, once known. */
     title: String?,
-    /** Your fighter's level and zeni, once known. */
-    level: Int?,
-    zeni: Long?,
+    achievementCount: Int,
     onOpenAchievements: () -> Unit,
-    onOpenStatus: () -> Unit,
     /** The line written about today, if any. */
     todayNote: String?,
     onSaveNote: (String) -> Unit,
@@ -197,7 +194,7 @@ fun HomeScreen(
             )
         }
         if (title != null) {
-            item(key = "title") { TitleStrip(title, level, zeni, onOpenAchievements, onOpenStatus) }
+            item(key = "title") { TitleStrip(title, achievementCount, onOpenAchievements) }
         }
         state.mentorLine?.let { line ->
             item(key = "mentor") { MentorLineCard(line) }
@@ -871,62 +868,35 @@ private fun NoteCard(note: String?, onClick: () -> Unit) {
 
 /** The title earned with achievements, under the power level. Opens the achievements. */
 @Composable
-private fun TitleStrip(title: String, level: Int?, zeni: Long?, onOpenAchievements: () -> Unit, onOpenStatus: () -> Unit) {
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-        // Level and title: opens the achievements.
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .weight(1f)
-                .clip(RoundedCornerShape(12.dp))
-                .clickable(onClickLabel = "See achievements", onClick = onOpenAchievements)
-                .padding(horizontal = 8.dp, vertical = 2.dp),
-        ) {
-            if (level != null) {
-                LevelBadge(level)
-                Spacer(Modifier.width(10.dp))
-            }
-            OutlinedText(
-                title.uppercase(),
-                MaterialTheme.typography.titleLarge,
-                fill = GoldLettering,
-                outlineWidth = 4.dp,
-            )
-        }
-        // Zeni: opens your status.
-        if (zeni != null) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .clip(RoundedCornerShape(12.dp))
-                    .clickable(onClickLabel = "See your status", onClick = onOpenStatus)
-                    .padding(horizontal = 8.dp, vertical = 6.dp),
-            ) {
-                com.saiyanhabits.ui.bonds.ZeniAmount(zeni)
-                Spacer(Modifier.width(2.dp))
-                Icon(
-                    painterResource(R.drawable.ic_back),
-                    contentDescription = null,
-                    tint = Color.White,
-                    modifier = Modifier.size(18.dp).graphicsLayer { scaleX = -1f },
-                )
-            }
-        }
-    }
-}
-
-/** "LV 9" on a gold disc. */
-@Composable
-private fun LevelBadge(level: Int) {
-    Box(
-        contentAlignment = Alignment.Center,
+private fun TitleStrip(title: String, count: Int, onClick: () -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .height(30.dp)
-            .clip(RoundedCornerShape(8.dp))
-            .background(Brush.verticalGradient(listOf(SaiyanColors.TabGoldTop, SaiyanColors.TabGoldBottom)))
-            .border(1.5.dp, SaiyanColors.FrameDark, RoundedCornerShape(8.dp))
-            .padding(horizontal = 8.dp),
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(12.dp))
+            .clickable(onClickLabel = "See achievements", onClick = onClick)
+            .padding(horizontal = 8.dp, vertical = 2.dp),
     ) {
-        Text("LV $level", style = MaterialTheme.typography.titleMedium, color = SaiyanColors.TabInk)
+        com.saiyanhabits.ui.history.Medal(unlocked = true, modifier = Modifier.size(26.dp), ring = 2.dp)
+        Spacer(Modifier.width(10.dp))
+        OutlinedText(
+            title.uppercase(),
+            MaterialTheme.typography.titleLarge,
+            fill = GoldLettering,
+            outlineWidth = 4.dp,
+            modifier = Modifier.weight(1f),
+        )
+        Text(
+            "$count / ${com.saiyanhabits.domain.Achievement.entries.size}",
+            style = MaterialTheme.typography.titleSmall,
+            color = Color.White,
+        )
+        Spacer(Modifier.width(4.dp))
+        Icon(
+            painterResource(R.drawable.ic_back),
+            contentDescription = null,
+            tint = Color.White,
+            modifier = Modifier.size(18.dp).graphicsLayer { scaleX = -1f },
+        )
     }
 }
