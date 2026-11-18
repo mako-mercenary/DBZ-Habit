@@ -21,6 +21,10 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.relocation.BringIntoViewRequester
 import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.foundation.background
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.withFrameNanos
@@ -70,13 +74,26 @@ fun HistoryScreen(
     onSelectDay: (Long) -> Unit,
     onRange: (ChartRange) -> Unit,
     onOpenRecap: () -> Unit,
+    onSaveNote: (Long, String) -> Unit,
     onBack: () -> Unit,
 ) {
+    var editingNote by remember { mutableStateOf<com.saiyanhabits.data.DayDetail?>(null) }
+    editingNote?.let { detail ->
+        NoteDialog(
+            title = "Note for " + LocalDate.ofEpochDay(detail.epochDay).format(DayTitle),
+            initial = detail.note,
+            onSave = {
+                onSaveNote(detail.epochDay, it)
+                editingNote = null
+            },
+            onDismiss = { editingNote = null },
+        )
+    }
     SubScreen(title = "History", onBack = onBack) {
         if (state == null) return@SubScreen
         StatsPanel(HistoryRules.stats(state.days, currentStreak), currentStreak)
         CalendarPanel(state, onPrevMonth, onNextMonth, onSelectDay)
-        state.selected?.let { DayPanel(it) }
+        state.selected?.let { DayPanel(it, onEditNote = { editingNote = it }) }
         PowerChartPanel(state, onRange)
         if (state.days.isNotEmpty()) {
             DbzSecondaryButton(onClick = onOpenRecap, modifier = Modifier.fillMaxWidth()) {
@@ -184,6 +201,16 @@ private fun CalendarPanel(
                                     onClick = if (open) ({ onSelectDay(day) }) else null,
                                     modifier = Modifier.matchParentSize(),
                                 )
+                                if (day in state.notedDays) {
+                                    // A small mark for a day with a note.
+                                    Box(
+                                        Modifier
+                                            .align(Alignment.BottomCenter)
+                                            .padding(bottom = 3.dp)
+                                            .size(5.dp)
+                                            .background(Color.White, androidx.compose.foundation.shape.CircleShape),
+                                    )
+                                }
                             }
                         }
                     }
@@ -195,7 +222,7 @@ private fun CalendarPanel(
 }
 
 @Composable
-private fun DayPanel(detail: com.saiyanhabits.data.DayDetail) {
+private fun DayPanel(detail: com.saiyanhabits.data.DayDetail, onEditNote: () -> Unit) {
     val date = LocalDate.ofEpochDay(detail.epochDay)
     val isToday = date == LocalDate.now()
     // The panel opens below the calendar, so scroll it into view when a day is picked.
@@ -233,6 +260,17 @@ private fun DayPanel(detail: com.saiyanhabits.data.DayDetail) {
                     Spacer(Modifier.width(8.dp))
                     Text(name)
                 }
+            }
+            if (detail.note != null) {
+                Text(
+                    "\u201C${detail.note}\u201D",
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                    modifier = Modifier.padding(top = 4.dp),
+                )
+            }
+            androidx.compose.material3.TextButton(onClick = onEditNote, contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)) {
+                Text(if (detail.note == null) "Write a note for this day" else "Edit the note", color = SaiyanColors.Orange)
             }
         }
     }

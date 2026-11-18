@@ -21,6 +21,8 @@ data class DayDetail(
     val points: Int,
     /** Names of the habits checked off that day. */
     val checkOffs: List<String>,
+    /** The line written about the day, if any. */
+    val note: String?,
 )
 
 /** Reads the past for the history screen and the weekly recap. Writes nothing to the database. */
@@ -46,7 +48,20 @@ class HistoryRepository(
             record = db.streakDao().getRecordsBetween(epochDay, epochDay).firstOrNull()?.toPastDay(),
             points = db.powerDao().observeDailyPoints(epochDay, epochDay).first().sumOf { it.points },
             checkOffs = completions.map { names[it.habitId] ?: "A removed habit" },
+            note = db.noteDao().get(epochDay)?.text,
         )
+    }
+
+    /** Every day's note, by day. */
+    val notes: Flow<Map<Long, String>> = db.noteDao().observeAll().map { rows -> rows.associate { it.epochDay to it.text } }
+
+    fun note(epochDay: Long): Flow<String?> = db.noteDao().observe(epochDay).map { it?.text }
+
+    /** Saves the note for a day; a blank one removes it. Never for a day still to come. */
+    suspend fun saveNote(epochDay: Long, text: String) {
+        if (epochDay > today().toEpochDay()) return
+        val trimmed = text.trim().take(NOTE_MAX_LENGTH)
+        if (trimmed.isEmpty()) db.noteDao().delete(epochDay) else db.noteDao().save(DayNoteEntity(epochDay, trimmed))
     }
 
     /** How the week starting on Monday [weekStart] went. */
@@ -107,9 +122,11 @@ class HistoryRepository(
             db.powerDao().observeDailyPoints(weekStart, sunday).first().any { it.points > 0 }
     }
 
-    private companion object {
-        const val KEY_LAST_SHOWN = "last_shown_week"
-        const val NONE = Long.MIN_VALUE
+    companion object {
+        /** Longest note kept for a day. */
+        const val NOTE_MAX_LENGTH = 280
+        private const val KEY_LAST_SHOWN = "last_shown_week"
+        private const val NONE = Long.MIN_VALUE
     }
 }
 

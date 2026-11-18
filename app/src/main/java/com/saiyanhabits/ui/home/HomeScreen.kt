@@ -109,6 +109,9 @@ private val HeaderDate = DateTimeFormatter.ofPattern("EEEE, MMM d", Locale.getDe
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
+    /** The line written about today, if any. */
+    todayNote: String?,
+    onSaveNote: (String) -> Unit,
     /** An unlocked story chapter that has not been read yet, if any. */
     newChapter: StoryChapter?,
     /** True when at least one wish is written down and waiting. */
@@ -131,6 +134,18 @@ fun HomeScreen(
     val haptics = LocalHapticFeedback.current
     var choosingGravityFor by remember { mutableStateOf<HabitEntity?>(null) }
     var undoing by remember { mutableStateOf<TodayHabit?>(null) }
+    var writingNote by remember { mutableStateOf(false) }
+    if (writingNote) {
+        com.saiyanhabits.ui.history.NoteDialog(
+            title = "Today's note",
+            initial = todayNote,
+            onSave = {
+                onSaveNote(it)
+                writingNote = false
+            },
+            onDismiss = { writingNote = false },
+        )
+    }
 
     Box(modifier.fillMaxSize()) {
     LazyColumn(
@@ -227,6 +242,7 @@ fun HomeScreen(
                 )
             }
         }
+        item(key = "note") { NoteCard(todayNote, onClick = { writingNote = true }) }
         item(key = "rival") { RivalCard(state.rival) }
         item(key = "orbs") { WishOrbsCard(state.wishOrbs, hasWaitingWish, onSummon, onOpenSettings) }
     }
@@ -810,6 +826,25 @@ private fun GravityChooser(habit: HabitEntity, perks: Perks, onChoose: (Gravity)
                         outlineWidth = 4.dp,
                     )
                 }
+            }
+        }
+    }
+}
+
+/** A line about today, or an invitation to write one. */
+@Composable
+private fun NoteCard(note: String?, onClick: () -> Unit) {
+    DbzPanel(onClick = onClick, modifier = Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(horizontal = 14.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            TabLabel("Today's note")
+            if (note == null) {
+                Text("Tap to write a line about today.", color = SaiyanColors.TextDim)
+            } else {
+                Text(
+                    "\u201C$note\u201D",
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                )
             }
         }
     }

@@ -276,7 +276,12 @@ fun SaiyanHabitsRoot() {
                 modifier = Modifier.padding(padding),
             ) {
                 composable(Routes.HOME) {
+                    val homeDate = homeViewModel.uiState.collectAsStateWithLifecycle().value?.date ?: java.time.LocalDate.now()
+                    val todayNote by remember(homeDate) { app.historyRepository.note(homeDate.toEpochDay()) }
+                        .collectAsStateWithLifecycle(initialValue = null)
                     HomeScreen(
+                        todayNote = todayNote,
+                        onSaveNote = { text -> scope.launch { app.historyRepository.saveNote(homeDate.toEpochDay(), text) } },
                         viewModel = homeViewModel,
                         newChapter = chapters?.firstOrNull { it.isNew }?.chapter,
                         hasWaitingWish = waitingWishes.isNotEmpty(),
@@ -362,6 +367,7 @@ fun SaiyanHabitsRoot() {
                         onNextMonth = { state?.let { historyViewModel.showMonth(it.month.plusMonths(1)) } },
                         onSelectDay = historyViewModel::select,
                         onRange = historyViewModel::setRange,
+                        onSaveNote = historyViewModel::saveNote,
                         onOpenRecap = {
                             val today = java.time.LocalDate.now().toEpochDay()
                             navController.navigate(Routes.recap(Weeks.startOf(today) - Weeks.DAYS))

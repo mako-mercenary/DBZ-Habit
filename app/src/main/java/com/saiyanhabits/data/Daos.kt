@@ -195,6 +195,9 @@ interface NoteDao {
     @Query("SELECT * FROM day_notes WHERE epochDay = :epochDay")
     fun observe(epochDay: Long): Flow<DayNoteEntity?>
 
+    @Query("SELECT * FROM day_notes WHERE epochDay = :epochDay")
+    suspend fun get(epochDay: Long): DayNoteEntity?
+
     @Upsert
     suspend fun save(note: DayNoteEntity)
 

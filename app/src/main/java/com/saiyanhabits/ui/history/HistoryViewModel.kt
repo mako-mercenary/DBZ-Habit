@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.YearMonth
 
@@ -36,6 +37,8 @@ data class HistoryUiState(
     /** Power earned over the chart's days. */
     val gained: Long,
     val selected: DayDetail?,
+    /** Days with a note written. */
+    val notedDays: Set<Long> = emptySet(),
 ) {
     val byDay: Map<Long, PastDay> = days.associateBy { it.epochDay }
     val canGoBack: Boolean get() = month > firstMonth
@@ -50,7 +53,7 @@ class HistoryViewModel(private val history: HistoryRepository) : ViewModel() {
 
     /** The day picked in the calendar, reloaded whenever the data changes. */
     @OptIn(ExperimentalCoroutinesApi::class)
-    private val selected = combine(selectedDay, history.dailyPoints, history.pastDays) { day, _, _ -> day }
+    private val selected = combine(selectedDay, history.dailyPoints, history.pastDays, history.notes) { day, _, _, _ -> day }
         .mapLatest { day -> day?.let { history.dayDetail(it) } }
 
     /** Null until the first database read comes back. */
@@ -59,7 +62,8 @@ class HistoryViewModel(private val history: HistoryRepository) : ViewModel() {
         history.dailyPoints,
         combine(month, range, ::Pair),
         selected,
-    ) { days, points, (shownMonth, chartRange), detail ->
+        history.notes,
+    ) { days, points, (shownMonth, chartRange), detail, notes ->
         val today = LocalDate.now()
         val todayDay = today.toEpochDay()
         val firstDay = listOfNotNull(days.firstOrNull()?.epochDay, points.keys.minOrNull()).minOrNull() ?: todayDay
@@ -74,6 +78,7 @@ class HistoryViewModel(private val history: HistoryRepository) : ViewModel() {
             seriesStart = LocalDate.ofEpochDay(from),
             gained = points.filterKeys { it in from..todayDay }.values.sumOf { it.toLong() },
             selected = detail,
+            notedDays = notes.keys,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
@@ -88,6 +93,10 @@ class HistoryViewModel(private val history: HistoryRepository) : ViewModel() {
     /** Picks a day in the calendar; picking it again closes it. */
     fun select(epochDay: Long) {
         selectedDay.value = if (selectedDay.value == epochDay) null else epochDay
+    }
+
+    fun saveNote(epochDay: Long, text: String) {
+        viewModelScope.launch { history.saveNote(epochDay, text) }
     }
 
     /** Goes back to this month with nothing picked, for the next visit. */
