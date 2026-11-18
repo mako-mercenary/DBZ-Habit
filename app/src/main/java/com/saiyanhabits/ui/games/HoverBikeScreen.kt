@@ -38,6 +38,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
@@ -109,10 +110,14 @@ fun HoverBikeScreen(onBack: () -> Unit) {
     var best by remember { mutableStateOf<Long?>(null) }
     var radio by remember { mutableStateOf<String?>(null) }
     val lines by produceState(emptyList<String>()) { value = app.dialogue.all()[Mentor.BULMA]?.game.orEmpty() }
-    val world = remember { HoverBikeWorld() }
     var points by remember { mutableStateOf(ScreenPoints()) }
     // The 2D art: the rider over the scene and the skyline behind it; both can be swapped in Settings > Art.
     val artVersion by app.art.version.collectAsState()
+    // The roadside pictures, as files for the 3D view; the world is rebuilt when they change.
+    val roadsideArt by produceState<Map<ArtKey, ByteArray>?>(null, artVersion) {
+        value = ArtKey.entries.filter { it.optional }.mapNotNull { key -> app.art.pngBytes(key)?.let { key to it } }.toMap()
+    }
+    val world = remember(roadsideArt) { HoverBikeWorld(roadsideArt.orEmpty()) }
     val rider by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_RIDER) }
     val skyline by produceState<ImageBitmap?>(null, artVersion) { value = app.art.image(ArtKey.BIKE_SKYLINE) }
     val haze = remember(skyline) { skyline?.let { footColour(it) } ?: Color(0xFFB8DCF7) }
@@ -183,12 +188,15 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             .background(Brush.verticalGradient(listOf(Color(0xFF2E7BE6), Color(0xFF8CCBFF), Color(0xFFB8DCF7)))),
     ) {
         skyline?.let { Skyline(it, points, haze, sky) }
-        HoverBikeScene(
-            world,
-            onCamera = { camera = it },
-            modifier = Modifier.fillMaxSize(),
-            fogColor = floatArrayOf(haze.red, haze.green, haze.blue),
-        )
+        // Waits for the roadside pictures, so the scene is built once with them.
+        if (roadsideArt != null) key(world) {
+            HoverBikeScene(
+                world,
+                onCamera = { camera = it },
+                modifier = Modifier.fillMaxSize(),
+                fogColor = floatArrayOf(haze.red, haze.green, haze.blue),
+            )
+        }
         rider?.let { RiderSprite(it, points, state, lean, clock) }
         Box(
             Modifier

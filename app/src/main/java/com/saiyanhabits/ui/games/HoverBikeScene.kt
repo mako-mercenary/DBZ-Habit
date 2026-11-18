@@ -6,6 +6,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.google.android.filament.Renderer
 import com.google.android.filament.View
+import com.saiyanhabits.GameConfig
+import com.saiyanhabits.art.ArtKey
 import com.saiyanhabits.domain.games.HoverBike
 import com.saiyanhabits.domain.games.HoverBikeState
 import com.saiyanhabits.domain.games.RoadThing
@@ -49,7 +51,7 @@ private const val HOVER_HEIGHT = 0.55f
 data class ScreenPoints(val horizonY: Float = 0.4f, val bikeX: Float = 0.5f, val bikeY: Float = 0.85f, val bikeSideways: Float = 0f)
 
 /** A model loaded once, with [count] copies that can each be placed anywhere. */
-internal class Pool(val file: String, val count: Int) {
+internal class Pool(val file: String, val count: Int, val glb: java.nio.ByteBuffer? = null) {
     var instances: List<ModelInstance> = emptyList()
     val nodes = ArrayList<ModelNode>()
     private var used = 0
@@ -71,7 +73,7 @@ internal class Pool(val file: String, val count: Int) {
  * bike. Nothing in it is recomposed per frame: [update] moves pooled copies of
  * each model from the game loop.
  */
-class HoverBikeWorld {
+class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     private val road = Pool("road", 12)
     private val pavement = Pool("pavement", 24)
     private val ground = Pool("ground", 1)
@@ -90,8 +92,14 @@ class HoverBikeWorld {
     private val palms = listOf("palm_tall", "palm_detailed", "palm_bend").map { Pool(it, 9) }
     private val lights = Pool("street_light", 10)
 
+    // The owner's pictures, stood up as flat cut-outs. Each kind replaces its 3D models once it has any.
+    private fun cutOuts(keys: List<ArtKey>, count: Int, width: Float? = null, height: Float? = null): List<Pool> =
+        keys.mapNotNull { key -> art[key]?.let { billboardGlb(it, width, height) }?.let { Pool(key.key, count, it) } }
+
+    private val cutOutBuildings = cutOuts(ArtKey.bikeBuildings, 8, width = GameConfig.BIKE_CUTOUT_BUILDING_WIDTH)
+
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
-        cars + trucks + buildings + palms
+        cars + trucks + buildings + palms + cutOutBuildings
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -104,7 +112,8 @@ class HoverBikeWorld {
     fun load(loader: ModelLoader) {
         for (pool in all) {
             pool.instances = try {
-                loader.createInstancedModel("models/${pool.file}.glb", pool.count)
+                val glb = pool.glb
+                if (glb != null) loader.createInstancedModel(glb, pool.count) else loader.createInstancedModel("models/${pool.file}.glb", pool.count)
             } catch (e: Exception) {
                 Log.w("HoverBike3D", "Could not load ${pool.file}: ${e.message}")
                 emptyList()
@@ -157,11 +166,19 @@ class HoverBikeWorld {
             val ahead = b * BLOCK - state.distance
             for (side in intArrayOf(-1, 1)) {
                 val h = hash(b, side)
-                val kind = Math.floorMod(h, buildings.size)
-                val dome = kind == buildings.lastIndex
-                val x = side * (half + 4.8f + (if (dome) 11f else 7f) + Math.floorMod(h ushr 4, 3))
-                // Fronts face the road.
-                place(buildings[kind], x, 0f, -ahead, yaw = if (side < 0) 90f else -90f)
+                if (cutOutBuildings.isNotEmpty()) {
+                    // Pictures stand near the pavement, turned partly towards the road so you see their fronts.
+                    val pool = cutOutBuildings[Math.floorMod(h, cutOutBuildings.size)]
+                    val x = side * (half + 4.4f + GameConfig.BIKE_CUTOUT_BUILDING_WIDTH * 0.42f + Math.floorMod(h ushr 4, 3))
+                    val angle = GameConfig.BIKE_CUTOUT_BUILDING_ANGLE
+                    place(pool, x, 0f, -ahead, yaw = if (side < 0) angle else -angle)
+                } else {
+                    val kind = Math.floorMod(h, buildings.size)
+                    val dome = kind == buildings.lastIndex
+                    val x = side * (half + 4.8f + (if (dome) 11f else 7f) + Math.floorMod(h ushr 4, 3))
+                    // Fronts face the road.
+                    place(buildings[kind], x, 0f, -ahead, yaw = if (side < 0) 90f else -90f)
+                }
                 val palm = palms[Math.floorMod(h ushr 7, palms.size)]
                 place(palm, side * (half + 3.4f), 0f, -(ahead + BLOCK / 2), yaw = Math.floorMod(h ushr 9, 360).toFloat())
                 // A street light every other block, alternating sides.
