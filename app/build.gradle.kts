@@ -13,6 +13,11 @@ android {
     compileSdk = 37
 
     defaultConfig {
+        // The 3D engine ships native code per processor type. Phones today are 64-bit ARM;
+        // x86_64 is for the emulator. Leaving out the rest keeps the APK much smaller.
+        ndk {
+            abiFilters += listOf("arm64-v8a", "x86_64")
+        }
         applicationId = "com.saiyanhabits"
         minSdk = 26
         targetSdk = 36
@@ -83,6 +88,7 @@ ksp {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+    implementation(libs.sceneview)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)

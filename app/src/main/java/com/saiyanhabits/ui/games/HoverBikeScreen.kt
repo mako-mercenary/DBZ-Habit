@@ -101,7 +101,8 @@ fun HoverBikeScreen(onBack: () -> Unit) {
     var best by remember { mutableStateOf<Long?>(null) }
     var radio by remember { mutableStateOf<String?>(null) }
     val lines by produceState(emptyList<String>()) { value = app.dialogue.all()[Mentor.BULMA]?.game.orEmpty() }
-    val art by produceState(BikeArtSet.NONE) { value = BikeArtSet.load(context) }
+    val world = remember { HoverBikeWorld() }
+    var camera by remember { mutableStateOf<io.github.sceneview.node.CameraNode?>(null) }
     val tilt = rememberTilt(enabled = phase == Phase.RIDING && useTilt)
     val view = LocalView.current
     DisposableEffect(phase) {
@@ -131,6 +132,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
             lean += (steer - lean) * (dt * 8f).coerceAtMost(1f)
             val before = state
             state = HoverBike.step(state, dt, steer, random)
+            camera?.let { world.update(state, lean, clock, it) }
             if (state.balls > before.balls) sounds?.play(SoundKey.CHECK_OFF, 0.5f)
             if (state.hearts < before.hearts && !state.crashed) sounds?.play(SoundKey.BOSS_HIT, 0.7f)
             if (state.boosting && !before.boosting) sounds?.play(SoundKey.BOMB_THROW, 0.6f)
@@ -150,8 +152,22 @@ fun HoverBikeScreen(onBack: () -> Unit) {
         }
     }
 
-    Box(Modifier.fillMaxSize().background(Color(0xFF8CCBFF))) {
-        Canvas(
+    // Before a run, keep the scene posed so it shows behind the menu.
+    LaunchedEffect(phase, camera) {
+        val cam = camera ?: return@LaunchedEffect
+        while (phase != Phase.RIDING) {
+            withFrameNanos { }
+            world.update(state, lean, clock, cam)
+        }
+    }
+
+    Box(
+        Modifier
+            .fillMaxSize()
+            .background(Brush.verticalGradient(listOf(Color(0xFF2E7BE6), Color(0xFF8CCBFF), Color(0xFFB8DCF7)))),
+    ) {
+        HoverBikeScene(world, onCamera = { camera = it }, modifier = Modifier.fillMaxSize())
+        Box(
             Modifier
                 .fillMaxSize()
                 .pointerInput(useTilt) {
@@ -171,7 +187,7 @@ fun HoverBikeScreen(onBack: () -> Unit) {
                         touchSteer = 0f
                     }
                 },
-        ) { drawRun3d(state, lean, art, clock) }
+        )
 
         Hud(state, radio, onPause = { if (phase == Phase.RIDING) phase = Phase.PAUSED })
 

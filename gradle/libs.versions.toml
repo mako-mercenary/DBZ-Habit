@@ -7,11 +7,14 @@ room = "2.8.5"
 lifecycle = "2.11.0"
 activityCompose = "1.13.0"
 coreKtx = "1.19.1"
+# 3D for the hover-bike run (approved). Pinned to a release that has been out a couple of weeks.
+sceneview = "4.65.0"
 navigation = "2.10.2"
 work = "2.12.0"
 junit = "4.13.2"
 
 [libraries]
+sceneview = { group = "io.github.sceneview", name = "sceneview", version.ref = "sceneview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
