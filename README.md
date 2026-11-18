@@ -15,6 +15,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 6 | Art manifest, gallery swap, `ART_LIST.md`, polish and animations | Done |
 | 7 | Data export/import, final debug APK | Done |
 | 8 | History screen, weekly recap | Done |
+| 9 | Flexible habits, day notes, achievements, widget, evening nudge, more mentor lines, sound | Done |
 
 ## Build
 
@@ -54,6 +55,22 @@ With a USB cable and developer mode on: `adb install -r app/build/outputs/apk/de
 - A healing bean is earned at every 7th day of a streak (3 at most). After a
   missed day the app offers to spend one, in the app and in a notification at
   8 in the morning. A covered day keeps the streak going but doesn't add to it.
+
+## Flexible habits
+
+In the habit editor:
+
+- **How often:** on the days you pick, or a number of **times a week** on any
+  days (1 to 6). A weekly goal is only *due* on the day the rest of the week
+  has exactly enough days left for it: 3 times a week with 1 done by Saturday
+  is due on Saturday. Any other day it can still be done, and a day it is done
+  counts like any check-off. A goal that slips counts as one missed day (a
+  bean can save it, as usual), and after that it stops being due that week.
+  In the week a weekly habit is made, its target is cut to the days left.
+- **Each time:** once, or **a count** (2 to 50) with a name for what you count,
+  such as 8 glasses. On the home screen each tap adds one; the last tap is the
+  check-off and asks for the gravity as usual. The minus button takes one off.
+  Undoing the check-off puts the count back to one short.
 
 ## Long tasks
 
@@ -108,17 +125,18 @@ flagged as hardest.
 All mentor lines are in `app/src/main/assets/dialogue/`, one JSON file per
 mentor. Edit, rebuild, done.
 
+- `evening` holds the evening nudges (no placeholders).
 - `reactions` holds the home-screen one-liners, a list per trigger:
   `missed_day`, `comeback`, `streak_milestone`, `boss_defeated`, `idle`.
-  A mentor's lines for a trigger are used one per day in order, so a list of 8
-  takes 8 days to repeat. `{streak}` is replaced by the streak length in
+  A mentor's lines for a trigger are used one per day in order, so a list of 16
+  takes 16 days to repeat. `{streak}` is replaced by the streak length in
   `streak_milestone` lines, `{boss}` by the boss's name in `boss_defeated` lines.
 - `scenes` holds the bond scenes, one per `level` from 2 to 10, each with a
   `title` and `lines`. A line's `speaker` is the mentor's name in capitals,
   `YOU` or `NARRATOR`.
 
 `./gradlew testDebugUnitTest` checks every file: valid JSON, at least 8 lines
-per trigger, a scene of 3 to 6 lines for every level, known speakers and
+per trigger and 8 evening lines, a scene of 3 to 6 lines for every level, known speakers and
 placeholders. A mistake is reported with its line number.
 
 ## Story, wish orbs and the rival
@@ -159,6 +177,44 @@ per unlock, 120 to 400 words each, known speakers).
 
 The "strong week" threshold for the recap headline is in `GameConfig.kt`.
 
+## Day notes
+
+Write a line about today from the card on the home screen, or about any past
+day from that day in the History calendar. Days with a note get a dot in the
+calendar.
+
+## Achievements and titles
+
+35 achievements, for check-offs, perfect days, streaks, power level, forms,
+bosses, spirit bombs, the time chamber, bonds, the story, wishes and notes.
+They are worked out from what's already in the app, so past training counts.
+The number unlocked earns a title, shown under the power level; tap it to see
+every achievement and how close you are. The titles and how many achievements
+each needs are in `GameConfig.kt`; the last one needs all of them. An
+achievement that has been announced stays unlocked even if you undo the
+check-off that earned it.
+
+## Home-screen widget
+
+Long-press the home screen, choose Widgets, and drag out **Today's training**.
+It shows your power level, streak and today's habits; tap a habit to check it
+off at normal gravity (or add one to a count), or tap anything else to open the
+app. Make it taller to see more habits. It updates as soon as anything changes
+in the app, and every 30 minutes so the day rolls over.
+
+## Evening nudge and sound
+
+Settings > Extras:
+
+- **Evening nudge:** at 9 pm (change the time there), if anything that counts
+  today is still open, the mentor who trains most of it says so in a
+  notification. Nothing comes if you're done.
+- **Sound effects:** check-offs, boss hits, victories, transformations, spirit
+  bomb throws, level-ups and the dragon. The sounds are listed in
+  [`SOUND_LIST.md`](SOUND_LIST.md); to use your own, put the file in
+  `app/src/main/assets/sound/`, point its key at it in `manifest.json` there,
+  and rebuild.
+
 ## Look
 
 Royal-blue panels in bevelled gold frames, slanted gold label tabs, and chunky
@@ -188,21 +244,25 @@ where it is used and the size to make it.
 Settings > Your data:
 
 - **Export data** saves everything (habits, check-offs, day records, streaks,
-  beans, sagas, spirit bombs, bonds, techniques, story progress, wish orbs and
-  wishes) to one JSON file, wherever you choose: the phone, a cloud drive, an
+  beans, sagas, spirit bombs, bonds, techniques, story progress, wish orbs,
+  wishes, counts and day notes) to one JSON file, wherever you choose: the phone, a cloud drive, an
   email to yourself.
 - **Import data** replaces everything in the app with an export, after a
   confirmation that shows what the file holds. It happens in one step: if
   anything in the file is wrong, nothing changes. Reminders are rescheduled for
   the imported habits.
 - Pictures picked under Settings > Art aren't included; keep the originals.
-- An export can be imported into the same version of the app. One made by an
-  older version is refused with an explanation rather than half-imported.
+- An export can be imported into the same version of the app or a later one
+  (from 1.0.0 on). One made by a newer version is refused with an explanation
+  rather than half-imported.
+- Settings in Settings > Extras and which achievements have been announced
+  stay on the phone and aren't exported.
 
 ## Reminders
 
 Each habit can have a reminder time. On its scheduled days, a notification
-appears at that time if the habit isn't done yet. Reminders are run by Android's
+appears at that time if the habit isn't done yet. A weekly goal reminds you
+each day until that week's target is reached. Reminders are run by Android's
 WorkManager, which can deliver a few minutes late when the phone is saving
 battery.
 
