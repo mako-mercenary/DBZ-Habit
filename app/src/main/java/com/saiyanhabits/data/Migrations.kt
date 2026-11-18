@@ -160,3 +160,16 @@ val MIGRATION_5_6 = object : Migration(5, 6) {
         )
     }
 }
+
+/** The mini games: one row per finished play. */
+val MIGRATION_6_7 = object : Migration(6, 7) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `minigame_plays` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`game` TEXT NOT NULL, `mentor` TEXT NOT NULL, `epochDay` INTEGER NOT NULL, `score` INTEGER NOT NULL, " +
+                "`detail` TEXT NOT NULL, `bondXp` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_minigame_plays_game` ON `minigame_plays` (`game`)")
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_minigame_plays_epochDay` ON `minigame_plays` (`epochDay`)")
+    }
+}

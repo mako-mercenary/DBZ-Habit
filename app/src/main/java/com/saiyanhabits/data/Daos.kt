@@ -224,6 +224,7 @@ interface AchievementDao {
              + (SELECT COUNT(*) FROM focus_sessions) * 23
              + (SELECT COALESCE(SUM(chaptersRead * 29 + highestForm * 31), 0) FROM player_state)
              + (SELECT COUNT(*) FROM sagas WHERE status = 'DONE') * 37
+             + (SELECT COUNT(*) FROM minigame_plays) * 41
         """,
     )
     fun observeChanges(): Flow<Long>
@@ -259,4 +260,20 @@ interface AchievementDao {
 
     @Query("SELECT (SELECT COALESCE(SUM(points), 0) FROM completions) + (SELECT COALESCE(SUM(points), 0) FROM power_events)")
     suspend fun totalPoints(): Long
+}
+
+@Dao
+interface GameDao {
+
+    @Query("SELECT * FROM minigame_plays WHERE game = :game ORDER BY createdAtMillis DESC")
+    fun observePlays(game: com.saiyanhabits.domain.MiniGame): Flow<List<MinigamePlayEntity>>
+
+    @Query("SELECT * FROM minigame_plays ORDER BY createdAtMillis DESC")
+    fun observeAll(): Flow<List<MinigamePlayEntity>>
+
+    @Query("SELECT COALESCE(SUM(bondXp), 0) FROM minigame_plays WHERE mentor = :mentor AND epochDay = :epochDay")
+    suspend fun bondXpOn(mentor: com.saiyanhabits.domain.Mentor, epochDay: Long): Int
+
+    @Insert
+    suspend fun insert(play: MinigamePlayEntity): Long
 }

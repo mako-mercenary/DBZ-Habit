@@ -189,6 +189,14 @@ object GameConfig {
     /** The title for unlocking every achievement in the game. */
     const val TOP_TITLE = "Mightiest in the universe"
 
+    // ---- Mini games ----
+
+    /** Bond XP a finished mini game gives its mentor. */
+    const val MINIGAME_BOND_XP_PER_PLAY = 10
+
+    /** Most bond XP mini games can give one mentor in a day, so they never replace check-offs. */
+    const val MINIGAME_DAILY_BOND_XP_CAP = 20
+
     // ---- Animation timing (milliseconds) ----
 
     /** The dragon rising when it is summoned. */

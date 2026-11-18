@@ -128,6 +128,7 @@ fun MentorScreen(
     onOpenScene: (level: Int) -> Unit,
     onUseKaioken: () -> Unit,
     onUseDayOff: (habitId: Long) -> Unit,
+    onTrain: () -> Unit,
     onBack: () -> Unit,
 ) {
     val bond = state.bond(mentor)
@@ -158,6 +159,11 @@ fun MentorScreen(
             style = MaterialTheme.typography.bodySmall,
             color = SaiyanColors.TextDim,
         )
+
+        val game = com.saiyanhabits.domain.MiniGame.of(mentor)
+        DbzPrimaryButton(onClick = onTrain, modifier = Modifier.fillMaxWidth()) {
+            Text("Train: ${game.title}")
+        }
 
         Spacer(Modifier.height(6.dp))
         SectionLabel("Techniques")

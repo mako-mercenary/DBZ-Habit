@@ -30,7 +30,7 @@ class BackupRepository(private val context: Context, private val db: AppDatabase
     private val tableOrder = listOf(
         "habits", "habit_counts", "day_notes", "completions", "day_records", "habit_misses", "habit_excuses", "player_state",
         "technique_uses", "wishes", "sagas", "saga_milestones", "spirit_bombs", "bomb_logs",
-        "power_events", "focus_sessions",
+        "power_events", "focus_sessions", "minigame_plays",
     )
 
     private val sql: SupportSQLiteDatabase get() = db.openHelper.writableDatabase

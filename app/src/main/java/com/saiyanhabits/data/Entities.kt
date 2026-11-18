@@ -63,6 +63,22 @@ data class HabitCountEntity(
     val count: Int,
 )
 
+/** One finished mini game. */
+@Entity(tableName = "minigame_plays", indices = [Index(value = ["game"]), Index(value = ["epochDay"])])
+data class MinigamePlayEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val game: com.saiyanhabits.domain.MiniGame,
+    /** The mentor whose game it is, who got the bond XP. */
+    val mentor: Mentor,
+    val epochDay: Long,
+    /** The game's score: metres, minutes, grams, a win (1) or loss (0), points. */
+    val score: Long,
+    /** Anything else worth keeping, e.g. the fish caught or the song played. */
+    val detail: String,
+    val bondXp: Int,
+    val createdAtMillis: Long,
+)
+
 /** A line written about a day. */
 @Entity(tableName = "day_notes")
 data class DayNoteEntity(

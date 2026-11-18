@@ -107,6 +107,10 @@ private object Routes {
     const val SETTINGS = "settings"
     const val ART = "art"
     const val HISTORY = "history"
+    const val GAMES = "games"
+    const val GAME_ARG = "game"
+    const val GAME = "game/{$GAME_ARG}"
+    fun game(game: com.saiyanhabits.domain.MiniGame) = "game/${game.name}"
     const val ACHIEVEMENTS = "achievements"
 
     const val WEEK_ARG = "week"
@@ -218,6 +222,16 @@ fun SaiyanHabitsRoot() {
     }
 
     LaunchedEffect(app) {
+        app.gameRepository.levelUps.collect { event ->
+            bondLevelUp = BondLevelUpNotice(
+                mentor = event.mentor,
+                level = event.level,
+                sceneTitle = app.dialogue.all()[event.mentor]?.scene(event.level)?.title,
+            )
+        }
+    }
+
+    LaunchedEffect(app) {
         app.questRepository.events.collect { event ->
             when (event) {
                 is QuestEvent.SagaDefeated -> defeated = event
@@ -316,6 +330,7 @@ fun SaiyanHabitsRoot() {
                         hasWaitingWish = waitingWishes.isNotEmpty(),
                         onAddHabit = { navController.navigate(Routes.habitEditor()) },
                         onOpenStory = { navController.navigate(Routes.STORY) },
+                        onOpenGames = { navController.navigate(Routes.GAMES) },
                         onOpenHistory = {
                             historyViewModel.reset()
                             navController.navigate(Routes.HISTORY)
@@ -407,6 +422,22 @@ fun SaiyanHabitsRoot() {
                         onBack = { navController.popBackStack(Routes.ACHIEVEMENTS, inclusive = true) },
                     )
                 }
+                composable(Routes.GAMES) {
+                    val bests by app.gameRepository.bests.collectAsStateWithLifecycle(initialValue = emptyMap())
+                    com.saiyanhabits.ui.games.GamesScreen(
+                        bests = bests,
+                        onPlay = { navController.navigate(Routes.game(it)) },
+                        onBack = { navController.popBackStack(Routes.GAMES, inclusive = true) },
+                    )
+                }
+                composable(Routes.GAME) { entry ->
+                    val name = entry.arguments?.getString(Routes.GAME_ARG)
+                    val game = com.saiyanhabits.domain.MiniGame.entries.firstOrNull { it.name == name } ?: return@composable
+                    com.saiyanhabits.ui.games.GameHost(
+                        game = game,
+                        onBack = { navController.popBackStack(Routes.GAME, inclusive = true) },
+                    )
+                }
                 composable(Routes.HISTORY) {
                     val state by historyViewModel.uiState.collectAsStateWithLifecycle()
                     val home by homeViewModel.uiState.collectAsStateWithLifecycle()
@@ -464,6 +495,7 @@ fun SaiyanHabitsRoot() {
                         MentorScreen(
                             mentor = mentor,
                             state = it,
+                            onTrain = { navController.navigate(Routes.game(com.saiyanhabits.domain.MiniGame.of(mentor))) },
                             onOpenScene = { level -> navController.navigate(Routes.scene(mentor, level)) },
                             onUseKaioken = bondsViewModel::useKaioken,
                             onUseDayOff = bondsViewModel::useDayOff,
