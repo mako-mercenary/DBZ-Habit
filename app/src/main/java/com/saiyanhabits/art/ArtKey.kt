@@ -11,7 +11,15 @@ enum class ArtShape { CIRCLE, FREE, FULL, ICON }
  * key to a file; ART_LIST.md at the repository root describes them for whoever
  * makes the art. The unit tests keep the three in step.
  */
-enum class ArtKey(val key: String, val label: String, val width: Int, val height: Int, val shape: ArtShape) {
+enum class ArtKey(
+    val key: String,
+    val label: String,
+    val width: Int,
+    val height: Int,
+    val shape: ArtShape,
+    /** Optional images have no built-in file: until one is supplied, the app draws something else. */
+    val optional: Boolean = false,
+) {
     MENTOR_ROSHI("mentor_roshi_portrait", "Roshi", 512, 512, ArtShape.CIRCLE),
     MENTOR_GOKU("mentor_goku_portrait", "Goku", 512, 512, ArtShape.CIRCLE),
     MENTOR_PICCOLO("mentor_piccolo_portrait", "Piccolo", 512, 512, ArtShape.CIRCLE),
@@ -36,6 +44,17 @@ enum class ArtKey(val key: String, val label: String, val width: Int, val height
     EMBLEM_CAPSULE("emblem_capsule", "Capsule emblem", 512, 512, ArtShape.FREE),
     BIKE_RIDER("bike_rider", "Rider on the hover bike, from behind", 768, 768, ArtShape.FREE),
     BIKE_SKYLINE("bike_skyline", "City skyline", 2048, 512, ArtShape.FREE),
+    BIKE_BUILDING_1("bike_building_1", "Roadside building 1", 1024, 1024, ArtShape.FREE, optional = true),
+    BIKE_BUILDING_2("bike_building_2", "Roadside building 2", 1024, 1024, ArtShape.FREE, optional = true),
+    BIKE_BUILDING_3("bike_building_3", "Roadside building 3", 1024, 1024, ArtShape.FREE, optional = true),
+    BIKE_BUILDING_4("bike_building_4", "Roadside building 4", 1024, 1024, ArtShape.FREE, optional = true),
+    BIKE_CAR_1("bike_car_1", "Hover car 1, from behind", 512, 512, ArtShape.FREE, optional = true),
+    BIKE_CAR_2("bike_car_2", "Hover car 2, from behind", 512, 512, ArtShape.FREE, optional = true),
+    BIKE_CAR_3("bike_car_3", "Hover car 3, from behind", 512, 512, ArtShape.FREE, optional = true),
+    BIKE_PALM("bike_palm", "Palm tree", 512, 1024, ArtShape.FREE, optional = true),
+    BIKE_PERSON_1("bike_person_1", "Pedestrian 1", 256, 512, ArtShape.FREE, optional = true),
+    BIKE_PERSON_2("bike_person_2", "Pedestrian 2", 256, 512, ArtShape.FREE, optional = true),
+    BIKE_SIGN("bike_sign", "City sign over the road", 1024, 512, ArtShape.FREE, optional = true),
     ;
 
     /** True for images the app loads while running; the launcher icon is baked in at build time. */
@@ -68,6 +87,11 @@ enum class ArtKey(val key: String, val label: String, val width: Int, val height
         }
 
         fun fromKey(key: String): ArtKey? = entries.firstOrNull { it.key == key }
+
+        /** The hover-bike run's roadside images, by what they replace. */
+        val bikeBuildings = listOf(BIKE_BUILDING_1, BIKE_BUILDING_2, BIKE_BUILDING_3, BIKE_BUILDING_4)
+        val bikeCars = listOf(BIKE_CAR_1, BIKE_CAR_2, BIKE_CAR_3)
+        val bikePeople = listOf(BIKE_PERSON_1, BIKE_PERSON_2)
     }
 }
 

@@ -22,6 +22,7 @@ class ArtManifestTest {
     @Test
     fun `every key is in the manifest and its file exists`() {
         for (key in ArtKey.entries) {
+            if (key.optional && key.key !in manifest) continue
             val file = manifest[key.key]
             assertNotNull("${key.key} is missing from manifest.json", file)
             assertTrue("${key.key}: $file is not in assets/art", File(artDir, file!!).isFile)
@@ -38,6 +39,7 @@ class ArtManifestTest {
     @Test
     fun `every bundled image is a PNG of the recommended size`() {
         for (key in ArtKey.entries) {
+            if (key.optional && key.key !in manifest) continue
             val bytes = File(artDir, manifest.getValue(key.key)).readBytes()
             assertTrue("${key.key} is not a PNG", bytes.size > 24 && bytes[1] == 'P'.code.toByte() && bytes[2] == 'N'.code.toByte())
             val header = ByteBuffer.wrap(bytes, 16, 8)
@@ -55,8 +57,14 @@ class ArtManifestTest {
             val line = lines.firstOrNull { it.contains("`${key.key}`") }
             assertNotNull("ART_LIST.md does not list ${key.key}", line)
             assertTrue("ART_LIST.md gives the wrong size for ${key.key}", line!!.contains("${key.width} × ${key.height}"))
-            assertTrue("ART_LIST.md does not name the file for ${key.key}", line.contains("`${manifest.getValue(key.key)}`"))
+            assertTrue("ART_LIST.md does not name the file for ${key.key}", line.contains("`${manifest[key.key] ?: "${key.key}.png"}`"))
         }
+    }
+
+    @Test
+    fun `only the hover-bike run's roadside images are optional`() {
+        val optional = ArtKey.entries.filter { it.optional }.toSet()
+        assertEquals((ArtKey.bikeBuildings + ArtKey.bikeCars + ArtKey.bikePeople + ArtKey.BIKE_PALM + ArtKey.BIKE_SIGN).toSet(), optional)
     }
 
     @Test

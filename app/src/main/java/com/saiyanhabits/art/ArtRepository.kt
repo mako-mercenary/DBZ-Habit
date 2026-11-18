@@ -69,10 +69,32 @@ class ArtRepository(context: Context) {
             BitmapFactory.decodeFile(override.path)?.let { return it.asImageBitmap() }
             Log.e("Art", "Could not decode the picked image for ${key.key}; using the bundled one")
         }
+        if (key.optional && key.key !in manifest) return null
         return try {
             context.assets.open("art/${bundledFileName(key)}").use { BitmapFactory.decodeStream(it) }?.asImageBitmap()
         } catch (e: Exception) {
             Log.e("Art", "Could not read the bundled image for ${key.key}: ${e.message}")
+            null
+        }
+    }
+
+    /** True if [key] has an image, picked or bundled. Optional keys may have neither. */
+    fun has(key: ArtKey): Boolean = hasOverride(key) || !key.optional || key.key in manifest
+
+    /**
+     * The image file for [key] as PNG bytes, picked or bundled, or null if
+     * there is none. For handing to code that wants the file, like the 3D view.
+     */
+    suspend fun pngBytes(key: ArtKey): ByteArray? = withContext(Dispatchers.IO) {
+        try {
+            val override = overrideFile(key)
+            when {
+                override.isFile -> override.readBytes()
+                key.optional && key.key !in manifest -> null
+                else -> context.assets.open("art/${bundledFileName(key)}").use { it.readBytes() }
+            }
+        } catch (e: Exception) {
+            Log.e("Art", "Could not read the image file for ${key.key}: ${e.message}")
             null
         }
     }

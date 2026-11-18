@@ -1,5 +1,7 @@
 package com.saiyanhabits.ui.settings
 
+import com.saiyanhabits.SaiyanApp
+import androidx.compose.ui.platform.LocalContext
 import com.saiyanhabits.ui.components.DbzSecondaryButton
 import com.saiyanhabits.ui.components.PanelStyle
 import com.saiyanhabits.ui.components.DbzPanel
@@ -102,7 +104,8 @@ fun ArtScreen(overridden: Set<ArtKey>, message: String?, onPick: (ArtKey, Uri) -
             "Bosses" to ArtKey.entries.filter { it.name.startsWith("BOSS_") },
             "Others" to listOf(ArtKey.RIVAL, ArtKey.DRAGON, ArtKey.BACKGROUND_HOME, ArtKey.APP_ICON),
             "Decorations" to listOf(ArtKey.SCOUTER_DEVICE, ArtKey.CLOUD_ORNAMENT, ArtKey.EMBLEM_CAPSULE),
-            "Hover-bike run" to listOf(ArtKey.BIKE_RIDER, ArtKey.BIKE_SKYLINE),
+            "Hover-bike run" to listOf(ArtKey.BIKE_RIDER, ArtKey.BIKE_SKYLINE) + ArtKey.bikeBuildings + ArtKey.bikeCars +
+                ArtKey.BIKE_PALM + ArtKey.bikePeople + ArtKey.BIKE_SIGN,
         )
         groups.forEach { (title, keys) ->
             Spacer(Modifier.height(6.dp))
@@ -144,6 +147,7 @@ private fun ArtRow(key: ArtKey, custom: Boolean, onPick: () -> Unit, onReset: ()
                     "${key.width} × ${key.height}" + when {
                         !key.isSwappableInApp -> " · replace the file and rebuild"
                         custom -> " · your image"
+                        key.optional && !(LocalContext.current.applicationContext as SaiyanApp).art.has(key) -> " · none yet"
                         else -> " · built-in"
                     },
                     style = MaterialTheme.typography.bodySmall,
