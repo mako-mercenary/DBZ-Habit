@@ -7,6 +7,7 @@ import com.saiyanhabits.domain.MiniGame
 @Composable
 fun GameHost(game: MiniGame, onBack: () -> Unit) {
     when (game) {
+        MiniGame.HOVER_BIKE -> HoverBikeScreen(onBack)
         else -> ComingSoon(game, onBack)
     }
 }

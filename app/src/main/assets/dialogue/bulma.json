@@ -102,6 +102,20 @@
     "Your progress bar for today isn't at a hundred. Yet.",
     "Finish it now, sleep better later. Trust the science."
   ],
+  "game": [
+    "Okay, you're on the radio. Try not to scratch the paint.",
+    "That bike cost more than your house. Just so you know.",
+    "Left lane's clear. Probably. I'm reading this off a map from last year.",
+    "Grab the capsules! Those are my prototypes, I want them back.",
+    "You're doing great. For someone who's never flown one before.",
+    "Watch the trucks. They don't watch you.",
+    "Faster! The stabilisers can take it. I think.",
+    "If you see a robot, that's not mine. Probably.",
+    "Smooth! You're almost as good as me. Almost.",
+    "The boost capsule's experimental. Use it anyway.",
+    "West City traffic at rush hour. You picked a great time.",
+    "Keep going, my data needs more samples."
+  ],
   "scenes": [
     {
       "level": 2,

@@ -16,6 +16,8 @@ data class MentorDialogue(
     val scenes: List<BondScene>,
     /** Evening nudges, for a day with training still open. */
     val evening: List<String> = emptyList(),
+    /** What the mentor says during their mini game. */
+    val game: List<String> = emptyList(),
 ) {
     fun scene(level: Int): BondScene? = scenes.firstOrNull { it.level == level }
 }
@@ -56,7 +58,9 @@ object DialogueParser {
         // Optional, so a file without evening lines still loads: that mentor just never nudges.
         val evening = root["evening"]?.asArray("\"evening\"")?.map { it.asString("an evening line") }.orEmpty()
 
-        return MentorDialogue(mentor, reactions, scenes, evening)
+        val game = root["game"]?.asArray("\"game\"")?.map { it.asString("a game line") }.orEmpty()
+
+        return MentorDialogue(mentor, reactions, scenes, evening, game)
     }
 }
 
