@@ -3,18 +3,21 @@
 
 Two kinds of model end up in app/src/main/assets/models/:
 
-* Picked from Kenney's CC0 packs (car kit, city kit commercial, city kit roads,
-  nature kit; https://kenney.nl). Each is copied with its texture packed into
-  the file, then resized and turned so that it stands on the ground (y = 0),
-  is centred, and faces the camera the way the game expects: vehicles show
-  their rear, buildings their front.
+* Picked from CC0 packs: KayKit City Builder Bits by Kay Lousberg (cars,
+  buildings, street lights; https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0)
+  and Kenney's car kit, city kit roads and nature kit (trucks, barriers,
+  cones, palms; https://kenney.nl). Each is copied with its texture packed
+  into the file, then resized and turned so that it stands on the ground
+  (y = 0), is centred, and faces the camera the way the game expects:
+  vehicles show their rear, buildings their front. Vehicles lose their
+  wheels: they hover, over a glowing pad the game puts under them.
 * Made here from simple shapes: the hover bike, a stand-in rider, dragon
-  balls, boost orbs, a Capsule Corp dome, the road strip and the ground.
+  balls, boost orbs, a dome, hover pads, the road strip and the ground.
 
-    python3 tools/prepare_models.py KENNEY_DIR
+    python3 tools/prepare_models.py KENNEY_DIR KAYKIT_DIR
 
-KENNEY_DIR holds the unzipped packs (car-kit/, city-kit-commercial/,
-city-kit-roads/, nature-kit/). Needs numpy and Pillow.
+KENNEY_DIR holds the unzipped Kenney packs (car-kit/, city-kit-roads/,
+nature-kit/); KAYKIT_DIR is the KayKit repository. Needs numpy and Pillow.
 """
 import io
 import json
@@ -47,6 +50,29 @@ def read_glb(path):
             binary = chunk
         offset += 8 + chunk_len
     return gltf, bytearray(binary)
+
+
+def read_gltf(path):
+    """A .gltf with its one .bin beside it, read as if it were a GLB."""
+    path = Path(path)
+    gltf = json.loads(path.read_text())
+    assert len(gltf["buffers"]) == 1, f"{path} has more than one buffer"
+    binary = bytearray((path.parent / gltf["buffers"][0]["uri"]).read_bytes())
+    gltf["buffers"][0].pop("uri")
+    return gltf, binary
+
+
+def strip_wheels(gltf):
+    """Unhooks every node named like a wheel, so the vehicle can hover."""
+    def keep(i):
+        return "wheel" not in gltf["nodes"][i].get("name", "").lower()
+    for node in gltf["nodes"]:
+        if "children" in node:
+            node["children"] = [c for c in node["children"] if keep(c)]
+            if not node["children"]:
+                node.pop("children")
+    scene = gltf["scenes"][gltf.get("scene", 0)]
+    scene["nodes"] = [n for n in scene["nodes"] if keep(n)]
 
 
 def write_glb(path, gltf, binary):
@@ -159,48 +185,67 @@ def normalise(gltf, size, axis, turn_degrees):
     return lo2, -lo2 + np.array([0, (thi[1] - tlo[1]) * k, 0])
 
 
-# What to take from Kenney: (pack, file, output name, size, axis, turn). Vehicles in the
-# car kit face +z; the game wants their back to the camera (+z), so they turn 180.
+# What to take from Kenney: (pack, file, output name, size, axis, turn, hovers). Vehicles in
+# the car kit face +z; the game wants their back to the camera (+z), so they turn 180.
 PICKS = [
-    ("car-kit", "sedan", "car_sedan", 4.4, 2, 180),
-    ("car-kit", "taxi", "car_taxi", 4.4, 2, 180),
-    ("car-kit", "police", "car_police", 4.6, 2, 180),
-    ("car-kit", "suv", "car_suv", 4.6, 2, 180),
-    ("car-kit", "hatchback-sports", "car_sports", 4.2, 2, 180),
-    ("car-kit", "van", "van", 5.2, 2, 180),
-    ("car-kit", "delivery", "truck_delivery", 6.5, 2, 180),
-    ("car-kit", "truck", "truck", 7.0, 2, 180),
-    ("city-kit-commercial", "building-a", "building_a", 11, 0, 0),
-    ("city-kit-commercial", "building-b", "building_b", 11, 0, 0),
-    ("city-kit-commercial", "building-c", "building_c", 11, 0, 0),
-    ("city-kit-commercial", "building-d", "building_d", 11, 0, 0),
-    ("city-kit-commercial", "building-e", "building_e", 12, 0, 0),
-    ("city-kit-commercial", "building-f", "building_f", 12, 0, 0),
-    ("city-kit-commercial", "building-skyscraper-a", "tower_a", 11, 0, 0),
-    ("city-kit-commercial", "building-skyscraper-b", "tower_b", 11, 0, 0),
-    ("city-kit-commercial", "building-skyscraper-c", "tower_c", 11, 0, 0),
-    ("city-kit-roads", "construction-barrier", "barrier", 2.4, 0, 90),
-    ("city-kit-roads", "construction-cone", "cone", 0.7, 1, 0),
-    ("city-kit-roads", "light-square", "street_light", 6.5, 1, 0),
-    ("nature-kit", "tree_palmTall", "palm_tall", 8.0, 1, 0),
-    ("nature-kit", "tree_palmDetailedTall", "palm_detailed", 8.5, 1, 0),
-    ("nature-kit", "tree_palmBend", "palm_bend", 7.0, 1, 0),
+    ("car-kit", "van", "van", 5.2, 2, 180, True),
+    ("car-kit", "delivery", "truck_delivery", 6.5, 2, 180, True),
+    ("car-kit", "truck", "truck", 7.0, 2, 180, True),
+    ("city-kit-roads", "construction-barrier", "barrier", 2.4, 0, 90, False),
+    ("city-kit-roads", "construction-cone", "cone", 0.7, 1, 0, False),
+    ("nature-kit", "tree_palmTall", "palm_tall", 8.0, 1, 0, False),
+    ("nature-kit", "tree_palmDetailedTall", "palm_detailed", 8.5, 1, 0, False),
+    ("nature-kit", "tree_palmBend", "palm_bend", 7.0, 1, 0, False),
 ]
+
+# What to take from KayKit, the same way. Its cars face +z too. Buildings are scaled by
+# KAYKIT_METRES per KayKit unit so they keep their sizes relative to each other; the
+# street light's arm points -x, turned here to -z like the lamp the game was laid out for.
+KAYKIT_METRES = 8.0
+KAYKIT_PICKS = [
+    ("car_sedan", "car_sedan", 4.4, 2, 180, True),
+    ("car_taxi", "car_taxi", 4.4, 2, 180, True),
+    ("car_police", "car_police", 4.6, 2, 180, True),
+    ("car_stationwagon", "car_suv", 4.6, 2, 180, True),
+    ("car_hatchback", "car_sports", 4.0, 2, 180, True),
+    *[(f"building_{c}_withoutBase", f"building_{c.lower()}", None, 0, 0, False) for c in "ABCDEFGH"],
+    ("streetlight", "street_light", 6.5, 1, -90, False),
+]
+
+
+def prepare(gltf, binary, folder, out, size, axis, turn, hovers):
+    embed_images(gltf, binary, folder)
+    if hovers:
+        strip_wheels(gltf)
+    if size is None:
+        lo, hi = bounds(gltf)
+        size = float(hi[axis] - lo[axis]) * KAYKIT_METRES
+    lo, hi = normalise(gltf, size, axis, turn)
+    write_glb(OUT / f"{out}.glb", gltf, binary)
+    return [round(float(v), 2) for v in (hi - lo)]
 
 
 def take_kenney(kenney):
     report = {}
-    for pack, name, out, size, axis, turn in PICKS:
+    for pack, name, out, size, axis, turn, hovers in PICKS:
         matches = list(Path(kenney, pack).rglob(f"GLB format/{name}.glb")) or list(Path(kenney, pack).rglob(f"{name}.glb"))
         if not matches:
             print("missing", pack, name)
             continue
-        src = matches[0]
-        gltf, binary = read_glb(src)
-        embed_images(gltf, binary, src.parent)
-        lo, hi = normalise(gltf, size, axis, turn)
-        write_glb(OUT / f"{out}.glb", gltf, binary)
-        report[out] = [round(float(v), 2) for v in (hi - lo)]
+        gltf, binary = read_glb(matches[0])
+        report[out] = prepare(gltf, binary, matches[0].parent, out, size, axis, turn, hovers)
+    return report
+
+
+def take_kaykit(kaykit):
+    report = {}
+    for name, out, size, axis, turn, hovers in KAYKIT_PICKS:
+        matches = list(Path(kaykit).rglob(f"gltf/{name}.gltf"))
+        if not matches:
+            print("missing", name)
+            continue
+        gltf, binary = read_gltf(matches[0])
+        report[out] = prepare(gltf, binary, matches[0].parent, out, size, axis, turn, hovers)
     return report
 
 
@@ -381,17 +426,15 @@ def make_bike():
 
 
 def make_rider():
-    """A stand-in rider leaning over the bike, until a real model is added. Faces -z."""
+    """A plain helmeted stand-in rider, used only when no rider image is set. Faces -z."""
     b = Builder()
-    skin = (1.0, 0.8, 0.6)
-    b.box((0, 1.25, 0.1), (0.42, 0.3, 0.5), WHITE)  # shorts
-    b.box((0, 1.55, -0.05), (0.4, 0.42, 0.3), (1.0, 0.92, 0.23))  # top
+    grey, jacket = (0.24, 0.26, 0.33), (0.47, 0.51, 0.59)
+    b.box((0, 1.25, 0.1), (0.42, 0.3, 0.5), grey)  # trousers
+    b.box((0, 1.55, -0.05), (0.4, 0.42, 0.3), jacket)
     for side in (-1, 1):
-        b.box((side * 0.27, 1.38, -0.45), (0.1, 0.1, 0.6), skin)  # arms to the bars
-        b.box((side * 0.2, 1.05, 0.15), (0.14, 0.14, 0.55), skin)  # legs
-    b.sphere((0, 1.92, -0.05), 0.2, (0.15, 0.65, 0.6))  # hair
-    b.sphere((0, 1.85, 0.25), 0.11, (0.15, 0.65, 0.6), scale=(1, 2.2, 1))  # ponytail
-    b.sphere((0, 2.08, 0.05), 0.07, (0.9, 0.15, 0.15), scale=(1.6, 1, 1))  # bow
+        b.box((side * 0.27, 1.38, -0.45), (0.1, 0.1, 0.6), jacket)  # arms to the bars
+        b.box((side * 0.2, 1.05, 0.15), (0.14, 0.14, 0.55), grey)  # legs
+    b.sphere((0, 1.92, -0.05), 0.21, WHITE, roughness=0.3)  # helmet
     return b
 
 
@@ -423,6 +466,13 @@ def make_robot():
     return b
 
 
+def make_pad(width, length):
+    """The glow under a hover vehicle: a flat, bright cyan disc."""
+    b = Builder()
+    b.sphere((0, 0.05, 0), 0.5, CYAN, emissive=2.5, scale=(width, 0.08, length))
+    return b
+
+
 def make_ground():
     """A wide grass plane the road sits on; it follows the bike."""
     b = Builder()
@@ -431,7 +481,7 @@ def make_ground():
 
 
 def make_dome():
-    """A Capsule Corp-style dome: white, a blue window band, a dark ring logo. Front faces +z."""
+    """A white dome building: a blue window band, a dark ring sign. Front faces +z."""
     b = Builder()
     b.sphere((0, 0, 0), 9, (0.98, 0.97, 0.93), scale=(1, 0.95, 1), top_only=True, rings=24, segments=40, roughness=0.5)
     b.cylinder((0, 1.6, 0), 9.05, 1.4, (0.55, 0.8, 1.0), segments=40, roughness=0.2)
@@ -481,13 +531,14 @@ def save_road():
 
 
 def main():
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 3:
         sys.exit(__doc__)
     OUT.mkdir(parents=True, exist_ok=True)
-    report = take_kenney(sys.argv[1])
+    report = take_kenney(sys.argv[1]) | take_kaykit(sys.argv[2])
     for name, builder in [("bike", make_bike()), ("rider", make_rider()), ("dragon_ball", make_dragon_ball()),
                           ("boost", make_boost()), ("capsule_dome", make_dome()), ("robot", make_robot()),
-                          ("ground", make_ground())]:
+                          ("ground", make_ground()), ("pad_car", make_pad(2.0, 3.8)),
+                          ("pad_truck", make_pad(2.4, 5.8))]:
         builder.save(OUT / f"{name}.glb")
     save_road()
     for name, size in sorted(report.items()):

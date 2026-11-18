@@ -38,6 +38,8 @@ private const val SCENERY_AHEAD = 190f
 private const val BLOCK = 24f
 private const val CAM_HEIGHT = 3.1f
 private const val CAM_BACK = 7.5f
+/** How high hover cars and trucks float, in metres. */
+private const val HOVER_HEIGHT = 0.55f
 
 /**
  * Where things land on screen, as shares of its width and height from the top
@@ -82,11 +84,14 @@ class HoverBikeWorld {
     private val cone = Pool("cone", 8)
     private val ball = Pool("dragon_ball", 18)
     private val boost = Pool("boost", 3)
-    private val buildings = listOf("building_a", "building_b", "building_c", "building_d", "building_e", "building_f", "tower_a", "tower_b", "tower_c", "capsule_dome").map { Pool(it, 5) }
+    private val buildings = ("abcdefgh".map { "building_$it" } + "capsule_dome").map { Pool(it, 5) }
+    private val padCar = Pool("pad_car", 20)
+    private val padTruck = Pool("pad_truck", 9)
     private val palms = listOf("palm_tall", "palm_detailed", "palm_bend").map { Pool(it, 9) }
     private val lights = Pool("street_light", 18)
 
-    private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights) + cars + trucks + buildings + palms
+    private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
+        cars + trucks + buildings + palms
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -169,8 +174,13 @@ class HoverBikeWorld {
             val x = (item.x - 0.5f) * ROAD_WIDTH
             val z = -item.ahead
             when (item.thing) {
-                RoadThing.CAR -> place(cars[item.id % cars.size], x, 0f, z)
-                RoadThing.TRUCK -> place(trucks[item.id % trucks.size], x, 0f, z)
+                RoadThing.CAR, RoadThing.TRUCK -> {
+                    // Hover traffic: floating over a glowing pad, bobbing out of step with each other.
+                    val truck = item.thing == RoadThing.TRUCK
+                    val lift = HOVER_HEIGHT + sin(clock * 3f + item.id * 1.7f) * 0.06f
+                    if (truck) place(trucks[item.id % trucks.size], x, lift, z) else place(cars[item.id % cars.size], x, lift, z)
+                    place(if (truck) padTruck else padCar, x, 0f, z)
+                }
                 RoadThing.ROBOT -> place(robot, x, 0f, z, yaw = sin(clock * 2f + item.id) * 25f)
                 RoadThing.BARRIER -> {
                     place(barrier, x, 0f, z)

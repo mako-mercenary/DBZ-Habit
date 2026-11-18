@@ -42,11 +42,14 @@ overwrites every file above, so keep your own art elsewhere too.
 ## Hover-bike run: 3D models
 
 Bulma's game is drawn in 3D from the models in `app/src/main/assets/models/`
-(glTF binary, `.glb`). Most come from Kenney's free CC0 packs (Car Kit, City Kit
-Commercial, City Kit Roads, Nature Kit, https://kenney.nl); the bike, the
-stand-in rider, dragon balls, boosts, the Capsule Corp dome, the robot, the
-road and the ground are made from simple shapes by `tools/prepare_models.py`,
-which also sizes and turns the Kenney models. To change one, replace its `.glb`
-(standing on y = 0, centred, facing +z; vehicles show their back to +z).
+(glTF binary, `.glb`). The cars, buildings and street lights come from KayKit
+City Builder Bits by Kay Lousberg, and the trucks, barriers, cones and palms
+from Kenney's packs; both are free CC0 packs. The bike, the stand-in rider,
+dragon balls, boosts, the dome, the hover pads, the robot, the road and the
+ground are made from simple shapes by `tools/prepare_models.py`, which also
+sizes and turns the downloaded models and takes the wheels off the vehicles.
+To change one, replace its `.glb` (standing on y = 0, centred, facing +z;
+vehicles show their back to +z).
 
-`rider.glb` is a stand-in. A real Bulma model drops in under that name.
+The rider is normally the `bike_rider` image above; `rider.glb` and `bike.glb`
+only show when that image can't be loaded.

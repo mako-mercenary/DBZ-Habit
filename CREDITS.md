@@ -22,10 +22,13 @@ originals are kept in `art_sources/`.
 
 ## 3D models
 
-Cars, trucks, city buildings, road barriers, cones, street lights and palm trees
-in the hover-bike run are by Kenney (https://kenney.nl), from Car Kit, City Kit
-Commercial, City Kit Roads and Nature Kit, released under Creative Commons Zero
-(CC0, public domain). Credit is not required; it's given anyway, with thanks.
+Cars, city buildings and street lights in the hover-bike run are by Kay
+Lousberg (https://www.kaylousberg.com), from KayKit City Builder Bits 1.0
+(https://github.com/KayKit-Game-Assets/KayKit-City-Builder-Bits-1.0). Trucks,
+road barriers, cones and palm trees are by Kenney (https://kenney.nl), from Car
+Kit, City Kit Roads and Nature Kit. Both are released under Creative Commons
+Zero (CC0, public domain). Credit is not required; it's given anyway, with
+thanks. The vehicles' wheels are removed so they hover.
 
 The 3D view is rendered with SceneView (https://github.com/SceneView/sceneview,
 Apache 2.0) on Google's Filament engine (Apache 2.0).
