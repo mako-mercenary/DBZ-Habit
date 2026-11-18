@@ -97,6 +97,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
         keys.mapNotNull { key -> art[key]?.let { billboardGlb(it, width, height) }?.let { Pool(key.key, count, it) } }
 
     private val cutOutCars = cutOuts(ArtKey.bikeCars, 5, width = GameConfig.BIKE_CUTOUT_CAR_WIDTH)
+    private val cutOutPalm = cutOuts(listOf(ArtKey.BIKE_PALM), 18, height = GameConfig.BIKE_CUTOUT_PALM_HEIGHT).firstOrNull()
 
     /** Building pictures with how wide each stands, in metres. */
     private val cutOutBuildings: List<Pair<Pool, Float>> = ArtKey.bikeBuildings.mapIndexedNotNull { i, key ->
@@ -105,7 +106,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     }
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
-        cars + trucks + buildings + palms + cutOutBuildings.map { it.first } + cutOutCars
+        cars + trucks + buildings + palms + cutOutBuildings.map { it.first } + cutOutCars + listOfNotNull(cutOutPalm)
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -185,8 +186,15 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
                     // Fronts face the road.
                     place(buildings[kind], x, 0f, -ahead, yaw = if (side < 0) 90f else -90f)
                 }
-                val palm = palms[Math.floorMod(h ushr 7, palms.size)]
-                place(palm, side * (half + 3.4f), 0f, -(ahead + BLOCK / 2), yaw = Math.floorMod(h ushr 9, 360).toFloat())
+                val palmX = side * (half + 3.4f)
+                val palmZ = -(ahead + BLOCK / 2)
+                if (cutOutPalm != null) {
+                    // The palm picture turns to face the camera, so it never looks flat.
+                    place(cutOutPalm, palmX, 0f, palmZ, yaw = facing(palmX, palmZ, camX))
+                } else {
+                    val palm = palms[Math.floorMod(h ushr 7, palms.size)]
+                    place(palm, palmX, 0f, palmZ, yaw = Math.floorMod(h ushr 9, 360).toFloat())
+                }
                 // A street light every other block, alternating sides.
                 if (Math.floorMod(b, 2) == (if (side < 0) 0 else 1)) {
                     place(lights, side * (half + 0.7f), 0f, -(ahead + 4f), yaw = if (side < 0) -90f else 90f)

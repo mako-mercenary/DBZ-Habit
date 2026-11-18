@@ -17,5 +17,6 @@ For pictures that arrive with their background painted in:
 checkerboard (used for `bike_building_1`), and
 `tools/remove_checker.py <source> <cut.png> --dark <limit>` clears a black
 backdrop with a glow (`bike_car_1` at 100, `bike_car_2` at 150; `bike_car_3`
-at 95 with `--any-tint`, for its blue glow). Then trim to
+at 95 with `--any-tint`, for its blue glow). `bike_palm` used `--smooth`, which
+floods the backdrop in small colour steps and stops at the figure's sharp edge. Then trim to
 the figure and fit it inside the key's size, keeping its proportions.

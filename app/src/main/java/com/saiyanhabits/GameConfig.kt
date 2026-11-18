@@ -246,4 +246,7 @@ object GameConfig {
 
     /** Hover-bike run: how wide a hover car picture stands, in metres. */
     const val BIKE_CUTOUT_CAR_WIDTH = 2.3f
+
+    /** Hover-bike run: how tall a palm tree picture stands, in metres. */
+    const val BIKE_CUTOUT_PALM_HEIGHT = 8f
 }
