@@ -237,9 +237,9 @@ object GameConfig {
 
     /**
      * Hover-bike run: how wide each roadside building picture stands, in metres, by slot
-     * (dome, shop, apartments, the fourth); its height follows the picture's proportions.
+     * (dome, shop, apartments, office tower); its height follows the picture's proportions.
      */
-    val BIKE_CUTOUT_BUILDING_WIDTHS = floatArrayOf(18f, 14f, 17f, 16f)
+    val BIKE_CUTOUT_BUILDING_WIDTHS = floatArrayOf(18f, 14f, 17f, 22f)
 
     /** Hover-bike run: how far building pictures are turned from facing down the road towards it, in degrees. */
     const val BIKE_CUTOUT_BUILDING_ANGLE = 35f
