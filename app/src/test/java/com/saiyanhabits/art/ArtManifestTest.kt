@@ -45,8 +45,14 @@ class ArtManifestTest {
             val header = ByteBuffer.wrap(bytes, 16, 8)
             val width = header.int
             val height = header.int
-            assertEquals("${key.key} width", key.width, width)
-            assertEquals("${key.key} height", key.height, height)
+            if (key.optional) {
+                // Roadside pictures keep their own proportions, fitted inside the recommended box.
+                assertTrue("${key.key} is ${width} x ${height}, larger than ${key.width} x ${key.height}", width <= key.width && height <= key.height)
+                assertTrue("${key.key} should fill its box on one side", width == key.width || height == key.height)
+            } else {
+                assertEquals("${key.key} width", key.width, width)
+                assertEquals("${key.key} height", key.height, height)
+            }
         }
     }
 

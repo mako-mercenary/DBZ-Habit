@@ -96,10 +96,14 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     private fun cutOuts(keys: List<ArtKey>, count: Int, width: Float? = null, height: Float? = null): List<Pool> =
         keys.mapNotNull { key -> art[key]?.let { billboardGlb(it, width, height) }?.let { Pool(key.key, count, it) } }
 
-    private val cutOutBuildings = cutOuts(ArtKey.bikeBuildings, 8, width = GameConfig.BIKE_CUTOUT_BUILDING_WIDTH)
+    /** Building pictures with how wide each stands, in metres. */
+    private val cutOutBuildings: List<Pair<Pool, Float>> = ArtKey.bikeBuildings.mapIndexedNotNull { i, key ->
+        val width = GameConfig.BIKE_CUTOUT_BUILDING_WIDTHS.getOrElse(i) { 16f }
+        art[key]?.let { billboardGlb(it, width = width) }?.let { Pool(key.key, 8, it) to width }
+    }
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
-        cars + trucks + buildings + palms + cutOutBuildings
+        cars + trucks + buildings + palms + cutOutBuildings.map { it.first }
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -168,8 +172,8 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
                 val h = hash(b, side)
                 if (cutOutBuildings.isNotEmpty()) {
                     // Pictures stand near the pavement, turned partly towards the road so you see their fronts.
-                    val pool = cutOutBuildings[Math.floorMod(h, cutOutBuildings.size)]
-                    val x = side * (half + 4.4f + GameConfig.BIKE_CUTOUT_BUILDING_WIDTH * 0.42f + Math.floorMod(h ushr 4, 3))
+                    val (pool, width) = cutOutBuildings[Math.floorMod(h, cutOutBuildings.size)]
+                    val x = side * (half + 4.4f + width * 0.42f + Math.floorMod(h ushr 4, 3))
                     val angle = GameConfig.BIKE_CUTOUT_BUILDING_ANGLE
                     place(pool, x, 0f, -ahead, yaw = if (side < 0) angle else -angle)
                 } else {

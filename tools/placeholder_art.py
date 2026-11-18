@@ -70,7 +70,7 @@ KEYS = [
 # Optional images: no placeholder is made, and the game draws something else until one is
 # supplied. key, used for, width, height, shown as.
 OPTIONAL = [
-    *[(f"bike_building_{n}", f"The hover-bike run: a roadside building, front or three-quarter view, standing on the bottom edge, transparent around it. Stood beside the road about 16 m wide, angled towards you. Until set, the 3D buildings are used.", 1024, 1024, "free") for n in range(1, 5)],
+    *[(f"bike_building_{n}", f"The hover-bike run: a roadside building, front or three-quarter view, standing on the bottom edge, transparent around it. Stood beside the road angled towards you; how wide it stands is set per slot in GameConfig (dome 18 m, shop 14 m, apartments 17 m, fourth 16 m) and its height follows the picture. Trimmed to the building, keeping its proportions. Until set, the 3D buildings are used.", 1024, 1024, "free") for n in range(1, 5)],
     *[(f"bike_car_{n}", "The hover-bike run: a hover car seen from behind, on a transparent background, its underside on the bottom edge. Floats over the road about 2.3 m wide; the game adds the shadow. Until set, the 3D cars are used.", 512, 512, "free") for n in range(1, 4)],
     ("bike_palm", "The hover-bike run: a palm tree, trunk foot on the bottom edge, transparent around it. About 8 m tall beside the road. Until set, the 3D palms are used.", 512, 1024, "free"),
     *[(f"bike_person_{n}", "The hover-bike run: someone standing or walking on the pavement, feet on the bottom edge, transparent around them. About 1.75 m tall; just scenery, you can't hit them. Until set, there are no pedestrians.", 256, 512, "free") for n in range(1, 3)],

@@ -235,8 +235,11 @@ object GameConfig {
     /** Hover-bike run: how far the skyline slides per metre the bike moves sideways, as a share of the screen width. */
     const val BIKE_SKYLINE_PARALLAX = 0.012f
 
-    /** Hover-bike run: how wide a roadside building picture stands, in metres. */
-    const val BIKE_CUTOUT_BUILDING_WIDTH = 16f
+    /**
+     * Hover-bike run: how wide each roadside building picture stands, in metres, by slot
+     * (dome, shop, apartments, the fourth); its height follows the picture's proportions.
+     */
+    val BIKE_CUTOUT_BUILDING_WIDTHS = floatArrayOf(18f, 14f, 17f, 16f)
 
     /** Hover-bike run: how far building pictures are turned from facing down the road towards it, in degrees. */
     const val BIKE_CUTOUT_BUILDING_ANGLE = 35f
