@@ -38,6 +38,17 @@ sealed interface GameEvent {
     data class OrbEarned(val orbs: Int) : GameEvent
 }
 
+/** One of today's habits, for the widget. See [HabitRepository.todaySnapshot]. */
+data class TodayEntry(
+    val habit: HabitEntity,
+    val done: Boolean,
+    /** True when it counts towards today being perfect; false for a weekly goal that can wait. */
+    val countsToday: Boolean,
+    val count: Int,
+    val weekDone: Int,
+    val weekTarget: Int?,
+)
+
 /** What a time chamber session did for a habit. */
 data class FocusHabitResult(
     val habitName: String,
@@ -55,6 +66,9 @@ class HabitRepository(
     private val habitDao = db.habitDao()
     private val completionDao = db.completionDao()
     private val streakDao = db.streakDao()
+
+    /** Total points earned, for places that need the power level once rather than as a flow. */
+    suspend fun powerLevelNow(): Long = PowerCalculator.powerLevel(db.achievementDao().totalPoints())
     private val powerDao = db.powerDao()
     private val bondDao = db.bondDao()
     private val countDao = db.countDao()
@@ -135,6 +149,36 @@ class HabitRepository(
         } else {
             StreakRules.scheduledOn(listOf(scheduled), day).isNotEmpty()
         }
+    }
+
+    /**
+     * Today's habits as the home screen lists them, for places with no screen
+     * of their own (the widget): those that count today first, then weekly
+     * goals that can wait.
+     */
+    suspend fun todaySnapshot(): List<TodayEntry> = db.withTransaction {
+        val date = today()
+        val day = date.toEpochDay()
+        val habits = habitDao.getActive()
+        val weekRows = completionDao.getBetween(Weeks.startOf(day), day)
+        val week = weekRows.groupBy({ it.epochDay }, { it.habitId }).mapValues { it.value.toSet() }
+        val excused = bondDao.getExcusesBetween(day, day).map { it.habitId }.toSet()
+        val counted = StreakRules.countedOn(habits.map { it.toScheduled() }, day, week).toSet()
+        val done = week[day].orEmpty()
+        habits
+            .filter { if (it.isWeekly) it.createdAtEpochDay <= day else WeekSchedule.isScheduled(it.scheduleDays, date) }
+            .filterNot { it.id in excused }
+            .map { habit ->
+                TodayEntry(
+                    habit = habit,
+                    done = habit.id in done,
+                    countsToday = habit.id in counted,
+                    count = if (habit.id in done) habit.dailyTarget else countDao.get(habit.id, day) ?: 0,
+                    weekDone = weekRows.count { it.habitId == habit.id },
+                    weekTarget = if (habit.isWeekly) WeeklyGoals.targetFor(habit.toScheduled(), day) else null,
+                )
+            }
+            .sortedBy { !it.countsToday }
     }
 
     /** Habits that count today and aren't done or excused yet: what the evening nudge is about. */

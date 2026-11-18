@@ -17,7 +17,10 @@ import com.saiyanhabits.reminders.ReminderScheduler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.launch
+
+private const val WIDGET_REFRESH_DELAY_MILLIS = 300L
 
 class SaiyanApp : Application() {
     val database: AppDatabase by lazy { AppDatabase.create(this) }
@@ -60,6 +63,13 @@ class SaiyanApp : Application() {
             reminders.ensureScheduled(habitRepository.getActiveHabits())
             reminders.updateEveningNudge(prefs.eveningNudge.value, prefs.eveningNudgeMinutes.value, replace = false)
             timeChamber.restore()
+        }
+        // Keep the home-screen widget in step with the app.
+        appScope.launch {
+            @OptIn(kotlinx.coroutines.FlowPreview::class)
+            database.achievementDao().observeWidgetChanges()
+                .debounce(WIDGET_REFRESH_DELAY_MILLIS)
+                .collect { com.saiyanhabits.widget.WidgetUpdater.update(this@SaiyanApp) }
         }
     }
 }

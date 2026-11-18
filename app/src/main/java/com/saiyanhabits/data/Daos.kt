@@ -231,6 +231,20 @@ interface AchievementDao {
     @Query("SELECT COUNT(*) FROM completions")
     suspend fun checkOffs(): Int
 
+    /** A number that changes whenever today's list or the numbers on the widget can. */
+    @Query(
+        """
+        SELECT (SELECT COUNT(*) FROM completions) * 3
+             + (SELECT COALESCE(SUM(count), 0) FROM habit_counts) * 5
+             + (SELECT COUNT(*) FROM habits WHERE archived = 0) * 7
+             + (SELECT COALESCE(SUM(scheduleDays + difficulty + dailyTarget + COALESCE(weeklyTarget, 0)), 0) FROM habits) * 11
+             + (SELECT COUNT(*) FROM habit_excuses) * 13
+             + (SELECT COUNT(*) FROM day_records) * 17
+             + (SELECT COALESCE(SUM(points), 0) FROM power_events)
+        """,
+    )
+    fun observeWidgetChanges(): Flow<Long>
+
     @Query("SELECT COUNT(*) FROM focus_sessions")
     suspend fun chamberSessions(): Int
 

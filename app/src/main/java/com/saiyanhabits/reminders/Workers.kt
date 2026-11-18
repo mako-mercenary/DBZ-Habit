@@ -49,6 +49,8 @@ class MorningCheckWorker(context: Context, params: WorkerParameters) : Coroutine
         app.habitRepository.syncDays()
         val offer = app.habitRepository.pendingBeanOffer()
         if (offer != null) Notifications.showBeanOffer(applicationContext, offer)
+        // A new day: the widget's list and streak move on.
+        com.saiyanhabits.widget.WidgetUpdater.update(applicationContext)
 
         app.reminders.scheduleMorningCheck(
             LocalDateTime.now().plusMinutes(1),

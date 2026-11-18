@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Saiyan Habits</string>
+    <string name="widget_name">Today\'s training</string>
+    <string name="widget_description">Your power level, streak and today\'s habits. Tap a habit to check it off.</string>
 </resources>

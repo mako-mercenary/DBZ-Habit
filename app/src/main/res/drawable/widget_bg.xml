@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Royal blue in a gold frame, like the app's panels. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <solid android:color="#FF3A2200" />
+        </shape>
+    </item>
+    <item android:bottom="1.5dp" android:left="1.5dp" android:right="1.5dp" android:top="1.5dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="17dp" />
+            <gradient android:angle="270" android:endColor="#FFB06A00" android:startColor="#FFFFF0A0" />
+        </shape>
+    </item>
+    <item android:bottom="4.5dp" android:left="4.5dp" android:right="4.5dp" android:top="4.5dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <gradient android:angle="270" android:endColor="#FF0B1F5C" android:startColor="#FF1D4BA6" />
+        </shape>
+    </item>
+</layer-list>

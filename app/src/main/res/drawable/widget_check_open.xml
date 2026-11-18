@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A habit still to do: an empty gold ring. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <path android:fillColor="#FFF5B800" android:pathData="M14,0a14,14 0,1 1,0 28a14,14 0,1 1,0 -28z" />
+    <path android:fillColor="#FF0E2668" android:pathData="M14,2.5a11.5,11.5 0,1 1,0 23a11.5,11.5 0,1 1,0 -23z" />
+</vector>
