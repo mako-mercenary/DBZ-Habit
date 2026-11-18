@@ -18,6 +18,8 @@ data class MentorDialogue(
     val evening: List<String> = emptyList(),
     /** What the mentor says during their mini game. */
     val game: List<String> = emptyList(),
+    /** What the mentor says when their mini game ends. */
+    val gameDone: List<String> = emptyList(),
 ) {
     fun scene(level: Int): BondScene? = scenes.firstOrNull { it.level == level }
 }
@@ -60,7 +62,9 @@ object DialogueParser {
 
         val game = root["game"]?.asArray("\"game\"")?.map { it.asString("a game line") }.orEmpty()
 
-        return MentorDialogue(mentor, reactions, scenes, evening, game)
+        val gameDone = root["game_done"]?.asArray("\"game_done\"")?.map { it.asString("a game_done line") }.orEmpty()
+
+        return MentorDialogue(mentor, reactions, scenes, evening, game, gameDone)
     }
 }
 

@@ -102,6 +102,22 @@
     "Don't let the day end on a loose thread.",
     "Finish. Then sleep."
   ],
+  "game": [
+    "Sit. Close your eyes if you want. Follow the light.",
+    "Thoughts will come. Let them pass. Return to the breath.",
+    "Slower. You're not in a race.",
+    "Good. The mind is a muscle too.",
+    "Don't judge the breath. Just notice it.",
+    "Stillness is a technique. You're learning it.",
+    "Your shoulders are up. Drop them.",
+    "Nothing else needs you right now."
+  ],
+  "game_done": [
+    "Done. You're calmer. Don't waste it.",
+    "Hmph. Better than last time.",
+    "Carry that quiet into the rest of the day.",
+    "Good. Now go and do one thing well."
+  ],
   "scenes": [
     {
       "level": 2,

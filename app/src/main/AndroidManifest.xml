@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- Gentle pulses marking each breath in meditation, so it works with eyes closed. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name=".SaiyanApp"
         android:icon="@mipmap/ic_launcher"
