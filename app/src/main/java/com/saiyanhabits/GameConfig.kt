@@ -221,7 +221,7 @@ object GameConfig {
     const val POWER_GAIN_LABEL_MILLIS = 1200
 
     /** Hover-bike run: the rider sprite's width as a share of the screen width. */
-    const val BIKE_SPRITE_WIDTH = 0.5f
+    const val BIKE_SPRITE_WIDTH = 0.62f
 
     /** Hover-bike run: how far the rider sprite tilts at full steer, in degrees. */
     const val BIKE_SPRITE_LEAN_DEGREES = 9f
@@ -255,4 +255,16 @@ object GameConfig {
 
     /** Hover-bike run: out of every 100 block sides, how many have someone on the pavement. */
     const val BIKE_PEOPLE_PER_100_BLOCKS = 60
+
+    /** Hover-bike run: the chase camera's height above the road, in metres. */
+    const val BIKE_CAMERA_HEIGHT = 2.2f
+
+    /** Hover-bike run: how far behind the bike the chase camera rides, in metres. */
+    const val BIKE_CAMERA_BACK = 5f
+
+    /** Hover-bike run: the height of the point ahead the camera looks at, in metres. */
+    const val BIKE_CAMERA_LOOK_HEIGHT = 1.3f
+
+    /** Hover-bike run: how far ahead of the bike the camera looks, in metres. */
+    const val BIKE_CAMERA_LOOK_AHEAD = 20f
 }

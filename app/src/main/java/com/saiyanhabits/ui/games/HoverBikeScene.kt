@@ -38,8 +38,8 @@ private const val TILE = 20f
 private const val SCENERY_AHEAD = 190f
 /** One building per this many metres on each side. */
 private const val BLOCK = 24f
-private const val CAM_HEIGHT = 3.1f
-private const val CAM_BACK = 7.5f
+private const val CAM_HEIGHT = GameConfig.BIKE_CAMERA_HEIGHT
+private const val CAM_BACK = GameConfig.BIKE_CAMERA_BACK
 /** How high hover cars and trucks float, in metres. */
 private const val HOVER_HEIGHT = 0.55f
 
@@ -250,7 +250,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
         // A chase camera, swinging a little with the bike; it shakes on boost.
         val shake = if (state.boosting) sin(clock * 60f) * 0.04f else 0f
         camera.position = Position(camX + shake, CAM_HEIGHT, CAM_BACK)
-        camera.lookAt(Position(camX * 0.9f, 1.1f, -14f))
+        camera.lookAt(Position(camX * 0.9f, GameConfig.BIKE_CAMERA_LOOK_HEIGHT, -GameConfig.BIKE_CAMERA_LOOK_AHEAD))
         return screenPoints(camera, bikeX)
     }
 
@@ -303,7 +303,7 @@ fun HoverBikeScene(
     val view = rememberView(engine)
     val camera = rememberCameraNode(engine) {
         position = Position(0f, CAM_HEIGHT, CAM_BACK)
-        lookAt(Position(0f, 1.1f, -14f))
+        lookAt(Position(0f, GameConfig.BIKE_CAMERA_LOOK_HEIGHT, -GameConfig.BIKE_CAMERA_LOOK_AHEAD))
     }
     remember(camera) { onCamera(camera); true }
     val loaded = remember(modelLoader) { world.load(modelLoader); world.instances }
