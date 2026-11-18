@@ -243,4 +243,7 @@ object GameConfig {
 
     /** Hover-bike run: how far building pictures are turned from facing down the road towards it, in degrees. */
     const val BIKE_CUTOUT_BUILDING_ANGLE = 35f
+
+    /** Hover-bike run: how wide a hover car picture stands, in metres. */
+    const val BIKE_CUTOUT_CAR_WIDTH = 2.3f
 }

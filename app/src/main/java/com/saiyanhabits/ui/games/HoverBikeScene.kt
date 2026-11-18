@@ -96,6 +96,8 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     private fun cutOuts(keys: List<ArtKey>, count: Int, width: Float? = null, height: Float? = null): List<Pool> =
         keys.mapNotNull { key -> art[key]?.let { billboardGlb(it, width, height) }?.let { Pool(key.key, count, it) } }
 
+    private val cutOutCars = cutOuts(ArtKey.bikeCars, 5, width = GameConfig.BIKE_CUTOUT_CAR_WIDTH)
+
     /** Building pictures with how wide each stands, in metres. */
     private val cutOutBuildings: List<Pair<Pool, Float>> = ArtKey.bikeBuildings.mapIndexedNotNull { i, key ->
         val width = GameConfig.BIKE_CUTOUT_BUILDING_WIDTHS.getOrElse(i) { 16f }
@@ -103,7 +105,7 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
     }
 
     private val all = listOf(road, pavement, ground, bike, rider, robot, barrier, cone, ball, boost, lights, padCar, padTruck) +
-        cars + trucks + buildings + palms + cutOutBuildings.map { it.first }
+        cars + trucks + buildings + palms + cutOutBuildings.map { it.first } + cutOutCars
 
     /** False when a 2D rider is drawn over the scene instead of the 3D bike and rider. */
     var showModelRider = true
@@ -202,7 +204,12 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
                     // Hover traffic: floating over a glowing pad, bobbing out of step with each other.
                     val truck = item.thing == RoadThing.TRUCK
                     val lift = HOVER_HEIGHT + sin(clock * 3f + item.id * 1.7f) * 0.06f
-                    if (truck) place(trucks[item.id % trucks.size], x, lift, z) else place(cars[item.id % cars.size], x, lift, z)
+                    when {
+                        truck -> place(trucks[item.id % trucks.size], x, lift, z)
+                        // A car picture turns to face the camera, so it always shows its back.
+                        cutOutCars.isNotEmpty() -> place(cutOutCars[item.id % cutOutCars.size], x, lift, z, yaw = facing(x, z, camX))
+                        else -> place(cars[item.id % cars.size], x, lift, z)
+                    }
                     place(if (truck) padTruck else padCar, x, 0f, z)
                 }
                 RoadThing.ROBOT -> place(robot, x, 0f, z, yaw = sin(clock * 2f + item.id) * 25f)
@@ -253,6 +260,10 @@ class HoverBikeWorld(private val art: Map<ArtKey, ByteArray> = emptyMap()) {
         if (c[3] <= 1e-6) return null
         return ((c[0] / c[3] + 1) / 2).toFloat() to ((1 - c[1] / c[3]) / 2).toFloat()
     }
+
+    /** The turn, in degrees, that points a picture at ([x], [z]) towards the camera. */
+    private fun facing(x: Float, z: Float, camX: Float): Float =
+        Math.toDegrees(kotlin.math.atan2((camX - x).toDouble(), (CAM_BACK - z).toDouble())).toFloat()
 
     private fun hash(a: Int, b: Int): Int {
         var x = a * 73856093 xor b * 19349663
