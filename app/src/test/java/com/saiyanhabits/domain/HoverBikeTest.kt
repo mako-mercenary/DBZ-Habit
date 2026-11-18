@@ -34,14 +34,41 @@ class HoverBikeTest {
     }
 
     @Test
-    fun `running into a car ends the run, a capsule is collected`() {
+    fun `a hit costs a heart and a moment of safety, the third ends the run`() {
         val car = HoverBikeState(items = listOf(RoadItem(0, RoadThing.CAR, 0.5f, 1f)), nextSpawnIn = 1e9f)
-        assertTrue(HoverBike.step(car, 0.05f, 0f, calm).crashed)
-        val capsule = HoverBikeState(items = listOf(RoadItem(0, RoadThing.CAPSULE, 0.5f, 1f)), nextSpawnIn = 1e9f)
-        val after = HoverBike.step(capsule, 0.05f, 0f, calm)
-        assertFalse(after.crashed)
-        assertEquals(1, after.capsules)
+        val hit = HoverBike.step(car, 0.05f, 0f, calm)
+        assertEquals(HoverBike.HEARTS - 1, hit.hearts)
+        assertFalse(hit.crashed)
+        assertTrue(hit.invulnerable > 0f)
+        assertTrue(hit.items.isEmpty())
+        // While flashing, another hit does nothing.
+        val again = HoverBike.step(hit.copy(items = listOf(RoadItem(1, RoadThing.BARRIER, 0.5f, 1f))), 0.05f, 0f, calm)
+        assertEquals(hit.hearts, again.hearts)
+        // On the last heart, a hit ends it.
+        val last = HoverBikeState(hearts = 1, items = listOf(RoadItem(0, RoadThing.TRUCK, 0.5f, 1f)), nextSpawnIn = 1e9f)
+        assertTrue(HoverBike.step(last, 0.05f, 0f, calm).crashed)
+    }
+
+    @Test
+    fun `dragon balls are collected and count towards the score`() {
+        val ball = HoverBikeState(items = listOf(RoadItem(0, RoadThing.DRAGON_BALL, 0.5f, 1f)), nextSpawnIn = 1e9f)
+        val after = HoverBike.step(ball, 0.05f, 0f, calm)
+        assertEquals(1, after.balls)
         assertTrue(after.items.isEmpty())
+        assertEquals(after.distance.toLong() * HoverBike.POINTS_PER_METRE + HoverBike.POINTS_PER_BALL, after.score)
+    }
+
+    @Test
+    fun `dragon balls sometimes come in trails down one lane`() {
+        var state = HoverBikeState()
+        val random = Random(11)
+        var trail = false
+        repeat(4000) {
+            state = HoverBike.step(state.copy(hearts = 99, invulnerable = 99f), 1 / 30f, 0f, random)
+            val balls = state.items.filter { it.thing == RoadThing.DRAGON_BALL }
+            if (balls.groupBy { it.x }.values.any { it.size >= 3 }) trail = true
+        }
+        assertTrue(trail)
     }
 
     @Test

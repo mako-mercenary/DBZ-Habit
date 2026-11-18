@@ -8,11 +8,12 @@ enum class RoadThing(val width: Float, val length: Float) {
     CAR(0.17f, 6f),
     TRUCK(0.2f, 10f),
     ROBOT(0.11f, 3f),
-    CAPSULE(0.08f, 2f),
+    BARRIER(0.15f, 1.5f),
+    DRAGON_BALL(0.08f, 2f),
     BOOST(0.09f, 2f),
     ;
 
-    val isObstacle: Boolean get() = this == CAR || this == TRUCK || this == ROBOT
+    val isObstacle: Boolean get() = this == CAR || this == TRUCK || this == ROBOT || this == BARRIER
 }
 
 /** Something on the road, [ahead] metres in front of the bike, across the road at [x] (0 = left kerb, 1 = right). */
@@ -24,7 +25,12 @@ data class HoverBikeState(
     val distance: Float = 0f,
     val speed: Float = HoverBike.START_SPEED,
     val items: List<RoadItem> = emptyList(),
-    val capsules: Int = 0,
+    /** Dragon balls collected. */
+    val balls: Int = 0,
+    /** Hits left; the run ends at 0. */
+    val hearts: Int = HoverBike.HEARTS,
+    /** Seconds of flashing after a hit, when nothing can hit again. */
+    val invulnerable: Float = 0f,
     /** Seconds of boost left; while boosting the bike is faster and can't crash. */
     val boost: Float = 0f,
     val crashed: Boolean = false,
@@ -33,6 +39,9 @@ data class HoverBikeState(
     val nextId: Int = 0,
 ) {
     val boosting: Boolean get() = boost > 0f
+
+    /** Points: ten a metre and a hundred a dragon ball. */
+    val score: Long get() = distance.toLong() * HoverBike.POINTS_PER_METRE + balls.toLong() * HoverBike.POINTS_PER_BALL
 }
 
 /**
@@ -52,7 +61,12 @@ object HoverBike {
     const val BIKE_WIDTH = 0.09f
     const val BIKE_LENGTH = 3f
     /** How far ahead things appear, in metres. */
-    const val VIEW_AHEAD = 70f
+    const val VIEW_AHEAD = 110f
+    const val HEARTS = 3
+    /** Seconds after a hit when the bike can't be hit again. */
+    const val INVULNERABLE_SECONDS = 1.6f
+    const val POINTS_PER_METRE = 10
+    const val POINTS_PER_BALL = 100
 
     /** Moves the run on by [dt] seconds with [steer] from -1 (left) to 1 (right). */
     fun step(state: HoverBikeState, dt: Float, steer: Float, random: Random): HoverBikeState {
@@ -64,18 +78,27 @@ object HoverBike {
         val half = BIKE_WIDTH / 2
         val bikeX = (state.bikeX + steer.coerceIn(-1f, 1f) * STEER_RATE * dt).coerceIn(half, 1f - half)
 
-        var capsules = state.capsules
+        var balls = state.balls
         var boostLeft = boost
-        var crashed = false
+        var hearts = state.hearts
+        var invulnerable = (state.invulnerable - dt).coerceAtLeast(0f)
         val kept = mutableListOf<RoadItem>()
         for (item in state.items) {
             val moved1 = item.copy(ahead = item.ahead - moved)
             if (moved1.ahead < -moved1.thing.length) continue // passed
             if (hits(bikeX, moved1)) {
                 when (moved1.thing) {
-                    RoadThing.CAPSULE -> { capsules++; continue }
+                    RoadThing.DRAGON_BALL -> { balls++; continue }
                     RoadThing.BOOST -> { boostLeft = BOOST_SECONDS; continue }
-                    else -> if (state.boost <= 0f) crashed = true else continue // boosting smashes through
+                    else -> when {
+                        state.boost > 0f -> continue // boosting smashes through
+                        invulnerable > 0f -> Unit // still flashing from the last hit
+                        else -> {
+                            hearts--
+                            invulnerable = INVULNERABLE_SECONDS
+                            continue // knocked out of the way
+                        }
+                    }
                 }
             }
             kept += moved1
@@ -85,17 +108,21 @@ object HoverBike {
         var id = state.nextId
         val distance = state.distance + moved
         while (next <= 0f) {
-            kept += spawn(id++, distance, random)
-            next += gapAt(distance, random)
+            val spawned = spawn(id, distance, random)
+            kept += spawned
+            id += spawned.size
+            next += gapAt(distance, random) + (spawned.size - 1) * TRAIL_SPACING
         }
         return state.copy(
             bikeX = bikeX,
             distance = distance,
             speed = baseSpeed,
             items = kept,
-            capsules = capsules,
+            balls = balls,
             boost = boostLeft,
-            crashed = crashed,
+            hearts = hearts.coerceAtLeast(0),
+            invulnerable = invulnerable,
+            crashed = hearts <= 0,
             nextSpawnIn = next,
             nextId = id,
         )
@@ -114,13 +141,25 @@ object HoverBike {
         return base + random.nextFloat() * base * 0.6f
     }
 
-    private fun spawn(id: Int, distance: Float, random: Random): RoadItem {
+    /** Metres between dragon balls in a trail. */
+    const val TRAIL_SPACING = 6f
+
+    /** What appears next: usually one thing, sometimes a trail of dragon balls down one lane. */
+    private fun spawn(id: Int, distance: Float, random: Random): List<RoadItem> {
+        val first = spawnOne(id, distance, random)
+        if (first.thing != RoadThing.DRAGON_BALL || random.nextFloat() > 0.45f) return listOf(first)
+        val length = 3 + random.nextInt(3)
+        return (0 until length).map { i -> first.copy(id = id + i, ahead = first.ahead + i * TRAIL_SPACING) }
+    }
+
+    private fun spawnOne(id: Int, distance: Float, random: Random): RoadItem {
         val roll = random.nextFloat()
         val thing = when {
-            roll < 0.22f -> RoadThing.CAPSULE
-            roll < 0.26f -> RoadThing.BOOST
-            roll < 0.40f && distance > 300f -> RoadThing.ROBOT
-            roll < 0.52f && distance > 600f -> RoadThing.TRUCK
+            roll < 0.24f -> RoadThing.DRAGON_BALL
+            roll < 0.28f -> RoadThing.BOOST
+            roll < 0.40f -> RoadThing.BARRIER
+            roll < 0.50f && distance > 300f -> RoadThing.ROBOT
+            roll < 0.62f && distance > 600f -> RoadThing.TRUCK
             else -> RoadThing.CAR
         }
         val half = thing.width / 2
