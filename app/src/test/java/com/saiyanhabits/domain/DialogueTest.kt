@@ -132,6 +132,27 @@ class DialogueTest {
     }
 
     @Test
+    fun `every mentor has at least 8 evening nudges with no placeholders`() {
+        for (mentor in Mentor.entries) {
+            val lines = shipped(mentor).evening
+            assertTrue("$mentor has ${lines.size} evening lines", lines.size >= 8)
+            assertTrue("$mentor has a blank evening line", lines.none { it.isBlank() })
+            assertEquals("$mentor repeats an evening line", lines.size, lines.toSet().size)
+            assertTrue("$mentor has a placeholder in an evening line", lines.none { '{' in it || '}' in it })
+        }
+    }
+
+    @Test
+    fun `a file without evening lines still loads`() {
+        val file = File(dialogueDir, "goku.json").readText()
+        val start = file.indexOf("\"evening\"")
+        val end = file.indexOf("],", start) + 2
+        val without = DialogueParser.parse(file.removeRange(start, end))
+        assertTrue(without.evening.isEmpty())
+        assertTrue(without.reactions.values.all { it.isNotEmpty() })
+    }
+
+    @Test
     fun `every mentor has a scene of 3 to 6 lines for each bond level from 2 to 10`() {
         for (mentor in Mentor.entries) {
             val dialogue = shipped(mentor)

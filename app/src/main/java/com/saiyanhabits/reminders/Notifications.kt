@@ -26,6 +26,8 @@ object Notifications {
     private const val CHANNEL_STREAK = "streak"
     private const val CHANNEL_CHAMBER = "time_chamber"
     private const val CHANNEL_CHAMBER_DONE = "time_chamber_done"
+    private const val CHANNEL_EVENING = "evening_nudge"
+    private const val EVENING_NUDGE_ID = 4
     private const val BEAN_OFFER_ID = 1
     const val CHAMBER_RUNNING_ID = 2
     private const val CHAMBER_FINISHED_ID = 3
@@ -42,6 +44,10 @@ object Notifications {
         manager.createNotificationChannel(
             NotificationChannel(CHANNEL_STREAK, "Streak", NotificationManager.IMPORTANCE_DEFAULT)
                 .apply { description = "The morning offer to save your streak with a healing bean." },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(CHANNEL_EVENING, "Evening nudge", NotificationManager.IMPORTANCE_DEFAULT)
+                .apply { description = "One message in the evening when today's training isn't finished." },
         )
         manager.createNotificationChannel(
             NotificationChannel(CHANNEL_CHAMBER, "Time chamber countdown", NotificationManager.IMPORTANCE_LOW)
@@ -86,6 +92,25 @@ object Notifications {
                 .setContentTitle("You missed $missed of training")
                 .setContentText("$beans can keep your ${offer.streakSaved}-day streak alive. Tap to decide."),
         )
+    }
+
+    /** A mentor's reminder that [open] habits still count today. */
+    fun showEveningNudge(context: Context, mentor: com.saiyanhabits.domain.Mentor, line: String?, open: List<String>) {
+        val title = if (open.size == 1) "\u201C${open.single()}\u201D is still open" else "${open.size} habits still open today"
+        val said = line?.let { "${mentor.displayName}: $it" } ?: "There's still training to finish today."
+        val text = if (open.size > 1) "$said\nStill open: ${open.joinToString(", ")}" else said
+        show(
+            context,
+            EVENING_NUDGE_ID,
+            NotificationCompat.Builder(context, CHANNEL_EVENING)
+                .setContentTitle(title)
+                .setContentText(said)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(text)),
+        )
+    }
+
+    fun cancelEveningNudge(context: Context) {
+        NotificationManagerCompat.from(context).cancel(EVENING_NUDGE_ID)
     }
 
     fun cancelBeanOffer(context: Context) {

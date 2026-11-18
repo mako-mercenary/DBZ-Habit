@@ -46,6 +46,8 @@ class SaiyanApp : Application() {
 
     val reminders: ReminderScheduler by lazy { ReminderScheduler(this) }
 
+    val prefs: com.saiyanhabits.data.AppPrefs by lazy { com.saiyanhabits.data.AppPrefs(this) }
+
     val timeChamber: TimeChamber by lazy { TimeChamber(this, habitRepository, questRepository) }
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -56,6 +58,7 @@ class SaiyanApp : Application() {
         appScope.launch {
             habitRepository.syncDays()
             reminders.ensureScheduled(habitRepository.getActiveHabits())
+            reminders.updateEveningNudge(prefs.eveningNudge.value, prefs.eveningNudgeMinutes.value, replace = false)
             timeChamber.restore()
         }
     }

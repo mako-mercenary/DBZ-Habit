@@ -9,7 +9,15 @@
       "Ho ho! Caught you slacking. Don't worry, I only tell the turtle.",
       "The shell on your back doesn't get lighter by ignoring it. Pick it up.",
       "One empty day won't undo you. Two in a row starts a habit of its own.",
-      "I'm not angry. I'm old. Old people are just disappointed, loudly."
+      "I'm not angry. I'm old. Old people are just disappointed, loudly.",
+      "Even the tide comes back twice a day. You can manage once.",
+      "You missed a day. I've missed whole decades. Let's not compete.",
+      "The lazy hermit in me says it's fine. The teacher in me says get up.",
+      "Rest is good. Unplanned rest is called skipping. Today, no skipping.",
+      "Yesterday got away from you. Today hasn't yet. Grab it.",
+      "An empty training day is like an empty teapot. Fill it before the guests arrive.",
+      "I won't scold you. I'll just sigh meaningfully until you train.",
+      "My turtle waited by the door all day. He's very forgiving. I'm only somewhat."
     ],
     "comeback": [
       "There you are! I told the turtle you'd be back. He owes me a fish.",
@@ -19,7 +27,15 @@
       "Ho ho, look who remembered where the training ground is.",
       "A day lost, a day returned. I'd call that even, if I could still do sums.",
       "You came back before I finished my nap. That's quicker than most.",
-      "Now that's the spirit. Yesterday was rest. Let's agree to call it that."
+      "Now that's the spirit. Yesterday was rest. Let's agree to call it that.",
+      "Welcome back! I kept the kettle warm. Mostly by forgetting to turn it off.",
+      "Ho ho! The student returns. Push-ups first, stories later.",
+      "You came back. That's the lesson most people never learn.",
+      "There's no shame in a stumble. Only in lying in the sand afterwards.",
+      "Good, good. The basics missed you. They told me so.",
+      "Back on the path. Walk it slowly if you must, but walk it.",
+      "I knew you'd return. Old men are rarely right, so let me enjoy this.",
+      "A fresh start without starting over. That's the trick of it."
     ],
     "streak_milestone": [
       "{streak} days without a gap! In my day we called that 'Tuesday'. But it's still very good.",
@@ -29,7 +45,15 @@
       "{streak} days! I'd do a backflip, but my back has opinions.",
       "A {streak}-day streak. The turtle is impressed, and he's seen empires rise.",
       "{streak} days. Don't count them too proudly. Just make it one more tomorrow.",
-      "{streak} days of the basics. That's how every master I ever knew began."
+      "{streak} days of the basics. That's how every master I ever knew began.",
+      "{streak} days! You've outlasted three of my diets.",
+      "{streak} days of honest work. The island approves, and the island is very picky.",
+      "{streak} days. I'm putting it in my diary. Next to my lunch.",
+      "{streak} days in a row. You're not trying a habit any more. You have one.",
+      "Ho ho, {streak} days! Even the seagulls are talking about it.",
+      "{streak} days. The milk gets delivered rain or shine. So do you, it seems.",
+      "{streak} days straight and hardly a complaint. Well, a few. I didn't hear them.",
+      "{streak} days! A student like this makes an old hermit feel young. For a minute."
     ],
     "boss_defeated": [
       "{boss} is down! I knew you had it. I had a small nap during, but I knew.",
@@ -39,7 +63,15 @@
       "{boss}, defeated by my student! I'll be telling this story for years. Slightly improved.",
       "Well fought. Now eat something. Victories don't digest on an empty stomach.",
       "{boss} has fallen. Enjoy tonight. Tomorrow, the basics again.",
-      "You finished what you started. Rarer than any fancy technique, that."
+      "You finished what you started. Rarer than any fancy technique, that.",
+      "{boss} is beaten! I'd throw a party, but parties tire me out. I'll nap in your honour.",
+      "You defeated {boss} without any fancy moves. Those are my favourite victories.",
+      "Ho ho! {boss} trained for years for that? Should have trained daily.",
+      "{boss} is done. Remember how that fight felt at the start? Remember how it feels now.",
+      "A great win over {boss}. Now, back to sweeping the porch. Victories need tidy porches.",
+      "{boss} fell to someone who simply kept turning up. I've seen it a hundred times. It never gets old.",
+      "Well done! Don't let it go to your head. Heads are heavy enough.",
+      "You took {boss} apart a day at a time. That's the Turtle School in one sentence."
     ],
     "idle": [
       "Work hard, study well, eat and sleep plenty. That's the Turtle School way.",
@@ -49,9 +81,27 @@
       "Morning! The sun got up on time. No reason you shouldn't.",
       "Don't train to impress me. I'm very easy to impress. Train so tomorrow is easier.",
       "Carry today's shell. Tomorrow's will wait its turn.",
-      "Ho ho! Another day on the island. Let's see what you do with it."
+      "Ho ho! Another day on the island. Let's see what you do with it.",
+      "Breathe in, stretch out, then get to work. In that order, ideally.",
+      "Training when you're tired counts double. That isn't true, but it feels true.",
+      "The secret technique is this: do the easy thing, every day, for ever.",
+      "I've trained more students than I can remember. The good ones all started small.",
+      "Train in the morning and the afternoon is yours.",
+      "There's no shortcut on this island. I've looked. For decades.",
+      "A sturdy shell, a steady pace. The turtle has it figured out.",
+      "Wake up, warm up, show up. The rest takes care of itself."
     ]
   },
+  "evening": [
+    "The sun's going down and there's still training on your list. Even I'm still awake.",
+    "Evening already! Finish up before bed. Sleep tastes better that way.",
+    "A little left to do today. Do it now and dream easy.",
+    "The turtle's off to bed. You've still got something to finish first.",
+    "Don't leave today's shell lying on the beach. Pick it up before dark.",
+    "Ho ho, it's late, but not too late. Finish today's training.",
+    "Before the day ends: one more thing. Then cocoa.",
+    "The day's nearly done. Make sure you are too."
+  ],
   "scenes": [
     {
       "level": 2,

@@ -137,6 +137,17 @@ class HabitRepository(
         }
     }
 
+    /** Habits that count today and aren't done or excused yet: what the evening nudge is about. */
+    suspend fun openToday(): List<HabitEntity> {
+        val day = today().toEpochDay()
+        val habits = habitDao.getActive()
+        val week = completedByDay(Weeks.startOf(day), day)
+        val excused = bondDao.getExcusesBetween(day, day).map { it.habitId }.toSet()
+        val counted = StreakRules.countedOn(habits.map { it.toScheduled() }, day, week).toSet()
+        val done = week[day].orEmpty()
+        return habits.filter { it.id in counted && it.id !in done && it.id !in excused }
+    }
+
     /** Ids of the habits checked off each day from [from] to [to]. */
     private suspend fun completedByDay(from: Long, to: Long): Map<Long, Set<Long>> =
         completionDao.getBetween(from, to)

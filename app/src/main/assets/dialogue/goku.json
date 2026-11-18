@@ -9,7 +9,15 @@
       "Yesterday's gone. I can't even remember what I had for breakfast yesterday. Let's go!",
       "I get it, some days your body says no. Today we ask it again, nicely.",
       "No training yesterday? Your muscles are probably bored. Let's fix that.",
-      "Don't beat yourself up. Save the beating for the training dummy!"
+      "Don't beat yourself up. Save the beating for the training dummy!",
+      "Ah, you missed one. I do that with naps sometimes. Then I train double!",
+      "Hey, no worries. Let's just go a little harder today, okay?",
+      "You missed a day? My stomach never misses a meal. Let's treat training like dinner!",
+      "Yesterday doesn't count, but today does! Come on, warm up with me.",
+      "Even I lose sometimes. The fun part is the rematch!",
+      "Huh, quiet day yesterday. Let's make some noise today!",
+      "A day off is fine. Two days off and I start getting antsy for you.",
+      "Shake it off! Like water after a swim. Ready? Go!"
     ],
     "comeback": [
       "You're back! I knew it! Okay, okay, where were we?",
@@ -19,7 +27,15 @@
       "One day off and you came back hungrier. That's a fighter's instinct.",
       "Look at you go! Yesterday who? Never heard of it.",
       "That first one back is the hardest. And you just did it. Wanna do another?",
-      "This is my favourite part: when you show up even though it'd be easy not to."
+      "This is my favourite part: when you show up even though it'd be easy not to.",
+      "Hey hey, you're back! I tried doing your training without you. It was boring.",
+      "Alright! Let's pick up right where we left off. Maybe a little further.",
+      "You came back! That's what makes someone really strong, you know.",
+      "Woo! Back in action! I can feel your energy from here.",
+      "Welcome back! Did you eat? Let's eat. Then train. Okay, train first.",
+      "That's it! Every time you come back, you come back stronger.",
+      "There you are! Let's do something fun. Like push-ups. Lots of them.",
+      "Missed you! Training's way better with a partner."
     ],
     "streak_milestone": [
       "{streak} days in a row! Whoa! You're getting stronger so fast it's making me excited!",
@@ -29,7 +45,15 @@
       "Wow, {streak} already? Time flies when you're having fun getting sore.",
       "{streak} straight! You know what that calls for? A huge meal. Then more training.",
       "{streak} days and you're not even slowing down. I love this!",
-      "{streak}! Keep going! I wanna see how far this goes just as much as you do."
+      "{streak}! Keep going! I wanna see how far this goes just as much as you do.",
+      "{streak} days! Your power's going up, I can feel it!",
+      "Whoa, {streak} days! That's longer than I've ever sat still for anything!",
+      "{streak} days straight! Let's celebrate with... more training!",
+      "{streak} days! If you keep this up, I'm gonna need a stronger sparring partner. Oh wait, that's you!",
+      "{streak} days in a row and you're still smiling? Awesome.",
+      "Hey, {streak} days! That's a lot of days! I think. I'm bad at counting.",
+      "{streak} days! You know what comes next? The day after that!",
+      "A {streak}-day streak! Man, I wish I could fight you right now."
     ],
     "boss_defeated": [
       "You beat {boss}! That was awesome! Did you see the look on that face?",
@@ -39,7 +63,15 @@
       "{boss}, done! You kept hitting till it was over. Nothing fancy. Perfect.",
       "That was a great fight! I almost jumped in, but it was yours to win.",
       "Beating {boss} means there's somebody even stronger out there. Isn't that exciting?",
-      "Victory! Let's eat! Then let's find something harder!"
+      "Victory! Let's eat! Then let's find something harder!",
+      "{boss} didn't know what hit them! Well, it was you. Every single day.",
+      "You took down {boss}! Let's go find somebody even stronger!",
+      "That was so cool! You beat {boss} without giving up once.",
+      "{boss} is beaten! Bet you're starving. I know I am.",
+      "Hey, {boss} wasn't so tough after all. Or you just got really strong!",
+      "Yes! {boss} is down! I'm so proud I could fly. Wait, I can fly.",
+      "Beating {boss} was awesome, but watching you get there was even better.",
+      "Down goes {boss}! The next one's gonna be even stronger. Can't wait!"
     ],
     "idle": [
       "Morning! Great day for training. They all are, though.",
@@ -49,9 +81,27 @@
       "You don't have to win today. You just have to show up and try hard.",
       "Ready? I've been ready since sunrise. I couldn't sleep, I was too excited.",
       "Tired's okay. Tired means it's working!",
-      "Come on, come on! Daylight's burning and I've got energy to spare."
+      "Come on, come on! Daylight's burning and I've got energy to spare.",
+      "Let's see how strong you are today! Bet it's a little stronger than yesterday.",
+      "Stretch first! I learned that one the hard way.",
+      "Every little bit adds up. That's how I got strong. Plus a lot of food.",
+      "Hey, wanna train? Of course you do. Let's go!",
+      "Whatever you're doing today, put your whole heart in it!",
+      "Don't worry about being the strongest. Just be stronger than last week!",
+      "You know what's great? Today's a brand new day to get better.",
+      "I'm feeling good today! You too? Let's put it to use!"
     ]
   },
+  "evening": [
+    "Hey! There's still training left today! Let's finish strong!",
+    "Before dinner... okay, after dinner. One more session?",
+    "The day's not over yet! We can still get it done!",
+    "Come on, just a bit more! Then we can rest.",
+    "You've got stuff left today. I'll cheer you on!",
+    "Last round of the day! Let's go!",
+    "It's getting late, but I've still got energy. You too?",
+    "Don't go to bed yet! There's still training to finish!"
+  ],
   "scenes": [
     {
       "level": 2,

@@ -54,6 +54,9 @@ object GameConfig {
     /** Most beans that can be held at once. */
     const val MAX_HEALING_BEANS = 3
 
+    /** Default time of the evening nudge, in minutes after midnight (21:00). */
+    const val EVENING_NUDGE_DEFAULT_MINUTES = 21 * 60
+
     /** Hour of the morning (0-23) when the app checks for a missed day and offers a bean. */
     const val MORNING_CHECK_HOUR = 8
 

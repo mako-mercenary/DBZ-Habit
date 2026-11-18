@@ -87,6 +87,29 @@ class ReminderScheduler(private val context: Context) {
         workManager.enqueueUniqueWork(MORNING_CHECK_WORK, policy, request)
     }
 
+    /**
+     * Turns the evening nudge on at [minutes] after midnight, or off. With
+     * [replace] a nudge already queued is moved to the new time; without it,
+     * one already queued is left alone (for app start).
+     */
+    fun updateEveningNudge(on: Boolean, minutes: Int, replace: Boolean) {
+        if (!on) {
+            workManager.cancelUniqueWork(EVENING_NUDGE_WORK)
+            Notifications.cancelEveningNudge(context)
+            return
+        }
+        scheduleEveningNudge(minutes, LocalDateTime.now(), if (replace) ExistingWorkPolicy.REPLACE else ExistingWorkPolicy.KEEP)
+    }
+
+    fun scheduleEveningNudge(minutes: Int, after: LocalDateTime, policy: ExistingWorkPolicy) {
+        val dueAt = ReminderTimes.nextOccurrence(after, com.saiyanhabits.domain.WeekSchedule.EVERY_DAY, minutes) ?: return
+        val request = OneTimeWorkRequestBuilder<EveningNudgeWorker>()
+            .setInitialDelay(delayUntil(dueAt))
+            .setInputData(workDataOf(EveningNudgeWorker.KEY_DUE_AT_MILLIS to dueAt.toEpochMillis()))
+            .build()
+        workManager.enqueueUniqueWork(EVENING_NUDGE_WORK, policy, request)
+    }
+
     private fun delayUntil(time: LocalDateTime): Duration =
         Duration.between(LocalDateTime.now(), time).coerceAtLeast(Duration.ZERO)
 
@@ -95,6 +118,7 @@ class ReminderScheduler(private val context: Context) {
 
     private companion object {
         const val MORNING_CHECK_WORK = "morning-check"
+        const val EVENING_NUDGE_WORK = "evening-nudge"
         fun reminderWorkName(habitId: Long) = "habit-reminder-$habitId"
     }
 }

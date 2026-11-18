@@ -1,5 +1,9 @@
 package com.saiyanhabits.ui.settings
 
+import androidx.compose.foundation.layout.Box
+
+import androidx.compose.foundation.selection.toggleable
+
 import com.saiyanhabits.ui.components.DbzSecondaryButton
 import com.saiyanhabits.ui.components.DbzPrimaryButton
 import com.saiyanhabits.ui.components.PanelStyle
@@ -85,6 +89,12 @@ fun SettingsScreen(
     onImport: (android.net.Uri) -> Unit,
     onConfirmImport: () -> Unit,
     onCancelImport: () -> Unit,
+    nudgeOn: Boolean,
+    nudgeMinutes: Int,
+    onNudge: (Boolean) -> Unit,
+    onNudgeTime: (Int) -> Unit,
+    soundOn: Boolean,
+    onSound: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     val waiting = wishes.filter { it.grantedAtEpochDay == null }
@@ -150,6 +160,16 @@ fun SettingsScreen(
         DbzSecondaryButton(onClick = onOpenArt, modifier = Modifier.fillMaxWidth()) { Text("Choose images") }
 
         Spacer(Modifier.height(12.dp))
+        SectionLabel("Extras")
+        EveningNudgeRow(nudgeOn, nudgeMinutes, onNudge, onNudgeTime)
+        SwitchRow(
+            title = "Sound effects",
+            detail = "Check-offs, boss hits, transformations and more.",
+            checked = soundOn,
+            onChange = onSound,
+        )
+
+        Spacer(Modifier.height(12.dp))
         DataSection(data, onExport, onImport, onConfirmImport, onCancelImport)
 
         Spacer(Modifier.height(12.dp))
@@ -210,3 +230,71 @@ private fun NotificationSettings() {
         modifier = Modifier.fillMaxWidth(),
     ) { Text("Open notification settings") }
 }
+
+@Composable
+private fun EveningNudgeRow(on: Boolean, minutes: Int, onToggle: (Boolean) -> Unit, onTime: (Int) -> Unit) {
+    var picking by rememberSaveable { mutableStateOf(false) }
+    SwitchRow(
+        title = "Evening nudge",
+        detail = if (on) {
+            "At ${com.saiyanhabits.ui.habits.formatReminderTime(minutes)}, if today's training isn't finished, " +
+                "a mentor tells you what's left."
+        } else {
+            "Off."
+        },
+        checked = on,
+        onChange = onToggle,
+        trailing = if (on) {
+            { androidx.compose.material3.TextButton(onClick = { picking = true }) { Text("Change time", color = SaiyanColors.Orange) } }
+        } else {
+            null
+        },
+    )
+    if (picking) {
+        com.saiyanhabits.ui.habits.ReminderTimeDialog(
+            initialMinutes = minutes,
+            onConfirm = {
+                onTime(it)
+                picking = false
+            },
+            onDismiss = { picking = false },
+        )
+    }
+}
+
+/** A setting that is on or off; the whole row flips it. */
+@Composable
+private fun SwitchRow(
+    title: String,
+    detail: String,
+    checked: Boolean,
+    onChange: (Boolean) -> Unit,
+    trailing: (@Composable () -> Unit)? = null,
+) {
+    DbzPanel(style = PanelStyle.Blue, modifier = Modifier.fillMaxWidth()) {
+        Column {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .settingToggle(checked, onChange)
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(title, style = MaterialTheme.typography.titleMedium)
+                    Text(detail, style = MaterialTheme.typography.bodySmall, color = SaiyanColors.TextDim)
+                }
+                androidx.compose.material3.Switch(checked = checked, onCheckedChange = null, modifier = Modifier.padding(start = 12.dp))
+            }
+            if (trailing != null) Box(Modifier.padding(start = 6.dp, bottom = 4.dp)) { trailing() }
+        }
+    }
+}
+
+private fun Modifier.settingToggle(checked: Boolean, onChange: (Boolean) -> Unit): Modifier =
+    this.then(
+        Modifier.toggleable(
+            value = checked,
+            role = androidx.compose.ui.semantics.Role.Switch,
+            onValueChange = onChange,
+        ),
+    )

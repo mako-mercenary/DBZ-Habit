@@ -9,7 +9,15 @@
       "You broke the pattern. Start a new one. Now.",
       "I waited. You did not come. I'm still waiting.",
       "Missing once is nothing. Getting comfortable with it is everything.",
-      "Hmph. No lecture. Begin."
+      "Hmph. No lecture. Begin.",
+      "Absence noted. Excuses not required.",
+      "You lost a day. Don't lose another looking for it.",
+      "Distraction won yesterday. It does not win twice.",
+      "Discipline is a promise to yourself. You broke one. Keep the next.",
+      "No training. No progress. Simple arithmetic.",
+      "I don't need you to feel bad. I need you to sit down and focus.",
+      "Hmph. Yesterday you let the noise win.",
+      "Begin again. Quietly."
     ],
     "comeback": [
       "You returned. Good.",
@@ -19,7 +27,15 @@
       "The lapse is over. Don't carry it into the session.",
       "Better. Again tomorrow.",
       "You sat down without being told. Progress.",
-      "A mind that returns is a trained mind. That is all training is."
+      "A mind that returns is a trained mind. That is all training is.",
+      "You're here. Focus. That's all I ask.",
+      "Good. The gap is closed. Don't open it again.",
+      "I won't mention yesterday. You'll remember it anyway.",
+      "Returning is a skill. You have it. Need it less.",
+      "Back. Sit. Breathe. Work.",
+      "Hmph. You came back without being dragged. Noted.",
+      "Discipline lost, discipline regained. Now hold it.",
+      "Your focus wandered off. It found its way home. Good."
     ],
     "streak_milestone": [
       "{streak} days. Acceptable.",
@@ -29,7 +45,15 @@
       "Hmph. {streak}. Don't let it make you careless.",
       "{streak} days of quiet work. Few manage ten.",
       "{streak}. I expected less of you. I was wrong.",
-      "A {streak}-day streak. Don't look at me. Keep going."
+      "A {streak}-day streak. Don't look at me. Keep going.",
+      "{streak} days. The mind sharpens with use.",
+      "{streak}. You're quieter now. That is strength.",
+      "{streak} days of focus. Don't speak of it. Continue.",
+      "Hmph. {streak} days. I am... satisfied.",
+      "{streak} days. Distraction has stopped trying.",
+      "{streak} in a row. You're no longer fighting yourself.",
+      "{streak} days. Don't admire the number. Admire nothing. Work.",
+      "{streak}. Good. Patience compounds."
     ],
     "boss_defeated": [
       "{boss} is finished. Clean work.",
@@ -39,7 +63,15 @@
       "You saw where {boss} was weak and kept at it. Good eyes.",
       "{boss} fell to discipline, not luck. Remember which.",
       "A long fight, well held. I have nothing to correct.",
-      "Good. Now rest your mind. It did most of the fighting."
+      "Good. Now rest your mind. It did most of the fighting.",
+      "{boss} lost to your patience. Most do.",
+      "Hmph. {boss} is defeated. Your focus never broke.",
+      "You were calm against {boss}. Calm wins wars.",
+      "{boss} is beaten. Now meditate. Victory clouds the mind.",
+      "Well done. {boss} never understood what consistency can do.",
+      "A clean finish against {boss}. I watched all of it.",
+      "{boss} is gone. Don't gloat. Prepare.",
+      "Hmph. I expected {boss} to last longer. You've grown."
     ],
     "idle": [
       "Sit. Breathe. Then work.",
@@ -49,9 +81,27 @@
       "Don't wait to feel ready. Ready comes after you begin.",
       "Your enemy today is the urge to check something else.",
       "Stillness first. Speed later.",
-      "I'm watching. Don't perform. Work."
+      "I'm watching. Don't perform. Work.",
+      "Clear the mind. Then fill it with one thing.",
+      "Phone down. Task up.",
+      "Focus is a muscle. Train it.",
+      "A quiet hour is worth more than a busy day.",
+      "Silence the rest. Do this.",
+      "Your attention is your strength. Don't spend it cheaply.",
+      "One breath. One task. Begin.",
+      "Everything else can wait. It always has."
     ]
   },
+  "evening": [
+    "The day isn't finished. Neither are you.",
+    "Unfinished training. Finish it.",
+    "Evening. You have tasks left. Focus.",
+    "Before you rest, complete what you began.",
+    "The night is quiet. Use it.",
+    "Hmph. Still something left. Do it now.",
+    "Don't let the day end on a loose thread.",
+    "Finish. Then sleep."
+  ],
   "scenes": [
     {
       "level": 2,

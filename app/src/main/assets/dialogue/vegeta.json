@@ -9,7 +9,15 @@
       "Don't give me reasons. A warrior has results or he has nothing.",
       "You call yourself my rival and then vanish for a day. Insulting.",
       "Tch. Weakness. Get up. I refuse to be chased by someone who stops.",
-      "One day of nothing. I've seen whole armies fall from less."
+      "One day of nothing. I've seen whole armies fall from less.",
+      "You skipped training. A Saiyan would rather die. You'd rather sleep. Noted.",
+      "Yesterday you did nothing. Today you do double, or I'll never let you forget it.",
+      "Weakness is a choice. Yesterday, you chose it.",
+      "I wait for no one. But I'll make an exception to watch you fix this.",
+      "Do you think your enemies rested yesterday? Hmph.",
+      "A day lost. A prince never loses days. He takes them.",
+      "Pathetic. Now prove me wrong.",
+      "If you're going to fail, at least fail while training."
     ],
     "comeback": [
       "Hmph. So you crawled back. Fine. At least you're not a quitter.",
@@ -19,7 +27,15 @@
       "Good. I had nobody worth beating while you were gone.",
       "So there's some pride in you after all.",
       "You fell and stood up. That's a Saiyan habit. Where did you learn it?",
-      "Don't thank me. I didn't wait for you. I simply noticed you were back."
+      "Don't thank me. I didn't wait for you. I simply noticed you were back.",
+      "Hmph. You're back. Show me you deserve to be.",
+      "Good. I'd hate to have a quitter for a rival.",
+      "You returned. Out of pride, I hope, not fear.",
+      "So you've decided to keep fighting. Wise.",
+      "Back on your feet. Now stay there.",
+      "Hmph. The prince acknowledges your return. Briefly.",
+      "You came back. That's the only answer to defeat.",
+      "Don't bore me with apologies. Train."
     ],
     "streak_milestone": [
       "{streak} days. Don't get smug. I've held a streak since before you could count.",
@@ -29,7 +45,15 @@
       "{streak} days. You're still beneath me. But the distance is no longer funny.",
       "{streak}. Tch. Now I'll have to train harder. I hope you're pleased with yourself.",
       "{streak} days of the hardest thing you do. That takes pride. I recognise pride.",
-      "{streak}. Not bad. If you repeat that to anyone I'll deny it."
+      "{streak}. Not bad. If you repeat that to anyone I'll deny it.",
+      "{streak} days. Hmph. You may yet be worthy of my rivalry.",
+      "{streak} days straight. I'll admit you're more stubborn than I thought.",
+      "{streak} days. A Saiyan's pride grows with every one. Grow it.",
+      "{streak}. Don't celebrate. Real warriors are never satisfied.",
+      "A {streak}-day streak. Fine. You've earned a nod. Just the one.",
+      "{streak} days. You're starting to make this interesting.",
+      "{streak} days without weakness. Keep it that way.",
+      "{streak}. Tch. I've done better. But you're closer than anyone else."
     ],
     "boss_defeated": [
       "You beat {boss}. I'd have done it faster. But you did it.",
@@ -39,7 +63,15 @@
       "{boss} is gone. One less fool between me and a proper challenge. You, perhaps.",
       "You won. I watched all of it. I was not bored.",
       "A real victory. Enjoy it for one night. A prince allows himself one night.",
-      "{boss} defeated. You're beginning to be worth my time."
+      "{boss} defeated. You're beginning to be worth my time.",
+      "{boss} is finished. You fought like you meant it. Finally.",
+      "Hmph. {boss} was beneath you. Don't let it go to your head.",
+      "You crushed {boss}. Now find something stronger.",
+      "{boss} defeated. A prince notices these things.",
+      "You destroyed {boss}. Not bad. Not bad at all.",
+      "{boss} was an obstacle. You removed it. That's all victory is.",
+      "{boss} has fallen. Now you know the taste of victory. Want more?",
+      "So {boss} is gone. I trust you didn't hold back."
     ],
     "idle": [
       "The hardest thing first. Everything after it is beneath you.",
@@ -49,9 +81,27 @@
       "Pride isn't a feeling. It's what you do when nobody is making you.",
       "Tch. Stop stalling. The dread is worse than the task.",
       "I'm ahead of you. I intend to stay there. Prove me wrong.",
-      "Do it or don't. But don't stand there deciding all day."
+      "Do it or don't. But don't stand there deciding all day.",
+      "Train like you have something to prove. You do.",
+      "Comfort is the enemy. Destroy it.",
+      "Push hard. Then harder than that.",
+      "I didn't become a prince by taking it easy.",
+      "Your limits are a suggestion. Ignore them.",
+      "Every day you skip, I get further ahead.",
+      "Pride is earned in the hours nobody sees.",
+      "Enough waiting. Fight."
     ]
   },
+  "evening": [
+    "The day isn't over. Neither is your training. Move.",
+    "You still have work left. A prince never sleeps on unfinished business.",
+    "Don't you dare end the day weak.",
+    "Hmph. Still not done? Finish it.",
+    "Night is no excuse. Train.",
+    "You still have time. Use it, or admit defeat.",
+    "Finish what you started today. No excuses.",
+    "I'm still training. Are you?"
+  ],
   "scenes": [
     {
       "level": 2,

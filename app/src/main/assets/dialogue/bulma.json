@@ -9,7 +9,15 @@
       "Yesterday you built nothing. Do you know how many things I built yesterday? Don't answer.",
       "Stalled engines don't restart themselves. Turn the key.",
       "I had my whole schedule arranged around you being useful. Rude.",
-      "One missed day is noise. Don't let it turn into a trend line."
+      "One missed day is noise. Don't let it turn into a trend line.",
+      "Yesterday's log is blank. That's not minimalism, that's neglect.",
+      "A missed day is a bug. Bugs get fixed. Today.",
+      "I could build a robot that never skips. Want one? Kidding. Get to work.",
+      "No progress yesterday. My projections didn't allow for that. Don't make me redo them.",
+      "Even capsules need maintenance. Treat today as maintenance.",
+      "One blank day. If you were a machine I'd send you in for repairs.",
+      "Look, everything breaks down sometimes. The well-built things restart.",
+      "One missed day isn't a disaster. Two is a pattern. I hate bad patterns."
     ],
     "comeback": [
       "Oh good, you're back online. I was about to file a report.",
@@ -19,7 +27,15 @@
       "Back at it. Good. I wasn't worried. I was mildly inconvenienced.",
       "There we go. Progress bar's moving again. I love a moving progress bar.",
       "You picked it back up. Most people leave things in a drawer for six years.",
-      "Welcome back, genius. Slightly-less-than-me genius. Still counts."
+      "Welcome back, genius. Slightly-less-than-me genius. Still counts.",
+      "System rebooted. Running smoothly. I knew the hardware was fine.",
+      "Back already? Great. I've just recalibrated your training. You're welcome.",
+      "Look who's productive again. Took you long enough. One day. Fine, that's quick.",
+      "Welcome back. I upgraded your to-do list while you were gone. It's longer now.",
+      "Good! The momentum's back. Never waste momentum.",
+      "See? A quick fix and you're running again. Genius design, if I say so myself.",
+      "Back to work. Honestly, it suits you.",
+      "You're back! Don't look so surprised. I predicted it."
     ],
     "streak_milestone": [
       "{streak} days running. That's not luck, that's a system. I approve of systems.",
@@ -29,7 +45,15 @@
       "{streak} in a row. Keep this up and I might let you touch the expensive equipment.",
       "{streak} days. Consistent, reliable, well built. I'm describing you, not the car.",
       "{streak}! Okay, I'm impressed. Write that down, I won't say it again.",
-      "{streak} days. This is what a good design looks like when it's running."
+      "{streak} days. This is what a good design looks like when it's running.",
+      "{streak} days! I'm adding you to my list of successful experiments.",
+      "{streak} days straight. Even my inventions need more downtime than you.",
+      "{streak} days. Efficient, consistent, reliable. You're practically a capsule.",
+      "A {streak}-day streak! I'd give you an award, but I'd have to invent one first.",
+      "{streak} days in a row! Your data looks gorgeous. I mean that scientifically.",
+      "Okay, {streak} days is genuinely impressive. Don't tell Vegeta I said so.",
+      "{streak} days! You know what that proves? Good systems beat good intentions.",
+      "{streak} days. I'm framing this graph."
     ],
     "boss_defeated": [
       "{boss} is scrap! You broke the problem into parts and took the parts apart. Textbook.",
@@ -39,7 +63,15 @@
       "Done and shipped. That's the difference between an idea and an invention.",
       "{boss} is down and I only had to help a little. Fine, I didn't help. Still.",
       "A big project, start to finish. That's worth more than a hundred clever starts.",
-      "Now that was smart work. Take the evening off. Tomorrow, something bigger."
+      "Now that was smart work. Take the evening off. Tomorrow, something bigger.",
+      "{boss} is defeated! Another project completed. Love that for you.",
+      "You beat {boss}! Next time let me plan the strategy. Kidding. Mostly.",
+      "{boss}, finished. Milestone by milestone. That's how real engineering works.",
+      "Victory over {boss}! I'm updating the records. With a gold star.",
+      "{boss} is down! Most people abandon big projects halfway. Not you.",
+      "Done! {boss} was a big one, and you shipped it anyway.",
+      "Great job on {boss}! Now, I've got a new project for you...",
+      "{boss} defeated! I'd say I'm surprised, but I'm a genius, so I saw it coming."
     ],
     "idle": [
       "What are we building today? And don't say 'nothing'.",
@@ -49,9 +81,27 @@
       "Clever beats strong. Finished beats clever.",
       "Stop admiring the plan and pick up a wrench.",
       "The boring part of the project is still the project.",
-      "Come on, I haven't got all day. Well, I have, but I've got plans for it."
+      "Come on, I haven't got all day. Well, I have, but I've got plans for it.",
+      "Today's agenda: build something. Anything. Just build.",
+      "A good inventor finishes things. Be a good inventor.",
+      "Write it down. Break it down. Knock it down.",
+      "Progress is progress, even when it's tiny. Especially then.",
+      "You don't need a perfect plan. You need a first step.",
+      "I've got coffee and ideas. You've got work to do.",
+      "Stuck? Work on the smallest part. It unsticks everything else.",
+      "Make today something you'd want to show off. I always do."
     ]
   },
+  "evening": [
+    "Status report: today isn't finished yet. Let's close it out.",
+    "You've got open tasks. I hate open tasks. Close them.",
+    "End-of-day check: something's still pending. Fix that.",
+    "Nearly bedtime! Wrap up your training, then log off.",
+    "One last push before the day shuts down.",
+    "Unfinished business? Not on my watch.",
+    "Your progress bar for today isn't at a hundred. Yet.",
+    "Finish it now, sleep better later. Trust the science."
+  ],
   "scenes": [
     {
       "level": 2,

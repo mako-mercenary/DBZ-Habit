@@ -363,6 +363,9 @@ fun SaiyanHabitsRoot() {
                     }
                 }
                 composable(Routes.SETTINGS) {
+                    val nudgeOn by app.prefs.eveningNudge.collectAsStateWithLifecycle()
+                    val nudgeMinutes by app.prefs.eveningNudgeMinutes.collectAsStateWithLifecycle()
+                    val soundOn by app.prefs.sound.collectAsStateWithLifecycle()
                     val dataState by dataViewModel.state.collectAsStateWithLifecycle()
                     SettingsScreen(
                         wishes = wishes,
@@ -374,6 +377,18 @@ fun SaiyanHabitsRoot() {
                         onImport = dataViewModel::check,
                         onConfirmImport = dataViewModel::confirmImport,
                         onCancelImport = dataViewModel::cancelImport,
+                        nudgeOn = nudgeOn,
+                        nudgeMinutes = nudgeMinutes,
+                        onNudge = { on ->
+                            app.prefs.setEveningNudge(on)
+                            app.reminders.updateEveningNudge(on, app.prefs.eveningNudgeMinutes.value, replace = true)
+                        },
+                        onNudgeTime = { minutes ->
+                            app.prefs.setEveningNudgeMinutes(minutes)
+                            app.reminders.updateEveningNudge(app.prefs.eveningNudge.value, minutes, replace = true)
+                        },
+                        soundOn = soundOn,
+                        onSound = app.prefs::setSound,
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
                     )
                 }
