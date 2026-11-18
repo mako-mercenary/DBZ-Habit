@@ -7,6 +7,7 @@ import com.saiyanhabits.domain.AchievementRules
 import com.saiyanhabits.domain.AchievementStats
 import com.saiyanhabits.domain.DayOutcome
 import com.saiyanhabits.domain.HistoryRules
+import com.saiyanhabits.domain.MiniGame
 import com.saiyanhabits.domain.PowerCalculator
 import com.saiyanhabits.domain.PowerSource
 import com.saiyanhabits.domain.Weeks
@@ -92,7 +93,16 @@ class AchievementRepository(
             wishesGranted = dao.wishesGranted(),
             notesWritten = dao.notesWritten(),
             bestHabitStreak = habits.habitStreaks.first().values.maxOrNull() ?: 0,
-        )
+        ).let { stats ->
+            val plays = db.gameDao().getAll().groupBy { it.game }
+            stats.copy(
+                hoverBikeBest = plays[MiniGame.HOVER_BIKE]?.maxOf { it.score } ?: 0,
+                meditationMinutes = (plays[MiniGame.MEDITATION]?.sumOf { it.score } ?: 0) / 60,
+                fishCaught = plays[MiniGame.FISHING]?.map { it.detail }?.toSet().orEmpty(),
+                chessWinsAt = plays[MiniGame.CHESS]?.filter { it.score > 0 }?.map { it.detail.substringBefore(':') }?.toSet().orEmpty(),
+                rhythmLevelsDone = plays[MiniGame.RHYTHM]?.map { it.detail.substringAfter('|') }?.toSet().orEmpty(),
+            )
+        }
     }
 
     private companion object {

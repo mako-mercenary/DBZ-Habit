@@ -21,6 +21,16 @@ data class AchievementStats(
     val notesWritten: Int = 0,
     /** The longest any single habit's own streak has reached right now. */
     val bestHabitStreak: Int = 0,
+    /** Longest hover-bike run, in metres. */
+    val hoverBikeBest: Long = 0,
+    /** Minutes meditated in all. */
+    val meditationMinutes: Long = 0,
+    /** Kinds of fish caught, by name. */
+    val fishCaught: Set<String> = emptySet(),
+    /** Levels Roshi has been beaten on, by name. */
+    val chessWinsAt: Set<String> = emptySet(),
+    /** Rhythm levels a song has been finished on, by name. */
+    val rhythmLevelsDone: Set<String> = emptySet(),
 )
 
 /** What an achievement is about, for grouping on the screen. */
@@ -30,6 +40,7 @@ enum class AchievementGroup(val title: String) {
     POWER("Power"),
     BATTLES("Battles"),
     BONDS("Bonds"),
+    GAMES("Mini games"),
     LEGEND("Legend"),
 }
 
@@ -80,6 +91,13 @@ enum class Achievement(
     WHOLE_TEAM("The whole team", "Reach bond level 5 with every mentor", AchievementGroup.BONDS, Mentor.entries.size.toLong(), { s -> Mentor.entries.count { (s.bondLevels[it] ?: 1) >= 5 }.toLong() }),
     MASTERED("Student becomes master", "Reach bond level 10 with a mentor", AchievementGroup.BONDS, 1, { s -> s.bondLevels.values.count { it >= 10 }.toLong() }),
     ALL_MASTERED("Master of masters", "Reach bond level 10 with every mentor", AchievementGroup.BONDS, Mentor.entries.size.toLong(), { s -> Mentor.entries.count { (s.bondLevels[it] ?: 1) >= 10 }.toLong() }),
+
+    RUSH_HOUR("Rush hour", "Ride 1,000 m on Bulma's hover bike", AchievementGroup.GAMES, 1000, { it.hoverBikeBest }),
+    INNER_PEACE("Inner peace", "Meditate with Piccolo for 60 minutes in all", AchievementGroup.GAMES, 60, { it.meditationMinutes }),
+    MASTER_ANGLER("Master angler", "Catch every kind of fish with Goku", AchievementGroup.GAMES, 7, { it.fishCaught.size.toLong() }),
+    THE_BIG_ONE("The one that didn't get away", "Catch the giant river beast", AchievementGroup.GAMES, 1, { if ("GIANT" in it.fishCaught) 1 else 0 }),
+    CHECKMATE("Checkmate, old man", "Beat Roshi at chess on Serious", AchievementGroup.GAMES, 1, { if ("SERIOUS" in it.chessWinsAt) 1 else 0 }),
+    HUNDRED_GRAVITY("A hundred times gravity", "Finish a song on Hard in the gravity room", AchievementGroup.GAMES, 1, { if ("HARD" in it.rhythmLevelsDone) 1 else 0 }),
 
     STORYTELLER("The whole story", "Read every story chapter", AchievementGroup.LEGEND, StoryRules.CHAPTER_COUNT.toLong(), { it.chaptersRead.toLong() }),
     FIRST_WISH("Your wish is granted", "Claim a wish from the dragon", AchievementGroup.LEGEND, 1, { it.wishesGranted.toLong() }),

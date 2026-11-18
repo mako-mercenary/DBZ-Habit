@@ -271,6 +271,9 @@ interface GameDao {
     @Query("SELECT * FROM minigame_plays ORDER BY createdAtMillis DESC")
     fun observeAll(): Flow<List<MinigamePlayEntity>>
 
+    @Query("SELECT * FROM minigame_plays")
+    suspend fun getAll(): List<MinigamePlayEntity>
+
     @Query("SELECT COALESCE(SUM(bondXp), 0) FROM minigame_plays WHERE mentor = :mentor AND epochDay = :epochDay")
     suspend fun bondXpOn(mentor: com.saiyanhabits.domain.Mentor, epochDay: Long): Int
 

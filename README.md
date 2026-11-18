@@ -16,6 +16,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 7 | Data export/import, final debug APK | Done |
 | 8 | History screen, weekly recap | Done |
 | 9 | Flexible habits, day notes, achievements, widget, evening nudge, more mentor lines, sound | Done |
+| 10 | Mini games with the mentors | Done |
 
 ## Build
 
@@ -185,7 +186,7 @@ calendar.
 
 ## Achievements and titles
 
-35 achievements, for check-offs, perfect days, streaks, power level, forms,
+41 achievements, for check-offs, perfect days, streaks, power level, forms,
 bosses, spirit bombs, the time chamber, bonds, the story, wishes and notes.
 They are worked out from what's already in the app, so past training counts.
 The number unlocked earns a title, shown under the power level; tap it to see
@@ -214,6 +215,33 @@ Settings > Extras:
   [`SOUND_LIST.md`](SOUND_LIST.md); to use your own, put the file in
   `app/src/main/assets/sound/`, point its key at it in `manifest.json` there,
   and rebuild.
+
+## Mini games
+
+A game with each mentor, from the controller icon on the home screen or the
+Train button on a mentor's page. Each finished game gives that mentor 10 bond
+XP, up to 20 a day per mentor (in `GameConfig.kt`), so games add to the bond
+without replacing check-offs.
+
+- **Roshi: chess.** You play white against four levels, from napping to
+  serious. Hints, take-backs, promotion, resigning; the game saves itself. The
+  engine is in `domain/games/Chess.kt` and is checked against the standard
+  perft move counts.
+- **Piccolo: meditation.** Guided breathing (calm 4-6, box, 4-7-8) for 1 to 10
+  minutes, with an aura that swells and settles with each breath and a soft
+  vibration at each change. Afterwards you can tick off one of today's habits.
+- **Goku: fishing.** Charge a cast, strike when the bobber dips, then reel
+  while keeping the line between slack and snapping. Seven fish, a fish log.
+- **Vegeta: gravity-room rhythm.** Tap four lanes in time with a song. Notes
+  are made from the music itself (beat detection), more of them on harder
+  levels; combos raise the gravity up to 100x. Songs are listed in
+  `app/src/main/assets/music/manifest.json` (title and file; MP3, WAV, OGG or
+  M4A). A song is analysed once, the first time it's played.
+- **Bulma: hover-bike run.** Tilt the phone (or hold a side) to weave through
+  West City traffic, grabbing capsules and boosts.
+
+The mentors' lines during their games are in the dialogue files under `game`,
+`game_done` and `game_lost`.
 
 ## Look
 
