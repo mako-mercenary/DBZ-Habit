@@ -27,9 +27,9 @@ import kotlin.math.sin
 /** Road width in metres; the rules' 0..1 across maps onto it. */
 private const val ROAD_WIDTH = 10f
 private const val PAVEMENT = 4f
-private const val CAM_HEIGHT = 2.6f
+private const val CAM_HEIGHT = 3.2f
 /** How far behind the bike the camera sits. */
-private const val CAM_BACK = 5f
+private const val CAM_BACK = 8.5f
 private const val FAR = 170f
 /** Things beyond this start to fade into the haze. */
 private const val HAZE_FROM = 90f
@@ -45,10 +45,10 @@ private data class Projected(val x: Float, val y: Float, val scale: Float)
 
 /** Everything the camera needs for one frame. */
 private class Camera(val w: Float, val h: Float, bikeX: Float) {
-    val horizon = h * 0.36f
+    val horizon = h * 0.38f
     val focal = h * 0.9f
     /** The camera drifts with the bike, but less, so turns feel like turns. */
-    val camX = (bikeX - 0.5f) * ROAD_WIDTH * 0.55f
+    val camX = (bikeX - 0.5f) * ROAD_WIDTH * 0.8f
 
     /** [x] metres across (0 = road centre), [y] up, [ahead] metres in front of the bike. */
     fun project(x: Float, y: Float, ahead: Float): Projected? {
@@ -244,7 +244,6 @@ private fun DrawScope.drawBuilding(cam: Camera, x: Float, ahead: Float, kind: In
         val hgt = 10f * s
         drawOval(Color(0xFFFAF7EE).copy(alpha = alpha), Offset(base.x - w / 2, base.y - hgt * 1.6f), Size(w, hgt * 2f))
         drawRect(Color(0xFF8CCBFF).copy(alpha = alpha), Offset(base.x - w / 2, base.y - hgt * 0.42f), Size(w, hgt * 0.16f))
-        drawRect(Color(0xFF8BC34A), Offset(base.x - w / 2 - 2f, base.y), Size(w + 4f, hgt * 0.7f))
         if (s > 6f) {
             drawCircle(Color(0xFF263238).copy(alpha = alpha), hgt * 0.16f, Offset(base.x, base.y - hgt * 1.05f), style = Stroke(hgt * 0.04f))
         }
