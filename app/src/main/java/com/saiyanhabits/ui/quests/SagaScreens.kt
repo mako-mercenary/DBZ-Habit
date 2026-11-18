@@ -295,9 +295,11 @@ fun SagaDetailScreen(
     val hit = remember { Animatable(1f) }
     var lastHit by remember { mutableStateOf<StrikeResult?>(null) }
     val haptics = LocalHapticFeedback.current
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
     LaunchedEffect(lastHit) {
         if (lastHit == null) return@LaunchedEffect
         haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+        sounds?.play(com.saiyanhabits.sound.SoundKey.BOSS_HIT)
         hit.snapTo(0f)
         hit.animateTo(1f, tween(GameConfig.BOSS_HIT_MILLIS, easing = LinearEasing))
     }

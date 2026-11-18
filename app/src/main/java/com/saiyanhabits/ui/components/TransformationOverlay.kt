@@ -66,7 +66,9 @@ fun TransformationOverlay(
     val haptics = LocalHapticFeedback.current
     val shakeReach = with(LocalDensity.current) { 14.dp.toPx() }
 
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
     LaunchedEffect(Unit) {
+        sounds?.play(com.saiyanhabits.sound.SoundKey.TRANSFORMATION)
         progress.animateTo(1f, tween(GameConfig.TRANSFORMATION_MILLIS, easing = LinearEasing))
         shake(Offset.Zero)
         finish()

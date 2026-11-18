@@ -1,0 +1,9 @@
+{
+  "check_off": "check_off.wav",
+  "boss_hit": "boss_hit.wav",
+  "victory": "victory.wav",
+  "transformation": "transformation.wav",
+  "bomb_throw": "bomb_throw.wav",
+  "level_up": "level_up.wav",
+  "dragon_summon": "dragon_summon.wav"
+}

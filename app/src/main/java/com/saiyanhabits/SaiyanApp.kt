@@ -51,6 +51,8 @@ class SaiyanApp : Application() {
 
     val prefs: com.saiyanhabits.data.AppPrefs by lazy { com.saiyanhabits.data.AppPrefs(this) }
 
+    val sounds: com.saiyanhabits.sound.SoundPlayer by lazy { com.saiyanhabits.sound.SoundPlayer(this, prefs.sound) }
+
     val timeChamber: TimeChamber by lazy { TimeChamber(this, habitRepository, questRepository) }
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -58,6 +60,8 @@ class SaiyanApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Notifications.ensureChannels(this)
+        // Load the sound effects now, so the first one is ready when it's needed.
+        appScope.launch { sounds }
         appScope.launch {
             habitRepository.syncDays()
             reminders.ensureScheduled(habitRepository.getActiveHabits())

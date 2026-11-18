@@ -5,6 +5,10 @@ plugins {
 }
 
 android {
+    // Sound effects are played straight from the APK, which needs them stored uncompressed.
+    androidResources {
+        noCompress += listOf("wav", "mp3", "ogg", "m4a")
+    }
     namespace = "com.saiyanhabits"
     compileSdk = 37
 

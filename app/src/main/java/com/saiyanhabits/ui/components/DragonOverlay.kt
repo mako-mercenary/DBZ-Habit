@@ -81,7 +81,9 @@ fun DragonOverlay(
     var confirming by remember { mutableStateOf<WishEntity?>(null) }
     var granted by remember { mutableStateOf<WishEntity?>(null) }
 
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
     LaunchedEffect(Unit) {
+        sounds?.play(com.saiyanhabits.sound.SoundKey.DRAGON_SUMMON)
         rise.animateTo(1f, tween(GameConfig.DRAGON_SUMMON_MILLIS, easing = LinearEasing))
     }
     LaunchedEffect(Unit) {

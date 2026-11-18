@@ -50,7 +50,9 @@ import kotlin.math.sin
 fun VictoryOverlay(sagaName: String, boss: Boss, bonus: Int, onDismiss: () -> Unit) {
     val progress = remember { Animatable(0f) }
     val haptics = LocalHapticFeedback.current
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
     LaunchedEffect(Unit) {
+        sounds?.play(com.saiyanhabits.sound.SoundKey.VICTORY)
         progress.animateTo(1f, tween(GameConfig.VICTORY_MILLIS, easing = LinearEasing))
     }
     LaunchedEffect(Unit) {

@@ -197,8 +197,11 @@ fun SaiyanHabitsRoot() {
             is com.saiyanhabits.data.AchievementNews.Backdated -> launch {
                 snackbars.showSnackbar("Your past training already earned ${news.count} achievements. Tap your title to see them.")
             }
-            is com.saiyanhabits.data.AchievementNews.Unlocked -> news.achievements.forEach { achievement ->
-                launch { snackbars.showSnackbar("Achievement unlocked: ${achievement.title}") }
+            is com.saiyanhabits.data.AchievementNews.Unlocked -> {
+                app.sounds.play(com.saiyanhabits.sound.SoundKey.LEVEL_UP)
+                news.achievements.forEach { achievement ->
+                    launch { snackbars.showSnackbar("Achievement unlocked: ${achievement.title}") }
+                }
             }
         }
     }
@@ -245,6 +248,12 @@ fun SaiyanHabitsRoot() {
         }
     }
 
+    // A sound for every check-off.
+    LaunchedEffect(homeViewModel) {
+        homeViewModel.gains.collect { app.sounds.play(com.saiyanhabits.sound.SoundKey.CHECK_OFF) }
+    }
+
+    androidx.compose.runtime.CompositionLocalProvider(com.saiyanhabits.sound.LocalSoundPlayer provides app.sounds) {
     Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
         // Your background behind every screen, under a scrim so the cards stay readable.
         ArtImage(
@@ -640,6 +649,7 @@ fun SaiyanHabitsRoot() {
             )
         }
     }
+    }
 }
 
 /** What to tell the player when a bond level is gained. */
@@ -647,6 +657,8 @@ private data class BondLevelUpNotice(val mentor: Mentor, val level: Int, val sce
 
 @Composable
 private fun BondLevelUpDialog(notice: BondLevelUpNotice, onView: () -> Unit, onDismiss: () -> Unit) {
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
+    LaunchedEffect(notice) { sounds?.play(com.saiyanhabits.sound.SoundKey.LEVEL_UP) }
     val mentor = notice.mentor
     val technique = BondRules.techniqueUnlockedAt(mentor, notice.level)
     AlertDialog(

@@ -169,6 +169,7 @@ fun BombDetailScreen(
     onAbandon: () -> Unit,
     onBack: () -> Unit,
 ) {
+    val sounds = com.saiyanhabits.sound.LocalSoundPlayer.current
     val active = bomb.status == QuestStatus.ACTIVE
     val fraction = SpiritBombRules.fraction(bomb.progress, bomb.target)
     val ready = active && SpiritBombRules.isReadyToThrow(bomb.progress, bomb.target)
@@ -197,6 +198,7 @@ fun BombDetailScreen(
                     enabled = !flight.isRunning,
                     onClick = {
                         haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                        sounds?.play(com.saiyanhabits.sound.SoundKey.BOMB_THROW)
                         scope.launch {
                             flight.animateTo(1f, tween(GameConfig.BOMB_THROW_MILLIS, easing = FastOutLinearInEasing))
                             onThrow { thrownBonus = it }
