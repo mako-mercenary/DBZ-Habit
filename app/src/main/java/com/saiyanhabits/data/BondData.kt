@@ -73,11 +73,13 @@ interface BondDao {
     suspend fun insertExcuse(excuse: HabitExcuseEntity)
 }
 
-/** Bond XP per mentor: from check-offs, plus finished mini games. */
+/** Bond XP per mentor: from check-offs, finished mini games, journal entries (Bulma's) and calls. */
 private const val BOND_XP =
     "SELECT mentor AS mentor, SUM(xp) AS xp FROM (" +
         "SELECT mentor, bondXp AS xp FROM completions WHERE mentor IS NOT NULL " +
-        "UNION ALL SELECT mentor, bondXp AS xp FROM minigame_plays) GROUP BY mentor"
+        "UNION ALL SELECT mentor, bondXp AS xp FROM minigame_plays " +
+        "UNION ALL SELECT 'BULMA' AS mentor, bondXp AS xp FROM journal_entries " +
+        "UNION ALL SELECT mentor, bondXp AS xp FROM mentor_calls) GROUP BY mentor"
 
 internal fun List<MentorXp>.toLevels(): Map<Mentor, Int> =
     Mentor.entries.associateWith { mentor -> BondRules.levelForXp(firstOrNull { it.mentor == mentor }?.xp ?: 0) }

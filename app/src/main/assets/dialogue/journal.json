@@ -1,0 +1,801 @@
+{
+  "prompts": [
+    {
+      "id": 1,
+      "topic": "today",
+      "text": "Run a diagnostic on your day. What worked, what overheated, and what needs a part replaced?"
+    },
+    {
+      "id": 2,
+      "topic": "today",
+      "text": "Walk me through today from waking up to right now, but skip the boring parts. If it was all boring, tell me why."
+    },
+    {
+      "id": 3,
+      "topic": "today",
+      "text": "What's one moment from today you'd keep if you could only save one? Describe it like I wasn't there."
+    },
+    {
+      "id": 4,
+      "topic": "today",
+      "text": "What took up most of your brainpower today? Was it worth the fuel?"
+    },
+    {
+      "id": 5,
+      "topic": "today",
+      "text": "Rate today out of ten, then defend the number. I will be checking your maths."
+    },
+    {
+      "id": 6,
+      "topic": "today",
+      "text": "What surprised you today? Even a small glitch counts."
+    },
+    {
+      "id": 7,
+      "topic": "today",
+      "text": "If today had a soundtrack, what would be playing right now, and why that one?"
+    },
+    {
+      "id": 8,
+      "topic": "today",
+      "text": "What did you put off today? Be honest, I put things off too. Mostly paperwork."
+    },
+    {
+      "id": 9,
+      "topic": "today",
+      "text": "What's the most useful thing you did today that nobody noticed?"
+    },
+    {
+      "id": 10,
+      "topic": "today",
+      "text": "Describe the place you're sitting in right now. Details. Pretend I'm designing it from your notes."
+    },
+    {
+      "id": 11,
+      "topic": "today",
+      "text": "What drained your battery today, and what charged it back up?"
+    },
+    {
+      "id": 12,
+      "topic": "today",
+      "text": "If you could redo one hour of today, which one, and what would you change?"
+    },
+    {
+      "id": 13,
+      "topic": "today",
+      "text": "What did you learn today? If the answer is nothing, go learn something and come back."
+    },
+    {
+      "id": 14,
+      "topic": "today",
+      "text": "What did your body tell you today that you ignored? Tired, hungry, restless? Write it down."
+    },
+    {
+      "id": 15,
+      "topic": "today",
+      "text": "Tell me about a conversation you had today. What did you really mean, and did it come across?"
+    },
+    {
+      "id": 16,
+      "topic": "gratitude",
+      "text": "Name three things that went right today. Small ones count. Working coffee machines count double."
+    },
+    {
+      "id": 17,
+      "topic": "gratitude",
+      "text": "Who made your life easier this week? Did you tell them? Write what you'd say."
+    },
+    {
+      "id": 18,
+      "topic": "gratitude",
+      "text": "What's something you own that you'd be lost without? Mine's my toolkit. What's yours, and why?"
+    },
+    {
+      "id": 19,
+      "topic": "gratitude",
+      "text": "Think of a skill you have now that you didn't have five years ago. How did you get it?"
+    },
+    {
+      "id": 20,
+      "topic": "gratitude",
+      "text": "What's a comfort you usually take for granted? Hot water? A bed? Gravity at one G? Thank it properly."
+    },
+    {
+      "id": 21,
+      "topic": "gratitude",
+      "text": "Who believed in you before you did? What did they see?"
+    },
+    {
+      "id": 22,
+      "topic": "gratitude",
+      "text": "Write about a place that always makes you feel better. What is it about it?"
+    },
+    {
+      "id": 23,
+      "topic": "gratitude",
+      "text": "What's a mistake you're secretly glad you made, because of what it taught you?"
+    },
+    {
+      "id": 24,
+      "topic": "gratitude",
+      "text": "What about your body are you thankful for today? It hauls you around all day. Give it some credit."
+    },
+    {
+      "id": 25,
+      "topic": "gratitude",
+      "text": "Pick one person and write a thank-you you'll probably never send. Then maybe send it."
+    },
+    {
+      "id": 26,
+      "topic": "gratitude",
+      "text": "What's a bit of technology you'd hate to live without? Bonus points if I invented it."
+    },
+    {
+      "id": 27,
+      "topic": "gratitude",
+      "text": "What's something about where you live that you'd miss if you moved away?"
+    },
+    {
+      "id": 28,
+      "topic": "gratitude",
+      "text": "What's the best piece of advice anyone ever gave you, and did you follow it?"
+    },
+    {
+      "id": 29,
+      "topic": "gratitude",
+      "text": "Which of your habits is quietly paying off? Thank past you for starting it."
+    },
+    {
+      "id": 30,
+      "topic": "gratitude",
+      "text": "What made you laugh this week? Describe it so I laugh too."
+    },
+    {
+      "id": 31,
+      "topic": "goals",
+      "text": "What's one thing you want done by the end of this week? Break it into steps a robot could follow."
+    },
+    {
+      "id": 32,
+      "topic": "goals",
+      "text": "If you had a whole free Saturday and zero excuses, how would you spend it to move your life forward?"
+    },
+    {
+      "id": 33,
+      "topic": "goals",
+      "text": "What's a goal you've been carrying around for ages without starting? What's the first bolt to turn?"
+    },
+    {
+      "id": 34,
+      "topic": "goals",
+      "text": "Where do you want to be a year from today? Be specific. Vague plans make vague results."
+    },
+    {
+      "id": 35,
+      "topic": "goals",
+      "text": "What habit would change the most if you did it every single day? Why haven't you yet?"
+    },
+    {
+      "id": 36,
+      "topic": "goals",
+      "text": "Write tomorrow's plan in five lines or fewer. I like short blueprints."
+    },
+    {
+      "id": 37,
+      "topic": "goals",
+      "text": "What's the biggest thing standing between you and your next goal? Is it a wall or a speed bump?"
+    },
+    {
+      "id": 38,
+      "topic": "goals",
+      "text": "If you could master one skill this year, which one? What would practising it look like on a normal Tuesday?"
+    },
+    {
+      "id": 39,
+      "topic": "goals",
+      "text": "What does 'winning' look like for you this month? Paint it."
+    },
+    {
+      "id": 40,
+      "topic": "goals",
+      "text": "What are you saying yes to that you should be saying no to, so you have room for what matters?"
+    },
+    {
+      "id": 41,
+      "topic": "goals",
+      "text": "Pick a goal and give it a deadline, a budget and a first step. That's how real projects start."
+    },
+    {
+      "id": 42,
+      "topic": "goals",
+      "text": "What would you attempt if you knew you couldn't fail? Now, what's the smallest version you could try anyway?"
+    },
+    {
+      "id": 43,
+      "topic": "goals",
+      "text": "Which of your goals is really someone else's goal for you? Do you still want it?"
+    },
+    {
+      "id": 44,
+      "topic": "goals",
+      "text": "What would you like to be known for? Then: what did you do today that points that way?"
+    },
+    {
+      "id": 45,
+      "topic": "goals",
+      "text": "What's a project you'd start right now if someone handed you the money? Could you start it smaller without it?"
+    },
+    {
+      "id": 46,
+      "topic": "curiosity",
+      "text": "If you could invent one gadget to fix an everyday annoyance, what would it do? Sketch it in words."
+    },
+    {
+      "id": 47,
+      "topic": "curiosity",
+      "text": "What's something you've always wondered how it works? Write down your best guess before you look it up."
+    },
+    {
+      "id": 48,
+      "topic": "curiosity",
+      "text": "If you could fit one thing from your home into a capsule and carry it everywhere, what would it be?"
+    },
+    {
+      "id": 49,
+      "topic": "curiosity",
+      "text": "What's a subject you could talk about for an hour without notes? Teach me something about it."
+    },
+    {
+      "id": 50,
+      "topic": "curiosity",
+      "text": "If you could ask any expert in the world one question, who and what would you ask?"
+    },
+    {
+      "id": 51,
+      "topic": "curiosity",
+      "text": "What's a question you were too embarrassed to ask lately? Ask it here. No one's grading."
+    },
+    {
+      "id": 52,
+      "topic": "curiosity",
+      "text": "If you designed your dream vehicle, what would it look like and what could it do?"
+    },
+    {
+      "id": 53,
+      "topic": "curiosity",
+      "text": "What's a rule everyone follows that you think is secretly pointless? Argue your case."
+    },
+    {
+      "id": 54,
+      "topic": "curiosity",
+      "text": "If you could add one room to your home, any kind at all, what would it be for?"
+    },
+    {
+      "id": 55,
+      "topic": "curiosity",
+      "text": "What's a hobby you'd love to try but haven't? What's stopping you, honestly?"
+    },
+    {
+      "id": 56,
+      "topic": "curiosity",
+      "text": "Invent a holiday. What's it called, what do people do, and what's the food?"
+    },
+    {
+      "id": 57,
+      "topic": "curiosity",
+      "text": "If you could understand one animal perfectly, which would you pick and what do you think it would say?"
+    },
+    {
+      "id": 58,
+      "topic": "curiosity",
+      "text": "What's the coolest thing you've ever built, fixed or made? Brag a little. I would."
+    },
+    {
+      "id": 59,
+      "topic": "curiosity",
+      "text": "If you could live in any time period for one week, when and where? What would you bring back?"
+    },
+    {
+      "id": 60,
+      "topic": "curiosity",
+      "text": "What's something you changed your mind about recently? What did it take to change it?"
+    },
+    {
+      "id": 61,
+      "topic": "setbacks",
+      "text": "What's been weighing on you lately? Get it out of your head and onto the page so it stops taking up RAM."
+    },
+    {
+      "id": 62,
+      "topic": "setbacks",
+      "text": "Think of a recent failure. What exactly broke? Engineers don't say 'it didn't work', they find the part."
+    },
+    {
+      "id": 63,
+      "topic": "setbacks",
+      "text": "What are you afraid of right now? Write it down plainly. Fears shrink when you can read them."
+    },
+    {
+      "id": 64,
+      "topic": "setbacks",
+      "text": "When did you last give up on something too soon? What would one more try have looked like?"
+    },
+    {
+      "id": 65,
+      "topic": "setbacks",
+      "text": "What's a criticism that stung? Is any part of it true? Is any part of it useful?"
+    },
+    {
+      "id": 66,
+      "topic": "setbacks",
+      "text": "What do you do when you're stressed? Is it helping or just making noise?"
+    },
+    {
+      "id": 67,
+      "topic": "setbacks",
+      "text": "What's a worry you've had for ages that never actually happened? What does that tell you?"
+    },
+    {
+      "id": 68,
+      "topic": "setbacks",
+      "text": "Describe a bad day you got through. What got you through it?"
+    },
+    {
+      "id": 69,
+      "topic": "setbacks",
+      "text": "What's a habit that's working against you? What does it give you that you'd have to replace?"
+    },
+    {
+      "id": 70,
+      "topic": "setbacks",
+      "text": "If a friend told you about the problem you're facing, what advice would you give them?"
+    },
+    {
+      "id": 71,
+      "topic": "setbacks",
+      "text": "What's something you're avoiding because it might go wrong? What's the worst that would really happen?"
+    },
+    {
+      "id": 72,
+      "topic": "setbacks",
+      "text": "When did you last feel out of your depth? What did you do with that feeling?"
+    },
+    {
+      "id": 73,
+      "topic": "setbacks",
+      "text": "What would you tell yourself on the day you skipped everything? Be kind, then be practical."
+    },
+    {
+      "id": 74,
+      "topic": "setbacks",
+      "text": "What's one thing you can't control right now, and one small thing next to it that you can?"
+    },
+    {
+      "id": 75,
+      "topic": "setbacks",
+      "text": "What's a regret you're ready to stop carrying? Write it, then write what you learned."
+    },
+    {
+      "id": 76,
+      "topic": "wins",
+      "text": "What are you proud of this week? Don't be modest, modesty is overrated. Ask anyone."
+    },
+    {
+      "id": 77,
+      "topic": "wins",
+      "text": "Write about the last time you surprised yourself."
+    },
+    {
+      "id": 78,
+      "topic": "wins",
+      "text": "What's a streak or habit you've kept going? How does it feel to look at the number?"
+    },
+    {
+      "id": 79,
+      "topic": "wins",
+      "text": "What's something hard you did recently that past you would have dodged?"
+    },
+    {
+      "id": 80,
+      "topic": "wins",
+      "text": "List five things you're genuinely good at. If you get stuck at two, keep going."
+    },
+    {
+      "id": 81,
+      "topic": "wins",
+      "text": "What's a compliment you got that you still think about?"
+    },
+    {
+      "id": 82,
+      "topic": "wins",
+      "text": "Describe a moment you were completely in the zone. What were you doing?"
+    },
+    {
+      "id": 83,
+      "topic": "wins",
+      "text": "What problem did you solve lately that you were sure would beat you?"
+    },
+    {
+      "id": 84,
+      "topic": "wins",
+      "text": "What's the bravest thing you've done this year?"
+    },
+    {
+      "id": 85,
+      "topic": "wins",
+      "text": "When did you last help someone without being asked? How did it go?"
+    },
+    {
+      "id": 86,
+      "topic": "wins",
+      "text": "What's improved in your life compared to this time last year? Measure it if you can."
+    },
+    {
+      "id": 87,
+      "topic": "wins",
+      "text": "What's a decision you made that turned out right? How did you know?"
+    },
+    {
+      "id": 88,
+      "topic": "wins",
+      "text": "Write your own highlight reel: three moments you'd show if someone asked who you are."
+    },
+    {
+      "id": 89,
+      "topic": "wins",
+      "text": "What's a small win from today that nobody will ever hear about except me?"
+    },
+    {
+      "id": 90,
+      "topic": "wins",
+      "text": "How did you show up for yourself today, even a little?"
+    },
+    {
+      "id": 91,
+      "topic": "people",
+      "text": "Who do you wish you talked to more? What's stopping you from messaging them tonight?"
+    },
+    {
+      "id": 92,
+      "topic": "people",
+      "text": "Describe your best friend to someone who's never met them."
+    },
+    {
+      "id": 93,
+      "topic": "people",
+      "text": "Who taught you the most without meaning to? What did you learn?"
+    },
+    {
+      "id": 94,
+      "topic": "people",
+      "text": "Is there someone you owe an apology? Or someone who owes you one? Write the conversation you'd want."
+    },
+    {
+      "id": 95,
+      "topic": "people",
+      "text": "Who's someone you admire? Which of their qualities could you borrow starting tomorrow?"
+    },
+    {
+      "id": 96,
+      "topic": "people",
+      "text": "What kind of friend are you? What would your friends say if I asked them?"
+    },
+    {
+      "id": 97,
+      "topic": "people",
+      "text": "Describe a person who made a big first impression on you. Was it right?"
+    },
+    {
+      "id": 98,
+      "topic": "people",
+      "text": "Who drains you and who recharges you? Do you spend your time the right way round?"
+    },
+    {
+      "id": 99,
+      "topic": "people",
+      "text": "What's a family story everyone tells? What does it say about you all?"
+    },
+    {
+      "id": 100,
+      "topic": "people",
+      "text": "Who's someone you've lost touch with? What do you remember most about them?"
+    },
+    {
+      "id": 101,
+      "topic": "people",
+      "text": "If you could have dinner with three people, alive or not, who and what would you ask them?"
+    },
+    {
+      "id": 102,
+      "topic": "people",
+      "text": "Who do you compete with in your head? Is that pushing you forward or just tiring you out?"
+    },
+    {
+      "id": 103,
+      "topic": "people",
+      "text": "When did someone show up for you when it mattered? Describe it."
+    },
+    {
+      "id": 104,
+      "topic": "people",
+      "text": "What's something you love about the people you live near or work with?"
+    },
+    {
+      "id": 105,
+      "topic": "people",
+      "text": "Who would you call first with good news? Why them?"
+    },
+    {
+      "id": 106,
+      "topic": "future",
+      "text": "Write a letter to yourself one year from now. What do you hope you've done?"
+    },
+    {
+      "id": 107,
+      "topic": "future",
+      "text": "Describe an ordinary day in your life five years from now, from breakfast to bed."
+    },
+    {
+      "id": 108,
+      "topic": "future",
+      "text": "What does future you thank you for? What does future you wish you'd started sooner?"
+    },
+    {
+      "id": 109,
+      "topic": "future",
+      "text": "Imagine you hit every goal on your list. What's the first thing you do after?"
+    },
+    {
+      "id": 110,
+      "topic": "future",
+      "text": "What kind of person do you want to be at seventy? What are you doing now that points there?"
+    },
+    {
+      "id": 111,
+      "topic": "future",
+      "text": "If your life were a building project, what phase are you in? Foundations, framing, or finishing?"
+    },
+    {
+      "id": 112,
+      "topic": "future",
+      "text": "What's one tradition you want to start that you'll still be doing in ten years?"
+    },
+    {
+      "id": 113,
+      "topic": "future",
+      "text": "What would you want to know if you could peek one year ahead? What would you do with the answer?"
+    },
+    {
+      "id": 114,
+      "topic": "future",
+      "text": "Picture your ideal home in the future. Where is it and what's in it?"
+    },
+    {
+      "id": 115,
+      "topic": "future",
+      "text": "What skill do you want to be the go-to person for someday?"
+    },
+    {
+      "id": 116,
+      "topic": "future",
+      "text": "If you could leave one piece of advice for someone starting where you are now, what would it be?"
+    },
+    {
+      "id": 117,
+      "topic": "future",
+      "text": "What would make this the year people point back to and say 'that's when it changed'?"
+    },
+    {
+      "id": 118,
+      "topic": "future",
+      "text": "What do you want to stop doing before this year ends?"
+    },
+    {
+      "id": 119,
+      "topic": "future",
+      "text": "What adventure is on your list that you haven't booked, planned or even said out loud?"
+    },
+    {
+      "id": 120,
+      "topic": "future",
+      "text": "Write the headline for the best news you could get next year."
+    },
+    {
+      "id": 121,
+      "topic": "body",
+      "text": "How did you sleep last night, and what do you think caused it? I'm collecting data."
+    },
+    {
+      "id": 122,
+      "topic": "body",
+      "text": "What did you eat today, and how did it make you feel an hour later? Fuel quality matters."
+    },
+    {
+      "id": 123,
+      "topic": "body",
+      "text": "When did you feel most energetic today? What were you doing just before?"
+    },
+    {
+      "id": 124,
+      "topic": "body",
+      "text": "What kind of movement do you actually enjoy, not the kind you think you should do?"
+    },
+    {
+      "id": 125,
+      "topic": "body",
+      "text": "How does your body feel right now, head to toe? Do a full systems check."
+    },
+    {
+      "id": 126,
+      "topic": "body",
+      "text": "What's one small change to your routine that would make tomorrow morning easier?"
+    },
+    {
+      "id": 127,
+      "topic": "body",
+      "text": "How much water did you drink today? If you have to think about it, the answer is not enough."
+    },
+    {
+      "id": 128,
+      "topic": "body",
+      "text": "When do you feel calmest during the day? Can you make more room for it?"
+    },
+    {
+      "id": 129,
+      "topic": "body",
+      "text": "What's your phone doing to your attention lately? Be brutal."
+    },
+    {
+      "id": 130,
+      "topic": "body",
+      "text": "Describe the last time you felt properly rested. What made it work?"
+    },
+    {
+      "id": 131,
+      "topic": "body",
+      "text": "Which of your habits feels easy now that used to be hard? How long did that take?"
+    },
+    {
+      "id": 132,
+      "topic": "body",
+      "text": "What does your ideal evening wind-down look like? How close did tonight get?"
+    },
+    {
+      "id": 133,
+      "topic": "body",
+      "text": "What's your body been asking for that you keep postponing? A stretch, a walk, a nap, a doctor?"
+    },
+    {
+      "id": 134,
+      "topic": "body",
+      "text": "How do you feel after training compared to before? Write both down so you remember next time."
+    },
+    {
+      "id": 135,
+      "topic": "body",
+      "text": "If you were a machine, which part of you most needs maintenance right now?"
+    },
+    {
+      "id": 136,
+      "topic": "silly",
+      "text": "You've been shrunk to two centimetres tall in your own home. How do you survive the afternoon?"
+    },
+    {
+      "id": 137,
+      "topic": "silly",
+      "text": "Describe your perfect sandwich in loving technical detail."
+    },
+    {
+      "id": 138,
+      "topic": "silly",
+      "text": "If your life had a theme song that played whenever you walked into a room, what would it be?"
+    },
+    {
+      "id": 139,
+      "topic": "silly",
+      "text": "You get one wish, but it has to be something completely useless. What do you wish for?"
+    },
+    {
+      "id": 140,
+      "topic": "silly",
+      "text": "Invent a new sport. Rules, equipment and the name of the trophy."
+    },
+    {
+      "id": 141,
+      "topic": "silly",
+      "text": "If animals could text, which one would send the most annoying messages?"
+    },
+    {
+      "id": 142,
+      "topic": "silly",
+      "text": "Design a ridiculous outfit for an important occasion. I'm a fashion expert, so be bold."
+    },
+    {
+      "id": 143,
+      "topic": "silly",
+      "text": "Your fridge can talk now. What does it think of you?"
+    },
+    {
+      "id": 144,
+      "topic": "silly",
+      "text": "Describe yourself as an item in a shop catalogue. Price, features and warranty."
+    },
+    {
+      "id": 145,
+      "topic": "silly",
+      "text": "If you had to fight one hundred duck-sized horses or one horse-sized duck, which and how?"
+    },
+    {
+      "id": 146,
+      "topic": "silly",
+      "text": "What would your villain name be, and what's your villain plan? Keep it petty."
+    },
+    {
+      "id": 147,
+      "topic": "silly",
+      "text": "You can swap lives with any fictional character for a day. Who and what's on your schedule?"
+    },
+    {
+      "id": 148,
+      "topic": "silly",
+      "text": "Write a one-star review of something that deserves five stars."
+    },
+    {
+      "id": 149,
+      "topic": "silly",
+      "text": "If you could add one button to the human body, what would it do?"
+    },
+    {
+      "id": 150,
+      "topic": "silly",
+      "text": "Describe the worst invention you can think of. I'll tell you if someone's already built it."
+    }
+  ],
+  "reactions": {
+    "first": [
+      "Your first entry. I read it. Well, I skimmed it. Okay, I read it twice. Keep going.",
+      "Look at that, a real entry. Most people quit at the blank page. You didn't."
+    ],
+    "done": [
+      "Saved and filed. Writing it down is how you stop going round in circles.",
+      "Good. Data in, clarity out. That's the whole trick.",
+      "Nice work. Your head's a little tidier now, I can tell.",
+      "Logged. I'd say you're getting better at this, but I don't hand out compliments that easily.",
+      "Done for today. Now go do something with what you just figured out.",
+      "That's another one in the book. Future you will like reading these.",
+      "Filed. You think better on paper than you do out loud, you know that?",
+      "Got it. Short, honest, useful. My favourite kind of report."
+    ],
+    "long": [
+      "Whoa, you had a lot to say. Good. Some days the pressure has to come out somewhere.",
+      "That's practically a technical manual. I'm impressed. Don't let it go to your head.",
+      "A long one. Either something big happened or you finally got going. Both are good."
+    ],
+    "streak": [
+      "Days in a row now. That's not luck, that's a system. I love a good system.",
+      "You keep showing up. I noticed. Don't make it weird.",
+      "Another day, another entry. You're building something here, even if you can't see it yet."
+    ],
+    "extra": [
+      "Another one? Writing twice in a day? Okay, overachiever. It's saved.",
+      "Saved. No extra reward, but I'm not stopping you. More data is more data.",
+      "Two entries today. Either it's a big day or you've caught the bug. I've had it for years."
+    ],
+    "short": [
+      "I saved it, but that's barely a sketch. Fifty words, minimum. Come back and finish the blueprint.",
+      "That's a start, not an entry. Add a bit more and I'll count it.",
+      "Half a thought is still a thought. I kept it. Now give me the other half."
+    ]
+  },
+  "swap": [
+    "Fine, picky. Here's a different one.",
+    "Not feeling it? Okay. Try this instead.",
+    "You're lucky I have a lot of these. New prompt.",
+    "Swapped. Don't make me do that again today."
+  ],
+  "no_swap": [
+    "Nope, that's your one swap for today. Sometimes the hard prompt is the right one.",
+    "No more swaps. Write about this one, or write about why you don't want to. Either counts.",
+    "I'm not a vending machine. You've had your swap. Get writing."
+  ]
+}

@@ -225,6 +225,8 @@ interface AchievementDao {
              + (SELECT COALESCE(SUM(chaptersRead * 29 + highestForm * 31), 0) FROM player_state)
              + (SELECT COUNT(*) FROM sagas WHERE status = 'DONE') * 37
              + (SELECT COUNT(*) FROM minigame_plays) * 41
+             + (SELECT COUNT(*) FROM journal_entries) * 43
+             + (SELECT COUNT(*) FROM mentor_calls) * 47
         """,
     )
     fun observeChanges(): Flow<Long>
@@ -279,4 +281,48 @@ interface GameDao {
 
     @Insert
     suspend fun insert(play: MinigamePlayEntity): Long
+}
+
+@Dao
+interface JournalDao {
+
+    @Query("SELECT * FROM journal_entries ORDER BY epochDay DESC, createdAtMillis DESC")
+    fun observeAll(): Flow<List<JournalEntryEntity>>
+
+    @Query("SELECT * FROM journal_entries WHERE epochDay = :epochDay ORDER BY createdAtMillis")
+    suspend fun onDay(epochDay: Long): List<JournalEntryEntity>
+
+    @Query("SELECT DISTINCT promptId FROM journal_entries WHERE promptId > 0")
+    suspend fun usedPromptIds(): List<Int>
+
+    @Query("SELECT DISTINCT epochDay FROM journal_entries WHERE bondXp > 0 ORDER BY epochDay DESC")
+    suspend fun rewardedDays(): List<Long>
+
+    @Query("SELECT * FROM journal_entries WHERE id = :id")
+    suspend fun get(id: Long): JournalEntryEntity?
+
+    @Insert
+    suspend fun insert(entry: JournalEntryEntity): Long
+
+    @androidx.room.Update
+    suspend fun update(entry: JournalEntryEntity)
+
+    @Query("DELETE FROM journal_entries WHERE id = :id")
+    suspend fun delete(id: Long)
+}
+
+@Dao
+interface CallDao {
+
+    @Query("SELECT * FROM mentor_calls ORDER BY answeredAtMillis DESC")
+    fun observeAll(): Flow<List<MentorCallEntity>>
+
+    @Query("SELECT * FROM mentor_calls WHERE epochDay = :epochDay")
+    suspend fun onDay(epochDay: Long): List<MentorCallEntity>
+
+    @Query("SELECT callId FROM mentor_calls WHERE mentor = :mentor")
+    suspend fun heardCallIds(mentor: com.saiyanhabits.domain.Mentor): List<String>
+
+    @Insert
+    suspend fun insert(call: MentorCallEntity): Long
 }

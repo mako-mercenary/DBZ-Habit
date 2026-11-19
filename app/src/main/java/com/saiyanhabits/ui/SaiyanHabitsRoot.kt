@@ -108,6 +108,7 @@ private object Routes {
     const val ART = "art"
     const val HISTORY = "history"
     const val GAMES = "games"
+    const val JOURNAL = "journal"
     const val GAME_ARG = "game"
     const val GAME = "game/{$GAME_ARG}"
     fun game(game: com.saiyanhabits.domain.MiniGame) = "game/${game.name}"
@@ -222,7 +223,7 @@ fun SaiyanHabitsRoot() {
     }
 
     LaunchedEffect(app) {
-        app.gameRepository.levelUps.collect { event ->
+        kotlinx.coroutines.flow.merge(app.gameRepository.levelUps, app.journalRepository.levelUps).collect { event ->
             bondLevelUp = BondLevelUpNotice(
                 mentor = event.mentor,
                 level = event.level,
@@ -331,6 +332,7 @@ fun SaiyanHabitsRoot() {
                         onAddHabit = { navController.navigate(Routes.habitEditor()) },
                         onOpenStory = { navController.navigate(Routes.STORY) },
                         onOpenGames = { navController.navigate(Routes.GAMES) },
+                        onOpenJournal = { navController.navigate(Routes.JOURNAL) },
                         onOpenHistory = {
                             historyViewModel.reset()
                             navController.navigate(Routes.HISTORY)
@@ -420,6 +422,11 @@ fun SaiyanHabitsRoot() {
                     AchievementsScreen(
                         state = achievements,
                         onBack = { navController.popBackStack(Routes.ACHIEVEMENTS, inclusive = true) },
+                    )
+                }
+                composable(Routes.JOURNAL) {
+                    com.saiyanhabits.ui.journal.JournalScreen(
+                        onBack = { navController.popBackStack(Routes.JOURNAL, inclusive = true) },
                     )
                 }
                 composable(Routes.GAMES) {

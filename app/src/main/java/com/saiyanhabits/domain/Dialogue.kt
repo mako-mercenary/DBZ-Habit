@@ -105,14 +105,14 @@ object StoryParser {
 }
 
 @Suppress("UNCHECKED_CAST")
-private fun Any?.asObject(what: String): Map<String, Any?> =
+internal fun Any?.asObject(what: String): Map<String, Any?> =
     this as? Map<String, Any?> ?: throw IllegalArgumentException("Expected $what to be an object")
 
-private fun Any?.asArray(what: String): List<Any?> =
+internal fun Any?.asArray(what: String): List<Any?> =
     this as? List<Any?> ?: throw IllegalArgumentException("Expected $what to be a list")
 
-private fun Any?.asString(what: String): String =
+internal fun Any?.asString(what: String): String =
     this as? String ?: throw IllegalArgumentException("Expected $what to be text")
 
-private fun Any?.asInt(what: String): Int =
+internal fun Any?.asInt(what: String): Int =
     (this as? Number)?.toInt() ?: throw IllegalArgumentException("Expected $what to be a number")

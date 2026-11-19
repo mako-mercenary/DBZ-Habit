@@ -173,3 +173,23 @@ val MIGRATION_6_7 = object : Migration(6, 7) {
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_minigame_plays_epochDay` ON `minigame_plays` (`epochDay`)")
     }
 }
+
+/** The journal and mentor calls. */
+val MIGRATION_7_8 = object : Migration(7, 8) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `journal_entries` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `promptId` INTEGER NOT NULL, `prompt` TEXT NOT NULL, `text` TEXT NOT NULL, " +
+                "`words` INTEGER NOT NULL, `bondXp` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL, " +
+                "`updatedAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_journal_entries_epochDay` ON `journal_entries` (`epochDay`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `mentor_calls` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`mentor` TEXT NOT NULL, `epochDay` INTEGER NOT NULL, `callId` TEXT NOT NULL, `choices` TEXT NOT NULL, " +
+                "`bondXp` INTEGER NOT NULL, `pickedUpQuickly` INTEGER NOT NULL, `answeredAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_mentor_calls_epochDay` ON `mentor_calls` (`epochDay`)")
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_mentor_calls_mentor` ON `mentor_calls` (`mentor`)")
+    }
+}

@@ -124,6 +124,7 @@ fun HomeScreen(
     onAddHabit: () -> Unit,
     onOpenStory: () -> Unit,
     onOpenGames: () -> Unit,
+    onOpenJournal: () -> Unit,
     onOpenHistory: () -> Unit,
     onOpenChapter: (Int) -> Unit,
     onOpenSettings: () -> Unit,
@@ -196,6 +197,9 @@ fun HomeScreen(
                 aura = formAura(state.form),
                 avatarForm = state.form,
             )
+        }
+        item(key = "journal") {
+            com.saiyanhabits.ui.journal.JournalHomeCard(onClick = onOpenJournal)
         }
         if (title != null) {
             item(key = "title") { TitleStrip(title, achievementCount, onOpenAchievements) }

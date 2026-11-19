@@ -23,6 +23,8 @@ enum class PowerSource {
     SAGA_VICTORY,
     BOMB_LOG,
     BOMB_THROW,
+    /** The day's first finished journal entry. */
+    JOURNAL,
 }
 
 /** What a time chamber session can be linked to. Stored in the database: do not rename. */

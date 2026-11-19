@@ -267,4 +267,33 @@ object GameConfig {
 
     /** Hover-bike run: how far ahead of the bike the camera looks, in metres. */
     const val BIKE_CAMERA_LOOK_AHEAD = 20f
+
+    // ---- Journal and calls ----
+
+    /** Words a journal entry needs before it counts as finished. */
+    const val JOURNAL_MIN_WORDS = 50
+
+    /** Bond XP with Bulma for the day's first finished journal entry. */
+    const val JOURNAL_BOND_XP = 15
+
+    /** Power for the day's first finished journal entry. */
+    const val JOURNAL_POWER = 20
+
+    /** How many times a day Bulma will swap the prompt for another. */
+    const val JOURNAL_SWAPS_PER_DAY = 1
+
+    /** An entry this long gets Bulma's "long entry" reaction. */
+    const val JOURNAL_LONG_WORDS = 200
+
+    /** Bond XP for answering a mentor's daily call. */
+    const val CALL_BOND_XP = 5
+
+    /** Extra bond XP for picking up within [CALL_PICKUP_WINDOW_MINUTES] of the phone ringing. */
+    const val CALL_QUICK_PICKUP_BONUS_XP = 5
+
+    /** How long after a mentor rings a pickup counts as quick. */
+    const val CALL_PICKUP_WINDOW_MINUTES = 60
+
+    /** The window, in hours of the day, in which a mentor may ring: from the first up to the second. */
+    val CALL_RING_HOURS = 10 to 20
 }

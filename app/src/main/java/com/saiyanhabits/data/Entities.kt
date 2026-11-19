@@ -79,6 +79,39 @@ data class MinigamePlayEntity(
     val createdAtMillis: Long,
 )
 
+/** One journal entry, written to one of Bulma's prompts. */
+@Entity(tableName = "journal_entries", indices = [Index(value = ["epochDay"])])
+data class JournalEntryEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    /** The prompt's id in assets/dialogue/journal.json, or 0 for a free entry. */
+    val promptId: Int,
+    /** The prompt's words as they were when written, so old entries keep them. */
+    val prompt: String,
+    val text: String,
+    val words: Int,
+    /** Bond XP this entry gave Bulma: only the day's first finished entry gives any. */
+    val bondXp: Int,
+    val createdAtMillis: Long,
+    val updatedAtMillis: Long,
+)
+
+/** One answered call from a mentor. */
+@Entity(tableName = "mentor_calls", indices = [Index(value = ["epochDay"]), Index(value = ["mentor"])])
+data class MentorCallEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val mentor: Mentor,
+    val epochDay: Long,
+    /** The call's id in assets/dialogue/calls_<mentor>.json. */
+    val callId: String,
+    /** The replies picked, as their indexes joined by commas, so the call can be re-read as it went. */
+    val choices: String,
+    val bondXp: Int,
+    /** True when it was picked up within the hour after the phone rang. */
+    val pickedUpQuickly: Boolean,
+    val answeredAtMillis: Long,
+)
+
 /** A line written about a day. */
 @Entity(tableName = "day_notes")
 data class DayNoteEntity(

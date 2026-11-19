@@ -41,6 +41,10 @@ class SaiyanApp : Application() {
 
     val dialogue: DialogueRepository by lazy { DialogueRepository(this) }
 
+    val journalRepository: com.saiyanhabits.data.JournalRepository by lazy {
+        com.saiyanhabits.data.JournalRepository(this, database)
+    }
+
     val storyRepository: StoryRepository by lazy { StoryRepository(this) }
 
     val wishRepository: WishRepository by lazy { WishRepository(database) }
