@@ -153,29 +153,29 @@ class DialogueTest {
     }
 
     @Test
-    fun `every mentor has a scene of 3 to 6 lines for each bond level from 2 to 10`() {
+    fun `every mentor has a full scene for each bond level from 2 to 10`() {
         for (mentor in Mentor.entries) {
             val dialogue = shipped(mentor)
             assertEquals("$mentor scene levels", (2..BondRules.MAX_LEVEL).toList(), dialogue.scenes.map { it.level })
             for (scene in dialogue.scenes) {
                 assertTrue("$mentor level ${scene.level} has no title", scene.title.isNotBlank())
-                assertTrue(
-                    "$mentor level ${scene.level} has ${scene.lines.size} lines",
-                    scene.lines.size in 3..6,
-                )
+                // Played with the first reply each time: long enough to be a real conversation.
+                val played = ScriptRunner.play(scene.script, List(10) { 0 }, ScriptStats()).count { it !is ScriptStep.Ask }
+                assertTrue("$mentor level ${scene.level} plays $played lines", played in 12..30)
+                assertTrue("$mentor level ${scene.level} has no reply to pick", scene.script.any { it is ScriptNode.Choice })
                 assertTrue("$mentor level ${scene.level} has a blank line", scene.lines.none { it.text.isBlank() })
             }
         }
     }
 
     @Test
-    fun `scene speakers are the mentor, the player or the narrator`() {
+    fun `scene speakers are mentors, the player or the narrator, and the scene's mentor speaks`() {
         for (mentor in Mentor.entries) {
             for (scene in shipped(mentor).scenes) {
                 val speakers = scene.lines.map { it.speaker }.toSet()
                 assertTrue(
                     "$mentor level ${scene.level} has speakers $speakers",
-                    (speakers - setOf(mentor.name, "YOU", "NARRATOR")).isEmpty(),
+                    (speakers - Mentor.entries.map { it.name }.toSet() - setOf("YOU", "NARRATOR")).isEmpty(),
                 )
                 assertTrue("$mentor never speaks in the level ${scene.level} scene", mentor.name in speakers)
             }

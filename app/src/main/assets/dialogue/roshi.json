@@ -132,8 +132,20 @@
       "title": "The Milk Round",
       "lines": [
         {
+          "speaker": "NARRATOR",
+          "text": "Four in the morning. Roshi is standing at the foot of your bed holding a lantern and a crate of milk bottles."
+        },
+        {
           "speaker": "ROSHI",
-          "text": "Your first real lesson: deliver the milk. Every house on the island, before breakfast."
+          "text": "Up you get. Your first real lesson: deliver the milk. Every house on the island, before breakfast."
+        },
+        {
+          "speaker": "YOU",
+          "text": "There are houses on this island?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Three. They're very far apart. That's the lesson."
         },
         {
           "speaker": "YOU",
@@ -144,8 +156,54 @@
           "text": "It isn't. It's getting up when you said you would. Martial arts comes after."
         },
         {
+          "choice": [
+            {
+              "text": "Couldn't I start with punching?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "You could. And you'd punch for a week, then sleep in on a cold morning, and then you'd stop."
+                },
+                {
+                  "speaker": "ROSHI",
+                  "text": "The milk doesn't care if it's cold. The milk is your teacher this month."
+                }
+              ]
+            },
+            {
+              "text": "Fine. Which way first?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho! No complaints? I had a speech ready and everything."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "It takes you nearly three hours. You drop one bottle. A goat steals another."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "When you get back, Roshi is in his deck chair, apparently asleep."
+        },
+        {
           "speaker": "ROSHI",
-          "text": "Also, I'm out of milk."
+          "text": "Three hours. Tomorrow it'll be two and a half. In a month, one."
+        },
+        {
+          "speaker": "YOU",
+          "text": "And then?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "And then I'll add a crate. That's how training works: the moment it's easy, it gets harder, and you won't notice either change."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Also, I'm out of milk. That part wasn't a lesson. Pass me a bottle."
         }
       ]
     },
@@ -166,8 +224,62 @@
           "text": "Sleeping is optional. I'm not a monster."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "You strap it on. Your knees make a noise you've never heard them make before."
+        },
+        {
+          "choice": [
+            {
+              "text": "This is too heavy.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "It's exactly heavy enough. Too heavy is when you can't stand. You're standing. Wobbling, but standing."
+                }
+              ]
+            },
+            {
+              "text": "How long do I wear it?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Until you forget you're wearing it. You'll know the day, because you'll go to bed in it by accident."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The first day, the milk round takes five hours. The turtle overtakes you twice."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The second day, four and a half. The turtle still overtakes you, but only once."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Do you know why I use shells? Anyone could use rocks."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Because you like turtles?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Partly. But mostly because a turtle carries its house everywhere and never complains. It just is the weight, after a while."
+        },
+        {
           "speaker": "ROSHI",
           "text": "You won't notice the day it stops feeling heavy. That's how getting stronger works: quietly."
+        },
+        {
+          "speaker": "YOU",
+          "text": "And then you'll give me a heavier one."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Ho ho! You're learning."
         }
       ]
     },
@@ -175,6 +287,10 @@
       "level": 4,
       "title": "Why the Basics",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "You're on your hundredth repetition of the same simple stance. It's raining. Roshi is under an umbrella."
+        },
         {
           "speaker": "YOU",
           "text": "When do I learn something that looks impressive?"
@@ -185,11 +301,57 @@
         },
         {
           "speaker": "ROSHI",
-          "text": "Wonderful to watch. Fell over in a strong wind."
+          "text": "Flips, spins, a jumping kick that went twice round before it landed. Wonderful to watch."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What happened to him?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Fell over in a strong wind. Really. Gust off the sea, and down he went, mid-spin. He'd never learned to stand."
+        },
+        {
+          "choice": [
+            {
+              "text": "So the stance is standing.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "The stance is standing properly. It sounds silly. It's the most important thing I'll ever teach you."
+                }
+              ]
+            },
+            {
+              "text": "Maybe he was just unlucky.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Luck is what we call it when the basics weren't there to catch us. He'd have been fine with a better stance."
+                }
+              ]
+            }
+          ]
         },
         {
           "speaker": "ROSHI",
           "text": "The dull things you do every day are the roots. Nobody claps for roots. Trees don't mind."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "When you've got roots, then you can be flashy. And you'll find you need it much less than you thought."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Because the basics are enough?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Because the basics win most fights before they start. Now, a hundred more. The rain doesn't count as a rest day."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You do a hundred more. Your legs stop shaking at around seventy. You don't notice when."
         }
       ]
     },
@@ -210,12 +372,58 @@
           "text": "I am. Rest is half of it. You youngsters always skip that half."
         },
         {
+          "choice": [
+            {
+              "text": "You're just being lazy.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho! I'm being lazy with purpose. There's a difference. Laziness is when you rest instead of training. Purpose is when you rest because of training."
+                }
+              ]
+            },
+            {
+              "text": "How much rest is enough?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Enough that tomorrow you're hungry to train again. If you dread it, you've done too much. If you forgot about it, too little."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "ROSHI",
           "text": "Push hard, then stop properly. A bow that's always strung goes slack."
         },
         {
           "speaker": "ROSHI",
+          "text": "Most people do everything halfway. Half-train, half-rest, half-sleep with a glowing screen in their face. They're tired all the time and strong none of it."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So go all in on both."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "All in on both. Train like it's the only thing. Then rest like it's the only thing."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He adjusts the magazine over his face."
+        },
+        {
+          "speaker": "ROSHI",
           "text": "Next time you face something big, wake me. I'll come along. After my drink."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You'll fight with me?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "I'll stand nearby and look wise. It's very intimidating. You'd be surprised."
         }
       ]
     },
@@ -225,7 +433,15 @@
       "lines": [
         {
           "speaker": "ROSHI",
-          "text": "Hold out your hand. These are healing beans. One of them undoes a very bad day."
+          "text": "Hold out your hand."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He tips a small cloth pouch into your palm. Three green beans roll out. They look like nothing much."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "These are healing beans. One of them undoes a very bad day."
         },
         {
           "speaker": "YOU",
@@ -237,7 +453,49 @@
         },
         {
           "speaker": "ROSHI",
+          "text": "When you first came, I knew if I gave you a bean, you'd skip a day on purpose. 'I've got a bean, so it's fine.'"
+        },
+        {
+          "choice": [
+            {
+              "text": "I wouldn't have.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho! You would. Everyone would. I would have, at your age."
+                }
+              ]
+            },
+            {
+              "text": "Fair. I probably would have.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Honesty! Good. That's exactly why you're getting them now and not then."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "A safety net is for falling. Not for jumping off the wire."
+        },
+        {
+          "speaker": "ROSHI",
           "text": "Bad days come for everyone. The trick is to have planned for them."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So the beans are a plan."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "The beans are a plan. And so is going to bed early, and keeping the habits small on hard weeks, and telling someone when you're struggling."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Those last ones are free, by the way. The beans are very expensive. Don't drop them in the sand."
         }
       ]
     },
@@ -245,6 +503,10 @@
       "level": 7,
       "title": "An Old Story",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "A quiet evening. Roshi pours two cups of tea and, unusually, doesn't make a joke."
+        },
         {
           "speaker": "ROSHI",
           "text": "I trained under a master too, you know. A terrifying man. Never smiled."
@@ -255,11 +517,61 @@
         },
         {
           "speaker": "ROSHI",
+          "text": "Everything I know, I suppose. He made me climb a mountain every day for a year. He never said why."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "He'd hit my hand with a stick if I stood wrong. He'd make me start over if I said a single word during training."
+        },
+        {
+          "choice": [
+            {
+              "text": "That sounds awful.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "It was. And it worked. Both things are true. That's what makes it complicated."
+                }
+              ]
+            },
+            {
+              "text": "Did you ever thank him?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "...No. By the time I understood what he'd done, he was gone. I think about that more than I'd like."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "So I learned something from him he didn't mean to teach."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What was it?"
+        },
+        {
+          "speaker": "ROSHI",
           "text": "That I didn't want to teach like him. So I tell jokes."
         },
         {
           "speaker": "ROSHI",
-          "text": "But the work underneath is the same work. It always is."
+          "text": "I read magazines in a deck chair. I let the turtle steal my snacks. I give you chores instead of beatings."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "But the work underneath is the same work. It always is. The mountain, the milk round. Every day, no matter what."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He sips his tea."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "If you ever teach someone, and you will, find your own way to make the same work bearable. That's the whole job."
         }
       ]
     },
@@ -276,16 +588,70 @@
           "text": "It comes in a little, goes out a little. Looks like it's getting nowhere."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "A wave slides up the sand, stops, slides back. Another. Another."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "If you stood here and watched one wave, you'd say the sea wasn't moving at all."
+        },
+        {
           "speaker": "ROSHI",
           "text": "Then you look up and the whole beach is under water."
         },
         {
-          "speaker": "YOU",
-          "text": "That's my training."
+          "choice": [
+            {
+              "text": "That's my training.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho! Took you long enough."
+                }
+              ]
+            },
+            {
+              "text": "Is this a metaphor?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Everything I say is a metaphor. Sometimes the sea is just the sea. Not tonight, though."
+                },
+                {
+                  "speaker": "YOU",
+                  "text": "...That's my training, isn't it."
+                },
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho! There it is."
+                }
+              ]
+            }
+          ]
         },
         {
           "speaker": "ROSHI",
-          "text": "Ho ho! Took you long enough."
+          "text": "You look at one day and think nothing happened. One push-up, one page, one glass of water. Nothing."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "But I've been watching your waves for months. The beach is nearly gone."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I can't see it."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Nobody can see their own tide. That's why you have teachers. And charts. And a very old man on a beach saying 'look how far you've come'."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The water reaches your toes. Neither of you moves your chair back."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Look how far you've come."
         }
       ]
     },
@@ -306,8 +672,54 @@
           "text": "You've earned the right to skip one without it meaning anything. That's a real skill, and a late one."
         },
         {
+          "choice": [
+            {
+              "text": "I don't want to break the habit.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "That's exactly why you get one. A habit that breaks after one day off was never a habit, it was a hostage."
+                }
+              ]
+            },
+            {
+              "text": "What should I do instead?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Something pleasant and useless. Fishing. Reading something silly. Staring at the sea. I recommend staring at the sea, I'm a professional."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "ROSHI",
           "text": "A beginner who rests is quitting. A master who rests is resting. The difference is every day before it."
+        },
+        {
+          "speaker": "YOU",
+          "text": "How do I know I'm not quitting?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Because tomorrow you'll come back without thinking about it. That's the test. Tomorrow."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "If tomorrow is hard, then it was too soon. Come back the day after and we'll call it a lesson."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You spend the day doing nothing much. It feels strange, then nice, then strange again."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The next morning, you're up before the alarm. You're halfway through the milk round before you remember yesterday was a day off."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Ho ho. Passed."
         },
         {
           "speaker": "ROSHI",
@@ -319,6 +731,10 @@
       "level": 10,
       "title": "Graduation",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "A bright morning. Roshi is wearing a slightly nicer shirt than usual. It still has flowers on it."
+        },
         {
           "speaker": "ROSHI",
           "text": "I've nothing left to teach you. That's not quite true, but it sounds good, doesn't it?"
@@ -332,8 +748,58 @@
           "text": "The same thing as yesterday. Milk, shell, basics. Only now nobody has to tell you."
         },
         {
+          "choice": [
+            {
+              "text": "That's it? No ceremony?",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "Ho ho, I did consider a ceremony. Then I remembered I'd have to organise it."
+                }
+              ]
+            },
+            {
+              "text": "I'll keep going.",
+              "then": [
+                {
+                  "speaker": "ROSHI",
+                  "text": "I know you will. That's why we're here."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Do you know what a master is?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "Someone who knows everything?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Nobody knows everything. I've been alive a very long time and I still can't work the remote."
+        },
+        {
           "speaker": "ROSHI",
           "text": "That's all a master is: a student who kept going after the teacher stopped watching."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Will you still be around?"
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "I'm always around. This island isn't going anywhere, and neither am I. I'm too old to move."
+        },
+        {
+          "speaker": "ROSHI",
+          "text": "Come back when you're stuck. Or when you're bored. Or when you want to beat me at chess, which you won't."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He holds out a hand. You shake it. His grip is far, far stronger than it looks."
         },
         {
           "speaker": "ROSHI",

@@ -125,6 +125,18 @@
       "title": "One More",
       "lines": [
         {
+          "speaker": "NARRATOR",
+          "text": "The sun is barely up. Goku has already been training for an hour. He waves you over with both arms."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Hey! Perfect timing! Squats! Let's go!"
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Fifty squats later, your legs are burning."
+        },
+        {
           "speaker": "GOKU",
           "text": "Okay, that's the set! ...Wanna do one more?"
         },
@@ -137,8 +149,58 @@
           "text": "It was! This is a new last one."
         },
         {
+          "choice": [
+            {
+              "text": "That's not how 'last' works.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Sure it is! Last just means the one before the next one."
+                }
+              ]
+            },
+            {
+              "text": "Fine. One more.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Yes! I knew you would!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You do one more. Then he says it again. You do another."
+        },
+        {
           "speaker": "GOKU",
           "text": "The one after you wanted to stop is the one that counts. It's my favourite."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why that one?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Because all the other ones, you were going to do anyway. That one's the one where you decided."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Your body says 'stop', and you go 'nah, one more', and then your body goes 'oh, okay, I guess I can'. That's how it learns!"
+        },
+        {
+          "speaker": "YOU",
+          "text": "That's surprisingly deep."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Ha! Don't tell anyone. They think I only know about food."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "...Speaking of which. Breakfast?"
         }
       ]
     },
@@ -148,7 +210,7 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "Goku is on his ninth bowl of rice."
+          "text": "Goku is on his ninth bowl of rice. There's a tower of empty plates next to him that's taller than you."
         },
         {
           "speaker": "YOU",
@@ -159,8 +221,62 @@
           "text": "How can you train without it? You've gotta put something in to get something out!"
         },
         {
+          "choice": [
+            {
+              "text": "I'm trying to eat less.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Less? Why? You're training! Your body's building stuff! It needs bricks!"
+                },
+                {
+                  "speaker": "GOKU",
+                  "text": "I mean, maybe less of the junk. Bulma says that's the important bit. But less food overall? No way."
+                }
+              ]
+            },
+            {
+              "text": "What should I eat?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Real food! Rice, fish, vegetables, eggs. Stuff that grew or swam. Grandpa always said, if you can't tell what it used to be, eat less of it."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "GOKU",
           "text": "Eat big, sleep big, train big. It's not complicated. People just make it complicated."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Some people would say you overdo the 'eat big' part."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Ha! Chi-Chi says that every day. But I train really hard, so it balances."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He finishes the ninth bowl and looks sadly at the empty pot."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "You know the best thing about eating properly? You feel good all day. No crashing at lunchtime, no getting grumpy."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Vegeta skips meals sometimes because he's too busy training. He's always grumpy. Coincidence? I don't think so!"
+        },
+        {
+          "speaker": "YOU",
+          "text": "I think Vegeta might be grumpy anyway."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "...Okay, yeah, that's true. But it doesn't help!"
         }
       ]
     },
@@ -168,6 +284,14 @@
       "level": 4,
       "title": "Losing",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "You've just lost a sparring match against one of Roshi's old students. Badly. You're sitting in the sand."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Hey. You okay?"
+        },
         {
           "speaker": "YOU",
           "text": "Have you ever lost a fight?"
@@ -177,12 +301,62 @@
           "text": "Oh, tons! Some really bad ones."
         },
         {
+          "speaker": "YOU",
+          "text": "Really? You?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "When I was a kid I lost to a guy who cheated, a guy who was way bigger, a guy who was way smaller, and once to a really fast cat."
+        },
+        {
+          "choice": [
+            {
+              "text": "A cat?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "It was a really fast cat."
+                }
+              ]
+            },
+            {
+              "text": "How did you handle it?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Badly, at first! I sulked. Then I got hungry and forgot to sulk."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "GOKU",
           "text": "But every time, I found out exactly what I was missing. You can't buy that anywhere."
         },
         {
           "speaker": "GOKU",
+          "text": "Like, the fast cat taught me I was terrible at dodging. So I practised dodging for a month. Then I beat the cat."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You had a rematch with a cat?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "A friendly rematch! It was fine! It got fish after."
+        },
+        {
+          "speaker": "GOKU",
           "text": "Win and you feel good. Lose and you get a to-do list. Both are pretty great."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So what's on my to-do list?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "You kept looking at his hands instead of his shoulders. Shoulders move first. Let's practise!"
         }
       ]
     },
@@ -203,12 +377,66 @@
           "text": "So? I'm not asking you to beat me. I'm asking you to try as hard as you can and see what happens."
         },
         {
+          "choice": [
+            {
+              "text": "What if I get hurt?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "I'll be careful! I'm really good at not hurting people. Mostly. I'll be extra careful."
+                }
+              ]
+            },
+            {
+              "text": "Okay. Don't hold back too much.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Ha! I like that! I'll hold back exactly the right amount."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You take your stance. He takes his, grinning like it's his birthday."
+        },
+        {
           "speaker": "NARRATOR",
           "text": "You last eleven seconds. Goku is delighted."
         },
         {
           "speaker": "GOKU",
-          "text": "Eleven! Last month you wouldn't have seen the first one coming. Next real fight you're in, I've got your back."
+          "text": "Eleven! Last month you wouldn't have seen the first one coming."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I didn't see the last one coming either."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Yeah, but you saw the second one! And the third! You even blocked one! I felt it!"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "That's the thing. It's not about winning. It's about the bit you got right this time that you got wrong last time."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Eleven seconds of getting things right."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Eleven seconds of getting better! Next month, fifteen. Then thirty."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He helps you up. His hand is warm and the grip is gentle."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Next real fight you're in, I've got your back."
         }
       ]
     },
@@ -221,6 +449,10 @@
           "text": "There's this thing I do when I really need it. Push everything to double for a little while."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He demonstrates. A red glow wraps around him and the sand blows outward in a ring. Then it's gone, and he's panting."
+        },
+        {
           "speaker": "YOU",
           "text": "Why not do it all the time?"
         },
@@ -230,7 +462,53 @@
         },
         {
           "speaker": "GOKU",
+          "text": "My whole body aches for ages after. If I did it every day, I'd break."
+        },
+        {
+          "choice": [
+            {
+              "text": "So when do you use it?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "When it really, really matters. A big fight. A day where everything's on the line."
+                }
+              ]
+            },
+            {
+              "text": "That's like an all-nighter.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Ha! Bulma says that too! Yeah, exactly like that. Works once. Hurts after."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "GOKU",
           "text": "So pick the day. That's the whole trick. I'll show you."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "You've got your normal days. Steady, every day. Then once in a while, a big day where you go double."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "But you can only go double because the normal days built you up. No normal days, no double."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So the steady days are what make the big days possible."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Yeah! You get it! Most people try to do the big day every day and then they're broken by Wednesday."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Okay. Next time there's something huge, you call me. We'll pick the day together."
         }
       ]
     },
@@ -238,6 +516,10 @@
       "level": 7,
       "title": "Why",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Late afternoon. Goku is floating on his back in the sea, doing nothing for once."
+        },
         {
           "speaker": "YOU",
           "text": "Why do you train so hard? You're already the strongest person I know."
@@ -247,12 +529,76 @@
           "text": "Hm. I never really thought about it."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He floats for a while. A seagull lands on his stomach. He doesn't seem to mind."
+        },
+        {
           "speaker": "GOKU",
           "text": "I guess I just like finding out what I can do. And then it turns out I can do a bit more."
         },
         {
+          "choice": [
+            {
+              "text": "But don't you ever want to stop?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Stop? Like, forever? That sounds so boring!"
+                }
+              ]
+            },
+            {
+              "text": "Is it about being the best?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Nah. If someone's better than me, that's great! It means I get to fight someone better than me!"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "GOKU",
           "text": "If I stopped, I'd never know what the next one felt like. That'd bug me forever."
+        },
+        {
+          "speaker": "YOU",
+          "text": "The next level?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "The next anything. The next technique, the next place, the next really good meal."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Why do you train?"
+        },
+        {
+          "choice": [
+            {
+              "text": "To be someone I'm proud of.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "That's a really good one! Way better than mine. Mine's just 'because it's fun'."
+                }
+              ]
+            },
+            {
+              "text": "I'm still figuring that out.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "That's okay! Keep training while you figure it out. The answer usually shows up mid-push-up."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The seagull flies away. Goku sinks slightly, then remembers to swim."
         }
       ]
     },
@@ -262,7 +608,7 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "Goku is sitting on a rock, unusually still."
+          "text": "Goku is sitting on a rock, unusually still. No food in his hand. That's how you know something's wrong."
         },
         {
           "speaker": "YOU",
@@ -273,12 +619,70 @@
           "text": "Yeah. Training went badly today. Everything felt heavy."
         },
         {
+          "speaker": "YOU",
+          "text": "You have bad days too?"
+        },
+        {
           "speaker": "GOKU",
-          "text": "Happens to me too, you know. I just do the easy version on those days, so the streak in my head doesn't break."
+          "text": "Course! I'm not a robot. Bulma's built robots. They don't have bad days. I do."
+        },
+        {
+          "choice": [
+            {
+              "text": "What do you do on them?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "I just do the easy version on those days, so the streak in my head doesn't break."
+                }
+              ]
+            },
+            {
+              "text": "Do you want to talk about it?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Nah. It's nothing specific. Sometimes your body just says 'not today'. I listen a little bit, but not all the way."
+                },
+                {
+                  "speaker": "GOKU",
+                  "text": "I do the easy version, so the streak in my head doesn't break."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Like, today I was supposed to do a thousand push-ups. I did a hundred. Really slowly. Then I sat here."
+        },
+        {
+          "speaker": "YOU",
+          "text": "A hundred is still a lot."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Right? That's what I'm telling myself! It's not zero. Zero's the only one that doesn't count."
         },
         {
           "speaker": "GOKU",
           "text": "A bad workout still counts. Don't tell Vegeta I said that."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why not?"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "He'd say 'a bad workout is a coward's workout' or something. He says stuff like that. Then he'd do a bad workout on his bad day and pretend he didn't."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He stands up and stretches."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Okay. Feeling better. Wanna get food?"
         }
       ]
     },
@@ -286,6 +690,10 @@
       "level": 9,
       "title": "Everyone's Energy",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "Night. Goku is lying in the grass looking at the stars."
+        },
         {
           "speaker": "GOKU",
           "text": "The biggest thing I can do, I can't do alone. I have to ask for a little energy from everybody."
@@ -300,7 +708,53 @@
         },
         {
           "speaker": "GOKU",
+          "text": "I raise my hands, and everyone, all over, lends me a tiny bit. The trees, the animals, people in towns I've never been to."
+        },
+        {
+          "choice": [
+            {
+              "text": "That sounds incredible.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "It is! It's the strongest thing I know. And none of it's really mine."
+                }
+              ]
+            },
+            {
+              "text": "What if nobody helps?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Then it doesn't work. That's the scary part. I have to trust people."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "GOKU",
           "text": "All those tiny bits add up to something huge. Kinda like your training, huh?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "Every little check-off."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Yeah! Each one's a tiny bit of energy. On its own, nothing. All together? Boom!"
+        },
+        {
+          "speaker": "GOKU",
+          "text": "Also, you've got all of us. Roshi, Piccolo, Bulma, me. Even Vegeta, though he'd never say it."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "If you're ever trying something really big, ask. That's not weak. That's the smartest thing you can do."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "A shooting star crosses the sky. Goku points at it, delighted, like he's never seen one before."
         }
       ]
     },
@@ -321,8 +775,58 @@
           "text": "No way! It's just, students follow. You've been keeping up."
         },
         {
+          "choice": [
+            {
+              "text": "Keeping up with you? Barely.",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "Barely is still keeping up! Most people don't even get to barely!"
+                }
+              ]
+            },
+            {
+              "text": "So what am I now?",
+              "then": [
+                {
+                  "speaker": "GOKU",
+                  "text": "A training partner! That's way better. Students are fun, but partners push you back."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "GOKU",
+          "text": "When we did the hill sprints yesterday, I had to actually try. Like, really try. You were right behind me."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You were carrying a boulder."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "A small boulder! And I still had to try!"
+        },
+        {
           "speaker": "GOKU",
           "text": "So I'm gonna train extra hard now. I don't wanna get left behind!"
+        },
+        {
+          "speaker": "YOU",
+          "text": "You're not going to get left behind."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "You don't know that! You're getting stronger every day! That's the most exciting thing ever!"
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He's grinning so wide it looks like it hurts."
+        },
+        {
+          "speaker": "GOKU",
+          "text": "This is the best part, you know. When someone you trained starts pushing you. It means it worked."
         },
         {
           "speaker": "GOKU",

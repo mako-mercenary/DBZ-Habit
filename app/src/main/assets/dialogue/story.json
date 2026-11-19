@@ -1,528 +1,1371 @@
 {
-  "chapters": [
+ "chapters": [
+  {
+   "number": 1,
+   "title": "The Island",
+   "lines": [
     {
-      "number": 1,
-      "title": "The Island",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "A small boat leaves you on a beach with one house on it. Pink walls. A turtle asleep by the door."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "An old man in sunglasses is reading in a deck chair. He does not look up."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "If you're selling something, I already have one."
-        },
-        {
-          "speaker": "YOU",
-          "text": "I heard a master lives here. I want to get stronger."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Ho ho. Everyone does, for about a week. Hold still."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He holds a small device to one eye. It beeps once."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Power level... five. Five! I've met house plants with more."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Then I've come to the right place."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The old man lowers the device and looks at you properly for the first time."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Hm. Most of them argue with the number. You didn't."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Listen. I won't teach you anything flashy. I'll give you small things to do, every day, and I'll expect them done. That is the whole school."
-        },
-        {
-          "speaker": "YOU",
-          "text": "That's all?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "That's all, and almost nobody manages it. There's a spare room upstairs. Training starts tomorrow."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Tonight, you cook. Consider it the entrance exam."
-        }
-      ]
+     "speaker": "NARRATOR",
+     "text": "A small boat leaves you on a beach with one house on it. Pink walls. A turtle asleep by the door."
     },
     {
-      "number": 2,
-      "title": "The Boy on the Cloud",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "You are halfway through the morning chores when a shadow crosses the beach. Something yellow drops out of the sky."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "A young man in an orange uniform lands in the sand, already grinning."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "Master Roshi! I smelled breakfast from three islands away!"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "You smelled it because you were hoping. Sit down, you'll scare the new student."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "New student? Oh! Hey! I'm Goku. What's your power level?"
-        },
-        {
-          "speaker": "YOU",
-          "text": "It was five. It's about a hundred now."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "A hundred! From five! That's twenty times! You know how hard it is to get twenty times stronger?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "It has only been a few days, Goku."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "Then imagine a few more! Come on, let's train. Right now. Just a little."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "\"A little\" lasts until the sun is high. Every time you think it is over, he says the same two words."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "One more!"
-        },
-        {
-          "speaker": "YOU",
-          "text": "You said that the last four times."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "Yeah, and you did every one! See? You had four more in you and you didn't even know."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He flops down on the sand beside you, not even out of breath."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "I'm gonna come by for the workouts. If that's okay. You're fun to train with."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "He means he's coming by for the food. But you could do worse for a teacher."
-        }
-      ]
+     "speaker": "NARRATOR",
+     "text": "The boat doesn't wait. By the time you turn round, it's a white dot on the horizon."
     },
     {
-      "number": 3,
-      "title": "The One in the Wasteland",
-      "lines": [
-        {
-          "speaker": "ROSHI",
-          "text": "Your body is coming along. Your mind is still a monkey in a fruit shop. I know someone who can fix that."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Another master?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "He'd hate the word. Walk north until there's nothing left to look at. He'll be there."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "It takes most of a day. The grass gives out, then the trees. At the foot of a cliff a tall figure in a white cape sits with his arms crossed, eyes shut."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Excuse me. Master Roshi sent me."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Nothing. Not even a twitch."
-        },
-        {
-          "speaker": "YOU",
-          "text": "He said you could teach me to focus."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Wind. A long time passes. Your legs ache. You give up on being polite and simply sit down facing him, and wait."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The sun moves a hand's width across the sky."
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "Forty minutes."
-        },
-        {
-          "speaker": "YOU",
-          "text": "What?"
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "You sat still for forty minutes before your mind ran off. Most leave after five. They want a secret."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Is there one?"
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "No. You sit. You do one thing. When your mind leaves, you bring it back. That's all of it."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He opens one eye, finally."
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "Come back tomorrow. Bring nothing. Say less."
-        }
-      ]
+     "speaker": "NARRATOR",
+     "text": "An old man in sunglasses is reading in a deck chair. He does not look up."
     },
     {
-      "number": 4,
-      "title": "Capsule",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "Roshi's old scouter has been making a noise like a kettle all week. This morning it gives one last beep and dies in your hand."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Ah. That would be the seven hundred. It was only built for beginners."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "There's a girl in West City who made it. Take it to her. Be polite. Be brief. She bites."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The workshop is the size of a hangar. A woman with blue hair is inside a machine up to her waist."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "If you're the delivery, leave it by the door. If you're not, you have thirty seconds."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Master Roshi's scouter broke. He said you built it."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "I built it when I was fourteen. Give it here."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "She has it in pieces before you finish handing it over."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Nothing's wrong with it. It ran out of numbers. You maxed out a scouter. Do you know how annoying that is? Now I have to make a better one."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Sorry?"
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Don't be sorry, be useful. I've got six projects open and two hands. You can clearly finish things, or that reading wouldn't exist."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Here's the deal. I upgrade the scouter. You help me close out one of these. Start to finish, no wandering off halfway."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Which one?"
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Pick. But once you pick, it's a promise. I don't keep half-built things around. They sulk."
-        }
-      ]
+     "speaker": "ROSHI",
+     "text": "If you're selling something, I already have one."
     },
     {
-      "number": 5,
-      "title": "The Prince",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "Bulma's house has a room nobody mentions. The door is steel. A dial beside it reads 300."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "It opens while you are standing there. Heat rolls out, and a man with a towel round his neck looks you up and down."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "So you're the stray everyone keeps feeding."
-        },
-        {
-          "speaker": "YOU",
-          "text": "I'm training under Master Roshi. And Goku, and..."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Kakarot. Of course. He collects weaklings the way that old man collects magazines."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He takes the scouter off your face without asking, reads it, and tosses it back."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Fifteen hundred. I've sneezed harder than that."
-        },
-        {
-          "speaker": "YOU",
-          "text": "A while ago it was five."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Something changes in his face. Not warmth. Attention."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Five. And you're still here."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Then answer me this. Out of everything they have you doing, which one do you dread? The one you put off. The one you'd skip if nobody was counting."
-        },
-        {
-          "speaker": "YOU",
-          "text": "...I know which one."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Good. That one is mine. Bring it to me every day. I won't be kind about it and I won't pretend it's easy."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "The others will make you better. I'm the only one here who'll make you hard to beat."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The steel door shuts. From behind it, the dial clicks up to 310."
-        }
-      ]
+     "speaker": "YOU",
+     "text": "I'm not selling anything."
     },
     {
-      "number": 6,
-      "title": "Five Teachers",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "For once, all of them are at the island on the same evening. This turns out to be a mistake."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "Workouts! That's the base of everything. Strong body first."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Strong body. Sure. And who builds the thing the strong body lives in? Projects. Finished ones."
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "Neither works without focus. A strong fool with good tools is still a fool."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "You're all coddling. One hard thing a day, done without whining. The rest is decoration."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "They turn, together, to the old man in the deck chair."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Don't look at me. I only make sure the teeth get brushed."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The argument starts again, louder. You get up quietly and clear the table, because it's a daily, and it's on the list."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "When you come back they've gone silent. All five are looking at the chart on the wall. Your chart. Weeks of it, filled in."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "Huh. It's all on there. Every one of ours."
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "Nobody is winning this argument. The student already settled it."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Ho ho. Five teachers, and the timetable was the smart one all along."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "So we're all right?"
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Tch. It means none of you can take the credit. Neither can I."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Vegeta looks at the chart a moment longer than the others."
-        }
-      ]
+     "speaker": "ROSHI",
+     "text": "Then you're lost. The mainland is that way. Swim with the current, not against it."
     },
     {
-      "number": 7,
-      "title": "The Bad Day",
-      "lines": [
-        {
-          "speaker": "NARRATOR",
-          "text": "It had to come eventually. You wake late with a head full of sand. Everything on the list looks twice its size."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "You sit on the step and do nothing for a long time. One by one, they find you there."
-        },
-        {
-          "speaker": "GOKU",
-          "text": "Heavy day, huh? I get those. Do the small version. Ten instead of fifty. It still counts."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He is gone before you can argue."
-        },
-        {
-          "speaker": "PICCOLO",
-          "text": "You're waiting to feel like it. You won't. Begin, and the feeling follows. It always has."
-        },
-        {
-          "speaker": "BULMA",
-          "text": "You've got a system. Systems are for days like this. On good days anyone can do it."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Vegeta doesn't stop walking."
-        },
-        {
-          "speaker": "VEGETA",
-          "text": "Get up or don't. But remember tomorrow which one you chose."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "Roshi is last. He lowers himself onto the step beside you with a great deal of noise."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "When you got here you couldn't have had a bad day. There was nothing to fall short of."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "This feeling is what it costs to have standards. Expensive, I know."
-        },
-        {
-          "speaker": "YOU",
-          "text": "What do I do?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "The first thing on the list. Badly, if you must. Then we'll see."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "You do the first thing. Badly. Then, because you are already standing, the second."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "By evening the list is done. Not one of them says a word about it, which is how you know they all noticed."
-        }
-      ]
+     "speaker": "YOU",
+     "text": "I heard a master lives here. I want to get stronger."
     },
     {
-      "number": 8,
-      "title": "Power Level",
-      "lines": [
+     "speaker": "ROSHI",
+     "text": "Ho ho. Everyone does, for about a week. Hold still."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He holds a small device to one eye. It beeps once."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Power level... five. Five! I've met house plants with more."
+    },
+    {
+     "choice": [
+      {
+       "text": "Then I've come to the right place.",
+       "then": [
         {
-          "speaker": "NARRATOR",
-          "text": "A hundred days without a gap. Roshi asks you to walk with him along the beach, and brings the old scouter. Bulma's first one, patched with tape."
+         "speaker": "NARRATOR",
+         "text": "The old man lowers the device and looks at you properly for the first time."
         },
         {
-          "speaker": "ROSHI",
-          "text": "Humour an old man. I want to do this the way we did on the first day."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He holds it to his eye. It hums. It whines. A thin line of smoke comes out of the side."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Ho ho! Well. There it goes."
-        },
-        {
-          "speaker": "YOU",
-          "text": "What did it say?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Nothing. It gave up trying. Do you remember what it said the first time?"
-        },
-        {
-          "speaker": "YOU",
-          "text": "Five."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Five. And do you know what I liked about you? You didn't argue with it. You just asked where to start."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "The others are waiting further along the sand. Goku is waving with both arms. Piccolo nods, once. Bulma is holding a new scouter she pretends not to have made for you. Vegeta stands apart with his back turned, which, for him, is attendance."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "I should tell you something, now that you can take it. The number was never the point. It was only there so you'd have something to look at while the real thing happened."
-        },
-        {
-          "speaker": "YOU",
-          "text": "What was the real thing?"
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "You turned into someone who does what they said they'd do. Every day. That doesn't show on a scouter."
-        },
-        {
-          "speaker": "NARRATOR",
-          "text": "He hands you the broken one to keep."
-        },
-        {
-          "speaker": "ROSHI",
-          "text": "Now. It's nearly morning. Somebody has to deliver the milk."
+         "speaker": "ROSHI",
+         "text": "Hm. Most of them argue with the number. You didn't."
         }
-      ]
+       ]
+      },
+      {
+       "text": "That thing must be broken.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho! That's what they all say. It isn't. I had it checked by a genius."
+        },
+        {
+         "speaker": "YOU",
+         "text": "...Fine. Then it's five. Where do I start?"
+        },
+        {
+         "speaker": "NARRATOR",
+         "text": "The old man lowers the device and looks at you properly for the first time."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "Hm. You got there quicker than most. They usually argue for a week."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Why do you want to be strong? And don't say 'to beat someone up'. I've heard that one."
+    },
+    {
+     "choice": [
+      {
+       "text": "I keep starting things and not finishing them.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ah. An honest one. That's the most common problem in the world, and the least discussed."
+        }
+       ]
+      },
+      {
+       "text": "I want to be someone I'm proud of.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Hm. That's a long road. The good news is you can start it today. The bad news is it never ends."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Listen. I won't teach you anything flashy. I'll give you small things to do, every day, and I'll expect them done. That is the whole school."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's all?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's all, and almost nobody manages it."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "They come here wanting secret techniques. They get chores. They leave in a huff, usually before lunch."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And the ones who stay?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The ones who stay get strong. Not because the chores are magic. Because they did them on the days they didn't want to."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The turtle opens one eye, looks at you, and goes back to sleep."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He's seen a lot of students come and go. He doesn't get attached any more. Don't take it personally."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll prove him wrong."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho! Don't prove anything. Just turn up tomorrow. Proving is for later."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "There's a spare room upstairs. Mind the third step, it bites. Training starts tomorrow."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Tonight, you cook. Consider it the entrance exam."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "You cook. It isn't good. The old man eats all of it anyway and says nothing, which you will later learn is the highest praise he gives."
     }
-  ]
+   ]
+  },
+  {
+   "number": 2,
+   "title": "The Boy on the Cloud",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "You are halfway through the morning chores when a shadow crosses the beach. Something yellow drops out of the sky."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "It's a cloud. A small, golden cloud, and there is a person standing on it."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "A young man in an orange uniform hops off and lands in the sand, already grinning."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Master Roshi! I smelled breakfast from three islands away!"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You smelled it because you were hoping. Sit down, you'll scare the new student."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "New student? Oh! Hey! I'm Goku. What's your power level?"
+    },
+    {
+     "choice": [
+      {
+       "text": "It was five. It's about a hundred now.",
+       "then": []
+      },
+      {
+       "text": "Is that the first thing you ask everyone?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Pretty much! It's way more interesting than asking their name. I'll ask your name too, though. Later."
+        },
+        {
+         "speaker": "YOU",
+         "text": "It was five. It's about a hundred now."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "A hundred! From five! That's twenty times! You know how hard it is to get twenty times stronger?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "It has only been a few days, Goku."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Then imagine a few more! Come on, let's train. Right now. Just a little."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'm in the middle of the chores."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Chores are training! I'll help! We'll race!"
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He finishes the sweeping in four seconds and knocks over a bucket doing it. He looks very proud."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "'A little' lasts until the sun is high. Every time you think it is over, he says the same two words."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "One more!"
+    },
+    {
+     "speaker": "YOU",
+     "text": "You said that the last four times."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yeah, and you did every one! See? You had four more in you and you didn't even know."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He flops down on the sand beside you, not even out of breath."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Can I tell you a secret? When I started, I couldn't do any of this either."
+    },
+    {
+     "choice": [
+      {
+       "text": "I don't believe you.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "It's true! Master Roshi made me deliver milk until my legs fell off. Not really fell off. But almost."
+        }
+       ]
+      },
+      {
+       "text": "What changed?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Nothing, really. I just kept doing it. Every morning. Then one day it was easy, and I hadn't even noticed when it happened."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He was a terrible student. Ate everything, broke everything, asked a hundred questions a day."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Hey! ...Okay, yeah, that's fair."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "And he never once skipped a morning. That's why he's standing there and other students aren't."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I'm gonna come by for the workouts. If that's okay. You're fun to train with."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He means he's coming by for the food. But you could do worse for a teacher."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Both! It can be both!"
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He climbs back on the cloud, then hops off again to steal a rice ball from the kitchen, then climbs back on."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "See you tomorrow! Same time! Bring snacks!"
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The cloud shoots off over the sea. Roshi sighs and starts counting what's left in the fridge."
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "title": "The One in the Wasteland",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Your body is coming along. Your mind is still a monkey in a fruit shop. I know someone who can fix that."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Another master?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He'd hate the word. Don't use it to his face. Don't use much of anything to his face, actually."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Is he dangerous?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Very. But not to you, if you're quiet. Walk north until there's nothing left to look at. He'll be there."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "It takes most of a day. The grass gives out, then the trees. At the foot of a cliff a tall figure in a white cape sits with his arms crossed, eyes shut."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He is floating. Not sitting on the rock. Floating, a hand's width above it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Excuse me. Master Roshi sent me."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Nothing. Not even a twitch."
+    },
+    {
+     "speaker": "YOU",
+     "text": "He said you could teach me to focus."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Wind. A long time passes. Your legs ache."
+    },
+    {
+     "choice": [
+      {
+       "text": "Sit down and wait.",
+       "then": [
+        {
+         "speaker": "NARRATOR",
+         "text": "You give up on being polite and simply sit down facing him, and wait."
+        }
+       ]
+      },
+      {
+       "text": "Clear your throat, loudly.",
+       "then": [
+        {
+         "speaker": "NARRATOR",
+         "text": "You clear your throat. One of his ears twitches. That's all."
+        },
+        {
+         "speaker": "NARRATOR",
+         "text": "Feeling slightly foolish, you sit down facing him, and wait."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The sun moves a hand's width across the sky. Your mind runs through everything: dinner, the chores, the boat ride, a song you can't remember the end of."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Each time, you notice, and you come back to the wind and the rock and the still green face in front of you."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Forty minutes."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You sat still for forty minutes before your mind ran off for good. Most leave after five. They want a secret."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Is there one?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "No. You sit. You do one thing. When your mind leaves, you bring it back. That's all of it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That sounds too simple."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It's simple. Simple and easy aren't the same. You'll find out."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He opens one eye, finally. It is not a friendly eye. It isn't unfriendly, either. It is measuring."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "The old man sent you because you rush. I can see it in how you sat down. Too quickly. Like sitting was something to get through."
+    },
+    {
+     "choice": [
+      {
+       "text": "I do rush.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Good. You can see it. Most can't."
+        }
+       ]
+      },
+      {
+       "text": "I sat down normally.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You sat down like someone waiting for a bus. I'm not a bus."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I'll teach you one thing. Attention. Where you put it, how long it stays, how to bring it back."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Everything you train, the old man's chores, the clown's workouts, all of it gets better when your attention is where your body is."
+    },
+    {
+     "speaker": "YOU",
+     "text": "The clown?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Goku. Don't tell him I call him that. Actually, do. He'll laugh. It's infuriating."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Come back tomorrow. Bring nothing. Say less."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He closes his eye. The conversation is over. You walk back south in the dark, and for once, you're only thinking about walking."
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "title": "Capsule",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "Roshi's old scouter has been making a noise like a kettle all week. This morning it gives one last beep and dies in your hand."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ah. That would be the seven hundred. It was only built for beginners."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I broke it?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You outgrew it. Different thing. Feels the same, I know."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "There's a girl in West City who made it. Take it to her. Be polite. Be brief. She bites."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Should I bring anything?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Bring a compliment. Make it about her work, not her hair. She gets enough about her hair."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "West City is louder than anything you've heard in weeks. Cars fly. Buildings are round. Everyone is in a hurry."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The workshop is the size of a hangar. A woman with blue hair is inside a machine up to her waist."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "If you're the delivery, leave it by the door. If you're not, you have thirty seconds."
+    },
+    {
+     "choice": [
+      {
+       "text": "Master Roshi's scouter broke. He said you built it.",
+       "then": []
+      },
+      {
+       "text": "Your work on this scouter is brilliant. It broke.",
+       "then": [
+        {
+         "speaker": "NARRATOR",
+         "text": "She pulls her head out of the machine and looks at you suspiciously."
+        },
+        {
+         "speaker": "BULMA",
+         "text": "Roshi told you to say that. ...It's still true, so I'll allow it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I built it when I was fourteen. Give it here."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "She has it in pieces before you finish handing it over. Tiny screws roll across the bench and she catches every one without looking."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Hm. Hm hm hm. Oh, that's funny."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What's funny?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Nothing's wrong with it. It ran out of numbers. You maxed out a scouter. Do you know how annoying that is? Now I have to make a better one."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Sorry?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Don't be sorry, be useful. I've got six projects open and two hands."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "She waves at the workshop. There's a half-built engine, a robot missing a head, something that might be a fridge or a spaceship, and a lot of very confident sticky notes."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "You can clearly finish things, or that reading wouldn't exist. Seven hundred doesn't happen by accident."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Here's the deal. I upgrade the scouter. You help me close out one of these. Start to finish, no wandering off halfway."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Which one?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Pick. But once you pick, it's a promise. I don't keep half-built things around. They sulk."
+    },
+    {
+     "choice": [
+      {
+       "text": "The robot.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Good choice. He's been headless for a month. It's starting to feel rude."
+        }
+       ]
+      },
+      {
+       "text": "The engine.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Ambitious! It's exploded twice. Third time's the charm, or the third explosion. We'll see."
+        }
+       ]
+      },
+      {
+       "text": "Whatever you need most.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Ooh, diplomatic. Fine. The fridge-spaceship. Don't ask. I'll explain while you hold the wrench."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Rule one in here: write it down. Every step. Your head is for thinking, not for storage."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Rule two: small pieces. Nobody builds a spaceship. They build a bolt, then another bolt, until someone says 'hey, that's a spaceship'."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And rule three?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Rule three is don't touch anything I haven't pointed at. That one's the most important."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "By the evening, the project is a little more finished than it was this morning. Bulma looks at it, then at you."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Not bad. Come back tomorrow. And bring that old man some batteries, his television's been flickering since the last century."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "title": "The Prince",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "Bulma's house has a room nobody mentions. The door is steel. A dial beside it reads 300."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Something heavy thuds behind it at regular intervals, like a very angry heartbeat."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Don't go in there. Don't knock. Don't breathe on the door."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What's in there?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "My gravity room. And the most stubborn man in the universe, who lives in it."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "It opens while you are standing there. Heat rolls out, and a man with a towel round his neck looks you up and down."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "So you're the stray everyone keeps feeding."
+    },
+    {
+     "choice": [
+      {
+       "text": "I'm training under Master Roshi. And Goku, and...",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Kakarot. Of course. He collects weaklings the way that old man collects magazines."
+        }
+       ]
+      },
+      {
+       "text": "And you're the one who breaks Bulma's things.",
+       "then": [
+        {
+         "speaker": "NARRATOR",
+         "text": "Behind you, Bulma makes a small, delighted noise."
+        },
+        {
+         "speaker": "VEGETA",
+         "text": "...I improve them. By finding their weaknesses. Kakarot sent you, I suppose. He collects weaklings."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He takes the scouter off your face without asking, reads it, and tosses it back."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Fifteen hundred. I've sneezed harder than that."
+    },
+    {
+     "speaker": "YOU",
+     "text": "A while ago it was five."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Something changes in his face. Not warmth. Attention."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Five. And you're still here."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "How long?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "A few months. Every day."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Every day. Not most days. Every day?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Every day. Some of them badly.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Badly still counts. Badly is how everyone begins. Even me. Briefly."
+        }
+       ]
+      },
+      {
+       "text": "Almost every day.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Almost. Hm. Honest, at least. Almost is where most people live their entire lives."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Then answer me this. Out of everything they have you doing, which one do you dread? The one you put off. The one you'd skip if nobody was counting."
+    },
+    {
+     "speaker": "YOU",
+     "text": "...I know which one."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Of course you do. Everyone does. Nobody says it."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Good. That one is mine. Bring it to me every day. I won't be kind about it and I won't pretend it's easy."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Why do you care?"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I don't. I'm curious. Kakarot finds strays and makes them strong. I want to know if it's him, or if it's them."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "The others will make you better. I'm the only one here who'll make you hard to beat."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He turns to go back inside. Then stops."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "The habit you dread. Do it first thing tomorrow, before you've had time to argue with yourself. Report to me when it's done."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And if I don't?"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Then I'll know what you are, and I'll stop wasting my time. Simple."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The steel door shuts. From behind it, the dial clicks up to 310."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He likes you."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That was him liking me?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "That was him liking you a lot. He usually just closes the door."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "title": "Five Teachers",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "For once, all of them are at the island on the same evening. This turns out to be a mistake."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "It starts innocently. Goku brings fish. Bulma brings a portable kitchen. Piccolo brings nothing and stands near the sea. Vegeta arrives last and says he was 'passing'."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Nobody passes this island. It's in the middle of nowhere. That's the whole point of it."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I was passing the middle of nowhere."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Dinner lasts eleven minutes. Then someone asks the question."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So what's the most important part of your training?"
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Silence. Then everyone answers at once."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Workouts! That's the base of everything. Strong body first."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Strong body. Sure. And who builds the thing the strong body lives in? Projects. Finished ones."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Neither works without focus. A strong fool with good tools is still a fool."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "You're all coddling. One hard thing a day, done without whining. The rest is decoration."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Decoration? My workouts aren't decoration!"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Neither are my projects! Some of them are load-bearing!"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Volume is not an argument."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Then be quiet, Namekian, and let the rest of us have it."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "They turn, together, to the old man in the deck chair."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Don't look at me. I only make sure the teeth get brushed."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "They turn, together, to you."
+    },
+    {
+     "choice": [
+      {
+       "text": "I think you're all right.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha! See? We're all right!"
+        },
+        {
+         "speaker": "VEGETA",
+         "text": "That is the most cowardly answer I've ever heard."
+        }
+       ]
+      },
+      {
+       "text": "I'm going to clear the table.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Coward."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho. Smart, actually. Watch."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The argument starts again, louder. You get up quietly and clear the table, because it's a daily, and it's on the list."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Then you wash up, because that's on the list too. Then you write today's notes, and stretch, and check the chart."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "When you come back they've gone silent. All five are looking at the chart on the wall. Your chart. Weeks of it, filled in."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Huh. It's all on there. Every one of ours."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "There's my workouts! And there's Piccolo's sitting thing!"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Meditation."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Sitting thing!"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "And mine. The one they dread. Done. Every day for..."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He counts. He stops counting, and looks for a moment like he wants to say something, then doesn't."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Nobody is winning this argument. The student already settled it."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho. Five teachers, and the timetable was the smart one all along."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So we're all right?"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Tch. It means none of you can take the credit. Neither can I."
+    },
+    {
+     "choice": [
+      {
+       "text": "You all helped.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Obviously. Mostly me. But obviously."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "She means all of us. She'd never say it."
+        }
+       ]
+      },
+      {
+       "text": "I just did the list.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "That's the point. Most people can't 'just do the list'. It's the hardest thing there is."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Vegeta looks at the chart a moment longer than the others."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "On the way out, he nods to you. Just once. Bulma sees it, and grins for the rest of the night."
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "title": "The Bad Day",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "It had to come eventually. You wake late with a head full of sand. Everything on the list looks twice its size."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Your phone has eleven messages. The weather is grey. Your body feels like it was put together by someone in a hurry."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "You sit on the step and do nothing for a long time. One by one, they find you there."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Heavy day, huh? I get those."
+    },
+    {
+     "choice": [
+      {
+       "text": "I can't do it today.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Sure you can. Just not the big version."
+        }
+       ]
+      },
+      {
+       "text": "Don't try to cheer me up.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "I'm not! Promise! Okay, maybe a little."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Do the small version. Ten instead of fifty. It still counts."
+    },
+    {
+     "speaker": "YOU",
+     "text": "It doesn't feel like it counts."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "It counts in the place that matters. In your head, the streak doesn't break. That's the real one."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He is gone before you can argue, off to eat something enormous."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You're waiting to feel like it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Yes."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You won't. Not today. Begin, and the feeling follows. It always has. Not always quickly."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What if it doesn't follow?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Then you'll have done the work without it. That's worth more. It means you don't need the feeling."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay. I'm not doing a speech. I'm just saying."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "You've got a system. Systems are for days like this. On good days anyone can do it."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Look at the list. Pick the smallest thing on it. Do just that. Then decide about the rest."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Vegeta doesn't stop walking."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Get up or don't. But remember tomorrow which one you chose."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Then he stops, a few steps away, without turning round."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "...Everyone has these days. Even me. The difference is what you do with them."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He keeps walking."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Roshi is last. He lowers himself onto the step beside you with a great deal of noise."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "When you got here you couldn't have had a bad day. There was nothing to fall short of."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "This feeling is what it costs to have standards. Expensive, I know."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What do I do?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The first thing on the list. Badly, if you must. Then we'll see."
+    },
+    {
+     "choice": [
+      {
+       "text": "And if I fail?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Then you'll have tried on a bad day, which is braver than succeeding on a good one."
+        }
+       ]
+      },
+      {
+       "text": "Okay. The first thing.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho. That's all anyone ever has to do. Just the first thing. Every day of your life."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "You do the first thing. Badly. Then, because you are already standing, the second."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The third is easier. By the fourth you've forgotten to feel terrible."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "By evening the list is done. Not one of them says a word about it, which is how you know they all noticed."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Later, you find a rice ball on your pillow with a note in very bad handwriting: 'One more!'"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "title": "Power Level",
+   "lines": [
+    {
+     "speaker": "NARRATOR",
+     "text": "A hundred days without a gap. Roshi asks you to walk with him along the beach, and brings the old scouter. Bulma's first one, patched with tape."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Humour an old man. I want to do this the way we did on the first day."
+    },
+    {
+     "speaker": "YOU",
+     "text": "It'll break."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I know. That's half the fun."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He holds it to his eye. It hums. It whines. A thin line of smoke comes out of the side."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho! Well. There it goes."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What did it say?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Nothing. It gave up trying. Do you remember what it said the first time?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "Five."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Five. And do you know what I liked about you? You didn't argue with it. You just asked where to start."
+    },
+    {
+     "choice": [
+      {
+       "text": "I did argue, a little.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "A little. For about one breath. Then you stopped. That's the part I remember."
+        }
+       ]
+      },
+      {
+       "text": "I didn't know enough to argue.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho! Maybe. But you knew enough to stay. That's rarer."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The others are waiting further along the sand. Goku is waving with both arms. Piccolo nods, once. Bulma is holding a new scouter she pretends not to have made for you. Vegeta stands apart with his back turned, which, for him, is attendance."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Hey! A hundred days! A hundred! Do you know how many push-ups that is?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He doesn't know either. He just likes the number."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I like the number a lot!"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Here. It's... just something I had lying around. A scouter. Rated past a hundred thousand. Don't break it this year."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Hm. Your breathing is slower than when you first came to the wasteland. You walk slower. You arrive faster."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That doesn't make sense."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It will."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Vegeta says nothing. Then, without turning:"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "A hundred days. Now do a thousand. Then we'll talk."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I should tell you something, now that you can take it. The number was never the point. It was only there so you'd have something to look at while the real thing happened."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What was the real thing?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You turned into someone who does what they said they'd do. Every day. That doesn't show on a scouter."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Most people go their whole lives thinking strength is a big moment. A fight, a test, a speech."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "It's not. It's a Tuesday. It's a Tuesday you didn't skip."
+    },
+    {
+     "choice": [
+      {
+       "text": "Thank you, Master.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Don't thank me. I gave you chores. You did them. That's the whole story."
+        }
+       ]
+      },
+      {
+       "text": "So what happens now?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Now? Ho ho. Same as yesterday. That's the secret ending. There isn't one."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "He hands you the broken one to keep."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Can we eat now? I've been waiting a hundred days. Well, since breakfast."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He had breakfast forty minutes ago."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "A hundred days in Goku time!"
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "Everyone laughs. Even Piccolo's ears move. Even Vegeta's shoulders shake, once, though he'll deny it."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Now. It's nearly morning. Somebody has to deliver the milk."
+    }
+   ]
+  }
+ ]
 }

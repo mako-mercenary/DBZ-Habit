@@ -130,20 +130,70 @@
       "title": "First Words",
       "lines": [
         {
+          "speaker": "NARRATOR",
+          "text": "The gravity room door is open a crack. Vegeta is doing push-ups on one finger. He doesn't stop when he sees you."
+        },
+        {
           "speaker": "VEGETA",
           "text": "You. You're the one Kakarot is wasting his time on?"
         },
         {
-          "speaker": "YOU",
-          "text": "I'm here to train on the hardest thing I've got."
+          "choice": [
+            {
+              "text": "I'm here to train on the hardest thing I've got.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Hmph. Everyone says that on the first day."
+                }
+              ]
+            },
+            {
+              "text": "He's not wasting it.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Bold. And probably wrong. We'll see."
+                }
+              ]
+            }
+          ]
         },
         {
           "speaker": "VEGETA",
-          "text": "Hmph. Everyone says that on the first day."
+          "text": "Do you know how many people Kakarot has taken under his wing? Dozens. Do you know how many of them still train?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "No."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Neither do I. I stopped counting the quitters. It got boring."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He switches fingers without slowing down."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "The first week is easy. Everyone's excited. The second week, half of them find a reason. The third week, the reasons get more creative."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I'm not going to quit."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "They all say that too."
         },
         {
           "speaker": "VEGETA",
           "text": "Stay out of my way. If you're still here in a week, I may learn your name."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "A week later, he walks past you in the kitchen and says your name without looking up. You decide it counts."
         }
       ]
     },
@@ -168,8 +218,58 @@
           "text": "At your level? It would fold you like paper."
         },
         {
+          "choice": [
+            {
+              "text": "Then start me low.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Hmph. At least you know your place."
+                }
+              ]
+            },
+            {
+              "text": "I can handle it.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "You can't. And that confidence will break your knees. Listen to me instead."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "VEGETA",
           "text": "...Start at ten times. Stand in the corner. Don't speak."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He turns the dial. The air thickens. You feel like you're wearing a coat made of sand."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Standing is hard. Breathing is harder. He doesn't even look at you."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Your shoulders are up by your ears. Lower them. Tension wastes energy."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You lower them. It helps, a little."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Ten minutes. Then you go. Tomorrow, eleven. That's all."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Just standing?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Just standing. Most people can't even do that at ten times. Prove you're not most people."
         }
       ]
     },
@@ -186,12 +286,58 @@
           "text": "That's none of your concern."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He punches the training bag. It swings and hits the wall. He catches it on the way back."
+        },
+        {
           "speaker": "VEGETA",
           "text": "There's a man who is always one step ahead of me. Always. I've hated him for years."
         },
         {
+          "choice": [
+            {
+              "text": "Goku?",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Kakarot. Don't say his other name in this room."
+                }
+              ]
+            },
+            {
+              "text": "Have you ever beaten him?",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "...That's not a question you ask a prince."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "VEGETA",
-          "text": "It's the best thing that ever happened to my training. Tell no one."
+          "text": "Every time I reach his level, he's found a new one. Every time. It's infuriating."
+        },
+        {
+          "speaker": "YOU",
+          "text": "That sounds exhausting."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "It is. It's also the best thing that ever happened to my training. Tell no one."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Without him, I'd have stopped. I'd have been strong enough, and comfortable, and slowly getting weaker."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Find someone one step ahead of you. Hate them a little, if it helps. Chase them."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He hits the bag again. This time he doesn't catch it."
         }
       ]
     },
@@ -212,8 +358,62 @@
           "text": "It was an observation. Don't be greedy."
         },
         {
+          "choice": [
+            {
+              "text": "I'll take it.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Hmph. As you should."
+                }
+              ]
+            },
+            {
+              "text": "What was wrong with my footwork?",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "You stepped back with your front foot first. Every time. Like a startled deer."
+                },
+                {
+                  "speaker": "VEGETA",
+                  "text": "Back foot first. Always. Then the front follows. You're never off balance that way."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Most people back away when it gets hard. It's instinct. You stood there and took the hits, and kept going."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "That's not technique. That can't be taught. You either have it or you build it the slow way."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Which did I do?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "The slow way. Every day you did the thing you dreaded. That's what builds it."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He's quiet for a moment."
+        },
+        {
           "speaker": "VEGETA",
           "text": "Next time something big stands in your way, I'll be there. I want to see it for myself."
+        },
+        {
+          "speaker": "YOU",
+          "text": "To help?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "To watch. If I happen to destroy whatever it is, that's incidental."
         }
       ]
     },
@@ -234,8 +434,54 @@
           "text": "You asked for what you could survive. I set it to what you can become."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "Your legs shake. Your arms feel like they're full of wet sand."
+        },
+        {
+          "choice": [
+            {
+              "text": "It's too much!",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "It isn't. It's uncomfortable. Learn the difference or you'll never grow."
+                }
+              ]
+            },
+            {
+              "text": "Okay. I can do this.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Good. You can. Your body doesn't believe it yet. Prove it to your body."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Too much is when something tears. Uncomfortable is when you want to stop. Most people stop at uncomfortable."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Most people never find out what they can do, because they stop the moment it stops being pleasant."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You stay. Five minutes. Ten. Your breathing slows down."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Notice that? Your body adapted. It stopped panicking. Now it's just working."
+        },
+        {
           "speaker": "VEGETA",
           "text": "A rival who trains at a comfortable setting is no rival. Stand up."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You realise you're already standing. He nods, once, and goes back to his own set."
         }
       ]
     },
@@ -252,12 +498,62 @@
           "text": "Because it's all I had, once. No home. No throne. No one left who knew my name."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He's sitting on the gravity room floor, catching his breath. He doesn't usually sit."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "My planet is gone. My father, my people. All of it, while I was a child."
+        },
+        {
+          "choice": [
+            {
+              "text": "I'm sorry.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Don't be. It was a long time ago. I don't need pity."
+                }
+              ]
+            },
+            {
+              "text": "How did you keep going?",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Pride. That's the answer. That's always been the answer."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "VEGETA",
           "text": "Pride meant I still got up and trained. Every day. For nobody."
         },
         {
           "speaker": "VEGETA",
+          "text": "Not because anyone was watching. Because I refused to be less than what I was born to be."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Even when no one would know?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Especially then. Anyone can work hard when someone is watching. The real measure is what you do alone."
+        },
+        {
+          "speaker": "VEGETA",
           "text": "You have that too. I didn't expect it from someone like you."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He stands abruptly, as if he's said too much."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "That's enough talking. Twenty more minutes. At thirty times. Go."
         }
       ]
     },
@@ -267,7 +563,7 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "You both lie flat on the gravity room floor, unable to move."
+          "text": "You both lie flat on the gravity room floor, unable to move. The dial still reads fifty."
         },
         {
           "speaker": "VEGETA",
@@ -280,6 +576,52 @@
         {
           "speaker": "VEGETA",
           "text": "'Barely' is how every level of mine began."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Neither of you can lift your head. The ceiling is very interesting."
+        },
+        {
+          "choice": [
+            {
+              "text": "Did you go easy on me?",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "I never go easy. I went at the speed I go at when I'm training someone. That's different."
+                }
+              ]
+            },
+            {
+              "text": "That was the hardest thing I've ever done.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Today. Tomorrow it'll be something harder. That's the point."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "When I first came to this planet I couldn't keep up with Kakarot. Not even barely. I was furious for months."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Then one day, barely. Then a little more. Then, sometimes, ahead."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Sometimes?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Don't push it."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "A long silence. Somewhere above, Bulma's voice crackles over a speaker, asking if you're both dead."
         },
         {
           "speaker": "VEGETA",
@@ -296,6 +638,10 @@
           "text": "There's a technique I use when nothing else is left. All of it, in one blow. No holding back."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He doesn't demonstrate. The way he says it, you're glad."
+        },
+        {
           "speaker": "YOU",
           "text": "Why are you telling me?"
         },
@@ -304,8 +650,50 @@
           "text": "Because when you fight beside the others, you hold back. I've watched you do it."
         },
         {
+          "choice": [
+            {
+              "text": "I don't want to get in their way.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "You think too little of yourself. That's as dangerous as thinking too much."
+                }
+              ]
+            },
+            {
+              "text": "I don't hold back.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "You do. You let Kakarot take the front. You let the Namekian cover your left. You wait to be needed."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "VEGETA",
           "text": "Stop. When we stand with you, we all hit harder. I'll see to it personally."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What do you mean?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "A team is only as strong as what each one gives. If you give half, we all fight at half. Give everything."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "That applies outside fighting too. If you're going to do a thing, do it fully. Or don't do it."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He stands and holds out a hand. It takes you a second to realise he's offering to help you up."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Don't look so surprised. I'm not a monster. Most days."
         }
       ]
     },
@@ -313,6 +701,10 @@
       "level": 10,
       "title": "Rival",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "The gravity room. The dial reads one hundred. You're both standing, both breathing hard, both still on your feet."
+        },
         {
           "speaker": "VEGETA",
           "text": "I'm going to say this once."
@@ -323,15 +715,65 @@
         },
         {
           "speaker": "VEGETA",
-          "text": "You took the hardest thing you had and did it until it wasn't hard. That is the only strength I respect."
-        },
-        {
-          "speaker": "YOU",
-          "text": "Thank you, Vegeta."
+          "text": "Kakarot's latest stray. Someone who'd quit in a week and tell stories about it at parties."
         },
         {
           "speaker": "VEGETA",
-          "text": "Don't thank me. Surpass me. Then we'll talk."
+          "text": "You took the hardest thing you had and did it until it wasn't hard. That is the only strength I respect."
+        },
+        {
+          "choice": [
+            {
+              "text": "Thank you, Vegeta.",
+              "then": [
+                {
+                  "speaker": "VEGETA",
+                  "text": "Don't thank me. Surpass me. Then we'll talk."
+                }
+              ]
+            },
+            {
+              "text": "I'll surpass you one day.",
+              "then": [
+                {
+                  "speaker": "NARRATOR",
+                  "text": "For a moment he looks genuinely startled. Then, very slightly, he smiles."
+                },
+                {
+                  "speaker": "VEGETA",
+                  "text": "Good. I'll be waiting. And I won't make it easy."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "You're not my student. I don't have students."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Then what am I?"
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "A rival. Second class. For now."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Bulma, watching from the control room, presses the intercom."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "He's never called anyone a rival except Goku. Just so you know."
+        },
+        {
+          "speaker": "VEGETA",
+          "text": "Turn that thing off, woman!"
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She doesn't. Vegeta turns the dial up to one hundred and ten, and you both start again."
         }
       ]
     }

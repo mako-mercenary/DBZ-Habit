@@ -125,11 +125,23 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "Piccolo sits beneath a waterfall. He does not open his eyes."
+          "text": "A waterfall thunders into a deep pool. Piccolo sits on a rock beneath it, the water pouring over his shoulders. He does not open his eyes."
         },
         {
           "speaker": "PICCOLO",
           "text": "Sit."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Under the waterfall?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Next to it. You'd drown under it."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You sit on the wet rock beside him. The noise is enormous. Spray soaks you in seconds."
         },
         {
           "speaker": "YOU",
@@ -138,6 +150,56 @@
         {
           "speaker": "PICCOLO",
           "text": "Until you stop asking."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Your mind races. The cold. The noise. Dinner. A conversation from last week you should have handled better."
+        },
+        {
+          "choice": [
+            {
+              "text": "Try to block out the noise.",
+              "then": [
+                {
+                  "speaker": "NARRATOR",
+                  "text": "You push against the noise. It pushes back harder. After ten minutes you have a headache."
+                },
+                {
+                  "speaker": "PICCOLO",
+                  "text": "You're fighting it. You'll lose. The waterfall has been here longer than you."
+                }
+              ]
+            },
+            {
+              "text": "Just listen to it.",
+              "then": [
+                {
+                  "speaker": "NARRATOR",
+                  "text": "You stop pushing. The noise is still there, but it's just noise now. A thing that's happening."
+                },
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Hm. Better."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Noise isn't the enemy. Attention that runs after the noise is the enemy."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Let it roar. Stay where you are."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "An hour passes. Maybe two. When he finally stands, you realise you haven't thought about dinner in a long time."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Again tomorrow."
         }
       ]
     },
@@ -150,6 +212,10 @@
           "text": "Put these on. Cape and all."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He hands you a turban and a cape. The turban alone weighs more than your bag. The cape drags you sideways."
+        },
+        {
           "speaker": "YOU",
           "text": "They weigh a ton. How do you think in these?"
         },
@@ -158,8 +224,54 @@
           "text": "That's the point. Learn to focus while something drags at you."
         },
         {
+          "choice": [
+            {
+              "text": "Why not focus without them first?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Because you'll never be without them. Not really. There's always something dragging at you. Tiredness, worry, someone else's opinion."
+                }
+              ]
+            },
+            {
+              "text": "Okay. What do I focus on?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Your breath. Only that. The weight will try to take your attention. Don't let it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You stand in the wasteland wearing his clothes, trying to breathe slowly while your shoulders scream."
+        },
+        {
           "speaker": "PICCOLO",
-          "text": "Something always will."
+          "text": "You're thinking about the weight."
+        },
+        {
+          "speaker": "YOU",
+          "text": "It's hard not to."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Then think about it once, deliberately. Notice it. Say 'heavy'. Then go back to your breath."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You try it. 'Heavy.' Back to breath. 'Heavy.' Back to breath. It gets slightly easier."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Something always will drag at you. The weight is just honest about it."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Wear them every morning for a week. Then we'll talk."
         }
       ]
     },
@@ -176,12 +288,62 @@
           "text": "You don't."
         },
         {
+          "speaker": "YOU",
+          "text": "Then what's the point of all this?"
+        },
+        {
           "speaker": "PICCOLO",
           "text": "You get distracted. You notice. You return. A thousand times a day."
         },
         {
           "speaker": "PICCOLO",
           "text": "The returning is the exercise. Stop treating it as failure."
+        },
+        {
+          "choice": [
+            {
+              "text": "But I want to stay focused.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "You want to never fall over. Nobody walks like that. They fall a little and catch themselves, every step."
+                }
+              ]
+            },
+            {
+              "text": "So every time I get distracted is practice?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Yes. Every time you notice and come back. That's one repetition."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "People think good focus means never drifting. It doesn't. It means drifting less far, and coming back sooner."
+        },
+        {
+          "speaker": "YOU",
+          "text": "How do I come back sooner?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "By practising coming back. There's no other way. It's a muscle like any other."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "When you meditate and your mind wanders a hundred times, you didn't fail a hundred times. You trained a hundred times."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You think about that for a while. It feels like something heavy being put down."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Now sit. Count your breaths to ten. When you lose count, start again. Don't be angry about it."
         }
       ]
     },
@@ -202,8 +364,58 @@
           "text": "Everything is happening. I'm gathering it to one point."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "A faint crackle of light begins at his fingertips. It grows, very slowly."
+        },
+        {
           "speaker": "PICCOLO",
           "text": "Scattered effort scratches. Gathered effort pierces."
+        },
+        {
+          "choice": [
+            {
+              "text": "How long does it take to gather?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Longer than people like. That's why most people never do it. They fire off half-ready and wonder why it didn't work."
+                }
+              ]
+            },
+            {
+              "text": "Can I learn this?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Not the technique. Not yet. The principle, yes. Today."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Look at your days. How many things are you doing at once?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "A lot."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "And how many of them go deep?"
+        },
+        {
+          "speaker": "YOU",
+          "text": "...Not many."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Pick one thing a day to do completely. Phone away. Door shut. One thing, all the way through. That's one point."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He lowers his hand. The light fades."
         },
         {
           "speaker": "PICCOLO",
@@ -217,7 +429,7 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "A storm breaks over the wasteland. Piccolo does not move."
+          "text": "A storm breaks over the wasteland. Rain comes sideways. Lightning hits the cliff close enough to feel. Piccolo does not move."
         },
         {
           "speaker": "YOU",
@@ -228,12 +440,58 @@
           "text": "Can you hold your mind still out here?"
         },
         {
-          "speaker": "YOU",
-          "text": "...Yes."
+          "choice": [
+            {
+              "text": "Yes.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Then an hour of your work is worth more than an hour of anyone else's. Stay."
+                }
+              ]
+            },
+            {
+              "text": "I don't know.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Then this is the hour to find out. Stay."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You stay. You're soaked. Every crack of thunder makes your heart jump."
         },
         {
           "speaker": "PICCOLO",
-          "text": "Then an hour of your work is worth more than an hour of anyone else's. Stay."
+          "text": "Notice the jump. Don't follow it. Let the heart settle on its own."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The next crack comes. Your heart jumps. You notice, and breathe. It settles faster than before."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Calm on a quiet day is nothing. Anyone is calm in a quiet room."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Calm in a storm is training. It's the only kind that counts when something goes wrong."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The storm passes after an hour. The sky is suddenly, ridiculously blue."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I did it."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "You did it once. Now do it on a bad day at work, in a traffic jam, in an argument. Those are the real storms."
         }
       ]
     },
@@ -241,6 +499,10 @@
       "level": 7,
       "title": "A Student",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "It's late. Piccolo is looking at something far away that you can't see."
+        },
         {
           "speaker": "PICCOLO",
           "text": "I trained a child once. Small. Cried constantly."
@@ -254,8 +516,58 @@
           "text": "He stopped crying. Then he became stronger than me."
         },
         {
+          "choice": [
+            {
+              "text": "You must be proud.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "...I don't use that word."
+                },
+                {
+                  "speaker": "NARRATOR",
+                  "text": "His ears twitch. He doesn't say anything else for a moment."
+                }
+              ]
+            },
+            {
+              "text": "How did you teach him?",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Badly, at first. I left him alone in the wild. I thought hardness was the only lesson."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "PICCOLO",
           "text": "I was harder on him than he deserved. I won't apologise. But I remember."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "He forgave me before I understood what I'd done. That's who he was. Who he still is."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Do you still see him?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "When he has time. He studies now. Books. Exams. He trains less than he should."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "He told me once that the meditation helps him study. Not fight. Study."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Something in his voice is almost soft."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "That's what training is for. It was never about fighting. Remember that, when you forget why you do it."
         }
       ]
     },
@@ -265,7 +577,41 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "You sit together for an hour. Neither of you speaks."
+          "text": "You sit together on the cliff edge for an hour. Neither of you speaks."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The wind moves. A hawk circles below you. The sun shifts from one rock to the next."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You notice your mind wander. You bring it back. It wanders less far this time."
+        },
+        {
+          "choice": [
+            {
+              "text": "Stay silent.",
+              "then": [
+                {
+                  "speaker": "NARRATOR",
+                  "text": "You stay silent. It's not hard today. It's almost easy."
+                }
+              ]
+            },
+            {
+              "text": "Glance at Piccolo.",
+              "then": [
+                {
+                  "speaker": "NARRATOR",
+                  "text": "You glance over. His eyes are closed. Somehow, he seems to know you looked, and doesn't mind."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Another half hour. Your legs are stiff. You don't move them."
         },
         {
           "speaker": "PICCOLO",
@@ -278,6 +624,26 @@
         {
           "speaker": "PICCOLO",
           "text": "You didn't fidget. First time."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Is that good?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "It means your body has stopped needing to escape. It's the start of real stillness."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Most people never get here. They fill every quiet moment with noise because quiet frightens them."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He stands, slowly, and looks at the horizon."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Same time tomorrow. Bring nothing."
         }
       ]
     },
@@ -294,12 +660,62 @@
           "text": "Yes."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "He doesn't elaborate. You wait. Eventually, he does."
+        },
+        {
           "speaker": "PICCOLO",
-          "text": "It takes energy and it takes focus. But what's lost comes back, if you don't panic."
+          "text": "It takes energy and it takes focus. Panic makes it slower. If you panic, the energy goes everywhere at once."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "But what's lost comes back, if you don't panic."
+        },
+        {
+          "choice": [
+            {
+              "text": "That's useful to know.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "It's useful to you too, though you can't regrow anything."
+                }
+              ]
+            },
+            {
+              "text": "I wish I could do that.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "You can. Not with arms. With everything else."
+                }
+              ]
+            }
+          ]
         },
         {
           "speaker": "PICCOLO",
           "text": "Your bad days work the same way. You recover faster now. I've been watching."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I still have bad days."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Of course. But a month ago, one bad day became three. Now one bad day is one bad day. Then you come back."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "That's regrowth. You lost something, and you didn't panic, and it came back."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He flexes his hand, the one that was once gone."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "Remember this the next time you break a streak. It's an arm. It grows back."
         }
       ]
     },
@@ -307,6 +723,10 @@
       "level": 10,
       "title": "Equal",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "The usual cliff. The usual silence. Then, unusually, Piccolo speaks first."
+        },
         {
           "speaker": "PICCOLO",
           "text": "Stand up."
@@ -320,8 +740,54 @@
           "text": "The lessons are. You have a quiet mind. I can't improve on it."
         },
         {
+          "choice": [
+            {
+              "text": "There must be more to learn.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "There's always more. But you don't need a teacher for it any more. You need time."
+                }
+              ]
+            },
+            {
+              "text": "Thank you, Piccolo.",
+              "then": [
+                {
+                  "speaker": "PICCOLO",
+                  "text": "Don't. You did the sitting. I just stood nearby looking disapproving."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "When you first came, you sat down like you were waiting for a bus. Now you sit like you live here."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Can I still come back?"
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "The cliff isn't mine. Sit on it whenever you like."
+        },
+        {
+          "speaker": "PICCOLO",
+          "text": "...And if you come at dawn, I'll probably be here. Not that it matters."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You understand that this is an invitation. Possibly the warmest one he's ever given."
+        },
+        {
           "speaker": "PICCOLO",
           "text": "You did well. I won't say it twice."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "He turns back to the horizon. After a moment, you sit down beside him. Neither of you speaks. It's the best conversation you've had all week."
         }
       ]
     }

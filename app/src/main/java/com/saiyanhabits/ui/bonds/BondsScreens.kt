@@ -29,6 +29,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import com.saiyanhabits.ui.components.Conversation
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -340,7 +341,19 @@ fun SceneScreen(mentor: Mentor, scene: BondScene, playerForm: Int, onBack: () ->
             style = MaterialTheme.typography.labelLarge,
             color = mentor.color,
         )
-        ScriptLines(scene.lines, playerForm)
+        val picked = androidx.compose.runtime.remember(scene) { androidx.compose.runtime.mutableStateListOf<Int>() }
+        var shown by androidx.compose.runtime.remember(scene) { androidx.compose.runtime.mutableIntStateOf(1) }
+        Conversation(
+            script = scene.script,
+            stats = com.saiyanhabits.domain.ScriptStats(),
+            picked = picked,
+            shown = shown,
+            onPick = { picked += it; shown++ },
+            onNext = { shown++ },
+            onFinished = onBack,
+            finishLabel = "Done",
+            playerForm = playerForm,
+        )
         Spacer(Modifier.height(16.dp))
     }
 }

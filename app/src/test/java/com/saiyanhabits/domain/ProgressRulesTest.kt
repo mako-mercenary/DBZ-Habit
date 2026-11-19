@@ -246,10 +246,10 @@ class ProgressRulesTest {
     }
 
     @Test
-    fun `every chapter reads in one to two minutes`() {
-        // Around 200 words a minute: at least a short scene, at most two minutes.
+    fun `every chapter is a full scene of two to four minutes`() {
+        // Around 200 words a minute, counting every reply's branch.
         for (chapter in story) {
-            assertTrue("Chapter ${chapter.number} has ${chapter.wordCount} words", chapter.wordCount in 120..400)
+            assertTrue("Chapter ${chapter.number} has ${chapter.wordCount} words", chapter.wordCount in 350..800)
             assertTrue("Chapter ${chapter.number} has a blank line", chapter.lines.none { it.text.isBlank() })
         }
     }

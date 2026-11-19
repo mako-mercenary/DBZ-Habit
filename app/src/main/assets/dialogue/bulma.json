@@ -126,6 +126,10 @@
           "text": "Bulma's workshop. Every surface holds something half taken apart."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "A robot arm is stirring a cup of coffee by itself. Something in the corner is beeping politely."
+        },
+        {
           "speaker": "BULMA",
           "text": "Don't touch that. Or that. Definitely not that."
         },
@@ -136,6 +140,52 @@
         {
           "speaker": "BULMA",
           "text": "The broom. Everyone starts on the broom. Even me, for about a day."
+        },
+        {
+          "choice": [
+            {
+              "text": "You started with a broom?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "My dad made me sweep his workshop for a week before he let me near a screwdriver. I was furious."
+                }
+              ]
+            },
+            {
+              "text": "Sweeping isn't engineering.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Sweeping is engineering. A clean bench is a bench where you can find the screw you dropped."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Here's the thing nobody tells you. Ninety percent of building something is getting ready to build it."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Clear space, right tools, parts sorted. Then the actual building is fast."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So the broom is step one."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "The broom is step one. And step one of your mornings is probably the same. Clear the space so the rest is easy."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You sweep. She talks the entire time, about engines, about her dad, about a fish she once tried to make into a submarine."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Not bad. Same time tomorrow. Bring coffee. Not that coffee. Good coffee."
         }
       ]
     },
@@ -156,8 +206,54 @@
           "text": "On paper, like a civilised person. Draw it, split it, number the pieces."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "She unrolls a blueprint across the bench. It's covered in tiny numbered boxes."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "This is a hover bike. Fifty-three parts. Each one has a number. When part twelve is done, I tick it. When all fifty-three are ticked, I have a bike."
+        },
+        {
+          "choice": [
+            {
+              "text": "That seems slow.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "It looks slow. It's fast. You never stand there wondering what to do next. You just do the next number."
+                }
+              ]
+            },
+            {
+              "text": "Can I do that with my goals?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "You absolutely should. 'Get fit' is a fog. 'Walk ten minutes after lunch' is part twelve."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "Your head is for solving problems. It's a terrible filing cabinet."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I lose track of things all the time."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Because you're asking your brain to remember AND think. It can't do both well. Nobody's can. Not even mine. Okay, mine's better than most. Still."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She hands you a notebook and a pen."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Write tomorrow's list tonight. Five things. Numbered. Tick them as you go. Report back."
         }
       ]
     },
@@ -165,6 +261,10 @@
       "level": 4,
       "title": "Forty-One Tries",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "She sets a small round device on the bench. A single light blinks on its screen."
+        },
         {
           "speaker": "BULMA",
           "text": "I built this radar when I was sixteen. It finds things nobody else can find."
@@ -178,8 +278,50 @@
           "text": "I know. But it took forty-one tries. The first forty found my own fridge."
         },
         {
+          "choice": [
+            {
+              "text": "Forty tries? Why didn't you give up?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Because each try was a little less wrong. Try one found nothing. Try twenty found the fridge in the next room. Progress!"
+                }
+              ]
+            },
+            {
+              "text": "Your fridge must be very findable.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "It has a very strong signal. I've since moved it."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "Nobody ever asks about the forty. They should. That's where the work was."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "People see the radar and think I'm a genius. I am. But the genius part was refusing to stop at thirty-nine."
+        },
+        {
+          "speaker": "YOU",
+          "text": "So the failures are hidden."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Everybody's failures are hidden. That's why you think you're the only one failing. You're not. You're just the only one you can see from the inside."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She taps the radar. The light blinks."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "When something you're trying keeps not working, count the tries. If you're on try four, you're nowhere near done. I was on forty."
         }
       ]
     },
@@ -192,6 +334,10 @@
           "text": "Here. Take this earpiece next time you go up against something big."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "It's tiny, smooth and slightly warm, like it's been in her pocket for a while."
+        },
+        {
           "speaker": "YOU",
           "text": "What does it do?"
         },
@@ -200,8 +346,58 @@
           "text": "It lets me yell advice at you from a safe distance."
         },
         {
+          "choice": [
+            {
+              "text": "That sounds distracting.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "It's helpful! I'll only yell important things. Like 'duck' and 'that's not a good idea' and 'I told you so'."
+                }
+              ]
+            },
+            {
+              "text": "Thank you.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Don't thank me yet. Thank me after I've saved you."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "What? That's help. I'm helping. You're welcome."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Why would you need to yell advice?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Because when you're in the middle of something hard, you can't see the whole picture. Someone outside can."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "That's why you tell people your goals. Not so they cheer. So they notice when you're veering off."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She fiddles with the earpiece settings."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Okay, it's tuned. Testing. Can you hear me?"
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "The voice comes from right inside your ear and also from two metres away. It's very loud."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Perfect. Don't lose it. It took me a whole afternoon."
         }
       ]
     },
@@ -222,8 +418,54 @@
           "text": "You pack it properly. Most of any big thing is air and bad organisation."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "She clicks the bike back into its capsule and tosses it to you. It's no heavier than a pebble."
+        },
+        {
+          "choice": [
+            {
+              "text": "That's amazing.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "I know. My dad invented it. I improved it. Our family is very good at small things holding big things."
+                }
+              ]
+            },
+            {
+              "text": "Can you do that with a house?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "We have done that with a house. Several houses. One of them is in my pocket right now."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "Same with your milestones. Pack them tighter and each one lands harder."
+        },
+        {
+          "speaker": "YOU",
+          "text": "What do you mean, tighter?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Smaller, sharper, nothing wasted. 'Run a marathon' is a big floppy goal. 'Run five kilometres by the end of the month' is a capsule."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You can carry five of those in your pocket. You can't carry one marathon."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She takes the capsule back and turns it over in her fingers."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "The trick isn't making things smaller. It's making them dense. Every bit doing something."
         }
       ]
     },
@@ -233,7 +475,7 @@
       "lines": [
         {
           "speaker": "NARRATOR",
-          "text": "Two in the morning. Bulma is still at the bench."
+          "text": "Two in the morning. Bulma is still at the bench. A single lamp lights her face and a tangle of wires."
         },
         {
           "speaker": "YOU",
@@ -244,8 +486,58 @@
           "text": "I should. But I can see how it ends now, and I never sleep when I can see how it ends."
         },
         {
+          "choice": [
+            {
+              "text": "What can you see?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "The last three steps. They're right there. If I sleep I'll have to find them again tomorrow."
+                }
+              ]
+            },
+            {
+              "text": "You told me not to stay up late.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "I told you not to do what I do. I didn't say I'd stop doing it. Hypocrisy is a privilege of genius."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "That's the good part, by the way. Everything before it is just getting here."
+        },
+        {
+          "speaker": "YOU",
+          "text": "The ending?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "The moment where the whole thing clicks. Where all the parts that didn't make sense suddenly do."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You get it with habits too. One day you'll notice your mornings run themselves. That's the click."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "Something sparks. She swears softly, then laughs."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Okay, maybe it's four steps. Go to bed. I mean it. One of us should be sensible."
+        },
+        {
+          "speaker": "YOU",
+          "text": "Goodnight, Bulma."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Night. And thanks for checking on me. Don't tell Vegeta. He'd make it a whole thing."
         }
       ]
     },
@@ -266,8 +558,54 @@
           "text": "I finish what I ship. The rest is in a warehouse I don't talk about."
         },
         {
+          "speaker": "NARRATOR",
+          "text": "She looks, for once, slightly embarrassed."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "A singing toaster. A self-folding umbrella. A robot that was supposed to do my hair and instead tried to shave the cat."
+        },
+        {
+          "choice": [
+            {
+              "text": "What happened to the cat?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "The cat is fine. The cat won. The robot is in the warehouse."
+                }
+              ]
+            },
+            {
+              "text": "Why do you stop?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "The exciting part is the idea. The boring part is the last ten percent. I'm great at ideas. I'm terrible at the last ten percent."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "speaker": "BULMA",
           "text": "You're steadier than me. Don't let it go to your head. But it's true."
+        },
+        {
+          "speaker": "YOU",
+          "text": "I'm not that steady."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You check things off every day. Every day. Do you know how rare that is? Most geniuses are hopeless at it. I'm hopeless at it."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Maybe I could learn something from you. Ugh. That was hard to say."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She immediately changes the subject to rocket fuel, but you notice that, the next week, a small checklist appears taped to her bench."
         }
       ]
     },
@@ -275,6 +613,10 @@
       "level": 9,
       "title": "The Better Radar",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "She hands you a radar. It's half the size of the old one and has three screens."
+        },
         {
           "speaker": "BULMA",
           "text": "I rebuilt the radar. Longer range, half the size."
@@ -288,8 +630,54 @@
           "text": "Because 'worked' isn't the finish line. It's where the fun starts."
         },
         {
+          "choice": [
+            {
+              "text": "When do you stop improving it?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Never. Not on purpose. I stop when something more interesting comes along. Then I come back to it in five years."
+                }
+              ]
+            },
+            {
+              "text": "What's new on it?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Distance, direction, a little map, and it tells you when the battery's low instead of just dying dramatically."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Your routine's the same. The first version that works is version one. Then you tweak it."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Move a habit to a better time. Make the hard one smaller. Add a reward. Version two."
+        },
+        {
+          "speaker": "YOU",
+          "text": "And version three?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "Version three is when someone else asks to copy your routine. That's when you know it's good."
+        },
+        {
           "speaker": "BULMA",
           "text": "Take it. When you bring something big down, this makes sure you get everything it was worth."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "You turn it on. It finds her fridge immediately. She sighs."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "...Version four is getting it to stop doing that."
         }
       ]
     },
@@ -297,6 +685,10 @@
       "level": 10,
       "title": "Partner",
       "lines": [
+        {
+          "speaker": "NARRATOR",
+          "text": "She's cleared an entire wall of the workshop. Pinned to it is the biggest blueprint you've ever seen."
+        },
         {
           "speaker": "BULMA",
           "text": "I've got a new project. Biggest thing I've ever tried. I want you on it."
@@ -308,6 +700,48 @@
         {
           "speaker": "BULMA",
           "text": "As my partner. I've seen your work. It holds up."
+        },
+        {
+          "choice": [
+            {
+              "text": "Me? I'm not an engineer.",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "You don't have to be. I've got engineering covered. I need someone who finishes things. That's you."
+                }
+              ]
+            },
+            {
+              "text": "What's the project?",
+              "then": [
+                {
+                  "speaker": "BULMA",
+                  "text": "Classified. Exciting. Possibly dangerous. You'll love it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "BULMA",
+          "text": "I've had a hundred assistants. They all did what I told them. Not one of them ever told me I was wrong."
+        },
+        {
+          "speaker": "BULMA",
+          "text": "You told me last month my schedule was a disaster. You were right. It was. It's better now."
+        },
+        {
+          "speaker": "YOU",
+          "text": "You listened?"
+        },
+        {
+          "speaker": "BULMA",
+          "text": "I always listen. I just don't usually admit it."
+        },
+        {
+          "speaker": "NARRATOR",
+          "text": "She hands you a pair of safety goggles. They're new. Your name is written on the strap in neat marker."
         },
         {
           "speaker": "BULMA",

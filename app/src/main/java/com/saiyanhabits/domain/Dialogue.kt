@@ -7,7 +7,10 @@ data class SceneLine(val speaker: String, val text: String) {
 }
 
 /** The scene unlocked at one bond level. */
-data class BondScene(val level: Int, val title: String, val lines: List<SceneLine>)
+data class BondScene(val level: Int, val title: String, val script: List<ScriptNode>) {
+    /** Every line in every branch. */
+    val lines: List<SceneLine> get() = ScriptRunner.allLines(script).map { SceneLine(it.speaker, it.text) }
+}
 
 /** Everything one mentor can say: home-screen one-liners per trigger, and bond scenes. */
 data class MentorDialogue(
@@ -49,13 +52,7 @@ object DialogueParser {
             BondScene(
                 level = level,
                 title = scene["title"].asString("title of the level $level scene"),
-                lines = scene["lines"].asArray("lines of the level $level scene").map { lineJson ->
-                    val line = lineJson.asObject("a line of the level $level scene")
-                    SceneLine(
-                        speaker = line["speaker"].asString("speaker in the level $level scene"),
-                        text = line["text"].asString("text in the level $level scene"),
-                    )
-                },
+                script = ScriptParser.nodes(scene["lines"], "lines of the level $level scene"),
             )
         }.sortedBy { it.level }
 
@@ -73,7 +70,10 @@ object DialogueParser {
 }
 
 /** A story chapter: a short scene told in lines, like a bond scene. */
-data class StoryChapter(val number: Int, val title: String, val lines: List<SceneLine>) {
+data class StoryChapter(val number: Int, val title: String, val script: List<ScriptNode>) {
+    /** Every line in every branch. */
+    val lines: List<SceneLine> get() = ScriptRunner.allLines(script).map { SceneLine(it.speaker, it.text) }
+
     /** Number of words to read, for keeping chapters short. */
     val wordCount: Int get() = lines.sumOf { line -> line.text.split(Regex("\\s+")).count { it.isNotBlank() } }
 }
@@ -92,13 +92,7 @@ object StoryParser {
             StoryChapter(
                 number = number,
                 title = chapter["title"].asString("title of chapter $number"),
-                lines = chapter["lines"].asArray("lines of chapter $number").map { lineJson ->
-                    val line = lineJson.asObject("a line of chapter $number")
-                    SceneLine(
-                        speaker = line["speaker"].asString("speaker in chapter $number"),
-                        text = line["text"].asString("text in chapter $number"),
-                    )
-                },
+                script = ScriptParser.nodes(chapter["lines"], "lines of chapter $number"),
             )
         }.sortedBy { it.number }
     }

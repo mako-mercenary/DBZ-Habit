@@ -51,3 +51,32 @@ def K(stat, *branches):
 def call(cid, kind, title, *lines):
     assert kind in ("wisdom", "about", "subject", "checkin", "gossip"), kind
     return {"id": cid, "kind": kind, "title": title, "lines": list(lines)}
+
+
+# Shorthand for scenes with several mentors.
+def R(text):
+    return S("ROSHI", text)
+
+
+def G(text):
+    return S("GOKU", text)
+
+
+def P(text):
+    return S("PICCOLO", text)
+
+
+def B(text):
+    return S("BULMA", text)
+
+
+def V(text):
+    return S("VEGETA", text)
+
+
+def chapter(number, title, *lines):
+    return {"number": number, "title": title, "lines": list(lines)}
+
+
+def scene(level, title, *lines):
+    return {"level": level, "title": title, "lines": list(lines)}

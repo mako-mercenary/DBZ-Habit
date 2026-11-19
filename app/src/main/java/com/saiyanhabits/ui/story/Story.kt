@@ -15,6 +15,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.saiyanhabits.ui.components.Conversation
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
@@ -128,7 +131,19 @@ fun StoryScreen(chapters: List<ChapterStatus>?, onOpen: (Int) -> Unit, onBack: (
 fun ChapterScreen(chapter: StoryChapter, playerForm: Int, onBack: () -> Unit) {
     SubScreen(title = chapter.title, onBack = onBack) {
         Text("Chapter ${chapter.number}", style = MaterialTheme.typography.labelLarge, color = SaiyanColors.Orange)
-        ScriptLines(chapter.lines, playerForm)
+        val picked = androidx.compose.runtime.remember(chapter) { androidx.compose.runtime.mutableStateListOf<Int>() }
+        var shown by androidx.compose.runtime.remember(chapter) { androidx.compose.runtime.mutableIntStateOf(1) }
+        Conversation(
+            script = chapter.script,
+            stats = com.saiyanhabits.domain.ScriptStats(),
+            picked = picked,
+            shown = shown,
+            onPick = { picked += it; shown++ },
+            onNext = { shown++ },
+            onFinished = onBack,
+            finishLabel = "Done",
+            playerForm = playerForm,
+        )
         Spacer(Modifier.height(16.dp))
     }
 }
