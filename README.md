@@ -17,6 +17,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 8 | History screen, weekly recap | Done |
 | 9 | Flexible habits, day notes, achievements, widget, evening nudge, more mentor lines, sound | Done |
 | 10 | Mini games with the mentors | Done |
+| 11 | Journal with Bulma, daily mentor calls, dialogue-heavy cutscenes | Done |
 
 ## Build
 
@@ -133,12 +134,22 @@ mentor. Edit, rebuild, done.
   takes 16 days to repeat. `{streak}` is replaced by the streak length in
   `streak_milestone` lines, `{boss}` by the boss's name in `boss_defeated` lines.
 - `scenes` holds the bond scenes, one per `level` from 2 to 10, each with a
-  `title` and `lines`. A line's `speaker` is the mentor's name in capitals,
-  `YOU` or `NARRATOR`.
+  `title` and `lines`. A line's `speaker` is a mentor's name in capitals,
+  `YOU` or `NARRATOR`. Scenes, story chapters and calls can branch: see below.
+
+The bond scenes, the story chapters (`story.json`) and the calls
+(`calls_<mentor>.json`) are written in `tools/dialogue/` in a short notation
+(`script_dsl.py` explains it) and built with `python3 tools/build_scenes.py`
+and `python3 tools/build_calls.py`. Edit those sources rather than the JSON.
+A script line can be a reply for you to pick, each with what follows it, or a
+check on one of your numbers (streak, power, this week's check-offs and
+misses, journal streak, bond level), and lines can name `{top_habit}` or
+`{weak_habit}`.
 
 `./gradlew testDebugUnitTest` checks every file: valid JSON, at least 8 lines
-per trigger and 8 evening lines, a scene of 3 to 6 lines for every level, known speakers and
-placeholders. A mistake is reported with its line number.
+per trigger and 8 evening lines, a full scene with a reply to pick for every
+level, 30 calls per mentor with every path at least 6 lines long, known
+speakers and placeholders. A mistake is reported with its line number.
 
 ## Story, wish orbs and the rival
 
@@ -177,6 +188,32 @@ per unlock, 120 to 400 words each, known speakers).
   can open it again from History.
 
 The "strong week" threshold for the recap headline is in `GameConfig.kt`.
+
+## Journal
+
+The journal card on the home screen opens Bulma's journal. Each day she gives
+you one prompt from 150 (ten topics: your day, gratitude, goals, curiosity,
+setbacks, wins, people, the future, body and energy, and silly ones). None
+repeats until you've written to all of them. Once a day you can ask her for a
+different one. You can also write freely, with no prompt.
+
+An entry of 50 words or more is finished. The day's first finished entry gives
++15 bond XP with Bulma and +20 power; later entries that day are saved but give
+nothing extra. Bulma replies to each save. Entries can be searched, edited and
+deleted (deleting one takes back what it earned), and they're included in
+exports. The prompts are in `app/src/main/assets/dialogue/journal.json`.
+
+## Mentor calls
+
+Each mentor can be called once a day from their page in Bonds, for +5 bond XP.
+Each has 30 calls: advice, stories about themselves, fun facts about what
+they teach, check-ins that read your real numbers, and gossip about the
+others. You pick replies as the call goes, and the mentor answers accordingly.
+
+Once a day, one mentor rings at a random time between 10:00 and 20:00. A card
+appears on the home screen; picking up within the hour adds +5 bond XP. The
+ringing can be switched off in Settings. The call log, from any mentor's page,
+replays past calls with the replies you chose.
 
 ## Day notes
 
