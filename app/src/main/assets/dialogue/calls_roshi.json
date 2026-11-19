@@ -1,0 +1,1789 @@
+{
+ "mentor": "ROSHI",
+ "ring": [
+  "Master Roshi is calling. He probably dialled with his elbow.",
+  "Incoming call from Kame House. Answer before he hangs up and blames you.",
+  "Master Roshi is ringing. The turtle is barking in the background."
+ ],
+ "calls": [
+  {
+   "id": "roshi_w_small",
+   "kind": "wisdom",
+   "title": "Small things",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Hello? Is this thing on? Turtle, is it on? Ah. There you are."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I was sitting on the beach thinking, which at my age is the same as napping with your eyes open."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you know what the hardest part of training is?"
+    },
+    {
+     "choice": [
+      {
+       "text": "The pain?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Pain? Pain is loud, but it leaves. No."
+        }
+       ]
+      },
+      {
+       "text": "Getting started?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Closer. Starting is hard, but anyone can start once."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The hardest part is doing the small thing on the day it feels pointless."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Nobody gets strong on the exciting days. They get strong on the dull Tuesdays when nothing is watching."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So the dull days count the most."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho! You were listening. Don't tell anyone, they'll expect it from me too."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Go do one small thing today. Then call it a victory. I'm going back to my deck chair."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_rest",
+   "kind": "wisdom",
+   "title": "On resting",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "You've been pushing hard lately. I can hear it in how fast you picked up."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Let me tell you a secret the young ones never believe. Rest is training too."
+    },
+    {
+     "choice": [
+      {
+       "text": "Rest feels like cheating.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Of course it does. That's because you think training is suffering. It isn't. Training is getting better."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "A muscle doesn't grow while you lift. It grows while you sleep. The lifting just asks it to."
+        }
+       ]
+      },
+      {
+       "text": "You just want an excuse to nap.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho! I don't need an excuse, I'm old. But I'm also right."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "A tired body learns nothing. A tired mind learns worse."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Here is the rule I gave my first students. Work hard, eat well, rest well, and keep doing it."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Everyone wants to skip straight to the working hard part. That's like building a house with only roof."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll sleep properly tonight."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Good. And not with that phone glowing in your face. I'll know."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_bad_day",
+   "kind": "wisdom",
+   "title": "Bad days",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Tell me something. When you have a bad day, what do you do the next morning?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Start again.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "That's the answer. Took me about eighty years to learn it properly."
+        }
+       ]
+      },
+      {
+       "text": "Feel bad about it for a while.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Honest. Most people are. Feeling bad is fine for an hour. After that it's just another way of not training."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Here's what an old man knows. A bad day is a single bad day. It only becomes a bad week if you let it hold the door open."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You don't owe yesterday anything. You owe today one honest try."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Even if the streak's gone?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Streaks are lovely. I like a number as much as anyone. But the number is not the training."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The training is the getting back up. You can't lose that, you can only practise it."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Now go drink some water. You sound like a dried sea cucumber."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_compare",
+   "kind": "wisdom",
+   "title": "Other people",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Ah, it's you. Did you know you're the only student who answers on the first ring? Goku answers on the ninth."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you ever compare yourself to other people?"
+    },
+    {
+     "choice": [
+      {
+       "text": "All the time.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Everyone does. It's the oldest bad habit there is. Older than me, even."
+        }
+       ]
+      },
+      {
+       "text": "Not really.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Either you're very wise or you're lying to an old man. I'll be polite and assume wise."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "When I was young I trained beside a fellow who was better than me at everything. Faster, stronger, better hair."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I spent two years being miserable about it. Then I noticed something."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He wasn't getting any better. I was. Slowly, but I was. Comparison only looks at where you are. Training looks at where you're going."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Compare yourself to last month's you. That's the only fight that's fair."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_patience",
+   "kind": "wisdom",
+   "title": "Patience",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I planted a coconut palm when I moved to this island. Do you know how long until it gave me coconuts?"
+    },
+    {
+     "choice": [
+      {
+       "text": "A year?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho, I wish."
+        }
+       ]
+      },
+      {
+       "text": "Ten years?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Not far off, actually."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Six years. Six years of watering a tree that gave me nothing but shade."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Then one morning, a coconut fell on my head. Best day of my life. Well. Top fifty."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The things worth having don't arrive on schedule. They arrive when the roots are deep enough."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I should just keep watering."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Keep watering. And stand somewhere sensible when it starts to pay off."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_mistakes",
+   "kind": "wisdom",
+   "title": "Mistakes",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I made a terrible mistake this morning. I tried to make pancakes without reading the recipe."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The turtle is still not speaking to me."
+    },
+    {
+     "choice": [
+      {
+       "text": "What went wrong?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "I used salt instead of sugar. Then I ate three of them out of pride."
+        }
+       ]
+      },
+      {
+       "text": "Are you okay?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Physically, yes. Spiritually, I've seen things."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "But here's the thing. I'll never mix those two up again. One bad breakfast bought me a lifetime of good ones."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's what a mistake is, if you let it be. Tuition."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Expensive tuition sometimes."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The expensive ones teach the most. Pay attention to what they're teaching, so you only pay once."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_simple",
+   "kind": "wisdom",
+   "title": "Keep it simple",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "People keep asking me for my secret technique. They expect something grand."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you want to know what I tell them?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Yes, obviously.",
+       "then": []
+      },
+      {
+       "text": "Is it a trick question?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Everything I say is a little bit of a trick. Listen anyway."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Wake up at the same time. Move your body. Eat like you respect yourself. Learn one thing. Go to bed."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do that for ten years and people will call you a master. Do it for twenty and they'll call you a legend."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's it?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's it. It's simple. Simple isn't the same as easy. Most people are looking for complicated so they don't have to do simple."
+    }
+   ]
+  },
+  {
+   "id": "roshi_w_motivation",
+   "kind": "wisdom",
+   "title": "Motivation",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Are you motivated today?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Very.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Lovely. Enjoy it. It won't last."
+        }
+       ]
+      },
+      {
+       "text": "Not at all.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Good. Then today you get to practise the real thing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Motivation is a wave. It comes in, it goes out. You can't train on a wave, you'll fall off."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Discipline is the island. It's boring and it's always there, and you can build a house on it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Is that why you live on an island?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho! No, I live on an island because nobody can visit without a boat. But it works as a metaphor."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_glasses",
+   "kind": "about",
+   "title": "The sunglasses",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Someone asked me today why I never take off my sunglasses."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why don't you?",
+       "then": []
+      },
+      {
+       "text": "I assumed you sleep in them.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Sometimes. That's not the point."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "When you've lived as long as I have, you've seen most things twice. The glasses let me pretend I'm surprised."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Also, the sun on this island could cook an egg on a rock. I've tried. It works."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So it's half wisdom and half sunburn."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Most of life is half wisdom and half sunburn. Write that down."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_house",
+   "kind": "about",
+   "title": "The pink house",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Have I told you why my house is pink?"
+    },
+    {
+     "choice": [
+      {
+       "text": "You chose it?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Nobody chooses pink this pink."
+        }
+       ]
+      },
+      {
+       "text": "Bulma painted it?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "No, though she has opinions about it. Loudly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The paint was on sale. Every can in the shop. I bought them all, thinking I'd find a use."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Then a storm came, and I thought, well, if the house has to be repainted anyway..."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Now ships use it as a landmark. 'Turn left at the pink house.' I've become geography."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's an honour, kind of."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "It's the only monument they'll ever build me. I'll take it."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_turtle",
+   "kind": "about",
+   "title": "My housemate",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "The turtle says hello. He doesn't, really, he's asleep, but he would if he were awake."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He's been my companion longer than most countries have been countries."
+    },
+    {
+     "choice": [
+      {
+       "text": "How did you meet?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "He was lost. I pointed him at the sea. He came back the next day and never left. That's how all my best friendships start."
+        }
+       ]
+      },
+      {
+       "text": "Does he train too?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "He swims every morning without fail. Twenty years and not one skipped day. He's my best student, frankly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Living with a turtle teaches you things. Slow is fine. Steady is better. Naps are sacred."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Sounds like a good housemate."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He never borrows my magazines and never eats my snacks. The best kind."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_teacher",
+   "kind": "about",
+   "title": "My own teacher",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I had a teacher once, you know. I wasn't born an old master. I was born a baby, like everyone."
+    },
+    {
+     "choice": [
+      {
+       "text": "What was your teacher like?",
+       "then": []
+      },
+      {
+       "text": "Were you a good student?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Terrible. Lazy, cocky, always late. Sound familiar?"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "My teacher made me carry water up a hill every morning for a year before showing me a single punch."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I thought he was wasting my time. I complained every single day."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Then one day someone tried to push me over, and I didn't move. My legs had been training all year without telling me."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's sneaky."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The best teaching is sneaky. That's why I give you small habits instead of speeches. You're getting stronger behind your own back."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_shell",
+   "kind": "about",
+   "title": "The shell",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "You've seen the shell I carry on my back."
+    },
+    {
+     "choice": [
+      {
+       "text": "Is it real?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Very real. Very heavy. It's a training weight that happens to look fashionable."
+        }
+       ]
+      },
+      {
+       "text": "I thought it was a backpack.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho, it does hold my snacks in a pinch."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I give my students shells to wear while they do ordinary chores. Deliver milk, dig fields, swim."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "They hate it for a month. Then they take it off and feel like they could fly."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's how it works with habits too. The weight is the habit. The lightness comes later."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'm in the hating-it month, I think."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Excellent. That means it's working."
+    }
+   ]
+  },
+  {
+   "id": "roshi_a_age",
+   "kind": "about",
+   "title": "How old I am",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Guess how old I am."
+    },
+    {
+     "choice": [
+      {
+       "text": "Seventy?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Flattery! I like you."
+        }
+       ]
+      },
+      {
+       "text": "Three hundred?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Rude, but closer than you'd think."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I stopped counting birthdays a long time ago. The candles became a fire hazard."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you know the best thing about being very old?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "What?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You've already made every mistake there is, so you can watch young people make them and feel wise."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you know the worst thing? The young people never listen. So I put the advice in small daily tasks. Sneaky, remember?"
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_shells",
+   "kind": "subject",
+   "title": "Turtle shells",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Fun fact for you, since you're awake and I'm bored."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "A turtle can't climb out of its shell. Cartoons lie to you."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why not?",
+       "then": []
+      },
+      {
+       "text": "Wait, really?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Really. Ask the turtle. Actually don't, he's sensitive about it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The shell is part of its skeleton. Its ribs and its backbone grew into it. Taking the shell off would be like taking your ribs off."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "So when people say they want to 'come out of their shell', I think, well, careful what you wish for."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So your training shell is cheating."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "My shell is a costume. His is a commitment. There's a lesson in that too, if you want one."
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_temperature",
+   "kind": "subject",
+   "title": "Warm sand",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I was watching sea turtle nests on the beach. Do you know what decides if a baby turtle is a boy or a girl?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Genes?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "That's how it works for you. Not for them."
+        }
+       ]
+      },
+      {
+       "text": "No idea.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Good. Not knowing is where learning starts."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "The temperature of the sand. Warmer nests hatch mostly girls. Cooler nests, mostly boys."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Scientists worry about it, because hotter beaches mean fewer boy turtles."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Isn't that something? The little ones are shaped by their surroundings before they even crack the egg."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So the environment matters a lot."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "For turtles and students both. That's why I tell you to set up your room for good habits. The sand decides more than you'd think."
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_diving",
+   "kind": "subject",
+   "title": "Deep divers",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Here's one for you. Leatherback turtles can dive more than a kilometre deep."
+    },
+    {
+     "choice": [
+      {
+       "text": "A kilometre?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Straight down. In the dark. Holding their breath."
+        }
+       ]
+      },
+      {
+       "text": "Can you?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "I can dive about as deep as the bathtub, these days."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "They slow their heartbeat right down to save oxygen. Just a few beats a minute at the bottom."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Calm is a survival skill. The panicked turtle runs out of air first."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Piccolo would like that one."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Ho ho! Don't tell him I'm stealing his material."
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_66",
+   "kind": "subject",
+   "title": "How long habits take",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I read a study. Yes, I read. Don't sound so surprised."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Researchers in London followed people building new habits. How long do you think it took for a habit to feel automatic?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Twenty-one days.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "That's the one everyone says. It's not right."
+        }
+       ]
+      },
+      {
+       "text": "A few months?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Closer."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Sixty-six days on average. But for some people it took eighteen, and for some it took over two hundred."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "And here's my favourite part. Missing a single day didn't really hurt the habit."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So one slip doesn't wreck everything."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "One slip is weather. Quitting is climate. Don't confuse the two."
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_tortoise",
+   "kind": "subject",
+   "title": "Old Jonathan",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "You think I'm old? There's a giant tortoise on the island of Saint Helena called Jonathan."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He's believed to have hatched around 1832."
+    },
+    {
+     "choice": [
+      {
+       "text": "That's nearly two hundred years!",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "He was already old when your great-great-grandparents were young."
+        }
+       ]
+      },
+      {
+       "text": "Older than you?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Hmph. We don't discuss that."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Do you know his secret? Eating, sunbathing, sleeping, and a very relaxed attitude."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Not much running. Not much worrying."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's basically your routine."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Exactly. I'm on track. Ho ho!"
+    }
+   ]
+  },
+  {
+   "id": "roshi_s_butt",
+   "kind": "subject",
+   "title": "A strange way to breathe",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "This is my favourite fact and Bulma says I'm not allowed to tell it at dinner."
+    },
+    {
+     "choice": [
+      {
+       "text": "Now I need to hear it.",
+       "then": []
+      },
+      {
+       "text": "Should I be worried?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Only a little."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Some river turtles can breathe through their backsides."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "It's true! They pull oxygen out of the water through their rear end, so they can stay under for ages."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's disgusting."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's adaptation. When life gives you a river, you use every tool you've got."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Remember that when you think you can't train because you don't have the right equipment."
+    }
+   ]
+  },
+  {
+   "id": "roshi_c_streak",
+   "kind": "checkin",
+   "title": "Checking on your streak",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I'm calling to look at your numbers. Don't panic, I'm old, not a tax inspector."
+    },
+    {
+     "check": "streak",
+     "branches": [
+      {
+       "min": 14,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "{streak} days in a row. Ho ho! That's no longer a streak, that's a lifestyle."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "At this point your habits are carrying you, not the other way round. Can you feel it?"
+        },
+        {
+         "choice": [
+          {
+           "text": "I can, actually.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Good. Remember this feeling on the day it gets hard. It will come back."
+            }
+           ]
+          },
+          {
+           "text": "Not really.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "You will. It sneaks up, like the water on the hill."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "{streak} days running. That's the hard part, the first stretch."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "Most people quit somewhere around day four. You're past that, or close to it."
+        },
+        {
+         "choice": [
+          {
+           "text": "Day four is hard?",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Day four is when the excitement is gone and the results haven't arrived. It's a desert. Walk through it."
+            }
+           ]
+          },
+          {
+           "text": "I'm not quitting.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "I believe you. Mostly because you answered on the first ring."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "No streak at the moment. That's fine. Every streak in history started at zero."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "Do one habit today. Just one. Then tomorrow, do one more."
+        },
+        {
+         "choice": [
+          {
+           "text": "Just one?",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Just one. Big things are made of small things wearing a trench coat."
+            }
+           ]
+          },
+          {
+           "text": "I'll do them all.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Ambitious! Start with one, and if the rest follow, lovely."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Right. That's my inspection done. I'm going back to bed. Well, to the deck chair. Same thing."
+    }
+   ]
+  },
+  {
+   "id": "roshi_c_week",
+   "kind": "checkin",
+   "title": "Your week so far",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Let's see. Hold on, these glasses are for sun, not for reading. There."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "This week you checked off {week_checkoffs} habits."
+    },
+    {
+     "check": "week_missed",
+     "branches": [
+      {
+       "min": 4,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "And you missed {week_missed}. That's a few more than I'd like, if I'm honest."
+        },
+        {
+         "speaker": "ROSHI",
+         "text": "Was something going on?"
+        },
+        {
+         "choice": [
+          {
+           "text": "It's been a rough week.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Then be kind about it. Shrink the list for a few days, do the essentials, and build back."
+            }
+           ]
+          },
+          {
+           "text": "I got lazy.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Honest! Laziness I understand, I'm its president. But the cure is the same: one small thing, right now."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 1,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "And you missed {week_missed}. A few slips, nothing a bowl of soup and a good night's sleep won't fix."
+        },
+        {
+         "choice": [
+          {
+           "text": "I'll tighten up.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Don't tighten. Just turn up. Tight people snap."
+            }
+           ]
+          },
+          {
+           "text": "I'm doing okay, right?",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "You're doing well. Don't let a couple of misses argue you out of it."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "And you missed nothing scheduled. Not one. Hmph. I was hoping to have something to lecture you about."
+        },
+        {
+         "choice": [
+          {
+           "text": "Sorry to disappoint.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Ho ho, I'll live. Barely."
+            }
+           ]
+          },
+          {
+           "text": "Lecture me anyway.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Fine: drink more water. There. Everyone needs that one."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Keep going. I'm watching. Well, the turtle is. I'm napping."
+    }
+   ]
+  },
+  {
+   "id": "roshi_c_top",
+   "kind": "checkin",
+   "title": "Your best habit",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I noticed something. Your most faithful habit lately is {top_habit}."
+    },
+    {
+     "choice": [
+      {
+       "text": "Is that good?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "It means you've found something you'll actually do. That's gold."
+        }
+       ]
+      },
+      {
+       "text": "I didn't even notice.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "That's the best kind. It's become part of you without asking permission."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Here's a trick from an old man. Tie the next habit you want onto that one."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "After {top_habit}, do the new thing. The old habit pulls the new one along like a boat with a dinghy."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Habit stacking."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Is that what they call it now? In my day we called it 'doing the next thing'. Same idea, less fancy."
+    }
+   ]
+  },
+  {
+   "id": "roshi_c_power",
+   "kind": "checkin",
+   "title": "Your power level",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I put my scouter on you this morning. Don't ask how, it's a long story involving a coconut."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Power level {power}."
+    },
+    {
+     "check": "power",
+     "branches": [
+      {
+       "min": 1000,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Do you remember when you arrived here? Five. Five! Look at you now."
+        },
+        {
+         "choice": [
+          {
+           "text": "It doesn't feel that different.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "It never does from the inside. You only see a mountain's height from far away."
+            }
+           ]
+          },
+          {
+           "text": "I've come a long way.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "You have. Don't get cocky. But do be proud for about an hour."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 100,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "That's real progress. You're not the house plant you were when you washed up on my beach."
+        },
+        {
+         "choice": [
+          {
+           "text": "Thanks, I think.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "It was a compliment. From me, those are rare. Frame it."
+            }
+           ]
+          },
+          {
+           "text": "How do I go faster?",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Same way you got here. Just more days of it. There's no shortcut I'm hiding."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Still small. Good. Small numbers grow the fastest. You'll double this in no time."
+        },
+        {
+         "choice": [
+          {
+           "text": "Promise?",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "I promise if you train. I'm a master, not a magician."
+            }
+           ]
+          },
+          {
+           "text": "Small is depressing.",
+           "then": [
+            {
+             "speaker": "ROSHI",
+             "text": "Small is honest. Everyone was small once. Even me. Especially me."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Right, I'm taking the scouter off. It beeps too much and the turtle hates it."
+    }
+   ]
+  },
+  {
+   "id": "roshi_c_weak",
+   "kind": "checkin",
+   "title": "The one you skip",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I'm going to say a name and I want you to feel slightly guilty. {weak_habit}."
+    },
+    {
+     "choice": [
+      {
+       "text": "Okay, that hurt.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Good. A tiny bit of guilt is useful. A lot of it is useless. We're aiming for a tiny bit."
+        }
+       ]
+      },
+      {
+       "text": "I know, I know.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Knowing is half. Doing is the other half. And the bigger half, honestly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "When a habit keeps getting skipped, it's usually too big, too vague or at a bad time of day."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Which one is it for {weak_habit}?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Too big.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Then cut it in half. Then in half again if you need. A habit you do is worth ten you plan."
+        }
+       ]
+      },
+      {
+       "text": "Bad time of day.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Then move it. Habits aren't furniture, they're allowed to change rooms."
+        }
+       ]
+      },
+      {
+       "text": "Not sure.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Then try it at a new time tomorrow and see. Experiments beat worrying."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Fix it a little. Then tell me how it went. Or don't, I'll find out. I always find out."
+    }
+   ]
+  },
+  {
+   "id": "roshi_g_goku",
+   "kind": "gossip",
+   "title": "About Goku",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Goku came by yesterday. Ate everything in the fridge, including something I think was a sponge."
+    },
+    {
+     "choice": [
+      {
+       "text": "Did you stop him?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "You can't stop Goku eating. You can only hide the good snacks and pray."
+        }
+       ]
+      },
+      {
+       "text": "Was he training?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "He's always training. Even eating, he does it like a competition."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He was my student when he was a little boy with a tail. Do you know what I liked about him?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "His strength?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "No. He never once complained about the chores. Delivering milk, digging fields, he thought it was all fun."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "That's his real talent. Not fighting. Enjoying the work. If you can learn that, you'll beat people far stronger than you."
+    }
+   ]
+  },
+  {
+   "id": "roshi_g_vegeta",
+   "kind": "gossip",
+   "title": "About Vegeta",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Vegeta called me 'the old turtle' again. Twice in one sentence, which takes skill."
+    },
+    {
+     "choice": [
+      {
+       "text": "Does that bother you?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "At my age, if someone remembers you exist, it's a compliment."
+        }
+       ]
+      },
+      {
+       "text": "You are an old turtle, sort of.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Ho ho! Careful, or I'll make you deliver milk."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Between you and me, he's a fine fighter. The finest kind of stubborn."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He'll never say thank you to anyone, but he trains harder than anyone I've ever seen."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Should I be more like him?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Take his work and leave his temper. You'll save on furniture."
+    }
+   ]
+  },
+  {
+   "id": "roshi_g_piccolo",
+   "kind": "gossip",
+   "title": "About Piccolo",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I met Piccolo on the beach this morning. He was meditating on top of a rock. In the sea."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "A wave came and he didn't even open his eyes. Just floated there, annoyed."
+    },
+    {
+     "choice": [
+      {
+       "text": "That's impressive.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "It is. Don't tell him I said so, he'll get insufferable."
+        }
+       ]
+      },
+      {
+       "text": "That's ridiculous.",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "It's both. Most impressive things are."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "He and I disagree about nearly everything. He thinks I'm lazy. I think he needs a holiday."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "But he's the best teacher of patience you'll find. He can sit still for a week. I can barely sit still through lunch."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll take notes from both of you."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Wise. Take his calm and my naps. Together, that's balance."
+    }
+   ]
+  },
+  {
+   "id": "roshi_g_bulma",
+   "kind": "gossip",
+   "title": "About Bulma",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "Bulma stopped by to fix my television. Again."
+    },
+    {
+     "choice": [
+      {
+       "text": "What broke it this time?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "The turtle sat on the remote. For six hours."
+        }
+       ]
+      },
+      {
+       "text": "Was she annoyed?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "She's always a little annoyed. It's how you know she cares."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "I've known that girl since she was a teenager tearing around the world in a car full of gadgets."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "She's the cleverest person I've ever met. Don't tell her. She already knows."
+    },
+    {
+     "speaker": "YOU",
+     "text": "She does seem to know."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "If you want someone to help you build a system for your habits, ask her. If you want someone to tell you to go to bed, ask me."
+    }
+   ]
+  },
+  {
+   "id": "roshi_g_all",
+   "kind": "gossip",
+   "title": "Everyone at once",
+   "lines": [
+    {
+     "speaker": "ROSHI",
+     "text": "I'm calling because I want to complain about my students and you're the only one who listens."
+    },
+    {
+     "choice": [
+      {
+       "text": "Go on.",
+       "then": []
+      },
+      {
+       "text": "Is this going to take long?",
+       "then": [
+        {
+         "speaker": "ROSHI",
+         "text": "Everything takes long at my age. Sit down."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "Goku eats my food. Vegeta insults my house. Piccolo meditates on my roof. Bulma rewires my television without asking."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "And you."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What do I do?"
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "You call back. You show up. You do the small things."
+    },
+    {
+     "speaker": "ROSHI",
+     "text": "It's the least dramatic thing anyone has ever done on this island, and honestly it's my favourite."
+    }
+   ]
+  }
+ ]
+}

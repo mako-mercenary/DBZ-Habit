@@ -95,6 +95,8 @@ fun SettingsScreen(
     onNudgeTime: (Int) -> Unit,
     soundOn: Boolean,
     onSound: (Boolean) -> Unit,
+    callsOn: Boolean,
+    onCalls: (Boolean) -> Unit,
     onBack: () -> Unit,
 ) {
     val waiting = wishes.filter { it.grantedAtEpochDay == null }
@@ -162,6 +164,12 @@ fun SettingsScreen(
         Spacer(Modifier.height(12.dp))
         SectionLabel("Extras")
         EveningNudgeRow(nudgeOn, nudgeMinutes, onNudge, onNudgeTime)
+        SwitchRow(
+            title = "Mentor calls ring",
+            detail = "Once a day, one mentor rings. Pick up within the hour for extra bond XP.",
+            checked = callsOn,
+            onChange = onCalls,
+        )
         SwitchRow(
             title = "Sound effects",
             detail = "Check-offs, boss hits, transformations and more.",

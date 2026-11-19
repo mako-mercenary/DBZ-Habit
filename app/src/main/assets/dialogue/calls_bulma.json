@@ -1,0 +1,1710 @@
+{
+ "mentor": "BULMA",
+ "ring": [
+  "Bulma is calling. She's already talking before you say hello.",
+  "Incoming call from Capsule Corp. It's Bulma, and she has an idea.",
+  "Bulma's ringing. Something in her lab just went bang."
+ ],
+ "calls": [
+  {
+   "id": "bulma_w_systems",
+   "kind": "wisdom",
+   "title": "Systems beat willpower",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Hi! Quick question, and be honest. Do you rely on willpower to do your habits?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Mostly, yeah.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Oh no. Okay, we need to fix that."
+        }
+       ]
+      },
+      {
+       "text": "What else is there?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Systems, genius. Systems."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Willpower is like a phone battery. It's full in the morning and dead by dinner."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "A system doesn't need a battery. Shoes by the door means you run. Fruit on the counter means you eat fruit. A glass by the sink means you drink water."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I set things up so the easy choice is the right one."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Exactly! You design your environment, and then your environment does the work. I haven't used willpower since I was twelve."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Go move one thing in your room tonight. Make one habit easier to start. Report back."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_prototype",
+   "kind": "wisdom",
+   "title": "Prototype first",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Do you know how many prototypes I built before the first capsule actually worked?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Ten?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Ha! Adorable."
+        }
+       ]
+      },
+      {
+       "text": "A hundred?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "More like a hundred and forty. Don't tell my dad, he thinks it was thirty."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Most of them exploded, melted or did absolutely nothing. Each one told me something."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Your routine is a prototype too. It doesn't have to be perfect the first time. It just has to be good enough to test."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I should try things and adjust."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Try, measure, adjust. Repeat. That's all engineering is. And honestly that's all growing up is too."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_data",
+   "kind": "wisdom",
+   "title": "Track it",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I love that you check things off in this app. Do you know why?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Because you built it?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Ha! I wish. No, because it's data."
+        }
+       ]
+      },
+      {
+       "text": "It's satisfying?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "That too. But mostly, data."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "What gets measured gets managed. If you can see it, you can fix it."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "People who don't track things think they're doing great or terribly, and they're usually wrong both ways."
+    },
+    {
+     "speaker": "YOU",
+     "text": "The numbers don't lie."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "The numbers don't flatter you either. Which is why they're useful. Flattery's my job."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_help",
+   "kind": "wisdom",
+   "title": "Ask for help",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Okay, confession. I'm stuck on a design and it's driving me up the wall."
+    },
+    {
+     "choice": [
+      {
+       "text": "Can I help?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Maybe! Mostly I needed to say it out loud."
+        }
+       ]
+      },
+      {
+       "text": "You get stuck?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "All the time! Genius isn't never being stuck. It's getting unstuck faster."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Saying the problem to someone else almost always shows me the answer. Even if they don't understand a word."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I used to explain things to Goku and he'd just nod. Worked every time."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So explaining my problems helps me solve them."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Yes! Write it in the journal, tell a friend, tell your houseplant. Just get it out of your head."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_failure",
+   "kind": "wisdom",
+   "title": "Failure is a test",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "My lab exploded this morning. Small explosion. Medium. Fine, big."
+    },
+    {
+     "choice": [
+      {
+       "text": "Are you okay?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "I'm fine, my eyebrows are fine, it's fine."
+        }
+       ]
+      },
+      {
+       "text": "What were you making?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "A faster engine. It was fast. Briefly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But here's the thing. Now I know exactly which part couldn't take the heat."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "An experiment that fails isn't a failure. It's an experiment that worked. It just told you something you didn't want to hear."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll remember that next time I miss a day."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Good! Ask what broke. Was it the time of day? Too big a goal? Then change that part. Don't throw out the whole engine."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_sleep",
+   "kind": "wisdom",
+   "title": "Do as I say",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I stayed up all night working on something again. Please don't do what I do."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why not?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Because I'm a wreck today and I've made three mistakes before lunch."
+        }
+       ]
+      },
+      {
+       "text": "But you're a genius.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "I'm a genius who's tired. That's just a regular person with nicer hair."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Sleep is when your brain files everything you learned. Skip it, and it's like saving without pressing save."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Vegeta can go days without sleeping because he's a Saiyan. You're not. Neither am I."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So go to bed on time."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Yes. Ugh. I hate giving advice I won't take. You take it for both of us."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_confidence",
+   "kind": "wisdom",
+   "title": "Act like you belong",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Do you know my secret to walking into any room? Even rooms full of scary people?"
+    },
+    {
+     "choice": [
+      {
+       "text": "What is it?",
+       "then": []
+      },
+      {
+       "text": "Great hair?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Okay, that's part of it. But that's not the main thing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I act like I belong there. Even when I don't feel like it. Especially when I don't."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Confidence isn't a feeling you wait for. It's a thing you practise until the feeling shows up."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Fake it till you make it?"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "No, practise it till you make it. Faking is pretending you're done. Practising is admitting you're learning, but doing it anyway."
+    }
+   ]
+  },
+  {
+   "id": "bulma_w_curiosity",
+   "kind": "wisdom",
+   "title": "Stay curious",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Ask me why I became an inventor."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why did you become an inventor?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Because I couldn't stop asking how things worked."
+        }
+       ]
+      },
+      {
+       "text": "Because you're a genius?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Flattering, and true, but no. It was curiosity."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "When I was five I took apart my dad's radio. He was furious. Then he gave me a screwdriver."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Curiosity is the most useful habit there is. Every skill I have started with 'wait, how does that work?'"
+    },
+    {
+     "speaker": "YOU",
+     "text": "I should ask that more."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Ask it about one thing a day. Your habits included. Why does this one work? Why does that one keep breaking?"
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_capsules",
+   "kind": "about",
+   "title": "Capsules",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "You know what capsules are, right? Tiny things you throw, and pop, there's a house. Or a car. Or a fridge."
+    },
+    {
+     "choice": [
+      {
+       "text": "How do they work?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Trade secret. Also very, very complicated. Also my dad's, mostly."
+        }
+       ]
+      },
+      {
+       "text": "I want one.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Everyone wants one. They're kind of our whole company."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "My dad invented them. I grew up in a house full of things that could fold down into your pocket."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "It taught me that big things can come from small ones. A whole house, in a capsule the size of your thumb."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Like habits."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Ooh, I like that. Small thing, big result. I'm stealing that for a slogan."
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_radar",
+   "kind": "about",
+   "title": "The radar",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Did anyone tell you I built the Dragon Radar when I was sixteen?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Seriously?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Seriously. In my bedroom. Over a summer."
+        }
+       ]
+      },
+      {
+       "text": "Goku mentioned it.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Did he say it was amazing? He should have said it was amazing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I wanted to find the Dragon Balls to wish for the perfect boyfriend. Don't laugh."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I didn't get the wish, but I got the adventure, and I got Goku, who's been my friend ever since."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So it worked out anyway."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Things usually do, if you keep building. You just don't always get the thing you were aiming for. Sometimes you get better."
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_hair",
+   "kind": "about",
+   "title": "Hairstyles",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I changed my hair again. What do you think?"
+    },
+    {
+     "choice": [
+      {
+       "text": "I can't see it, this is a phone call.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Use your imagination! It's fabulous."
+        }
+       ]
+      },
+      {
+       "text": "Looks great!",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Thank you! See, you have taste. I knew I liked you."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I change my look every few years. People always ask why."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "It's because I change. I'm not the same person I was at sixteen. Why should my hair be?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "A new look for a new you."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Exactly! When you hit a big milestone, mark it. New haircut, new shoes, new notebook. Your brain loves a fresh start."
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_age",
+   "kind": "about",
+   "title": "Don't say it",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Someone at the shop called me 'ma'am' today."
+    },
+    {
+     "choice": [
+      {
+       "text": "That's polite!",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "It's polite and it's a crime."
+        }
+       ]
+      },
+      {
+       "text": "How old are you anyway?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "I'm going to pretend you didn't ask that."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I'm a genius in her prime. I'll be a genius in her prime for the next forty years, thank you."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But okay, real talk. Getting older is fine. Getting older without learning anything is the scary part."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So keep learning."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Keep learning, keep moving, keep doing your skincare. In that order. Okay, maybe skincare first."
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_dad",
+   "kind": "about",
+   "title": "My dad",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "My dad's the reason I became an inventor. Did I tell you that?"
+    },
+    {
+     "choice": [
+      {
+       "text": "What's he like?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Gentle. Absent-minded. Always has a cat on his shoulder."
+        }
+       ]
+      },
+      {
+       "text": "You sound close.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "We are. He's the nicest genius alive. I'm the second nicest."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He never once told me something was impossible. He'd just say, 'Well, let's see what happens.'"
+    },
+    {
+     "speaker": "BULMA",
+     "text": "That's the best thing anyone ever taught me. Not the maths. The 'let's see what happens'."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Low pressure, lots of experiments."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Exactly. Try it with your habits. Not 'I must'. 'Let's see what happens if I do this for a week.'"
+    }
+   ]
+  },
+  {
+   "id": "bulma_a_lab",
+   "kind": "about",
+   "title": "My lab",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "You should see my lab right now. It's a disaster."
+    },
+    {
+     "choice": [
+      {
+       "text": "Organised chaos?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Chaos chaos. There's a robot arm in the fruit bowl."
+        }
+       ]
+      },
+      {
+       "text": "Do you ever tidy it?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Every Sunday. It lasts about three hours."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But I know where everything is. Mostly. There's a system, it's just a system only I understand."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Your routine can be weird too, you know. It doesn't have to look like anyone else's. It just has to work for you."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So my weird morning routine is fine."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "If it works, it's not weird, it's custom. Custom is premium."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_bug",
+   "kind": "subject",
+   "title": "The first bug",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Fun fact time! Do you know where the word 'bug' for computer problems comes from?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Tell me.",
+       "then": []
+      },
+      {
+       "text": "A literal bug?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Yes! Ugh, you guessed it. Let me tell it properly anyway."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "In 1947, engineers working on a huge early computer at Harvard found a moth stuck in one of its relays."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "They taped it into the logbook and wrote that it was the first actual case of a bug being found."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "People had called problems 'bugs' before that, but that moth made it famous."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So debugging was once literal."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Literally getting the moth out! Next time something in your routine goes wrong, look for the moth. There's always one small thing."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_velcro",
+   "kind": "subject",
+   "title": "Burrs and Velcro",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Do you know how Velcro was invented? I love this one."
+    },
+    {
+     "choice": [
+      {
+       "text": "No idea.",
+       "then": []
+      },
+      {
+       "text": "Was it an accident?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Sort of! The best inventions usually are."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "An engineer called George de Mestral went for a walk with his dog in the 1940s and came back covered in burrs."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Instead of being annoyed, he looked at them under a microscope. Tiny hooks catching on loops in his clothes and the dog's fur."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "A few years later, he'd made hook-and-loop fastener. Velcro!"
+    },
+    {
+     "speaker": "YOU",
+     "text": "He turned an annoyance into an invention."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Exactly! Every annoyance is a problem waiting for a solution. What annoys you in your day? That's your invention."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_microwave",
+   "kind": "subject",
+   "title": "A melted chocolate bar",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Here's a good one. The microwave oven was discovered because of a melted chocolate bar."
+    },
+    {
+     "choice": [
+      {
+       "text": "How?",
+       "then": []
+      },
+      {
+       "text": "You're making that up.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "I would never make up science. I only make up excuses."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "In 1945 an engineer called Percy Spencer was working near a magnetron, which makes microwaves for radar."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He noticed the chocolate bar in his pocket had melted. So he tried popcorn next. It popped."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "And a couple of years later, there were microwave ovens. Big ones. Like, fridge-sized."
+    },
+    {
+     "speaker": "YOU",
+     "text": "All from noticing one small thing."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Noticing is a superpower. Most people would've just been upset about their chocolate."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_postit",
+   "kind": "subject",
+   "title": "A glue that didn't stick",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Sticky notes were a failure first. Did you know that?"
+    },
+    {
+     "choice": [
+      {
+       "text": "A failure?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Totally. Listen."
+        }
+       ]
+      },
+      {
+       "text": "I use those every day.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "So do I! My lab's covered in them."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "A chemist called Spencer Silver was trying to make a super strong glue in 1968. He made a weak one instead."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "It stuck, but you could peel it off. Nobody knew what to do with it for years."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Then his colleague Art Fry used it to stop bookmarks falling out of his hymn book. And that was it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "A failed glue became a success."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Your 'failed' habits might be the same. Maybe the thing you tried didn't work how you wanted, but it'd be perfect somewhere else."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_bluetooth",
+   "kind": "subject",
+   "title": "Named after a king",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Do you know who Bluetooth is named after?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Someone with blue teeth?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Actually, yes! Sort of!"
+        }
+       ]
+      },
+      {
+       "text": "No idea.",
+       "then": []
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "A Viking king! Harald Bluetooth, who ruled Denmark over a thousand years ago."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He was famous for uniting different groups, so the engineers named their tech after him, because it unites different devices."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "The logo is his initials, in old runes, stuck together."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's way cooler than I expected."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "History is hiding in everything you own. Just like your habits are hiding in everything you do. Okay, that was a stretch. I'm still proud of it."
+    }
+   ]
+  },
+  {
+   "id": "bulma_s_apollo",
+   "kind": "subject",
+   "title": "Pocket power",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Look at your phone. Seriously, look at it."
+    },
+    {
+     "choice": [
+      {
+       "text": "Okay, I'm looking.",
+       "then": []
+      },
+      {
+       "text": "It's just a phone.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Just a phone! Listen to this."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "The computer that helped guide astronauts to the Moon in 1969 had far less computing power than that phone does today. Thousands of times less."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "They got to the Moon with that. And most people use their phone to scroll until two in the morning."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Okay, that's a bit of a burn."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "It's a big burn. I'm just saying, you're holding a spaceship computer. Use it to do something brilliant. Like checking off your habits."
+    }
+   ]
+  },
+  {
+   "id": "bulma_c_journal",
+   "kind": "checkin",
+   "title": "Your journal",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Hi! Got a second? Doesn't matter, I'm talking anyway."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay, I've been checking the journal stats. Don't make that face, I can hear it."
+    },
+    {
+     "check": "journal_streak",
+     "branches": [
+      {
+       "min": 7,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "{journal_streak} days in a row! That's a real habit! I'm honestly impressed."
+        },
+        {
+         "choice": [
+          {
+           "text": "Your prompts are good.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "I know! But you're the one answering them."
+            }
+           ]
+          },
+          {
+           "text": "I like writing now.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "See? Told you. I'm never wrong. Well, rarely."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 1,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "{journal_streak} days running. That's a good start."
+        },
+        {
+         "choice": [
+          {
+           "text": "It's getting easier.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "It will. The first few entries feel weird, then they feel like talking to a friend. Me. I'm the friend."
+            }
+           ]
+          },
+          {
+           "text": "Some prompts are hard.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "The hard ones are the good ones! But you can swap once a day if you really hate it."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Nothing recently. I've got a whole notebook of questions just waiting for you, you know."
+        },
+        {
+         "choice": [
+          {
+           "text": "I'll write today.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Promise? I'll know if you don't. I built half the systems you use."
+            }
+           ]
+          },
+          {
+           "text": "I don't know what to say.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "That's what my prompts are for! You don't need ideas, I have plenty."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay, I'm done nagging. Mostly. Bye!"
+    }
+   ]
+  },
+  {
+   "id": "bulma_c_week",
+   "kind": "checkin",
+   "title": "Weekly report",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Hold on, let me pull up your spreadsheet. Yes, I made you a spreadsheet. Don't be weird about it."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Time for your weekly report. I love reports. Okay: {week_checkoffs} check-offs this week."
+    },
+    {
+     "check": "week_checkoffs",
+     "branches": [
+      {
+       "min": 20,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "That's excellent output. If you were an engine I'd put you in a race car."
+        },
+        {
+         "choice": [
+          {
+           "text": "Thanks!",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Don't let it go to your head. That's my job. My head, I mean."
+            }
+           ]
+          },
+          {
+           "text": "Can I keep it up?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "If you sleep enough, yes. If you don't, the engine overheats. Trust me, I know."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 5,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Solid! Not spectacular, but solid. Solid is underrated."
+        },
+        {
+         "choice": [
+          {
+           "text": "I want spectacular.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Then add one small habit and keep everything else steady. Spectacular is just solid, stacked."
+            }
+           ]
+          },
+          {
+           "text": "Solid is fine by me.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Good answer. Solid lasts. Spectacular burns out."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Low. Not a disaster, just low. Something jammed the gears."
+        },
+        {
+         "choice": [
+          {
+           "text": "Life got busy.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Then make the habits smaller until they fit. A tiny habit beats a big one you skip."
+            }
+           ]
+          },
+          {
+           "text": "I lost motivation.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Motivation's unreliable. Systems, remember? Make the first step so easy it's silly."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay, report filed! Same time next week. Maybe. I'll call when I feel like it."
+    }
+   ]
+  },
+  {
+   "id": "bulma_c_top",
+   "kind": "checkin",
+   "title": "Your best habit",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Analysis says your most reliable habit is {top_habit}. Nice!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Why that one, do you think?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Probably because it's easy to start, or tied to something you already do. That's the pattern."
+        }
+       ]
+      },
+      {
+       "text": "Is that good?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "It's great! Reliable is the best word in engineering."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Here's what I'd do. Look at why {top_habit} works and copy that into the habit that keeps failing."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Same time of day? Same place? Same trigger? Reverse-engineer your own success."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Reverse-engineer myself."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "You're the most interesting machine you'll ever work on. Read the manual. You're writing it."
+    }
+   ]
+  },
+  {
+   "id": "bulma_c_streak",
+   "kind": "checkin",
+   "title": "The streak",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Hi, it's me! Data time. My favourite time."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay, let's check the streak counter."
+    },
+    {
+     "check": "streak",
+     "branches": [
+      {
+       "min": 14,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "{streak} days! Do you know what that is? That's a stable system. I'd sign off on that."
+        },
+        {
+         "choice": [
+          {
+           "text": "Feels good.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "It should! Celebrate a bit. Buy something cute. Or eat something nice."
+            }
+           ]
+          },
+          {
+           "text": "What if I break it?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Then you fix it. Every system needs maintenance. Breaking isn't failing, it's just a repair day."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "{streak} days. The engine's started. Now keep your foot on the pedal."
+        },
+        {
+         "choice": [
+          {
+           "text": "How do I keep going?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Don't change anything big. Just keep showing up. Consistency first, upgrades later."
+            }
+           ]
+          },
+          {
+           "text": "I want to add more habits.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Wait a week. Let this settle first. Overloading a new system is how things explode."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "No streak right now. That's okay. Every machine needs a restart sometimes."
+        },
+        {
+         "choice": [
+          {
+           "text": "I keep restarting.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Then let's change the design. What's the one habit that always breaks first? Start there."
+            }
+           ]
+          },
+          {
+           "text": "Restarting today.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Good! Turn it off and on again. Works on everything."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay. Back to work, and drink some water. That's an order from management."
+    }
+   ]
+  },
+  {
+   "id": "bulma_c_power",
+   "kind": "checkin",
+   "title": "Scouter data",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I hacked into your scouter data. Don't be mad, it was very easy."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Power level {power}."
+    },
+    {
+     "check": "power",
+     "branches": [
+      {
+       "min": 1000,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Over a thousand? You're officially stronger than most people on this planet! Not Vegeta. But most people."
+        },
+        {
+         "choice": [
+          {
+           "text": "Not Vegeta?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Nobody's stronger than Vegeta, according to Vegeta."
+            }
+           ]
+          },
+          {
+           "text": "I'll take it.",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Take it! You earned it, every point."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Going up nicely. I've plotted it on a graph. It's a very pretty line."
+        },
+        {
+         "choice": [
+          {
+           "text": "Can I see the graph?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "It's in the History tab! I made sure of it. Okay, someone made sure. Probably me."
+            }
+           ]
+          },
+          {
+           "text": "Is it fast enough?",
+           "then": [
+            {
+             "speaker": "BULMA",
+             "text": "Fast is overrated. Steady is beautiful. Look at your line, not anyone else's."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Okay, I'm logging off your scouter now. Probably. Bye!"
+    }
+   ]
+  },
+  {
+   "id": "bulma_g_vegeta",
+   "kind": "gossip",
+   "title": "About Vegeta",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Vegeta broke the gravity room. Again. That's the fourth time this month."
+    },
+    {
+     "choice": [
+      {
+       "text": "What did he do?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "He turned it up to a level I specifically told him not to."
+        }
+       ]
+      },
+      {
+       "text": "Is he okay?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "He's fine. The room is not fine. The room is a crater."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He says it's the machine's fault. It's never the machine's fault."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But okay, between you and me? I've never seen anyone train like him. Every day, no excuses, even when he's hurt."
+    },
+    {
+     "speaker": "YOU",
+     "text": "You sound proud of him."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I'm proud of my gravity room. He's just very good at breaking it. Don't tell him I said anything nice."
+    }
+   ]
+  },
+  {
+   "id": "bulma_g_goku",
+   "kind": "gossip",
+   "title": "About Goku",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "Goku came over and ate everything in my kitchen. Including a cake I was saving for a party."
+    },
+    {
+     "choice": [
+      {
+       "text": "Did you yell?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Of course I yelled. He just said it was really good cake."
+        }
+       ]
+      },
+      {
+       "text": "That sounds like him.",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "It sounds exactly like him."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I've known him since he was a little kid who'd never seen a girl before. He still can't use a phone properly."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But he's the most honest person I know. He never pretends. If he's hungry, he eats. If he's tired, he sleeps. If he's happy, he's really happy."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Honest with himself."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Yeah. That's rare. Most of us lie to ourselves a little about why we skip things. Goku never does."
+    }
+   ]
+  },
+  {
+   "id": "bulma_g_roshi",
+   "kind": "gossip",
+   "title": "About Roshi",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I fixed Master Roshi's television again. Do you know what was wrong with it?"
+    },
+    {
+     "choice": [
+      {
+       "text": "The turtle?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "The turtle sat on the remote! How did you know?"
+        }
+       ]
+      },
+      {
+       "text": "Everything?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "Basically everything. It's older than me. Way older."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "I've known him since I was a teenager. He's a funny old man. Lazy, cheeky, always napping."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "But every one of the strongest people I know trained with him at some point. That's not an accident."
+    },
+    {
+     "speaker": "YOU",
+     "text": "He knows what he's doing."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He really does. He just hides it under a lot of naps and sunglasses."
+    }
+   ]
+  },
+  {
+   "id": "bulma_g_piccolo",
+   "kind": "gossip",
+   "title": "About Piccolo",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I made Piccolo a cake for his birthday. He said, 'I only drink water.'"
+    },
+    {
+     "choice": [
+      {
+       "text": "Did he eat it?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "No! He stared at it for a whole minute like it had insulted him."
+        }
+       ]
+      },
+      {
+       "text": "Does he even have a birthday?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "I picked a day. He didn't argue. Mostly because he didn't speak."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "He's grumpy, but he came to the party. Stood in the corner the whole time, but he came."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "That's Piccolo. He shows up. He just doesn't make a fuss about it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Showing up matters most."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "It really does. Even if you stand in the corner. Especially if you don't eat my cake, apparently."
+    }
+   ]
+  },
+  {
+   "id": "bulma_g_party",
+   "kind": "gossip",
+   "title": "The party",
+   "lines": [
+    {
+     "speaker": "BULMA",
+     "text": "I threw a party and everyone came. It was chaos. It was perfect."
+    },
+    {
+     "choice": [
+      {
+       "text": "What happened?",
+       "then": []
+      },
+      {
+       "text": "Was I invited?",
+       "then": [
+        {
+         "speaker": "BULMA",
+         "text": "You're invited to the next one. I'm making a list."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "BULMA",
+     "text": "Goku ate the buffet. Vegeta glared at everyone. Piccolo stood in a corner. Master Roshi fell asleep in a deckchair by the pool."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "And somehow it was the best night I've had in ages. Everyone being completely themselves."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Sounds loud."
+    },
+    {
+     "speaker": "BULMA",
+     "text": "So loud! But you know what? You need people around you, even weird ones. Especially weird ones. Don't train all alone forever."
+    }
+   ]
+  }
+ ]
+}

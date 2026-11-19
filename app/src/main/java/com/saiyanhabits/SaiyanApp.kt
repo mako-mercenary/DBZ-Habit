@@ -45,6 +45,10 @@ class SaiyanApp : Application() {
         com.saiyanhabits.data.JournalRepository(this, database)
     }
 
+    val callRepository: com.saiyanhabits.data.CallRepository by lazy {
+        com.saiyanhabits.data.CallRepository(this, database, habitRepository, journalRepository)
+    }
+
     val storyRepository: StoryRepository by lazy { StoryRepository(this) }
 
     val wishRepository: WishRepository by lazy { WishRepository(database) }
@@ -73,6 +77,7 @@ class SaiyanApp : Application() {
             reminders.ensureScheduled(habitRepository.getActiveHabits())
             reminders.updateEveningNudge(prefs.eveningNudge.value, prefs.eveningNudgeMinutes.value, replace = false)
             timeChamber.restore()
+            reminders.scheduleNextCall(callRepository)
         }
         // Keep the home-screen widget in step with the app.
         appScope.launch {

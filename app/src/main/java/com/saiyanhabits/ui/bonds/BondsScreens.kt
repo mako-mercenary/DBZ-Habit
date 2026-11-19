@@ -3,6 +3,7 @@ package com.saiyanhabits.ui.bonds
 import com.saiyanhabits.ui.components.MentorWatermark
 import com.saiyanhabits.ui.components.ScreenTitle
 import com.saiyanhabits.ui.components.DbzPrimaryButton
+import com.saiyanhabits.ui.components.DbzSecondaryButton
 import com.saiyanhabits.ui.components.PanelStyle
 import com.saiyanhabits.ui.components.DbzPanel
 import androidx.compose.foundation.BorderStroke
@@ -129,6 +130,8 @@ fun MentorScreen(
     onUseKaioken: () -> Unit,
     onUseDayOff: (habitId: Long) -> Unit,
     onTrain: () -> Unit,
+    onCall: () -> Unit,
+    onCallLog: () -> Unit,
     onBack: () -> Unit,
 ) {
     val bond = state.bond(mentor)
@@ -164,6 +167,15 @@ fun MentorScreen(
         DbzPrimaryButton(onClick = onTrain, modifier = Modifier.fillMaxWidth()) {
             Text("Train: ${game.title}")
         }
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            DbzSecondaryButton(onClick = onCall, modifier = Modifier.weight(1f)) { Text("Call ${mentor.displayName}") }
+            DbzSecondaryButton(onClick = onCallLog, modifier = Modifier.weight(1f)) { Text("Call log") }
+        }
+        Text(
+            "One call each day: +${com.saiyanhabits.GameConfig.CALL_BOND_XP} bond.",
+            style = MaterialTheme.typography.bodySmall,
+            color = SaiyanColors.TextDim,
+        )
 
         Spacer(Modifier.height(6.dp))
         SectionLabel("Techniques")

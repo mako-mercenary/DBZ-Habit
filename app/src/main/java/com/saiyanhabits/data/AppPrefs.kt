@@ -15,6 +15,15 @@ class AppPrefs(context: Context) {
         prefs.getInt(KEY_NUDGE_MINUTES, GameConfig.EVENING_NUDGE_DEFAULT_MINUTES),
     )
     private val _sound = MutableStateFlow(prefs.getBoolean(KEY_SOUND_ON, true))
+    private val _callsRing = MutableStateFlow(prefs.getBoolean(KEY_CALLS_RING, true))
+
+    /** True when a mentor rings once a day. */
+    val callsRing: StateFlow<Boolean> = _callsRing
+
+    fun setCallsRing(on: Boolean) {
+        prefs.edit { putBoolean(KEY_CALLS_RING, on) }
+        _callsRing.value = on
+    }
 
     /** True when the evening nudge is on. */
     val eveningNudge: StateFlow<Boolean> = _eveningNudge
@@ -44,5 +53,6 @@ class AppPrefs(context: Context) {
         const val KEY_NUDGE_ON = "evening_nudge"
         const val KEY_NUDGE_MINUTES = "evening_nudge_minutes"
         const val KEY_SOUND_ON = "sound"
+        const val KEY_CALLS_RING = "calls_ring"
     }
 }

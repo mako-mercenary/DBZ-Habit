@@ -1,0 +1,1715 @@
+{
+ "mentor": "VEGETA",
+ "ring": [
+  "Vegeta is calling. He will be insulted if you let it ring.",
+  "Incoming call: the Prince of all Saiyans. Answer.",
+  "Vegeta's ringing. You can hear the gravity room humming behind him."
+ ],
+ "calls": [
+  {
+   "id": "vegeta_w_excuses",
+   "kind": "wisdom",
+   "title": "No excuses",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "You. I've been looking at your record. You have excuses."
+    },
+    {
+     "choice": [
+      {
+       "text": "I've been busy.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Busy. Everyone is busy. Busy is what weak people say when they mean 'I chose something else'."
+        }
+       ]
+      },
+      {
+       "text": "Everyone has excuses.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Everyone weak has excuses."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I've trained with broken ribs. I've trained after losing. I've trained on days I'd rather have destroyed a planet."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I'm not telling you to do that. You'd break. I'm telling you that a reason is not permission."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So do it anyway, even a little."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Even a little. A little is not nothing. Nothing is for cowards."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_pride",
+   "kind": "wisdom",
+   "title": "Pride",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Are you proud of your work?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Sometimes.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Sometimes. Pathetic. You should be proud every day, or doing something worth being proud of."
+        }
+       ]
+      },
+      {
+       "text": "I don't like to brag.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I didn't say brag. I said be proud. Learn the difference."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Pride is why I train. I refuse to be anything less than my best. Anything less is beneath a prince."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "You're not a prince. But you can still refuse to do sloppy work."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So hold myself to a high standard."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Hold yourself to your own standard. Not other people's. Theirs are usually too low."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_rival",
+   "kind": "wisdom",
+   "title": "Find a rival",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Do you have a rival?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Not really.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Then you're training without a target. Find one."
+        }
+       ]
+      },
+      {
+       "text": "Yes.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Good. Hate them a little. Respect them a lot."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Kakarot is the most irritating creature in the universe. He's also the reason I'm this strong."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Every time he passes me, I train until I pass him. Then he does it again. It never ends."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Who should my rival be?"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Yourself from last week. Beat him. Then beat next week's you. That one's harder. Good."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_feelings",
+   "kind": "wisdom",
+   "title": "Feelings don't train",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Did you skip something today because you didn't feel like it?"
+    },
+    {
+     "choice": [
+      {
+       "text": "...Maybe.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I knew it."
+        }
+       ]
+      },
+      {
+       "text": "No.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Hm. Then this is for tomorrow."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Your feelings don't lift weights. Your feelings don't run. Your feelings don't do anything except complain."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Train when you feel like it. Train harder when you don't. That's where the real gains are."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's intense."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I'm a Saiyan. Intense is the default setting. You can turn it down. Not off."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_pain",
+   "kind": "wisdom",
+   "title": "Hard is good",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Something's hard for you right now. I can tell."
+    },
+    {
+     "choice": [
+      {
+       "text": "How?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Because you're quiet. Weak people get quiet when things are hard."
+        }
+       ]
+      },
+      {
+       "text": "Yeah, it is.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Good."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Hard means you're at the edge of what you can do. That's the only place you grow."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Easy is maintenance. Hard is progress. Don't run from it, lean into it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And if it's too hard?"
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Then do a smaller hard thing. But never pick easy just because it's easy."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_consistency",
+   "kind": "wisdom",
+   "title": "Every day",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I trained today. I trained yesterday. I will train tomorrow."
+    },
+    {
+     "choice": [
+      {
+       "text": "Every day?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Every. Single. Day."
+        }
+       ]
+      },
+      {
+       "text": "Even on holidays?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Especially on holidays. Everyone else is resting."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Do you know why I'm stronger than nearly everyone in the universe? Not talent. I had talent, but so did others."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I never stopped. While they celebrated, I trained. While they rested, I trained."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'm not sure I can do it every day."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Then do something every day. Even the smallest thing. The streak matters more than the size."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_lose",
+   "kind": "wisdom",
+   "title": "Losing",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I lost today. To Kakarot. Again."
+    },
+    {
+     "choice": [
+      {
+       "text": "Sorry to hear that.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Don't pity me."
+        }
+       ]
+      },
+      {
+       "text": "Are you okay?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I'm furious. Which means I'm fine."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Do you know what I do when I lose? I don't sulk. Well. I sulk for ten minutes. Then I go back to the gravity room."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Losing is information. It tells you exactly where you're weak. Then you fix it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Ten minutes of sulking, then back to work."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "You may have ten minutes too. Not eleven."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_w_protect",
+   "kind": "wisdom",
+   "title": "Why I fight",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I used to fight only for myself. For my pride."
+    },
+    {
+     "choice": [
+      {
+       "text": "And now?",
+       "then": []
+      },
+      {
+       "text": "That sounds lonely.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "It was. I didn't notice until it wasn't."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Now I have a family. A woman who shouts at me. A son who thinks he can beat me."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I still fight for my pride. But I also fight so they're safe."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's a good reason."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Find yours. A reason bigger than you will make you get up on days your own reasons aren't enough. Don't tell anyone I said something soft."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_prince",
+   "kind": "about",
+   "title": "The prince",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "You do know you're speaking to royalty."
+    },
+    {
+     "choice": [
+      {
+       "text": "Prince of the Saiyans, right?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "The Prince of all Saiyans. Get it right."
+        }
+       ]
+      },
+      {
+       "text": "Is there a kingdom?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "...Not anymore."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "My planet is gone. Most of my people are gone. The title is all that's left."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I carry it anyway. Not because anyone makes me. Because I refuse to let it mean nothing."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's a lot to carry."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "It's a lot. It makes me strong. Choose something worth carrying, and carry it every day."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_gravity",
+   "kind": "about",
+   "title": "The gravity room",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I'm in the gravity room right now. Three hundred times normal gravity. Don't drop your phone, you'd break your foot."
+    },
+    {
+     "choice": [
+      {
+       "text": "How do you even move?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Slowly, at first. Then normally. That's the point."
+        }
+       ]
+      },
+      {
+       "text": "Bulma says you keep breaking it.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "The machine is weak."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I raise the gravity a little at a time. My body adapts. Then I raise it again."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "If I jumped straight to the top, I'd be crushed. Step by step is the only way."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Like adding a bit more to a habit each week."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Exactly like that. Don't go from zero to everything. Go from zero to slightly more than zero."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_kakarot",
+   "kind": "about",
+   "title": "Kakarot",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "You'll hear people say Kakarot and I are friends. We are not friends."
+    },
+    {
+     "choice": [
+      {
+       "text": "What are you, then?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Rivals. Eternal rivals."
+        }
+       ]
+      },
+      {
+       "text": "He talks about you a lot.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Of course he does. I'm the most interesting thing in his life besides food."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "When I first came to Earth, I came to destroy him. He beat me. A low-class soldier beat the prince."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I've been trying to settle that score ever since. It's been years. I'm still trying."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's a long time to stay motivated."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "When something truly matters to you, you don't need motivation. You need time. Use yours well."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_trunks",
+   "kind": "about",
+   "title": "My son",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "My son challenged me to a fight this morning."
+    },
+    {
+     "choice": [
+      {
+       "text": "Did you let him win?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I don't let anyone win."
+        }
+       ]
+      },
+      {
+       "text": "How old is he?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Old enough to think he can beat me. Young enough to be wrong."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "He lost. Then he asked to train again tomorrow. Same time."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "...I said yes."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's sweet."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "It's not sweet. It's training. He needs discipline. And I may enjoy it slightly. Don't repeat that."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_armour",
+   "kind": "about",
+   "title": "The armour",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I still wear my old battle armour sometimes. Bulma's made me new versions, but the design is the same."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why keep it?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "It reminds me where I came from."
+        }
+       ]
+      },
+      {
+       "text": "Isn't it uncomfortable?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Comfort is for the weak."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I was a soldier before I was anything else. The armour reminds me what I was, and what I refuse to be again."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Keep something that reminds you how far you've come. Old shoes. An old photo. Your first day's numbers."
+    },
+    {
+     "speaker": "YOU",
+     "text": "The first day's power level."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Yes. Look at it when you feel weak. You aren't that anymore."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_a_temper",
+   "kind": "about",
+   "title": "My temper",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I lost my temper and destroyed the training dummies again."
+    },
+    {
+     "choice": [
+      {
+       "text": "All of them?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "All twelve. Bulma's making thirteen now. Reinforced."
+        }
+       ]
+      },
+      {
+       "text": "Why?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "They looked smug."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "I've always had a temper. It used to run my life. Now I mostly aim it at training."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Mostly. The dummies are an exception."
+    },
+    {
+     "speaker": "YOU",
+     "text": "At least you're aiming it somewhere useful."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Anger is fuel. Learn to put it in the engine instead of setting the house on fire. I'm still learning that. Don't tell anyone."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_overload",
+   "kind": "subject",
+   "title": "Getting stronger",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Do you know why muscles get stronger? Most people don't. Listen."
+    },
+    {
+     "choice": [
+      {
+       "text": "Go on.",
+       "then": []
+      },
+      {
+       "text": "You lift heavy things?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "That's the start. Not the reason."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "When you push a muscle harder than it's used to, it adapts. It rebuilds stronger, so next time it's ready."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Trainers call it progressive overload. Do the same weight forever and you stop growing. Add a little more, a little more."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I have to keep raising the bar."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Slowly. Too much at once and you get hurt. Too little and nothing happens. Find the edge and push it gently. Even I do that. Mostly."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_heart",
+   "kind": "subject",
+   "title": "Your heart",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Your heart beats around a hundred thousand times a day."
+    },
+    {
+     "choice": [
+      {
+       "text": "That many?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Every day. Without asking permission."
+        }
+       ]
+      },
+      {
+       "text": "Does yours beat faster?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Mine beats however I tell it to."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "It's the hardest-working muscle you have. It never takes a rest day. Ever."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Train it. Run, swim, climb stairs. A strong heart makes everything else possible."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So cardio matters."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Cardio matters. I hate admitting it. Kakarot loves cardio. Insufferable."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_jupiter",
+   "kind": "subject",
+   "title": "Heavy planets",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Bulma told me the gravity on the planet Jupiter would make you weigh about two and a half times as much as you do now."
+    },
+    {
+     "choice": [
+      {
+       "text": "Could you train there?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Easily. That's nothing."
+        }
+       ]
+      },
+      {
+       "text": "I'd be crushed.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "You'd be slow. Not crushed. There's a difference."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Gravity is just resistance. The more you have, the more your body has to work. That's why I train in my room."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Your habits are resistance too. Each one is a little weight you choose to carry."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And they make me stronger."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "If you carry them every day, yes. If you put them down every other day, they make you tired."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_space",
+   "kind": "subject",
+   "title": "Weak astronauts",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Astronauts living in space lose muscle and bone, because nothing pulls on them."
+    },
+    {
+     "choice": [
+      {
+       "text": "Really?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Their bodies get lazy. Floating is too easy."
+        }
+       ]
+      },
+      {
+       "text": "How do they stop it?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "They train. About two hours a day."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "On the space station, they strap themselves to machines and exercise for hours, every day, just to stay the same."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Do you see? Without resistance, the body wastes away. Even in the most advanced place your species has built."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So comfort makes you weak."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Too much comfort makes everyone weak. A little resistance every day is the price of staying strong."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_beat",
+   "kind": "subject",
+   "title": "Training to a beat",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "You train to music, don't you? The rhythm game. With me."
+    },
+    {
+     "choice": [
+      {
+       "text": "It helps.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "It does. There's research on it."
+        }
+       ]
+      },
+      {
+       "text": "I just like the songs.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Hm. That's acceptable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Studies show music with a strong beat can make hard exercise feel easier, and people tend to move in time with it without trying."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Your body likes a rhythm. Daily habits are a rhythm too. Same time, same order, every day."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So routine is like a beat."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Yes. Find your tempo and keep it. Don't miss beats."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_s_sore",
+   "kind": "subject",
+   "title": "Sore muscles",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Are you sore from training?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Very.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Good."
+        }
+       ]
+      },
+      {
+       "text": "A bit.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Then you didn't train hard enough. Joking. Partly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "That soreness usually peaks a day or two after new exercise. It's tiny damage in the muscle, being repaired."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "People used to blame it on lactic acid. They were wrong. The burn during a set and the ache the next day are different things."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So the ache means I'm rebuilding."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Rebuilding stronger. Eat properly and sleep, or the repair takes longer. Even I sleep. Briefly."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_c_streak",
+   "kind": "checkin",
+   "title": "Your streak",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Listen carefully. I won't repeat myself."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Your streak is {streak} days."
+    },
+    {
+     "check": "streak",
+     "branches": [
+      {
+       "min": 14,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Acceptable. More than acceptable. Don't let it make you soft."
+        },
+        {
+         "choice": [
+          {
+           "text": "Thank you, Vegeta.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "I didn't compliment you. I said 'acceptable'."
+            }
+           ]
+          },
+          {
+           "text": "I'm going for a month.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Good. Then a year. Then forever. That's how it's done."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "A beginning. Weak, but a beginning."
+        },
+        {
+         "choice": [
+          {
+           "text": "Weak?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Everyone's weak at the beginning. Even I was. Briefly. Very briefly."
+            }
+           ]
+          },
+          {
+           "text": "I'll keep it going.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Don't tell me. Show me tomorrow."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Zero. Pathetic."
+        },
+        {
+         "speaker": "VEGETA",
+         "text": "...Fine. I've been at zero too. More than once. After every defeat."
+        },
+        {
+         "choice": [
+          {
+           "text": "What did you do?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "I got up and trained. Do the same. Today."
+            }
+           ]
+          },
+          {
+           "text": "I'll start again.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Then start now, not tomorrow. Tomorrow is where weaklings keep their plans."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Now stop wasting my time on the phone and go train."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_c_weak",
+   "kind": "checkin",
+   "title": "Your weakness",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Your weakest habit is {weak_habit}."
+    },
+    {
+     "choice": [
+      {
+       "text": "I know.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Then why is it still weak?"
+        }
+       ]
+      },
+      {
+       "text": "It's just hard.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Everything worth doing is hard. That's how you know it's worth doing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "A warrior attacks his weakness. He doesn't hide it."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Tomorrow, do {weak_habit} first. Before anything else. Before you have a chance to talk yourself out of it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "First thing."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "First thing. Weakness is strongest when you give it time to argue."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_c_power",
+   "kind": "checkin",
+   "title": "Power level",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I sensed your energy from across the city. Don't flatter yourself, it wasn't difficult."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Your power level is {power}."
+    },
+    {
+     "check": "power",
+     "branches": [
+      {
+       "min": 1000,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Over a thousand. Not bad. Still nowhere near mine."
+        },
+        {
+         "choice": [
+          {
+           "text": "What's yours?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Higher than you can count."
+            }
+           ]
+          },
+          {
+           "text": "I'm catching up.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "You are not catching up. But you're improving. That's enough for now."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 100,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Weak. But rising. Rising is what matters."
+        },
+        {
+         "choice": [
+          {
+           "text": "How do I rise faster?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Do everything, every day. No skipped days. That's the whole secret."
+            }
+           ]
+          },
+          {
+           "text": "I'm proud of it.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Be proud of the effort. Numbers are the receipt."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "That's barely a reading. Even the Earthlings on the street are higher."
+        },
+        {
+         "choice": [
+          {
+           "text": "Thanks a lot.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "I'm not here to comfort you. I'm here to tell you to train."
+            }
+           ]
+          },
+          {
+           "text": "Then help me.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "...Fine. Check one thing off before this call ends. Go. I'll wait. Briefly."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Go. Raise that number before I check again."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_c_week",
+   "kind": "checkin",
+   "title": "This week",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Bulma left your numbers on the kitchen table. I read them. Don't make it a thing."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "{week_checkoffs} habits this week. And {week_missed} missed."
+    },
+    {
+     "check": "week_missed",
+     "branches": [
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Too many missed. I don't accept that."
+        },
+        {
+         "choice": [
+          {
+           "text": "I'll do better.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Don't say it. Do it."
+            }
+           ]
+          },
+          {
+           "text": "Life got in the way.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Then make your habits harder to break. Smaller, earlier, unavoidable."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 1,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "A few misses. Sloppy, not hopeless."
+        },
+        {
+         "choice": [
+          {
+           "text": "Sloppy?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Sloppy. Tighten it up."
+            }
+           ]
+          },
+          {
+           "text": "Not hopeless is good.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Don't aim for not hopeless. Aim for flawless."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Nothing missed. Hm."
+        },
+        {
+         "choice": [
+          {
+           "text": "Was that praise?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "It was a sound. Interpret it however you like."
+            }
+           ]
+          },
+          {
+           "text": "Flawless week.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Then do it again. One flawless week is luck. Ten is a warrior."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "That's all. Train."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_c_bond",
+   "kind": "checkin",
+   "title": "Training together",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Bulma said I should 'check in on my student'. A ridiculous phrase. Yet here I am."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Our bond is at level {bond_level}. I keep count."
+    },
+    {
+     "check": "bond_level",
+     "branches": [
+      {
+       "min": 6,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I've decided you're worth my time. That's rare. Don't waste it."
+        },
+        {
+         "choice": [
+          {
+           "text": "I won't.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Good."
+            }
+           ]
+          },
+          {
+           "text": "That means a lot from you.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "It should. I don't say it twice."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "You're still proving yourself. That's fine. Everyone has to."
+        },
+        {
+         "choice": [
+          {
+           "text": "How do I prove myself?",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "Show up. Every day. Until I stop noticing you show up, because it's just what you do."
+            }
+           ]
+          },
+          {
+           "text": "I'll get there.",
+           "then": [
+            {
+             "speaker": "VEGETA",
+             "text": "We'll see."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "...Now go. I have a gravity room to break."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_g_kakarot",
+   "kind": "gossip",
+   "title": "About Kakarot",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Kakarot came to my house and ate my lunch."
+    },
+    {
+     "choice": [
+      {
+       "text": "Your lunch specifically?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "He said it 'looked lonely'. It was not lonely. It was mine."
+        }
+       ]
+      },
+      {
+       "text": "Did you fight?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "We fought. Then Bulma made us both stop. Then he ate dessert too."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "He's an idiot. A powerful idiot. The most frustrating combination in the universe."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "He never takes anything seriously, and he still somehow gets stronger. It drives me mad."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Maybe that's his secret."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "His secret is that he loves fighting more than anything. I'll never admit that it works. You didn't hear me say it."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_g_bulma",
+   "kind": "gossip",
+   "title": "About Bulma",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Bulma said I'm 'banned' from the gravity room until she repairs it."
+    },
+    {
+     "choice": [
+      {
+       "text": "What did you break?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Nothing. It broke itself, near me."
+        }
+       ]
+      },
+      {
+       "text": "Can she ban you?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "She owns the house, the machine, and the kitchen. She can do what she likes."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "She's the only person on this planet who isn't afraid of me. She shouts at me like I'm a normal man."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "...It's refreshing. Don't tell her."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Your secret's safe."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "It had better be. I know where you live. Well, Bulma does. Same thing."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_g_piccolo",
+   "kind": "gossip",
+   "title": "About the Namekian",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "The Namekian was meditating on the roof again."
+    },
+    {
+     "choice": [
+      {
+       "text": "Does that bother you?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "He's very quiet. Suspiciously quiet."
+        }
+       ]
+      },
+      {
+       "text": "He's good at it.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "He's good at sitting still. That's a skill for a statue."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "He told me I should meditate. Me. The Prince of all Saiyans. Sitting still. Ridiculous."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "...I tried it for five minutes. It was annoying. And I slept well that night. Which proves nothing."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Maybe a little."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "It proves nothing. And if you tell him, I'll deny it."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_g_roshi",
+   "kind": "gossip",
+   "title": "About the old man",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "I met the old turtle hermit. He was asleep in a deck chair at noon."
+    },
+    {
+     "choice": [
+      {
+       "text": "He's very old.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Old isn't an excuse. Well. Maybe at three hundred it is."
+        }
+       ]
+      },
+      {
+       "text": "He's a great master.",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "So everyone keeps telling me."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Kakarot says everything he knows started with that old man's chores. Milk. Fields. Swimming."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Chores. The strongest fighter on Earth started with chores."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Small things add up."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "Small things add up. Don't you dare quote me to him."
+    }
+   ]
+  },
+  {
+   "id": "vegeta_g_training",
+   "kind": "gossip",
+   "title": "Training day",
+   "lines": [
+    {
+     "speaker": "VEGETA",
+     "text": "Everyone trained together at Capsule Corp today. It was chaos."
+    },
+    {
+     "choice": [
+      {
+       "text": "Who was the strongest?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "Me, obviously. Kakarot will say otherwise. Kakarot is wrong."
+        }
+       ]
+      },
+      {
+       "text": "Did you enjoy it?",
+       "then": [
+        {
+         "speaker": "VEGETA",
+         "text": "I don't 'enjoy' training. I conquer it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "The Namekian meditated. The old man napped. Kakarot ate. Bulma shouted about the lawn."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "And I trained. Like I always do. While they're all distracted, I get stronger."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's your secret."
+    },
+    {
+     "speaker": "VEGETA",
+     "text": "That's the only secret there is. Do the work while everyone else is busy doing something else."
+    }
+   ]
+  }
+ ]
+}

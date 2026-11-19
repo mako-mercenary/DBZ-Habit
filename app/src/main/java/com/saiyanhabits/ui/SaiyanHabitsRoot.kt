@@ -109,6 +109,7 @@ private object Routes {
     const val HISTORY = "history"
     const val GAMES = "games"
     const val JOURNAL = "journal"
+    const val CALL_LOG = "calls"
     const val GAME_ARG = "game"
     const val GAME = "game/{$GAME_ARG}"
     fun game(game: com.saiyanhabits.domain.MiniGame) = "game/${game.name}"
@@ -124,6 +125,8 @@ private object Routes {
 
     const val MENTOR_ARG = "mentor"
     const val MENTOR = "mentor/{$MENTOR_ARG}"
+    const val CALL = "call/{$MENTOR_ARG}"
+    fun call(mentor: Mentor) = "call/${mentor.name}"
     fun mentor(mentor: Mentor) = "mentor/${mentor.name}"
 
     const val SCENE_LEVEL_ARG = "level"
@@ -223,7 +226,7 @@ fun SaiyanHabitsRoot() {
     }
 
     LaunchedEffect(app) {
-        kotlinx.coroutines.flow.merge(app.gameRepository.levelUps, app.journalRepository.levelUps).collect { event ->
+        kotlinx.coroutines.flow.merge(app.gameRepository.levelUps, app.journalRepository.levelUps, app.callRepository.levelUps).collect { event ->
             bondLevelUp = BondLevelUpNotice(
                 mentor = event.mentor,
                 level = event.level,
@@ -333,6 +336,7 @@ fun SaiyanHabitsRoot() {
                         onOpenStory = { navController.navigate(Routes.STORY) },
                         onOpenGames = { navController.navigate(Routes.GAMES) },
                         onOpenJournal = { navController.navigate(Routes.JOURNAL) },
+                        onAnswerCall = { navController.navigate(Routes.call(it)) },
                         onOpenHistory = {
                             historyViewModel.reset()
                             navController.navigate(Routes.HISTORY)
@@ -392,6 +396,8 @@ fun SaiyanHabitsRoot() {
                     val nudgeOn by app.prefs.eveningNudge.collectAsStateWithLifecycle()
                     val nudgeMinutes by app.prefs.eveningNudgeMinutes.collectAsStateWithLifecycle()
                     val soundOn by app.prefs.sound.collectAsStateWithLifecycle()
+                    val callsOn by app.prefs.callsRing.collectAsStateWithLifecycle()
+                    val settingsScope = rememberCoroutineScope()
                     val dataState by dataViewModel.state.collectAsStateWithLifecycle()
                     SettingsScreen(
                         wishes = wishes,
@@ -415,6 +421,12 @@ fun SaiyanHabitsRoot() {
                         },
                         soundOn = soundOn,
                         onSound = app.prefs::setSound,
+                        callsOn = callsOn,
+                        onCalls = { on ->
+                            app.prefs.setCallsRing(on)
+                            if (!on) com.saiyanhabits.reminders.Notifications.cancelCall(app)
+                            settingsScope.launch { app.reminders.scheduleNextCall(app.callRepository) }
+                        },
                         onBack = { navController.popBackStack(Routes.SETTINGS, inclusive = true) },
                     )
                 }
@@ -422,6 +434,20 @@ fun SaiyanHabitsRoot() {
                     AchievementsScreen(
                         state = achievements,
                         onBack = { navController.popBackStack(Routes.ACHIEVEMENTS, inclusive = true) },
+                    )
+                }
+                composable(Routes.CALL) { entry ->
+                    val mentor = entry.mentorArg() ?: return@composable
+                    com.saiyanhabits.ui.calls.CallScreen(
+                        mentor = mentor,
+                        playerForm = player.highestForm,
+                        onBack = { navController.popBackStack(Routes.CALL, inclusive = true) },
+                    )
+                }
+                composable(Routes.CALL_LOG) {
+                    com.saiyanhabits.ui.calls.CallLogScreen(
+                        playerForm = player.highestForm,
+                        onBack = { navController.popBackStack(Routes.CALL_LOG, inclusive = true) },
                     )
                 }
                 composable(Routes.JOURNAL) {
@@ -506,6 +532,8 @@ fun SaiyanHabitsRoot() {
                             onOpenScene = { level -> navController.navigate(Routes.scene(mentor, level)) },
                             onUseKaioken = bondsViewModel::useKaioken,
                             onUseDayOff = bondsViewModel::useDayOff,
+                            onCall = { navController.navigate(Routes.call(mentor)) },
+                            onCallLog = { navController.navigate(Routes.CALL_LOG) },
                             onBack = { navController.popBackStack(Routes.MENTOR, inclusive = true) },
                         )
                     }

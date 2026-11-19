@@ -125,6 +125,7 @@ fun HomeScreen(
     onOpenStory: () -> Unit,
     onOpenGames: () -> Unit,
     onOpenJournal: () -> Unit,
+    onAnswerCall: (com.saiyanhabits.domain.Mentor) -> Unit,
     onOpenHistory: () -> Unit,
     onOpenChapter: (Int) -> Unit,
     onOpenSettings: () -> Unit,
@@ -197,6 +198,15 @@ fun HomeScreen(
                 aura = formAura(state.form),
                 avatarForm = state.form,
             )
+        }
+        item(key = "ringing") {
+            val app = androidx.compose.ui.platform.LocalContext.current.applicationContext as com.saiyanhabits.SaiyanApp
+            var ringing by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf<com.saiyanhabits.domain.Mentor?>(null) }
+            androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
+                val job = kotlinx.coroutines.MainScope().launch { ringing = app.callRepository.ringing() }
+                onPauseOrDispose { job.cancel() }
+            }
+            ringing?.let { mentor -> com.saiyanhabits.ui.calls.RingingCard(mentor, onAnswer = { onAnswerCall(mentor) }) }
         }
         item(key = "journal") {
             com.saiyanhabits.ui.journal.JournalHomeCard(onClick = onOpenJournal)

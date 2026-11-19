@@ -27,6 +27,8 @@ object Notifications {
     private const val CHANNEL_CHAMBER = "time_chamber"
     private const val CHANNEL_CHAMBER_DONE = "time_chamber_done"
     private const val CHANNEL_EVENING = "evening_nudge"
+    private const val CHANNEL_CALLS = "mentor_calls"
+    private const val CALL_ID = 5
     private const val EVENING_NUDGE_ID = 4
     private const val BEAN_OFFER_ID = 1
     const val CHAMBER_RUNNING_ID = 2
@@ -44,6 +46,10 @@ object Notifications {
         manager.createNotificationChannel(
             NotificationChannel(CHANNEL_STREAK, "Streak", NotificationManager.IMPORTANCE_DEFAULT)
                 .apply { description = "The morning offer to save your streak with a healing bean." },
+        )
+        manager.createNotificationChannel(
+            NotificationChannel(CHANNEL_CALLS, "Mentor calls", NotificationManager.IMPORTANCE_DEFAULT)
+                .apply { description = "A mentor rings once a day. Picking up within the hour earns extra bond XP." },
         )
         manager.createNotificationChannel(
             NotificationChannel(CHANNEL_EVENING, "Evening nudge", NotificationManager.IMPORTANCE_DEFAULT)
@@ -107,6 +113,23 @@ object Notifications {
                 .setContentText(said)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(text)),
         )
+    }
+
+    /** A mentor ringing. Tapping opens the app, where the call is waiting on the home screen. */
+    fun showCall(context: Context, mentor: com.saiyanhabits.domain.Mentor, line: String) {
+        show(
+            context,
+            CALL_ID,
+            NotificationCompat.Builder(context, CHANNEL_CALLS)
+                .setContentTitle("${mentor.displayName} is calling")
+                .setContentText(line)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setStyle(NotificationCompat.BigTextStyle().bigText("$line\nPick up within the hour for extra bond XP.")),
+        )
+    }
+
+    fun cancelCall(context: Context) {
+        NotificationManagerCompat.from(context).cancel(CALL_ID)
     }
 
     fun cancelEveningNudge(context: Context) {

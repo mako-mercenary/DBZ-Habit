@@ -110,6 +110,38 @@ class ReminderScheduler(private val context: Context) {
         workManager.enqueueUniqueWork(EVENING_NUDGE_WORK, policy, request)
     }
 
+    /**
+     * Queues the next mentor call: today's ring if it's still ahead, otherwise
+     * a planning run just after midnight. Off when calls are switched off.
+     */
+    suspend fun scheduleNextCall(calls: com.saiyanhabits.data.CallRepository) {
+        val app = context.applicationContext as com.saiyanhabits.SaiyanApp
+        if (!app.prefs.callsRing.value) {
+            workManager.cancelUniqueWork(CALL_RING_WORK)
+            return
+        }
+        val now = LocalDateTime.now()
+        val plan = calls.planRing()
+        val ringAt = plan?.let { now.toLocalDate().atStartOfDay().plusMinutes(it.second.toLong()) }
+        val request = if (plan != null && ringAt != null && ringAt.isAfter(now)) {
+            OneTimeWorkRequestBuilder<CallRingWorker>()
+                .setInitialDelay(delayUntil(ringAt))
+                .setInputData(
+                    workDataOf(
+                        CallRingWorker.KEY_RING to true,
+                        CallRingWorker.KEY_MENTOR to plan.first.name,
+                        CallRingWorker.KEY_DUE_AT_MILLIS to ringAt.toEpochMillis(),
+                    ),
+                )
+                .build()
+        } else {
+            OneTimeWorkRequestBuilder<CallRingWorker>()
+                .setInitialDelay(delayUntil(now.toLocalDate().plusDays(1).atStartOfDay().plusMinutes(5)))
+                .build()
+        }
+        workManager.enqueueUniqueWork(CALL_RING_WORK, ExistingWorkPolicy.REPLACE, request)
+    }
+
     private fun delayUntil(time: LocalDateTime): Duration =
         Duration.between(LocalDateTime.now(), time).coerceAtLeast(Duration.ZERO)
 
@@ -119,6 +151,7 @@ class ReminderScheduler(private val context: Context) {
     private companion object {
         const val MORNING_CHECK_WORK = "morning-check"
         const val EVENING_NUDGE_WORK = "evening-nudge"
+        const val CALL_RING_WORK = "mentor-call"
         fun reminderWorkName(habitId: Long) = "habit-reminder-$habitId"
     }
 }

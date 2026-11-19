@@ -1,0 +1,1708 @@
+{
+ "mentor": "GOKU",
+ "ring": [
+  "Goku is calling! You can hear him chewing already.",
+  "Incoming call from Goku. He sounds out of breath, as usual.",
+  "Goku's ringing. Something about training, or lunch, or both."
+ ],
+ "calls": [
+  {
+   "id": "goku_w_fun",
+   "kind": "wisdom",
+   "title": "Make it fun",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey! It's me! Are you training? I'm training. Well, I'm eating, but I was training a second ago."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Can I ask you something? Do you like your habits?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Some of them.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha! That's honest. Which ones are the fun ones?"
+        }
+       ]
+      },
+      {
+       "text": "Not really, they're work.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Hmm. That's the thing I don't get about people."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When I was a kid, Master Roshi had me deliver milk every morning. I turned it into a race against the sunrise."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I never won, the sun's really fast. But I got super strong trying."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I should turn mine into a game."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yeah! If it's boring, add a rule. Beat your time, do it on one foot, do it before the kettle boils. Training's way better when you're grinning."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_stronger",
+   "kind": "wisdom",
+   "title": "Someone stronger",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I met a guy today who was way stronger than me. It was awesome!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Awesome? You lost?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yeah! Isn't that great?"
+        }
+       ]
+      },
+      {
+       "text": "Did you win?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Nope! Got flattened. Best morning all week."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "If you only spar with people you can beat, you stay exactly as strong as you are."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Losing to someone better shows you everything you can't do yet. It's like a map."
+    },
+    {
+     "speaker": "YOU",
+     "text": "It still stings, though."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Sure it stings! Then you eat something, and you sleep, and you go back. And one day it doesn't sting, because you won."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Find something that's a bit too hard for you. That's where all the good stuff is."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_eat",
+   "kind": "wisdom",
+   "title": "Eat properly",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Did you eat today? Like, properly? Not a sad little sandwich?"
+    },
+    {
+     "choice": [
+      {
+       "text": "I had a sad little sandwich.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Aw, no! That's not fuel, that's a snack pretending."
+        }
+       ]
+      },
+      {
+       "text": "I ate well, actually.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yes! See, that's how you get strong. You can't train on an empty tank."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "People think strength is all punching and running. Half of it happens at the table."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Chi-Chi always says I eat enough for ten people. But I train enough for ten people, so it's fair!"
+    },
+    {
+     "speaker": "YOU",
+     "text": "I don't train like you."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Then eat like you, not like me. Just make it real food, and enough of it. Your body's trying to build something, give it the bricks."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_simple",
+   "kind": "wisdom",
+   "title": "Don't overthink it",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey, you sound like you're thinking too hard. Your voice goes all squinty."
+    },
+    {
+     "choice": [
+      {
+       "text": "I'm planning my week.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Planning's fine. Just don't plan so long you forget to do it."
+        }
+       ]
+      },
+      {
+       "text": "I'm worrying about stuff.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ah. Worrying's like running in place. Tiring, and you don't get anywhere."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When I'm stuck, I just do the next thing I can do right now. Then the next. Usually the big problem goes away while I'm busy."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And if it doesn't?"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Then at least you're warmed up for it! Ha!"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Seriously, go move a bit. Your brain works better after your legs do."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_lose",
+   "kind": "wisdom",
+   "title": "Losing is okay",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I lost a lot when I was starting out. Like, a lot a lot."
+    },
+    {
+     "choice": [
+      {
+       "text": "Even you?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Especially me! I was a kid with a stick and a tail, I didn't know anything."
+        }
+       ]
+      },
+      {
+       "text": "Did it make you want to quit?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Quit? Nah. It made me want to get back up faster."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "The thing is, every time I lost, I learned one thing. Then I didn't lose that way again."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So losing is just how you collect the lessons. You can't skip it, it's part of the path."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I missed a few days this week. Does that count as losing?"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "It counts as one round! The match keeps going. Get up, shake it off, next round."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_friends",
+   "kind": "wisdom",
+   "title": "Training together",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Do you ever train with friends?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Not really.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "You should try it! It's way easier to show up when someone's waiting for you."
+        }
+       ]
+      },
+      {
+       "text": "Sometimes.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's great! Training alone is fine, but together is the best."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When I trained with Krillin, we'd push each other every day. If he did fifty push-ups, I had to do fifty-one."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Then he'd do fifty-two. We got really strong really fast. And really hungry."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Friendly competition."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Exactly! Find someone to race. Or tell someone what you're doing. They'll ask you about it, and you won't want to say you skipped."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_rest",
+   "kind": "wisdom",
+   "title": "When to stop",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Okay, I'm calling to say something weird for me. Take a rest day."
+    },
+    {
+     "choice": [
+      {
+       "text": "Are you feeling okay?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha! I know, I know. But I mean it."
+        }
+       ]
+      },
+      {
+       "text": "I don't want to lose progress.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "You won't! That's the funny thing about rest."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When I came back from training in heavy gravity once, I was so tired I slept for a whole day."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "And when I woke up I was stronger than when I went to sleep! The training goes in while you're resting."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So resting is training."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Resting is the second half of training! Just don't rest for a whole week. Then it's just napping."
+    }
+   ]
+  },
+  {
+   "id": "goku_w_curious",
+   "kind": "wisdom",
+   "title": "Stay curious",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I learned a new move today by watching a cat chase a moth. Did you know cats are really good at feints?"
+    },
+    {
+     "choice": [
+      {
+       "text": "You learned from a cat?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Sure! You can learn from anything if you watch closely."
+        }
+       ]
+      },
+      {
+       "text": "What's a feint?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "It's when you pretend to go one way and then go the other. Cats are sneaky about it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Everything's a teacher if you're curious. The wind, a river, a really annoying fly."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "The day you think you know everything is the day you stop getting stronger."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So what should I learn today?"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Something small you didn't know this morning. Then tell me about it! I like new stuff."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_grandpa",
+   "kind": "about",
+   "title": "My grandpa",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Did I ever tell you about my grandpa Gohan? Not my son Gohan, my grandpa. My son's named after him."
+    },
+    {
+     "choice": [
+      {
+       "text": "What was he like?",
+       "then": []
+      },
+      {
+       "text": "That's sweet.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yeah. He'd have liked my son. They're both really gentle."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He found me in the woods when I was a baby and raised me in the mountains."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He taught me to fight, to fish, to climb, and to say thank you for every meal."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Every morning we did the same exercises, even in the snow. I didn't know it was training. I thought it was just mornings."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's the best kind of habit."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yeah! When something's just part of your day, you never have to argue with yourself about it."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_cloud",
+   "kind": "about",
+   "title": "The cloud",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I'm calling from my cloud! It's a bit windy, sorry!"
+    },
+    {
+     "choice": [
+      {
+       "text": "You're on a cloud?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yep! The Flying Nimbus! Master Roshi gave it to me when I was little."
+        }
+       ]
+      },
+      {
+       "text": "Is that safe?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Totally safe! Unless you fall off. Then it's a long way down."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "The cool thing about it is, only people with a pure heart can ride it. If you're not, you fall right through."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I always thought that was a fun rule. You can't fake being kind to a cloud."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Could I ride it?"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Hmm, maybe! Keep being good to people and doing your stuff. The cloud can tell."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_needles",
+   "kind": "about",
+   "title": "A secret",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Okay, I'll tell you a secret if you promise not to laugh."
+    },
+    {
+     "choice": [
+      {
+       "text": "I promise.",
+       "then": []
+      },
+      {
+       "text": "No promises.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Aw, come on. Fine, I'll tell you anyway."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I'm scared of needles. Like, at the doctor."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I've fought monsters the size of mountains and I'm fine. A tiny needle, and I'm out the window."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Everyone's scared of something."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Right? So if you're scared of something small, don't feel bad. Just do it anyway, like I do. Mostly. Chi-Chi has to drag me."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_appetite",
+   "kind": "about",
+   "title": "How much I eat",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Guess how many bowls of rice I had for breakfast."
+    },
+    {
+     "choice": [
+      {
+       "text": "Three?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha! Three's a snack."
+        }
+       ]
+      },
+      {
+       "text": "Twenty?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Close! I stopped counting at twenty-something."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When Saiyans train hard, we get super hungry. Our bodies burn through everything."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "But I always eat slowly enough to taste it. Grandpa said food deserves attention."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's surprisingly wise."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Hey, I'm wise sometimes! Mostly about food. And fighting. Two topics. I'm very wise about two topics."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_driving",
+   "kind": "about",
+   "title": "Cars",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Bulma tried to teach me to drive once. It didn't go great."
+    },
+    {
+     "choice": [
+      {
+       "text": "What happened?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "I kept forgetting the car can't fly. There was a fence. And a farmer."
+        }
+       ]
+      },
+      {
+       "text": "You can fly, why drive?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's what I said! But apparently people find it weird when you fly to the shop."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I'm really bad at some normal stuff. Driving, forms, remembering birthdays."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "But I practise the stuff that matters to me every day, and that's what I'm good at."
+    },
+    {
+     "speaker": "YOU",
+     "text": "You can't be good at everything."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Nope! Pick your few things and do them every day. The rest, ask Bulma."
+    }
+   ]
+  },
+  {
+   "id": "goku_a_tail",
+   "kind": "about",
+   "title": "When I had a tail",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Did you know I had a tail when I was a kid?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Seriously?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Seriously! It was really useful for climbing trees."
+        }
+       ]
+      },
+      {
+       "text": "Do you miss it?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Sometimes! It was great for holding snacks."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "The problem was, if anyone grabbed it, I got all weak and floppy. It was my big weak spot."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So I trained it. Every day I squeezed it a little, until one day it didn't bother me anymore."
+    },
+    {
+     "speaker": "YOU",
+     "text": "You trained your weakness."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yep! That's the trick. Don't hide the weak spot. Poke at it a little every day until it's not weak."
+    }
+   ]
+  },
+  {
+   "id": "goku_s_brain",
+   "kind": "subject",
+   "title": "Hungry brain",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Bulma told me a fact and I can't stop thinking about it. Which is funny, because it's about thinking."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Your brain is only about two percent of your weight, but it uses around a fifth of your energy!"
+    },
+    {
+     "choice": [
+      {
+       "text": "A fifth?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yeah! It's the hungriest part of you. Like me at a buffet."
+        }
+       ]
+      },
+      {
+       "text": "Is that why I'm tired after studying?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Probably! Thinking hard is real work."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So if you skip meals and then try to do something clever, your brain's running on empty."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So eating is studying."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Ha! I'm telling Gohan that. He'll say it's not scientific. But it kind of is!"
+    }
+   ]
+  },
+  {
+   "id": "goku_s_catfish",
+   "kind": "subject",
+   "title": "Tasting with skin",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I went fishing this morning and caught a catfish. Did you know they can taste with their skin?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Their whole body?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Pretty much! They've got taste buds all over."
+        }
+       ]
+      },
+      {
+       "text": "That sounds terrible.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha! Imagine swimming through soup. Actually that sounds great."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "They live in muddy water where they can't see much, so they feel and taste their way around."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Isn't that cool? When one sense doesn't work, they got really good at another."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Like working with what you've got."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Exactly! If you can't train one way, train another way. There's always something you can do."
+    }
+   ]
+  },
+  {
+   "id": "goku_s_sleep",
+   "kind": "subject",
+   "title": "Growing while you sleep",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Okay, this one's my favourite fact ever, because it means sleeping counts as training."
+    },
+    {
+     "choice": [
+      {
+       "text": "Go on.",
+       "then": []
+      },
+      {
+       "text": "You just want to nap more.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "I always want to nap more! But listen."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When you're in deep sleep, your body makes a bunch of growth hormone. That's when muscles repair and get stronger."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So if you train hard and then skip sleep, you're doing all the work and skipping the part where you get paid."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's a good way to put it."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Bulma said it, I just remembered it. I remember facts about sleep and food really well. Funny, huh?"
+    }
+   ]
+  },
+  {
+   "id": "goku_s_salmon",
+   "kind": "subject",
+   "title": "Finding home",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I watched salmon jumping up a waterfall today. Like, straight up it! They're so strong!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Why do they do that?",
+       "then": []
+      },
+      {
+       "text": "Did you catch one?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "I caught two. But then I let one go, because it was trying so hard."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "They're swimming back to the stream where they were born. They find it partly by smell!"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "They swim all the way out into the ocean, and years later they find their way back. Up waterfalls and everything."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's incredible."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Right? If a fish can find its way back after years, you can find your way back to a habit after a few days off."
+    }
+   ]
+  },
+  {
+   "id": "goku_s_water",
+   "kind": "subject",
+   "title": "Drink up",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey, have you had water today? Like, a real amount?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Some.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Some isn't enough! Have more."
+        }
+       ]
+      },
+      {
+       "text": "Lots!",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yes! You sound stronger already."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Muscles are about three-quarters water. If you're dried out, they don't work as well."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Even a little bit thirsty and you get slower and grumpier. Ask Vegeta. Actually, he's always grumpy, bad example."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll go get a glass."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Get two! I'll wait. Actually, I won't, I'm going to lunch. Bye!"
+    }
+   ]
+  },
+  {
+   "id": "goku_s_fish_sleep",
+   "kind": "subject",
+   "title": "Sleeping fish",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Do fish sleep? I asked Bulma and she said kind of!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Do they close their eyes?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's the funny part, most of them can't! No eyelids."
+        }
+       ]
+      },
+      {
+       "text": "How do you know if they're asleep?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "They just slow down and hover, all calm. Like they're meditating."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So they rest with their eyes open, just floating there. Piccolo would love it."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Everything needs rest. Even fish, even in the middle of the ocean. Even me!"
+    },
+    {
+     "speaker": "YOU",
+     "text": "Even you?"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Especially me! I sleep like a rock. Chi-Chi says I snore like an avalanche."
+    }
+   ]
+  },
+  {
+   "id": "goku_c_streak",
+   "kind": "checkin",
+   "title": "How's the streak?",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey! It's me! Are you busy? I'm not, I just finished lunch. Well, second lunch."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Hey! How many days in a row now?"
+    },
+    {
+     "check": "streak",
+     "branches": [
+      {
+       "min": 7,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "{streak}? Whoa! That's awesome!"
+        },
+        {
+         "speaker": "GOKU",
+         "text": "You know what that means? You're not trying to do habits anymore. You just do them. That's when it gets fun."
+        },
+        {
+         "choice": [
+          {
+           "text": "It does feel easier.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Right?! Now's a good time to add a bit more. Not a lot. Just a bit."
+            }
+           ]
+          },
+          {
+           "text": "I'm scared of breaking it.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Don't be scared! Even if it breaks, all that training stays in you. The number's just the scoreboard."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 1,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "{streak} days! That's a great start!"
+        },
+        {
+         "speaker": "GOKU",
+         "text": "The first few days are like the first few punches in a fight. You're just warming up."
+        },
+        {
+         "choice": [
+          {
+           "text": "Feels like a slow start.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Slow's fine! Slow and every day beats fast and sometimes."
+            }
+           ]
+          },
+          {
+           "text": "I'm going for a week.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Yeah! Go for it! Then go for two!"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Zero days? That's okay! Zero means you get to start fresh. I love starting fresh."
+        },
+        {
+         "choice": [
+          {
+           "text": "I keep messing up.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Everybody does! Get back up. That's literally the whole thing."
+            }
+           ]
+          },
+          {
+           "text": "Starting today.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Yes! Let's go! Do one thing right now while we're on the phone. I'll wait."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Okay, I gotta go, I smell dinner. Keep training!"
+    }
+   ]
+  },
+  {
+   "id": "goku_c_week",
+   "kind": "checkin",
+   "title": "This week",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hi! Bulma showed me how to read your chart thing. It's got lines and everything!"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Bulma showed me your numbers. You did {week_checkoffs} habits this week!"
+    },
+    {
+     "check": "week_checkoffs",
+     "branches": [
+      {
+       "min": 20,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's a ton! You're training like a Saiyan!"
+        },
+        {
+         "choice": [
+          {
+           "text": "Thanks!",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Don't thank me, you did it! But I'll take a little credit for cheering."
+            }
+           ]
+          },
+          {
+           "text": "Is it too much?",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "If you feel good, it's not too much. If you're dragging, take a rest day. Your body tells you."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 5,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's solid! Real training, every week. That's how you get strong."
+        },
+        {
+         "choice": [
+          {
+           "text": "I want to do more.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Then add one thing. Just one. Then see how it feels."
+            }
+           ]
+          },
+          {
+           "text": "It's enough for now.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Totally! Steady is better than burning out."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Not many yet. Rough week?"
+        },
+        {
+         "choice": [
+          {
+           "text": "Yeah, kind of.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "That's okay. Pick the easiest one and do just that tomorrow. Easy wins still count."
+            }
+           ]
+          },
+          {
+           "text": "I forgot about them.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Ha, I forget stuff all the time! Put them somewhere you'll see them. Like next to the food. That's where I'd look."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Okay! Back to training. Or lunch. Both!"
+    }
+   ]
+  },
+  {
+   "id": "goku_c_top",
+   "kind": "checkin",
+   "title": "Your best one",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey, you're super good at {top_habit}! You've been doing it all the time!"
+    },
+    {
+     "choice": [
+      {
+       "text": "It's become easy.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "That's how you know it's yours now! It's like breathing."
+        }
+       ]
+      },
+      {
+       "text": "It's my favourite.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha, me too! Well, I don't know what it is exactly, but I'm excited for you."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "When I got good at one technique, I used it to learn the next one. Everything builds on everything."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "So what's next? What would make {top_habit} even better?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Doing it longer.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Nice! A bit longer each week. Don't jump too far."
+        }
+       ]
+      },
+      {
+       "text": "Adding something to it.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Smart! Do the new thing right after. It rides along."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Keep going! I'm proud of you!"
+    }
+   ]
+  },
+  {
+   "id": "goku_c_journal",
+   "kind": "checkin",
+   "title": "The book Bulma gave you",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Hey! Okay, I'm supposed to tell you something. Hang on, I wrote it on my hand."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Bulma says you've been writing in that journal thing."
+    },
+    {
+     "check": "journal_streak",
+     "branches": [
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "{journal_streak} days in a row! I can't write that much. My hand gets tired before my brain does."
+        },
+        {
+         "choice": [
+          {
+           "text": "It helps me think.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "That's cool. I think by punching stuff. Writing's probably quieter."
+            }
+           ]
+          },
+          {
+           "text": "Bulma's prompts are good.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "She's the smartest person I know! If she says write, write."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Or, she says you should be. She asked me to remind you. So, reminder! Write something!"
+        },
+        {
+         "choice": [
+          {
+           "text": "What should I write?",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Just answer her question. Like you're telling a friend about your day. That's what I'd do."
+            }
+           ]
+          },
+          {
+           "text": "I'm not a writer.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Me neither! But you don't have to be good, you just have to do it. Like training."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Okay, I did my job. Now I'm going fishing!"
+    }
+   ]
+  },
+  {
+   "id": "goku_c_power",
+   "kind": "checkin",
+   "title": "Your power",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Woah, I can feel your energy from here! What's your power level now?"
+    },
+    {
+     "speaker": "YOU",
+     "text": "It's {power}."
+    },
+    {
+     "check": "power",
+     "branches": [
+      {
+       "min": 1000,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Over a thousand?! That's awesome! When I started, I was barely past ten!"
+        },
+        {
+         "choice": [
+          {
+           "text": "Really?",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Yep! Everybody starts small. You're doing great."
+            }
+           ]
+          },
+          {
+           "text": "Want to spar?",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Yes! Wait, no, Chi-Chi said no sparring in the house. Next time!"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Hey, that's going up! Every day it goes up a bit. That's how it works for everyone."
+        },
+        {
+         "choice": [
+          {
+           "text": "It feels slow.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Slow means it's real. Fast is usually a trick."
+            }
+           ]
+          },
+          {
+           "text": "I want to be as strong as you.",
+           "then": [
+            {
+             "speaker": "GOKU",
+             "text": "Ha! Then you'd better start eating more. And training. Mostly eating."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Keep it up! Bye!"
+    }
+   ]
+  },
+  {
+   "id": "goku_g_vegeta",
+   "kind": "gossip",
+   "title": "About Vegeta",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Vegeta challenged me to a race this morning. Then he said I cheated. I didn't cheat! I just ran faster!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Did you win?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yep! Then he challenged me to another one. He's so fun."
+        }
+       ]
+      },
+      {
+       "text": "Is he mad?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "He's always a bit mad. It's kind of his thing."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He acts like he hates me, but he's the best rival anyone could ask for. Every time I get stronger, he gets stronger too."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "And every time he gets stronger, I want to train even harder. It's like a ladder we keep building."
+    },
+    {
+     "speaker": "YOU",
+     "text": "You two need each other."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Don't tell him that! He'd explode. Like, actually. He's done it before."
+    }
+   ]
+  },
+  {
+   "id": "goku_g_roshi",
+   "kind": "gossip",
+   "title": "About Master Roshi",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "I went to visit Master Roshi! He was asleep in his deck chair, but he says he was meditating."
+    },
+    {
+     "choice": [
+      {
+       "text": "Was he?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "He was snoring, so... probably not."
+        }
+       ]
+      },
+      {
+       "text": "He's earned a nap.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yeah, he's super old! Like, really super old."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He was my first real teacher. He made me deliver milk, plough fields and swim with sharks, all while wearing a heavy shell."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "I thought it was just chores. But it built everything. All my strength started in those boring mornings."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Small habits."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yep! Don't tell him I said he was right. He gets really smug."
+    }
+   ]
+  },
+  {
+   "id": "goku_g_piccolo",
+   "kind": "gossip",
+   "title": "About Piccolo",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Piccolo used to be my enemy, did you know that? Now he's like family!"
+    },
+    {
+     "choice": [
+      {
+       "text": "What changed?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Time, I think. And he started teaching Gohan. He loves that kid."
+        }
+       ]
+      },
+      {
+       "text": "That's a big change.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "People can change a lot! Don't let anyone tell you they can't."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He still doesn't smile much. But when Gohan does something good, his ears twitch. It's how you can tell he's happy."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "He's the best at staying calm. When I get too excited, I go sit with him for a while."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Everyone needs someone like that."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Yeah! Piccolo for calm, Bulma for brains, Roshi for wisdom, Vegeta for... yelling. And me for fun!"
+    }
+   ]
+  },
+  {
+   "id": "goku_g_bulma",
+   "kind": "gossip",
+   "title": "About Bulma",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Bulma was the first person I ever met who wasn't my grandpa! She hit me with her car."
+    },
+    {
+     "choice": [
+      {
+       "text": "She hit you?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yeah, but I thought the car was a monster, so I threw it. We were even."
+        }
+       ]
+      },
+      {
+       "text": "That's a weird first meeting.",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Ha, she says that too!"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Then we went on a big adventure looking for the Dragon Balls. She made a radar to find them. I'd never seen a machine before!"
+    },
+    {
+     "speaker": "GOKU",
+     "text": "She's still my oldest friend. She's bossy, but she's always right. Okay, mostly right."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Don't let her hear 'mostly'."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Ha! Good call. You're smart. Like her!"
+    }
+   ]
+  },
+  {
+   "id": "goku_g_spar",
+   "kind": "gossip",
+   "title": "Big sparring day",
+   "lines": [
+    {
+     "speaker": "GOKU",
+     "text": "Everyone came over for a big sparring day! It was the best!"
+    },
+    {
+     "choice": [
+      {
+       "text": "Who won?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Nobody! Bulma made us stop because we broke her lawn."
+        }
+       ]
+      },
+      {
+       "text": "Did everyone come?",
+       "then": [
+        {
+         "speaker": "GOKU",
+         "text": "Yep! Even Master Roshi, though he mostly watched and ate snacks."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "GOKU",
+     "text": "Vegeta fought me, Piccolo fought Gohan, and Bulma shouted at all of us about the garden."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "You should come next time! You're getting strong enough."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'd get flattened."
+    },
+    {
+     "speaker": "GOKU",
+     "text": "That's the best part! You'd learn so much. Okay, maybe start with Krillin."
+    }
+   ]
+  }
+ ]
+}

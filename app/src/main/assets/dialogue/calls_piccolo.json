@@ -1,0 +1,1769 @@
+{
+ "mentor": "PICCOLO",
+ "ring": [
+  "Piccolo is calling. He will not wait long.",
+  "Incoming call: Piccolo. It's very quiet on his end.",
+  "Piccolo is ringing. Answer calmly."
+ ],
+ "calls": [
+  {
+   "id": "piccolo_w_still",
+   "kind": "wisdom",
+   "title": "Stillness",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You picked up. Good. Sit down."
+    },
+    {
+     "choice": [
+      {
+       "text": "I'm sitting.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then sit properly. Back straight. Feet on the floor."
+        }
+       ]
+      },
+      {
+       "text": "Why?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Because you never do. Sit."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Close your eyes for three breaths. Don't talk."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "The line is silent for a while. You can hear him breathing, slow and even."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "What did you notice?"
+    },
+    {
+     "choice": [
+      {
+       "text": "My mind kept wandering.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Of course it did. Noticing that is the whole exercise. You did it right."
+        }
+       ]
+      },
+      {
+       "text": "It was quiet.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Quiet is rarer than you think. You'll want it more, now you know where it is."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Stillness isn't empty. It's where you hear what you've been ignoring."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Do that once a day. Three breaths. No excuses. That's all."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_anger",
+   "kind": "wisdom",
+   "title": "Anger",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You sounded angry yesterday. In your notes. Bulma showed me. Don't be annoyed at her."
+    },
+    {
+     "choice": [
+      {
+       "text": "I was a bit.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then let's talk about it, briefly."
+        }
+       ]
+      },
+      {
+       "text": "I'm fine.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You're not. But fine, listen anyway."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Anger is energy. It isn't wrong. It's just usually pointed at the wrong thing."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "When I was young I let it run me. I trained only to hurt someone. It made me strong and miserable."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Now I point it at the work instead. Something annoys you? Good. Do twenty push-ups about it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That actually sounds helpful."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It is. Anger burns. Use it as fuel, don't let it use you as fuel."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_focus",
+   "kind": "wisdom",
+   "title": "One thing",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "How many things are you trying to do right now?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Just this call.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Liar. I can hear you typing."
+        }
+       ]
+      },
+      {
+       "text": "A few.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then you're doing all of them badly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Split attention is weak attention. A punch thrown while looking somewhere else hits nothing."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "When you train, train. When you eat, eat. When you rest, rest."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's hard with a phone in my pocket."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Then put it in another room. Strength sometimes means removing temptations, not resisting them."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_quiet_work",
+   "kind": "wisdom",
+   "title": "Quiet work",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You don't need to announce your training."
+    },
+    {
+     "choice": [
+      {
+       "text": "I wasn't going to.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Good."
+        }
+       ]
+      },
+      {
+       "text": "But sharing keeps me going.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Sometimes. Sometimes it replaces the work."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Some people spend more time talking about their plans than doing them. They get the feeling of progress for free."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Do it first. Talk later, if you still want to."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Show, don't tell."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Don't tell. And don't show, either. Just do. The results will speak loud enough."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_slow",
+   "kind": "wisdom",
+   "title": "Slow is fast",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You rushed your stretching this morning."
+    },
+    {
+     "choice": [
+      {
+       "text": "How do you know?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "I know."
+        }
+       ]
+      },
+      {
+       "text": "I was late.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then do less, slowly. Not more, badly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "When I taught Gohan, he wanted to learn everything in a day. Every technique, every stance."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I made him hold one stance for an hour. He hated me for it."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Then he could hold any stance for as long as he needed. The slow thing made every fast thing possible."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So go slower to get faster."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Get the basics right. Speed comes from not having to think."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_feelings",
+   "kind": "wisdom",
+   "title": "When it's hard",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You've had a heavy week. I can tell from your habits."
+    },
+    {
+     "choice": [
+      {
+       "text": "It's been a lot.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then say so. To yourself, at least."
+        }
+       ]
+      },
+      {
+       "text": "I'm managing.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Managing is fine. Pretending isn't."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I spent years thinking feelings were weakness. Then I realised ignoring them made them louder."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Notice it. Name it. Then do one small thing anyway."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Even when I don't want to?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Especially then. You don't have to feel ready. You only have to start."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_alone",
+   "kind": "wisdom",
+   "title": "Being alone",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "I spend most of my time alone. Do you know why?"
+    },
+    {
+     "choice": [
+      {
+       "text": "You don't like people?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "That's half of it."
+        }
+       ]
+      },
+      {
+       "text": "It's peaceful?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "That's the other half."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Being alone isn't the same as being lonely. Alone is where you find out what you actually think."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Most people never sit with themselves long enough to meet themselves."
+    },
+    {
+     "speaker": "YOU",
+     "text": "That's a bit scary."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It is at first. Then it's the most useful hour of your day. Try ten minutes. No phone, no noise."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_w_letgo",
+   "kind": "wisdom",
+   "title": "Letting go",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Stop replaying it."
+    },
+    {
+     "choice": [
+      {
+       "text": "Replaying what?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Whatever you were replaying when you picked up. You were distracted."
+        }
+       ]
+      },
+      {
+       "text": "I can't help it.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You can. It takes practice, like everything else."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "The past can't be trained. Only now can. Every minute you spend redoing yesterday is a minute you don't spend on today."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "When it comes back, notice it, and bring yourself back to your breath. Again and again."
+    },
+    {
+     "speaker": "YOU",
+     "text": "And it gets easier?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It gets quieter. That's better than easier."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_water",
+   "kind": "about",
+   "title": "Water",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Bulma asked me again why I only drink water. I'll tell you, so I don't have to tell her a fourth time."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why only water?",
+       "then": []
+      },
+      {
+       "text": "Don't you get hungry?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "No."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "My people don't need food. Water and sunlight are enough. It's simple, and I like simple."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You need more than water, obviously. But you could learn from it. Most people drink everything except the thing their body is asking for."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So, drink more water."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Drink more water. And stop asking me if I want cake."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_cape",
+   "kind": "about",
+   "title": "The cape",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "My cape and turban are weighted. Together they weigh more than you'd believe."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why wear them?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Training. Everything I do, I do slightly heavier than I need to."
+        }
+       ]
+      },
+      {
+       "text": "Isn't that uncomfortable?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Comfort isn't the goal."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "When I take them off for a real fight, I'm lighter than anyone expects."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Your habits are like that. The small daily weight you carry makes the big days feel light."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Did you just give me a motivational speech?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "No. I gave you a fact. What you do with it is your business."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_regen",
+   "kind": "about",
+   "title": "Growing back",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Has anyone told you I can regrow a limb?"
+    },
+    {
+     "choice": [
+      {
+       "text": "That's terrifying.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "It's useful."
+        }
+       ]
+      },
+      {
+       "text": "Does it hurt?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Yes. Briefly. Then it's done."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It takes a lot of energy, so I don't do it for fun. But it taught me something."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Losing something isn't the end of it. You can rebuild. It takes energy and time, but it's possible."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Like rebuilding a habit after a break."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Yes. You don't lose the ability. You only lose the momentum. Momentum comes back."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_gohan",
+   "kind": "about",
+   "title": "My student",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "I had a student once. Gohan. He was four and cried constantly."
+    },
+    {
+     "choice": [
+      {
+       "text": "You trained a four-year-old?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Nobody else was going to. So I did."
+        }
+       ]
+      },
+      {
+       "text": "Did he get stronger?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Stronger than me, eventually. That's what you want from a student."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I left him alone in the wilderness for six months to toughen him up. He survived by himself, then he trained with me for the rest of the year."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I was harsh. He forgave me. He's... the reason I'm not who I used to be."
+    },
+    {
+     "speaker": "YOU",
+     "text": "You care about him a lot."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Don't tell anyone. And don't make that noise. I can hear you smiling."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_rest",
+   "kind": "about",
+   "title": "How I rest",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "I don't really sleep. Not the way you do."
+    },
+    {
+     "choice": [
+      {
+       "text": "Then how do you rest?",
+       "then": []
+      },
+      {
+       "text": "That explains a lot.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Watch it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I meditate. Float somewhere quiet, close my eyes, and let my energy settle."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Sometimes for hours. Sometimes on top of a waterfall. The noise helps, oddly."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You need actual sleep, not floating. But you could add a few minutes of stillness before bed."
+    },
+    {
+     "speaker": "YOU",
+     "text": "It might help me fall asleep."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It will. Your mind needs to land before it can rest. Give it a runway."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_a_past",
+   "kind": "about",
+   "title": "Who I was",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "You should know I wasn't always on your side."
+    },
+    {
+     "choice": [
+      {
+       "text": "Goku mentioned that.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Of course he did. He mentions everything."
+        }
+       ]
+      },
+      {
+       "text": "What happened?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Time. And a child who trusted me before I deserved it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I was raised to be an enemy. For a long time, I was a very good one."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "People change. Not quickly. Not in one dramatic moment. Bit by bit, by doing different things on ordinary days."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Like habits."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Exactly like habits. You aren't who you were last year. You're who you've been practising being."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_breath",
+   "kind": "subject",
+   "title": "Slow breathing",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Breathe with me. In for five seconds. Out for five."
+    },
+    {
+     "speaker": "NARRATOR",
+     "text": "You breathe slowly together. Five in, five out."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "That's about six breaths a minute. It's a speed researchers like, because it settles the heart and the nerves."
+    },
+    {
+     "choice": [
+      {
+       "text": "Why does it work?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "A long, slow breath tells your body it isn't in danger. A calm body makes a calm mind."
+        }
+       ]
+      },
+      {
+       "text": "I already feel calmer.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Good. That took one minute. Imagine ten."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "And if you make the out-breath longer than the in-breath, it settles you even faster."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll use that before bed."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Use it before anything hard. That's what I do."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_wander",
+   "kind": "subject",
+   "title": "A wandering mind",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Researchers once asked thousands of people, at random moments, what they were thinking about."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Do you know how often people were thinking about something other than what they were doing?"
+    },
+    {
+     "choice": [
+      {
+       "text": "Ten percent?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Much more."
+        }
+       ]
+      },
+      {
+       "text": "Half the time?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Almost exactly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Nearly half of waking hours. And people were generally less happy when their minds wandered."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "That's why I train attention. Not to stop thinking. To come back."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So meditation is practice at coming back."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Yes. Every time you notice you've drifted and return, that's one repetition. Like a push-up for the mind."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_axolotl",
+   "kind": "subject",
+   "title": "Regrowing",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Bulma showed me a creature called an axolotl. Pink, odd face, lives in lakes in Mexico."
+    },
+    {
+     "choice": [
+      {
+       "text": "I've seen those.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then you know they look ridiculous."
+        }
+       ]
+      },
+      {
+       "text": "What about it?",
+       "then": []
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It can regrow its legs. Parts of its heart. Even parts of its brain."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Scientists study it to learn how healing works. I study it because it's the first creature I've met that regrows better than I do."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Does that annoy you?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Slightly. Respect is sometimes annoying."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_octopus",
+   "kind": "subject",
+   "title": "Thinking arms",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "An octopus has more of its nerve cells in its arms than in its head. About two-thirds of them."
+    },
+    {
+     "choice": [
+      {
+       "text": "Its arms think?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "In a way. Each arm can work things out on its own."
+        }
+       ]
+      },
+      {
+       "text": "That's unsettling.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "It's efficient."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It means the octopus doesn't have to think about every movement. Its body handles it."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "That's what good habits are. You train something until your body does it without the head getting involved."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So I want octopus habits."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "...Yes. Don't say it like that again."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_box",
+   "kind": "subject",
+   "title": "Box breathing",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "There's a breathing pattern some soldiers and emergency workers use under pressure. Box breathing."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "In for four. Hold for four. Out for four. Hold for four. Like the sides of a box."
+    },
+    {
+     "choice": [
+      {
+       "text": "Let's try it.",
+       "then": [
+        {
+         "speaker": "NARRATOR",
+         "text": "You trace the four sides of the box together, once, then again."
+        },
+        {
+         "speaker": "PICCOLO",
+         "text": "Good. Again, alone, when you need it."
+        }
+       ]
+      },
+      {
+       "text": "Does it really work?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "It gives your mind something simple to hold onto when everything else is loud. That's enough."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Use it before a hard conversation, an exam, a fight. Anywhere your heart is running ahead of you."
+    },
+    {
+     "speaker": "YOU",
+     "text": "I'll remember it."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You won't, under pressure. That's why you practise it when you're calm."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_s_bamboo",
+   "kind": "subject",
+   "title": "Growing fast",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Some kinds of bamboo can grow almost a metre in a single day."
+    },
+    {
+     "choice": [
+      {
+       "text": "A metre? In a day?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You could almost watch it happen."
+        }
+       ]
+      },
+      {
+       "text": "Is that true?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "It's measured. Bulma checked. She checks everything."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "But it doesn't happen from nothing. The plant is already standing on a big, healthy root system underground."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Fast growth looks sudden from the outside. Underneath, it's been building for a long time."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So the boring days are the roots."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Yes. Don't dig yours up every week to check if they're working."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_c_streak",
+   "kind": "checkin",
+   "title": "Your streak",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "It's me. I'll be brief. I'm always brief."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "{streak} days."
+    },
+    {
+     "check": "streak",
+     "branches": [
+      {
+       "min": 14,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "That's discipline. Not luck, not motivation. Discipline."
+        },
+        {
+         "choice": [
+          {
+           "text": "Thank you.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Don't thank me. Keep going."
+            }
+           ]
+          },
+          {
+           "text": "It's getting hard to keep it up.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Then lower the bar for a while, but don't drop it. Do the minimum. The minimum still counts."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "A start. Don't celebrate yet. Keep building."
+        },
+        {
+         "choice": [
+          {
+           "text": "I wasn't celebrating.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Good."
+            }
+           ]
+          },
+          {
+           "text": "A little celebration?",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "...A little. Then back to work."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Zero. Then today is day one. Nothing else matters."
+        },
+        {
+         "choice": [
+          {
+           "text": "I failed again.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "You stopped. That isn't failing. Failing is not starting again."
+            }
+           ]
+          },
+          {
+           "text": "Starting now.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Good. Don't tell me. Do it."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "That's all. Go."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_c_missed",
+   "kind": "checkin",
+   "title": "What you skipped",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Sit down. I'm going to tell you a number and you're going to hear it calmly."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "You missed {week_missed} this week."
+    },
+    {
+     "check": "week_missed",
+     "branches": [
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Too many. Why?"
+        },
+        {
+         "choice": [
+          {
+           "text": "Tired.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Then sleep earlier. That's the fix for most problems you'll ever have."
+            }
+           ]
+          },
+          {
+           "text": "Busy.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Everyone's busy. Make the habits smaller so they fit. Smaller, not gone."
+            }
+           ]
+          },
+          {
+           "text": "I don't know.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Then find out. Write it down tonight. Bulma's journal is good for that."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 1,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "A few. Acceptable. Don't let them become a pattern."
+        },
+        {
+         "choice": [
+          {
+           "text": "I won't.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "We'll see."
+            }
+           ]
+          },
+          {
+           "text": "What's a pattern?",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Three of the same miss in a row. Watch for it."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "None. Hm."
+        },
+        {
+         "speaker": "PICCOLO",
+         "text": "...Well done."
+        },
+        {
+         "choice": [
+          {
+           "text": "Did you just compliment me?",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "I said 'hm'. That's all you heard."
+            }
+           ]
+          },
+          {
+           "text": "Thank you, Piccolo.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Don't make it strange."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Tomorrow, do a little better than today. That's all I ask. It's all anyone should ask."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_c_weak",
+   "kind": "checkin",
+   "title": "{weak_habit}",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "{weak_habit}. You keep avoiding it."
+    },
+    {
+     "choice": [
+      {
+       "text": "I know.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Then why?"
+        }
+       ]
+      },
+      {
+       "text": "It's hard.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Hard isn't a reason. It's a description."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Avoidance is usually fear wearing a disguise. Fear of doing it badly. Fear of it taking too long."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Do it badly. Do it for two minutes. Then you've done it."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Two minutes?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Two minutes. Every day. Then it's not a monster anymore. It's just a thing you do."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_c_journal",
+   "kind": "checkin",
+   "title": "Writing",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Piccolo. Don't hang up. I won't keep you."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Bulma says you've been using her journal."
+    },
+    {
+     "check": "journal_streak",
+     "branches": [
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "{journal_streak} days in a row. Good. Writing is a kind of meditation. It slows your thoughts down to the speed of your hand."
+        },
+        {
+         "choice": [
+          {
+           "text": "It does help.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Of course it does."
+            }
+           ]
+          },
+          {
+           "text": "I didn't think of it like that.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Now you will."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Or not. You should. Clearing your head onto paper makes room for clearer thinking."
+        },
+        {
+         "choice": [
+          {
+           "text": "I'll try tonight.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Good. Short is fine. Honest is necessary."
+            }
+           ]
+          },
+          {
+           "text": "I don't know what to write.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Then write that you don't know. Keep writing. Something will come."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Don't tell her I recommended it. She'll be insufferable."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_c_bond",
+   "kind": "checkin",
+   "title": "You and me",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "I don't call people. I'm calling you. Think about what that means."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "We've been training together a while now."
+    },
+    {
+     "check": "bond_level",
+     "branches": [
+      {
+       "min": 6,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "I don't say this often. I trust you. You show up."
+        },
+        {
+         "choice": [
+          {
+           "text": "That means a lot.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "...Hm. Don't make me say it twice."
+            }
+           ]
+          },
+          {
+           "text": "You show up too.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "I live on a mountain. Where else would I be?"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 3,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You're becoming someone I'd train properly. That's not nothing."
+        },
+        {
+         "choice": [
+          {
+           "text": "What's training properly?",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Harder. You'll see."
+            }
+           ]
+          },
+          {
+           "text": "I'm ready.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "You're not. But you will be."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "min": 0,
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "You're still new. That's fine. I don't trust anyone quickly."
+        },
+        {
+         "choice": [
+          {
+           "text": "How do I earn it?",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "Keep your word. Small promises, kept, every day."
+            }
+           ]
+          },
+          {
+           "text": "Fair enough.",
+           "then": [
+            {
+             "speaker": "PICCOLO",
+             "text": "It is."
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "That's enough talking. Go and train."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_g_goku",
+   "kind": "gossip",
+   "title": "About Goku",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Goku tried to meditate with me today."
+    },
+    {
+     "choice": [
+      {
+       "text": "How did it go?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "He lasted four minutes. Then he fell asleep and snored."
+        }
+       ]
+      },
+      {
+       "text": "Did he enjoy it?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "He said it was 'super relaxing'. Then he fell asleep."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He's the most frustrating person I've ever met. He doesn't think, he just does. And it works."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Don't copy that. It only works for him."
+    },
+    {
+     "speaker": "YOU",
+     "text": "What should I copy from him?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "His joy in the work. He's never once trained because he had to. He trains because he loves it. That part's worth stealing."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_g_vegeta",
+   "kind": "gossip",
+   "title": "About Vegeta",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Vegeta broke a mountain this morning because he lost a sparring match."
+    },
+    {
+     "choice": [
+      {
+       "text": "A whole mountain?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Most of one."
+        }
+       ]
+      },
+      {
+       "text": "Did you see it?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "I was meditating on it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He's proud. Too proud. But he's honest about wanting to be better, and he never stops."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "If he could learn to sit still for ten minutes, he'd be unstoppable."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Have you told him?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "I'd rather keep the mountains I have left."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_g_roshi",
+   "kind": "gossip",
+   "title": "About the old man",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "The old man tried to teach me to relax. On his beach. In a deck chair."
+    },
+    {
+     "choice": [
+      {
+       "text": "Did it work?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "I lasted ten minutes. The sand was everywhere."
+        }
+       ]
+      },
+      {
+       "text": "I can't picture that.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Don't try."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He pretends to be lazy. He isn't. He's been training longer than nearly anyone alive. He just hides it behind naps."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He understands something I took a long time to learn. Not every lesson has to look like hard work."
+    },
+    {
+     "speaker": "YOU",
+     "text": "High praise from you."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Don't tell him. He'll want me to wear a flowered shirt."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_g_bulma",
+   "kind": "gossip",
+   "title": "About Bulma",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Bulma talked to me for forty minutes about a new kind of battery."
+    },
+    {
+     "choice": [
+      {
+       "text": "Did you understand it?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "No. I nodded until it ended."
+        }
+       ]
+      },
+      {
+       "text": "That sounds like her.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "It is entirely like her."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "She's loud. She's impatient. And she built a machine that finds magic orbs from across the world when she was a teenager."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "Never underestimate someone just because they talk more than you."
+    },
+    {
+     "speaker": "YOU",
+     "text": "Is that advice for me or for you?"
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "...Both."
+    }
+   ]
+  },
+  {
+   "id": "piccolo_g_gohan",
+   "kind": "gossip",
+   "title": "About Gohan",
+   "lines": [
+    {
+     "speaker": "PICCOLO",
+     "text": "Gohan sent me a letter. He's studying for exams."
+    },
+    {
+     "choice": [
+      {
+       "text": "Does he still train?",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "Less than he should. More than he admits."
+        }
+       ]
+      },
+      {
+       "text": "You sound proud.",
+       "then": [
+        {
+         "speaker": "PICCOLO",
+         "text": "I sound normal."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He asked how I stay focused. I told him the same thing I tell you. One thing at a time. Breathe. Come back."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "He wrote back that it helped. With studying. Not fighting. Studying."
+    },
+    {
+     "speaker": "YOU",
+     "text": "So it works for everything."
+    },
+    {
+     "speaker": "PICCOLO",
+     "text": "It works for anything you want to get better at. That's the point of training. It isn't about fighting. It never was."
+    }
+   ]
+  }
+ ]
+}

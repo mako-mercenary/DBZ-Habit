@@ -94,3 +94,35 @@ class EveningNudgeWorker(context: Context, params: WorkerParameters) : Coroutine
         private const val MAX_LATE_HOURS = 2L
     }
 }
+
+/**
+ * A mentor's daily ring. Runs twice a day: once just after midnight to plan who
+ * rings and when, and once at that time to ring (if you haven't talked to them
+ * yet). Each run queues the next.
+ */
+class CallRingWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
+
+    override suspend fun doWork(): Result {
+        val app = applicationContext as SaiyanApp
+        if (!app.prefs.callsRing.value) return Result.success()
+        if (inputData.getBoolean(KEY_RING, false)) {
+            val lateBy = System.currentTimeMillis() - inputData.getLong(KEY_DUE_AT_MILLIS, 0)
+            val name = inputData.getString(KEY_MENTOR)
+            val mentor = com.saiyanhabits.domain.Mentor.entries.firstOrNull { it.name == name }
+            if (mentor != null && lateBy < TimeUnit.HOURS.toMillis(MAX_LATE_HOURS) && mentor !in app.callRepository.answeredToday()) {
+                app.callRepository.markRang(mentor)
+                Notifications.showCall(applicationContext, mentor, app.callRepository.ringLine(mentor))
+            }
+        }
+        app.reminders.scheduleNextCall(app.callRepository)
+        return Result.success()
+    }
+
+    companion object {
+        const val KEY_RING = "ring"
+        const val KEY_MENTOR = "mentor"
+        const val KEY_DUE_AT_MILLIS = "dueAtMillis"
+        private const val MAX_LATE_HOURS = 2L
+    }
+}
+

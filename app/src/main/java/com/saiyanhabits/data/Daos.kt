@@ -325,4 +325,10 @@ interface CallDao {
 
     @Insert
     suspend fun insert(call: MentorCallEntity): Long
+
+    @Query("SELECT COUNT(*) FROM habit_misses WHERE epochDay BETWEEN :fromDay AND :toDay")
+    suspend fun missesBetween(fromDay: Long, toDay: Long): Int
+
+    @Query("SELECT MIN(epochDay) FROM completions")
+    suspend fun firstCheckOffDay(): Long?
 }
