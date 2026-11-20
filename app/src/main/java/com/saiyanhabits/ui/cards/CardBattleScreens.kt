@@ -1,7 +1,12 @@
+@file:OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
+
 package com.saiyanhabits.ui.cards
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.runtime.key
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -359,6 +364,8 @@ private fun PickHand(
 
 @Composable
 private fun CardGrid(cards: List<CardDef>, selected: Set<Int> = emptySet(), dimmed: Set<Int> = emptySet(), onTap: ((Int) -> Unit)? = null) {
+    var detail by remember { mutableStateOf<CardDef?>(null) }
+    detail?.let { CardDetailDialog(it, onDismiss = { detail = null }) }
     cards.indices.chunked(4).forEach { row ->
         Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth()) {
             row.forEach { i ->
@@ -366,7 +373,7 @@ private fun CardGrid(cards: List<CardDef>, selected: Set<Int> = emptySet(), dimm
                     Modifier
                         .weight(1f)
                         .aspectRatio(0.8f)
-                        .then(if (onTap != null) Modifier.clickable { onTap(i) } else Modifier),
+                        .combinedClickable(onLongClick = { detail = cards[i] }, onClick = { onTap?.invoke(i) ?: run { detail = cards[i] } }),
                 ) {
                     CardFace(cards[i], owner = null, selected = i in selected, modifier = Modifier.fillMaxSize())
                     if (i in dimmed) Box(Modifier.fillMaxSize().background(Color(0xAA000000), RoundedCornerShape(8.dp)))
@@ -410,11 +417,14 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
     }
     var picked by remember { mutableStateOf<Int?>(null) }
     var banner by remember { mutableStateOf<String?>(null) }
+    val haptics = androidx.compose.ui.platform.LocalHapticFeedback.current
     var says by remember { mutableStateOf(setup.challenger.intro.random(random)) }
     var flashed by remember { mutableStateOf<Set<Int>>(emptySet()) }
     var confirmQuit by remember { mutableStateOf(false) }
     var showHelp by remember { mutableStateOf(false) }
     if (showHelp) CardHelpDialog(onDismiss = { showHelp = false })
+    var detail by remember { mutableStateOf<CardDef?>(null) }
+    detail?.let { CardDetailDialog(it, onDismiss = { detail = null }) }
     val boardArt by produceState<ImageBitmap?>(null) { value = app.art.image(ArtKey.CARD_BOARD) }
     BackHandler { confirmQuit = true }
 
@@ -429,7 +439,10 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
             CaptureKind.COMBO in kinds -> "Combo!"
             else -> null
         }
-        if (r.flips.isNotEmpty()) sounds?.play(SoundKey.CHECK_OFF, 0.5f)
+        if (r.flips.isNotEmpty()) {
+            sounds?.play(SoundKey.CHECK_OFF, 0.5f)
+            haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.LongPress)
+        }
     }
 
     // The challenger's turns, and the end of the match.
@@ -444,6 +457,10 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
             val move = withContext(Dispatchers.Default) { CardAi.choose(state, setup.challenger.difficulty, random) }
             apply(move.first, move.second)
         }
+    }
+    // Who won the coin toss.
+    LaunchedEffect(Unit) {
+        banner = if (state.turn == Side.PLAYER) "You go first!" else "${setup.challenger.name.split(" ").first()} goes first"
     }
     LaunchedEffect(banner) {
         if (banner != null) {
@@ -552,14 +569,35 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
                                 Box(Modifier.fillMaxSize().border(3.dp, Color(0xFFFFEB3B), RoundedCornerShape(10.dp)))
                             }
                             if (placed != null) {
-                                CardFace(
-                                    placed.card,
-                                    placed.owner,
-                                    selected = i in flashed,
-                                    showName = false,
-                                    tag = if (placed.owner == Side.PLAYER) "YOU" else initials(setup.challenger.name),
-                                    modifier = Modifier.fillMaxSize(),
-                                )
+                                // A new card drops in; a captured one flips over to its new owner.
+                                key(placed.card.id, placed.owner) {
+                                    val flip = i in flashed
+                                    val anim = remember { androidx.compose.animation.core.Animatable(0f) }
+                                    LaunchedEffect(Unit) {
+                                        anim.animateTo(1f, androidx.compose.animation.core.tween(if (flip) 420 else 260))
+                                    }
+                                    val density2 = LocalDensity.current.density
+                                    CardFace(
+                                        placed.card,
+                                        placed.owner,
+                                        selected = i in flashed,
+                                        showName = false,
+                                        tag = if (placed.owner == Side.PLAYER) "YOU" else initials(setup.challenger.name),
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .graphicsLayer {
+                                                cameraDistance = 14f * density2
+                                                if (flip) {
+                                                    rotationY = (1f - anim.value) * 90f
+                                                } else {
+                                                    val s = 1.25f - 0.25f * anim.value
+                                                    scaleX = s
+                                                    scaleY = s
+                                                    alpha = 0.4f + 0.6f * anim.value
+                                                }
+                                            },
+                                    )
+                                }
                             }
                         }
                     }
@@ -620,7 +658,11 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
                             .weight(1f)
                             .aspectRatio(0.8f)
                             .offset(y = if (picked == i) (-10).dp else 0.dp)
-                            .clickable(enabled = state.turn == Side.PLAYER && !state.isOver) { picked = if (picked == i) null else i },
+                            .combinedClickable(
+                                enabled = state.turn == Side.PLAYER && !state.isOver,
+                                onLongClick = { detail = c },
+                                onClick = { picked = if (picked == i) null else i },
+                            ),
                     ) {
                         CardFace(c, Side.PLAYER, selected = picked == i, modifier = Modifier.fillMaxSize())
                     }
@@ -721,6 +763,19 @@ private fun LostScreen(setup: CardMatchSetup, hand: List<CardDef>, onDone: () ->
 /** New cards: from a pack, or unlocked by bonds. */
 @Composable
 private fun NewCardsDialog(title: String, cards: List<CardDef>, onDone: () -> Unit) {
+    // Cards start face down and turn over one by one; tap one to turn it early.
+    val turned = remember { mutableStateListOf<Int>() }
+    val haptics = androidx.compose.ui.platform.LocalHapticFeedback.current
+    LaunchedEffect(cards) {
+        delay(500)
+        for (i in cards.indices) {
+            if (i !in turned) turned += i
+            if (cards[i].rarity.rank >= com.saiyanhabits.domain.CardRarity.EPIC.rank) {
+                haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.LongPress)
+            }
+            delay(if (cards[i].rarity.rank >= com.saiyanhabits.domain.CardRarity.EPIC.rank) 900 else 450)
+        }
+    }
     Column(
         Modifier
             .fillMaxSize()
@@ -733,19 +788,83 @@ private fun NewCardsDialog(title: String, cards: List<CardDef>, onDone: () -> Un
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         OutlinedText(title, TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Black), outlineWidth = 4.dp)
-        cards.chunked(3).forEach { row ->
+        cards.indices.chunked(3).forEach { row ->
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                row.forEach { c ->
+                row.forEach { i ->
+                    val c = cards[i]
+                    val shown = i in turned
+                    val angle by androidx.compose.animation.core.animateFloatAsState(
+                        if (shown) 0f else 180f,
+                        androidx.compose.animation.core.tween(500),
+                        label = "turn",
+                    )
+                    val density = LocalDensity.current.density
                     Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Box(Modifier.fillMaxWidth().aspectRatio(0.8f)) { CardFace(c, null, modifier = Modifier.fillMaxSize()) }
-                        Text(c.rarity.label, style = MaterialTheme.typography.labelSmall, color = c.rarity.color)
+                        Box(
+                            Modifier
+                                .fillMaxWidth()
+                                .aspectRatio(0.8f)
+                                .graphicsLayer {
+                                    rotationY = angle
+                                    cameraDistance = 14f * density
+                                }
+                                .clickable { if (i !in turned) turned += i },
+                        ) {
+                            if (angle <= 90f) {
+                                CardFace(c, null, modifier = Modifier.fillMaxSize())
+                            } else {
+                                CardBack(Modifier.fillMaxSize().graphicsLayer { rotationY = 180f })
+                            }
+                        }
+                        Text(
+                            if (shown) c.rarity.label else " ",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = c.rarity.color,
+                        )
                     }
                 }
                 repeat(3 - row.size) { Spacer(Modifier.weight(1f)) }
             }
         }
-        DbzPrimaryButton(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Nice!") }
+        DbzPrimaryButton(onClick = onDone, enabled = turned.size == cards.size, modifier = Modifier.fillMaxWidth()) {
+            Text(if (turned.size == cards.size) "Nice!" else "Revealing…")
+        }
     }
+}
+
+/** One card up close: long-press any card to see it. */
+@Composable
+private fun CardDetailDialog(card: CardDef, onDismiss: () -> Unit) {
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = { TextButton(onClick = onDismiss) { Text("Close") } },
+        title = { Text(card.name) },
+        text = {
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Box(Modifier.size(200.dp, 250.dp)) { CardFace(card, null, modifier = Modifier.fillMaxSize()) }
+                Text(
+                    "${card.rarity.label} · ${card.element.label}",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = card.rarity.color,
+                )
+                Text(
+                    "Top ${sideLabel(card.top)} · Right ${sideLabel(card.right)} · Bottom ${sideLabel(card.bottom)} · Left ${sideLabel(card.left)}",
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+                Text(
+                    when (card.source) {
+                        com.saiyanhabits.domain.CardSource.PACK -> "Found in daily packs and challengers' decks."
+                        com.saiyanhabits.domain.CardSource.SIGNATURE -> "A signature card: only won by beating its challenger."
+                        com.saiyanhabits.domain.CardSource.BOND ->
+                            if (card.mentor == "ALL") "Unlocked when every mentor reaches bond ${card.bondLevel}."
+                            else "Unlocked at bond ${card.bondLevel} with ${card.mentor?.lowercase()?.replaceFirstChar { it.uppercase() }}."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SaiyanColors.TextDim,
+                )
+            }
+        },
+    )
 }
 
 /** The home screen's way in: a pack waiting, or today's challenger. */

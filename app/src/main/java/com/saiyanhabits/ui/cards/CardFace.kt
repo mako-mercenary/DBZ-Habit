@@ -2,6 +2,10 @@ package com.saiyanhabits.ui.cards
 
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.ui.draw.shadow
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -106,22 +110,16 @@ fun CardFace(
         null -> card.rarity.color
     }
     val shape = RoundedCornerShape(8.dp)
+    // Off the board, the frame shows the rarity; on it, the owner (and the rarity stays on the badge).
+    val rarityFramed = tag == null && !selected
     BoxWithConstraints(
         modifier
+            .then(if (rarityFramed) Modifier.rarityGlow(card.rarity, shape) else Modifier)
             .clip(shape)
             .background(Brush.verticalGradient(listOf(frame.copy(alpha = 0.95f), Color(0xFF0B1230))))
-            .border(
-                when {
-                    selected -> 3.dp
-                    tag != null -> 4.dp
-                    else -> 2.dp
-                },
-                when {
-                    selected -> Color(0xFFFFEB3B)
-                    tag != null -> frame
-                    else -> card.rarity.color
-                },
-                shape,
+            .then(
+                if (rarityFramed) Modifier.rarityFrame(card.rarity, shape)
+                else Modifier.border(if (selected) 3.dp else 4.dp, if (selected) Color(0xFFFFEB3B) else frame, shape),
             ),
     ) {
         val size = with(LocalDensity.current) { minOf(maxWidth, maxHeight).toPx() }
@@ -196,6 +194,71 @@ fun CardFace(
                     .background(Color(0xCC000000))
                     .padding(horizontal = 2.dp, vertical = 1.dp),
             )
+        }
+    }
+}
+
+
+/** A soft glow behind rare and better cards. */
+private fun Modifier.rarityGlow(rarity: CardRarity, shape: androidx.compose.ui.graphics.Shape): Modifier = when (rarity) {
+    CardRarity.COMMON -> this
+    CardRarity.RARE -> shadow(6.dp, shape, ambientColor = rarity.color, spotColor = rarity.color)
+    CardRarity.EPIC -> shadow(8.dp, shape, ambientColor = rarity.color, spotColor = rarity.color)
+    CardRarity.LEGENDARY, CardRarity.SIGNATURE -> shadow(12.dp, shape, ambientColor = rarity.color, spotColor = rarity.color)
+}
+
+/**
+ * The rarity border: a thin silver line for commons, blue for rares, a double
+ * purple line for epics, a moving gold shimmer for legendaries and a thick
+ * flame-coloured frame for signature cards.
+ */
+@Composable
+private fun Modifier.rarityFrame(rarity: CardRarity, shape: androidx.compose.ui.graphics.Shape): Modifier = when (rarity) {
+    CardRarity.COMMON -> border(2.dp, rarity.color, shape)
+    CardRarity.RARE -> border(2.5.dp, rarity.color, shape)
+    CardRarity.EPIC -> border(2.dp, rarity.color, shape).padding(3.dp).border(1.5.dp, rarity.color.copy(alpha = 0.8f), shape)
+    CardRarity.LEGENDARY -> {
+        val shift by androidx.compose.animation.core.rememberInfiniteTransition(label = "shimmer").animateFloat(
+            initialValue = 0f,
+            targetValue = 1f,
+            animationSpec = androidx.compose.animation.core.infiniteRepeatable(androidx.compose.animation.core.tween(1800)),
+            label = "shimmer",
+        )
+        val gold = Color(0xFFFFC107)
+        border(
+            3.5.dp,
+            Brush.linearGradient(
+                colors = listOf(Color(0xFFB8860B), gold, Color(0xFFFFF8E1), gold, Color(0xFFB8860B)),
+                start = androidx.compose.ui.geometry.Offset(-300f + 600f * shift, 0f),
+                end = androidx.compose.ui.geometry.Offset(0f + 600f * shift, 300f),
+                tileMode = androidx.compose.ui.graphics.TileMode.Mirror,
+            ),
+            shape,
+        )
+    }
+    CardRarity.SIGNATURE -> border(4.dp, Brush.verticalGradient(listOf(Color(0xFFFFD54F), rarity.color, Color(0xFFD84315))), shape)
+}
+
+/** The back of a card, for packs before they're turned over: a plain design, an orange orb with one star. */
+@Composable
+fun CardBack(modifier: Modifier = Modifier) {
+    val shape = RoundedCornerShape(8.dp)
+    Box(
+        modifier
+            .clip(shape)
+            .background(Brush.radialGradient(listOf(Color(0xFF1E3A8A), Color(0xFF0B1230))))
+            .border(3.dp, Color(0xFFFFC107), shape),
+        contentAlignment = Alignment.Center,
+    ) {
+        Box(
+            Modifier
+                .fillMaxSize(0.45f)
+                .aspectRatio(1f)
+                .background(Brush.radialGradient(listOf(Color(0xFFFFE082), Color(0xFFFF8F00), Color(0xFFE65100))), CircleShape)
+                .border(2.dp, Color(0xFF7A3E00), CircleShape),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text("\u2605", style = TextStyle(fontSize = 22.sp, color = Color(0xFFC62828), fontWeight = FontWeight.Black))
         }
     }
 }
