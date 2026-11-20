@@ -193,3 +193,31 @@ val MIGRATION_7_8 = object : Migration(7, 8) {
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_mentor_calls_mentor` ON `mentor_calls` (`mentor`)")
     }
 }
+
+/** Routines: reusable templates and day checklists. */
+val MIGRATION_8_9 = object : Migration(8, 9) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `routine_templates` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`name` TEXT NOT NULL, `createdAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `routine_template_items` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`templateId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `text` TEXT NOT NULL, " +
+                "FOREIGN KEY(`templateId`) REFERENCES `routine_templates`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_routine_template_items_templateId` ON `routine_template_items` (`templateId`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `day_routines` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `name` TEXT NOT NULL, `templateId` INTEGER, `position` INTEGER NOT NULL, " +
+                "`createdAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_day_routines_epochDay` ON `day_routines` (`epochDay`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `day_routine_items` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`routineId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `text` TEXT NOT NULL, `doneAtMillis` INTEGER, " +
+                "FOREIGN KEY(`routineId`) REFERENCES `day_routines`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_day_routine_items_routineId` ON `day_routine_items` (`routineId`)")
+    }
+}

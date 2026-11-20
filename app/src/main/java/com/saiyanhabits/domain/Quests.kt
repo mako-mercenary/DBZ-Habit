@@ -25,6 +25,9 @@ enum class PowerSource {
     BOMB_THROW,
     /** The day's first finished journal entry. */
     JOURNAL,
+
+    /** One checked-off item of a day's routine. */
+    ROUTINE_ITEM,
 }
 
 /** What a time chamber session can be linked to. Stored in the database: do not rename. */

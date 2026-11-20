@@ -18,6 +18,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 9 | Flexible habits, day notes, achievements, widget, evening nudge, more mentor lines, sound | Done |
 | 10 | Mini games with the mentors | Done |
 | 11 | Journal with Bulma, daily mentor calls, dialogue-heavy cutscenes | Done |
+| 12 | Routines: day checklists and reusable templates | Done |
 
 ## Build
 
@@ -188,6 +189,26 @@ per unlock, 120 to 400 words each, known speakers).
   can open it again from History.
 
 The "strong week" threshold for the recap headline is in `GameConfig.kt`.
+
+## Routines
+
+The routines card on the home screen opens your checklists. A routine is a
+named list of things to do on one day: a morning routine, a gym session, a
+Sunday reset.
+
+- **Days.** Pick a day (today, the next two weeks, or any later day with
+  something planned) and add a routine from scratch or from a template.
+  You can plan up to 60 days ahead. Each item you check off on the day gives
+  +5 power; unchecking it takes the 5 back. Items on other days can be planned
+  and edited, but only checked off on the day itself.
+- **Templates.** Save a routine once and reuse it. "Plan on days" copies it
+  onto any days you pick (every day, weekdays, or by hand). Any day's routine
+  can be saved as a new template. Each planned day is its own copy, so editing
+  a template never changes days already planned, and deleting a template
+  keeps them.
+
+Deleting a day's routine takes back the power its checked items gave.
+Routines are included in exports.
 
 ## Journal
 

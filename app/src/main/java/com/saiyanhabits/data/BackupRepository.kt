@@ -31,6 +31,7 @@ class BackupRepository(private val context: Context, private val db: AppDatabase
         "habits", "habit_counts", "day_notes", "completions", "day_records", "habit_misses", "habit_excuses", "player_state",
         "technique_uses", "wishes", "sagas", "saga_milestones", "spirit_bombs", "bomb_logs",
         "power_events", "focus_sessions", "minigame_plays", "journal_entries", "mentor_calls",
+        "routine_templates", "routine_template_items", "day_routines", "day_routine_items",
     )
 
     private val sql: SupportSQLiteDatabase get() = db.openHelper.writableDatabase

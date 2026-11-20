@@ -50,6 +50,9 @@ interface PowerDao {
     @Query("DELETE FROM power_events WHERE source = :source AND sourceId = :sourceId")
     suspend fun delete(source: PowerSource, sourceId: Long)
 
+    @Query("SELECT COALESCE(SUM(points), 0) FROM power_events WHERE source = :source AND sourceId = :sourceId")
+    suspend fun pointsFor(source: PowerSource, sourceId: Long): Int
+
     @Query("DELETE FROM power_events WHERE source = :source AND sourceId = :sourceId AND epochDay = :epochDay")
     suspend fun deleteOnDay(source: PowerSource, sourceId: Long, epochDay: Long)
 

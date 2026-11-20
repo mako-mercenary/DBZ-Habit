@@ -26,8 +26,12 @@ import androidx.room.RoomDatabase
         MinigamePlayEntity::class,
         JournalEntryEntity::class,
         MentorCallEntity::class,
+        RoutineTemplateEntity::class,
+        RoutineTemplateItemEntity::class,
+        DayRoutineEntity::class,
+        DayRoutineItemEntity::class,
     ],
-    version = 8,
+    version = 9,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -44,11 +48,12 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun gameDao(): GameDao
     abstract fun journalDao(): JournalDao
     abstract fun callDao(): CallDao
+    abstract fun routineDao(): RoutineDao
 
     companion object {
         fun create(context: Context): AppDatabase =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "saiyan_habits.db")
-                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
                 .build()
     }
 }

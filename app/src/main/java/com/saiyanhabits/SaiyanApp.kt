@@ -45,6 +45,10 @@ class SaiyanApp : Application() {
         com.saiyanhabits.data.JournalRepository(this, database)
     }
 
+    val routineRepository: com.saiyanhabits.data.RoutineRepository by lazy {
+        com.saiyanhabits.data.RoutineRepository(database)
+    }
+
     val callRepository: com.saiyanhabits.data.CallRepository by lazy {
         com.saiyanhabits.data.CallRepository(this, database, habitRepository, journalRepository)
     }

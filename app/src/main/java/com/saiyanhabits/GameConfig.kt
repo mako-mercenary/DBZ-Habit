@@ -296,4 +296,12 @@ object GameConfig {
 
     /** The window, in hours of the day, in which a mentor may ring: from the first up to the second. */
     val CALL_RING_HOURS = 10 to 20
+
+    // ---- Routines ----
+
+    /** Power for each routine item checked off. */
+    const val ROUTINE_ITEM_POWER = 5
+
+    /** How many days ahead a routine can be planned. */
+    const val ROUTINE_PLAN_DAYS_AHEAD = 60
 }

@@ -125,6 +125,7 @@ fun HomeScreen(
     onOpenStory: () -> Unit,
     onOpenGames: () -> Unit,
     onOpenJournal: () -> Unit,
+    onOpenRoutines: () -> Unit,
     onAnswerCall: (com.saiyanhabits.domain.Mentor) -> Unit,
     onOpenHistory: () -> Unit,
     onOpenChapter: (Int) -> Unit,
@@ -207,6 +208,9 @@ fun HomeScreen(
                 onPauseOrDispose { job.cancel() }
             }
             ringing?.let { mentor -> com.saiyanhabits.ui.calls.RingingCard(mentor, onAnswer = { onAnswerCall(mentor) }) }
+        }
+        item(key = "routines") {
+            com.saiyanhabits.ui.routines.RoutinesHomeCard(onClick = onOpenRoutines)
         }
         item(key = "journal") {
             com.saiyanhabits.ui.journal.JournalHomeCard(onClick = onOpenJournal)

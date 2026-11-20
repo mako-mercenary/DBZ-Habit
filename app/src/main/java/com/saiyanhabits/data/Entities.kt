@@ -79,6 +79,54 @@ data class MinigamePlayEntity(
     val createdAtMillis: Long,
 )
 
+/** A saved routine you can reuse: a name and its checklist. */
+@Entity(tableName = "routine_templates")
+data class RoutineTemplateEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val name: String,
+    val createdAtMillis: Long,
+)
+
+/** One step of a saved routine. */
+@Entity(
+    tableName = "routine_template_items",
+    foreignKeys = [ForeignKey(entity = RoutineTemplateEntity::class, parentColumns = ["id"], childColumns = ["templateId"], onDelete = ForeignKey.CASCADE)],
+    indices = [Index(value = ["templateId"])],
+)
+data class RoutineTemplateItemEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val templateId: Long,
+    val position: Int,
+    val text: String,
+)
+
+/** A checklist for one day, planned from a template or from scratch. */
+@Entity(tableName = "day_routines", indices = [Index(value = ["epochDay"])])
+data class DayRoutineEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    val name: String,
+    /** The template it was made from, if any; kept only as a note, editing one never changes the other. */
+    val templateId: Long?,
+    val position: Int,
+    val createdAtMillis: Long,
+)
+
+/** One thing to do in a day's routine. */
+@Entity(
+    tableName = "day_routine_items",
+    foreignKeys = [ForeignKey(entity = DayRoutineEntity::class, parentColumns = ["id"], childColumns = ["routineId"], onDelete = ForeignKey.CASCADE)],
+    indices = [Index(value = ["routineId"])],
+)
+data class DayRoutineItemEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val routineId: Long,
+    val position: Int,
+    val text: String,
+    /** When it was checked off, or null while it's still to do. */
+    val doneAtMillis: Long?,
+)
+
 /** One journal entry, written to one of Bulma's prompts. */
 @Entity(tableName = "journal_entries", indices = [Index(value = ["epochDay"])])
 data class JournalEntryEntity(

@@ -227,6 +227,8 @@ interface AchievementDao {
              + (SELECT COUNT(*) FROM minigame_plays) * 41
              + (SELECT COUNT(*) FROM journal_entries) * 43
              + (SELECT COUNT(*) FROM mentor_calls) * 47
+             + (SELECT COUNT(*) FROM day_routine_items WHERE doneAtMillis IS NOT NULL) * 53
+             + (SELECT COUNT(*) FROM day_routine_items) * 59
         """,
     )
     fun observeChanges(): Flow<Long>
@@ -332,3 +334,78 @@ interface CallDao {
     @Query("SELECT MIN(epochDay) FROM completions")
     suspend fun firstCheckOffDay(): Long?
 }
+
+@Dao
+interface RoutineDao {
+
+    // ---- Templates ----
+
+    @Query("SELECT * FROM routine_templates ORDER BY name COLLATE NOCASE")
+    fun observeTemplates(): Flow<List<RoutineTemplateEntity>>
+
+    @Query("SELECT * FROM routine_template_items ORDER BY templateId, position")
+    fun observeTemplateItems(): Flow<List<RoutineTemplateItemEntity>>
+
+    @Query("SELECT * FROM routine_templates WHERE id = :id")
+    suspend fun template(id: Long): RoutineTemplateEntity?
+
+    @Query("SELECT * FROM routine_template_items WHERE templateId = :templateId ORDER BY position")
+    suspend fun templateItems(templateId: Long): List<RoutineTemplateItemEntity>
+
+    @Insert
+    suspend fun insertTemplate(template: RoutineTemplateEntity): Long
+
+    @androidx.room.Update
+    suspend fun updateTemplate(template: RoutineTemplateEntity)
+
+    @Insert
+    suspend fun insertTemplateItems(items: List<RoutineTemplateItemEntity>)
+
+    @Query("DELETE FROM routine_template_items WHERE templateId = :templateId")
+    suspend fun clearTemplateItems(templateId: Long)
+
+    @Query("DELETE FROM routine_templates WHERE id = :id")
+    suspend fun deleteTemplate(id: Long)
+
+    // ---- Day routines ----
+
+    @Query("SELECT * FROM day_routines WHERE epochDay >= :fromDay ORDER BY epochDay, position, id")
+    fun observeRoutinesFrom(fromDay: Long): Flow<List<DayRoutineEntity>>
+
+    @Query("SELECT * FROM day_routines WHERE epochDay = :epochDay ORDER BY position, id")
+    fun observeRoutinesOn(epochDay: Long): Flow<List<DayRoutineEntity>>
+
+    @Query("SELECT i.* FROM day_routine_items i JOIN day_routines r ON r.id = i.routineId WHERE r.epochDay >= :fromDay ORDER BY i.routineId, i.position")
+    fun observeItemsFrom(fromDay: Long): Flow<List<DayRoutineItemEntity>>
+
+    @Query("SELECT * FROM day_routines WHERE id = :id")
+    suspend fun routine(id: Long): DayRoutineEntity?
+
+    @Query("SELECT * FROM day_routine_items WHERE routineId = :routineId ORDER BY position")
+    suspend fun routineItems(routineId: Long): List<DayRoutineItemEntity>
+
+    @Query("SELECT * FROM day_routine_items WHERE id = :id")
+    suspend fun item(id: Long): DayRoutineItemEntity?
+
+    @Query("SELECT COALESCE(MAX(position), -1) FROM day_routines WHERE epochDay = :epochDay")
+    suspend fun lastPositionOn(epochDay: Long): Int
+
+    @Insert
+    suspend fun insertRoutine(routine: DayRoutineEntity): Long
+
+    @androidx.room.Update
+    suspend fun updateRoutine(routine: DayRoutineEntity)
+
+    @Insert
+    suspend fun insertItems(items: List<DayRoutineItemEntity>): List<Long>
+
+    @androidx.room.Update
+    suspend fun updateItem(item: DayRoutineItemEntity)
+
+    @Query("DELETE FROM day_routine_items WHERE id = :id")
+    suspend fun deleteItem(id: Long)
+
+    @Query("DELETE FROM day_routines WHERE id = :id")
+    suspend fun deleteRoutine(id: Long)
+}
+
