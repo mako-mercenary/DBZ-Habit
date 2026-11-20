@@ -111,7 +111,7 @@ fun ManualScreen(onBack: () -> Unit) {
             item {
                 Text(
                     "Why it works this way: the handbook is AAMVA material, and permission " +
-                        "to reproduce it is given to state driver licence agencies only. " +
+                        "to reproduce it is given to state driver license agencies only. " +
                         "So the app carries no manual text, and reads the copy you import.",
                     style = MaterialTheme.typography.labelMedium,
                 )

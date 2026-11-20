@@ -12,7 +12,7 @@ import java.io.File
  * Your own copy of the manual.
  *
  * The app ships no manual text and no manual pages. The manual is AAMVA
- * material, and permission to reproduce it is given to state driver licence
+ * material, and permission to reproduce it is given to state driver license
  * agencies only. So you import your copy once, the app keeps it in its own
  * private folder, and it shows you the pages. Nothing leaves the phone.
  *

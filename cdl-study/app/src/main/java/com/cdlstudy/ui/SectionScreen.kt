@@ -40,7 +40,9 @@ fun SectionScreen(
                 Column {
                     Text(section.title, style = MaterialTheme.typography.titleLarge)
                     Text(
-                        "${section.track.label} | ${section.readingPages} pages to read",
+                        "${section.track.label} | ${section.readingPages} pages | " +
+                            "${section.readyToRecall} of ${section.subsections.size} " +
+                            "subsections have a fact checklist",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
@@ -55,17 +57,30 @@ fun SectionScreen(
                         Text("${sub.id} ${sub.title}", style = MaterialTheme.typography.titleMedium)
                         Text(
                             buildString {
-                                append("${sub.facts.size} facts")
-                                append(" | ${sub.criticalFacts.size} must memorize")
+                                when {
+                                    // A subsection you can recall: the checklist is the point.
+                                    sub.canRecall -> {
+                                        append("${sub.facts.size} facts")
+                                        append(" | ${sub.criticalFacts.size} must memorize")
+                                    }
+                                    // A heading or an overview: reading only, and no
+                                    // "0 facts", which reads like something is broken.
+                                    sub.hasLesson -> append("Overview to read, no recall")
+                                    else -> append("Not written yet")
+                                }
                                 sub.manualPages?.let { append(" | pages $it") }
                             },
                             style = MaterialTheme.typography.labelMedium,
                         )
                         Text(
-                            when (row?.status) {
-                                null, "new" -> "Not started"
-                                "reading" -> "Read, no recall yet"
-                                "recalled" -> "Best: ${row.bestCritical}% on must-memorize facts"
+                            when {
+                                !sub.canRecall && !sub.hasLesson ->
+                                    "Read it in your own manual with the book pages switch"
+                                !sub.canRecall -> "Read when you reach it"
+                                row == null || row.status == "new" -> "Not started"
+                                row.status == "reading" -> "Read, no recall yet"
+                                row.status == "recalled" ->
+                                    "Best: ${row.bestCritical}% on must-memorize facts"
                                 else -> "Mastered: ${row.bestCritical}% on must-memorize facts"
                             },
                             style = MaterialTheme.typography.bodySmall,

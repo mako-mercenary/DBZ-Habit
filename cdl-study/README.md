@@ -31,7 +31,7 @@ Three knowledge tests and a skills test in three parts:
 | 1 Introduction | General Knowledge test |
 | 2 Driving Safely | General Knowledge test, and the largest section at 45 pages |
 | 3 Transporting Cargo Safely | General Knowledge test |
-| 5 Air Brakes | The Air Brakes test. Skip it and your licence bars air brakes. |
+| 5 Air Brakes | The Air Brakes test. Skip it and your license bars air brakes. |
 | 6 Combination Vehicles | The Combination Vehicles test, for Class A only |
 | 11 Vehicle Inspection | Skills test, part one |
 | 12 Basic Vehicle Control Skills Test | Skills test, part two |
@@ -73,7 +73,7 @@ number, limit and procedure kept exactly as the manual gives it.
 
 They are not the handbook's text, and the app ships none of it. The handbook is
 AAMVA material, and its copyright page gives permission to reproduce it to state
-driver licence agencies only. This repository is public, so the manual's wording
+driver license agencies only. This repository is public, so the manual's wording
 belongs in neither the repo nor the APK.
 
 For the real pages, you import your own copy:

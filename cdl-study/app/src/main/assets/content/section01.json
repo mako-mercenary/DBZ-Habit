@@ -88,7 +88,7 @@
             "16",
             "placarding"
           ],
-          "text": "Class C is a single vehicle under 26,001 pounds GVWR, included in the CDL programme only when it carries 16 or more passengers including the driver, or needs hazmat placards."
+          "text": "Class C is a single vehicle under 26,001 pounds GVWR, included in the CDL program only when it carries 16 or more passengers including the driver, or needs hazmat placards."
         },
         {
           "id": "1.0.8",
@@ -99,7 +99,7 @@
             "b",
             "c"
           ],
-          "text": "A Class A licence also lets you drive Class B and Class C vehicles, and a Class B licence also lets you drive Class C vehicles."
+          "text": "A Class A license also lets you drive Class B and Class C vehicles, and a Class B license also lets you drive Class C vehicles."
         },
         {
           "id": "1.0.9",
@@ -185,7 +185,7 @@
       "exam": [
         {
           "id": "1.0.e1",
-          "q": "Which combination needs a Class A licence?",
+          "q": "Which combination needs a Class A license?",
           "factId": "1.0.5",
           "page": "1-1",
           "choices": [
@@ -199,7 +199,7 @@
         },
         {
           "id": "1.0.e2",
-          "q": "A 15-passenger van weighing 9,000 lb needs which licence?",
+          "q": "A 15-passenger van weighing 9,000 lb needs which license?",
           "factId": "1.0.7",
           "page": "1-1",
           "choices": [
@@ -247,7 +247,7 @@
           ]
         },
         {
-          "p": "A Class A licence also lets you drive Class B and Class C vehicles. A Class B licence also lets you drive Class C vehicles. Driving a Class A vehicle takes a good deal more skill and knowledge than the other two."
+          "p": "A Class A license also lets you drive Class B and Class C vehicles. A Class B license also lets you drive Class C vehicles. Driving a Class A vehicle takes a good deal more skill and knowledge than the other two."
         },
         {
           "h": "Endorsements and the learner's permit"
@@ -270,7 +270,22 @@
       "manualPages": "1-5",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "This part of the manual explains what you must pass to get a CDL. There are two kinds of test, and the parts below take each one in turn."
+        },
+        {
+          "ul": [
+            "Knowledge tests: written tests, and which ones you take depends on your license class and your endorsements.",
+            "Skills tests: three parts taken in a vehicle, in order.",
+            "Utah requirements: what this state asks for on top of the federal rules."
+          ]
+        },
+        {
+          "note": "This is a heading. The facts are in 1.1.1, 1.1.2 and 1.1.3 below."
+        }
+      ]
     },
     {
       "id": "1.1.1",
@@ -332,7 +347,7 @@
             "12",
             "13"
           ],
-          "text": "For a Class A licence the manual says to study sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
+          "text": "For a Class A license the manual says to study sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
         }
       ],
       "cards": [
@@ -375,7 +390,7 @@
       ],
       "reading": [
         {
-          "p": "How many knowledge tests you take depends on the licence class and the endorsements you want."
+          "p": "How many knowledge tests you take depends on the license class and the endorsements you want."
         },
         {
           "h": "The tests"
@@ -393,7 +408,7 @@
           "h": "What a Class A applicant studies"
         },
         {
-          "p": "Figure 1.2 in the manual lists the sections for each licence class. For Class A it names sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
+          "p": "Figure 1.2 in the manual lists the sections for each license class. For Class A it names sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
         },
         {
           "note": "That is the plan this app follows. Sections 4, 7, 8, 9 and 10 are endorsement material."
@@ -498,7 +513,7 @@
         },
         {
           "q": "Which vehicle must you use for the skills test?",
-          "a": "The type of vehicle you want the licence for.",
+          "a": "The type of vehicle you want the license for.",
           "factId": "1.1.2.3"
         },
         {
@@ -522,7 +537,7 @@
             "You go on to the on-road test",
             "You cannot go on to the on-road test",
             "You retake the vehicle inspection",
-            "You get the licence with a restriction"
+            "You get the license with a restriction"
           ],
           "answer": 1,
           "why": "Each part must be passed before the next one, so a failed part stops the test there."
@@ -601,7 +616,7 @@
             "mcsa 5876",
             "dot card"
           ],
-          "text": "Utah requires your driver licence and your current Medical Examiner's Certificate, form MCSA-5876, also called the medical certificate or DOT card."
+          "text": "Utah requires your driver license and your current Medical Examiner's Certificate, form MCSA-5876, also called the medical certificate or DOT card."
         },
         {
           "id": "1.1.3.3",
@@ -612,7 +627,7 @@
             "cdip",
             "permit"
           ],
-          "text": "You must give up your driver licence to the Division when you get your Utah commercial driver instruction permit, and the permit then lets you drive your own vehicle."
+          "text": "You must give up your driver license to the Division when you get your Utah commercial driver instruction permit, and the permit then lets you drive your own vehicle."
         },
         {
           "id": "1.1.3.4",
@@ -639,7 +654,7 @@
           "factId": "1.1.3.2"
         },
         {
-          "q": "What happens to your driver licence when you get a CDIP in Utah?",
+          "q": "What happens to your driver license when you get a CDIP in Utah?",
           "a": "You surrender it to the Division, and the CDIP lets you drive your own vehicle.",
           "factId": "1.1.3.3"
         },
@@ -674,13 +689,13 @@
         },
         {
           "ul": [
-            "Your driver licence.",
+            "Your driver license.",
             "At least one year of experience as a licensed driver.",
             "Your current Medical Examiner's Certificate, form MCSA-5876, also called the medical certificate or DOT card."
           ]
         },
         {
-          "note": "You must surrender your driver licence, from Utah or another state, to the Division when you get your Utah commercial driver instruction permit. The permit then lets you drive your own vehicle."
+          "note": "You must surrender your driver license, from Utah or another state, to the Division when you get your Utah commercial driver instruction permit. The permit then lets you drive your own vehicle."
         },
         {
           "p": "An applicant under 21 years of age cannot get the passenger, school bus or hazardous materials endorsements."
@@ -863,7 +878,7 @@
       "facts": [
         {
           "id": "1.2.2.1",
-          "text": "A non-excepted interstate driver must give a current medical examiner's certificate to the state driver licence agency.",
+          "text": "A non-excepted interstate driver must give a current medical examiner's certificate to the state driver license agency.",
           "critical": true,
           "page": "1-6",
           "keywords": [
@@ -903,7 +918,7 @@
         },
         {
           "id": "1.2.2.5",
-          "text": "In Utah you are an excepted intrastate driver if you are under 21 and may drive a CMV only inside the state, and you then need a K restriction on the licence.",
+          "text": "In Utah you are an excepted intrastate driver if you are under 21 and may drive a CMV only inside the state, and you then need a K restriction on the license.",
           "critical": true,
           "page": "1-7",
           "keywords": [
@@ -1135,7 +1150,7 @@
       "exam": [
         {
           "id": "1.2.4.e1",
-          "q": "You take the skills test in a truck with hydraulic brakes. What goes on your licence?",
+          "q": "You take the skills test in a truck with hydraulic brakes. What goes on your license?",
           "choices": [
             "No restriction",
             "An L restriction barring air brakes",
@@ -1164,7 +1179,7 @@
       ],
       "reading": [
         {
-          "p": "A restriction is a letter or a number on the licence that limits what you may drive. These are the ones a Utah CDL can carry."
+          "p": "A restriction is a letter or a number on the license that limits what you may drive. These are the ones a Utah CDL can carry."
         },
         {
           "h": "The ones that matter most to you"
@@ -1197,7 +1212,7 @@
           "note": "To remove an E, L or O restriction you must get a qualifying permit and pass the skills tests. Utah does not permit modified skills tests."
         },
         {
-          "h": "Others you should recognise"
+          "h": "Others you should recognize"
         },
         {
           "ul": [
@@ -1229,7 +1244,7 @@
         },
         {
           "id": "1.2.5.2",
-          "text": "To keep a school bus (S) endorsement in Utah you must pass a written exam when you renew the licence.",
+          "text": "To keep a school bus (S) endorsement in Utah you must pass a written exam when you renew the license.",
           "critical": true,
           "page": "1-9",
           "keywords": [
@@ -1309,7 +1324,7 @@
         {
           "ul": [
             "H: you must pass a Transportation Security Administration background check every five years, and a written exam at first issue and at renewal.",
-            "S: you must pass a written exam when you renew the licence."
+            "S: you must pass a written exam when you renew the license."
           ]
         }
       ]
@@ -1411,7 +1426,7 @@
           "critical": true,
           "page": "1-9",
           "keywords": [
-            "three years",
+            "3 years",
             "moving violations"
           ]
         },
@@ -1421,7 +1436,7 @@
           "critical": true,
           "page": "1-9",
           "keywords": [
-            "ten years",
+            "10 years",
             "drug",
             "alcohol"
           ]
@@ -1522,7 +1537,26 @@
       "manualPages": "1-10",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Disqualification means you may not drive a commercial motor vehicle, whatever your license says. The parts below give the offences and how long each one costs you."
+        },
+        {
+          "ul": [
+            "1.3.1 The general rule.",
+            "1.3.2 Alcohol, leaving the scene, and felonies: the heaviest penalties.",
+            "1.3.3 Serious traffic violations, counted over three years.",
+            "1.3.4 Out-of-service order violations, counted over ten years.",
+            "1.3.5 Railroad-highway grade crossing violations.",
+            "1.3.6 Hazardous materials endorsement checks.",
+            "1.3.7 What you do in your own car."
+          ]
+        },
+        {
+          "note": "This is a heading. Learn the periods in the parts below: they are the most tested numbers in Section 1."
+        }
+      ]
     },
     {
       "id": "1.3.1",
@@ -1567,7 +1601,7 @@
           "critical": true,
           "page": "1-10",
           "keywords": [
-            "04",
+            "0.04",
             "blood alcohol"
           ]
         },
@@ -1597,7 +1631,7 @@
           "critical": true,
           "page": "1-10",
           "keywords": [
-            "three years",
+            "3 years",
             "placarded"
           ]
         },
@@ -1759,7 +1793,7 @@
           ]
         },
         {
-          "note": "By driving a CMV you are deemed to have consented to alcohol testing. Using a CMV to commit a felony involving controlled substances costs you the licence for life, first offence or not."
+          "note": "By driving a CMV you are deemed to have consented to alcohol testing. Using a CMV to commit a felony involving controlled substances costs you the license for life, first offence or not."
         },
         {
           "p": "In Utah it is also unlawful to use or possess powdered alcohol for human consumption."
@@ -1801,7 +1835,7 @@
           "keywords": [
             "two",
             "60 days",
-            "three year"
+            "3 year"
           ]
         },
         {
@@ -1850,7 +1884,7 @@
       ],
       "reading": [
         {
-          "p": "A serious traffic violation is not a disqualification on its own. It is the second and third one inside three years that costs you the licence."
+          "p": "A serious traffic violation is not a disqualification on its own. It is the second and third one inside three years that costs you the license."
         },
         {
           "numbers": [
@@ -1879,7 +1913,7 @@
             "Following a vehicle too closely.",
             "A traffic offence in a CMV connected with a fatal accident.",
             "Driving a CMV without a CDL, or without it in your possession.",
-            "Driving a CMV without the proper class of licence or endorsement."
+            "Driving a CMV without the proper class of license or endorsement."
           ]
         }
       ]
@@ -1909,7 +1943,7 @@
           "keywords": [
             "two",
             "one year",
-            "ten year"
+            "10 year"
           ]
         },
         {
@@ -1919,7 +1953,7 @@
           "page": "1-10",
           "keywords": [
             "three",
-            "three years"
+            "3 years"
           ]
         }
       ],
@@ -2191,7 +2225,7 @@
         },
         {
           "id": "1.3.7.2",
-          "text": "If your personal licence is revoked, cancelled or suspended for alcohol, a controlled substance or a felony, you lose your CDL for one year.",
+          "text": "If your personal license is revoked, cancelled or suspended for alcohol, a controlled substance or a felony, you lose your CDL for one year.",
           "critical": true,
           "page": "1-11",
           "keywords": [
@@ -2212,7 +2246,7 @@
         },
         {
           "id": "1.3.7.4",
-          "text": "You cannot get a hardship licence to drive a CMV while your personal licence is revoked, cancelled or suspended.",
+          "text": "You cannot get a hardship license to drive a CMV while your personal license is revoked, cancelled or suspended.",
           "critical": true,
           "page": "1-11",
           "keywords": [
@@ -2223,12 +2257,12 @@
       ],
       "cards": [
         {
-          "q": "Your car licence is suspended for DUI. What happens to your CDL?",
+          "q": "Your car license is suspended for DUI. What happens to your CDL?",
           "a": "You lose it for one year.",
           "factId": "1.3.7.2"
         },
         {
-          "q": "Can you get a hardship licence to drive a CMV?",
+          "q": "Can you get a hardship license to drive a CMV?",
           "a": "No.",
           "factId": "1.3.7.4"
         },
@@ -2266,7 +2300,7 @@
           ]
         },
         {
-          "note": "You cannot get a hardship licence to drive a commercial motor vehicle while your personal licence is revoked, cancelled or suspended."
+          "note": "You cannot get a hardship license to drive a commercial motor vehicle while your personal license is revoked, cancelled or suspended."
         }
       ]
     },
@@ -2278,7 +2312,7 @@
       "facts": [
         {
           "id": "1.4.1",
-          "text": "You cannot hold more than one licence. A court can fine you up to $5,000 or put you in jail, and your home state keeps its licence while the others are returned.",
+          "text": "You cannot hold more than one license. A court can fine you up to $5,000 or put you in jail, and your home state keeps its license while the others are returned.",
           "critical": true,
           "page": "1-11",
           "keywords": [
@@ -2309,7 +2343,7 @@
         },
         {
           "id": "1.4.4",
-          "text": "You must tell your employer within two business days if your licence is suspended, revoked or cancelled, or if you are disqualified.",
+          "text": "You must tell your employer within two business days if your license is suspended, revoked or cancelled, or if you are disqualified.",
           "critical": true,
           "page": "1-11",
           "keywords": [
@@ -2323,7 +2357,7 @@
           "critical": true,
           "page": "1-11",
           "keywords": [
-            "ten years",
+            "10 years",
             "driving jobs"
           ]
         },
@@ -2350,7 +2384,7 @@
         },
         {
           "id": "1.4.8",
-          "text": "Your employer may not let you drive a CMV if you hold more than one licence or your CDL is suspended or revoked, and the employer can be fined up to $5,000 or jailed.",
+          "text": "Your employer may not let you drive a CMV if you hold more than one license or your CDL is suspended or revoked, and the employer can be fined up to $5,000 or jailed.",
           "critical": true,
           "page": "1-12",
           "keywords": [
@@ -2400,7 +2434,7 @@
       ],
       "cards": [
         {
-          "q": "How many licences may a CDL driver hold?",
+          "q": "How many licenses may a CDL driver hold?",
           "a": "One. The fine can reach $5,000 or jail.",
           "factId": "1.4.1"
         },
@@ -2410,7 +2444,7 @@
           "factId": "1.4.2"
         },
         {
-          "q": "How soon must you tell your employer that your licence is suspended?",
+          "q": "How soon must you tell your employer that your license is suspended?",
           "a": "Within two business days.",
           "factId": "1.4.4"
         },
@@ -2438,7 +2472,7 @@
       "exam": [
         {
           "id": "1.4.e1",
-          "q": "Your licence is suspended on Monday. By when must you tell your employer?",
+          "q": "Your license is suspended on Monday. By when must you tell your employer?",
           "choices": [
             "Within 30 days",
             "Within two business days",
@@ -2495,7 +2529,7 @@
             },
             {
               "value": "2 business days",
-              "what": "to tell your employer that your licence is suspended, revoked or cancelled, or that you are disqualified"
+              "what": "to tell your employer that your license is suspended, revoked or cancelled, or that you are disqualified"
             },
             {
               "value": "10 years",
@@ -2507,7 +2541,7 @@
             },
             {
               "value": "$5,000",
-              "what": "the fine a court may set, with jail, for holding more than one licence or driving without a CDL"
+              "what": "the fine a court may set, with jail, for holding more than one license or driving without a CDL"
             }
           ]
         },
@@ -2516,8 +2550,8 @@
         },
         {
           "ul": [
-            "You cannot hold more than one licence. Your home state keeps its licence and the others are returned.",
-            "Your employer may not let you drive if you hold more than one licence, or your CDL is suspended or revoked. The employer faces the same $5,000 fine or jail.",
+            "You cannot hold more than one license. Your home state keeps its license and the others are returned.",
+            "Your employer may not let you drive if you hold more than one license, or your CDL is suspended or revoked. The employer faces the same $5,000 fine or jail.",
             "You may not hold a mobile telephone to make a voice call, and you may not dial one by pressing more than a single button, while driving.",
             "You may not send or read text messages while driving.",
             "You must wear the safety belt at all times while driving a commercial motor vehicle.",
@@ -2548,7 +2582,7 @@
         },
         {
           "id": "1.5.2",
-          "text": "The two programmes cover the 48 adjoining United States and 10 Canadian provinces.",
+          "text": "The two programs cover the 48 adjoining United States and 10 Canadian provinces.",
           "critical": false,
           "page": "1-12",
           "keywords": [
@@ -2570,7 +2604,7 @@
       ],
       "cards": [
         {
-          "q": "Which two programmes must an interstate CDL vehicle be registered under?",
+          "q": "Which two programs must an interstate CDL vehicle be registered under?",
           "a": "The International Registration Plan (IRP) and the International Fuel Tax Agreement (IFTA).",
           "factId": "1.5.1"
         },
@@ -2583,10 +2617,10 @@
       "exam": [],
       "reading": [
         {
-          "p": "If you drive a CDL required vehicle in interstate commerce, the vehicle must, with few exceptions, be registered under two programmes: the International Registration Plan and the International Fuel Tax Agreement."
+          "p": "If you drive a CDL required vehicle in interstate commerce, the vehicle must, with few exceptions, be registered under two programs: the International Registration Plan and the International Fuel Tax Agreement."
         },
         {
-          "p": "They share vehicle licence fees and motor fuel taxes fairly between the places you drive through, across the 48 adjoining United States and 10 Canadian provinces."
+          "p": "They share vehicle license fees and motor fuel taxes fairly between the places you drive through, across the 48 adjoining United States and 10 Canadian provinces."
         },
         {
           "h": "What a registrant must do"
@@ -2608,7 +2642,15 @@
       "manualPages": "1-15",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "The manual lists the current Utah license and endorsement fees here."
+        },
+        {
+          "note": "Fees change, and they are not test material. Check the current fees with the Driver License Division at dld.utah.gov when you apply. No fact checklist is written for this part on purpose."
+        }
+      ]
     }
   ],
   "exam": []

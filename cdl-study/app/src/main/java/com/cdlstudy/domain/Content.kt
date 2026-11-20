@@ -114,6 +114,9 @@ data class Section(
     val factCount: Int get() = subsections.sumOf { it.facts.size }
     val readyToRecall: Int get() = subsections.count { it.canRecall }
     val withLesson: Int get() = subsections.count { it.hasLesson }
+
+    /** True while nothing is written for this section yet. */
+    val isEmpty: Boolean get() = subsections.none { it.hasLesson || it.canRecall }
     val cardCount: Int get() = subsections.sumOf { it.cards.size }
     val examCount: Int get() = exam.size + subsections.sumOf { it.exam.size }
 }

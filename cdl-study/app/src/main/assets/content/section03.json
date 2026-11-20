@@ -25,7 +25,7 @@
         },
         {
           "id": "3.0.2",
-          "text": "You are responsible for recognising an overload and badly balanced weight.",
+          "text": "You are responsible for recognizing an overload and badly balanced weight.",
           "critical": true,
           "page": "3-1",
           "keywords": [
@@ -213,7 +213,7 @@
           "choices": [
             "Nothing until 300 miles",
             "Inspect the cargo and its securing devices",
-            "Only check the tyres",
+            "Only check the tires",
             "Report to the carrier"
           ],
           "answer": 1,
@@ -304,7 +304,7 @@
         },
         {
           "id": "3.2.1.4",
-          "text": "Tire load is the most weight a tyre can carry safely at a stated pressure, and the rating is written on the side of the tyre.",
+          "text": "Tire load is the most weight a tire can carry safely at a stated pressure, and the rating is written on the side of the tire.",
           "critical": true,
           "page": "3-1",
           "keywords": [
@@ -340,23 +340,23 @@
           "factId": "3.2.1.3"
         },
         {
-          "q": "Where is the tyre load rating written?",
-          "a": "On the side of each tyre.",
+          "q": "Where is the tire load rating written?",
+          "a": "On the side of each tire.",
           "factId": "3.2.1.4"
         }
       ],
       "exam": [
         {
           "id": "3.2.1.e1",
-          "q": "Where do you find the maximum safe weight a tyre can carry?",
+          "q": "Where do you find the maximum safe weight a tire can carry?",
           "choices": [
             "On the certification label",
-            "On the side of the tyre",
+            "On the side of the tire",
             "In the cab card",
             "On the axle"
           ],
           "answer": 1,
-          "why": "The tire load rating is stated on the side of each tyre, at a specified pressure.",
+          "why": "The tire load rating is stated on the side of each tire, at a specified pressure.",
           "factId": "3.2.1.4",
           "page": "3-1"
         }
@@ -381,12 +381,12 @@
             },
             {
               "value": "Tire load",
-              "what": "the most weight a tyre can carry safely at a stated pressure"
+              "what": "the most weight a tire can carry safely at a stated pressure"
             }
           ]
         },
         {
-          "note": "The tire load rating is written on the side of each tyre."
+          "note": "The tire load rating is written on the side of each tire."
         },
         {
           "p": "A suspension system has a weight capacity rating from its maker. A coupling device is rated for the most weight it can pull or carry."
@@ -579,7 +579,7 @@
       "facts": [
         {
           "id": "3.2.4.1",
-          "text": "Too much weight on the steering axle makes steering hard, and it can damage the steering axle and the tyres.",
+          "text": "Too much weight on the steering axle makes steering hard, and it can damage the steering axle and the tires.",
           "critical": true,
           "page": "3-2",
           "keywords": [
@@ -622,7 +622,7 @@
       "cards": [
         {
           "q": "What does too much weight on the steering axle cause?",
-          "a": "Hard steering, and damage to the steering axle and tyres.",
+          "a": "Hard steering, and damage to the steering axle and tires.",
           "factId": "3.2.4.1"
         },
         {
@@ -658,7 +658,7 @@
         },
         {
           "ul": [
-            "Too much weight on the steering axle: hard steering, and damage to the axle and tyres.",
+            "Too much weight on the steering axle: hard steering, and damage to the axle and tires.",
             "Too little weight on the front axle, from weight pushed too far back: the steering axle gets too light to steer safely.",
             "Too little weight on the driving axles: poor traction, and the drive wheels spin easily. In bad weather the truck may not keep going.",
             "Weight too high: a greater chance of rollover, and on a flat bed a greater chance the load shifts sideways or falls off."

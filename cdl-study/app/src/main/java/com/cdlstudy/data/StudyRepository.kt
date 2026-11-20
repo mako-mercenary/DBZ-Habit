@@ -173,7 +173,9 @@ class StudyRepository(
     /** How far you are through the plan, for the home screen. */
     val planProgress: Flow<PlanProgress>
         get() = progress.map { rows ->
-            val total = content.sections.sumOf { it.subsections.size }
+            // Only a subsection with a fact checklist can be recalled. A parent
+            // heading never can, so counting it would put 100% out of reach.
+            val total = content.sections.sumOf { it.readyToRecall }
             PlanProgress(
                 subsectionsTotal = total,
                 subsectionsRecalled = rows.count { it.status == "recalled" || it.status == "mastered" },

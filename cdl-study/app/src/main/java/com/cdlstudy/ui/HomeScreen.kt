@@ -145,7 +145,9 @@ private fun SectionRow(
     progress: List<ProgressEntity>,
     onClick: () -> Unit,
 ) {
-    val ids = section.subsections.map { it.id }.toSet()
+    // Only subsections with a fact checklist can be recalled, so they are the
+    // ones the count is out of.
+    val ids = section.subsections.filter { it.canRecall }.map { it.id }.toSet()
     val done = progress.count { it.subsectionId in ids && it.status != "new" && it.status != "reading" }
     Card(onClick = onClick, modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
@@ -154,12 +156,16 @@ private fun SectionRow(
                 style = MaterialTheme.typography.titleMedium,
             )
             Text(
-                "${section.track.label} | $done of ${section.subsections.size} subsections recalled",
+                if (section.isEmpty) {
+                    "${section.track.label} | reading not written yet"
+                } else {
+                    "${section.track.label} | $done of ${ids.size} subsections recalled"
+                },
                 style = MaterialTheme.typography.bodyMedium,
             )
             Text(
                 if (section.factCount == 0) {
-                    "${section.readingPages} pages to read | no fact checklist yet"
+                    "${section.subsections.size} subsections | ${section.readingPages} pages"
                 } else {
                     "${section.factCount} facts | ${section.cardCount} cards | " +
                         "${section.examCount} questions"

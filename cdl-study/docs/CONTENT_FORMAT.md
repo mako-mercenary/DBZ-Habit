@@ -77,7 +77,7 @@ pages exist, because they are reading too.
 
 `reading` holds the lesson you read in the app. It is written by hand, in plain
 words, and it is **never the manual's own text**: the handbook is AAMVA material
-that only state licence agencies may reproduce, and this repository is public.
+that only state license agencies may reproduce, and this repository is public.
 Keep every number, limit and procedure exactly as the manual gives it.
 
 ```json
@@ -99,7 +99,7 @@ Keep every number, limit and procedure exactly as the manual gives it.
 | `p` | One short paragraph. Keep it under 600 characters; the build fails above that. |
 | `ul` | A list, one point per line. |
 | `numbers` | The numbers to memorize, each with what it is for. Drawn as a table. |
-| `note` | A rule, a limit or a warning, drawn in a coloured card. |
+| `note` | A rule, a limit or a warning, drawn in a colored card. |
 
 An unknown block is left out rather than shown wrongly.
 
@@ -189,7 +189,7 @@ state test. `why` is shown after the exam, with the manual page.
 
 `tools/manual_map.py` writes these files from the manual PDF. It records
 headings and page numbers only, and copies no manual text, because the handbook
-is AAMVA material that only state licence agencies may reproduce.
+is AAMVA material that only state license agencies may reproduce.
 
 ```
 python3 tools/manual_map.py /path/to/CDL-Manual.pdf

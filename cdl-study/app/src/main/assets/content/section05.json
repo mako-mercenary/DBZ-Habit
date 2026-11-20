@@ -1145,8 +1145,8 @@
           "critical": false,
           "page": "5-4",
           "keywords": [
-            "separate tank",
-            "few times"
+            "separate air tank",
+            "few moves|few times"
           ]
         }
       ],
@@ -1165,7 +1165,7 @@
       "exam": [
         {
           "id": "5.1.15.e1",
-          "q": "What shape and colour is the parking brake control on a newer vehicle?",
+          "q": "What shape and color is the parking brake control on a newer vehicle?",
           "choices": [
             "Round and blue",
             "Yellow and diamond-shaped",
@@ -1298,7 +1298,7 @@
           "factId": "5.1.16.2"
         },
         {
-          "q": "What colour is the ABS malfunction lamp?",
+          "q": "What color is the ABS malfunction lamp?",
           "a": "Yellow.",
           "factId": "5.1.16.4"
         },
@@ -2067,7 +2067,27 @@
       "manualPages": "5-8",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "You know the parts and you have inspected them. This part is about using the brakes on the road."
+        },
+        {
+          "ul": [
+            "5.4.1 Normal stops.",
+            "5.4.2 Braking with antilock brakes.",
+            "5.4.3 Emergency stops: controlled braking and stab braking.",
+            "5.4.4 Stopping distance, and the brake lag that air brakes add.",
+            "5.4.5 Brake fade and brake failure.",
+            "5.4.6 Proper braking technique on a downgrade.",
+            "5.4.7 What to do when the air pressure gets low.",
+            "5.4.8 Parking brakes."
+          ]
+        },
+        {
+          "note": "This is a heading. The facts are in the parts below."
+        }
+      ]
     },
     {
       "id": "5.4.1",
@@ -2137,8 +2157,8 @@
           "critical": true,
           "page": "5-8",
           "keywords": [
-            "brake normally",
-            "only the force"
+            "as you always have|brake normally",
+            "only the braking force"
           ]
         },
         {

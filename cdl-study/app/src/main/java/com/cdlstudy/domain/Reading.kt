@@ -4,7 +4,7 @@ package com.cdlstudy.domain
  * The lesson you read in the app.
  *
  * This is NOT the handbook's text. The handbook is AAMVA material, and
- * permission to reproduce it is given to state driver licence agencies only.
+ * permission to reproduce it is given to state driver license agencies only.
  * Each lesson here is a rewrite in plain words, with every number, limit and
  * procedure kept exactly as the manual gives it.
  *

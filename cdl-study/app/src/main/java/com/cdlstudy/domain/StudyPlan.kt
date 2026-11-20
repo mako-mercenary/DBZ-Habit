@@ -36,7 +36,7 @@ object StudyPlan {
     val required: List<RequiredSection> = listOf(
         RequiredSection(
             1, "Introduction", Track.GENERAL_KNOWLEDGE,
-            "General Knowledge test. Licence classes, medical papers, and what " +
+            "General Knowledge test. License classes, medical papers, and what " +
                 "disqualifies a driver.",
         ),
         RequiredSection(
@@ -49,7 +49,7 @@ object StudyPlan {
         ),
         RequiredSection(
             5, "Air Brakes", Track.AIR_BRAKES,
-            "The Air Brakes knowledge test. Without it, your licence carries a " +
+            "The Air Brakes knowledge test. Without it, your license carries a " +
                 "restriction against air brakes.",
         ),
         RequiredSection(
@@ -62,7 +62,7 @@ object StudyPlan {
         ),
         RequiredSection(
             12, "Basic Vehicle Control Skills Test", Track.BASIC_CONTROL,
-            "Part two of the skills test. The backing and manoeuvring exercises.",
+            "Part two of the skills test. The backing and maneuvering exercises.",
         ),
         RequiredSection(
             13, "On-Road Driving", Track.ON_ROAD,

@@ -51,6 +51,35 @@ class BlurtMatcherTest {
     }
 
     @Test
+    fun `a decimal number survives, so 0_04 is one number and not two`() {
+        val text = BlurtMatcher.normalize("the limit is 0.04% in a CMV")
+        assertTrue(BlurtMatcher.contains(text, "0.04"))
+        assertTrue(BlurtMatcher.contains(text, "0.04%"))
+        assertEquals("the limit is 0.04 % in a cmv", text)
+    }
+
+    @Test
+    fun `a number written as a word matches the digits`() {
+        val text = BlurtMatcher.normalize("hold it about three seconds, then release")
+        assertTrue(BlurtMatcher.contains(text, "3 seconds"))
+        assertTrue(BlurtMatcher.contains(BlurtMatcher.normalize("2 business days"), "two business days"))
+    }
+
+    @Test
+    fun `a plural s does not lose a fact you knew`() {
+        assertTrue(BlurtMatcher.contains(BlurtMatcher.normalize("ten years"), "10 year"))
+        assertTrue(BlurtMatcher.contains(BlurtMatcher.normalize("one year"), "1 years"))
+        assertTrue(BlurtMatcher.contains(BlurtMatcher.normalize("the air brakes"), "air brake"))
+    }
+
+    @Test
+    fun `a keyword can offer choices, and any one of them counts`() {
+        val text = BlurtMatcher.normalize("I would use the headache rack")
+        assertTrue(BlurtMatcher.contains(text, "header board|headache rack"))
+        assertFalse(BlurtMatcher.contains(text, "header board|bulkhead"))
+    }
+
+    @Test
     fun `a keyword matches a whole word only`() {
         val text = BlurtMatcher.normalize("the airbrakes were fine")
         assertFalse(BlurtMatcher.contains(text, "air"))

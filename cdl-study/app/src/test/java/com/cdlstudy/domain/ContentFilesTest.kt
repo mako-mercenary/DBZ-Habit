@@ -157,6 +157,56 @@ class ContentFilesTest {
     }
 
     @Test
+    fun `a finished section leaves no subsection with nothing in it`() {
+        // The screen showed "0 facts | 0 must memorize" for a parent heading,
+        // which reads like a fault. A section that is written must have a
+        // lesson or a checklist on every subsection, headings included.
+        val finished = setOf(1, 3, 5)
+        val bare = mutableListOf<String>()
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            if (section.number !in finished) return@forEach
+            section.subsections
+                .filterNot { it.hasLesson || it.canRecall }
+                .forEach { bare.add("${section.number}: ${it.id} ${it.title}") }
+        }
+        assertTrue("These have neither a lesson nor facts: $bare", bare.isEmpty())
+    }
+
+    @Test
+    fun `a keyword can be matched against a recall that repeats the fact`() {
+        // A keyword nobody could ever match is a dead keyword. Reading the fact
+        // back word for word must suggest a hit.
+        val weak = mutableListOf<String>()
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            section.subsections.forEach { sub ->
+                sub.facts.filter { it.keywords.isNotEmpty() }.forEach { fact ->
+                    val suggestion = BlurtMatcher.suggest(listOf(fact), fact.text)[fact.id]!!
+                    if (suggestion.mark == Mark.MISS) weak.add("${fact.id}: ${suggestion.missing}")
+                }
+            }
+        }
+        // A keyword may be an abbreviation the driver would write, such as GVWR
+        // for gross vehicle weight rating, so some will not be in the fact text.
+        // None should match nothing at all.
+        assertTrue("These facts match nothing in their own text: $weak", weak.isEmpty())
+    }
+
+    @Test
+    fun `the content is written in American spelling, as a US exam needs`() {
+        val british = Regex(
+            "\\b(licence|licences|tyre|tyres|colour|programme|programmes|recognise|recognised|manoeuvre)\\b",
+            RegexOption.IGNORE_CASE,
+        )
+        val found = mutableListOf<String>()
+        files().forEach { file ->
+            british.findAll(file.readText()).forEach { found.add("${file.name}: ${it.value}") }
+        }
+        assertTrue("British spellings: ${found.take(10)}", found.isEmpty())
+    }
+
+    @Test
     fun `a subsection with facts can be read in the app, lesson or fact list`() {
         files().forEach { file ->
             val section = ContentReader.readSection(file.readText())
