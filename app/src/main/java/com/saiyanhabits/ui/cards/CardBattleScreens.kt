@@ -83,6 +83,7 @@ import com.saiyanhabits.ui.components.SubScreen
 import com.saiyanhabits.ui.components.TabLabel
 import com.saiyanhabits.ui.theme.SaiyanColors
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -417,6 +418,11 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
     }
     var picked by remember { mutableStateOf<Int?>(null) }
     var banner by remember { mutableStateOf<String?>(null) }
+    /** The square a card last landed on, and a counter so each landing replays its burst. */
+    var landed by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    /** The card in the challenger's hand they're looking at, and whether they've picked it. */
+    var focus by remember { mutableStateOf<Int?>(null) }
+    var chosen by remember { mutableStateOf(false) }
     val haptics = androidx.compose.ui.platform.LocalHapticFeedback.current
     var says by remember { mutableStateOf(setup.challenger.intro.random(random)) }
     var flashed by remember { mutableStateOf<Set<Int>>(emptySet()) }
@@ -432,6 +438,7 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
         val r = CardRulesEngine.play(state, card, square)
         state = r.state
         flashed = r.flips.map { it.first }.toSet()
+        landed = square to (landed?.second?.plus(1) ?: 0)
         val kinds = r.flips.map { it.second }.toSet()
         banner = when {
             CaptureKind.SAME in kinds -> "Same!"
@@ -439,8 +446,9 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
             CaptureKind.COMBO in kinds -> "Combo!"
             else -> null
         }
+        sounds?.play(SoundKey.CARD_PLACE, 0.8f)
         if (r.flips.isNotEmpty()) {
-            sounds?.play(SoundKey.CHECK_OFF, 0.5f)
+            sounds?.play(if (banner != null) SoundKey.CARD_COMBO else SoundKey.CARD_FLIP, 0.8f)
             haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.LongPress)
         }
     }
@@ -453,9 +461,24 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
             return@LaunchedEffect
         }
         if (state.turn == Side.OPPONENT) {
-            delay(700)
-            val move = withContext(Dispatchers.Default) { CardAi.choose(state, setup.challenger.difficulty, random) }
+            // They think it over: a highlight hops across their hand while the move is worked out.
+            val snapshot = state
+            val thinking = async(Dispatchers.Default) { CardAi.choose(snapshot, setup.challenger.difficulty, random) }
+            val hand = state.opponentHand
+            var hops = 0
+            while (hops < 4 || !thinking.isCompleted) {
+                focus = if (hand.size <= 1) 0 else ((focus ?: -1) + 1 + random.nextInt(hand.size - 1)) % hand.size
+                sounds?.play(SoundKey.CARD_HOVER, 0.4f)
+                delay(170)
+                hops++
+            }
+            val move = thinking.await()
+            focus = hand.indexOfFirst { it === move.first }.takeIf { it >= 0 } ?: hand.indexOf(move.first)
+            chosen = true
+            delay(380)
             apply(move.first, move.second)
+            focus = null
+            chosen = false
         }
     }
     // Who won the coin toss.
@@ -568,6 +591,13 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
                             if (canDrop) {
                                 Box(Modifier.fillMaxSize().border(3.dp, Color(0xFFFFEB3B), RoundedCornerShape(10.dp)))
                             }
+                            val land = landed
+                            if (placed != null && land != null && land.first == i) {
+                                key(land.second) { LandingBurst(placed.card.element.color) }
+                            }
+                            if (placed != null && i in flashed) {
+                                key(placed.owner, landed?.second) { CaptureFlash() }
+                            }
                             if (placed != null) {
                                 // A new card drops in; a captured one flips over to its new owner.
                                 key(placed.card.id, placed.owner) {
@@ -620,8 +650,31 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text("${setup.challenger.name.split(" ").first()}:", style = MaterialTheme.typography.labelMedium, color = Color.White)
-                state.opponentHand.forEach { c ->
-                    CardFace(c, Side.OPPONENT, showName = false, modifier = Modifier.size(40.dp, 50.dp))
+                state.opponentHand.forEachIndexed { i, c ->
+                    val looking = focus == i
+                    val lift by androidx.compose.animation.core.animateFloatAsState(
+                        when {
+                            looking && chosen -> 1f
+                            looking -> 0.45f
+                            else -> 0f
+                        },
+                        androidx.compose.animation.core.spring(dampingRatio = 0.55f, stiffness = 500f),
+                        label = "lift",
+                    )
+                    CardFace(
+                        c,
+                        Side.OPPONENT,
+                        showName = false,
+                        selected = looking && chosen,
+                        modifier = Modifier
+                            .size(40.dp, 50.dp)
+                            .graphicsLayer {
+                                translationY = -lift * 14f * density
+                                scaleX = 1f + lift * 0.25f
+                                scaleY = 1f + lift * 0.25f
+                                rotationZ = if (looking && !chosen) 4f else 0f
+                            },
+                    )
                 }
             }
             // Whose turn.
@@ -674,6 +727,8 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
     LaunchedEffect(state.isOver) {
         if (state.isOver) {
             val won = state.score(Side.PLAYER) > state.score(Side.OPPONENT)
+            val lost = state.score(Side.PLAYER) < state.score(Side.OPPONENT)
+            if (won) sounds?.play(SoundKey.CARD_WIN) else if (lost) sounds?.play(SoundKey.CARD_LOSE)
             says = if (won) setup.challenger.win.random(random) else if (state.score(Side.PLAYER) < state.score(Side.OPPONENT)) setup.challenger.lose.random(random) else says
         }
     }
@@ -766,11 +821,15 @@ private fun NewCardsDialog(title: String, cards: List<CardDef>, onDone: () -> Un
     // Cards start face down and turn over one by one; tap one to turn it early.
     val turned = remember { mutableStateListOf<Int>() }
     val haptics = androidx.compose.ui.platform.LocalHapticFeedback.current
+    val sounds = LocalSoundPlayer.current
     LaunchedEffect(cards) {
+        sounds?.play(SoundKey.PACK_OPEN)
         delay(500)
         for (i in cards.indices) {
             if (i !in turned) turned += i
+            sounds?.play(SoundKey.CARD_FLIP, 0.6f)
             if (cards[i].rarity.rank >= com.saiyanhabits.domain.CardRarity.EPIC.rank) {
+                sounds?.play(SoundKey.CARD_REVEAL_RARE)
                 haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.LongPress)
             }
             delay(if (cards[i].rarity.rank >= com.saiyanhabits.domain.CardRarity.EPIC.rank) 900 else 450)
@@ -969,4 +1028,51 @@ private fun FriendlyWin(setup: CardMatchSetup, onDone: () -> Unit) {
         )
         DbzPrimaryButton(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Back") }
     }
+}
+
+
+/** Where a card lands: a ring in its element's colour and a few sparks, spreading and fading. */
+@Composable
+private fun LandingBurst(color: Color) {
+    val t = remember { androidx.compose.animation.core.Animatable(0f) }
+    LaunchedEffect(Unit) { t.animateTo(1f, androidx.compose.animation.core.tween(520)) }
+    androidx.compose.foundation.Canvas(Modifier.fillMaxSize()) {
+        val p = t.value
+        if (p >= 1f) return@Canvas
+        val c = center
+        val maxR = size.minDimension * 0.85f
+        drawCircle(
+            color.copy(alpha = (1f - p) * 0.9f),
+            radius = maxR * (0.35f + 0.65f * p),
+            center = c,
+            style = androidx.compose.ui.graphics.drawscope.Stroke(width = size.minDimension * 0.06f * (1f - p) + 2f),
+        )
+        drawCircle(Color.White.copy(alpha = (1f - p) * 0.5f), radius = maxR * 0.5f * (1f - p), center = c)
+        for (k in 0 until 8) {
+            val a = Math.toRadians(k * 45.0 + 22.5).toFloat()
+            val r0 = maxR * (0.3f + 0.6f * p)
+            val r1 = r0 + maxR * 0.18f * (1f - p)
+            drawLine(
+                color.copy(alpha = 1f - p),
+                androidx.compose.ui.geometry.Offset(c.x + r0 * kotlin.math.cos(a), c.y + r0 * kotlin.math.sin(a)),
+                androidx.compose.ui.geometry.Offset(c.x + r1 * kotlin.math.cos(a), c.y + r1 * kotlin.math.sin(a)),
+                strokeWidth = 4f,
+            )
+        }
+    }
+}
+
+/** A white flash over a captured card. */
+@Composable
+private fun CaptureFlash() {
+    val t = remember { androidx.compose.animation.core.Animatable(0f) }
+    LaunchedEffect(Unit) {
+        delay(150)
+        t.animateTo(1f, androidx.compose.animation.core.tween(450))
+    }
+    Box(
+        Modifier
+            .fillMaxSize()
+            .background(Color.White.copy(alpha = if (t.value == 0f) 0f else (1f - t.value) * 0.7f), RoundedCornerShape(10.dp)),
+    )
 }

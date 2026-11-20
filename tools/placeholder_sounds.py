@@ -29,6 +29,14 @@ SOUNDS = [
     ("bomb_throw", "Spirit bomb throw", "A full spirit bomb is thrown.", 1.5),
     ("level_up", "Level up", "A bond level or an achievement is gained.", 1.0),
     ("dragon_summon", "Dragon summon", "The dragon is summoned.", 2.5),
+    ("card_place", "Card placed", "A card lands on the card battle board.", 0.25),
+    ("card_flip", "Card captured", "A card flips to its new owner.", 0.3),
+    ("card_combo", "Same, Plus or Combo", "A special capture rule triggers.", 0.8),
+    ("card_hover", "Opponent choosing", "The challenger considers a card in their hand.", 0.08),
+    ("card_win", "Match won", "You win a card battle.", 1.2),
+    ("card_lose", "Match lost", "You lose a card battle.", 1.0),
+    ("pack_open", "Pack opened", "A card pack is torn open.", 0.6),
+    ("card_reveal_rare", "Rare reveal", "An epic, legendary or bond card is revealed.", 0.9),
 ]
 
 
@@ -93,6 +101,22 @@ def make(key):
         return sweep(700, 90, 1.1, volume=0.6, noise=0.9, release=0.5)
     if key == "level_up":
         return tone([(659.3, 0.25), (880, 0.25), (1174.7, 0.5)], 0.6, release=0.25)
+    if key == "card_place":
+        return mix(burst(0.12, volume=0.7, low=90), tone([(196, 1.0)], 0.14, volume=0.6, release=0.1))
+    if key == "card_flip":
+        return mix(sweep(300, 1400, 0.18, volume=0.5, noise=0.6, release=0.1), tone([(784, 1.0)], 0.2, volume=0.3, release=0.15))
+    if key == "card_combo":
+        return tone([(587.3, 0.2), (784.0, 0.2), (1174.7, 0.6)], 0.55, volume=0.6, release=0.3)
+    if key == "card_hover":
+        return tone([(1046.5, 1.0)], 0.05, volume=0.25, attack=0.002, release=0.04)
+    if key == "card_win":
+        return tone([(392.0, 0.15), (523.3, 0.15), (659.3, 0.15), (784.0, 0.15), (1046.5, 0.4)], 1.0, release=0.35)
+    if key == "card_lose":
+        return tone([(392.0, 0.3), (349.2, 0.3), (293.7, 0.4)], 0.9, volume=0.45, release=0.35, wobble=0.02)
+    if key == "pack_open":
+        return sweep(200, 2400, 0.45, volume=0.5, noise=0.85, release=0.25)
+    if key == "card_reveal_rare":
+        return mix(tone([(1318.5, 0.3), (1568.0, 0.3), (2093.0, 0.4)], 0.7, volume=0.5, release=0.3), sweep(800, 3000, 0.7, volume=0.25, noise=0.3, release=0.4))
     if key == "dragon_summon":
         return mix(burst(1.8, volume=0.5, low=40), sweep(80, 400, 1.8, volume=0.5, noise=0.1, release=0.6))
     raise ValueError(key)

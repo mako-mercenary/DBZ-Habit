@@ -18,3 +18,11 @@ your files unless run with `--force`.
 | `bomb_throw` | Spirit bomb throw | A full spirit bomb is thrown. | up to 1.5 s | `bomb_throw.wav` |
 | `level_up` | Level up | A bond level or an achievement is gained. | up to 1 s | `level_up.wav` |
 | `dragon_summon` | Dragon summon | The dragon is summoned. | up to 2.5 s | `dragon_summon.wav` |
+| `card_place` | Card placed | A card lands on the card battle board. | up to 0.25 s | `card_place.wav` |
+| `card_flip` | Card captured | A card flips to its new owner. | up to 0.3 s | `card_flip.wav` |
+| `card_combo` | Same, Plus or Combo | A special capture rule triggers. | up to 0.8 s | `card_combo.wav` |
+| `card_hover` | Opponent choosing | The challenger considers a card in their hand. | up to 0.08 s | `card_hover.wav` |
+| `card_win` | Match won | You win a card battle. | up to 1.2 s | `card_win.wav` |
+| `card_lose` | Match lost | You lose a card battle. | up to 1 s | `card_lose.wav` |
+| `pack_open` | Pack opened | A card pack is torn open. | up to 0.6 s | `pack_open.wav` |
+| `card_reveal_rare` | Rare reveal | An epic, legendary or bond card is revealed. | up to 0.9 s | `card_reveal_rare.wav` |

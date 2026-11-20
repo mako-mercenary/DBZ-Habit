@@ -5,5 +5,13 @@
   "transformation": "transformation.wav",
   "bomb_throw": "bomb_throw.wav",
   "level_up": "level_up.wav",
-  "dragon_summon": "dragon_summon.wav"
+  "dragon_summon": "dragon_summon.wav",
+  "card_place": "card_place.wav",
+  "card_flip": "card_flip.wav",
+  "card_combo": "card_combo.wav",
+  "card_hover": "card_hover.wav",
+  "card_win": "card_win.wav",
+  "card_lose": "card_lose.wav",
+  "pack_open": "pack_open.wav",
+  "card_reveal_rare": "card_reveal_rare.wav"
 }

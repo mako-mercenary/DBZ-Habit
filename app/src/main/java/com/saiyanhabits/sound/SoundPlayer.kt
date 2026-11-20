@@ -18,6 +18,14 @@ enum class SoundKey(val key: String) {
     BOMB_THROW("bomb_throw"),
     LEVEL_UP("level_up"),
     DRAGON_SUMMON("dragon_summon"),
+    CARD_PLACE("card_place"),
+    CARD_FLIP("card_flip"),
+    CARD_COMBO("card_combo"),
+    CARD_HOVER("card_hover"),
+    CARD_WIN("card_win"),
+    CARD_LOSE("card_lose"),
+    PACK_OPEN("pack_open"),
+    CARD_REVEAL_RARE("card_reveal_rare"),
 }
 
 /**
