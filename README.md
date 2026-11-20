@@ -210,15 +210,19 @@ your facing number is higher. Most cards owned when the board is full wins.
   cards (bond 5 and bond 10 with each mentor, and Vegito for all five at 10).
   You start with ten. Numbers come from rarity; 10 shows as A.
 - **Daily pack.** Finish every habit that counts today for a pack of five.
-- **Challengers.** Ten, one a day in a random order, plus each mentor once
-  you reach bond 9 with them. Each match they bring their signature card and
-  nine random others, harder ones rarer cards. Beat them and you pick one card
-  from their deck, and the next challenger steps up.
+- **Challengers.** Ten, plus each mentor once you reach bond 9 with them.
+  One is picked each day and stays all day. Each match they bring their
+  signature card and nine random others, harder ones rarer cards. Your first
+  win of the day lets you pick one card from their deck.
 - **Losing.** They take your best card from the hand you played, or you can
   redo one of today's habits: it's unticked, and if you check it off again
-  before midnight you keep the card. A challenger who took a card can't take
-  another that day, and always plays the cards they hold, so you can win them
-  back. You never drop below five cards.
+  before midnight you keep the card. Once a card has changed hands either way,
+  rematches that day are just for fun. A challenger always plays the cards
+  they've taken from you, so you can win them back. You never drop below five
+  cards.
+- **Whose card is whose.** Yours are blue with a YOU tag in the corner, theirs
+  red with their initials; a captured card changes colour and tag. The ? button
+  explains every rule.
 - **Card pictures.** Cards show their initials until a picture is added: put
   `<card id>.png` in `app/src/main/assets/cards/art/` (ids are in
   `cards.json`).

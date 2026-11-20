@@ -176,7 +176,15 @@ fun CardBattleScreen(onBack: () -> Unit) {
                 }
             },
         )
-        is CardScreen.Won -> WonScreen(s.setup, onPick = { card ->
+        is CardScreen.Won -> if (!s.setup.stakes) {
+            FriendlyWin(s.setup, onDone = {
+                scope.launch {
+                    repo.recordWin(s.setup, null)
+                    refresh++
+                    screen = CardScreen.Hub
+                }
+            })
+        } else WonScreen(s.setup, onPick = { card ->
             scope.launch {
                 repo.recordWin(s.setup, card)
                 refresh++
@@ -228,7 +236,9 @@ private fun CardHub(
     val todayComplete by produceState(false, refresh) { value = repo.todayComplete() }
     val pending by repo.pending.collectAsStateWithLifecycle(initialValue = emptyList())
     val book by produceState<com.saiyanhabits.domain.CardBook?>(null) { value = repo.book() }
-    SubScreen(title = "Card Battle", onBack = onBack) {
+    var showHelp by remember { mutableStateOf(false) }
+    if (showHelp) CardHelpDialog(onDismiss = { showHelp = false })
+    SubScreen(title = "Card Battle", onBack = onBack, actions = { Box(Modifier.padding(end = 8.dp)) { HelpButton(onClick = { showHelp = true }) } }) {
         val t = today
         if (t != null) {
             DbzPanel(style = PanelStyle.Orange, modifier = Modifier.fillMaxWidth()) {
@@ -253,11 +263,12 @@ private fun CardHub(
                         color = SaiyanColors.TextDim,
                     )
                     Text(
-                        if (t.stakes) {
-                            "Win: pick any card from their deck, including ${book?.card(t.challenger.signature)?.name ?: "their signature card"}. " +
-                                "Lose: they take your best card, or you redo one of today's habits to keep it."
-                        } else {
-                            "They already took a card today. Rematch freely: you can still win a card, and you can't lose another."
+                        when {
+                            t.stakes ->
+                                "Win: pick any card from their deck, including ${book?.card(t.challenger.signature)?.name ?: "their signature card"}. " +
+                                    "Lose: they take your best card, or you redo one of today's habits to keep it."
+                            t.wonToday -> "You beat them today and took a card. They're your challenger until tomorrow: rematches are just for fun."
+                            else -> "They took a card from you today. Rematches are just for fun until tomorrow, when you can win it back."
                         },
                         style = MaterialTheme.typography.bodySmall,
                         color = SaiyanColors.TextHigh,
@@ -402,6 +413,8 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
     var says by remember { mutableStateOf(setup.challenger.intro.random(random)) }
     var flashed by remember { mutableStateOf<Set<Int>>(emptySet()) }
     var confirmQuit by remember { mutableStateOf(false) }
+    var showHelp by remember { mutableStateOf(false) }
+    if (showHelp) CardHelpDialog(onDismiss = { showHelp = false })
     val boardArt by produceState<ImageBitmap?>(null) { value = app.art.image(ArtKey.CARD_BOARD) }
     BackHandler { confirmQuit = true }
 
@@ -455,7 +468,43 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
             .background(Brush.verticalGradient(listOf(Color(0xFF3F7FD9), Color(0xFF9E9AB8), Color(0xFF6E6A86)))),
     ) {
         Column(Modifier.fillMaxSize()) {
-            // The board picture, with everything positioned on it.
+            // The challenger, what they say, the score and help: above the board, never over it.
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .statusBarsPadding()
+                    .padding(horizontal = 8.dp, vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                ChallengerBadge(setup.challenger, 44)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    says,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color.White,
+                    maxLines = 3,
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(Color(0xDD0B1F5C), RoundedCornerShape(10.dp))
+                        .border(1.dp, SaiyanColors.FrameGold, RoundedCornerShape(10.dp))
+                        .padding(6.dp),
+                )
+                Spacer(Modifier.width(6.dp))
+                HelpButton(onClick = { showHelp = true })
+            }
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                ScoreChip("YOU", state.score(Side.PLAYER), Color(0xFF1E5BD8))
+                Spacer(Modifier.width(6.dp))
+                ScoreChip(initials(setup.challenger.name), state.score(Side.OPPONENT), Color(0xFFC62828))
+                Spacer(Modifier.weight(1f))
+                Text(rulesLabel(rules), style = MaterialTheme.typography.labelSmall, color = Color.White)
+            }
+            // The board picture, with the cards on its squares.
             BoxWithConstraints(
                 Modifier
                     .fillMaxWidth()
@@ -508,46 +557,11 @@ private fun MatchScreen(setup: CardMatchSetup, playerHand: List<CardDef>, onQuit
                                     placed.owner,
                                     selected = i in flashed,
                                     showName = false,
+                                    tag = if (placed.owner == Side.PLAYER) "YOU" else initials(setup.challenger.name),
                                     modifier = Modifier.fillMaxSize(),
                                 )
                             }
                         }
-                    }
-                    // The challenger and what they say, over the left of the picture.
-                    Column(
-                        Modifier
-                            .statusBarsPadding()
-                            .padding(start = 6.dp, top = with(density) { (190 * scale).toDp() })
-                            .width(with(density) { (300 * scale).toDp() }),
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        ChallengerBadge(setup.challenger, 48)
-                        Text(
-                            says,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = Color.White,
-                            modifier = Modifier
-                                .background(Color(0xDD0B1F5C), RoundedCornerShape(10.dp))
-                                .border(1.dp, SaiyanColors.FrameGold, RoundedCornerShape(10.dp))
-                                .padding(6.dp),
-                        )
-                    }
-                    // Rules and the score, over the right.
-                    Column(
-                        Modifier
-                            .align(Alignment.TopEnd)
-                            .statusBarsPadding()
-                            .padding(end = 6.dp, top = with(density) { (190 * scale).toDp() })
-                            .background(Color(0xDD0B1F5C), RoundedCornerShape(10.dp))
-                            .border(1.dp, SaiyanColors.FrameGold, RoundedCornerShape(10.dp))
-                            .padding(6.dp),
-                        horizontalAlignment = Alignment.End,
-                    ) {
-                        Text("Rules", style = MaterialTheme.typography.labelLarge, color = SaiyanColors.Gold)
-                        rulesLabel(rules).split(" · ").forEach { Text(it, style = MaterialTheme.typography.labelSmall, color = Color.White) }
-                        Spacer(Modifier.height(4.dp))
-                        Text("You ${state.score(Side.PLAYER)}", style = MaterialTheme.typography.titleSmall, color = Color(0xFF64B5F6))
-                        Text("${setup.challenger.name.split(" ").first()} ${state.score(Side.OPPONENT)}", style = MaterialTheme.typography.titleSmall, color = Color(0xFFEF5350))
                     }
                     banner?.let {
                         OutlinedText(
@@ -755,5 +769,85 @@ fun CardBattleHomeCard(onClick: () -> Unit) {
                 )
             }
         }
+    }
+}
+
+
+private fun initials(name: String): String =
+    name.split(" ", ".").filter { it.isNotBlank() && it[0].isLetter() }.take(2).joinToString("") { it.take(1).uppercase() }
+
+@Composable
+private fun ScoreChip(label: String, score: Int, color: Color) {
+    Row(
+        Modifier
+            .background(color, RoundedCornerShape(50))
+            .border(1.dp, Color.White, RoundedCornerShape(50))
+            .padding(horizontal = 10.dp, vertical = 2.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(label, style = MaterialTheme.typography.labelMedium, color = Color.White)
+        Spacer(Modifier.width(6.dp))
+        Text("$score", style = MaterialTheme.typography.titleSmall, color = Color.White)
+    }
+}
+
+@Composable
+private fun HelpButton(onClick: () -> Unit) {
+    Box(
+        Modifier
+            .size(36.dp)
+            .background(Color(0xFF1565C0), CircleShape)
+            .border(2.dp, Color.White, CircleShape)
+            .clickable(onClickLabel = "How to play", onClick = onClick),
+        contentAlignment = Alignment.Center,
+    ) { Text("?", style = MaterialTheme.typography.titleMedium, color = Color.White) }
+}
+
+/** How card battles work. */
+@Composable
+fun CardHelpDialog(onDismiss: () -> Unit) {
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = { TextButton(onClick = onDismiss) { Text("Got it") } },
+        title = { Text("How to play") },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                HelpPara("The match", "You and the challenger take turns placing one of your five cards on an empty square. Most cards owned when the board is full wins (cards left in your hand count too).")
+                HelpPara("Whose card is whose", "Your cards are blue with a YOU tag in the corner. The challenger's are red with their initials. When a card is captured, its colour and tag change to its new owner. The chips at the top keep the score.")
+                HelpPara("Capturing", "Each card has four numbers, one per side (A is 10). Place a card next to an opponent's card: if your number on the touching side is higher than theirs, their card becomes yours.")
+                HelpPara("Elemental", "Some squares are charged with an element (Ki, Strength, Spirit or Tech). A card of the same element gets +1 on every side there; any other card gets -1. The card's element is the letter in its top corner.")
+                HelpPara("Same", "If two or more of your card's touching numbers are exactly equal to the numbers they touch, all those opponent cards are captured.")
+                HelpPara("Plus", "If two or more touching pairs add up to the same total (your side + their side), all those opponent cards are captured.")
+                HelpPara("Combo", "Cards captured by Same or Plus then capture their own weaker neighbours, which can chain across the board.")
+                HelpPara("Open", "Both hands are face up, so you can plan around the challenger's cards.")
+                HelpPara("Which rules", "Easy challengers play Open and Elemental. Medium add Same and Combo. Hard and very hard add Plus.")
+                HelpPara("Winning and losing", "One challenger a day, all day. Your first win against them earns one card from their deck, including their signature card. If they win, they take your best card from the hand you played, unless you redo one of today's habits and check it off again before midnight. Once a card has changed hands either way, rematches that day are just for fun.")
+                HelpPara("Getting cards back", "A challenger always plays the cards they've taken from you. Beat them and you can pick yours back.")
+                HelpPara("Getting new cards", "Finish every habit that counts today for a pack of five. Bond cards unlock at bond 5 and 10 with each mentor, and mentors become challengers at bond 9.")
+            }
+        },
+    )
+}
+
+@Composable
+private fun HelpPara(title: String, body: String) {
+    Column {
+        Text(title, style = MaterialTheme.typography.titleSmall, color = SaiyanColors.Gold)
+        Text(body, style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
+
+/** A rematch won after a card already changed hands today: nothing to pick. */
+@Composable
+private fun FriendlyWin(setup: CardMatchSetup, onDone: () -> Unit) {
+    SubScreen(title = "You win!", onBack = onDone) {
+        Text("\u201C${setup.challenger.win.first()}\u201D", style = MaterialTheme.typography.bodyLarge, color = Color.White)
+        Text(
+            "A card already changed hands with ${setup.challenger.name} today, so this one was for fun. Tomorrow brings a new challenger, with cards on the line again.",
+            style = MaterialTheme.typography.bodyMedium,
+            color = SaiyanColors.TextDim,
+        )
+        DbzPrimaryButton(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Back") }
     }
 }

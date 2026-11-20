@@ -85,7 +85,15 @@ private fun cardArt(id: String): ImageBitmap? {
  * the four numbers on its edges, and the name along the bottom.
  */
 @Composable
-fun CardFace(card: CardDef, owner: Side?, modifier: Modifier = Modifier, selected: Boolean = false, showName: Boolean = true) {
+fun CardFace(
+    card: CardDef,
+    owner: Side?,
+    modifier: Modifier = Modifier,
+    selected: Boolean = false,
+    showName: Boolean = true,
+    /** On the board: a corner tag naming the owner ("YOU", or the challenger's initials), and the owner's colour over the picture. */
+    tag: String? = null,
+) {
     val frame = when (owner) {
         Side.PLAYER -> Color(0xFF1E5BD8)
         Side.OPPONENT -> Color(0xFFC62828)
@@ -96,7 +104,19 @@ fun CardFace(card: CardDef, owner: Side?, modifier: Modifier = Modifier, selecte
         modifier
             .clip(shape)
             .background(Brush.verticalGradient(listOf(frame.copy(alpha = 0.95f), Color(0xFF0B1230))))
-            .border(if (selected) 3.dp else 2.dp, if (selected) Color(0xFFFFEB3B) else card.rarity.color, shape),
+            .border(
+                when {
+                    selected -> 3.dp
+                    tag != null -> 4.dp
+                    else -> 2.dp
+                },
+                when {
+                    selected -> Color(0xFFFFEB3B)
+                    tag != null -> frame
+                    else -> card.rarity.color
+                },
+                shape,
+            ),
     ) {
         val size = with(LocalDensity.current) { minOf(maxWidth, maxHeight).toPx() }
         val numberSize = (size / 7.5f / LocalDensity.current.density).coerceIn(9f, 26f).sp
@@ -116,6 +136,19 @@ fun CardFace(card: CardDef, owner: Side?, modifier: Modifier = Modifier, selecte
                     style = TextStyle(fontSize = (numberSize.value * 1.9f).sp, fontWeight = FontWeight.Black, color = Color.White.copy(alpha = 0.85f)),
                     modifier = Modifier.align(Alignment.Center),
                 )
+            }
+        }
+        if (tag != null) {
+            // Whose card it is, at a glance: a wash of the owner's colour, and a tag in the corner.
+            Box(Modifier.fillMaxSize().background(frame.copy(alpha = 0.28f)))
+            Box(
+                Modifier
+                    .align(Alignment.TopStart)
+                    .background(frame, RoundedCornerShape(bottomEnd = 8.dp))
+                    .border(1.dp, Color.White, RoundedCornerShape(bottomEnd = 8.dp))
+                    .padding(horizontal = 4.dp, vertical = 1.dp),
+            ) {
+                Text(tag, style = TextStyle(fontSize = (numberSize.value * 0.55f).coerceAtLeast(8f).sp, fontWeight = FontWeight.Black, color = Color.White))
             }
         }
         val style = TextStyle(fontSize = numberSize, fontWeight = FontWeight.Black)

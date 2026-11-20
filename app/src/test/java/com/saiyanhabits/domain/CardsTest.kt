@@ -199,14 +199,15 @@ class CardsTest {
     }
 
     @Test
-    fun `beaten challengers are replaced and mentors join at bond 9`() {
+    fun `one challenger all day, a new one most days, and mentors join at bond 9`() {
         val book = shipped()
         val pool = CardCollecting.pool(book, emptyMap())
         assertEquals(10, pool.size)
-        val first = CardCollecting.challengerOfTheDay(pool, 500, emptySet())!!
-        val next = CardCollecting.challengerOfTheDay(pool, 500, setOf(first.id))!!
-        assertTrue(first.id != next.id)
-        assertEquals(first, CardCollecting.challengerOfTheDay(pool, 500, emptySet()))
+        val today = CardCollecting.challengerOfTheDay(pool, 500)!!
+        assertEquals(today, CardCollecting.challengerOfTheDay(pool, 500))
+        assertEquals(today, CardCollecting.challengerOfTheDay(pool.reversed(), 500))
+        val week = (500L until 530L).map { CardCollecting.challengerOfTheDay(pool, it)!!.id }.toSet()
+        assertTrue("only ${week.size} different challengers in 30 days", week.size >= 6)
         val withGoku = CardCollecting.pool(book, mapOf(Mentor.GOKU to 9))
         assertTrue(withGoku.any { it.mentor == Mentor.GOKU })
     }
@@ -223,9 +224,10 @@ class CardsTest {
     }
 
     @Test
-    fun `no card is lost twice to the same challenger in a day, or below five`() {
-        assertTrue(CardCollecting.stakesOn(emptySet(), "tien"))
-        assertFalse(CardCollecting.stakesOn(setOf("tien"), "tien"))
+    fun `once a card changes hands, rematches that day are friendly, and nobody drops below five`() {
+        assertTrue(CardCollecting.stakesToday(lostCardToday = false, wonCardToday = false))
+        assertFalse(CardCollecting.stakesToday(lostCardToday = true, wonCardToday = false))
+        assertFalse(CardCollecting.stakesToday(lostCardToday = false, wonCardToday = true))
         assertTrue(CardCollecting.loses(6, true))
         assertFalse(CardCollecting.loses(5, true))
         assertFalse(CardCollecting.loses(20, false))

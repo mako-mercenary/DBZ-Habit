@@ -20,8 +20,12 @@ import kotlin.random.Random
 /** Today's challenger, and what's at stake against them. */
 data class ChallengerToday(
     val challenger: Challenger,
-    /** False if they already took a card from you today: no card can change hands against them again until tomorrow, except by your winning. */
+    /** True if a card can change hands in the next match: false once one has today, either way. */
     val stakes: Boolean,
+    /** True if you already won a card from them today. */
+    val wonToday: Boolean,
+    /** True if they already took (or are holding on to) a card from you today. */
+    val lostToday: Boolean,
     /** Your cards they hold. */
     val holding: List<CardDef>,
 )
@@ -163,20 +167,22 @@ class CardRepository(
         return cards
     }
 
-    /** Today's challenger: the first in today's order you haven't beaten today. */
+    /** Today's challenger: the same one all day. */
     suspend fun challengerToday(): ChallengerToday? {
         val book = book()
         val day = today().toEpochDay()
         val matches = dao.matchesOn(day)
-        val beaten = matches.filter { it.result == WIN }.map { it.challengerId }.toSet()
         val pool = CardCollecting.pool(book, db.bondDao().getBondXp().toLevels())
-        val challenger = CardCollecting.challengerOfTheDay(pool, day, beaten) ?: return null
-        return ChallengerToday(challenger, stakes(challenger.id, matches), heldCards(challenger.id))
+        val challenger = CardCollecting.challengerOfTheDay(pool, day) ?: return null
+        val won = matches.any { it.challengerId == challenger.id && it.result == WIN && it.cardWon != null }
+        val lost = matches.any { it.challengerId == challenger.id && it.result == LOSE && it.stakes }
+        return ChallengerToday(challenger, CardCollecting.stakesToday(lost, won), won, lost, heldCards(challenger.id))
     }
 
-    private suspend fun stakes(challengerId: String, matches: List<CardMatchEntity>): Boolean {
-        val lostTo = matches.filter { it.result == LOSE && it.stakes }.map { it.challengerId }.toSet()
-        return CardCollecting.stakesOn(lostTo, challengerId)
+    private fun stakes(challengerId: String, matches: List<CardMatchEntity>): Boolean {
+        val won = matches.any { it.challengerId == challengerId && it.result == WIN && it.cardWon != null }
+        val lost = matches.any { it.challengerId == challengerId && it.result == LOSE && it.stakes }
+        return CardCollecting.stakesToday(lost, won)
     }
 
     private suspend fun heldCards(challengerId: String): List<CardDef> {
@@ -193,12 +199,19 @@ class CardRepository(
         return CardMatchSetup(challenger, deck + held, hand, stakes(challenger.id, dao.matchesOn(today().toEpochDay())))
     }
 
-    /** Records a win and gives you [chosen] from their deck; one of yours they held comes back. */
-    suspend fun recordWin(setup: CardMatchSetup, chosen: CardDef) = db.withTransaction {
-        add(chosen.id)
-        val h = dao.held(setup.challenger.id, chosen.id)
-        if (h != null && h.count > 0) dao.saveHeld(h.copy(count = h.count - 1))
-        dao.insertMatch(CardMatchEntity(0, today().toEpochDay(), setup.challenger.id, WIN, true, chosen.id, null, nowMillis()))
+    /**
+     * Records a win. With stakes you get [chosen] from their deck (one of
+     * yours they held comes back); a friendly rematch win records nothing won.
+     */
+    suspend fun recordWin(setup: CardMatchSetup, chosen: CardDef?) = db.withTransaction {
+        if (setup.stakes && chosen != null) {
+            add(chosen.id)
+            val h = dao.held(setup.challenger.id, chosen.id)
+            if (h != null && h.count > 0) dao.saveHeld(h.copy(count = h.count - 1))
+            dao.insertMatch(CardMatchEntity(0, today().toEpochDay(), setup.challenger.id, WIN, true, chosen.id, null, nowMillis()))
+        } else {
+            dao.insertMatch(CardMatchEntity(0, today().toEpochDay(), setup.challenger.id, WIN, false, null, null, nowMillis()))
+        }
     }
 
     suspend fun recordDraw(setup: CardMatchSetup) {

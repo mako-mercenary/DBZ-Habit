@@ -393,11 +393,9 @@ object CardCollecting {
     /** The card a challenger takes when they win: your best one from the hand you played. */
     fun cardTaken(playedHand: List<CardDef>): CardDef = playedHand.maxBy { it.strength }
 
-    /** The day's challenger order: everyone in the pool, shuffled by the day. The first not yet beaten today is up. */
-    fun dailyOrder(pool: List<Challenger>, epochDay: Long): List<Challenger> = pool.shuffled(Random(epochDay * 7919 + 17))
-
-    fun challengerOfTheDay(pool: List<Challenger>, epochDay: Long, beatenToday: Set<String>): Challenger? =
-        dailyOrder(pool, epochDay).firstOrNull { it.id !in beatenToday } ?: dailyOrder(pool, epochDay).firstOrNull()
+    /** The day's challenger: one from the pool, picked by the day, the same all day whatever happens. */
+    fun challengerOfTheDay(pool: List<Challenger>, epochDay: Long): Challenger? =
+        pool.sortedBy { it.id }.shuffled(Random(epochDay * 7919 + 17)).firstOrNull()
 
     /** Who you can be challenged by: the ten, plus mentors at bond 9 or more. */
     fun pool(book: CardBook, bondLevels: Map<Mentor, Int>): List<Challenger> =
@@ -412,8 +410,12 @@ object CardCollecting {
             else (bondLevels[Mentor.entries.firstOrNull { it.name == card.mentor }] ?: 0) >= card.bondLevel
         }
 
-    /** True if you can stake a card against [challengerId] today: not if they already took one from you today. */
-    fun stakesOn(lostToToday: Set<String>, challengerId: String): Boolean = challengerId !in lostToToday
+    /**
+     * True if a card can change hands in the next match today: not once
+     * they've taken one from you today, nor once you've won one from them.
+     * Rematches after that are friendly.
+     */
+    fun stakesToday(lostCardToday: Boolean, wonCardToday: Boolean): Boolean = !lostCardToday && !wonCardToday
 
     /** True if losing would take a card: only with stakes, and only if you'd still have enough to play. */
     fun loses(collectionSize: Int, stakes: Boolean): Boolean = stakes && collectionSize > MIN_COLLECTION
