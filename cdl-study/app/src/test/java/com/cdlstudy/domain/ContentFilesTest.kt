@@ -127,6 +127,46 @@ class ContentFilesTest {
     }
 
     @Test
+    fun `a lesson holds no empty block and no runaway paragraph`() {
+        val problems = mutableListOf<String>()
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            section.subsections.forEach { sub ->
+                sub.reading.forEach { block ->
+                    when (block) {
+                        is ReadBlock.Heading ->
+                            if (block.text.isBlank()) problems.add("${sub.id}: empty heading")
+                        is ReadBlock.Paragraph -> {
+                            if (block.text.isBlank()) problems.add("${sub.id}: empty paragraph")
+                            // A wall of text is what the manual's two columns already are.
+                            if (block.text.length > 600) problems.add("${sub.id}: a paragraph over 600 characters")
+                        }
+                        is ReadBlock.Note ->
+                            if (block.text.isBlank()) problems.add("${sub.id}: empty note")
+                        is ReadBlock.Bullets ->
+                            if (block.items.any { it.isBlank() }) problems.add("${sub.id}: empty bullet")
+                        is ReadBlock.Numbers ->
+                            if (block.rows.any { it.value.isBlank() || it.what.isBlank() }) {
+                                problems.add("${sub.id}: empty number row")
+                            }
+                    }
+                }
+            }
+        }
+        assertTrue(problems.joinToString("; "), problems.isEmpty())
+    }
+
+    @Test
+    fun `a subsection with facts can be read in the app, lesson or fact list`() {
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            section.subsections.filter { it.canRecall }.forEach { sub ->
+                assertTrue("${sub.id} has facts but nothing to read", sub.lesson.isNotEmpty())
+            }
+        }
+    }
+
+    @Test
     fun `the subsections of a section are in manual order`() {
         files().forEach { file ->
             val section = ContentReader.readSection(file.readText())

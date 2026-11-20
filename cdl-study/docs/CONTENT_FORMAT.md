@@ -73,6 +73,42 @@ An `id` that ends in `.0`, such as `1.0`, is the section opening: the pages
 before the first numbered heading. `tools/manual_map.py` makes it when those
 pages exist, because they are reading too.
 
+## A lesson
+
+`reading` holds the lesson you read in the app. It is written by hand, in plain
+words, and it is **never the manual's own text**: the handbook is AAMVA material
+that only state licence agencies may reproduce, and this repository is public.
+Keep every number, limit and procedure exactly as the manual gives it.
+
+```json
+"reading": [
+  { "h": "What it does" },
+  { "p": "The governor decides when the compressor pumps air." },
+  { "ul": ["Cut-out stops the pumping.", "Cut-in starts it again."] },
+  { "numbers": [
+    { "value": "125 psi", "what": "cut-out" },
+    { "value": "100 psi", "what": "cut-in" }
+  ] },
+  { "note": "Learn both numbers." }
+]
+```
+
+| Block | What it is for |
+|---|---|
+| `h` | A heading inside the lesson. |
+| `p` | One short paragraph. Keep it under 600 characters; the build fails above that. |
+| `ul` | A list, one point per line. |
+| `numbers` | The numbers to memorize, each with what it is for. Drawn as a table. |
+| `note` | A rule, a limit or a warning, drawn in a coloured card. |
+
+An unknown block is left out rather than shown wrongly.
+
+Write short. Short blocks and short sentences read well on a phone, and they
+suit the focus text, which bolds the first letters of each word.
+
+Leave `reading` out and the app reads the fact list instead, and says so. That is
+a usable lesson, not a broken screen, so facts first and prose later is fine.
+
 ## A fact
 
 ```json

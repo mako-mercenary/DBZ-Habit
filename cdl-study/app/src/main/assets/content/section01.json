@@ -211,6 +211,56 @@
           "answer": 3,
           "why": "A CDL is needed at 16 or more people including the driver, so 15 is below the limit."
         }
+      ],
+      "reading": [
+        {
+          "p": "Federal law makes every state set minimum standards for licensing commercial drivers. This manual gives you the testing information. It does not give you every federal and state rule you must meet before you drive a commercial motor vehicle."
+        },
+        {
+          "h": "When you must have a CDL"
+        },
+        {
+          "ul": [
+            "Any single vehicle with a gross vehicle weight rating of 26,001 pounds or more.",
+            "A combination vehicle with a gross combination weight rating of 26,001 pounds or more, when the vehicle being towed is rated over 10,000 pounds.",
+            "A vehicle designed to carry 16 or more passengers, including the driver.",
+            "Any size vehicle that needs hazardous material placards, or that carries a material listed as a select agent or toxin."
+          ]
+        },
+        {
+          "h": "The three classes"
+        },
+        {
+          "numbers": [
+            {
+              "value": "Class A",
+              "what": "a combination: GCWR 26,001 lb or more, towed unit over 10,000 lb"
+            },
+            {
+              "value": "Class B",
+              "what": "a single vehicle of 26,001 lb GVWR or more, or one towing 10,000 lb or less"
+            },
+            {
+              "value": "Class C",
+              "what": "under 26,001 lb, but carrying 16+ people or placarded hazmat"
+            }
+          ]
+        },
+        {
+          "p": "A Class A licence also lets you drive Class B and Class C vehicles. A Class B licence also lets you drive Class C vehicles. Driving a Class A vehicle takes a good deal more skill and knowledge than the other two."
+        },
+        {
+          "h": "Endorsements and the learner's permit"
+        },
+        {
+          "p": "There are six kinds of endorsement: double and triple trailers (T), tank vehicle (N), passenger (P), hazardous materials (H), school bus (S), and the tank and hazmat combination (X)."
+        },
+        {
+          "note": "Only three endorsements can go on a commercial learner's permit: passenger (P), school bus (S) and tank vehicle (N)."
+        },
+        {
+          "p": "A tank endorsement is needed for a tank with an individual rated capacity over 119 gallons and a total rated capacity of 1,000 gallons or more. A hazmat endorsement needs entry level driver training and a Transportation Security Administration background check."
+        }
       ]
     },
     {
@@ -321,6 +371,32 @@
           ],
           "answer": 1,
           "why": "Air over hydraulic brakes count as air brakes, so the air brakes test is required."
+        }
+      ],
+      "reading": [
+        {
+          "p": "How many knowledge tests you take depends on the licence class and the endorsements you want."
+        },
+        {
+          "h": "The tests"
+        },
+        {
+          "ul": [
+            "General knowledge: every applicant takes it.",
+            "Air brakes: you must take it if your vehicle has air brakes. Air over hydraulic brakes count as air brakes.",
+            "Combination vehicles: required to drive combination vehicles, so every Class A driver takes it.",
+            "Passenger transport: every bus driver applicant.",
+            "Hazardous materials, tank vehicle, doubles and triples, and school bus: each for its own endorsement."
+          ]
+        },
+        {
+          "h": "What a Class A applicant studies"
+        },
+        {
+          "p": "Figure 1.2 in the manual lists the sections for each licence class. For Class A it names sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
+        },
+        {
+          "note": "That is the plan this app follows. Sections 4, 7, 8, 9 and 10 are endorsement material."
         }
       ]
     },
@@ -465,6 +541,37 @@
           "answer": 1,
           "why": "The test needs you to point to or touch the item, name it, and explain the check."
         }
+      ],
+      "reading": [
+        {
+          "p": "Once you pass the knowledge tests you need, and you finish entry level driver training, you can take the skills test when you are eligible."
+        },
+        {
+          "h": "Three parts, in order"
+        },
+        {
+          "ul": [
+            "Vehicle inspection.",
+            "Basic vehicle control.",
+            "On-road driving."
+          ]
+        },
+        {
+          "note": "You take the parts in that order, and you must pass each one before you move to the next."
+        },
+        {
+          "h": "What each part asks of you"
+        },
+        {
+          "ul": [
+            "Vehicle inspection: you show that you know whether the vehicle is safe to drive. You must point to or touch each item, name it, and tell the examiner what you would inspect and why.",
+            "Basic vehicle control: you move the vehicle forward, backward and turn it inside a marked area. The examiner tells you how each exercise is done.",
+            "On-road driving: you drive in traffic, which can include turns, intersections, railroad crossings, curves, grades, and single or multi-lane roads. The examiner tells you where to drive."
+          ]
+        },
+        {
+          "note": "Take the test in the type of vehicle you want to be licensed for. A vehicle with marked or labelled components cannot be used."
+        }
       ]
     },
     {
@@ -557,6 +664,27 @@
           "answer": 2,
           "why": "Under 21, the passenger, school bus and hazmat endorsements are not available."
         }
+      ],
+      "reading": [
+        {
+          "p": "Utah adds its own requirements on top of the federal ones."
+        },
+        {
+          "h": "What you must provide"
+        },
+        {
+          "ul": [
+            "Your driver licence.",
+            "At least one year of experience as a licensed driver.",
+            "Your current Medical Examiner's Certificate, form MCSA-5876, also called the medical certificate or DOT card."
+          ]
+        },
+        {
+          "note": "You must surrender your driver licence, from Utah or another state, to the Division when you get your Utah commercial driver instruction permit. The permit then lets you drive your own vehicle."
+        },
+        {
+          "p": "An applicant under 21 years of age cannot get the passenger, school bus or hazardous materials endorsements."
+        }
       ]
     },
     {
@@ -598,7 +726,18 @@
           "factId": "1.2.2f"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "You must tell the state what kind of commercial driving you do. That is called self-certification, and it decides whether you must file a medical certificate."
+        },
+        {
+          "p": "If you apply for a CDL permit, renew, upgrade, add an endorsement or transfer from another state, you must give the state your type of commercial motor vehicle operation. Drivers in some types of commerce must also file a current medical examiner's certificate, and any medical variance papers such as a vision, skills performance or diabetic waiver."
+        },
+        {
+          "note": "If you must hold a certified medical status and you let your certificate lapse, you become not-certified. You can lose your CDL, or it can be denied for not downgrading in time."
+        }
+      ]
     },
     {
       "id": "1.2.1",
@@ -689,6 +828,30 @@
           "why": "Cargo on a trip that began in another state makes it interstate commerce, even inside one state.",
           "factId": "1.2.1.3",
           "page": "1-6"
+        }
+      ],
+      "reading": [
+        {
+          "p": "The first question is simple: do you cross a state line, in any sense?"
+        },
+        {
+          "h": "Interstate commerce"
+        },
+        {
+          "ul": [
+            "You drive from one state to another state or a foreign country.",
+            "You drive between two places inside one state, but part of the trip crosses into another state or a foreign country.",
+            "You drive between two places inside one state, but the cargo or the passengers are part of a trip that began, or will end, in another state or a foreign country."
+          ]
+        },
+        {
+          "h": "Intrastate commerce"
+        },
+        {
+          "p": "You drive inside one state and none of the three descriptions above fits."
+        },
+        {
+          "note": "If you do both, you must choose interstate commerce."
         }
       ]
     },
@@ -799,7 +962,43 @@
           "page": "1-6"
         }
       ],
-      "titleFixed": true
+      "titleFixed": true,
+      "reading": [
+        {
+          "p": "Once you know interstate or intrastate, you choose excepted or non-excepted. That gives you one of four types of commerce to certify to."
+        },
+        {
+          "h": "Interstate"
+        },
+        {
+          "ul": [
+            "Excepted interstate: you drive in interstate commerce only for certain listed activities, and you do not need a federal medical examiner's certificate.",
+            "Non-excepted interstate: anything else. You must give a current medical examiner's certificate to the state."
+          ]
+        },
+        {
+          "note": "Most CDL holders who drive in interstate commerce are non-excepted interstate drivers. If you do both, choose non-excepted."
+        },
+        {
+          "h": "Some of the excepted activities"
+        },
+        {
+          "ul": [
+            "Carrying school children and school staff between home and school.",
+            "Work as a federal, state or local government employee.",
+            "Carrying human remains, or sick or injured people.",
+            "Fire truck or rescue vehicle driving in an emergency.",
+            "Custom harvesting, beekeeping, or a farmer's own non-combination vehicle within 150 air miles of the farm.",
+            "Carrying migrant workers, or passengers privately for non-business purposes."
+          ]
+        },
+        {
+          "h": "Intrastate, in Utah"
+        },
+        {
+          "p": "You are an excepted intrastate driver in Utah if you are under 21 and may drive a commercial motor vehicle only inside the state. You must still meet the federal or state medical requirements, file the certificate, and carry a K restriction. On your 21st birthday you must certify under a different category."
+        }
+      ]
     },
     {
       "id": "1.2.4",
@@ -962,6 +1161,53 @@
           "factId": "1.2.4.6",
           "page": "1-8"
         }
+      ],
+      "reading": [
+        {
+          "p": "A restriction is a letter or a number on the licence that limits what you may drive. These are the ones a Utah CDL can carry."
+        },
+        {
+          "h": "The ones that matter most to you"
+        },
+        {
+          "numbers": [
+            {
+              "value": "L",
+              "what": "no commercial vehicle with air brakes"
+            },
+            {
+              "value": "Z",
+              "what": "no commercial vehicle with air brakes that are not fully equipped"
+            },
+            {
+              "value": "E",
+              "what": "no commercial motor vehicle with a manual transmission"
+            },
+            {
+              "value": "O",
+              "what": "no commercial motor vehicle with a tractor-trailer"
+            },
+            {
+              "value": "K",
+              "what": "commercial driving inside the state only"
+            }
+          ]
+        },
+        {
+          "note": "To remove an E, L or O restriction you must get a qualifying permit and pass the skills tests. Utah does not permit modified skills tests."
+        },
+        {
+          "h": "Others you should recognise"
+        },
+        {
+          "ul": [
+            "A: no restrictions. B: corrective lenses. C: mechanical aid. D: prosthetic aid.",
+            "F: outside rearview mirrors. G: daylight hours only. J: any other restriction the Division thinks necessary.",
+            "M and N: no passengers in a Class A bus, or in a Class A or B bus.",
+            "P: a school bus or passenger endorsement holder may carry no passengers.",
+            "V: the Federal Motor Carrier Safety Administration has given the driver a medical variance."
+          ]
+        }
       ]
     },
     {
@@ -1016,7 +1262,57 @@
           "factId": "1.2.5.3"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "These are the endorsements a Utah CDL can carry."
+        },
+        {
+          "numbers": [
+            {
+              "value": "M",
+              "what": "motorcycle"
+            },
+            {
+              "value": "N",
+              "what": "tank vehicles"
+            },
+            {
+              "value": "P",
+              "what": "passengers"
+            },
+            {
+              "value": "T",
+              "what": "double or triple trailers"
+            },
+            {
+              "value": "X",
+              "what": "hazardous materials and tank combination"
+            },
+            {
+              "value": "Z",
+              "what": "taxi"
+            },
+            {
+              "value": "H",
+              "what": "hazardous materials"
+            },
+            {
+              "value": "S",
+              "what": "school bus"
+            }
+          ]
+        },
+        {
+          "h": "Two that need more than one test"
+        },
+        {
+          "ul": [
+            "H: you must pass a Transportation Security Administration background check every five years, and a written exam at first issue and at renewal.",
+            "S: you must pass a written exam when you renew the licence."
+          ]
+        }
+      ]
     },
     {
       "id": "1.2.6",
@@ -1083,7 +1379,25 @@
           "factId": "1.2.6.2"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Get your medical examiner's certificate from a registered physician on the National Registry. The list is at the Federal Motor Carrier Safety Administration website."
+        },
+        {
+          "ul": [
+            "File a valid certificate and the self-certification form for an original, a renewal, an upgrade or a state to state transfer.",
+            "File a new certificate when the one before it expires.",
+            "Your provider must put the certificate on the National Registry before you apply, because it is added to your record electronically."
+          ]
+        },
+        {
+          "note": "If you cannot qualify for a certificate, a Utah K restriction may let you drive a commercial motor vehicle inside Utah only."
+        },
+        {
+          "p": "If you drive a commercial vehicle over 10,001 pounds that needs no CDL, you must carry a medical certificate, but you do not have to file it with the Driver License Division."
+        }
+      ]
     },
     {
       "id": "1.2.7",
@@ -1169,6 +1483,36 @@
           "factId": "1.2.7.2",
           "page": "1-9"
         }
+      ],
+      "reading": [
+        {
+          "p": "A motor vehicle record, or MVR, can be obtained at any Driver License office. A CDL holder and an employer can get a CDL MVR, which holds more."
+        },
+        {
+          "numbers": [
+            {
+              "value": "3 years",
+              "what": "how far back moving violations show"
+            },
+            {
+              "value": "10 years",
+              "what": "how long a drug or alcohol offence stays"
+            },
+            {
+              "value": "55 years",
+              "what": "how long the items on a CDL MVR stay, at least"
+            }
+          ]
+        },
+        {
+          "p": "A CDL MVR must include your driver history with convictions, pleas held in abeyance, disqualifications and other licensing actions, in any type of vehicle; your self-certification status; and your medical certification record."
+        },
+        {
+          "note": "A citation entered as a plea in abeyance still appears on your record, and once it is there it cannot be removed."
+        },
+        {
+          "p": "A CDL MVR is released only with a notarized release from the driver, or to the driver in person."
+        }
       ]
     },
     {
@@ -1204,7 +1548,12 @@
           "factId": "1.3.1.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "You may not drive a commercial motor vehicle while you are disqualified, for any reason at all."
+        }
+      ]
     },
     {
       "id": "1.3.2",
@@ -1366,7 +1715,56 @@
           "page": "1-10"
         }
       ],
-      "titleFixed": true
+      "titleFixed": true,
+      "reading": [
+        {
+          "p": "These are the heaviest penalties in the manual, and the numbers are the answer to most of the questions about them."
+        },
+        {
+          "numbers": [
+            {
+              "value": "0.04%",
+              "what": "the blood alcohol level at which driving a CMV is illegal"
+            },
+            {
+              "value": "1 year",
+              "what": "at least, for a first offence"
+            },
+            {
+              "value": "3 years",
+              "what": "at least, if the offence happens while placarded for hazmat"
+            },
+            {
+              "value": "Life",
+              "what": "a second offence"
+            },
+            {
+              "value": "24 hours",
+              "what": "out of service for any detectable alcohol under 0.04%"
+            }
+          ]
+        },
+        {
+          "h": "What counts as a first offence"
+        },
+        {
+          "ul": [
+            "A blood alcohol concentration of 0.04% or higher in a CMV.",
+            "Driving a CMV under the influence of alcohol, or of a controlled substance.",
+            "Refusing a blood alcohol test.",
+            "Leaving the scene of an accident involving a CMV.",
+            "Committing a felony with a CMV.",
+            "Driving a CMV while the CDL is suspended.",
+            "Causing a death through negligent driving of a CMV."
+          ]
+        },
+        {
+          "note": "By driving a CMV you are deemed to have consented to alcohol testing. Using a CMV to commit a felony involving controlled substances costs you the licence for life, first offence or not."
+        },
+        {
+          "p": "In Utah it is also unlawful to use or possess powdered alcohol for human consumption."
+        }
+      ]
     },
     {
       "id": "1.3.3",
@@ -1449,6 +1847,41 @@
           "factId": "1.3.3.4",
           "page": "1-10"
         }
+      ],
+      "reading": [
+        {
+          "p": "A serious traffic violation is not a disqualification on its own. It is the second and third one inside three years that costs you the licence."
+        },
+        {
+          "numbers": [
+            {
+              "value": "15 mph",
+              "what": "over the posted limit is excessive speeding"
+            },
+            {
+              "value": "60 days",
+              "what": "at least, for two serious violations in three years"
+            },
+            {
+              "value": "120 days",
+              "what": "at least, for three or more in three years"
+            }
+          ]
+        },
+        {
+          "h": "What is a serious traffic violation"
+        },
+        {
+          "ul": [
+            "Excessive speeding, 15 mph or more over the limit.",
+            "Reckless driving.",
+            "Improper or erratic lane changes.",
+            "Following a vehicle too closely.",
+            "A traffic offence in a CMV connected with a fatal accident.",
+            "Driving a CMV without a CDL, or without it in your possession.",
+            "Driving a CMV without the proper class of licence or endorsement."
+          ]
+        }
       ]
     },
     {
@@ -1521,6 +1954,30 @@
           "why": "A first out-of-service violation is at least 90 days.",
           "factId": "1.3.4.1",
           "page": "1-10"
+        }
+      ],
+      "reading": [
+        {
+          "p": "An out-of-service order takes the vehicle or the driver off the road. Breaking one is treated severely."
+        },
+        {
+          "numbers": [
+            {
+              "value": "90 days",
+              "what": "at least, first violation"
+            },
+            {
+              "value": "1 year",
+              "what": "at least, two violations in ten years"
+            },
+            {
+              "value": "3 years",
+              "what": "at least, three or more violations in ten years"
+            }
+          ]
+        },
+        {
+          "note": "Note the window: ten years, not three."
         }
       ]
     },
@@ -1621,6 +2078,40 @@
           "factId": "1.3.5.4",
           "page": "1-11"
         }
+      ],
+      "reading": [
+        {
+          "p": "A railroad crossing violation has its own set of penalties, counted over three years."
+        },
+        {
+          "numbers": [
+            {
+              "value": "60 days",
+              "what": "at least, first violation"
+            },
+            {
+              "value": "120 days",
+              "what": "at least, second violation within three years"
+            },
+            {
+              "value": "1 year",
+              "what": "at least, third violation within three years"
+            }
+          ]
+        },
+        {
+          "h": "The six offences"
+        },
+        {
+          "ul": [
+            "A driver not always required to stop fails to stop before the crossing when the tracks are not clear.",
+            "A driver not always required to stop fails to slow down and check that the tracks are clear of a train.",
+            "A driver always required to stop fails to stop before driving onto the crossing.",
+            "Any driver fails to have enough space to drive all the way through the crossing without stopping.",
+            "Any driver fails to obey a traffic control device, or an enforcement official, at the crossing.",
+            "Any driver fails to get across because of too little undercarriage clearance."
+          ]
+        }
       ]
     },
     {
@@ -1658,7 +2149,28 @@
           "factId": "1.3.6.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A hazardous materials endorsement needs your fingerprints and a background check."
+        },
+        {
+          "h": "You are denied, or you lose it, if you"
+        },
+        {
+          "ul": [
+            "Are not a lawful permanent resident of the United States.",
+            "Renounce your United States citizenship.",
+            "Are wanted or under indictment for certain felonies.",
+            "Have a conviction in a military or civilian court for certain felonies.",
+            "Have been found to lack mental capacity, or were involuntarily committed to a mental health facility.",
+            "Are judged a security threat by the Transportation Security Administration."
+          ]
+        },
+        {
+          "p": "Background check procedures differ by jurisdiction. Your licensing agency tells you what to do."
+        }
+      ]
     },
     {
       "id": "1.3.7",
@@ -1740,6 +2252,21 @@
           "why": "A personal-vehicle alcohol, drug or felony revocation costs the CDL for one year.",
           "factId": "1.3.7.2",
           "page": "1-11"
+        }
+      ],
+      "reading": [
+        {
+          "p": "What you do in your own car reaches your CDL. The Motor Carrier Safety Improvement Act of 1999 requires it."
+        },
+        {
+          "ul": [
+            "Lose your right to drive your personal vehicle for breaking traffic laws, other than parking, and you lose your CDL privileges too.",
+            "Lose it for alcohol, a controlled substance or a felony, and you lose your CDL for one year.",
+            "A second such violation, in your own vehicle or a CMV, costs you the CDL for life."
+          ]
+        },
+        {
+          "note": "You cannot get a hardship licence to drive a commercial motor vehicle while your personal licence is revoked, cancelled or suspended."
         }
       ]
     },
@@ -1951,6 +2478,55 @@
           "factId": "1.4.5",
           "page": "1-11"
         }
+      ],
+      "reading": [
+        {
+          "p": "These rules apply to drivers of commercial motor vehicles in every state. The deadlines are the part the test asks about."
+        },
+        {
+          "numbers": [
+            {
+              "value": "30 days",
+              "what": "to tell your employer of a conviction for any traffic violation except parking"
+            },
+            {
+              "value": "30 days",
+              "what": "to tell your licensing agency of a conviction in another jurisdiction"
+            },
+            {
+              "value": "2 business days",
+              "what": "to tell your employer that your licence is suspended, revoked or cancelled, or that you are disqualified"
+            },
+            {
+              "value": "10 years",
+              "what": "of driving jobs to report when you apply for a commercial driving job"
+            },
+            {
+              "value": "24 hours",
+              "what": "to surrender a hazmat endorsement after a disqualifying conviction or indictment"
+            },
+            {
+              "value": "$5,000",
+              "what": "the fine a court may set, with jail, for holding more than one licence or driving without a CDL"
+            }
+          ]
+        },
+        {
+          "h": "The other rules"
+        },
+        {
+          "ul": [
+            "You cannot hold more than one licence. Your home state keeps its licence and the others are returned.",
+            "Your employer may not let you drive if you hold more than one licence, or your CDL is suspended or revoked. The employer faces the same $5,000 fine or jail.",
+            "You may not hold a mobile telephone to make a voice call, and you may not dial one by pressing more than a single button, while driving.",
+            "You may not send or read text messages while driving.",
+            "You must wear the safety belt at all times while driving a commercial motor vehicle.",
+            "All states share one computer system for CDL records, and they check that no driver holds more than one CDL."
+          ]
+        },
+        {
+          "note": "Without a safety belt you are four times more likely to be killed if you are thrown from the vehicle."
+        }
       ]
     },
     {
@@ -2004,7 +2580,26 @@
           "factId": "1.5.2"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "If you drive a CDL required vehicle in interstate commerce, the vehicle must, with few exceptions, be registered under two programmes: the International Registration Plan and the International Fuel Tax Agreement."
+        },
+        {
+          "p": "They share vehicle licence fees and motor fuel taxes fairly between the places you drive through, across the 48 adjoining United States and 10 Canadian provinces."
+        },
+        {
+          "h": "What a registrant must do"
+        },
+        {
+          "ul": [
+            "Apply for registration with the base jurisdiction.",
+            "Provide the proper documents and pay the fees.",
+            "Display the registration credentials properly.",
+            "Keep accurate distance records, and make them available for review."
+          ]
+        }
+      ]
     },
     {
       "id": "1.6",

@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.AssistChip
@@ -30,6 +32,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.cdlstudy.domain.Fact
+import com.cdlstudy.domain.FocusText
 import com.cdlstudy.domain.Mark
 
 @Composable
@@ -40,10 +43,11 @@ fun StudyScreen(
     onManual: () -> Unit,
 ) {
     val repo = repository()
+    val context = androidx.compose.ui.platform.LocalContext.current
     val vm: StudyViewModel = viewModel(
         key = "study-$subsectionId",
         factory = viewModelFactory {
-            initializer { StudyViewModel(repo, subsectionId) }
+            initializer { StudyViewModel(repo, ReadPrefs(context), subsectionId) }
         },
     )
     val sub = vm.subsection
@@ -71,75 +75,67 @@ fun StudyScreen(
 private fun ColumnScope.ReadStep(vm: StudyViewModel, onManual: () -> Unit, onDone: () -> Unit) {
     val sub = vm.subsection!!
     val store = manualStore()
-    val span = sub.pdfPages
+    val lesson = sub.lesson
+    val style = vm.readStyle
 
-    Text("Step 1 of 4: read", style = MaterialTheme.typography.labelLarge)
+    ReaderControls(vm)
 
-    if (span == null) {
+    if (vm.showManualPages) {
+        val span = sub.pdfPages
+        when {
+            span == null -> WarningCard("This subsection has no manual pages in the content file.")
+            !store.isImported -> {
+                Card {
+                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text("No manual imported", style = MaterialTheme.typography.titleMedium)
+                        Text(
+                            "The pages of the book come from your own copy. Import it, or read " +
+                                "the lesson in the app instead.",
+                            style = MaterialTheme.typography.bodyMedium,
+                        )
+                    }
+                }
+                Button(onClick = onManual) { Text("Import the manual") }
+            }
+            else -> ManualPages(
+                span = span,
+                zoom = vm.zoom,
+                modifier = Modifier.fillMaxWidth().weight(1f),
+            )
+        }
+    } else if (lesson.isEmpty()) {
         WarningCard(
-            "This subsection has no manual pages in the content file, so it cannot " +
-                "be shown here. Run tools/manual_map.py to map the pages."
+            "No lesson and no facts are written for ${sub.id} yet. " +
+                "Switch on the manual pages to read it in your own copy of the book."
         )
-        OutlinedButton(onClick = onDone) { Text("Back") }
-        return
-    }
-
-    if (!store.isImported) {
-        Card {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Import your manual first", style = MaterialTheme.typography.titleMedium)
-                Text(
-                    "The app carries no manual text. Import your own copy of the handbook " +
-                        "once, and every subsection opens at the right pages.",
-                    style = MaterialTheme.typography.bodyMedium,
-                )
-                sub.manualPages?.let {
+    } else {
+        LazyColumn(modifier = Modifier.fillMaxWidth().weight(1f)) {
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text(
-                        "Until then, read pages $it in your manual.",
-                        style = MaterialTheme.typography.bodyMedium,
+                        "${sub.id} ${sub.title}",
+                        style = MaterialTheme.typography.headlineSmall,
                     )
+                    Text(
+                        buildString {
+                            append("${com.cdlstudy.domain.Reading.minutes(lesson)} min read")
+                            sub.manualPages?.let { append(" | manual $it") }
+                            if (!sub.hasLesson) append(" | fact list")
+                        },
+                        style = MaterialTheme.typography.labelMedium,
+                    )
+                    Spacer(Modifier.height(8.dp))
                 }
             }
+            item { Lesson(lesson, style) }
+            item { Spacer(Modifier.height(24.dp)) }
         }
-        Button(onClick = onManual) { Text("Import the manual") }
-        if (sub.canRecall) {
-            OutlinedButton(onClick = vm::startBlurt) {
-                Text("I read it elsewhere. Start my recall")
-            }
-        }
-        return
     }
-
-    // The pages, with the controls under them, so the reading gets the screen.
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        Text(
-            buildString {
-                append("${sub.id} ${sub.title}")
-                sub.manualPages?.let { append(" | manual $it") }
-            },
-            style = MaterialTheme.typography.labelMedium,
-            modifier = Modifier.weight(1f),
-        )
-        FilterChip(
-            selected = vm.zoom > 1f,
-            onClick = { vm.chooseZoom(if (vm.zoom > 1f) 1f else 2f) },
-            label = { Text(if (vm.zoom > 1f) "2x" else "Fit") },
-        )
-    }
-
-    ManualPages(
-        span = span,
-        zoom = vm.zoom,
-        modifier = Modifier.fillMaxWidth().weight(1f),
-    )
 
     if (sub.canRecall) {
         Text(
             "${sub.facts.size} facts, ${sub.criticalFacts.size} of them must-memorize. " +
-                "The next screen hides the manual.",
+                "The next screen hides the lesson.",
             style = MaterialTheme.typography.labelSmall,
         )
         Button(onClick = vm::startBlurt, modifier = Modifier.fillMaxWidth()) {
@@ -156,6 +152,56 @@ private fun ColumnScope.ReadStep(vm: StudyViewModel, onManual: () -> Unit, onDon
             enabled = !vm.readMarked,
             modifier = Modifier.fillMaxWidth(),
         ) { Text(if (vm.readMarked) "Marked as read" else "Mark this as read") }
+    }
+}
+
+/** Focus text, size, spacing, and the switch to the pages of the book. */
+@Composable
+private fun ReaderControls(vm: StudyViewModel) {
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+        ) {
+            FilterChip(
+                selected = vm.readStyle.focus,
+                onClick = { vm.toggleFocus() },
+                label = { Text("Focus") },
+            )
+            if (vm.readStyle.focus) {
+                FocusText.Strength.entries.forEach { option ->
+                    FilterChip(
+                        selected = vm.readStyle.strength == option,
+                        onClick = { vm.chooseStrength(option) },
+                        label = { Text(option.label) },
+                    )
+                }
+            }
+        }
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+        ) {
+            OutlinedButton(onClick = { vm.smaller() }) { Text("A-") }
+            OutlinedButton(onClick = { vm.bigger() }) { Text("A+") }
+            FilterChip(
+                selected = vm.readStyle.wideSpacing,
+                onClick = { vm.toggleSpacing() },
+                label = { Text("Airy") },
+            )
+            FilterChip(
+                selected = vm.showManualPages,
+                onClick = { vm.toggleManualPages() },
+                label = { Text("Book pages") },
+            )
+            if (vm.showManualPages) {
+                FilterChip(
+                    selected = vm.zoom > 1f,
+                    onClick = { vm.chooseZoom(if (vm.zoom > 1f) 1f else 2f) },
+                    label = { Text(if (vm.zoom > 1f) "2x" else "Fit") },
+                )
+            }
+        }
     }
 }
 

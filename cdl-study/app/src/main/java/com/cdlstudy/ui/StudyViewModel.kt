@@ -24,6 +24,7 @@ enum class Stage { READ, BLURT, GRADE, RESULT }
  */
 class StudyViewModel(
     private val repo: StudyRepository,
+    private val prefs: ReadPrefs,
     val subsectionId: String,
 ) : ViewModel() {
 
@@ -46,11 +47,49 @@ class StudyViewModel(
     var zoom by mutableStateOf(1f)
         private set
 
+    /** How the lesson is drawn. Kept between sessions. */
+    var readStyle by mutableStateOf(prefs.style())
+        private set
+
+    /** The pages of your own book instead of the lesson in the app. */
+    var showManualPages by mutableStateOf(prefs.showManualPages)
+        private set
+
     var readMarked by mutableStateOf(false)
         private set
 
     fun chooseZoom(value: Float) {
         zoom = value
+    }
+
+    fun toggleFocus() {
+        prefs.focus = !readStyle.focus
+        readStyle = prefs.style()
+    }
+
+    fun chooseStrength(strength: com.cdlstudy.domain.FocusText.Strength) {
+        prefs.strength = strength
+        readStyle = prefs.style()
+    }
+
+    fun bigger() {
+        prefs.scale = readStyle.scale + ReadPrefs.SCALE_STEP
+        readStyle = prefs.style()
+    }
+
+    fun smaller() {
+        prefs.scale = readStyle.scale - ReadPrefs.SCALE_STEP
+        readStyle = prefs.style()
+    }
+
+    fun toggleSpacing() {
+        prefs.wideSpacing = !readStyle.wideSpacing
+        readStyle = prefs.style()
+    }
+
+    fun toggleManualPages() {
+        prefs.showManualPages = !showManualPages
+        showManualPages = prefs.showManualPages
     }
 
     /**

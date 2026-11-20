@@ -70,8 +70,10 @@ data class Subsection(
     val title: String,
     /** The page labels the manual prints, such as "5-3 to 5-4". */
     val manualPages: String? = null,
-    /** The pages of the manual PDF to show on the Read step. */
+    /** The pages of the manual PDF, for checking a correction against the book. */
     val pdfPages: PageSpan? = null,
+    /** The lesson you read in the app: a rewrite in plain words, not the manual's text. */
+    val reading: List<ReadBlock> = emptyList(),
     val facts: List<Fact> = emptyList(),
     val cards: List<Card> = emptyList(),
     val exam: List<ExamItem> = emptyList(),
@@ -81,6 +83,15 @@ data class Subsection(
 
     /** True once the fact checklist is written, so a recall can be graded. */
     val canRecall: Boolean get() = facts.isNotEmpty()
+
+    /** True once the lesson is written as prose. */
+    val hasLesson: Boolean get() = reading.isNotEmpty()
+
+    /**
+     * What to read in the app: the lesson, or the fact list while the lesson is
+     * not written. Empty only when neither exists.
+     */
+    val lesson: List<ReadBlock> get() = if (hasLesson) reading else Reading.fromFacts(this)
 
     /** True once the pages are mapped, so the manual can be read in the app. */
     val canRead: Boolean get() = pdfPages != null
@@ -102,6 +113,7 @@ data class Section(
 ) {
     val factCount: Int get() = subsections.sumOf { it.facts.size }
     val readyToRecall: Int get() = subsections.count { it.canRecall }
+    val withLesson: Int get() = subsections.count { it.hasLesson }
     val cardCount: Int get() = subsections.sumOf { it.cards.size }
     val examCount: Int get() = exam.size + subsections.sumOf { it.exam.size }
 }
@@ -166,6 +178,7 @@ object ContentReader {
             title = map.str("title"),
             manualPages = map.strOrNull("manualPages"),
             pdfPages = PageSpan.parse(map.strOrNull("pdfPages")),
+            reading = Reading.parse(map.list("reading")),
             facts = map.list("facts").mapIndexed { i, f -> readFact(f, "$id.${i + 1}") },
             cards = map.list("cards").map { readCard(it) },
             exam = map.list("exam").mapIndexed { i, e -> readExamItem(e, "$id.e${i + 1}") },

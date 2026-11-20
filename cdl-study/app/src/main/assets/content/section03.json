@@ -102,6 +102,36 @@
           "factId": "3.0.1",
           "page": "3-1"
         }
+      ],
+      "reading": [
+        {
+          "p": "You must understand the basic cargo safety rules to get a CDL, whether or not you load the vehicle yourself."
+        },
+        {
+          "h": "Why it matters"
+        },
+        {
+          "ul": [
+            "Loose cargo that falls off causes traffic trouble, and it can hurt or kill somebody.",
+            "Loose cargo inside can hurt or kill you in a quick stop or a crash.",
+            "An overload can damage your vehicle.",
+            "How the vehicle is loaded changes the steering, and a bad load is harder to control."
+          ]
+        },
+        {
+          "h": "Four things that are yours, whoever loaded it"
+        },
+        {
+          "ul": [
+            "Inspecting your cargo.",
+            "Recognising an overload and badly balanced weight.",
+            "Knowing the cargo is secured and does not block your view ahead or to the sides.",
+            "Knowing the cargo does not block your way to the emergency equipment."
+          ]
+        },
+        {
+          "note": "To carry hazardous material that needs placards you also need a hazardous materials endorsement."
+        }
       ]
     },
     {
@@ -191,6 +221,33 @@
           "factId": "3.1.2",
           "page": "3-1"
         }
+      ],
+      "reading": [
+        {
+          "p": "Check the load as part of your vehicle inspection: not overloaded, balanced, and secured. Then check it again on the road."
+        },
+        {
+          "numbers": [
+            {
+              "value": "50 miles",
+              "what": "the first re-check, after you start the trip"
+            },
+            {
+              "value": "3 hours or 150 miles",
+              "what": "then re-check again, whichever comes first"
+            },
+            {
+              "value": "Every break",
+              "what": "re-check after each break you take while driving"
+            }
+          ]
+        },
+        {
+          "note": "Re-check as often as you need to keep the load secure. Those numbers are the minimum, not the target."
+        },
+        {
+          "p": "Rules for weight, securing cargo, covering loads and where a large vehicle may drive change from place to place. Know the rules where you will drive."
+        }
       ]
     },
     {
@@ -200,7 +257,12 @@
       "manualPages": "3-1",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "You are responsible for not being overloaded. To do that, you need the weight words the rules use."
+        }
+      ]
     },
     {
       "id": "3.2.1",
@@ -298,6 +360,37 @@
           "factId": "3.2.1.4",
           "page": "3-1"
         }
+      ],
+      "reading": [
+        {
+          "h": "The definitions"
+        },
+        {
+          "numbers": [
+            {
+              "value": "GVWR",
+              "what": "gross vehicle weight rating: the maker's loaded weight for a single vehicle"
+            },
+            {
+              "value": "GCWR",
+              "what": "gross combination weight rating: the maker's value for the power unit, or the combined ratings or weights of power unit and towed units, whichever is highest"
+            },
+            {
+              "value": "Axle weight",
+              "what": "the weight one axle, or one set of axles, puts on the ground"
+            },
+            {
+              "value": "Tire load",
+              "what": "the most weight a tyre can carry safely at a stated pressure"
+            }
+          ]
+        },
+        {
+          "note": "The tire load rating is written on the side of each tyre."
+        },
+        {
+          "p": "A suspension system has a weight capacity rating from its maker. A coupling device is rated for the most weight it can pull or carry."
+        }
       ]
     },
     {
@@ -382,6 +475,31 @@
           "factId": "3.2.2.4",
           "page": "3-2"
         }
+      ],
+      "reading": [
+        {
+          "p": "States set maximums for gross vehicle weight ratings, gross combination weight ratings and axle weights. You must stay inside them."
+        },
+        {
+          "h": "The bridge formula"
+        },
+        {
+          "p": "Maximum axle weights often come from a bridge formula, which allows less weight on axles that sit closer together. That keeps bridges and roadways from being overloaded."
+        },
+        {
+          "h": "What an overload does"
+        },
+        {
+          "ul": [
+            "It hurts steering, braking and speed control.",
+            "It makes you crawl up a grade, and worse, it can let you gain too much speed going down.",
+            "It lengthens your stopping distance.",
+            "It can make the brakes fail, because they are forced to work too hard."
+          ]
+        },
+        {
+          "note": "In bad weather or in the mountains, even a legal maximum weight may not be safe. Think about it before you drive."
+        }
       ]
     },
     {
@@ -439,6 +557,17 @@
           "why": "Keep the centre of gravity low: the heaviest parts go under the lightest parts.",
           "factId": "3.2.3.2",
           "page": "3-2"
+        }
+      ],
+      "reading": [
+        {
+          "p": "The height of the centre of gravity decides how the vehicle handles. Pile the cargo high, or put the heavy cargo on top, and the centre of gravity goes up with it."
+        },
+        {
+          "note": "A high centre of gravity makes a rollover more likely, and the danger is worst in a curve or when you swerve to miss something."
+        },
+        {
+          "p": "Spread the load as low as you can, and put the heaviest parts under the lightest parts."
         }
       ]
     },
@@ -522,6 +651,19 @@
           "factId": "3.2.4.2",
           "page": "3-2"
         }
+      ],
+      "reading": [
+        {
+          "p": "Where the weight sits matters as much as how much there is."
+        },
+        {
+          "ul": [
+            "Too much weight on the steering axle: hard steering, and damage to the axle and tyres.",
+            "Too little weight on the front axle, from weight pushed too far back: the steering axle gets too light to steer safely.",
+            "Too little weight on the driving axles: poor traction, and the drive wheels spin easily. In bad weather the truck may not keep going.",
+            "Weight too high: a greater chance of rollover, and on a flat bed a greater chance the load shifts sideways or falls off."
+          ]
+        }
       ]
     },
     {
@@ -531,7 +673,12 @@
       "manualPages": "3-2",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Cargo must be held in place. There are three ways to do it, and they work together: blocking, bracing and tie-downs."
+        }
+      ]
     },
     {
       "id": "3.3.1",
@@ -574,7 +721,15 @@
           "factId": "3.3.1.2"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Blocking goes at the front, the back and the sides of the cargo, to stop it sliding. It is shaped to fit the cargo snugly and fixed to the cargo deck.",
+            "Bracing runs from the upper part of the cargo down to the floor or the walls of the cargo compartment, to stop the cargo moving."
+          ]
+        }
+      ]
     },
     {
       "id": "3.3.2",
@@ -700,6 +855,39 @@
           "factId": "3.3.2.1",
           "page": "3-2"
         }
+      ],
+      "reading": [
+        {
+          "p": "On a flatbed, or a trailer with no sides, the cargo must be tied down so it cannot shift or fall off. In a closed van, tie-downs still matter, because shifting cargo changes how the vehicle handles."
+        },
+        {
+          "h": "The numbers"
+        },
+        {
+          "numbers": [
+            {
+              "value": "One half",
+              "what": "the least total working load limit of the securement system, as a share of the cargo weight"
+            },
+            {
+              "value": "1 per 10 feet",
+              "what": "the least number of tie-downs, by cargo length"
+            },
+            {
+              "value": "2",
+              "what": "the least number of tie-downs for any load, however small"
+            }
+          ]
+        },
+        {
+          "p": "A 20-foot load needs two tie-downs. A 30-foot load needs three."
+        },
+        {
+          "note": "Use the proper equipment: ropes, straps, chains, and tensioning devices such as winches, ratchets and clinching components. Attach them to the vehicle correctly, by hooks, bolts, rails or rings."
+        },
+        {
+          "p": "Heavy pieces of metal have special securing requirements. Find out what they are before you carry such a load."
+        }
       ]
     },
     {
@@ -727,7 +915,15 @@
           "factId": "3.3.3.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A front-end header board, which drivers call a headache rack, stands between you and the cargo. It protects you in a crash or an emergency stop."
+        },
+        {
+          "note": "Make sure the front-end structure is in good condition, and that it will block your cargo from moving forward."
+        }
+      ]
     },
     {
       "id": "3.3.4",
@@ -795,6 +991,23 @@
           "factId": "3.3.4.1",
           "page": "3-3"
         }
+      ],
+      "reading": [
+        {
+          "h": "Two reasons to cover cargo"
+        },
+        {
+          "ul": [
+            "To protect people from spilled cargo.",
+            "To protect the cargo from the weather."
+          ]
+        },
+        {
+          "p": "Spill protection is a safety requirement in many states. Know the law where you drive."
+        },
+        {
+          "note": "Look at the cargo covers in your mirrors from time to time. A flapping cover can tear loose, uncover the cargo, and block your view or another driver's."
+        }
       ]
     },
     {
@@ -847,6 +1060,14 @@
           "factId": "3.3.5.1",
           "page": "3-3"
         }
+      ],
+      "reading": [
+        {
+          "p": "A containerized load is usually freight that travels part of the way by rail or ship, with a truck at one or both ends. Some containers lock into a special frame. Others sit on a flatbed trailer, and they must be secured like any other cargo."
+        },
+        {
+          "note": "You cannot inspect a sealed load. You must still check that you are inside the gross weight and the axle weight limits."
+        }
       ]
     },
     {
@@ -856,7 +1077,12 @@
       "manualPages": "3-3",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Some loads behave badly even when they are secured properly. These four need extra care."
+        }
+      ]
     },
     {
       "id": "3.4.1",
@@ -883,7 +1109,15 @@
           "factId": "3.4.1.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A dry bulk tank carries a high centre of gravity, and the load can shift inside."
+        },
+        {
+          "note": "Be slow and careful through curves and sharp turns."
+        }
+      ]
     },
     {
       "id": "3.4.2",
@@ -910,7 +1144,15 @@
           "factId": "3.4.2.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Hanging meat, which is suspended beef, pork or lamb in a refrigerated truck, is a very unstable load with a high centre of gravity."
+        },
+        {
+          "note": "Take particular care on sharp curves such as on-ramps and off-ramps. Go slowly."
+        }
+      ]
     },
     {
       "id": "3.4.3",
@@ -967,6 +1209,17 @@
           "factId": "3.4.3.1",
           "page": "3-3"
         }
+      ],
+      "reading": [
+        {
+          "p": "Livestock move around in the trailer, and that makes handling unsafe."
+        },
+        {
+          "ul": [
+            "With less than a full load, use false bulkheads to keep the animals bunched together.",
+            "Even bunched, take special care: animals lean on a curve, which shifts the centre of gravity and makes a rollover more likely."
+          ]
+        }
       ]
     },
     {
@@ -1004,7 +1257,21 @@
           "factId": "3.4.4.1"
         }
       ],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A load that is over-length, over-width or overweight needs a special transit permit, and driving is usually limited to certain times."
+        },
+        {
+          "ul": [
+            "Special equipment may be needed, such as wide load signs, flashing lights and flags.",
+            "The load may need a police escort, or pilot vehicles with warning signs or flashing lights."
+          ]
+        },
+        {
+          "note": "These loads need special driving care."
+        }
+      ]
     }
   ],
   "exam": []

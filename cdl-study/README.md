@@ -13,7 +13,7 @@ No accounts, no backend, no ads, no network. Your study record stays on the phon
 
 | Job | Where it is done |
 |---|---|
-| Read the subsection | In the app, on the pages of the manual you import. |
+| Read the subsection | In the app, as a lesson written in plain words. |
 | Closed-book recall | In the app. No fact is shown until you send your recall. |
 | Correction | In the app. You mark each manual fact against your own words. |
 | Flashcards | The app makes them and exports TSV. **Anki** keeps the schedule. |
@@ -46,14 +46,40 @@ for Class A. The app will not load a section outside this plan.
 the Utah Driver License Division testing page, read in November 2026. The
 Division is the authority, not this app.
 
-## Your copy of the manual
+## Reading in the app
 
-The app ships **no manual text and no manual pages**. The handbook is AAMVA
-material, and the copyright page gives permission to reproduce it to state
-driver licence agencies only. So:
+You read a lesson, not the handbook. Each lesson is short blocks: headings,
+short paragraphs, lists, a table of the numbers to memorize, and a note for a
+rule you must not miss. That reads far better on a phone than two columns of
+small print.
 
-- you download the handbook from the Utah Driver License Division (dld.utah.gov);
-- you import that PDF once, on the "Your manual" screen;
+**Focus text** puts the first letters of each word in bold, so the eye lands on
+the start of the word. It is the bionic-style effect, and the reader can switch
+it off or set it to light, medium or strong. Research is mixed on whether it
+makes anybody read faster, so it is a preference, not a default truth.
+
+A number is never half bold. "26,001" and "0.04" go bold whole, because in this
+material the number is the fact. A bold run never ends on a hyphen either, so
+"out-of-service" bolds "out-of".
+
+The reader also has text size, airy line spacing, and a **Book pages** switch,
+which shows the real pages of your own manual instead of the lesson. Use it to
+check a correction against the book.
+
+## Where the lesson text comes from
+
+The lessons are **written by hand for this app**, in plain words, with every
+number, limit and procedure kept exactly as the manual gives it.
+
+They are not the handbook's text, and the app ships none of it. The handbook is
+AAMVA material, and its copyright page gives permission to reproduce it to state
+driver licence agencies only. This repository is public, so the manual's wording
+belongs in neither the repo nor the APK.
+
+For the real pages, you import your own copy:
+
+- download the handbook from the Utah Driver License Division (dld.utah.gov);
+- import that PDF once, on the "Your manual" screen;
 - the app keeps it in its own private folder and shows you the right pages;
 - nothing is uploaded, and nothing is shared.
 
@@ -62,9 +88,8 @@ PDF. It copies no manual text into the repository.
 
 ## The study loop
 
-1. **Read.** The app opens your manual at that subsection's pages, inside the
-   app. Pinch is not needed: a button holds the page at the screen width or at
-   2x. Then you press "Close the book", and the pages are gone.
+1. **Read.** The app shows the lesson for that subsection, with focus text and
+   your own text size. Then you press "Close the book", and the lesson is gone.
 2. **Recall.** You write everything you remember. The screen holds no facts and
    no manual.
 3. **Correct.** The app shows every fact for that subsection. You mark each one
@@ -117,21 +142,22 @@ have written are kept, and only the titles and page numbers are refreshed.
 **Fact checklists are written by hand**, section by section, because the facts
 must be accurate and in plain words.
 
-| Section | Subsections | With a checklist | Facts | Cards | Questions |
-|---|---|---|---|---|---|
-| 1 Introduction | 23 | 20 | 101 | 77 | 21 |
-| 2 Driving Safely | 116 | 0 | 0 | 0 | 0 |
-| 3 Transporting Cargo Safely | 18 | 15 | 44 | 31 | 13 |
-| 5 Air Brakes | 31 | 30 | 105 | 80 | 27 |
-| 6 Combination Vehicles | 32 | 0 | 0 | 0 | 0 |
-| 11 Vehicle Inspection | 14 | 0 | 0 | 0 | 0 |
-| 12 Basic Vehicle Control | 2 | 0 | 0 | 0 | 0 |
-| 13 On-Road Driving | 15 | 0 | 0 | 0 | 0 |
-| **Total** | **251** | **65** | **250** | **188** | **61** |
+| Section | Subsections | Lessons | With a checklist | Facts | Cards | Questions |
+|---|---|---|---|---|---|---|
+| 1 Introduction | 23 | 20 | 20 | 101 | 77 | 21 |
+| 2 Driving Safely | 116 | 0 | 0 | 0 | 0 | 0 |
+| 3 Transporting Cargo Safely | 18 | 18 | 15 | 44 | 31 | 13 |
+| 5 Air Brakes | 31 | 30 | 30 | 105 | 80 | 27 |
+| 6 Combination Vehicles | 32 | 0 | 0 | 0 | 0 | 0 |
+| 11 Vehicle Inspection | 14 | 0 | 0 | 0 | 0 | 0 |
+| 12 Basic Vehicle Control | 2 | 0 | 0 | 0 | 0 | 0 |
+| 13 On-Road Driving | 15 | 0 | 0 | 0 | 0 | 0 |
+| **Total** | **251** | **68** | **65** | **250** | **188** | **61** |
 
-A subsection with no checklist can still be read in the app, and it says plainly
-that a recall cannot be graded there yet. A parent heading with no text of its
-own, such as 5.4, needs no checklist.
+That is about 7,500 words of lesson text. A subsection with facts but no lesson
+falls back to reading its fact list, and says so. A subsection with neither
+tells you to switch on the book pages. A parent heading with no text of its own,
+such as 5.4, needs neither.
 
 The Air Brakes exam can run at its full 25 questions now.
 
@@ -166,8 +192,8 @@ With a USB cable and developer mode on:
 
 ## Still to do
 
-- Fact checklists for sections 2, 6, 11, 12 and 13. Section 2 is the large job,
-  at 45 pages and 116 subsections.
+- Lessons and fact checklists for sections 2, 6, 11, 12 and 13. Section 2 is the
+  large job, at 45 pages and 116 subsections.
 - AI grading of a recall, on demand, with your own API key.
 - A daily reminder, and a streak for days with a recall.
 - Export and import of the study record.
