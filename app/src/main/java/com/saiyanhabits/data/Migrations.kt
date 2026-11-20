@@ -221,3 +221,36 @@ val MIGRATION_8_9 = object : Migration(8, 9) {
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_day_routine_items_routineId` ON `day_routine_items` (`routineId`)")
     }
 }
+
+/** Card battles: your collection, held cards, matches, packs, saved cards and one-off grants. */
+val MIGRATION_9_10 = object : Migration(9, 10) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_collection` (`cardId` TEXT NOT NULL, `count` INTEGER NOT NULL, " +
+                "`firstAtMillis` INTEGER NOT NULL, PRIMARY KEY(`cardId`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_held` (`challengerId` TEXT NOT NULL, `cardId` TEXT NOT NULL, " +
+                "`count` INTEGER NOT NULL, PRIMARY KEY(`challengerId`, `cardId`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_matches` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `challengerId` TEXT NOT NULL, `result` TEXT NOT NULL, `stakes` INTEGER NOT NULL, " +
+                "`cardWon` TEXT, `cardLost` TEXT, `createdAtMillis` INTEGER NOT NULL)",
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_card_matches_epochDay` ON `card_matches` (`epochDay`)")
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_packs` (`epochDay` INTEGER NOT NULL, `cards` TEXT NOT NULL, " +
+                "`openedAtMillis` INTEGER NOT NULL, PRIMARY KEY(`epochDay`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_pending` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `challengerId` TEXT NOT NULL, `cardId` TEXT NOT NULL, `habitId` INTEGER NOT NULL, " +
+                "`outcome` TEXT NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `card_grants` (`grantId` TEXT NOT NULL, `atMillis` INTEGER NOT NULL, PRIMARY KEY(`grantId`))",
+        )
+    }
+}
+

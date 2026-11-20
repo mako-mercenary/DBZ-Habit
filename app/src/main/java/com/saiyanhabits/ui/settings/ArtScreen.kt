@@ -104,6 +104,7 @@ fun ArtScreen(overridden: Set<ArtKey>, message: String?, onPick: (ArtKey, Uri) -
             "Bosses" to ArtKey.entries.filter { it.name.startsWith("BOSS_") },
             "Others" to listOf(ArtKey.RIVAL, ArtKey.DRAGON, ArtKey.BACKGROUND_HOME, ArtKey.APP_ICON),
             "Decorations" to listOf(ArtKey.SCOUTER_DEVICE, ArtKey.CLOUD_ORNAMENT, ArtKey.EMBLEM_CAPSULE),
+            "Card battles" to listOf(ArtKey.CARD_BOARD),
             "Hover-bike run" to listOf(ArtKey.BIKE_RIDER, ArtKey.BIKE_SKYLINE) + ArtKey.bikeBuildings + ArtKey.bikeCars +
                 ArtKey.BIKE_PALM + ArtKey.bikePeople + ArtKey.BIKE_SIGN,
         )

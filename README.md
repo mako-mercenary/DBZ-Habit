@@ -19,6 +19,7 @@ Fully offline: no accounts, no backend, no ads, no analytics.
 | 10 | Mini games with the mentors | Done |
 | 11 | Journal with Bulma, daily mentor calls, dialogue-heavy cutscenes | Done |
 | 12 | Routines: day checklists and reusable templates | Done |
+| 13 | Card battles | Done |
 
 ## Build
 
@@ -189,6 +190,38 @@ per unlock, 120 to 400 words each, known speakers).
   can open it again from History.
 
 The "strong week" threshold for the recap headline is in `GameConfig.kt`.
+
+## Card battles
+
+The Card Battle card on the home screen opens the section. It's a 3 x 3 card
+game played on the board picture (art key `card_board`): each card has four
+numbers, one per side, and placing a card next to the opponent's flips it if
+your facing number is higher. Most cards owned when the board is full wins.
+
+- **Rules.** Open (both hands face up) and Elemental for everyone: up to two
+  squares are charged with an element, +1 to a matching card's numbers there,
+  -1 to any other. Medium challengers add Same and Combo; hard ones Plus too.
+  Same: if two or more of your card's sides equal the sides they touch, those
+  cards flip. Plus: if two or more touching pairs add up to the same total.
+  Combo: cards flipped by Same or Plus flip their own weaker neighbours.
+- **Cards.** 161 in all (`app/src/main/assets/cards/cards.json`, built by
+  `tools/build_cards.py`): 135 found in packs and challengers' decks, 15
+  signature cards (one per challenger, only won by beating them), and 11 bond
+  cards (bond 5 and bond 10 with each mentor, and Vegito for all five at 10).
+  You start with ten. Numbers come from rarity; 10 shows as A.
+- **Daily pack.** Finish every habit that counts today for a pack of five.
+- **Challengers.** Ten, one a day in a random order, plus each mentor once
+  you reach bond 9 with them. Each match they bring their signature card and
+  nine random others, harder ones rarer cards. Beat them and you pick one card
+  from their deck, and the next challenger steps up.
+- **Losing.** They take your best card from the hand you played, or you can
+  redo one of today's habits: it's unticked, and if you check it off again
+  before midnight you keep the card. A challenger who took a card can't take
+  another that day, and always plays the cards they hold, so you can win them
+  back. You never drop below five cards.
+- **Card pictures.** Cards show their initials until a picture is added: put
+  `<card id>.png` in `app/src/main/assets/cards/art/` (ids are in
+  `cards.json`).
 
 ## Routines
 

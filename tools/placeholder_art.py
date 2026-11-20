@@ -64,6 +64,7 @@ KEYS = [
     ("emblem_capsule", "A faint emblem in the corner of the healing beans card and of Bulma's cards. Transparent background; shown at low opacity.", 512, 512, "free"),
     ("bike_rider", "The hover-bike run: the rider on the bike, seen from behind, on a transparent background. Drawn over the 3D road, following the steering and tilting into turns; put the bottom of the bike on the bottom edge and keep it centred. The placeholder is a plain stand-in rider.", 768, 768, "free"),
     ("bike_skyline", "The hover-bike run: the city far away, behind the 3D street. A wide strip (4:1) with the horizon on the bottom edge; it is shown about 1.3 screens wide and slides a little as you steer, so keep the middle the busiest part. The sky above it is filled with a gradient matched to its top edge.", 2048, 512, "free"),
+    ("card_board", "Card battles: the whole match screen behind the cards, with the 3 x 3 board in it. The cards are placed over its nine squares at fixed spots (see CARD_BOARD_CELLS in the app), so a new picture needs its squares in the same places.", 1086, 1448, "full"),
     ("app_icon", "The launcher icon's foreground. Android shows the middle 288 x 288 and crops the edges. Swapped by file and rebuild only.", 432, 432, "icon"),
 ]
 

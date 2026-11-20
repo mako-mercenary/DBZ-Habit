@@ -1,0 +1,2054 @@
+{
+ "cards": [
+  {
+   "id": "super_saiyan_goku_namek",
+   "name": "Super Saiyan Goku (Namek)",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "pack",
+   "top": 4,
+   "right": 8,
+   "bottom": 9,
+   "left": 9
+  },
+  {
+   "id": "super_saiyan_2_gohan_cell_games",
+   "name": "Super Saiyan 2 Gohan (Cell Games)",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "pack",
+   "top": 4,
+   "right": 8,
+   "bottom": 8,
+   "left": 7
+  },
+  {
+   "id": "gogeta_super_saiyan",
+   "name": "Gogeta (Super Saiyan)",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "pack",
+   "top": 8,
+   "right": 3,
+   "bottom": 8,
+   "left": 8
+  },
+  {
+   "id": "broly_legendary_super_saiyan",
+   "name": "Broly (Legendary Super Saiyan)",
+   "rarity": "legendary",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 10,
+   "bottom": 6,
+   "left": 9
+  },
+  {
+   "id": "perfect_cell",
+   "name": "Perfect Cell",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "pack",
+   "top": 7,
+   "right": 10,
+   "bottom": 9,
+   "left": 4
+  },
+  {
+   "id": "kid_buu",
+   "name": "Kid Buu",
+   "rarity": "legendary",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 3,
+   "bottom": 8,
+   "left": 10
+  },
+  {
+   "id": "frieza_final_form",
+   "name": "Frieza (Final Form)",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "pack",
+   "top": 8,
+   "right": 3,
+   "bottom": 9,
+   "left": 9
+  },
+  {
+   "id": "shenron",
+   "name": "Shenron",
+   "rarity": "legendary",
+   "element": "P",
+   "source": "pack",
+   "top": 8,
+   "right": 10,
+   "bottom": 8,
+   "left": 4
+  },
+  {
+   "id": "ultimate_gohan",
+   "name": "Ultimate Gohan",
+   "rarity": "epic",
+   "element": "K",
+   "source": "pack",
+   "top": 7,
+   "right": 5,
+   "bottom": 3,
+   "left": 8
+  },
+  {
+   "id": "super_vegeta",
+   "name": "Super Vegeta",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 5,
+   "bottom": 8,
+   "left": 6
+  },
+  {
+   "id": "gotenks_super_saiyan_3",
+   "name": "Gotenks (Super Saiyan 3)",
+   "rarity": "epic",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 6,
+   "bottom": 8,
+   "left": 8
+  },
+  {
+   "id": "super_buu",
+   "name": "Super Buu",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 7,
+   "right": 7,
+   "bottom": 3,
+   "left": 7
+  },
+  {
+   "id": "majin_buu",
+   "name": "Majin Buu",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 2,
+   "bottom": 8,
+   "left": 7
+  },
+  {
+   "id": "cooler_final_form",
+   "name": "Cooler (Final Form)",
+   "rarity": "epic",
+   "element": "K",
+   "source": "pack",
+   "top": 2,
+   "right": 7,
+   "bottom": 8,
+   "left": 5
+  },
+  {
+   "id": "janemba",
+   "name": "Janemba",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 7,
+   "right": 3,
+   "bottom": 9,
+   "left": 6
+  },
+  {
+   "id": "bojack",
+   "name": "Bojack",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 8,
+   "bottom": 4,
+   "left": 3
+  },
+  {
+   "id": "android_17",
+   "name": "Android 17",
+   "rarity": "epic",
+   "element": "T",
+   "source": "pack",
+   "top": 2,
+   "right": 7,
+   "bottom": 7,
+   "left": 7
+  },
+  {
+   "id": "android_16",
+   "name": "Android 16",
+   "rarity": "epic",
+   "element": "T",
+   "source": "pack",
+   "top": 6,
+   "right": 3,
+   "bottom": 8,
+   "left": 5
+  },
+  {
+   "id": "semi_perfect_cell",
+   "name": "Semi-Perfect Cell",
+   "rarity": "epic",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 7,
+   "bottom": 6,
+   "left": 6
+  },
+  {
+   "id": "king_piccolo",
+   "name": "King Piccolo",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 7,
+   "right": 7,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "captain_ginyu",
+   "name": "Captain Ginyu",
+   "rarity": "epic",
+   "element": "T",
+   "source": "pack",
+   "top": 8,
+   "right": 6,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "baby_vegeta",
+   "name": "Baby Vegeta",
+   "rarity": "epic",
+   "element": "T",
+   "source": "pack",
+   "top": 7,
+   "right": 8,
+   "bottom": 5,
+   "left": 2
+  },
+  {
+   "id": "super_17",
+   "name": "Super 17",
+   "rarity": "epic",
+   "element": "T",
+   "source": "pack",
+   "top": 3,
+   "right": 7,
+   "bottom": 6,
+   "left": 8
+  },
+  {
+   "id": "omega_shenron",
+   "name": "Omega Shenron",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 2,
+   "right": 6,
+   "bottom": 6,
+   "left": 8
+  },
+  {
+   "id": "porunga",
+   "name": "Porunga",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 3,
+   "bottom": 7,
+   "left": 7
+  },
+  {
+   "id": "dabura",
+   "name": "Dabura",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 6,
+   "bottom": 8,
+   "left": 6
+  },
+  {
+   "id": "turles",
+   "name": "Turles",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 10,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "lord_slug",
+   "name": "Lord Slug",
+   "rarity": "epic",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 9,
+   "bottom": 7,
+   "left": 6
+  },
+  {
+   "id": "super_saiyan_future_trunks",
+   "name": "Super Saiyan Future Trunks",
+   "rarity": "epic",
+   "element": "K",
+   "source": "pack",
+   "top": 7,
+   "right": 8,
+   "bottom": 4,
+   "left": 5
+  },
+  {
+   "id": "grandpa_gohan",
+   "name": "Grandpa Gohan",
+   "rarity": "epic",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 6,
+   "left": 8
+  },
+  {
+   "id": "goku_saiyan_saga",
+   "name": "Goku (Saiyan Saga)",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 3,
+   "bottom": 7,
+   "left": 5
+  },
+  {
+   "id": "vegeta_saiyan_saga",
+   "name": "Vegeta (Saiyan Saga)",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 5,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "piccolo_saiyan_saga",
+   "name": "Piccolo (Saiyan Saga)",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 6,
+   "bottom": 4,
+   "left": 3
+  },
+  {
+   "id": "kid_gohan_namek",
+   "name": "Kid Gohan (Namek)",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 5,
+   "right": 6,
+   "bottom": 2,
+   "left": 7
+  },
+  {
+   "id": "teen_gohan",
+   "name": "Teen Gohan",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 6,
+   "right": 5,
+   "bottom": 6,
+   "left": 2
+  },
+  {
+   "id": "super_saiyan_goten",
+   "name": "Super Saiyan Goten",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 5,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "super_saiyan_kid_trunks",
+   "name": "Super Saiyan Kid Trunks",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 6,
+   "right": 4,
+   "bottom": 6,
+   "left": 2
+  },
+  {
+   "id": "raditz",
+   "name": "Raditz",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 7,
+   "right": 6,
+   "bottom": 3,
+   "left": 2
+  },
+  {
+   "id": "nappa",
+   "name": "Nappa",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 6,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "zarbon_monster_form",
+   "name": "Zarbon (Monster Form)",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 6,
+   "right": 4,
+   "bottom": 8,
+   "left": 2
+  },
+  {
+   "id": "recoome",
+   "name": "Recoome",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 8,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "burter",
+   "name": "Burter",
+   "rarity": "rare",
+   "element": "T",
+   "source": "pack",
+   "top": 3,
+   "right": 5,
+   "bottom": 4,
+   "left": 7
+  },
+  {
+   "id": "jeice",
+   "name": "Jeice",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 5,
+   "right": 2,
+   "bottom": 5,
+   "left": 7
+  },
+  {
+   "id": "guldo",
+   "name": "Guldo",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 6,
+   "left": 7
+  },
+  {
+   "id": "frieza_second_form",
+   "name": "Frieza (Second Form)",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 2,
+   "bottom": 5,
+   "left": 4
+  },
+  {
+   "id": "frieza_third_form",
+   "name": "Frieza (Third Form)",
+   "rarity": "rare",
+   "element": "T",
+   "source": "pack",
+   "top": 4,
+   "right": 5,
+   "bottom": 3,
+   "left": 6
+  },
+  {
+   "id": "mecha_frieza",
+   "name": "Mecha Frieza",
+   "rarity": "rare",
+   "element": "T",
+   "source": "pack",
+   "top": 6,
+   "right": 7,
+   "bottom": 2,
+   "left": 6
+  },
+  {
+   "id": "king_cold",
+   "name": "King Cold",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 6,
+   "bottom": 4,
+   "left": 6
+  },
+  {
+   "id": "android_19",
+   "name": "Android 19",
+   "rarity": "rare",
+   "element": "T",
+   "source": "pack",
+   "top": 5,
+   "right": 3,
+   "bottom": 4,
+   "left": 7
+  },
+  {
+   "id": "android_20_dr_gero",
+   "name": "Android 20 (Dr. Gero)",
+   "rarity": "rare",
+   "element": "T",
+   "source": "pack",
+   "top": 3,
+   "right": 8,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "cell_jr",
+   "name": "Cell Jr.",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 5,
+   "right": 4,
+   "bottom": 2,
+   "left": 7
+  },
+  {
+   "id": "babidi",
+   "name": "Babidi",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 5,
+   "bottom": 3,
+   "left": 6
+  },
+  {
+   "id": "pui_pui",
+   "name": "Pui Pui",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 3,
+   "bottom": 5,
+   "left": 8
+  },
+  {
+   "id": "yakon",
+   "name": "Yakon",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 5,
+   "bottom": 3,
+   "left": 2
+  },
+  {
+   "id": "spopovich",
+   "name": "Spopovich",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 8,
+   "right": 4,
+   "bottom": 3,
+   "left": 3
+  },
+  {
+   "id": "garlic_jr",
+   "name": "Garlic Jr.",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 7,
+   "right": 6,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "zangya",
+   "name": "Zangya",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 8,
+   "right": 5,
+   "bottom": 5,
+   "left": 2
+  },
+  {
+   "id": "cooler_base_form",
+   "name": "Cooler (Base Form)",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 2,
+   "right": 5,
+   "bottom": 6,
+   "left": 5
+  },
+  {
+   "id": "pan",
+   "name": "Pan",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 6,
+   "right": 6,
+   "bottom": 2,
+   "left": 5
+  },
+  {
+   "id": "uub",
+   "name": "Uub",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 5,
+   "right": 3,
+   "bottom": 6,
+   "left": 5
+  },
+  {
+   "id": "majuub",
+   "name": "Majuub",
+   "rarity": "rare",
+   "element": "K",
+   "source": "pack",
+   "top": 6,
+   "right": 6,
+   "bottom": 3,
+   "left": 6
+  },
+  {
+   "id": "kibito",
+   "name": "Kibito",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 5,
+   "bottom": 3,
+   "left": 6
+  },
+  {
+   "id": "supreme_kai",
+   "name": "Supreme Kai",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 7,
+   "right": 7,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "kibito_kai",
+   "name": "Kibito Kai",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 6,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "king_kai",
+   "name": "King Kai",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 5,
+   "bottom": 2,
+   "left": 7
+  },
+  {
+   "id": "kami",
+   "name": "Kami",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 3,
+   "right": 5,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "mr_popo",
+   "name": "Mr. Popo",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 2,
+   "bottom": 7,
+   "left": 6
+  },
+  {
+   "id": "korin",
+   "name": "Korin",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 3,
+   "right": 6,
+   "bottom": 5,
+   "left": 5
+  },
+  {
+   "id": "bardock",
+   "name": "Bardock",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 6,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "fasha",
+   "name": "Fasha",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 4,
+   "bottom": 6,
+   "left": 6
+  },
+  {
+   "id": "king_vegeta",
+   "name": "King Vegeta",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 9,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "nail",
+   "name": "Nail",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 3,
+   "right": 7,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "dende",
+   "name": "Dende",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 3,
+   "right": 6,
+   "bottom": 7,
+   "left": 3
+  },
+  {
+   "id": "grand_elder_guru",
+   "name": "Grand Elder Guru",
+   "rarity": "rare",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 8,
+   "bottom": 6,
+   "left": 2
+  },
+  {
+   "id": "hirudegarn",
+   "name": "Hirudegarn",
+   "rarity": "rare",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 4,
+   "bottom": 2,
+   "left": 8
+  },
+  {
+   "id": "kid_goku",
+   "name": "Kid Goku",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 2,
+   "bottom": 2,
+   "left": 3
+  },
+  {
+   "id": "turtle",
+   "name": "Turtle",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 2,
+   "left": 3
+  },
+  {
+   "id": "oolong",
+   "name": "Oolong",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 2,
+   "right": 6,
+   "bottom": 4,
+   "left": 3
+  },
+  {
+   "id": "puar",
+   "name": "Puar",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 5,
+   "left": 2
+  },
+  {
+   "id": "launch",
+   "name": "Launch",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 2,
+   "right": 5,
+   "bottom": 4,
+   "left": 5
+  },
+  {
+   "id": "chi_chi",
+   "name": "Chi-Chi",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 4,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "ox_king",
+   "name": "Ox-King",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 3,
+   "left": 2
+  },
+  {
+   "id": "bulma_capsule_corp",
+   "name": "Bulma (Capsule Corp)",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 4,
+   "right": 5,
+   "bottom": 2,
+   "left": 2
+  },
+  {
+   "id": "dr_brief",
+   "name": "Dr. Brief",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 2,
+   "right": 2,
+   "bottom": 5,
+   "left": 4
+  },
+  {
+   "id": "mrs_brief",
+   "name": "Mrs. Brief",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 5,
+   "bottom": 1,
+   "left": 3
+  },
+  {
+   "id": "goten",
+   "name": "Goten",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 4,
+   "bottom": 2,
+   "left": 5
+  },
+  {
+   "id": "kid_trunks",
+   "name": "Kid Trunks",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 4,
+   "right": 4,
+   "bottom": 2,
+   "left": 4
+  },
+  {
+   "id": "marron",
+   "name": "Marron",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 3,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "gohan_saiyan_saga",
+   "name": "Gohan (Saiyan Saga)",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 4,
+   "bottom": 5,
+   "left": 1
+  },
+  {
+   "id": "saibaman",
+   "name": "Saibaman",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 7,
+   "bottom": 2,
+   "left": 1
+  },
+  {
+   "id": "appule",
+   "name": "Appule",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 3,
+   "bottom": 6,
+   "left": 1
+  },
+  {
+   "id": "cui",
+   "name": "Cui",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 1,
+   "bottom": 5,
+   "left": 6
+  },
+  {
+   "id": "dodoria",
+   "name": "Dodoria",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 3,
+   "right": 2,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "zarbon",
+   "name": "Zarbon",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 2,
+   "right": 4,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "frieza_soldier",
+   "name": "Frieza Soldier",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 6,
+   "right": 4,
+   "bottom": 1,
+   "left": 2
+  },
+  {
+   "id": "red_ribbon_soldier",
+   "name": "Red Ribbon Soldier",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 4,
+   "left": 1
+  },
+  {
+   "id": "general_blue",
+   "name": "General Blue",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 1,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "mercenary_tao",
+   "name": "Mercenary Tao",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "android_8",
+   "name": "Android 8",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 1,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "commander_red",
+   "name": "Commander Red",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 5,
+   "right": 4,
+   "bottom": 5,
+   "left": 1
+  },
+  {
+   "id": "pilaf",
+   "name": "Pilaf",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 5,
+   "right": 2,
+   "bottom": 2,
+   "left": 7
+  },
+  {
+   "id": "mai",
+   "name": "Mai",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 4,
+   "right": 3,
+   "bottom": 3,
+   "left": 2
+  },
+  {
+   "id": "shu",
+   "name": "Shu",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 6,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "arale",
+   "name": "Arale",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 5,
+   "right": 1,
+   "bottom": 5,
+   "left": 4
+  },
+  {
+   "id": "giran",
+   "name": "Giran",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 2,
+   "bottom": 3,
+   "left": 7
+  },
+  {
+   "id": "nam",
+   "name": "Nam",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 7,
+   "right": 5,
+   "bottom": 2,
+   "left": 2
+  },
+  {
+   "id": "bacterian",
+   "name": "Bacterian",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "tournament_announcer",
+   "name": "Tournament Announcer",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "king_furry",
+   "name": "King Furry",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 1,
+   "bottom": 5,
+   "left": 2
+  },
+  {
+   "id": "bee_mr_satan_s_dog",
+   "name": "Bee (Mr. Satan's dog)",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 1,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "upa",
+   "name": "Upa",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 4,
+   "left": 6
+  },
+  {
+   "id": "bora",
+   "name": "Bora",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 1,
+   "bottom": 4,
+   "left": 3
+  },
+  {
+   "id": "suno",
+   "name": "Suno",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 2,
+   "right": 5,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "colonel_silver",
+   "name": "Colonel Silver",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 2,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "general_white",
+   "name": "General White",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 3,
+   "right": 2,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "ninja_murasaki",
+   "name": "Ninja Murasaki",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 1,
+   "right": 4,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "major_metallitron",
+   "name": "Major Metallitron",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 6,
+   "right": 5,
+   "bottom": 2,
+   "left": 1
+  },
+  {
+   "id": "staff_officer_black",
+   "name": "Staff Officer Black",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 4,
+   "right": 2,
+   "bottom": 4,
+   "left": 4
+  },
+  {
+   "id": "tambourine",
+   "name": "Tambourine",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 6,
+   "right": 2,
+   "bottom": 2,
+   "left": 6
+  },
+  {
+   "id": "cymbal",
+   "name": "Cymbal",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 7,
+   "bottom": 2,
+   "left": 5
+  },
+  {
+   "id": "drum",
+   "name": "Drum",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 4,
+   "right": 4,
+   "bottom": 7,
+   "left": 1
+  },
+  {
+   "id": "fortuneteller_baba",
+   "name": "Fortuneteller Baba",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 4,
+   "bottom": 1,
+   "left": 4
+  },
+  {
+   "id": "bubbles",
+   "name": "Bubbles",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 4,
+   "right": 4,
+   "bottom": 5,
+   "left": 2
+  },
+  {
+   "id": "gregory",
+   "name": "Gregory",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 2,
+   "right": 3,
+   "bottom": 4,
+   "left": 5
+  },
+  {
+   "id": "princess_snake",
+   "name": "Princess Snake",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 2,
+   "right": 4,
+   "bottom": 6,
+   "left": 2
+  },
+  {
+   "id": "goz",
+   "name": "Goz",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 4,
+   "bottom": 5,
+   "left": 5
+  },
+  {
+   "id": "mez",
+   "name": "Mez",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 1,
+   "right": 4,
+   "bottom": 5,
+   "left": 5
+  },
+  {
+   "id": "king_yemma",
+   "name": "King Yemma",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 6,
+   "right": 4,
+   "bottom": 3,
+   "left": 2
+  },
+  {
+   "id": "sharpner",
+   "name": "Sharpner",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 2,
+   "right": 3,
+   "bottom": 5,
+   "left": 6
+  },
+  {
+   "id": "erasa",
+   "name": "Erasa",
+   "rarity": "common",
+   "element": "P",
+   "source": "pack",
+   "top": 5,
+   "right": 4,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "bulla",
+   "name": "Bulla",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 4,
+   "bottom": 2,
+   "left": 5
+  },
+  {
+   "id": "paragus",
+   "name": "Paragus",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 2,
+   "right": 1,
+   "bottom": 5,
+   "left": 4
+  },
+  {
+   "id": "salza",
+   "name": "Salza",
+   "rarity": "common",
+   "element": "K",
+   "source": "pack",
+   "top": 3,
+   "right": 1,
+   "bottom": 6,
+   "left": 6
+  },
+  {
+   "id": "doore",
+   "name": "Doore",
+   "rarity": "common",
+   "element": "S",
+   "source": "pack",
+   "top": 1,
+   "right": 3,
+   "bottom": 3,
+   "left": 5
+  },
+  {
+   "id": "neiz",
+   "name": "Neiz",
+   "rarity": "common",
+   "element": "T",
+   "source": "pack",
+   "top": 1,
+   "right": 4,
+   "bottom": 3,
+   "left": 7
+  },
+  {
+   "id": "yamcha_wolf_fang_fist",
+   "name": "Yamcha: Wolf Fang Fist",
+   "rarity": "signature",
+   "element": "S",
+   "source": "signature",
+   "top": 5,
+   "right": 5,
+   "bottom": 2,
+   "left": 6
+  },
+  {
+   "id": "chiaotzu_telekinesis",
+   "name": "Chiaotzu: Telekinesis",
+   "rarity": "signature",
+   "element": "P",
+   "source": "signature",
+   "top": 2,
+   "right": 7,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "yajirobe_senzu_courier",
+   "name": "Yajirobe: Senzu Courier",
+   "rarity": "signature",
+   "element": "S",
+   "source": "signature",
+   "top": 6,
+   "right": 6,
+   "bottom": 3,
+   "left": 4
+  },
+  {
+   "id": "videl_satan_city_hero",
+   "name": "Videl: Satan City Hero",
+   "rarity": "signature",
+   "element": "S",
+   "source": "signature",
+   "top": 6,
+   "right": 6,
+   "bottom": 4,
+   "left": 2
+  },
+  {
+   "id": "mr_satan_the_champ",
+   "name": "Mr. Satan: The Champ",
+   "rarity": "signature",
+   "element": "S",
+   "source": "signature",
+   "top": 2,
+   "right": 6,
+   "bottom": 9,
+   "left": 5
+  },
+  {
+   "id": "krillin_destructo_disc",
+   "name": "Krillin: Destructo Disc",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 2,
+   "right": 6,
+   "bottom": 5,
+   "left": 9
+  },
+  {
+   "id": "great_saiyaman",
+   "name": "Great Saiyaman",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 7,
+   "right": 8,
+   "bottom": 5,
+   "left": 3
+  },
+  {
+   "id": "tien_tri_beam",
+   "name": "Tien: Tri-Beam",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 6,
+   "right": 3,
+   "bottom": 9,
+   "left": 8
+  },
+  {
+   "id": "android_18_infinite_energy",
+   "name": "Android 18: Infinite Energy",
+   "rarity": "signature",
+   "element": "T",
+   "source": "signature",
+   "top": 3,
+   "right": 5,
+   "bottom": 7,
+   "left": 9
+  },
+  {
+   "id": "future_trunks_sword_of_hope",
+   "name": "Future Trunks: Sword of Hope",
+   "rarity": "signature",
+   "element": "T",
+   "source": "signature",
+   "top": 6,
+   "right": 3,
+   "bottom": 9,
+   "left": 8
+  },
+  {
+   "id": "master_roshi_max_power",
+   "name": "Master Roshi: Max Power",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 5,
+   "right": 9,
+   "bottom": 6,
+   "left": 4
+  },
+  {
+   "id": "goku_super_saiyan_2",
+   "name": "Goku: Super Saiyan 2",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 10,
+   "right": 9,
+   "bottom": 7,
+   "left": 3
+  },
+  {
+   "id": "piccolo_special_beam_cannon",
+   "name": "Piccolo: Special Beam Cannon",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 10,
+   "right": 6,
+   "bottom": 10,
+   "left": 4
+  },
+  {
+   "id": "bulma_capsule_corp_president",
+   "name": "Bulma: Capsule Corp President",
+   "rarity": "signature",
+   "element": "T",
+   "source": "signature",
+   "top": 6,
+   "right": 3,
+   "bottom": 8,
+   "left": 9
+  },
+  {
+   "id": "vegeta_final_flash",
+   "name": "Vegeta: Final Flash",
+   "rarity": "signature",
+   "element": "K",
+   "source": "signature",
+   "top": 4,
+   "right": 9,
+   "bottom": 9,
+   "left": 8
+  },
+  {
+   "id": "jackie_chun",
+   "name": "Jackie Chun",
+   "rarity": "epic",
+   "element": "S",
+   "source": "bond",
+   "mentor": "ROSHI",
+   "bondLevel": 5,
+   "top": 3,
+   "right": 6,
+   "bottom": 7,
+   "left": 8
+  },
+  {
+   "id": "goku_frieza_saga",
+   "name": "Goku (Frieza Saga)",
+   "rarity": "epic",
+   "element": "K",
+   "source": "bond",
+   "mentor": "GOKU",
+   "bondLevel": 5,
+   "top": 3,
+   "right": 7,
+   "bottom": 8,
+   "left": 8
+  },
+  {
+   "id": "piccolo_cell_saga",
+   "name": "Piccolo (Cell Saga)",
+   "rarity": "epic",
+   "element": "P",
+   "source": "bond",
+   "mentor": "PICCOLO",
+   "bondLevel": 5,
+   "top": 5,
+   "right": 9,
+   "bottom": 3,
+   "left": 7
+  },
+  {
+   "id": "bulma_dragon_ball",
+   "name": "Bulma (Dragon Ball)",
+   "rarity": "epic",
+   "element": "T",
+   "source": "bond",
+   "mentor": "BULMA",
+   "bondLevel": 5,
+   "top": 6,
+   "right": 8,
+   "bottom": 3,
+   "left": 8
+  },
+  {
+   "id": "vegeta_namek_saga",
+   "name": "Vegeta (Namek Saga)",
+   "rarity": "epic",
+   "element": "S",
+   "source": "bond",
+   "mentor": "VEGETA",
+   "bondLevel": 5,
+   "top": 8,
+   "right": 9,
+   "bottom": 6,
+   "left": 3
+  },
+  {
+   "id": "goku_super_saiyan_4",
+   "name": "Goku Super Saiyan 4",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "bond",
+   "mentor": "ROSHI",
+   "bondLevel": 10,
+   "top": 8,
+   "right": 4,
+   "bottom": 8,
+   "left": 10
+  },
+  {
+   "id": "goku_super_saiyan_3",
+   "name": "Goku Super Saiyan 3",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "bond",
+   "mentor": "GOKU",
+   "bondLevel": 10,
+   "top": 4,
+   "right": 7,
+   "bottom": 10,
+   "left": 10
+  },
+  {
+   "id": "piccolo_fused_with_kami",
+   "name": "Piccolo Fused with Kami",
+   "rarity": "legendary",
+   "element": "P",
+   "source": "bond",
+   "mentor": "PICCOLO",
+   "bondLevel": 10,
+   "top": 10,
+   "right": 4,
+   "bottom": 8,
+   "left": 10
+  },
+  {
+   "id": "vegeta_super_saiyan_4",
+   "name": "Vegeta Super Saiyan 4",
+   "rarity": "legendary",
+   "element": "S",
+   "source": "bond",
+   "mentor": "BULMA",
+   "bondLevel": 10,
+   "top": 4,
+   "right": 9,
+   "bottom": 9,
+   "left": 8
+  },
+  {
+   "id": "majin_vegeta",
+   "name": "Majin Vegeta",
+   "rarity": "legendary",
+   "element": "S",
+   "source": "bond",
+   "mentor": "VEGETA",
+   "bondLevel": 10,
+   "top": 4,
+   "right": 9,
+   "bottom": 9,
+   "left": 9
+  },
+  {
+   "id": "vegito",
+   "name": "Vegito",
+   "rarity": "legendary",
+   "element": "K",
+   "source": "bond",
+   "mentor": "ALL",
+   "bondLevel": 10,
+   "top": 10,
+   "right": 10,
+   "bottom": 9,
+   "left": 6
+  }
+ ],
+ "challengers": [
+  {
+   "id": "yamcha",
+   "name": "Yamcha",
+   "difficulty": "easy",
+   "signature": "yamcha_wolf_fang_fist",
+   "mentor": null,
+   "intro": [
+    "Okay, cards. I'm great at cards. Probably.",
+    "Don't go easy on me. Actually, a little easy is fine."
+   ],
+   "win": [
+    "Aw, man. Again? Fine, take one. Not the good one. Okay, the good one."
+   ],
+   "lose": [
+    "I won? I WON! Somebody write this down!"
+   ]
+  },
+  {
+   "id": "chiaotzu",
+   "name": "Chiaotzu",
+   "difficulty": "easy",
+   "signature": "chiaotzu_telekinesis",
+   "mentor": null,
+   "intro": [
+    "Tien said I should practise. Can we play?",
+    "I'm not allowed to move the cards with my mind. I asked."
+   ],
+   "win": [
+    "Good game! I'll tell Tien you're really strong."
+   ],
+   "lose": [
+    "Oh! I won! Sorry. Not sorry. A little sorry."
+   ]
+  },
+  {
+   "id": "yajirobe",
+   "name": "Yajirobe",
+   "difficulty": "easy",
+   "signature": "yajirobe_senzu_courier",
+   "mentor": null,
+   "intro": [
+    "I'll play, but if I win you're buying lunch.",
+    "Quick game. Korin's waiting and I'm starving."
+   ],
+   "win": [
+    "Tch. I let you win. Obviously. Go on, pick one."
+   ],
+   "lose": [
+    "Ha! Pay up. I'm thinking noodles."
+   ]
+  },
+  {
+   "id": "videl",
+   "name": "Videl",
+   "difficulty": "easy",
+   "signature": "videl_satan_city_hero",
+   "mentor": null,
+   "intro": [
+    "Let's keep it fair. No flying over the board.",
+    "Gohan says you're good. Prove it."
+   ],
+   "win": [
+    "Not bad. I want a rematch tomorrow."
+   ],
+   "lose": [
+    "That's how it's done. Don't sulk, it's not a good look."
+   ]
+  },
+  {
+   "id": "mr_satan",
+   "name": "Mr. Satan",
+   "difficulty": "medium",
+   "signature": "mr_satan_the_champ",
+   "mentor": null,
+   "intro": [
+    "The World Champion accepts your challenge! Ha ha ha!",
+    "Cameras? Is anyone filming this? They should be."
+   ],
+   "win": [
+    "I... was testing you! Yes! You passed! Take a card, my student!"
+   ],
+   "lose": [
+    "Victory! As always! Sign here for an autograph."
+   ]
+  },
+  {
+   "id": "krillin",
+   "name": "Krillin",
+   "difficulty": "medium",
+   "signature": "krillin_destructo_disc",
+   "mentor": null,
+   "intro": [
+    "Hey! Up for a game? I've been practising with 18. She always wins.",
+    "Best of luck. You'll need it. Kidding! Mostly."
+   ],
+   "win": [
+    "Ha, okay, you got me. Good game, really."
+   ],
+   "lose": [
+    "Whoa, I actually won! Don't tell Goku, he'll want a go."
+   ]
+  },
+  {
+   "id": "gohan",
+   "name": "Gohan",
+   "difficulty": "medium",
+   "signature": "great_saiyaman",
+   "mentor": null,
+   "intro": [
+    "I worked out the probabilities for this. Let's see if they hold.",
+    "Dad taught me cards. Mum taught me to count them."
+   ],
+   "win": [
+    "Well played. I miscalculated the corners."
+   ],
+   "lose": [
+    "Sorry! I'll go easier next time. Probably not, actually."
+   ]
+  },
+  {
+   "id": "tien",
+   "name": "Tien",
+   "difficulty": "hard",
+   "signature": "tien_tri_beam",
+   "mentor": null,
+   "intro": [
+    "Discipline wins card games too. Sit.",
+    "I don't lose focus. Let's see if you do."
+   ],
+   "win": [
+    "You earned that. Take your card."
+   ],
+   "lose": [
+    "Your focus slipped in the middle. Train it."
+   ]
+  },
+  {
+   "id": "android_18",
+   "name": "Android 18",
+   "difficulty": "hard",
+   "signature": "android_18_infinite_energy",
+   "mentor": null,
+   "intro": [
+    "Make it quick. I'm meeting Krillin for dinner.",
+    "I calculate every move. Do you?"
+   ],
+   "win": [
+    "Hm. Not bad. Krillin will be thrilled someone beat me."
+   ],
+   "lose": [
+    "Predictable. Try harder next time."
+   ]
+  },
+  {
+   "id": "future_trunks",
+   "name": "Future Trunks",
+   "difficulty": "hard",
+   "signature": "future_trunks_sword_of_hope",
+   "mentor": null,
+   "intro": [
+    "Where I'm from, we didn't have time for games. Let's make this count.",
+    "Ready when you are."
+   ],
+   "win": [
+    "Well fought. I'll remember that move."
+   ],
+   "lose": [
+    "Don't give up. That's the one thing I've learned."
+   ]
+  },
+  {
+   "id": "master_roshi",
+   "name": "Master Roshi",
+   "difficulty": "hard",
+   "signature": "master_roshi_max_power",
+   "mentor": "ROSHI",
+   "intro": [
+    "Ho ho! I've been playing cards since before your grandparents were born.",
+    "Shuffle well. I'll know if you don't."
+   ],
+   "win": [
+    "Ho ho! The student surpasses the master. At cards. Don't get cocky."
+   ],
+   "lose": [
+    "Experience, my young friend. Three hundred years of it."
+   ]
+  },
+  {
+   "id": "goku",
+   "name": "Goku",
+   "difficulty": "very_hard",
+   "signature": "goku_super_saiyan_2",
+   "mentor": "GOKU",
+   "intro": [
+    "Cards! I love cards! Well, I love winning cards!",
+    "No holding back, okay? I won't!"
+   ],
+   "win": [
+    "Aw, you got me! That was awesome! Again!"
+   ],
+   "lose": [
+    "Ha! That was so fun! Wanna go again? Let's go again!"
+   ]
+  },
+  {
+   "id": "piccolo",
+   "name": "Piccolo",
+   "difficulty": "very_hard",
+   "signature": "piccolo_special_beam_cannon",
+   "mentor": "PICCOLO",
+   "intro": [
+    "Sit. Focus. Play.",
+    "Every move matters. Act like it."
+   ],
+   "win": [
+    "...Well played. I won't say it twice."
+   ],
+   "lose": [
+    "You rushed. Again."
+   ]
+  },
+  {
+   "id": "bulma",
+   "name": "Bulma",
+   "difficulty": "hard",
+   "signature": "bulma_capsule_corp_president",
+   "mentor": "BULMA",
+   "intro": [
+    "I designed a card-playing robot once. I beat it. Let's go.",
+    "Fair warning: I'm a genius."
+   ],
+   "win": [
+    "Huh. You actually beat me. I'm recalculating everything."
+   ],
+   "lose": [
+    "Told you. Genius. Take notes."
+   ]
+  },
+  {
+   "id": "vegeta",
+   "name": "Vegeta",
+   "difficulty": "very_hard",
+   "signature": "vegeta_final_flash",
+   "mentor": "VEGETA",
+   "intro": [
+    "Hmph. Let's see if you're worthy of a Saiyan.",
+    "I don't play games. I win them."
+   ],
+   "win": [
+    "...Impossible. Again. Tomorrow."
+   ],
+   "lose": [
+    "As expected. A prince doesn't lose at anything."
+   ]
+  }
+ ]
+}

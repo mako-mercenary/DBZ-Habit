@@ -229,6 +229,8 @@ interface AchievementDao {
              + (SELECT COUNT(*) FROM mentor_calls) * 47
              + (SELECT COUNT(*) FROM day_routine_items WHERE doneAtMillis IS NOT NULL) * 53
              + (SELECT COUNT(*) FROM day_routine_items) * 59
+             + (SELECT COALESCE(SUM(count), 0) FROM card_collection) * 61
+             + (SELECT COUNT(*) FROM card_matches) * 67
         """,
     )
     fun observeChanges(): Flow<Long>
@@ -407,5 +409,66 @@ interface RoutineDao {
 
     @Query("DELETE FROM day_routines WHERE id = :id")
     suspend fun deleteRoutine(id: Long)
+}
+
+@Dao
+interface CardDao {
+
+    @Query("SELECT * FROM card_collection WHERE count > 0")
+    fun observeCollection(): Flow<List<CardOwnedEntity>>
+
+    @Query("SELECT * FROM card_collection WHERE count > 0")
+    suspend fun collection(): List<CardOwnedEntity>
+
+    @Query("SELECT * FROM card_collection WHERE cardId = :cardId")
+    suspend fun owned(cardId: String): CardOwnedEntity?
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun saveOwned(card: CardOwnedEntity)
+
+    @Query("SELECT * FROM card_held WHERE count > 0")
+    fun observeHeld(): Flow<List<CardHeldEntity>>
+
+    @Query("SELECT * FROM card_held WHERE challengerId = :challengerId AND count > 0")
+    suspend fun heldBy(challengerId: String): List<CardHeldEntity>
+
+    @Query("SELECT * FROM card_held WHERE challengerId = :challengerId AND cardId = :cardId")
+    suspend fun held(challengerId: String, cardId: String): CardHeldEntity?
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
+    suspend fun saveHeld(held: CardHeldEntity)
+
+    @Insert
+    suspend fun insertMatch(match: CardMatchEntity): Long
+
+    @Query("SELECT * FROM card_matches WHERE epochDay = :epochDay")
+    suspend fun matchesOn(epochDay: Long): List<CardMatchEntity>
+
+    @Query("SELECT * FROM card_matches ORDER BY createdAtMillis DESC")
+    fun observeMatches(): Flow<List<CardMatchEntity>>
+
+    @Query("SELECT * FROM card_packs WHERE epochDay = :epochDay")
+    suspend fun pack(epochDay: Long): CardPackEntity?
+
+    @Insert
+    suspend fun insertPack(pack: CardPackEntity)
+
+    @Query("SELECT * FROM card_pending WHERE outcome = ''")
+    suspend fun openPending(): List<CardPendingEntity>
+
+    @Query("SELECT * FROM card_pending WHERE outcome = ''")
+    fun observeOpenPending(): Flow<List<CardPendingEntity>>
+
+    @Insert
+    suspend fun insertPending(pending: CardPendingEntity): Long
+
+    @androidx.room.Update
+    suspend fun updatePending(pending: CardPendingEntity)
+
+    @Query("SELECT COUNT(*) FROM card_grants WHERE grantId = :grantId")
+    suspend fun granted(grantId: String): Int
+
+    @Insert(onConflict = androidx.room.OnConflictStrategy.IGNORE)
+    suspend fun grant(grant: CardGrantEntity)
 }
 

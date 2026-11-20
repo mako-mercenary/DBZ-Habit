@@ -44,6 +44,7 @@ enum class ArtKey(
     EMBLEM_CAPSULE("emblem_capsule", "Capsule emblem", 512, 512, ArtShape.FREE),
     BIKE_RIDER("bike_rider", "Rider on the hover bike, from behind", 768, 768, ArtShape.FREE),
     BIKE_SKYLINE("bike_skyline", "City skyline", 2048, 512, ArtShape.FREE),
+    CARD_BOARD("card_board", "Card battle board", 1086, 1448, ArtShape.FULL),
     BIKE_BUILDING_1("bike_building_1", "Roadside building 1", 1024, 1024, ArtShape.FREE, optional = true),
     BIKE_BUILDING_2("bike_building_2", "Roadside building 2", 1024, 1024, ArtShape.FREE, optional = true),
     BIKE_BUILDING_3("bike_building_3", "Roadside building 3", 1024, 1024, ArtShape.FREE, optional = true),

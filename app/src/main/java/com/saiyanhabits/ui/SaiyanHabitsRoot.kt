@@ -110,6 +110,7 @@ private object Routes {
     const val GAMES = "games"
     const val JOURNAL = "journal"
     const val ROUTINES = "routines"
+    const val CARDS = "cards"
     const val CALL_LOG = "calls"
     const val GAME_ARG = "game"
     const val GAME = "game/{$GAME_ARG}"
@@ -338,6 +339,7 @@ fun SaiyanHabitsRoot() {
                         onOpenGames = { navController.navigate(Routes.GAMES) },
                         onOpenJournal = { navController.navigate(Routes.JOURNAL) },
                         onOpenRoutines = { navController.navigate(Routes.ROUTINES) },
+                        onOpenCards = { navController.navigate(Routes.CARDS) },
                         onAnswerCall = { navController.navigate(Routes.call(it)) },
                         onOpenHistory = {
                             historyViewModel.reset()
@@ -450,6 +452,11 @@ fun SaiyanHabitsRoot() {
                     com.saiyanhabits.ui.calls.CallLogScreen(
                         playerForm = player.highestForm,
                         onBack = { navController.popBackStack(Routes.CALL_LOG, inclusive = true) },
+                    )
+                }
+                composable(Routes.CARDS) {
+                    com.saiyanhabits.ui.cards.CardBattleScreen(
+                        onBack = { navController.popBackStack(Routes.CARDS, inclusive = true) },
                     )
                 }
                 composable(Routes.ROUTINES) {

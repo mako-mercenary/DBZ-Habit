@@ -79,6 +79,65 @@ data class MinigamePlayEntity(
     val createdAtMillis: Long,
 )
 
+/** How many of one card you own. */
+@Entity(tableName = "card_collection")
+data class CardOwnedEntity(
+    @PrimaryKey val cardId: String,
+    val count: Int,
+    val firstAtMillis: Long,
+)
+
+/** Your cards a challenger took, and still holds until you win them back. */
+@Entity(tableName = "card_held", primaryKeys = ["challengerId", "cardId"])
+data class CardHeldEntity(
+    val challengerId: String,
+    val cardId: String,
+    val count: Int,
+)
+
+/** One card battle. */
+@Entity(tableName = "card_matches", indices = [Index(value = ["epochDay"])])
+data class CardMatchEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    val challengerId: String,
+    /** WIN, LOSE or DRAW, from your side. */
+    val result: String,
+    /** True when a card could change hands. */
+    val stakes: Boolean,
+    val cardWon: String?,
+    val cardLost: String?,
+    val createdAtMillis: Long,
+)
+
+/** The day's card pack, once opened. */
+@Entity(tableName = "card_packs")
+data class CardPackEntity(
+    @PrimaryKey val epochDay: Long,
+    /** The card ids, comma-separated. */
+    val cards: String,
+    val openedAtMillis: Long,
+)
+
+/** A card saved from a loss by redoing a habit: kept if the habit is checked off again that day. */
+@Entity(tableName = "card_pending")
+data class CardPendingEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    val challengerId: String,
+    val cardId: String,
+    val habitId: Long,
+    /** KEPT, LOST, or empty while waiting. */
+    val outcome: String,
+)
+
+/** Cards given once (the starter deck, bond cards), so they're never given twice. */
+@Entity(tableName = "card_grants")
+data class CardGrantEntity(
+    @PrimaryKey val grantId: String,
+    val atMillis: Long,
+)
+
 /** A saved routine you can reuse: a name and its checklist. */
 @Entity(tableName = "routine_templates")
 data class RoutineTemplateEntity(
