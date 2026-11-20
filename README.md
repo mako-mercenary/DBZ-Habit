@@ -223,9 +223,11 @@ your facing number is higher. Most cards owned when the board is full wins.
 - **Whose card is whose.** Yours are blue with a YOU tag in the corner, theirs
   red with their initials; a captured card changes colour and tag. The ? button
   explains every rule.
-- **Card pictures.** Cards show their initials until a picture is added: put
-  `<card id>.png` in `app/src/main/assets/cards/art/` (ids are in
-  `cards.json`).
+- **Card pictures.** All 161 are in `app/src/main/assets/cards/art/` as
+  `<card id>.webp` (480 x 600; the 768 x 960 originals live in the owner's
+  Drive folder). A `.png` of the same name also works. The brief they were
+  made from is `docs/CARD_ART_BRIEF.md`. A card with no picture shows its
+  initials.
 
 ## Routines
 

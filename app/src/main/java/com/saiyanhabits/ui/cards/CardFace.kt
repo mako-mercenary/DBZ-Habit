@@ -59,7 +59,7 @@ val CardRarity.color: Color
 /** A side's number as shown: 10 is A. */
 fun sideLabel(v: Int): String = if (v >= 10) "A" else v.toString()
 
-/** The picture for a card, if one has been added: assets/cards/art/<id>.png or the app's card_art folder. */
+/** The picture for a card, if one has been added: the app's card_art folder, or assets/cards/art/<id>.webp (or .png). */
 @Composable
 private fun cardArt(id: String): ImageBitmap? {
     val context = LocalContext.current
@@ -69,7 +69,13 @@ private fun cardArt(id: String): ImageBitmap? {
             try {
                 when {
                     picked.isFile -> BitmapFactory.decodeFile(picked.path)
-                    else -> context.assets.open("cards/art/$id.png").use { BitmapFactory.decodeStream(it) }
+                    else -> listOf("webp", "png").firstNotNullOfOrNull { ext ->
+                        try {
+                            context.assets.open("cards/art/$id.$ext").use { BitmapFactory.decodeStream(it) }
+                        } catch (_: java.io.IOException) {
+                            null
+                        }
+                    }
                 }?.asImageBitmap()
             } catch (_: Exception) {
                 null
@@ -129,7 +135,14 @@ fun CardFace(
                 .background(Brush.radialGradient(listOf(card.element.color.copy(alpha = 0.85f), Color(0xFF14102A)))),
         ) {
             if (art != null) {
-                Image(art, contentDescription = card.name, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
+                // Faces sit in the upper part of the art, so a crop keeps more of the top than the bottom.
+                Image(
+                    art,
+                    contentDescription = card.name,
+                    contentScale = ContentScale.Crop,
+                    alignment = androidx.compose.ui.BiasAlignment(0f, -0.45f),
+                    modifier = Modifier.fillMaxSize(),
+                )
             } else {
                 Text(
                     card.name.split(" ", "(", ":").filter { it.isNotBlank() && it[0].isLetter() }.take(2).joinToString("") { it.take(1) },
