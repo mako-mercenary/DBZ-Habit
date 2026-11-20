@@ -1,0 +1,299 @@
+{
+  "section": 6,
+  "title": "Combination Vehicles",
+  "track": "combination",
+  "readingPages": 14,
+  "pdfPages": "87-100",
+  "subsections": [
+    {
+      "id": "6.1",
+      "title": "Driving Combination Vehicles",
+      "pdfPages": "87",
+      "manualPages": "6-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.1",
+      "title": "Rollover Risks",
+      "pdfPages": "87",
+      "manualPages": "6-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.2",
+      "title": "Steer Gently",
+      "pdfPages": "87",
+      "manualPages": "6-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.3",
+      "title": "Brake Early",
+      "pdfPages": "87-88",
+      "manualPages": "6-1 to 6-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.4",
+      "title": "Railroad-highway Crossings",
+      "pdfPages": "88",
+      "manualPages": "6-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.5",
+      "title": "Prevent Trailer Skids",
+      "pdfPages": "88-89",
+      "manualPages": "6-2 to 6-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.6",
+      "title": "Turn Wide",
+      "pdfPages": "89",
+      "manualPages": "6-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.1.7",
+      "title": "Backing with a Trailer.",
+      "pdfPages": "89-90",
+      "manualPages": "6-3 to 6-4",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2",
+      "title": "Combination Vehicle Air Brakes",
+      "pdfPages": "90",
+      "manualPages": "6-4",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.1",
+      "title": "Trailer Hand Valve",
+      "pdfPages": "90-91",
+      "manualPages": "6-4 to 6-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.2",
+      "title": "Tractor Protection Valve",
+      "pdfPages": "91",
+      "manualPages": "6-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.3",
+      "title": "Trailer Air Supply Control",
+      "pdfPages": "91",
+      "manualPages": "6-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.4",
+      "title": "Trailer Air-lines",
+      "pdfPages": "91",
+      "manualPages": "6-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.5",
+      "title": "Hose Couplers (Glad Hands)",
+      "pdfPages": "91-92",
+      "manualPages": "6-5 to 6-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.6",
+      "title": "Trailer Air Tanks",
+      "pdfPages": "92",
+      "manualPages": "6-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.7",
+      "title": "Shut-off Valves",
+      "pdfPages": "92",
+      "manualPages": "6-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.2.8",
+      "title": "Trailer Service, Parking and Emergency",
+      "pdfPages": "92",
+      "manualPages": "6-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.3",
+      "title": "Antilock Brake Systems",
+      "pdfPages": "92",
+      "manualPages": "6-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.3.1",
+      "title": "Trailers Required to Have ABS",
+      "pdfPages": "92-93",
+      "manualPages": "6-6 to 6-7",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.3.2",
+      "title": "Braking with ABS",
+      "pdfPages": "93",
+      "manualPages": "6-7",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4",
+      "title": "Coupling and Uncoupling",
+      "pdfPages": "93",
+      "manualPages": "6-7",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.1",
+      "title": "Coupling Tractor-Semitrailers",
+      "pdfPages": "93-95",
+      "manualPages": "6-7 to 6-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.2",
+      "title": "Uncoupling Tractor-Semitrailers",
+      "pdfPages": "95-96",
+      "manualPages": "6-9 to 6-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.3",
+      "title": "Coupling a Pintle Hook",
+      "pdfPages": "96-97",
+      "manualPages": "6-10 to 6-11",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.4",
+      "title": "Uncoupling a Pintle Hook",
+      "pdfPages": "97",
+      "manualPages": "6-11",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.5",
+      "title": "Coupling a Drawbar",
+      "pdfPages": "97-98",
+      "manualPages": "6-11 to 6-12",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.6",
+      "title": "Uncoupling a Drawbar",
+      "pdfPages": "98",
+      "manualPages": "6-12",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.7",
+      "title": "Coupling a Gooseneck Hitch",
+      "pdfPages": "98",
+      "manualPages": "6-12",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.4.8",
+      "title": "Uncoupling a Gooseneck Hitch",
+      "pdfPages": "98",
+      "manualPages": "6-12",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.5",
+      "title": "Inspecting a Combination Vehicle",
+      "pdfPages": "98-99",
+      "manualPages": "6-12 to 6-13",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "6.5.1",
+      "title": "Additional Things to Check during a Walk-around Inspection",
+      "pdfPages": "99",
+      "manualPages": "6-13",
+      "facts": [],
+      "cards": [],
+      "exam": [],
+      "titleFixed": true
+    },
+    {
+      "id": "6.5.2",
+      "title": "Combination Vehicle Brake Check",
+      "pdfPages": "99-100",
+      "manualPages": "6-13 to 6-14",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    }
+  ],
+  "exam": []
+}

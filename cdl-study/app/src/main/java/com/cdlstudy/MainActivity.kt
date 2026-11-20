@@ -13,6 +13,8 @@ import com.cdlstudy.ui.CardsScreen
 import com.cdlstudy.ui.CdlTheme
 import com.cdlstudy.ui.ExamScreen
 import com.cdlstudy.ui.HomeScreen
+import com.cdlstudy.ui.ManualScreen
+import com.cdlstudy.ui.PlanScreen
 import com.cdlstudy.ui.ProgressScreen
 import com.cdlstudy.ui.SectionScreen
 import com.cdlstudy.ui.StudyScreen
@@ -36,6 +38,8 @@ private fun AppNav() {
                 onCards = { nav.navigate("cards") },
                 onExams = { nav.navigate("exams") },
                 onProgress = { nav.navigate("progress") },
+                onManual = { nav.navigate("manual") },
+                onPlan = { nav.navigate("plan") },
             )
         }
         composable(
@@ -56,9 +60,12 @@ private fun AppNav() {
                 subsectionId = entry.arguments!!.getString("id")!!,
                 onDone = { nav.popBackStack() },
                 onCards = { nav.navigate("cards") },
+                onManual = { nav.navigate("manual") },
             )
         }
         composable("exams") { ExamScreen(onBack = { nav.popBackStack() }) }
+        composable("manual") { ManualScreen(onBack = { nav.popBackStack() }) }
+        composable("plan") { PlanScreen(onBack = { nav.popBackStack() }) }
         composable("cards") { CardsScreen(onBack = { nav.popBackStack() }) }
         composable("progress") { ProgressScreen(onBack = { nav.popBackStack() }) }
     }

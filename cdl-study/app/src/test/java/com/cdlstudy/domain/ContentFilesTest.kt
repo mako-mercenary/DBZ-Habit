@@ -1,6 +1,7 @@
 package com.cdlstudy.domain
 
 import java.io.File
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -79,6 +80,62 @@ class ContentFilesTest {
             } else {
                 assertFalse("${file.name} must not be a placeholder", section.placeholder)
             }
+        }
+    }
+
+    @Test
+    fun `only the sections Utah requires for a Class A are here`() {
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            assertTrue(
+                "${file.name} holds section ${section.number}, which is not in the Class A plan",
+                StudyPlan.isRequired(section.number),
+            )
+        }
+    }
+
+    @Test
+    fun `all eight required sections are here`() {
+        val numbers = files().map { ContentReader.readSection(it.readText()).number }.toSet()
+        assertEquals(StudyPlan.requiredNumbers, numbers)
+    }
+
+    @Test
+    fun `every section and subsection is mapped to pages of the manual PDF`() {
+        val unmapped = mutableListOf<String>()
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            if (section.pdfPages == null) unmapped.add("section ${section.number}")
+            section.subsections.filterNot { it.canRead }.forEach { unmapped.add(it.id) }
+        }
+        assertTrue("These have no manual pages: $unmapped", unmapped.isEmpty())
+    }
+
+    @Test
+    fun `a subsection stays inside its section pages`() {
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            val whole = section.pdfPages!!
+            section.subsections.forEach { sub ->
+                val span = sub.pdfPages!!
+                assertTrue(
+                    "${sub.id} is on pages $span, outside section ${section.number} ($whole)",
+                    span.first >= whole.first && span.last <= whole.last,
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `the subsections of a section are in manual order`() {
+        files().forEach { file ->
+            val section = ContentReader.readSection(file.readText())
+            val starts = section.subsections.map { it.pdfPages!!.first }
+            assertEquals(
+                "Section ${section.number} subsections are out of order",
+                starts.sorted(),
+                starts,
+            )
         }
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import com.cdlstudy.domain.Content
 import com.cdlstudy.domain.ContentReader
 import com.cdlstudy.domain.Section
+import com.cdlstudy.domain.StudyPlan
 
 /**
  * Reads every section file in assets/content.
@@ -31,7 +32,17 @@ object ContentStore {
         for (name in names) {
             try {
                 val text = context.assets.open("content/$name").bufferedReader().use { it.readText() }
-                sections.add(ContentReader.readSection(text))
+                val section = ContentReader.readSection(text)
+                // The plan covers the sections Utah requires for a Class A with
+                // air brakes. An endorsement section is left out, even if a file
+                // for it is here.
+                if (StudyPlan.isRequired(section.number)) {
+                    sections.add(section)
+                } else {
+                    errors.add(
+                        "$name: section ${section.number} is not in the Class A plan, so it is left out"
+                    )
+                }
             } catch (e: Exception) {
                 errors.add("$name: ${e.message}")
             }

@@ -1,0 +1,289 @@
+{
+  "section": 5,
+  "title": "Air Brakes",
+  "track": "air_brakes",
+  "readingPages": 10,
+  "pdfPages": "77-86",
+  "subsections": [
+    {
+      "id": "5.1",
+      "title": "The Parts of an Air Brake System",
+      "pdfPages": "77",
+      "manualPages": "5-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.1",
+      "title": "Air Compressor",
+      "pdfPages": "77",
+      "manualPages": "5-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.2",
+      "title": "Air Compressor Governor",
+      "pdfPages": "77",
+      "manualPages": "5-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.3",
+      "title": "Air Storage Tanks",
+      "pdfPages": "77",
+      "manualPages": "5-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.4",
+      "title": "Air Tank Drains",
+      "pdfPages": "77-78",
+      "manualPages": "5-1 to 5-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.5",
+      "title": "Alcohol Evaporator",
+      "pdfPages": "78",
+      "manualPages": "5-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.6",
+      "title": "Safety Valve",
+      "pdfPages": "78",
+      "manualPages": "5-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.7",
+      "title": "The Brake Pedal",
+      "pdfPages": "78",
+      "manualPages": "5-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.8",
+      "title": "Foundation Brakes",
+      "pdfPages": "78",
+      "manualPages": "5-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.9",
+      "title": "Supply Pressure Gauges",
+      "pdfPages": "78-79",
+      "manualPages": "5-2 to 5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.10",
+      "title": "Application Pressure Gauge",
+      "pdfPages": "79",
+      "manualPages": "5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.11",
+      "title": "Low Air Pressure Warning",
+      "pdfPages": "79",
+      "manualPages": "5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.12",
+      "title": "Stop Light Switch",
+      "pdfPages": "79",
+      "manualPages": "5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.13",
+      "title": "Front Brake Limiting Valve",
+      "pdfPages": "79",
+      "manualPages": "5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.14",
+      "title": "Spring Brakes",
+      "pdfPages": "79",
+      "manualPages": "5-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.15",
+      "title": "Parking Brake Controls",
+      "pdfPages": "79-80",
+      "manualPages": "5-3 to 5-4",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.1.16",
+      "title": "Antilock Braking Systems (ABS)",
+      "pdfPages": "80-81",
+      "manualPages": "5-4 to 5-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.2",
+      "title": "Dual Air Brake",
+      "pdfPages": "81-82",
+      "manualPages": "5-5 to 5-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.3",
+      "title": "Inspecting Air Brake Systems",
+      "pdfPages": "82",
+      "manualPages": "5-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.3.1",
+      "title": "During Step 2 Engine Compartment",
+      "pdfPages": "82",
+      "manualPages": "5-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.3.2",
+      "title": "During Step 5 Walk-around Inspection",
+      "pdfPages": "82",
+      "manualPages": "5-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.3.3",
+      "title": "Step 7 Final Air Brake Check",
+      "pdfPages": "82-84",
+      "manualPages": "5-6 to 5-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4",
+      "title": "Using Air Brakes",
+      "pdfPages": "84",
+      "manualPages": "5-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.1",
+      "title": "Normal Stops",
+      "pdfPages": "84",
+      "manualPages": "5-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.2",
+      "title": "Braking with Antilock Brakes",
+      "pdfPages": "84",
+      "manualPages": "5-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.3",
+      "title": "Emergency Stops",
+      "pdfPages": "84",
+      "manualPages": "5-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.4",
+      "title": "Stopping Distance",
+      "pdfPages": "84-85",
+      "manualPages": "5-8 to 5-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.5",
+      "title": "Brake Fading or Failure",
+      "pdfPages": "85",
+      "manualPages": "5-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.6",
+      "title": "Proper Braking Technique",
+      "pdfPages": "85",
+      "manualPages": "5-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.7",
+      "title": "Low Air Pressure",
+      "pdfPages": "85",
+      "manualPages": "5-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "5.4.8",
+      "title": "Parking Brakes",
+      "pdfPages": "85-86",
+      "manualPages": "5-9 to 5-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    }
+  ],
+  "exam": []
+}

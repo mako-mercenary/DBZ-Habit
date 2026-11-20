@@ -42,6 +42,28 @@ class StudyViewModel(
     var saved by mutableStateOf<SavedRecall?>(null)
         private set
 
+    /** 1x fits the page to the screen. 2x needs a sideways scroll. */
+    var zoom by mutableStateOf(1f)
+        private set
+
+    var readMarked by mutableStateOf(false)
+        private set
+
+    fun chooseZoom(value: Float) {
+        zoom = value
+    }
+
+    /**
+     * For a subsection whose fact checklist is not written yet. You can still
+     * read it in the app and record that you read it.
+     */
+    fun markReadOnly() {
+        viewModelScope.launch {
+            repo.markRead(subsectionId)
+            readMarked = true
+        }
+    }
+
     fun startBlurt() {
         viewModelScope.launch { repo.markRead(subsectionId) }
         stage = Stage.BLURT

@@ -1,0 +1,28 @@
+{
+  "section": 12,
+  "title": "Basic Vehicle Control Skills Test",
+  "track": "basic_control",
+  "readingPages": 6,
+  "pdfPages": "158-163",
+  "subsections": [
+    {
+      "id": "12.1",
+      "title": "Scoring",
+      "pdfPages": "158-159",
+      "manualPages": "12-1 to 12-2",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "12.2",
+      "title": "Exercises",
+      "pdfPages": "159-163",
+      "manualPages": "12-2 to 12-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    }
+  ],
+  "exam": []
+}

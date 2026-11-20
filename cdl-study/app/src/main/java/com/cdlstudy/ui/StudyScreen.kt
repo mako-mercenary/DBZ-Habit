@@ -2,6 +2,7 @@ package com.cdlstudy.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,6 +37,7 @@ fun StudyScreen(
     subsectionId: String,
     onDone: () -> Unit,
     onCards: () -> Unit,
+    onManual: () -> Unit,
 ) {
     val repo = repository()
     val vm: StudyViewModel = viewModel(
@@ -56,7 +58,7 @@ fun StudyScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             when (vm.stage) {
-                Stage.READ -> ReadStep(vm)
+                Stage.READ -> ReadStep(vm, onManual, onDone)
                 Stage.BLURT -> BlurtStep(vm)
                 Stage.GRADE -> GradeStep(vm)
                 Stage.RESULT -> ResultStep(vm, onDone, onCards)
@@ -66,29 +68,95 @@ fun StudyScreen(
 }
 
 @Composable
-private fun ReadStep(vm: StudyViewModel) {
+private fun ColumnScope.ReadStep(vm: StudyViewModel, onManual: () -> Unit, onDone: () -> Unit) {
     val sub = vm.subsection!!
+    val store = manualStore()
+    val span = sub.pdfPages
+
     Text("Step 1 of 4: read", style = MaterialTheme.typography.labelLarge)
-    Card {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(vm.sectionTitle, style = MaterialTheme.typography.bodyMedium)
-            Text("${sub.id} ${sub.title}", style = MaterialTheme.typography.titleLarge)
-            sub.manualPages?.let {
-                Text("Open your manual at pages $it.", style = MaterialTheme.typography.bodyLarge)
-            }
-            Text(
-                "Read the subsection and all of its numbered parts. " +
-                    "Then close the manual. This app shows no fact until you send your recall.",
-                style = MaterialTheme.typography.bodyMedium,
-            )
-            Text(
-                "This subsection has ${sub.facts.size} facts, " +
-                    "and ${sub.criticalFacts.size} of them are must-memorize facts.",
-                style = MaterialTheme.typography.labelMedium,
-            )
-        }
+
+    if (span == null) {
+        WarningCard(
+            "This subsection has no manual pages in the content file, so it cannot " +
+                "be shown here. Run tools/manual_map.py to map the pages."
+        )
+        OutlinedButton(onClick = onDone) { Text("Back") }
+        return
     }
-    Button(onClick = vm::startBlurt) { Text("The manual is closed. Start my recall") }
+
+    if (!store.isImported) {
+        Card {
+            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("Import your manual first", style = MaterialTheme.typography.titleMedium)
+                Text(
+                    "The app carries no manual text. Import your own copy of the handbook " +
+                        "once, and every subsection opens at the right pages.",
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+                sub.manualPages?.let {
+                    Text(
+                        "Until then, read pages $it in your manual.",
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
+            }
+        }
+        Button(onClick = onManual) { Text("Import the manual") }
+        if (sub.canRecall) {
+            OutlinedButton(onClick = vm::startBlurt) {
+                Text("I read it elsewhere. Start my recall")
+            }
+        }
+        return
+    }
+
+    // The pages, with the controls under them, so the reading gets the screen.
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text(
+            buildString {
+                append("${sub.id} ${sub.title}")
+                sub.manualPages?.let { append(" | manual $it") }
+            },
+            style = MaterialTheme.typography.labelMedium,
+            modifier = Modifier.weight(1f),
+        )
+        FilterChip(
+            selected = vm.zoom > 1f,
+            onClick = { vm.chooseZoom(if (vm.zoom > 1f) 1f else 2f) },
+            label = { Text(if (vm.zoom > 1f) "2x" else "Fit") },
+        )
+    }
+
+    ManualPages(
+        span = span,
+        zoom = vm.zoom,
+        modifier = Modifier.fillMaxWidth().weight(1f),
+    )
+
+    if (sub.canRecall) {
+        Text(
+            "${sub.facts.size} facts, ${sub.criticalFacts.size} of them must-memorize. " +
+                "The next screen hides the manual.",
+            style = MaterialTheme.typography.labelSmall,
+        )
+        Button(onClick = vm::startBlurt, modifier = Modifier.fillMaxWidth()) {
+            Text("Close the book and start my recall")
+        }
+    } else {
+        Text(
+            "The fact checklist for this subsection is not written yet, so a recall " +
+                "cannot be graded here. You can still read it and mark it read.",
+            style = MaterialTheme.typography.labelSmall,
+        )
+        Button(
+            onClick = vm::markReadOnly,
+            enabled = !vm.readMarked,
+            modifier = Modifier.fillMaxWidth(),
+        ) { Text(if (vm.readMarked) "Marked as read" else "Mark this as read") }
+    }
 }
 
 @Composable

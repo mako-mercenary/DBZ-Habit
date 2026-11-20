@@ -1,0 +1,137 @@
+{
+  "section": 11,
+  "title": "Vehicle Inspection",
+  "track": "inspection",
+  "readingPages": 15,
+  "pdfPages": "143-157",
+  "subsections": [
+    {
+      "id": "11.1",
+      "title": "Internal Inspection (All Vehicles)",
+      "pdfPages": "143",
+      "manualPages": "11-1",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.1.1",
+      "title": "In-Vehicle/Engine Start",
+      "pdfPages": "143-145",
+      "manualPages": "11-1 to 11-3",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.1.2",
+      "title": "Air Brake or Hydraulic Brake",
+      "pdfPages": "145-146",
+      "manualPages": "11-3 to 11-4",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.2",
+      "title": "Passenger and School Bus Only",
+      "pdfPages": "146",
+      "manualPages": "11-4",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.3",
+      "title": "School Bus Only",
+      "pdfPages": "146-147",
+      "manualPages": "11-4 to 11-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.4",
+      "title": "Lights Operations Check (All Vehicles)",
+      "pdfPages": "147",
+      "manualPages": "11-5",
+      "facts": [],
+      "cards": [],
+      "exam": [],
+      "titleFixed": true
+    },
+    {
+      "id": "11.5",
+      "title": "External Inspection (All Vehicles)",
+      "pdfPages": "147",
+      "manualPages": "11-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.5.1",
+      "title": "Front of Vehicle / Engine Area",
+      "pdfPages": "147-148",
+      "manualPages": "11-5 to 11-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.5.2",
+      "title": "Axle Components/Steering Axle",
+      "pdfPages": "148-150",
+      "manualPages": "11-6 to 11-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.5.3",
+      "title": "Side of Vehicle",
+      "pdfPages": "150",
+      "manualPages": "11-8",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.5.4",
+      "title": "Rear of Vehicle or Trailer",
+      "pdfPages": "150-151",
+      "manualPages": "11-8 to 11-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.6",
+      "title": "Combination Vehicles",
+      "pdfPages": "151",
+      "manualPages": "11-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.6.1",
+      "title": "Combination Vehicles Only",
+      "pdfPages": "151-152",
+      "manualPages": "11-9 to 11-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "11.6.2",
+      "title": "Trailers Only",
+      "pdfPages": "152-157",
+      "manualPages": "11-10 to 11-14",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    }
+  ],
+  "exam": []
+}

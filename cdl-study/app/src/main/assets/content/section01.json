@@ -1,0 +1,728 @@
+{
+  "section": 1,
+  "title": "Introduction",
+  "track": "general_knowledge",
+  "readingPages": 15,
+  "pdfPages": "8-22",
+  "subsections": [
+    {
+      "id": "1.0",
+      "title": "What This Section Covers",
+      "pdfPages": "8-12",
+      "manualPages": "1-1 to 1-5",
+      "facts": [
+        {
+          "id": "1.0.1",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "26001",
+            "gvwr",
+            "single"
+          ],
+          "text": "You must have a CDL to drive any single vehicle with a gross vehicle weight rating of 26,001 pounds or more."
+        },
+        {
+          "id": "1.0.2",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "gcwr",
+            "26001",
+            "10000"
+          ],
+          "text": "You must have a CDL to drive a combination vehicle with a gross combination weight rating of 26,001 pounds or more, when the vehicle being towed is rated over 10,000 pounds."
+        },
+        {
+          "id": "1.0.3",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "16",
+            "passengers",
+            "driver"
+          ],
+          "text": "You must have a CDL to drive a vehicle designed to carry 16 or more passengers, including the driver."
+        },
+        {
+          "id": "1.0.4",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "placards",
+            "hazardous",
+            "select agent"
+          ],
+          "text": "You must have a CDL to drive any size vehicle that needs hazardous material placards, or that carries a material listed as a select agent or toxin."
+        },
+        {
+          "id": "1.0.5",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "class a",
+            "26001",
+            "10000",
+            "combination"
+          ],
+          "text": "Class A is a combination of vehicles with a GCWR of 26,001 pounds or more, when the towed vehicle or vehicles are rated over 10,000 pounds."
+        },
+        {
+          "id": "1.0.6",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "class b",
+            "single",
+            "26001",
+            "10000"
+          ],
+          "text": "Class B is a single vehicle with a GVWR of 26,001 pounds or more, or such a vehicle towing another vehicle rated at 10,000 pounds or less."
+        },
+        {
+          "id": "1.0.7",
+          "critical": true,
+          "page": "1-1",
+          "keywords": [
+            "class c",
+            "16",
+            "placarding"
+          ],
+          "text": "Class C is a single vehicle under 26,001 pounds GVWR, included in the CDL programme only when it carries 16 or more passengers including the driver, or needs hazmat placards."
+        },
+        {
+          "id": "1.0.8",
+          "critical": false,
+          "page": "1-1",
+          "keywords": [
+            "class a",
+            "b",
+            "c"
+          ],
+          "text": "A Class A licence also lets you drive Class B and Class C vehicles, and a Class B licence also lets you drive Class C vehicles."
+        },
+        {
+          "id": "1.0.9",
+          "critical": true,
+          "page": "1-2",
+          "keywords": [
+            "six",
+            "endorsements"
+          ],
+          "text": "There are six kinds of CDL endorsement: double and triple trailers (T), tank vehicle (N), passenger (P), hazardous materials (H), school bus (S), and the combination of tank and hazmat (X)."
+        },
+        {
+          "id": "1.0.10",
+          "critical": true,
+          "page": "1-2",
+          "keywords": [
+            "clp",
+            "passenger",
+            "school bus",
+            "tank"
+          ],
+          "text": "Only three endorsements can be added to a commercial learner's permit: passenger (P), school bus (S) and tank vehicle (N)."
+        },
+        {
+          "id": "1.0.11",
+          "critical": false,
+          "page": "1-2",
+          "keywords": [
+            "119",
+            "1000",
+            "tank"
+          ],
+          "text": "A tank vehicle endorsement is needed for a tank with an individual rated capacity over 119 gallons and a total rated capacity of 1,000 gallons or more."
+        }
+      ],
+      "cards": [
+        {
+          "q": "What single vehicle weight rating needs a CDL?",
+          "a": "A GVWR of 26,001 lb or more.",
+          "factId": "1.0.1"
+        },
+        {
+          "q": "What combination weight ratings need a CDL?",
+          "a": "A GCWR of 26,001 lb or more, with the towed vehicle rated over 10,000 lb.",
+          "factId": "1.0.2"
+        },
+        {
+          "q": "How many passengers make a vehicle a CDL vehicle?",
+          "a": "16 or more, including the driver.",
+          "factId": "1.0.3"
+        },
+        {
+          "q": "Define a Class A vehicle.",
+          "a": "A combination with a GCWR of 26,001 lb or more, towing a unit rated over 10,000 lb.",
+          "factId": "1.0.5"
+        },
+        {
+          "q": "Define a Class B vehicle.",
+          "a": "A single vehicle of 26,001 lb GVWR or more, or one towing a unit rated 10,000 lb or less.",
+          "factId": "1.0.6"
+        },
+        {
+          "q": "Define a Class C vehicle.",
+          "a": "A vehicle under 26,001 lb that carries 16+ people including the driver, or needs hazmat placards.",
+          "factId": "1.0.7"
+        },
+        {
+          "q": "Which classes may a Class A holder drive?",
+          "a": "Class A, B and C.",
+          "factId": "1.0.8"
+        },
+        {
+          "q": "Which endorsements can go on a commercial learner's permit?",
+          "a": "Passenger (P), school bus (S) and tank vehicle (N) only.",
+          "factId": "1.0.10"
+        },
+        {
+          "q": "What tank capacity needs the N endorsement?",
+          "a": "An individual tank over 119 gallons, with 1,000 gallons or more in total.",
+          "factId": "1.0.11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.0.e1",
+          "q": "Which combination needs a Class A licence?",
+          "factId": "1.0.5",
+          "page": "1-1",
+          "choices": [
+            "A GCWR of 26,001 lb with a 12,000 lb trailer",
+            "A GCWR of 24,000 lb with a 12,000 lb trailer",
+            "A GCWR of 30,000 lb with an 8,000 lb trailer",
+            "A single truck of 30,000 lb GVWR"
+          ],
+          "answer": 0,
+          "why": "Class A needs a GCWR of 26,001 lb or more AND a towed unit rated over 10,000 lb."
+        },
+        {
+          "id": "1.0.e2",
+          "q": "A 15-passenger van weighing 9,000 lb needs which licence?",
+          "factId": "1.0.7",
+          "page": "1-1",
+          "choices": [
+            "Class A",
+            "Class B",
+            "Class C",
+            "No CDL for the passenger count alone"
+          ],
+          "answer": 3,
+          "why": "A CDL is needed at 16 or more people including the driver, so 15 is below the limit."
+        }
+      ]
+    },
+    {
+      "id": "1.1",
+      "title": "Commercial Driver License Tests",
+      "pdfPages": "12",
+      "manualPages": "1-5",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.1.1",
+      "title": "Knowledge Tests",
+      "pdfPages": "12",
+      "manualPages": "1-5",
+      "facts": [
+        {
+          "id": "1.1.1.1",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "general knowledge",
+            "all applicants"
+          ],
+          "text": "The general knowledge test is taken by every CDL applicant."
+        },
+        {
+          "id": "1.1.1.2",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "air brakes",
+            "air over hydraulic"
+          ],
+          "text": "You must take the air brakes test if your vehicle has air brakes, and air over hydraulic brakes count as air brakes."
+        },
+        {
+          "id": "1.1.1.3",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "combination"
+          ],
+          "text": "The combination vehicles test is required if you want to drive combination vehicles, which includes every Class A driver."
+        },
+        {
+          "id": "1.1.1.4",
+          "critical": false,
+          "page": "1-5",
+          "keywords": [
+            "hazardous materials",
+            "tsa",
+            "background"
+          ],
+          "text": "The hazardous materials test needs entry level driver training and a Transportation Security Administration background check."
+        },
+        {
+          "id": "1.1.1.5",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "11",
+            "12",
+            "13"
+          ],
+          "text": "For a Class A licence the manual says to study sections 1, 2, 3, 6, 11, 12 and 13, and section 5 as well if you will drive a vehicle with air brakes."
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which knowledge test does every CDL applicant take?",
+          "a": "The general knowledge test.",
+          "factId": "1.1.1.1"
+        },
+        {
+          "q": "Do air over hydraulic brakes count as air brakes for the test?",
+          "a": "Yes. You must take the air brakes test.",
+          "factId": "1.1.1.2"
+        },
+        {
+          "q": "Which knowledge tests does a Class A driver with air brakes take?",
+          "a": "General knowledge, combination vehicles, and air brakes.",
+          "factId": "1.1.1.3"
+        },
+        {
+          "q": "Which manual sections should a Class A applicant with air brakes study?",
+          "a": "Sections 1, 2, 3, 5, 6, 11, 12 and 13.",
+          "factId": "1.1.1.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.1.1.e1",
+          "q": "Your tractor has air over hydraulic brakes. Which test must you take?",
+          "factId": "1.1.1.2",
+          "page": "1-5",
+          "choices": [
+            "No extra test",
+            "The air brakes test",
+            "The tank vehicle test",
+            "The doubles and triples test"
+          ],
+          "answer": 1,
+          "why": "Air over hydraulic brakes count as air brakes, so the air brakes test is required."
+        }
+      ]
+    },
+    {
+      "id": "1.1.2",
+      "title": "Skills Tests",
+      "pdfPages": "12-13",
+      "manualPages": "1-5 to 1-6",
+      "facts": [
+        {
+          "id": "1.1.2.1",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "three",
+            "vehicle inspection",
+            "basic vehicle control",
+            "on road"
+          ],
+          "text": "The skills test has three parts: vehicle inspection, basic vehicle control, and on-road driving."
+        },
+        {
+          "id": "1.1.2.2",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "order",
+            "pass",
+            "before"
+          ],
+          "text": "You must take the three skills test parts in order, and you must pass each part before you go on to the next."
+        },
+        {
+          "id": "1.1.2.3",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "type of vehicle",
+            "licensed"
+          ],
+          "text": "You must take the skills test in the type of vehicle you want to be licensed for."
+        },
+        {
+          "id": "1.1.2.4",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "marked",
+            "labeled",
+            "cannot"
+          ],
+          "text": "A vehicle with marked or labelled components cannot be used for the CDL skills test."
+        },
+        {
+          "id": "1.1.2.5",
+          "critical": true,
+          "page": "1-5",
+          "keywords": [
+            "point",
+            "touch",
+            "name",
+            "explain"
+          ],
+          "text": "In the vehicle inspection test you must point to or touch each item, name it, and tell the examiner what you would inspect and why."
+        },
+        {
+          "id": "1.1.2.6",
+          "critical": false,
+          "page": "1-5",
+          "keywords": [
+            "forward",
+            "backward",
+            "turn",
+            "defined area"
+          ],
+          "text": "In the basic vehicle control test you move the vehicle forward, backward and turn it inside a marked area, and the examiner tells you how each exercise is done."
+        },
+        {
+          "id": "1.1.2.7",
+          "critical": false,
+          "page": "1-5",
+          "keywords": [
+            "entry level driver training",
+            "knowledge"
+          ],
+          "text": "You can take the skills test after you pass the required knowledge tests and finish entry level driver training."
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the three parts of the CDL skills test, in order?",
+          "a": "Vehicle inspection, basic vehicle control, then on-road driving.",
+          "factId": "1.1.2.1"
+        },
+        {
+          "q": "Can you take the skills test parts in any order?",
+          "a": "No. They are taken in order, and each must be passed before the next.",
+          "factId": "1.1.2.2"
+        },
+        {
+          "q": "Which vehicle must you use for the skills test?",
+          "a": "The type of vehicle you want the licence for.",
+          "factId": "1.1.2.3"
+        },
+        {
+          "q": "Can a vehicle with labelled parts be used for the skills test?",
+          "a": "No. Marked or labelled components are not allowed.",
+          "factId": "1.1.2.4"
+        },
+        {
+          "q": "What must you do for each item in the vehicle inspection test?",
+          "a": "Point to or touch it, name it, and say what you inspect and why.",
+          "factId": "1.1.2.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.1.2.e1",
+          "q": "You fail the basic vehicle control part. What happens next?",
+          "factId": "1.1.2.2",
+          "page": "1-5",
+          "choices": [
+            "You go on to the on-road test",
+            "You cannot go on to the on-road test",
+            "You retake the vehicle inspection",
+            "You get the licence with a restriction"
+          ],
+          "answer": 1,
+          "why": "Each part must be passed before the next one, so a failed part stops the test there."
+        },
+        {
+          "id": "1.1.2.e2",
+          "q": "During the inspection test, what must you do at each item?",
+          "factId": "1.1.2.5",
+          "page": "1-5",
+          "choices": [
+            "Name it only",
+            "Point to or touch it, name it, and explain what and why",
+            "Write it on the form",
+            "Nothing: the examiner points"
+          ],
+          "answer": 1,
+          "why": "The test needs you to point to or touch the item, name it, and explain the check."
+        }
+      ]
+    },
+    {
+      "id": "1.1.3",
+      "title": "Utah CDL Requirements",
+      "pdfPages": "13",
+      "manualPages": "1-6",
+      "facts": [
+        {
+          "id": "1.1.3.1",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "one year",
+            "experience",
+            "licensed driver"
+          ],
+          "text": "Utah requires at least one year of experience as a licensed driver before you can apply for a CDL."
+        },
+        {
+          "id": "1.1.3.2",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "medical examiner",
+            "certificate",
+            "mcsa 5876",
+            "dot card"
+          ],
+          "text": "Utah requires your driver licence and your current Medical Examiner's Certificate, form MCSA-5876, also called the medical certificate or DOT card."
+        },
+        {
+          "id": "1.1.3.3",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "surrender",
+            "cdip",
+            "permit"
+          ],
+          "text": "You must give up your driver licence to the Division when you get your Utah commercial driver instruction permit, and the permit then lets you drive your own vehicle."
+        },
+        {
+          "id": "1.1.3.4",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "21",
+            "passenger",
+            "school bus",
+            "hazmat"
+          ],
+          "text": "A CDL applicant under 21 years of age cannot get the passenger, school bus or hazardous materials endorsements."
+        }
+      ],
+      "cards": [
+        {
+          "q": "How much driving experience does Utah require before a CDL?",
+          "a": "At least one year as a licensed driver.",
+          "factId": "1.1.3.1"
+        },
+        {
+          "q": "Which medical form must a Utah CDL applicant provide?",
+          "a": "The current Medical Examiner's Certificate, MCSA-5876 (the DOT card).",
+          "factId": "1.1.3.2"
+        },
+        {
+          "q": "What happens to your driver licence when you get a CDIP in Utah?",
+          "a": "You surrender it to the Division, and the CDIP lets you drive your own vehicle.",
+          "factId": "1.1.3.3"
+        },
+        {
+          "q": "Which endorsements are barred under age 21 in Utah?",
+          "a": "Passenger, school bus and hazardous materials.",
+          "factId": "1.1.3.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.1.3.e1",
+          "q": "A 20-year-old Utah applicant may NOT get which endorsement?",
+          "factId": "1.1.3.4",
+          "page": "1-6",
+          "choices": [
+            "Tank vehicle",
+            "Doubles and triples",
+            "School bus",
+            "Air brakes removal"
+          ],
+          "answer": 2,
+          "why": "Under 21, the passenger, school bus and hazmat endorsements are not available."
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Medical Documentation",
+      "pdfPages": "13",
+      "manualPages": "1-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.2.1",
+      "title": "Interstate or Intrastate Commerce",
+      "pdfPages": "13",
+      "manualPages": "1-6",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.2.2",
+      "title": "Inter/Intrastate Commerce: Status Non-excepted or Excepted?",
+      "pdfPages": "13-15",
+      "manualPages": "1-6 to 1-8",
+      "facts": [],
+      "cards": [],
+      "exam": [],
+      "titleFixed": true
+    },
+    {
+      "id": "1.2.4",
+      "title": "State of Utah Restrictions",
+      "pdfPages": "15-16",
+      "manualPages": "1-8 to 1-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.2.5",
+      "title": "State of Utah Endorsements",
+      "pdfPages": "16",
+      "manualPages": "1-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.2.6",
+      "title": "Medical Examination",
+      "pdfPages": "16",
+      "manualPages": "1-9",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.2.7",
+      "title": "MVR",
+      "pdfPages": "16-17",
+      "manualPages": "1-9 to 1-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3",
+      "title": "CDL Disqualifications",
+      "pdfPages": "17",
+      "manualPages": "1-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.1",
+      "title": "General",
+      "pdfPages": "17",
+      "manualPages": "1-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.2",
+      "title": "Alcohol, Leaving the Scene of an Accident, and Commission of a Felony",
+      "pdfPages": "17",
+      "manualPages": "1-10",
+      "facts": [],
+      "cards": [],
+      "exam": [],
+      "titleFixed": true
+    },
+    {
+      "id": "1.3.3",
+      "title": "Serious Traffic Violations",
+      "pdfPages": "17",
+      "manualPages": "1-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.4",
+      "title": "Violation of Out-of-Service Orders",
+      "pdfPages": "17",
+      "manualPages": "1-10",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.5",
+      "title": "Railroad-highway Grade Crossing",
+      "pdfPages": "17-18",
+      "manualPages": "1-10 to 1-11",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.6",
+      "title": "Hazardous Materials Endorsement",
+      "pdfPages": "18",
+      "manualPages": "1-11",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.3.7",
+      "title": "Traffic Violations in Your Personal",
+      "pdfPages": "18",
+      "manualPages": "1-11",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.4",
+      "title": "Other CDL Rules",
+      "pdfPages": "18-19",
+      "manualPages": "1-11 to 1-12",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.5",
+      "title": "International Registration Plan",
+      "pdfPages": "19-22",
+      "manualPages": "1-12 to 1-15",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    },
+    {
+      "id": "1.6",
+      "title": "Driver License Fees",
+      "pdfPages": "22",
+      "manualPages": "1-15",
+      "facts": [],
+      "cards": [],
+      "exam": []
+    }
+  ],
+  "exam": []
+}

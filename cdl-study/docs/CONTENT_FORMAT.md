@@ -17,6 +17,7 @@ The **fact** is the centre of the format. One fact does three jobs:
   "title": "Air Brakes",
   "track": "air_brakes",
   "readingPages": 10,
+  "pdfPages": "77-86",
   "placeholder": false,
   "subsections": [ ... ],
   "exam": [ ... ]
@@ -29,12 +30,16 @@ The **fact** is the centre of the format. One fact does three jobs:
 | `title` | yes | The section name from the manual. |
 | `track` | yes | One of the six exam tracks. The list is below. |
 | `readingPages` | no | Pages to read, for the home screen. |
+| `pdfPages` | yes | Every page of the section in the manual PDF, such as "77-86". |
 | `placeholder` | no | `true` makes the app warn that the content is a sample. |
 | `subsections` | no | The subsections, in manual order. |
 | `exam` | no | Questions about the whole section, not one subsection. |
 
 The six tracks: `general_knowledge`, `air_brakes`, `combination`, `inspection`,
 `basic_control`, `on_road`.
+
+Only the eight sections Utah requires for a Class A are loaded: 1, 2, 3, 5, 6,
+11, 12 and 13. A file for any other section is reported and left out.
 
 ## A subsection
 
@@ -43,14 +48,30 @@ The six tracks: `general_knowledge`, `air_brakes`, `combination`, `inspection`,
   "id": "5.1",
   "title": "The Parts of an Air Brake System",
   "manualPages": "5-1 to 5-3",
+  "pdfPages": "77-79",
+  "titleFixed": true,
   "facts": [ ... ],
   "cards": [ ... ],
   "exam": [ ... ]
 }
 ```
 
-Use the manual's own numbering for `id`, such as `5.1`. The app shows
-`manualPages` on the Read step, so write it the way the manual labels its pages.
+| Field | Needed | What it is |
+|---|---|---|
+| `id` | yes | The manual's own numbering, such as `5.1`. |
+| `title` | yes | The heading from the manual. |
+| `pdfPages` | yes | The PDF pages to show on the Read step. |
+| `manualPages` | no | The page labels the manual prints, such as "5-1 to 5-3". |
+| `titleFixed` | no | `true` keeps a title you corrected by hand when the tool runs again. |
+
+**Two sets of page numbers, and they differ.** `pdfPages` counts pages as the
+PDF counts them, from 1, and the app needs it to show the page. `manualPages`
+holds the labels the manual prints, such as 5-3, which start again in every
+section. Page 5-1 of the manual is PDF page 77.
+
+An `id` that ends in `.0`, such as `1.0`, is the section opening: the pages
+before the first numbered heading. `tools/manual_map.py` makes it when those
+pages exist, because they are reading too.
 
 ## A fact
 
@@ -122,4 +143,22 @@ state test. `why` is shown after the exam, with the manual page.
 - a fact id is used twice;
 - a card or a question points at a fact that is not there;
 - a subsection has facts but no must-memorize fact;
-- a file named `*sample*` does not set `placeholder`, or any other file does.
+- a file named `*sample*` does not set `placeholder`, or any other file does;
+- a file holds a section outside the Class A plan, or one of the eight is missing;
+- a section or a subsection has no `pdfPages`;
+- a subsection's pages fall outside its section's pages;
+- the subsections of a section are out of manual order.
+
+## Making the files
+
+`tools/manual_map.py` writes these files from the manual PDF. It records
+headings and page numbers only, and copies no manual text, because the handbook
+is AAMVA material that only state licence agencies may reproduce.
+
+```
+python3 tools/manual_map.py /path/to/CDL-Manual.pdf
+```
+
+It needs `pdftotext` and `pdfinfo` (poppler-utils). A long heading wraps in the
+two-column layout, so a few titles come out cut short. Correct those by hand and
+add `"titleFixed": true`, and the next run keeps your version.

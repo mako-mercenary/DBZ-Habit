@@ -68,13 +68,22 @@ data class ExamItem(
 data class Subsection(
     val id: String,
     val title: String,
+    /** The page labels the manual prints, such as "5-3 to 5-4". */
     val manualPages: String? = null,
+    /** The pages of the manual PDF to show on the Read step. */
+    val pdfPages: PageSpan? = null,
     val facts: List<Fact> = emptyList(),
     val cards: List<Card> = emptyList(),
     val exam: List<ExamItem> = emptyList(),
 ) {
     val criticalFacts: List<Fact> get() = facts.filter { it.critical }
     fun fact(id: String): Fact? = facts.firstOrNull { it.id == id }
+
+    /** True once the fact checklist is written, so a recall can be graded. */
+    val canRecall: Boolean get() = facts.isNotEmpty()
+
+    /** True once the pages are mapped, so the manual can be read in the app. */
+    val canRead: Boolean get() = pdfPages != null
 }
 
 /** A section of the manual, such as Section 5, Air Brakes. */
@@ -83,6 +92,8 @@ data class Section(
     val title: String,
     val track: Track,
     val readingPages: Int = 0,
+    /** Every page of the section in the manual PDF. */
+    val pdfPages: PageSpan? = null,
     val subsections: List<Subsection> = emptyList(),
     /** Questions that test the whole section, not one subsection. */
     val exam: List<ExamItem> = emptyList(),
@@ -90,12 +101,17 @@ data class Section(
     val placeholder: Boolean = false,
 ) {
     val factCount: Int get() = subsections.sumOf { it.facts.size }
+    val readyToRecall: Int get() = subsections.count { it.canRecall }
     val cardCount: Int get() = subsections.sumOf { it.cards.size }
     val examCount: Int get() = exam.size + subsections.sumOf { it.exam.size }
 }
 
 /** Every section the app has loaded. */
 class Content(val sections: List<Section>) {
+
+    /** The highest manual page any section needs, to check an imported PDF. */
+    val lastPdfPage: Int
+        get() = sections.mapNotNull { it.pdfPages?.last }.maxOrNull() ?: 0
 
     val isPlaceholderOnly: Boolean get() = sections.all { it.placeholder }
 
@@ -129,6 +145,7 @@ object ContentReader {
             title = root.str("title"),
             track = Track.of(root.str("track")),
             readingPages = root.intOrNull("readingPages") ?: 0,
+            pdfPages = PageSpan.parse(root.strOrNull("pdfPages")),
             subsections = root.list("subsections").map { readSubsection(it) },
             exam = root.list("exam").mapIndexed { i, item ->
                 readExamItem(item, "s${root.int("section")}.e${i + 1}")
@@ -148,6 +165,7 @@ object ContentReader {
             id = id,
             title = map.str("title"),
             manualPages = map.strOrNull("manualPages"),
+            pdfPages = PageSpan.parse(map.strOrNull("pdfPages")),
             facts = map.list("facts").mapIndexed { i, f -> readFact(f, "$id.${i + 1}") },
             cards = map.list("cards").map { readCard(it) },
             exam = map.list("exam").mapIndexed { i, e -> readExamItem(e, "$id.e${i + 1}") },

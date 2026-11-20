@@ -32,8 +32,11 @@ fun HomeScreen(
     onCards: () -> Unit,
     onExams: () -> Unit,
     onProgress: () -> Unit,
+    onManual: () -> Unit,
+    onPlan: () -> Unit,
 ) {
     val repo = repository()
+    val store = manualStore()
     val errors = contentErrors()
     val plan by repo.planProgress.collectAsStateWithLifecycle(
         PlanProgress(0, 0, 0)
@@ -87,6 +90,21 @@ fun HomeScreen(
                 }
             }
 
+            if (!store.isImported) {
+                item {
+                    Card(onClick = onManual, modifier = Modifier.fillMaxWidth()) {
+                        Column(Modifier.padding(16.dp)) {
+                            Text("Import your manual", style = MaterialTheme.typography.titleMedium)
+                            Text(
+                                "Then you read each subsection in the app, at the right pages. " +
+                                    "The app carries no manual text of its own.",
+                                style = MaterialTheme.typography.bodyMedium,
+                            )
+                        }
+                    }
+                }
+            }
+
             item {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Button(onClick = onCards) { Text("Cards ($pendingCards)") }
@@ -94,8 +112,25 @@ fun HomeScreen(
                     OutlinedButton(onClick = onProgress) { Text("Progress") }
                 }
             }
+            item {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedButton(onClick = onPlan) { Text("What you must study") }
+                    OutlinedButton(onClick = onManual) { Text("Your manual") }
+                }
+            }
 
-            item { Text("Sections", style = MaterialTheme.typography.titleMedium) }
+            item {
+                Column {
+                    Text(
+                        "The eight required sections",
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                    Text(
+                        "Class A with air brakes, no endorsements.",
+                        style = MaterialTheme.typography.labelMedium,
+                    )
+                }
+            }
 
             items(repo.content.sections) { section ->
                 SectionRow(section, progress) { onSection(section.number) }
@@ -123,7 +158,12 @@ private fun SectionRow(
                 style = MaterialTheme.typography.bodyMedium,
             )
             Text(
-                "${section.factCount} facts | ${section.cardCount} cards | ${section.examCount} questions",
+                if (section.factCount == 0) {
+                    "${section.readingPages} pages to read | no fact checklist yet"
+                } else {
+                    "${section.factCount} facts | ${section.cardCount} cards | " +
+                        "${section.examCount} questions"
+                },
                 style = MaterialTheme.typography.labelMedium,
             )
         }
