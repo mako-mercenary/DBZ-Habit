@@ -10,17 +10,119 @@
       "title": "The Parts of an Air Brake System",
       "pdfPages": "77",
       "manualPages": "5-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.a",
+          "text": "Air brakes are three braking systems in one: the service brake, the parking brake, and the emergency brake.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "three",
+            "service",
+            "parking",
+            "emergency"
+          ]
+        },
+        {
+          "id": "5.1.b",
+          "text": "The service brake system puts on and releases the brakes when you use the brake pedal in normal driving.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "service brake",
+            "pedal"
+          ]
+        },
+        {
+          "id": "5.1.c",
+          "text": "The parking brake system puts on and releases the parking brakes when you use the parking brake control.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "parking brake",
+            "control"
+          ]
+        },
+        {
+          "id": "5.1.d",
+          "text": "The emergency brake system uses parts of the service and parking brake systems to stop the vehicle if the brake system fails.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "emergency",
+            "failure"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What three braking systems make up air brakes?",
+          "a": "Service brake, parking brake and emergency brake.",
+          "factId": "5.1.a"
+        },
+        {
+          "q": "What does the emergency brake system use?",
+          "a": "Parts of the service and parking brake systems.",
+          "factId": "5.1.d"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.e1",
+          "q": "Air brakes are really how many braking systems?",
+          "choices": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "answer": 2,
+          "why": "Service, parking and emergency brakes together make the air brake system.",
+          "factId": "5.1.a",
+          "page": "5-1"
+        }
+      ]
     },
     {
       "id": "5.1.1",
       "title": "Air Compressor",
       "pdfPages": "77",
       "manualPages": "5-1",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.1.1",
+          "text": "The air compressor pumps air into the air storage tanks, and it is driven by the engine through gears or a v-belt.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "compressor",
+            "pumps",
+            "tanks"
+          ]
+        },
+        {
+          "id": "5.1.1.2",
+          "text": "If the air compressor has its own oil supply, check the oil level before you drive.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "own oil",
+            "check"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the air compressor do?",
+          "a": "It pumps air into the air storage tanks.",
+          "factId": "5.1.1.1"
+        },
+        {
+          "q": "What must you check if the compressor has its own oil supply?",
+          "a": "The oil level, before driving.",
+          "factId": "5.1.1.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -28,17 +130,101 @@
       "title": "Air Compressor Governor",
       "pdfPages": "77",
       "manualPages": "5-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.2.1",
+          "text": "The governor stops the compressor pumping at the cut-out level, which is about 125 psi.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "governor",
+            "cut out",
+            "125"
+          ]
+        },
+        {
+          "id": "5.1.2.2",
+          "text": "The governor lets the compressor start pumping again at the cut-in level, which is about 100 psi.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "cut in",
+            "100"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "At what pressure does the governor cut out?",
+          "a": "About 125 psi.",
+          "factId": "5.1.2.1"
+        },
+        {
+          "q": "At what pressure does the governor cut in?",
+          "a": "About 100 psi.",
+          "factId": "5.1.2.2"
+        },
+        {
+          "q": "What does the air compressor governor control?",
+          "a": "When the compressor pumps air into the tanks.",
+          "factId": "5.1.2.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.2.e1",
+          "q": "At about what pressure does the governor stop the compressor pumping?",
+          "choices": [
+            "55 psi",
+            "100 psi",
+            "125 psi",
+            "150 psi"
+          ],
+          "answer": 2,
+          "why": "Cut-out is about 125 psi. Cut-in is about 100 psi.",
+          "factId": "5.1.2.1",
+          "page": "5-1"
+        },
+        {
+          "id": "5.1.2.e2",
+          "q": "At about what pressure does the compressor start pumping again?",
+          "choices": [
+            "55 psi",
+            "100 psi",
+            "125 psi",
+            "150 psi"
+          ],
+          "answer": 1,
+          "why": "Cut-in is about 100 psi.",
+          "factId": "5.1.2.2",
+          "page": "5-1"
+        }
+      ]
     },
     {
       "id": "5.1.3",
       "title": "Air Storage Tanks",
       "pdfPages": "77",
       "manualPages": "5-1",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.3.1",
+          "text": "The air tanks hold enough compressed air to use the brakes several times, even after the compressor stops working.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "several times",
+            "compressor stops"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How much air do the tanks hold?",
+          "a": "Enough to use the brakes several times, even if the compressor stops.",
+          "factId": "5.1.3.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -46,17 +232,103 @@
       "title": "Air Tank Drains",
       "pdfPages": "77-78",
       "manualPages": "5-1 to 5-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.4.1",
+          "text": "Compressed air holds water and compressor oil, and the water can freeze in cold weather and cause brake failure.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "water",
+            "oil",
+            "freeze"
+          ]
+        },
+        {
+          "id": "5.1.4.2",
+          "text": "With manual drain valves you must drain the tanks yourself at the end of each day of driving.",
+          "critical": true,
+          "page": "5-1",
+          "keywords": [
+            "manual",
+            "end of each day"
+          ]
+        },
+        {
+          "id": "5.1.4.3",
+          "text": "A manual drain valve is worked by a quarter turn or by pulling a cable, and an automatic valve forces the water and oil out by itself.",
+          "critical": false,
+          "page": "5-1",
+          "keywords": [
+            "quarter turn",
+            "cable",
+            "automatic"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why must air tanks be drained?",
+          "a": "Water and oil collect in them, and water can freeze and cause brake failure.",
+          "factId": "5.1.4.1"
+        },
+        {
+          "q": "How often do you drain manual air tanks?",
+          "a": "At the end of each day of driving.",
+          "factId": "5.1.4.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.4.e1",
+          "q": "Why must you drain the air tanks?",
+          "choices": [
+            "To cool the brakes",
+            "To remove water and oil",
+            "To lower the pressure",
+            "To test the governor"
+          ],
+          "answer": 1,
+          "why": "Water and compressor oil collect in the tanks, and water can freeze and stop the brakes working.",
+          "factId": "5.1.4.1",
+          "page": "5-1"
+        }
+      ]
     },
     {
       "id": "5.1.5",
       "title": "Alcohol Evaporator",
       "pdfPages": "78",
       "manualPages": "5-2",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.5.1",
+          "text": "An alcohol evaporator puts alcohol into the air system to cut the risk of ice in the air brake valves in cold weather.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "alcohol evaporator",
+            "ice"
+          ]
+        },
+        {
+          "id": "5.1.5.2",
+          "text": "Check the alcohol container and fill it as needed every day in cold weather, and still drain the tanks daily.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "every day",
+            "drain"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does an alcohol evaporator do?",
+          "a": "It puts alcohol in the air system to stop ice forming in the valves.",
+          "factId": "5.1.5.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -64,17 +336,103 @@
       "title": "Safety Valve",
       "pdfPages": "78",
       "manualPages": "5-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.6.1",
+          "text": "The safety relief valve is in the first tank the compressor pumps to, and it is usually set to open at 150 psi.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "safety valve",
+            "150",
+            "first tank"
+          ]
+        },
+        {
+          "id": "5.1.6.2",
+          "text": "If the safety valve lets air out, something is wrong, and a mechanic must fix it.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "something is wrong",
+            "mechanic"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "At what pressure does the safety valve usually open?",
+          "a": "150 psi.",
+          "factId": "5.1.6.1"
+        },
+        {
+          "q": "Where is the safety relief valve fitted?",
+          "a": "In the first tank the compressor pumps air to.",
+          "factId": "5.1.6.1"
+        },
+        {
+          "q": "What does it mean if the safety valve releases air?",
+          "a": "Something is wrong. Have a mechanic fix it.",
+          "factId": "5.1.6.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.6.e1",
+          "q": "The safety relief valve is usually set to open at what pressure?",
+          "choices": [
+            "100 psi",
+            "125 psi",
+            "150 psi",
+            "55 psi"
+          ],
+          "answer": 2,
+          "why": "The safety valve usually opens at 150 psi.",
+          "factId": "5.1.6.1",
+          "page": "5-2"
+        }
+      ]
     },
     {
       "id": "5.1.7",
       "title": "The Brake Pedal",
       "pdfPages": "78",
       "manualPages": "5-2",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.7.1",
+          "text": "Pushing the brake pedal harder applies more air pressure, and letting it up releases the brakes and lets air out of the system.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "harder",
+            "more air pressure"
+          ]
+        },
+        {
+          "id": "5.1.7.2",
+          "text": "Pressing and releasing the pedal when you do not need to lets air out faster than the compressor can replace it, and the brakes stop working if the pressure gets too low.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "faster",
+            "compressor",
+            "too low"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the danger of fanning the brake pedal?",
+          "a": "Air goes out faster than the compressor replaces it, and the brakes fail at low pressure.",
+          "factId": "5.1.7.2"
+        },
+        {
+          "q": "What else is the brake pedal called?",
+          "a": "The foot valve or treadle valve.",
+          "factId": "5.1.7.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -82,8 +440,52 @@
       "title": "Foundation Brakes",
       "pdfPages": "78",
       "manualPages": "5-2",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.8.1",
+          "text": "The most common foundation brake is the s-cam drum brake.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "s cam",
+            "drum",
+            "most common"
+          ]
+        },
+        {
+          "id": "5.1.8.2",
+          "text": "To stop, the brake shoes and linings are pushed against the inside of the drum, which makes friction and heat, and too much heat makes the brakes stop working.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "friction",
+            "heat"
+          ]
+        },
+        {
+          "id": "5.1.8.3",
+          "text": "Wedge brakes and disc brakes are less common than s-cam brakes.",
+          "critical": false,
+          "page": "5-2",
+          "keywords": [
+            "wedge",
+            "disc",
+            "less common"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the most common type of foundation brake?",
+          "a": "The s-cam drum brake.",
+          "factId": "5.1.8.1"
+        },
+        {
+          "q": "What slows the vehicle inside a drum brake?",
+          "a": "Friction, as the shoes and linings press the inside of the drum.",
+          "factId": "5.1.8.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -91,8 +493,26 @@
       "title": "Supply Pressure Gauges",
       "pdfPages": "78-79",
       "manualPages": "5-2 to 5-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.9.1",
+          "text": "Every vehicle with air brakes has a supply pressure gauge that shows how much pressure is in the air tanks, and a dual system has one for each half, or one gauge with two needles.",
+          "critical": true,
+          "page": "5-2",
+          "keywords": [
+            "supply pressure",
+            "tanks",
+            "dual"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the supply pressure gauge show?",
+          "a": "How much pressure is in the air tanks.",
+          "factId": "5.1.9.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -100,26 +520,164 @@
       "title": "Application Pressure Gauge",
       "pdfPages": "79",
       "manualPages": "5-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.10.1",
+          "text": "The application pressure gauge shows how much air pressure you are putting on the brakes.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "application",
+            "putting on"
+          ]
+        },
+        {
+          "id": "5.1.10.2",
+          "text": "If you need more and more application pressure to hold the same speed, the brakes are fading, so slow down and take a lower gear.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "fading",
+            "lower gear"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does rising application pressure at the same speed mean?",
+          "a": "The brakes are fading. Slow down and use a lower gear.",
+          "factId": "5.1.10.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.10.e1",
+          "q": "You need more application pressure to hold your speed. What does this mean?",
+          "choices": [
+            "The governor is cutting out",
+            "The brakes are fading",
+            "The tanks are full",
+            "ABS has engaged"
+          ],
+          "answer": 1,
+          "why": "More pressure for the same speed means fading brakes, brakes out of adjustment, leaks or a mechanical fault.",
+          "factId": "5.1.10.2",
+          "page": "5-3"
+        }
+      ]
     },
     {
       "id": "5.1.11",
       "title": "Low Air Pressure Warning",
       "pdfPages": "79",
       "manualPages": "5-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.11.1",
+          "text": "A low air pressure warning you can see must come on before the tank pressure falls below 55 psi.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "55",
+            "warning",
+            "before"
+          ]
+        },
+        {
+          "id": "5.1.11.2",
+          "text": "A low air pressure warning signal is required on every vehicle with air brakes, and it is usually a red light, sometimes with a buzzer.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "required",
+            "red light"
+          ]
+        },
+        {
+          "id": "5.1.11.3",
+          "text": "A wig wag drops a mechanical arm into view when the pressure falls below 55 psi, and an automatic one rises out of view only above 55 psi.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "wig wag",
+            "55"
+          ]
+        },
+        {
+          "id": "5.1.11.4",
+          "text": "On large buses the low pressure warning often comes on at 80 to 85 psi.",
+          "critical": false,
+          "page": "5-3",
+          "keywords": [
+            "buses",
+            "80",
+            "85"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Before what pressure must the low air warning come on?",
+          "a": "Before the pressure falls below 55 psi.",
+          "factId": "5.1.11.1"
+        },
+        {
+          "q": "Is a low air pressure warning required?",
+          "a": "Yes, on every vehicle with air brakes.",
+          "factId": "5.1.11.2"
+        },
+        {
+          "q": "What is a wig wag?",
+          "a": "A mechanical arm that drops into view when pressure falls below 55 psi.",
+          "factId": "5.1.11.3"
+        },
+        {
+          "q": "At what pressure do large buses usually warn of low air?",
+          "a": "80 to 85 psi.",
+          "factId": "5.1.11.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.11.e1",
+          "q": "The low air pressure warning must come on before the pressure drops below what?",
+          "choices": [
+            "20 psi",
+            "45 psi",
+            "55 psi",
+            "100 psi"
+          ],
+          "answer": 2,
+          "why": "The visible warning must come on before 55 psi.",
+          "factId": "5.1.11.1",
+          "page": "5-3"
+        }
+      ]
     },
     {
       "id": "5.1.12",
       "title": "Stop Light Switch",
       "pdfPages": "79",
       "manualPages": "5-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.1.12.1",
+          "text": "The stop light switch is an electric switch worked by air pressure, and it turns on your brake lights when you put on the air brakes.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "stop light",
+            "brake lights"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the stop light switch do?",
+          "a": "It turns on the brake lights when you apply the air brakes.",
+          "factId": "5.1.12.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -127,53 +685,522 @@
       "title": "Front Brake Limiting Valve",
       "pdfPages": "79",
       "manualPages": "5-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.13.1",
+          "text": "A front brake limiting valve, on some vehicles made before 1975, cuts the normal air pressure to the front brakes by half when the cab control is set to slippery.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "1975",
+            "slippery",
+            "half"
+          ]
+        },
+        {
+          "id": "5.1.13.2",
+          "text": "Front wheel braking is good in all conditions, and tests show a front wheel skid from braking is not likely even on ice, so keep the control in the normal position.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "front wheel",
+            "all conditions",
+            "normal"
+          ]
+        },
+        {
+          "id": "5.1.13.3",
+          "text": "An automatic front wheel limiting valve cuts the air to the front brakes except in a very hard application of 55 psi or more, and the driver cannot control it.",
+          "critical": false,
+          "page": "5-3",
+          "keywords": [
+            "automatic",
+            "55"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Are front wheel brakes good on slippery roads?",
+          "a": "Yes. Front wheel braking is good in all conditions.",
+          "factId": "5.1.13.2"
+        },
+        {
+          "q": "What does the slippery setting of a front brake limiting valve do?",
+          "a": "It halves the air pressure to the front brakes, and cuts your stopping power.",
+          "factId": "5.1.13.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.13.e1",
+          "q": "Front wheel brakes on a slippery road are:",
+          "choices": [
+            "Dangerous, so cut the pressure",
+            "Good under all conditions",
+            "Only for dry roads",
+            "Only for use with ABS"
+          ],
+          "answer": 1,
+          "why": "Front wheel braking is good in all conditions, and a braking skid at the front is unlikely even on ice.",
+          "factId": "5.1.13.2",
+          "page": "5-3"
+        }
+      ]
     },
     {
       "id": "5.1.14",
       "title": "Spring Brakes",
       "pdfPages": "79",
       "manualPages": "5-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.14.1",
+          "text": "Every truck, truck tractor and bus must have emergency brakes and parking brakes held on by mechanical force, because air pressure leaks away, and spring brakes do that job.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "mechanical force",
+            "spring brakes"
+          ]
+        },
+        {
+          "id": "5.1.14.2",
+          "text": "When you drive, air pressure holds the powerful springs back. Take the air away and the springs put the brakes on.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "springs",
+            "air pressure",
+            "put the brakes on"
+          ]
+        },
+        {
+          "id": "5.1.14.3",
+          "text": "Tractor and straight truck spring brakes come fully on when the air pressure drops to between 20 and 45 psi, and typically 20 to 30 psi.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "20",
+            "45",
+            "fully on"
+          ]
+        },
+        {
+          "id": "5.1.14.4",
+          "text": "Do not wait for the spring brakes to come on by themselves. Stop safely as soon as the low air warning comes on, while you still control the brakes.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "do not wait",
+            "stop"
+          ]
+        },
+        {
+          "id": "5.1.14.5",
+          "text": "Spring brake power depends on the brakes being in adjustment, because badly adjusted brakes make the regular, emergency and parking brakes all work poorly.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "adjustment"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are spring brakes?",
+          "a": "Brakes held off by air pressure. If the air goes, the springs apply them.",
+          "factId": "5.1.14.2"
+        },
+        {
+          "q": "At what pressure do spring brakes come fully on?",
+          "a": "Between 20 and 45 psi, typically 20 to 30 psi.",
+          "factId": "5.1.14.3"
+        },
+        {
+          "q": "What do you do when the low air warning comes on?",
+          "a": "Stop safely right away, while you can still control the brakes.",
+          "factId": "5.1.14.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.14.e1",
+          "q": "At what pressure do tractor and straight truck spring brakes come fully on?",
+          "choices": [
+            "55 to 70 psi",
+            "20 to 45 psi",
+            "100 to 125 psi",
+            "10 to 15 psi"
+          ],
+          "answer": 1,
+          "why": "They come fully on between 20 and 45 psi, typically 20 to 30.",
+          "factId": "5.1.14.3",
+          "page": "5-3"
+        },
+        {
+          "id": "5.1.14.e2",
+          "q": "The low air pressure warning comes on while you drive. What should you do?",
+          "choices": [
+            "Keep going to the next stop",
+            "Pump the brake pedal to build air",
+            "Stop safely right away",
+            "Wait for the spring brakes"
+          ],
+          "answer": 2,
+          "why": "Stop while you still have enough air to control the brakes. Do not wait for the spring brakes.",
+          "factId": "5.1.14.4",
+          "page": "5-3"
+        }
+      ]
     },
     {
       "id": "5.1.15",
       "title": "Parking Brake Controls",
       "pdfPages": "79-80",
       "manualPages": "5-3 to 5-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.15.1",
+          "text": "On a newer vehicle the parking brake control is a yellow, diamond-shaped push-pull knob. Pull it out to put the parking brakes on, and push it in to release them.",
+          "critical": true,
+          "page": "5-3",
+          "keywords": [
+            "yellow",
+            "diamond",
+            "pull out"
+          ]
+        },
+        {
+          "id": "5.1.15.2",
+          "text": "Never push the brake pedal down while the spring brakes are on, because the springs and the air pressure together can damage the brakes.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "never",
+            "spring brakes on",
+            "damage"
+          ]
+        },
+        {
+          "id": "5.1.15.3",
+          "text": "A modulating control valve puts the spring brakes on gradually, so you can control them if the service brakes fail.",
+          "critical": false,
+          "page": "5-4",
+          "keywords": [
+            "modulating",
+            "gradually"
+          ]
+        },
+        {
+          "id": "5.1.15.4",
+          "text": "A separate air tank with dual parking control valves can release the spring brakes to move the vehicle in an emergency, and it holds only enough air for a few moves.",
+          "critical": false,
+          "page": "5-4",
+          "keywords": [
+            "separate tank",
+            "few times"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the parking brake control look like on a newer vehicle?",
+          "a": "A yellow, diamond-shaped push-pull knob.",
+          "factId": "5.1.15.1"
+        },
+        {
+          "q": "Why must you not press the brake pedal with the spring brakes on?",
+          "a": "The springs and the air pressure together can damage the brakes.",
+          "factId": "5.1.15.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.15.e1",
+          "q": "What shape and colour is the parking brake control on a newer vehicle?",
+          "choices": [
+            "Round and blue",
+            "Yellow and diamond-shaped",
+            "Red and octagonal",
+            "Black and square"
+          ],
+          "answer": 1,
+          "why": "It is a yellow, diamond-shaped push-pull knob. Older vehicles may have a round blue knob or a lever.",
+          "factId": "5.1.15.1",
+          "page": "5-3"
+        }
+      ]
     },
     {
       "id": "5.1.16",
       "title": "Antilock Braking Systems (ABS)",
       "pdfPages": "80-81",
       "manualPages": "5-4 to 5-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.1.16.1",
+          "text": "Truck tractors with air brakes built on or after 1 March 1997 must have antilock brakes.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "tractors",
+            "march 1 1997"
+          ]
+        },
+        {
+          "id": "5.1.16.2",
+          "text": "Other air brake vehicles, which are trucks, buses, trailers and converter dollies, must have antilock brakes if they were built on or after 1 March 1998.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "march 1 1998",
+            "trailers",
+            "dollies"
+          ]
+        },
+        {
+          "id": "5.1.16.3",
+          "text": "Check the certification label for the date of manufacture to find out whether your vehicle has ABS.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "certification label",
+            "date"
+          ]
+        },
+        {
+          "id": "5.1.16.4",
+          "text": "ABS malfunction lamps are yellow. A tractor, truck or bus has it on the instrument panel, and a trailer has it on the left side, at the front or the rear corner.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "yellow",
+            "left side",
+            "instrument panel"
+          ]
+        },
+        {
+          "id": "5.1.16.5",
+          "text": "The malfunction lamp comes on at start-up for a bulb check and then goes out. On an older system it may stay on until you are driving over five mph.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "bulb check",
+            "five mph"
+          ]
+        },
+        {
+          "id": "5.1.16.6",
+          "text": "ABS is an addition to your normal brakes. It does not decrease or increase your normal braking, and it works only when the wheels are about to lock.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "addition",
+            "about to lock"
+          ]
+        },
+        {
+          "id": "5.1.16.7",
+          "text": "ABS does not always shorten your stopping distance, but it helps you keep control in hard braking.",
+          "critical": true,
+          "page": "5-4",
+          "keywords": [
+            "does not",
+            "stopping distance",
+            "control"
+          ]
+        },
+        {
+          "id": "5.1.16.8",
+          "text": "To find ABS on an older towed unit, look under the vehicle for the electronic control unit and the wheel speed sensor wires at the back of the brakes.",
+          "critical": false,
+          "page": "5-4",
+          "keywords": [
+            "electronic control unit",
+            "wheel speed sensor"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which air brake tractors must have ABS?",
+          "a": "Truck tractors built on or after 1 March 1997.",
+          "factId": "5.1.16.1"
+        },
+        {
+          "q": "Which other air brake vehicles must have ABS?",
+          "a": "Trucks, buses, trailers and converter dollies built on or after 1 March 1998.",
+          "factId": "5.1.16.2"
+        },
+        {
+          "q": "What colour is the ABS malfunction lamp?",
+          "a": "Yellow.",
+          "factId": "5.1.16.4"
+        },
+        {
+          "q": "Where is a trailer's ABS malfunction lamp?",
+          "a": "On the left side, at the front or rear corner.",
+          "factId": "5.1.16.4"
+        },
+        {
+          "q": "Does ABS shorten your stopping distance?",
+          "a": "Not necessarily. It helps you stay in control during hard braking.",
+          "factId": "5.1.16.7"
+        },
+        {
+          "q": "How do you tell whether your vehicle has ABS?",
+          "a": "Check the certification label for the date of manufacture.",
+          "factId": "5.1.16.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.1.16.e1",
+          "q": "From which date must a truck tractor with air brakes have antilock brakes?",
+          "choices": [
+            "1 March 1995",
+            "1 March 1997",
+            "1 March 1998",
+            "1 January 2000"
+          ],
+          "answer": 1,
+          "why": "Tractors from 1 March 1997, and other air brake vehicles from 1 March 1998.",
+          "factId": "5.1.16.1",
+          "page": "5-4"
+        },
+        {
+          "id": "5.1.16.e2",
+          "q": "What does ABS do for your braking?",
+          "choices": [
+            "It shortens every stop",
+            "It replaces the service brakes",
+            "It keeps the wheels from locking so you stay in control",
+            "It applies the spring brakes"
+          ],
+          "answer": 2,
+          "why": "ABS only works when a wheel is about to lock. It does not necessarily shorten the stop.",
+          "factId": "5.1.16.6",
+          "page": "5-4"
+        }
+      ]
     },
     {
       "id": "5.2",
       "title": "Dual Air Brake",
       "pdfPages": "81-82",
       "manualPages": "5-5 to 5-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.2.1",
+          "text": "A dual air brake system is two separate air brake systems that share one set of brake controls, and each has its own tanks, hoses and lines.",
+          "critical": true,
+          "page": "5-5",
+          "keywords": [
+            "dual",
+            "two separate",
+            "one set"
+          ]
+        },
+        {
+          "id": "5.2.2",
+          "text": "One system works the rear axle brakes and the other works the front axle brakes, and both feed air to the trailer. The first is the primary system and the other is the secondary system.",
+          "critical": true,
+          "page": "5-5",
+          "keywords": [
+            "primary",
+            "secondary"
+          ]
+        },
+        {
+          "id": "5.2.3",
+          "text": "Before you drive a vehicle with a dual air system, let the compressor build at least 100 psi in both the primary and the secondary system.",
+          "critical": true,
+          "page": "5-5",
+          "keywords": [
+            "100",
+            "both"
+          ]
+        },
+        {
+          "id": "5.2.4",
+          "text": "The warning light and buzzer must go off above 55 psi, and must come on before the pressure falls below 55 psi in either system.",
+          "critical": true,
+          "page": "5-5",
+          "keywords": [
+            "55",
+            "either system"
+          ]
+        },
+        {
+          "id": "5.2.5",
+          "text": "If one air system gets very low, the front or the rear brakes will not work fully, so it takes longer to stop. Park safely and have the system fixed.",
+          "critical": true,
+          "page": "5-5",
+          "keywords": [
+            "very low",
+            "longer to stop"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is a dual air brake system?",
+          "a": "Two separate air brake systems with one set of controls, each with its own tanks and lines.",
+          "factId": "5.2.1"
+        },
+        {
+          "q": "How much pressure must be in both systems before driving?",
+          "a": "At least 100 psi.",
+          "factId": "5.2.3"
+        },
+        {
+          "q": "What happens if one system of a dual air brake system goes very low?",
+          "a": "The front or rear brakes stop working fully, so stopping takes longer.",
+          "factId": "5.2.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.2.e1",
+          "q": "Before driving a vehicle with a dual air brake system, what pressure must you have?",
+          "choices": [
+            "At least 55 psi in one system",
+            "At least 100 psi in both systems",
+            "At least 125 psi in one system",
+            "At least 150 psi in both systems"
+          ],
+          "answer": 1,
+          "why": "Let the compressor build a minimum of 100 psi in both the primary and secondary systems.",
+          "factId": "5.2.3",
+          "page": "5-5"
+        }
+      ]
     },
     {
       "id": "5.3",
       "title": "Inspecting Air Brake Systems",
       "pdfPages": "82",
       "manualPages": "5-6",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.3.a",
+          "text": "Inspect a vehicle with air brakes with the same seven-step method as any other vehicle, and add the air brake checks in the step where each one belongs.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "seven step",
+            "air brake checks"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which inspection method covers air brakes?",
+          "a": "The same seven-step method, with extra air brake checks added in.",
+          "factId": "5.3.a"
+        }
+      ],
       "exam": []
     },
     {
@@ -181,8 +1208,25 @@
       "title": "During Step 2 Engine Compartment",
       "pdfPages": "82",
       "manualPages": "5-6",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.3.1.1",
+          "text": "In step 2, the engine compartment check, look at the condition and the tightness of the air compressor drive belt if the compressor is belt-driven.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "drive belt",
+            "tightness"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What air brake item do you check in the engine compartment?",
+          "a": "The air compressor drive belt, if it is belt-driven: condition and tightness.",
+          "factId": "5.3.1.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -190,18 +1234,348 @@
       "title": "During Step 5 Walk-around Inspection",
       "pdfPages": "82",
       "manualPages": "5-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.3.2.1",
+          "text": "To check a slack adjuster, park on level ground, chock the wheels, release the parking brakes, put gloves on, and pull hard on each slack adjuster you can reach.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "chock",
+            "release",
+            "gloves",
+            "pull hard"
+          ]
+        },
+        {
+          "id": "5.3.2.2",
+          "text": "A slack adjuster that moves more than about one inch where the push rod attaches to it probably needs adjustment.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "one inch",
+            "push rod"
+          ]
+        },
+        {
+          "id": "5.3.2.3",
+          "text": "Brakes out of adjustment are the most common fault found in roadside inspections.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "most common",
+            "roadside"
+          ]
+        },
+        {
+          "id": "5.3.2.4",
+          "text": "Every vehicle built since 1994 has automatic slack adjusters, and they must still be checked.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "1994",
+            "automatic",
+            "still be checked"
+          ]
+        },
+        {
+          "id": "5.3.2.5",
+          "text": "A brake drum or disc must not have a crack longer than one half the width of the friction area.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "crack",
+            "one half",
+            "friction area"
+          ]
+        },
+        {
+          "id": "5.3.2.6",
+          "text": "Linings must not be loose, soaked with oil or grease, or dangerously thin, and the air hoses to the brake chambers must not be cut or worn.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "linings",
+            "loose",
+            "soaked",
+            "thin"
+          ]
+        },
+        {
+          "id": "5.3.2.7",
+          "text": "Adjusting an automatic slack adjuster by hand hides a mechanical fault instead of fixing it, so take the vehicle to a repair shop.",
+          "critical": false,
+          "page": "5-6",
+          "keywords": [
+            "by hand",
+            "hides",
+            "repair"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How much slack adjuster movement means adjustment is needed?",
+          "a": "More than about one inch where the push rod attaches.",
+          "factId": "5.3.2.2"
+        },
+        {
+          "q": "How do you check slack adjusters safely?",
+          "a": "Park level, chock the wheels, release the parking brakes, wear gloves and pull hard on each one.",
+          "factId": "5.3.2.1"
+        },
+        {
+          "q": "What is the most common fault found in roadside inspections?",
+          "a": "Brakes out of adjustment.",
+          "factId": "5.3.2.3"
+        },
+        {
+          "q": "How long a crack is allowed in a brake drum?",
+          "a": "No longer than half the width of the friction area.",
+          "factId": "5.3.2.5"
+        },
+        {
+          "q": "Do automatic slack adjusters still need checking?",
+          "a": "Yes. Every vehicle since 1994 has them, and they must still be checked.",
+          "factId": "5.3.2.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.3.2.e1",
+          "q": "A slack adjuster moves about two inches when you pull hard on it. What does this mean?",
+          "choices": [
+            "It is correct",
+            "It probably needs adjustment",
+            "It is over-adjusted",
+            "It means the spring brakes are on"
+          ],
+          "answer": 1,
+          "why": "More than about one inch of movement at the push rod means it probably needs adjustment.",
+          "factId": "5.3.2.2",
+          "page": "5-6"
+        },
+        {
+          "id": "5.3.2.e2",
+          "q": "Before you pull on a slack adjuster you must:",
+          "choices": [
+            "Apply the parking brakes",
+            "Chock the wheels and release the parking brakes",
+            "Start the engine",
+            "Drain the air tanks"
+          ],
+          "answer": 1,
+          "why": "Park level, chock the wheels and release the parking brakes so the slack adjuster can move.",
+          "factId": "5.3.2.1",
+          "page": "5-6"
+        }
+      ]
     },
     {
       "id": "5.3.3",
       "title": "Step 7 Final Air Brake Check",
       "pdfPages": "82-84",
       "manualPages": "5-6 to 5-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.3.3.1",
+          "text": "Governor check: pumping should start at about 100 psi and stop at about 125 psi.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "100",
+            "125",
+            "governor"
+          ]
+        },
+        {
+          "id": "5.3.3.2",
+          "text": "Leakage test with the brakes released: with a fully charged system, the engine off and the parking brake released, the loss must be less than 2 psi in one minute for a single vehicle and less than 3 psi in one minute for a combination vehicle.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "2",
+            "3",
+            "one minute",
+            "released"
+          ]
+        },
+        {
+          "id": "5.3.3.3",
+          "text": "Leakage test with the foot brake fully applied for one minute: more than 3 psi in a minute for a single vehicle, or more than 4 psi for a combination vehicle, is too much.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "3",
+            "4",
+            "applied"
+          ]
+        },
+        {
+          "id": "5.3.3.4",
+          "text": "A fully charged air system is typically 125 psi, and governor cutoff is in the range 120 to 140 psi.",
+          "critical": true,
+          "page": "5-6",
+          "keywords": [
+            "fully charged",
+            "125",
+            "120",
+            "140"
+          ]
+        },
+        {
+          "id": "5.3.3.5",
+          "text": "Low pressure warning test: with the engine off and the electrical power on, step on and off the brake pedal. The warning must come on before the pressure falls below 55 psi.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "55",
+            "warning",
+            "engine off"
+          ]
+        },
+        {
+          "id": "5.3.3.6",
+          "text": "Spring brake test: keep fanning off air, and the parking brake valve, with the tractor protection valve on a tractor-trailer, must pop out between 20 and 45 psi, which puts the spring brakes on.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "pop out",
+            "20",
+            "45"
+          ]
+        },
+        {
+          "id": "5.3.3.7",
+          "text": "Pressure buildup in a dual air system must go from 85 to 100 psi within 45 seconds at operating rpm.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "85",
+            "100",
+            "45 seconds"
+          ]
+        },
+        {
+          "id": "5.3.3.8",
+          "text": "In a single air system made before 1975, pressure must build from 50 to 90 psi within 3 minutes with the engine idling at 600 to 900 rpm.",
+          "critical": false,
+          "page": "5-7",
+          "keywords": [
+            "50",
+            "90",
+            "3 minutes"
+          ]
+        },
+        {
+          "id": "5.3.3.9",
+          "text": "Parking brake test: stop, put the parking brake on, and pull gently against it in a low gear to check that it holds.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "parking brake",
+            "low gear",
+            "holds"
+          ]
+        },
+        {
+          "id": "5.3.3.10",
+          "text": "Service brake test: at normal pressure, with the parking brake released, roll forward at about five mph and apply the brakes firmly. Note any pull to one side, an odd feel, or a slow stop.",
+          "critical": true,
+          "page": "5-7",
+          "keywords": [
+            "five mph",
+            "firmly",
+            "pulling"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Maximum air loss in one minute with the brakes released?",
+          "a": "Less than 2 psi for a single vehicle, less than 3 psi for a combination.",
+          "factId": "5.3.3.2"
+        },
+        {
+          "q": "Maximum air loss in one minute with the foot brake applied?",
+          "a": "3 psi for a single vehicle, 4 psi for a combination.",
+          "factId": "5.3.3.3"
+        },
+        {
+          "q": "How do you test the low pressure warning signal?",
+          "a": "Engine off, power on, fan the brake pedal. It must come on before 55 psi.",
+          "factId": "5.3.3.5"
+        },
+        {
+          "q": "How do you check that the spring brakes come on by themselves?",
+          "a": "Keep fanning off air. The parking brake valve pops out between 20 and 45 psi.",
+          "factId": "5.3.3.6"
+        },
+        {
+          "q": "How fast must a dual air system build pressure?",
+          "a": "From 85 to 100 psi within 45 seconds at operating rpm.",
+          "factId": "5.3.3.7"
+        },
+        {
+          "q": "How do you test the parking brake?",
+          "a": "Put it on and pull gently against it in a low gear.",
+          "factId": "5.3.3.9"
+        },
+        {
+          "q": "At what speed do you test the service brakes?",
+          "a": "About five mph, applying the brakes firmly.",
+          "factId": "5.3.3.10"
+        },
+        {
+          "q": "What pressure is a fully charged air system?",
+          "a": "Typically 125 psi, with governor cutoff from 120 to 140 psi.",
+          "factId": "5.3.3.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.3.3.e1",
+          "q": "With the brakes released, engine off, what is the most air a single vehicle may lose in one minute?",
+          "choices": [
+            "Less than 2 psi",
+            "Less than 3 psi",
+            "Less than 4 psi",
+            "Less than 6 psi"
+          ],
+          "answer": 0,
+          "why": "Released: under 2 psi single, under 3 psi combination. Applied: 3 psi single, 4 psi combination.",
+          "factId": "5.3.3.2",
+          "page": "5-6"
+        },
+        {
+          "id": "5.3.3.e2",
+          "q": "With the foot brake fully applied, what air loss in one minute is too much for a combination vehicle?",
+          "choices": [
+            "More than 2 psi",
+            "More than 3 psi",
+            "More than 4 psi",
+            "More than 8 psi"
+          ],
+          "answer": 2,
+          "why": "Applied, a combination vehicle may not lose more than 4 psi in a minute.",
+          "factId": "5.3.3.3",
+          "page": "5-7"
+        },
+        {
+          "id": "5.3.3.e3",
+          "q": "In a dual air system, pressure must build from 85 to 100 psi in how long?",
+          "choices": [
+            "15 seconds",
+            "30 seconds",
+            "45 seconds",
+            "3 minutes"
+          ],
+          "answer": 2,
+          "why": "85 to 100 psi within 45 seconds at operating rpm.",
+          "factId": "5.3.3.7",
+          "page": "5-7"
+        }
+      ]
     },
     {
       "id": "5.4",
@@ -217,8 +1591,36 @@
       "title": "Normal Stops",
       "pdfPages": "84",
       "manualPages": "5-8",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.4.1.1",
+          "text": "For a normal stop, push the brake pedal down and control the pressure so the vehicle stops smoothly and safely.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "smooth",
+            "control the pressure"
+          ]
+        },
+        {
+          "id": "5.4.1.2",
+          "text": "With a manual transmission, do not push the clutch in until the engine rpm is down close to idle, and select a starting gear once you stop.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "clutch",
+            "idle",
+            "starting gear"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When do you push the clutch in during a normal stop?",
+          "a": "Not until the engine rpm is down close to idle.",
+          "factId": "5.4.1.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -226,35 +1628,364 @@
       "title": "Braking with Antilock Brakes",
       "pdfPages": "84",
       "manualPages": "5-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.4.2.1",
+          "text": "Without ABS, hard braking on a slippery surface can lock the wheels. Locked steering wheels take away your steering, and other locked wheels can make you skid, jackknife or spin.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "lock up",
+            "steering",
+            "jackknife"
+          ]
+        },
+        {
+          "id": "5.4.2.2",
+          "text": "With ABS you brake as you always have: use only the braking force you need to stop safely and stay in control.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "brake normally",
+            "only the force"
+          ]
+        },
+        {
+          "id": "5.4.2.3",
+          "text": "ABS on only the tractor, only the trailer, or only one axle still gives you more control, so brake normally.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "only",
+            "still",
+            "more control"
+          ]
+        },
+        {
+          "id": "5.4.2.4",
+          "text": "If only the tractor has ABS, watch the trailer and let up on the brakes, if it is safe, should the trailer start to swing out.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "only the tractor",
+            "swing out",
+            "let up"
+          ]
+        },
+        {
+          "id": "5.4.2.5",
+          "text": "If only the trailer has ABS, let up on the brakes, if it is safe, should you lose steering control or start a tractor jackknife.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "only the trailer",
+            "jackknife"
+          ]
+        },
+        {
+          "id": "5.4.2.6",
+          "text": "There is one exception: if you always drive with working ABS on every axle, you may fully apply the brakes in an emergency stop.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "exception",
+            "all axles",
+            "fully apply"
+          ]
+        },
+        {
+          "id": "5.4.2.7",
+          "text": "If your ABS fails you still have your normal brakes. Drive normally and get the system serviced soon.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "malfunctions",
+            "normal brakes"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you brake in a tractor-trailer with ABS?",
+          "a": "The same as always: only the force you need to stop safely and stay in control.",
+          "factId": "5.4.2.2"
+        },
+        {
+          "q": "Only the trailer has ABS. What do you do if you start to jackknife?",
+          "a": "Let up on the brakes, if it is safe, until you have control.",
+          "factId": "5.4.2.5"
+        },
+        {
+          "q": "When may you fully apply the brakes in an emergency?",
+          "a": "Only if you always drive with working ABS on all axles.",
+          "factId": "5.4.2.6"
+        },
+        {
+          "q": "Your ABS light comes on. What brakes do you have?",
+          "a": "Your normal brakes. Drive normally and get it serviced soon.",
+          "factId": "5.4.2.7"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.4.2.e1",
+          "q": "Your ABS malfunction lamp comes on while driving. What do you have?",
+          "choices": [
+            "No brakes",
+            "Normal brakes without ABS",
+            "Only spring brakes",
+            "Only trailer brakes"
+          ],
+          "answer": 1,
+          "why": "ABS is an addition. Without it you still have normal brakes, so drive normally and get it fixed.",
+          "factId": "5.4.2.7",
+          "page": "5-8"
+        }
+      ]
     },
     {
       "id": "5.4.3",
       "title": "Emergency Stops",
       "pdfPages": "84",
       "manualPages": "5-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.4.3.1",
+          "text": "In an emergency stop, brake so the vehicle stays in a straight line and you can still turn. Use controlled braking or stab braking.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "straight line",
+            "controlled",
+            "stab"
+          ]
+        },
+        {
+          "id": "5.4.3.2",
+          "text": "Controlled braking: apply the brakes as hard as you can without locking the wheels, and keep steering movements very small. Release if a wheel locks or you must steer more, then re-apply as soon as you can.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "controlled",
+            "without locking",
+            "small"
+          ]
+        },
+        {
+          "id": "5.4.3.3",
+          "text": "Stab braking: apply the brakes all the way, release when the wheels lock, and apply fully again as soon as the wheels start rolling.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "stab",
+            "all the way",
+            "release"
+          ]
+        },
+        {
+          "id": "5.4.3.4",
+          "text": "It can take up to one second for the wheels to start rolling after you release the brakes, and re-applying too early stops the vehicle straightening out.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "one second",
+            "rolling"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the two emergency braking methods?",
+          "a": "Controlled braking and stab braking.",
+          "factId": "5.4.3.1"
+        },
+        {
+          "q": "Describe controlled braking.",
+          "a": "Brake as hard as you can without locking the wheels, with very small steering movements.",
+          "factId": "5.4.3.2"
+        },
+        {
+          "q": "Describe stab braking.",
+          "a": "Full brakes, release when the wheels lock, full brakes again once they roll.",
+          "factId": "5.4.3.3"
+        },
+        {
+          "q": "How long can it take for wheels to roll again after releasing the brakes?",
+          "a": "Up to one second.",
+          "factId": "5.4.3.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.4.3.e1",
+          "q": "In stab braking, when do you release the brakes?",
+          "choices": [
+            "After one second",
+            "When the wheels lock up",
+            "When you feel a slowdown",
+            "Never"
+          ],
+          "answer": 1,
+          "why": "Apply fully, release when the wheels lock, then apply fully again when they start rolling.",
+          "factId": "5.4.3.3",
+          "page": "5-8"
+        }
+      ]
     },
     {
       "id": "5.4.4",
       "title": "Stopping Distance",
       "pdfPages": "84-85",
       "manualPages": "5-8 to 5-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.4.4.1",
+          "text": "Brake lag is the time the brakes need to work after you push the pedal, and with air brakes it is half a second or more.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "brake lag",
+            "half second"
+          ]
+        },
+        {
+          "id": "5.4.4.2",
+          "text": "Total stopping distance with air brakes has four parts: perception distance, reaction distance, brake lag distance, and braking distance.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "four",
+            "perception",
+            "reaction",
+            "brake lag",
+            "braking"
+          ]
+        },
+        {
+          "id": "5.4.4.3",
+          "text": "Air brake lag adds about 32 feet at 55 mph on dry pavement.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "32 feet",
+            "55"
+          ]
+        },
+        {
+          "id": "5.4.4.4",
+          "text": "At 55 mph, for an average driver with good traction and brakes, total stopping distance is over 450 feet.",
+          "critical": true,
+          "page": "5-8",
+          "keywords": [
+            "450 feet",
+            "55"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is brake lag?",
+          "a": "The time air brakes need to work after you push the pedal: half a second or more.",
+          "factId": "5.4.4.1"
+        },
+        {
+          "q": "What are the four parts of air brake stopping distance?",
+          "a": "Perception, reaction, brake lag and braking distance.",
+          "factId": "5.4.4.2"
+        },
+        {
+          "q": "How much does brake lag add at 55 mph?",
+          "a": "About 32 feet.",
+          "factId": "5.4.4.3"
+        },
+        {
+          "q": "What is total stopping distance at 55 mph with air brakes?",
+          "a": "Over 450 feet.",
+          "factId": "5.4.4.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.4.4.e1",
+          "q": "Which distance do air brakes add that hydraulic brakes do not?",
+          "choices": [
+            "Perception distance",
+            "Reaction distance",
+            "Brake lag distance",
+            "Braking distance"
+          ],
+          "answer": 2,
+          "why": "Air takes time to reach the brakes, so brake lag distance is added: about 32 feet at 55 mph.",
+          "factId": "5.4.4.2",
+          "page": "5-8"
+        },
+        {
+          "id": "5.4.4.e2",
+          "q": "Total stopping distance at 55 mph with air brakes is about:",
+          "choices": [
+            "150 feet",
+            "250 feet",
+            "350 feet",
+            "Over 450 feet"
+          ],
+          "answer": 3,
+          "why": "Perception, reaction, brake lag and braking add to over 450 feet at 55 mph.",
+          "factId": "5.4.4.4",
+          "page": "5-8"
+        }
+      ]
     },
     {
       "id": "5.4.5",
       "title": "Brake Fading or Failure",
       "pdfPages": "85",
       "manualPages": "5-9",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.4.5.1",
+          "text": "Brakes fade or fail from too much heat, caused by using them too much instead of using the braking effect of the engine.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "heat",
+            "engine braking"
+          ]
+        },
+        {
+          "id": "5.4.5.2",
+          "text": "Heat changes the brake lining chemically, which cuts friction, and it expands the drums, so the shoes must move farther and press with less force.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "lining",
+            "expansion",
+            "friction"
+          ]
+        },
+        {
+          "id": "5.4.5.3",
+          "text": "Brakes out of adjustment stop doing their share first, so the others overheat and fade. Check brake adjustment often, because brakes go out of adjustment quickly when hot.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "adjustment",
+            "share",
+            "overheat"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What causes brake fade?",
+          "a": "Too much heat from overusing the brakes instead of the engine's braking effect.",
+          "factId": "5.4.5.1"
+        },
+        {
+          "q": "How does heat cause fade?",
+          "a": "It changes the lining chemically and expands the drums, so contact force drops.",
+          "factId": "5.4.5.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -262,17 +1993,149 @@
       "title": "Proper Braking Technique",
       "pdfPages": "85",
       "manualPages": "5-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.4.6.1",
+          "text": "On a long or steep downgrade, the brakes are only a help to the braking effect of the engine, so get into the proper low gear first.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "supplement",
+            "engine",
+            "low gear"
+          ]
+        },
+        {
+          "id": "5.4.6.2",
+          "text": "Proper downgrade braking: apply the brakes just hard enough to feel a definite slowdown, then release when your speed is about five mph below your safe speed, and the application should last about three seconds.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "five mph",
+            "three seconds",
+            "definite slowdown"
+          ]
+        },
+        {
+          "id": "5.4.6.3",
+          "text": "Apply the brakes again once the speed comes back up to your safe speed, and repeat to the bottom of the grade.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "repeat",
+            "safe speed"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "On a steep downgrade, what slows the vehicle most?",
+          "a": "The engine. The brakes only help it, so be in the proper low gear.",
+          "factId": "5.4.6.1"
+        },
+        {
+          "q": "Describe proper downgrade braking.",
+          "a": "Brake to a definite slowdown, release about five mph below your safe speed, about three seconds per application.",
+          "factId": "5.4.6.2"
+        },
+        {
+          "q": "Your safe speed is 40 mph. How do you brake on the grade?",
+          "a": "Brake at 40, slow to 35, release, and repeat as needed.",
+          "factId": "5.4.6.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.4.6.e1",
+          "q": "Your safe speed on a downgrade is 40 mph. When do you release the brakes?",
+          "choices": [
+            "At 30 mph",
+            "At 35 mph",
+            "At 38 mph",
+            "At 20 mph"
+          ],
+          "answer": 1,
+          "why": "Brake at your safe speed and release about five mph below it, so 40 down to 35.",
+          "factId": "5.4.6.2",
+          "page": "5-9"
+        },
+        {
+          "id": "5.4.6.e2",
+          "q": "How long should each brake application last on a downgrade?",
+          "choices": [
+            "About one second",
+            "About three seconds",
+            "About ten seconds",
+            "Until the bottom"
+          ],
+          "answer": 1,
+          "why": "The application should last about three seconds, and take off about five mph.",
+          "factId": "5.4.6.2",
+          "page": "5-9"
+        }
+      ]
     },
     {
       "id": "5.4.7",
       "title": "Low Air Pressure",
       "pdfPages": "85",
       "manualPages": "5-9",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "5.4.7.1",
+          "text": "If the low air pressure warning comes on, stop and park safely as soon as you can, because there may be an air leak.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "stop",
+            "park",
+            "leak"
+          ]
+        },
+        {
+          "id": "5.4.7.2",
+          "text": "Controlled braking works only while enough air is left in the tanks, and the spring brakes come on between 20 and 45 psi.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "controlled",
+            "20",
+            "45"
+          ]
+        },
+        {
+          "id": "5.4.7.3",
+          "text": "A heavily loaded vehicle takes a long way to stop on spring brakes, because the spring brakes do not work on every axle.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "heavily loaded",
+            "not on all axles"
+          ]
+        },
+        {
+          "id": "5.4.7.4",
+          "text": "A lightly loaded vehicle, or one on a slippery road, may skid out of control when the spring brakes come on.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "lightly loaded",
+            "skid"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why stop early when the low air warning comes on?",
+          "a": "Controlled braking only works while air remains, and spring brakes come on at 20 to 45 psi.",
+          "factId": "5.4.7.2"
+        },
+        {
+          "q": "Why is stopping on spring brakes dangerous when heavily loaded?",
+          "a": "Spring brakes do not work on all axles, so it takes a long distance.",
+          "factId": "5.4.7.3"
+        }
+      ],
       "exam": []
     },
     {
@@ -280,9 +2143,115 @@
       "title": "Parking Brakes",
       "pdfPages": "85-86",
       "manualPages": "5-9 to 5-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "5.4.8.1",
+          "text": "Use the parking brakes any time you park, except when the brakes are very hot or very wet in freezing weather.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "any time",
+            "except",
+            "hot",
+            "wet"
+          ]
+        },
+        {
+          "id": "5.4.8.2",
+          "text": "Very hot brakes can be damaged by the heat if you set the parking brake, so let them cool and use wheel chocks on level ground.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "hot",
+            "chocks",
+            "cool"
+          ]
+        },
+        {
+          "id": "5.4.8.3",
+          "text": "Very wet brakes in freezing weather can freeze on, so drive in a low gear with light brake pressure to heat and dry them.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "wet",
+            "freeze",
+            "dry them"
+          ]
+        },
+        {
+          "id": "5.4.8.4",
+          "text": "Drain the air tanks at the end of each working day unless the vehicle has automatic drains, or the brakes could fail.",
+          "critical": true,
+          "page": "5-9",
+          "keywords": [
+            "end of each working day",
+            "drain"
+          ]
+        },
+        {
+          "id": "5.4.8.5",
+          "text": "Never leave your vehicle unattended without the parking brakes on or the wheels chocked.",
+          "critical": true,
+          "page": "5-10",
+          "keywords": [
+            "never",
+            "unattended",
+            "chocking"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When do you NOT use the parking brakes?",
+          "a": "When the brakes are very hot, or very wet in freezing weather.",
+          "factId": "5.4.8.1"
+        },
+        {
+          "q": "What do you do with very hot brakes at a stop?",
+          "a": "Let them cool, and hold the vehicle with wheel chocks on level ground.",
+          "factId": "5.4.8.2"
+        },
+        {
+          "q": "How do you dry wet brakes?",
+          "a": "Drive in a low gear and use the brakes lightly to heat and dry them.",
+          "factId": "5.4.8.3"
+        },
+        {
+          "q": "May you leave the vehicle briefly without the parking brake?",
+          "a": "No. Never leave it unattended without parking brakes on or wheels chocked.",
+          "factId": "5.4.8.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "5.4.8.e1",
+          "q": "You have just come down a steep grade and the brakes are very hot. What do you do when you park?",
+          "choices": [
+            "Set the parking brakes at once",
+            "Let the brakes cool and use wheel chocks",
+            "Set the parking brakes and the trailer brakes",
+            "Drain the air tanks"
+          ],
+          "answer": 1,
+          "why": "Very hot brakes can be damaged by the heat, so let them cool and chock the wheels on level ground.",
+          "factId": "5.4.8.2",
+          "page": "5-9"
+        },
+        {
+          "id": "5.4.8.e2",
+          "q": "You will be away from the vehicle for two minutes. What must you do?",
+          "choices": [
+            "Nothing",
+            "Apply the parking brakes or chock the wheels",
+            "Leave it in gear only",
+            "Leave the engine running"
+          ],
+          "answer": 1,
+          "why": "Never leave a vehicle unattended without the parking brakes applied or the wheels chocked.",
+          "factId": "5.4.8.5",
+          "page": "5-10"
+        }
+      ]
     }
   ],
   "exam": []

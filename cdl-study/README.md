@@ -115,9 +115,25 @@ Run it again for a new edition of the manual: the facts, cards and questions you
 have written are kept, and only the titles and page numbers are refreshed.
 
 **Fact checklists are written by hand**, section by section, because the facts
-must be accurate and in plain words. Section 1 has 27 facts, 22 cards and 6
-questions. The other sections can be read in the app now, and each one says that
-its checklist is not written yet.
+must be accurate and in plain words.
+
+| Section | Subsections | With a checklist | Facts | Cards | Questions |
+|---|---|---|---|---|---|
+| 1 Introduction | 23 | 20 | 101 | 77 | 21 |
+| 2 Driving Safely | 116 | 0 | 0 | 0 | 0 |
+| 3 Transporting Cargo Safely | 18 | 15 | 44 | 31 | 13 |
+| 5 Air Brakes | 31 | 30 | 105 | 80 | 27 |
+| 6 Combination Vehicles | 32 | 0 | 0 | 0 | 0 |
+| 11 Vehicle Inspection | 14 | 0 | 0 | 0 | 0 |
+| 12 Basic Vehicle Control | 2 | 0 | 0 | 0 | 0 |
+| 13 On-Road Driving | 15 | 0 | 0 | 0 | 0 |
+| **Total** | **251** | **65** | **250** | **188** | **61** |
+
+A subsection with no checklist can still be read in the app, and it says plainly
+that a recall cannot be graded there yet. A parent heading with no text of its
+own, such as 5.4, needs no checklist.
+
+The Air Brakes exam can run at its full 25 questions now.
 
 `ContentFilesTest` reads every content file on each build. A file that will not
 parse, a repeated fact id, a card that points at a fact that is not there, or a
@@ -150,7 +166,8 @@ With a USB cable and developer mode on:
 
 ## Still to do
 
-- Fact checklists for sections 2, 3, 5, 6, 11, 12 and 13. This is the large job.
+- Fact checklists for sections 2, 6, 11, 12 and 13. Section 2 is the large job,
+  at 45 pages and 116 subsections.
 - AI grading of a recall, on demand, with your own API key.
 - A daily reminder, and a streak for days with a recall.
 - Export and import of the study record.

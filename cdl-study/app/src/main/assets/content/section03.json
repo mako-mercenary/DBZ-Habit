@@ -6,13 +6,192 @@
   "pdfPages": "69-71",
   "subsections": [
     {
+      "id": "3.0",
+      "title": "What This Section Covers",
+      "pdfPages": "69",
+      "manualPages": "3-1",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "3.0.1",
+          "text": "Whoever loads and secures the cargo, you are responsible for inspecting your cargo.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "responsible",
+            "inspecting"
+          ]
+        },
+        {
+          "id": "3.0.2",
+          "text": "You are responsible for recognising an overload and badly balanced weight.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "overload",
+            "balanced"
+          ]
+        },
+        {
+          "id": "3.0.3",
+          "text": "You are responsible for knowing that your cargo is secured and does not block your view ahead or to the sides.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "secured",
+            "view"
+          ]
+        },
+        {
+          "id": "3.0.4",
+          "text": "You are responsible for knowing that your cargo does not block your way to the emergency equipment.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "emergency equipment",
+            "access"
+          ]
+        },
+        {
+          "id": "3.0.5",
+          "text": "Loose cargo that falls off can cause a crash, and it can hurt or kill you in a quick stop. An overload can damage the vehicle and make steering harder.",
+          "critical": false,
+          "page": "3-1",
+          "keywords": [
+            "loose",
+            "overload",
+            "steering"
+          ]
+        },
+        {
+          "id": "3.0.6",
+          "text": "To carry hazardous material that needs placards you also need a hazardous materials endorsement.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "placards",
+            "endorsement"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What four cargo duties are yours, whoever loaded it?",
+          "a": "Inspect the cargo, spot overloads and bad balance, secure it and keep your view clear, and keep emergency equipment reachable.",
+          "factId": "3.0.1"
+        },
+        {
+          "q": "What do you need to haul placarded hazardous material?",
+          "a": "A hazardous materials endorsement.",
+          "factId": "3.0.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.0.e1",
+          "q": "Someone else loaded and secured your trailer. Who is responsible for the load?",
+          "choices": [
+            "The loader",
+            "The carrier",
+            "You, the driver",
+            "The consignee"
+          ],
+          "answer": 2,
+          "why": "Whoever loads it, the driver is responsible for inspecting it, spotting overloads, and securing it.",
+          "factId": "3.0.1",
+          "page": "3-1"
+        }
+      ]
+    },
+    {
       "id": "3.1",
       "title": "Inspecting Cargo",
       "pdfPages": "69",
       "manualPages": "3-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.1.1",
+          "text": "Inspect the cargo and its securing devices again within the first 50 miles of a trip, and make any adjustment needed.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "50 miles",
+            "first"
+          ]
+        },
+        {
+          "id": "3.1.2",
+          "text": "Inspect the cargo again after every three hours or 150 miles of driving.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "3 hours",
+            "150 miles"
+          ]
+        },
+        {
+          "id": "3.1.3",
+          "text": "Inspect the cargo again after every break you take while driving.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "every break"
+          ]
+        },
+        {
+          "id": "3.1.4",
+          "text": "Rules for weight, securing cargo, covering loads and where a large vehicle may drive differ from place to place, so know the rules where you drive.",
+          "critical": false,
+          "page": "3-1",
+          "keywords": [
+            "vary",
+            "know the rules"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When is the first cargo re-inspection after you set off?",
+          "a": "Within the first 50 miles.",
+          "factId": "3.1.1"
+        },
+        {
+          "q": "How often must you re-inspect cargo while driving?",
+          "a": "Every 3 hours or 150 miles, and after every break.",
+          "factId": "3.1.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.1.e1",
+          "q": "How soon after starting a trip must you inspect your cargo again?",
+          "choices": [
+            "Within 10 miles",
+            "Within 50 miles",
+            "Within 150 miles",
+            "At the first delivery"
+          ],
+          "answer": 1,
+          "why": "The first re-inspection is within 50 miles, then every 3 hours or 150 miles and after each break.",
+          "factId": "3.1.1",
+          "page": "3-1"
+        },
+        {
+          "id": "3.1.e2",
+          "q": "You have driven 150 miles since your last cargo check. What must you do?",
+          "choices": [
+            "Nothing until 300 miles",
+            "Inspect the cargo and its securing devices",
+            "Only check the tyres",
+            "Report to the carrier"
+          ],
+          "answer": 1,
+          "why": "Cargo is re-inspected after 3 hours or 150 miles of driving, whichever comes first.",
+          "factId": "3.1.2",
+          "page": "3-1"
+        }
+      ]
     },
     {
       "id": "3.2",
@@ -28,36 +207,322 @@
       "title": "Definitions You Should Know",
       "pdfPages": "69",
       "manualPages": "3-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.2.1.1",
+          "text": "Gross vehicle weight rating, the GVWR, is the loaded weight of a single vehicle, as the maker specifies it.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "gvwr",
+            "single vehicle",
+            "manufacturer"
+          ]
+        },
+        {
+          "id": "3.2.1.2",
+          "text": "Gross combination weight rating, the GCWR, is the maker's value for the power unit, or the sum of the ratings or weights of the power unit and the towed units that gives the highest value.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "gcwr",
+            "power unit",
+            "towed"
+          ]
+        },
+        {
+          "id": "3.2.1.3",
+          "text": "Axle weight is the weight that one axle, or one set of axles, puts on the ground.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "axle weight",
+            "ground"
+          ]
+        },
+        {
+          "id": "3.2.1.4",
+          "text": "Tire load is the most weight a tyre can carry safely at a stated pressure, and the rating is written on the side of the tyre.",
+          "critical": true,
+          "page": "3-1",
+          "keywords": [
+            "tire load",
+            "side of the tire"
+          ]
+        },
+        {
+          "id": "3.2.1.5",
+          "text": "A suspension system has a weight capacity rating from its maker, and a coupling device is rated for the most weight it can pull or carry.",
+          "critical": false,
+          "page": "3-1",
+          "keywords": [
+            "suspension",
+            "coupling"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is GVWR?",
+          "a": "The maker's loaded weight for a single vehicle.",
+          "factId": "3.2.1.1"
+        },
+        {
+          "q": "What is GCWR?",
+          "a": "The maker's rating for the power unit, or the combined ratings of the power unit and towed units, whichever is highest.",
+          "factId": "3.2.1.2"
+        },
+        {
+          "q": "What is axle weight?",
+          "a": "The weight one axle or set of axles puts on the ground.",
+          "factId": "3.2.1.3"
+        },
+        {
+          "q": "Where is the tyre load rating written?",
+          "a": "On the side of each tyre.",
+          "factId": "3.2.1.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.2.1.e1",
+          "q": "Where do you find the maximum safe weight a tyre can carry?",
+          "choices": [
+            "On the certification label",
+            "On the side of the tyre",
+            "In the cab card",
+            "On the axle"
+          ],
+          "answer": 1,
+          "why": "The tire load rating is stated on the side of each tyre, at a specified pressure.",
+          "factId": "3.2.1.4",
+          "page": "3-1"
+        }
+      ]
     },
     {
       "id": "3.2.2",
       "title": "Legal Weight Limits",
       "pdfPages": "69-70",
       "manualPages": "3-1 to 3-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.2.2.1",
+          "text": "A bridge formula often sets the maximum axle weights, and it allows less weight on axles that are closer together, to protect bridges and roads.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "bridge formula",
+            "closer together"
+          ]
+        },
+        {
+          "id": "3.2.2.2",
+          "text": "Overloading hurts steering, braking and speed control. Stopping distance grows, and brakes can fail when they work too hard.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "steering",
+            "braking",
+            "stopping distance"
+          ]
+        },
+        {
+          "id": "3.2.2.3",
+          "text": "An overloaded truck crawls up a grade and can gain too much speed going down.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "upgrade",
+            "downgrade",
+            "speed"
+          ]
+        },
+        {
+          "id": "3.2.2.4",
+          "text": "In bad weather or in the mountains it may be unsafe to run at the legal maximum weight, so think about that before you drive.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "bad weather",
+            "mountains",
+            "maximum"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does a bridge formula do?",
+          "a": "It sets lower maximum axle weights for axles that are closer together.",
+          "factId": "3.2.2.1"
+        },
+        {
+          "q": "Name two times when legal maximum weight may not be safe.",
+          "a": "Bad weather and mountain driving.",
+          "factId": "3.2.2.4"
+        },
+        {
+          "q": "What does overloading do to your brakes?",
+          "a": "Stopping distance grows, and the brakes can fail from working too hard.",
+          "factId": "3.2.2.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.2.2.e1",
+          "q": "When might a legal maximum weight still be unsafe?",
+          "choices": [
+            "Only at night",
+            "In bad weather or in the mountains",
+            "Only in cities",
+            "Never: legal is safe"
+          ],
+          "answer": 1,
+          "why": "Bad weather and mountain driving can make legal maximum weights unsafe.",
+          "factId": "3.2.2.4",
+          "page": "3-2"
+        }
+      ]
     },
     {
       "id": "3.2.3",
       "title": "Don't Be Top-heavy",
       "pdfPages": "70",
       "manualPages": "3-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.2.3.1",
+          "text": "A high centre of gravity, from cargo piled high or heavy cargo on top, makes a rollover more likely, and the danger is worst in a curve or a swerve.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "center of gravity",
+            "high",
+            "tip over"
+          ]
+        },
+        {
+          "id": "3.2.3.2",
+          "text": "Spread the cargo as low as you can, and put the heaviest parts under the lightest parts.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "low",
+            "heaviest",
+            "under"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does a high centre of gravity do?",
+          "a": "It makes the vehicle more likely to tip over, above all in curves or a swerve.",
+          "factId": "3.2.3.1"
+        },
+        {
+          "q": "Where do the heaviest parts of the load go?",
+          "a": "Under the lightest parts, as low as possible.",
+          "factId": "3.2.3.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.2.3.e1",
+          "q": "Where should the heaviest part of a load be placed?",
+          "choices": [
+            "On top, for easy unloading",
+            "Under the lighter cargo",
+            "Over the steering axle",
+            "At the rear doors"
+          ],
+          "answer": 1,
+          "why": "Keep the centre of gravity low: the heaviest parts go under the lightest parts.",
+          "factId": "3.2.3.2",
+          "page": "3-2"
+        }
+      ]
     },
     {
       "id": "3.2.4",
       "title": "Balance the Weight",
       "pdfPages": "70",
       "manualPages": "3-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.2.4.1",
+          "text": "Too much weight on the steering axle makes steering hard, and it can damage the steering axle and the tyres.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "steering axle",
+            "hard steering"
+          ]
+        },
+        {
+          "id": "3.2.4.2",
+          "text": "An under-loaded front axle, from weight pushed too far back, makes the steering axle too light to steer safely.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "under loaded",
+            "too light"
+          ]
+        },
+        {
+          "id": "3.2.4.3",
+          "text": "Too little weight on the driving axles gives poor traction, and the drive wheels spin easily in bad weather.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "driving axles",
+            "traction",
+            "spin"
+          ]
+        },
+        {
+          "id": "3.2.4.4",
+          "text": "On a flat bed there is also a greater chance that a high load will shift sideways or fall off.",
+          "critical": false,
+          "page": "3-2",
+          "keywords": [
+            "flat bed",
+            "shift"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does too much weight on the steering axle cause?",
+          "a": "Hard steering, and damage to the steering axle and tyres.",
+          "factId": "3.2.4.1"
+        },
+        {
+          "q": "What happens with too little weight on the front axle?",
+          "a": "The steering axle gets too light to steer safely.",
+          "factId": "3.2.4.2"
+        },
+        {
+          "q": "What happens with too little weight on the drive axles?",
+          "a": "Poor traction, and the drive wheels spin easily.",
+          "factId": "3.2.4.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.2.4.e1",
+          "q": "Weight is loaded too far to the rear. What is the result?",
+          "choices": [
+            "Better traction and no problem",
+            "The steering axle gets too light to steer safely",
+            "Hard steering",
+            "Brake fade"
+          ],
+          "answer": 1,
+          "why": "An under-loaded front axle makes the steering axle too light to steer safely.",
+          "factId": "3.2.4.2",
+          "page": "3-2"
+        }
+      ]
     },
     {
       "id": "3.3",
@@ -73,8 +538,42 @@
       "title": "Blocking and Bracing",
       "pdfPages": "70",
       "manualPages": "3-2",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "3.3.1.1",
+          "text": "Blocking goes at the front, the back and the sides of the cargo to stop it sliding, and it is shaped to fit the cargo snugly and fixed to the deck.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "blocking",
+            "sliding",
+            "deck"
+          ]
+        },
+        {
+          "id": "3.3.1.2",
+          "text": "Bracing runs from the upper part of the cargo to the floor or the walls of the cargo compartment, to stop the cargo moving.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "bracing",
+            "upper part",
+            "floor"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is blocking?",
+          "a": "Shaped material at the front, back or sides of cargo, fixed to the deck, to stop it sliding.",
+          "factId": "3.3.1.1"
+        },
+        {
+          "q": "What is bracing?",
+          "a": "Support from the upper part of the cargo down to the floor or walls.",
+          "factId": "3.3.1.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -82,17 +581,152 @@
       "title": "Cargo Tie-down",
       "pdfPages": "70-71",
       "manualPages": "3-2 to 3-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.3.2.1",
+          "text": "A securement system's total working load limit must be at least one half the weight of the article or group of articles it holds.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "one half",
+            "working load limit"
+          ]
+        },
+        {
+          "id": "3.3.2.2",
+          "text": "Cargo needs at least one tie-down for every ten feet of cargo.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "one",
+            "ten feet"
+          ]
+        },
+        {
+          "id": "3.3.2.3",
+          "text": "However small the cargo is, it needs at least two tie-downs.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "two",
+            "at least",
+            "small"
+          ]
+        },
+        {
+          "id": "3.3.2.4",
+          "text": "Tie-downs must be the right type and strength, and they must be attached to the vehicle correctly, by hooks, bolts, rails or rings.",
+          "critical": true,
+          "page": "3-2",
+          "keywords": [
+            "proper type",
+            "strength",
+            "attached"
+          ]
+        },
+        {
+          "id": "3.3.2.5",
+          "text": "Heavy metal pieces have special securing requirements, so find out what they are before you carry such a load.",
+          "critical": false,
+          "page": "3-3",
+          "keywords": [
+            "metal",
+            "special requirements"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How many tie-downs per length of cargo?",
+          "a": "At least one for every ten feet.",
+          "factId": "3.3.2.2"
+        },
+        {
+          "q": "What is the minimum number of tie-downs for any load?",
+          "a": "Two, however small the cargo is.",
+          "factId": "3.3.2.3"
+        },
+        {
+          "q": "How many tie-downs for a 20-foot load?",
+          "a": "Two.",
+          "factId": "3.3.2.2"
+        },
+        {
+          "q": "How strong must a securement system be?",
+          "a": "Its total working load limit must be at least half the weight of the cargo.",
+          "factId": "3.3.2.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.3.2.e1",
+          "q": "What is the least number of tie-downs for any flatbed load?",
+          "choices": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "answer": 1,
+          "why": "Two tie-downs at least, however small the cargo, and one more for every ten feet.",
+          "factId": "3.3.2.3",
+          "page": "3-3"
+        },
+        {
+          "id": "3.3.2.e2",
+          "q": "How many tie-downs does a 30-foot load need?",
+          "choices": [
+            "Two",
+            "Three",
+            "Four",
+            "Six"
+          ],
+          "answer": 1,
+          "why": "One tie-down for every ten feet gives three for a 30-foot load.",
+          "factId": "3.3.2.2",
+          "page": "3-3"
+        },
+        {
+          "id": "3.3.2.e3",
+          "q": "A securement system must have a total working load limit of at least:",
+          "choices": [
+            "One quarter of the cargo weight",
+            "One half of the cargo weight",
+            "The full cargo weight",
+            "Twice the cargo weight"
+          ],
+          "answer": 1,
+          "why": "Federal rules require at least one half the weight of the article or group of articles.",
+          "factId": "3.3.2.1",
+          "page": "3-2"
+        }
+      ]
     },
     {
       "id": "3.3.3",
       "title": "Header Boards",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "3.3.3.1",
+          "text": "A front-end header board, also called a headache rack, protects you from your cargo in a crash or a hard stop, and it must block the cargo moving forward.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "header board",
+            "headache rack",
+            "forward"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does a header board do?",
+          "a": "It blocks cargo from moving forward and protects the driver in a crash or hard stop.",
+          "factId": "3.3.3.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -100,18 +734,120 @@
       "title": "Covering Cargo",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.3.4.1",
+          "text": "There are two reasons to cover cargo: to protect people from spilled cargo, and to protect the cargo from the weather.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "two",
+            "spilled",
+            "weather"
+          ]
+        },
+        {
+          "id": "3.3.4.2",
+          "text": "Spill protection is a safety requirement in many states, so know the law where you drive.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "spill protection",
+            "requirement"
+          ]
+        },
+        {
+          "id": "3.3.4.3",
+          "text": "Look at your cargo covers in the mirrors from time to time, because a flapping cover can tear loose, uncover the cargo and block your view or another driver's.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "mirrors",
+            "flapping",
+            "block your view"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the two reasons for covering cargo?",
+          "a": "To protect people from spilled cargo, and to protect the cargo from weather.",
+          "factId": "3.3.4.1"
+        },
+        {
+          "q": "Why watch your cargo cover in the mirrors?",
+          "a": "A flapping cover can tear loose and block your view or someone else's.",
+          "factId": "3.3.4.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.3.4.e1",
+          "q": "What are the two basic reasons for covering cargo?",
+          "choices": [
+            "Theft and weather",
+            "Spill protection and weather",
+            "Weight and balance",
+            "Looks and weather"
+          ],
+          "answer": 1,
+          "why": "Cover cargo to protect people from spills and to protect the cargo from weather.",
+          "factId": "3.3.4.1",
+          "page": "3-3"
+        }
+      ]
     },
     {
       "id": "3.3.5",
       "title": "Sealed and Containerized Loads",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.3.5.1",
+          "text": "You cannot inspect a sealed load, but you must still check that you are inside the gross weight and axle weight limits.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "sealed",
+            "gross weight",
+            "axle weight"
+          ]
+        },
+        {
+          "id": "3.3.5.2",
+          "text": "A container must be secured like any other cargo, whether it locks into a special frame or sits on a flatbed trailer.",
+          "critical": false,
+          "page": "3-3",
+          "keywords": [
+            "container",
+            "secured"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What must you check on a sealed load?",
+          "a": "That you are within the gross weight and axle weight limits.",
+          "factId": "3.3.5.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.3.5.e1",
+          "q": "You carry a sealed container you cannot inspect. What must you still check?",
+          "choices": [
+            "Nothing: it is sealed",
+            "Gross weight and axle weight limits",
+            "The cargo temperature",
+            "The seal number only"
+          ],
+          "answer": 1,
+          "why": "A sealed load cannot be inspected inside, but the weight limits are still yours to check.",
+          "factId": "3.3.5.1",
+          "page": "3-3"
+        }
+      ]
     },
     {
       "id": "3.4",
@@ -127,8 +863,26 @@
       "title": "Dry Bulk",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "3.4.1.1",
+          "text": "A dry bulk tank has a high centre of gravity and the load can shift, so go slowly and carefully through curves and sharp turns.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "dry bulk",
+            "high center of gravity",
+            "slow"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why do dry bulk tanks need special care?",
+          "a": "High centre of gravity and a load that can shift. Go slowly in curves and sharp turns.",
+          "factId": "3.4.1.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -136,8 +890,26 @@
       "title": "Hanging Meat",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "3.4.2.1",
+          "text": "Hanging meat is an unstable load with a high centre of gravity, so take special care and go slowly on sharp curves such as on-ramps and off-ramps.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "hanging meat",
+            "unstable",
+            "ramps"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why is hanging meat a difficult load?",
+          "a": "It is unstable with a high centre of gravity, so ramps and sharp curves need slow speed.",
+          "factId": "3.4.2.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -145,17 +917,93 @@
       "title": "Livestock",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "3.4.3.1",
+          "text": "Livestock can move around and make handling unsafe. With less than a full load, use false bulkheads to keep the animals bunched together.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "livestock",
+            "false bulkheads",
+            "bunched"
+          ]
+        },
+        {
+          "id": "3.4.3.2",
+          "text": "Even bunched together, livestock can lean on a curve, which shifts the centre of gravity and makes a rollover more likely.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "lean",
+            "rollover"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you carry a part load of livestock?",
+          "a": "Use false bulkheads to keep the animals bunched together.",
+          "factId": "3.4.3.1"
+        },
+        {
+          "q": "Why is livestock still risky when bunched?",
+          "a": "The animals lean in curves, which shifts the centre of gravity.",
+          "factId": "3.4.3.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "3.4.3.e1",
+          "q": "You have a part load of livestock. What do you use?",
+          "choices": [
+            "Extra tie-downs",
+            "False bulkheads to bunch the animals",
+            "A header board",
+            "Blocking only"
+          ],
+          "answer": 1,
+          "why": "False bulkheads keep livestock bunched so they cannot move about the trailer.",
+          "factId": "3.4.3.1",
+          "page": "3-3"
+        }
+      ]
     },
     {
       "id": "3.4.4",
       "title": "Oversized Loads",
       "pdfPages": "71",
       "manualPages": "3-3",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "3.4.4.1",
+          "text": "An over-length, over-width or overweight load needs a special transit permit, and driving is usually allowed only at certain times.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "permit",
+            "certain times"
+          ]
+        },
+        {
+          "id": "3.4.4.2",
+          "text": "An oversized load may need wide load signs, flashing lights and flags, and it may need a police escort or pilot vehicles.",
+          "critical": true,
+          "page": "3-3",
+          "keywords": [
+            "wide load",
+            "flags",
+            "escort"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does an oversized load need?",
+          "a": "A special transit permit, limited driving hours, and often signs, lights, flags or an escort.",
+          "factId": "3.4.4.1"
+        }
+      ],
       "exam": []
     }
   ],

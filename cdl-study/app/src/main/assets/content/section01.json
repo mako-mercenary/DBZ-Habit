@@ -564,8 +564,40 @@
       "title": "Medical Documentation",
       "pdfPages": "13",
       "manualPages": "1-6",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.2.1f",
+          "text": "You must tell the Driver License Division what type of commercial driving you do, and that is called self-certification.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "self certify",
+            "type"
+          ]
+        },
+        {
+          "id": "1.2.2f",
+          "text": "If you must hold a certified medical status and you let your medical examiner's certificate lapse, you become not-certified and you can lose your CDL.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "not certified",
+            "lose"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is self-certification?",
+          "a": "Telling the Division which type of commercial driving you do.",
+          "factId": "1.2.1f"
+        },
+        {
+          "q": "What happens if your medical certificate lapses?",
+          "a": "You become not-certified and can lose your CDL.",
+          "factId": "1.2.2f"
+        }
+      ],
       "exam": []
     },
     {
@@ -573,18 +605,200 @@
       "title": "Interstate or Intrastate Commerce",
       "pdfPages": "13",
       "manualPages": "1-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.2.1.1",
+          "text": "Interstate commerce is driving a CMV from one state to another state or a foreign country.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "interstate",
+            "another state"
+          ]
+        },
+        {
+          "id": "1.2.1.2",
+          "text": "Driving between two places inside one state is still interstate commerce if the trip crosses into another state or a foreign country during part of it.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "crosses",
+            "part of the trip"
+          ]
+        },
+        {
+          "id": "1.2.1.3",
+          "text": "Driving between two places inside one state is still interstate commerce if the cargo or the passengers are part of a trip that began or will end in another state or a foreign country.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "cargo",
+            "began",
+            "end"
+          ]
+        },
+        {
+          "id": "1.2.1.4",
+          "text": "Intrastate commerce is driving a CMV inside one state, and meeting none of the interstate descriptions.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "intrastate",
+            "within a state"
+          ]
+        },
+        {
+          "id": "1.2.1.5",
+          "text": "If you drive in both interstate and intrastate commerce, you must choose interstate commerce.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "both",
+            "choose interstate"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Define interstate commerce.",
+          "a": "Driving a CMV across a state or national line, or carrying cargo or people on a trip that does.",
+          "factId": "1.2.1.1"
+        },
+        {
+          "q": "Is a trip inside one state ever interstate commerce?",
+          "a": "Yes. If the trip crosses a state line, or the cargo or passengers began or will end out of state.",
+          "factId": "1.2.1.2"
+        },
+        {
+          "q": "You drive both interstate and intrastate. Which do you certify?",
+          "a": "Interstate commerce.",
+          "factId": "1.2.1.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.2.1.e1",
+          "q": "You haul a load from Salt Lake City to Provo, but the load started in Nevada. What kind of commerce is it?",
+          "choices": [
+            "Intrastate",
+            "Interstate",
+            "Excepted intrastate",
+            "Neither"
+          ],
+          "answer": 1,
+          "why": "Cargo on a trip that began in another state makes it interstate commerce, even inside one state.",
+          "factId": "1.2.1.3",
+          "page": "1-6"
+        }
+      ]
     },
     {
       "id": "1.2.2",
       "title": "Inter/Intrastate Commerce: Status Non-excepted or Excepted?",
       "pdfPages": "13-15",
       "manualPages": "1-6 to 1-8",
-      "facts": [],
-      "cards": [],
-      "exam": [],
+      "facts": [
+        {
+          "id": "1.2.2.1",
+          "text": "A non-excepted interstate driver must give a current medical examiner's certificate to the state driver licence agency.",
+          "critical": true,
+          "page": "1-6",
+          "keywords": [
+            "non excepted",
+            "medical examiner"
+          ]
+        },
+        {
+          "id": "1.2.2.2",
+          "text": "Most CDL holders who drive in interstate commerce are non-excepted interstate drivers.",
+          "critical": true,
+          "page": "1-7",
+          "keywords": [
+            "most",
+            "non excepted interstate"
+          ]
+        },
+        {
+          "id": "1.2.2.3",
+          "text": "An excepted interstate driver does not need a federal medical examiner's certificate.",
+          "critical": true,
+          "page": "1-7",
+          "keywords": [
+            "excepted",
+            "do not need"
+          ]
+        },
+        {
+          "id": "1.2.2.4",
+          "text": "If you drive in both excepted and non-excepted interstate commerce, you must choose non-excepted interstate commerce.",
+          "critical": true,
+          "page": "1-7",
+          "keywords": [
+            "both",
+            "choose non excepted"
+          ]
+        },
+        {
+          "id": "1.2.2.5",
+          "text": "In Utah you are an excepted intrastate driver if you are under 21 and may drive a CMV only inside the state, and you then need a K restriction on the licence.",
+          "critical": true,
+          "page": "1-7",
+          "keywords": [
+            "utah",
+            "21",
+            "k restriction"
+          ]
+        },
+        {
+          "id": "1.2.2.6",
+          "text": "Excepted activities include carrying school children and staff between home and school, government work, carrying human remains or sick or injured people, and emergency fire or rescue driving.",
+          "critical": false,
+          "page": "1-6",
+          "keywords": [
+            "school children",
+            "government",
+            "human remains"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which interstate status must give a medical certificate to the state?",
+          "a": "Non-excepted interstate.",
+          "factId": "1.2.2.1"
+        },
+        {
+          "q": "Which status do most interstate CDL holders have?",
+          "a": "Non-excepted interstate.",
+          "factId": "1.2.2.2"
+        },
+        {
+          "q": "You drive both excepted and non-excepted interstate. Which do you pick?",
+          "a": "Non-excepted interstate.",
+          "factId": "1.2.2.4"
+        },
+        {
+          "q": "When is a Utah driver excepted intrastate?",
+          "a": "Under 21 and allowed to drive a CMV only inside Utah, with a K restriction.",
+          "factId": "1.2.2.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.2.2.e1",
+          "q": "Which self-certification requires you to hand a medical examiner's certificate to the state?",
+          "choices": [
+            "Interstate excepted",
+            "Interstate non-excepted",
+            "Neither",
+            "Both equally"
+          ],
+          "answer": 1,
+          "why": "Non-excepted interstate drivers must provide and keep a current MEC.",
+          "factId": "1.2.2.1",
+          "page": "1-6"
+        }
+      ],
       "titleFixed": true
     },
     {
@@ -592,17 +806,216 @@
       "title": "State of Utah Restrictions",
       "pdfPages": "15-16",
       "manualPages": "1-8 to 1-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.2.4.1",
+          "text": "The L restriction means you may not drive a commercial vehicle with air brakes.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "l",
+            "air brakes"
+          ]
+        },
+        {
+          "id": "1.2.4.2",
+          "text": "The Z restriction means you may not drive a commercial vehicle with air brakes that are not fully equipped.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "z",
+            "not fully equipped"
+          ]
+        },
+        {
+          "id": "1.2.4.3",
+          "text": "The E restriction means you may not drive a commercial motor vehicle with a manual transmission.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "e",
+            "manual transmission"
+          ]
+        },
+        {
+          "id": "1.2.4.4",
+          "text": "The O restriction means you may not drive a commercial motor vehicle with a tractor-trailer.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "o",
+            "tractor trailer"
+          ]
+        },
+        {
+          "id": "1.2.4.5",
+          "text": "The K restriction limits you to driving commercial vehicles inside the state only.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "k",
+            "intrastate"
+          ]
+        },
+        {
+          "id": "1.2.4.6",
+          "text": "To remove an E, L or O restriction you must get a qualifying permit and pass the skills tests again.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "remove",
+            "permit",
+            "skills"
+          ]
+        },
+        {
+          "id": "1.2.4.7",
+          "text": "Utah does not permit modified skills tests.",
+          "critical": true,
+          "page": "1-8",
+          "keywords": [
+            "modified",
+            "not permitted"
+          ]
+        },
+        {
+          "id": "1.2.4.8",
+          "text": "The B restriction means you must wear corrective lenses, and the G restriction limits you to daylight hours only.",
+          "critical": false,
+          "page": "1-8",
+          "keywords": [
+            "b",
+            "corrective lenses",
+            "g",
+            "daylight"
+          ]
+        },
+        {
+          "id": "1.2.4.9",
+          "text": "The V code shows that the Federal Motor Carrier Safety Administration gave the driver a medical variance.",
+          "critical": false,
+          "page": "1-8",
+          "keywords": [
+            "v",
+            "variance"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does an L restriction bar?",
+          "a": "Driving a commercial vehicle with air brakes.",
+          "factId": "1.2.4.1"
+        },
+        {
+          "q": "What does a Z restriction bar?",
+          "a": "Driving a commercial vehicle with air brakes that are not fully equipped.",
+          "factId": "1.2.4.2"
+        },
+        {
+          "q": "What does an E restriction bar?",
+          "a": "Driving a CMV with a manual transmission.",
+          "factId": "1.2.4.3"
+        },
+        {
+          "q": "What does an O restriction bar?",
+          "a": "Driving a CMV with a tractor-trailer.",
+          "factId": "1.2.4.4"
+        },
+        {
+          "q": "What does a K restriction limit you to?",
+          "a": "Driving commercial vehicles inside the state only.",
+          "factId": "1.2.4.5"
+        },
+        {
+          "q": "How do you remove an E, L or O restriction?",
+          "a": "Get a qualifying permit and pass the skills tests.",
+          "factId": "1.2.4.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.2.4.e1",
+          "q": "You take the skills test in a truck with hydraulic brakes. What goes on your licence?",
+          "choices": [
+            "No restriction",
+            "An L restriction barring air brakes",
+            "A K restriction",
+            "An E restriction"
+          ],
+          "answer": 1,
+          "why": "Testing in a vehicle without air brakes gives the L restriction, which bars air brakes.",
+          "factId": "1.2.4.1",
+          "page": "1-8"
+        },
+        {
+          "id": "1.2.4.e2",
+          "q": "How is an L restriction removed?",
+          "choices": [
+            "It expires after a year",
+            "By a doctor's letter",
+            "With a qualifying permit and passing the skills test",
+            "It cannot be removed"
+          ],
+          "answer": 2,
+          "why": "An E, L or O restriction needs a qualifying permit and a passed skills test.",
+          "factId": "1.2.4.6",
+          "page": "1-8"
+        }
+      ]
     },
     {
       "id": "1.2.5",
       "title": "State of Utah Endorsements",
       "pdfPages": "16",
       "manualPages": "1-9",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.2.5.1",
+          "text": "To keep a hazardous materials (H) endorsement in Utah you must pass a Transportation Security Administration background check every five years, and a written exam at first issue and at renewal.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "h",
+            "tsa",
+            "five years"
+          ]
+        },
+        {
+          "id": "1.2.5.2",
+          "text": "To keep a school bus (S) endorsement in Utah you must pass a written exam when you renew the licence.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "s",
+            "written exam",
+            "renewal"
+          ]
+        },
+        {
+          "id": "1.2.5.3",
+          "text": "The X endorsement is the tank vehicle and hazardous materials combination.",
+          "critical": false,
+          "page": "1-9",
+          "keywords": [
+            "x",
+            "tank",
+            "hazardous"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How often must an H endorsement holder pass a TSA background check in Utah?",
+          "a": "Every five years.",
+          "factId": "1.2.5.1"
+        },
+        {
+          "q": "What does the X endorsement cover?",
+          "a": "Tank vehicles and hazardous materials together.",
+          "factId": "1.2.5.3"
+        }
+      ],
       "exam": []
     },
     {
@@ -610,8 +1023,66 @@
       "title": "Medical Examination",
       "pdfPages": "16",
       "manualPages": "1-9",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.2.6.1",
+          "text": "Get your medical examiner's certificate from a physician on the National Registry.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "national registry",
+            "physician"
+          ]
+        },
+        {
+          "id": "1.2.6.2",
+          "text": "If you do not qualify for a medical certificate, a Utah K restriction may let you drive a commercial vehicle inside Utah only.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "k restriction",
+            "utah only"
+          ]
+        },
+        {
+          "id": "1.2.6.3",
+          "text": "You must give a new medical certificate when the one before it expires, and your provider must put it on the National Registry before you apply.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "expires",
+            "new mec"
+          ]
+        },
+        {
+          "id": "1.2.6.4",
+          "text": "If you drive a commercial vehicle over 10,001 pounds that needs no CDL, you must carry a medical certificate, but you do not have to give it to the Driver License Division.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "10001",
+            "carry",
+            "not required"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Who can issue your medical examiner's certificate?",
+          "a": "A physician on the National Registry.",
+          "factId": "1.2.6.1"
+        },
+        {
+          "q": "Which weight makes a non-CDL commercial driver carry an MEC?",
+          "a": "Over 10,001 lb. It is carried, not filed with the Division.",
+          "factId": "1.2.6.4"
+        },
+        {
+          "q": "What may you get if you cannot qualify for an MEC?",
+          "a": "A Utah K restriction, for driving inside Utah only.",
+          "factId": "1.2.6.2"
+        }
+      ],
       "exam": []
     },
     {
@@ -619,9 +1090,86 @@
       "title": "MVR",
       "pdfPages": "16-17",
       "manualPages": "1-9 to 1-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.2.7.1",
+          "text": "A motor vehicle record shows every moving violation for the last three years.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "three years",
+            "moving violations"
+          ]
+        },
+        {
+          "id": "1.2.7.2",
+          "text": "A drug or alcohol offence stays on your motor vehicle record for ten years.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "ten years",
+            "drug",
+            "alcohol"
+          ]
+        },
+        {
+          "id": "1.2.7.3",
+          "text": "The items on a CDL motor vehicle record stay on it for at least 55 years.",
+          "critical": true,
+          "page": "1-9",
+          "keywords": [
+            "55 years"
+          ]
+        },
+        {
+          "id": "1.2.7.4",
+          "text": "A citation entered as a plea in abeyance still appears on your record, and it cannot be taken off once it is there.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "plea in abeyance",
+            "cannot be removed"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How far back do moving violations show on an MVR?",
+          "a": "Three years.",
+          "factId": "1.2.7.1"
+        },
+        {
+          "q": "How long does a drug or alcohol offence stay on an MVR?",
+          "a": "Ten years.",
+          "factId": "1.2.7.2"
+        },
+        {
+          "q": "How long do items stay on a CDL MVR?",
+          "a": "At least 55 years.",
+          "factId": "1.2.7.3"
+        },
+        {
+          "q": "Can a plea in abeyance be removed from your record?",
+          "a": "No. It appears and stays.",
+          "factId": "1.2.7.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.2.7.e1",
+          "q": "How long does a drug or alcohol offence stay on your motor vehicle record?",
+          "choices": [
+            "Three years",
+            "Five years",
+            "Ten years",
+            "55 years"
+          ],
+          "answer": 2,
+          "why": "Moving violations show for three years, but a drug or alcohol offence stays ten.",
+          "factId": "1.2.7.2",
+          "page": "1-9"
+        }
+      ]
     },
     {
       "id": "1.3",
@@ -637,8 +1185,25 @@
       "title": "General",
       "pdfPages": "17",
       "manualPages": "1-10",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.3.1.1",
+          "text": "You may not drive a commercial motor vehicle while you are disqualified, for any reason.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "disqualified",
+            "may not drive"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "May you drive a CMV while disqualified for any reason?",
+          "a": "No.",
+          "factId": "1.3.1.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -646,9 +1211,161 @@
       "title": "Alcohol, Leaving the Scene of an Accident, and Commission of a Felony",
       "pdfPages": "17",
       "manualPages": "1-10",
-      "facts": [],
-      "cards": [],
-      "exam": [],
+      "facts": [
+        {
+          "id": "1.3.2.1",
+          "text": "It is illegal to drive a CMV with a blood alcohol concentration of 0.04% or more.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "04",
+            "blood alcohol"
+          ]
+        },
+        {
+          "id": "1.3.2.2",
+          "text": "By driving a CMV you are deemed to have consented to alcohol testing.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "consent",
+            "testing"
+          ]
+        },
+        {
+          "id": "1.3.2.3",
+          "text": "A first offence costs you your CDL for at least one year: a BAC of 0.04% or higher, driving under the influence of alcohol or a controlled substance, refusing a test, leaving the scene of an accident, a felony with a CMV, driving on a suspended CDL, or causing a death by negligent driving.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "one year",
+            "first offence"
+          ]
+        },
+        {
+          "id": "1.3.2.4",
+          "text": "The loss is at least three years if the offence happens while you drive a CMV placarded for hazardous materials.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "three years",
+            "placarded"
+          ]
+        },
+        {
+          "id": "1.3.2.5",
+          "text": "A second offence costs you your CDL for life.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "second",
+            "life"
+          ]
+        },
+        {
+          "id": "1.3.2.6",
+          "text": "Using a CMV to commit a felony involving controlled substances costs you your CDL for life.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "felony",
+            "controlled substances",
+            "life"
+          ]
+        },
+        {
+          "id": "1.3.2.7",
+          "text": "Any detectable alcohol under 0.04% puts you out of service for 24 hours.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "24 hours",
+            "detectable",
+            "out of service"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What BAC makes it illegal to drive a CMV?",
+          "a": "0.04% or more.",
+          "factId": "1.3.2.1"
+        },
+        {
+          "q": "How long do you lose your CDL for a first alcohol offence?",
+          "a": "At least one year.",
+          "factId": "1.3.2.3"
+        },
+        {
+          "q": "How long for a first offence while placarded for hazmat?",
+          "a": "At least three years.",
+          "factId": "1.3.2.4"
+        },
+        {
+          "q": "What is the penalty for a second serious alcohol or drug offence?",
+          "a": "Loss of the CDL for life.",
+          "factId": "1.3.2.5"
+        },
+        {
+          "q": "What happens with any detectable alcohol under 0.04%?",
+          "a": "Out of service for 24 hours.",
+          "factId": "1.3.2.7"
+        },
+        {
+          "q": "What is the penalty for using a CMV in a controlled substance felony?",
+          "a": "Loss of the CDL for life.",
+          "factId": "1.3.2.6"
+        },
+        {
+          "q": "Does refusing a blood alcohol test carry a penalty?",
+          "a": "Yes. At least one year, the same as a first offence.",
+          "factId": "1.3.2.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.3.2.e1",
+          "q": "You are driving a CMV placarded for hazardous materials and you are convicted of a first DUI. How long do you lose your CDL?",
+          "choices": [
+            "60 days",
+            "One year",
+            "Three years",
+            "For life"
+          ],
+          "answer": 2,
+          "why": "A first offence is one year, but three years when the vehicle is placarded for hazmat.",
+          "factId": "1.3.2.4",
+          "page": "1-10"
+        },
+        {
+          "id": "1.3.2.e2",
+          "q": "A test shows 0.02% BAC in a CMV driver. What happens?",
+          "choices": [
+            "Nothing: it is under the limit",
+            "Out of service for 24 hours",
+            "CDL lost for one year",
+            "CDL lost for life"
+          ],
+          "answer": 1,
+          "why": "Any detectable alcohol under 0.04% means 24 hours out of service.",
+          "factId": "1.3.2.7",
+          "page": "1-10"
+        },
+        {
+          "id": "1.3.2.e3",
+          "q": "What is the penalty for refusing alcohol testing on a first offence?",
+          "choices": [
+            "A warning",
+            "60 days",
+            "At least one year",
+            "24 hours out of service"
+          ],
+          "answer": 2,
+          "why": "Refusing a test is treated like the other first offences: at least one year.",
+          "factId": "1.3.2.3",
+          "page": "1-10"
+        }
+      ],
       "titleFixed": true
     },
     {
@@ -656,35 +1373,291 @@
       "title": "Serious Traffic Violations",
       "pdfPages": "17",
       "manualPages": "1-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.3.3.1",
+          "text": "Excessive speeding, which is a serious traffic violation, means 15 mph or more above the posted limit.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "15",
+            "excessive speeding"
+          ]
+        },
+        {
+          "id": "1.3.3.2",
+          "text": "Serious traffic violations also include reckless driving, improper or erratic lane changes, following too closely, a traffic offence in a CMV connected with a fatal accident, driving a CMV without a CDL or without it in your possession, and driving without the right class or endorsement.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "reckless",
+            "erratic",
+            "too closely"
+          ]
+        },
+        {
+          "id": "1.3.3.3",
+          "text": "Two serious traffic violations in a CMV within three years cost you your CDL for at least 60 days.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "two",
+            "60 days",
+            "three year"
+          ]
+        },
+        {
+          "id": "1.3.3.4",
+          "text": "Three or more serious traffic violations in a CMV within three years cost you your CDL for at least 120 days.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "three",
+            "120 days"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How far over the limit is excessive speeding?",
+          "a": "15 mph or more above the posted limit.",
+          "factId": "1.3.3.1"
+        },
+        {
+          "q": "Penalty for two serious traffic violations in three years?",
+          "a": "At least 60 days.",
+          "factId": "1.3.3.3"
+        },
+        {
+          "q": "Penalty for three serious traffic violations in three years?",
+          "a": "At least 120 days.",
+          "factId": "1.3.3.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.3.3.e1",
+          "q": "You get a third serious traffic violation inside three years. How long do you lose your CDL?",
+          "choices": [
+            "60 days",
+            "90 days",
+            "120 days",
+            "One year"
+          ],
+          "answer": 2,
+          "why": "Two in three years is 60 days; three or more is 120 days.",
+          "factId": "1.3.3.4",
+          "page": "1-10"
+        }
+      ]
     },
     {
       "id": "1.3.4",
       "title": "Violation of Out-of-Service Orders",
       "pdfPages": "17",
       "manualPages": "1-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.3.4.1",
+          "text": "A first violation of an out-of-service order costs you your CDL for at least 90 days.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "first",
+            "90 days",
+            "out of service"
+          ]
+        },
+        {
+          "id": "1.3.4.2",
+          "text": "Two violations of an out-of-service order within ten years cost you your CDL for at least one year.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "two",
+            "one year",
+            "ten year"
+          ]
+        },
+        {
+          "id": "1.3.4.3",
+          "text": "Three or more violations of an out-of-service order within ten years cost you your CDL for at least three years.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "three",
+            "three years"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Penalty for a first out-of-service order violation?",
+          "a": "At least 90 days.",
+          "factId": "1.3.4.1"
+        },
+        {
+          "q": "Penalty for two out-of-service violations in ten years?",
+          "a": "At least one year.",
+          "factId": "1.3.4.2"
+        },
+        {
+          "q": "Penalty for three out-of-service violations in ten years?",
+          "a": "At least three years.",
+          "factId": "1.3.4.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.3.4.e1",
+          "q": "How long do you lose your CDL for a first violation of an out-of-service order?",
+          "choices": [
+            "24 hours",
+            "60 days",
+            "90 days",
+            "One year"
+          ],
+          "answer": 2,
+          "why": "A first out-of-service violation is at least 90 days.",
+          "factId": "1.3.4.1",
+          "page": "1-10"
+        }
+      ]
     },
     {
       "id": "1.3.5",
       "title": "Railroad-highway Grade Crossing",
       "pdfPages": "17-18",
       "manualPages": "1-10 to 1-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.3.5.1",
+          "text": "A first railroad-highway grade crossing violation costs you your CDL for at least 60 days.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "first",
+            "60 days",
+            "railroad"
+          ]
+        },
+        {
+          "id": "1.3.5.2",
+          "text": "A second railroad crossing violation within three years costs you your CDL for at least 120 days.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "second",
+            "120 days"
+          ]
+        },
+        {
+          "id": "1.3.5.3",
+          "text": "A third railroad crossing violation within three years costs you your CDL for at least one year.",
+          "critical": true,
+          "page": "1-10",
+          "keywords": [
+            "third",
+            "one year"
+          ]
+        },
+        {
+          "id": "1.3.5.4",
+          "text": "There are six railroad crossing offences, and they include not having enough space to drive all the way through the crossing without stopping, and not getting across because of too little undercarriage clearance.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "six",
+            "space",
+            "undercarriage"
+          ]
+        },
+        {
+          "id": "1.3.5.5",
+          "text": "A driver who need not always stop still must slow down, check that the tracks are clear, and stop before the crossing if they are not.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "slow down",
+            "check",
+            "clear"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Penalty for a first railroad crossing violation?",
+          "a": "At least 60 days.",
+          "factId": "1.3.5.1"
+        },
+        {
+          "q": "Penalty for a second railroad crossing violation in three years?",
+          "a": "At least 120 days.",
+          "factId": "1.3.5.2"
+        },
+        {
+          "q": "Penalty for a third railroad crossing violation in three years?",
+          "a": "At least one year.",
+          "factId": "1.3.5.3"
+        },
+        {
+          "q": "How many railroad crossing offences are listed?",
+          "a": "Six.",
+          "factId": "1.3.5.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.3.5.e1",
+          "q": "You stop on a crossing because there was not enough room on the far side. What is this?",
+          "choices": [
+            "No violation if you were moving",
+            "A railroad crossing violation",
+            "A serious traffic violation only",
+            "An out-of-service order"
+          ],
+          "answer": 1,
+          "why": "Failing to have enough space to clear the crossing without stopping is one of the six offences.",
+          "factId": "1.3.5.4",
+          "page": "1-11"
+        }
+      ]
     },
     {
       "id": "1.3.6",
       "title": "Hazardous Materials Endorsement",
       "pdfPages": "18",
       "manualPages": "1-11",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.3.6.1",
+          "text": "A hazardous materials endorsement needs your fingerprints and a background check.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "fingerprints",
+            "background check"
+          ]
+        },
+        {
+          "id": "1.3.6.2",
+          "text": "You lose or are denied the hazmat endorsement if you are not a lawful permanent resident, give up your United States citizenship, are wanted or under indictment for certain felonies, were convicted of certain felonies, were found to lack mental capacity or were committed to a mental health facility, or the Transportation Security Administration judges you a security threat.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "permanent resident",
+            "indictment",
+            "security threat"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does a hazmat endorsement application need?",
+          "a": "Fingerprints and a background check.",
+          "factId": "1.3.6.1"
+        }
+      ],
       "exam": []
     },
     {
@@ -692,26 +1665,345 @@
       "title": "Traffic Violations in Your Personal",
       "pdfPages": "18",
       "manualPages": "1-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.3.7.1",
+          "text": "If your right to drive your personal vehicle is revoked, cancelled or suspended for breaking traffic laws, other than parking, you lose your CDL driving privileges too.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "personal vehicle",
+            "revoked",
+            "lose"
+          ]
+        },
+        {
+          "id": "1.3.7.2",
+          "text": "If your personal licence is revoked, cancelled or suspended for alcohol, a controlled substance or a felony, you lose your CDL for one year.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "one year",
+            "alcohol",
+            "felony"
+          ]
+        },
+        {
+          "id": "1.3.7.3",
+          "text": "A second such violation, in your personal vehicle or in a CMV, costs you your CDL for life.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "second",
+            "life"
+          ]
+        },
+        {
+          "id": "1.3.7.4",
+          "text": "You cannot get a hardship licence to drive a CMV while your personal licence is revoked, cancelled or suspended.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "hardship",
+            "cannot"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Your car licence is suspended for DUI. What happens to your CDL?",
+          "a": "You lose it for one year.",
+          "factId": "1.3.7.2"
+        },
+        {
+          "q": "Can you get a hardship licence to drive a CMV?",
+          "a": "No.",
+          "factId": "1.3.7.4"
+        },
+        {
+          "q": "Second alcohol or felony violation, car or truck. What happens?",
+          "a": "You lose the CDL for life.",
+          "factId": "1.3.7.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.3.7.e1",
+          "q": "You are convicted of DUI in your own car. What happens to your CDL?",
+          "choices": [
+            "Nothing: it was not a CMV",
+            "You lose it for one year",
+            "You lose it for 60 days",
+            "You lose it for life"
+          ],
+          "answer": 1,
+          "why": "A personal-vehicle alcohol, drug or felony revocation costs the CDL for one year.",
+          "factId": "1.3.7.2",
+          "page": "1-11"
+        }
+      ]
     },
     {
       "id": "1.4",
       "title": "Other CDL Rules",
       "pdfPages": "18-19",
       "manualPages": "1-11 to 1-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "1.4.1",
+          "text": "You cannot hold more than one licence. A court can fine you up to $5,000 or put you in jail, and your home state keeps its licence while the others are returned.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "one license",
+            "5000"
+          ]
+        },
+        {
+          "id": "1.4.2",
+          "text": "You must tell your employer within 30 days of a conviction for any traffic violation except parking, whatever vehicle you were driving.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "30 days",
+            "employer",
+            "conviction"
+          ]
+        },
+        {
+          "id": "1.4.3",
+          "text": "You must tell your motor vehicle licensing agency within 30 days if another jurisdiction convicts you of any traffic violation except parking.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "30 days",
+            "licensing agency"
+          ]
+        },
+        {
+          "id": "1.4.4",
+          "text": "You must tell your employer within two business days if your licence is suspended, revoked or cancelled, or if you are disqualified.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "two business days",
+            "suspended"
+          ]
+        },
+        {
+          "id": "1.4.5",
+          "text": "When you apply for a commercial driving job you must give the employer information on every driving job you held for the past ten years.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "ten years",
+            "driving jobs"
+          ]
+        },
+        {
+          "id": "1.4.6",
+          "text": "Nobody may drive a CMV without a CDL, and a court can fine you up to $5,000 or put you in jail for it.",
+          "critical": true,
+          "page": "1-11",
+          "keywords": [
+            "5000",
+            "without a cdl"
+          ]
+        },
+        {
+          "id": "1.4.7",
+          "text": "With a hazardous materials endorsement you must tell the state that issued your CDL, and give up the endorsement, within 24 hours of a conviction or indictment for a disqualifying crime.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "24 hours",
+            "surrender",
+            "hazardous"
+          ]
+        },
+        {
+          "id": "1.4.8",
+          "text": "Your employer may not let you drive a CMV if you hold more than one licence or your CDL is suspended or revoked, and the employer can be fined up to $5,000 or jailed.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "employer",
+            "5000"
+          ]
+        },
+        {
+          "id": "1.4.9",
+          "text": "You may not hold a mobile telephone to make a voice call, and you may not dial one by pressing more than a single button, while driving.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "mobile",
+            "single button"
+          ]
+        },
+        {
+          "id": "1.4.10",
+          "text": "You may not send or read text messages while driving.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "text messages"
+          ]
+        },
+        {
+          "id": "1.4.11",
+          "text": "You must wear the safety belt at all times while you drive a commercial motor vehicle. Without it you are four times more likely to be killed if you are thrown from the vehicle.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "safety belt",
+            "four times"
+          ]
+        },
+        {
+          "id": "1.4.12",
+          "text": "All states share one computer system for CDL information, and they check accident records so that no driver holds more than one CDL.",
+          "critical": false,
+          "page": "1-12",
+          "keywords": [
+            "one computerized system",
+            "share"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How many licences may a CDL driver hold?",
+          "a": "One. The fine can reach $5,000 or jail.",
+          "factId": "1.4.1"
+        },
+        {
+          "q": "How soon must you tell your employer about a traffic conviction?",
+          "a": "Within 30 days, whatever vehicle you drove.",
+          "factId": "1.4.2"
+        },
+        {
+          "q": "How soon must you tell your employer that your licence is suspended?",
+          "a": "Within two business days.",
+          "factId": "1.4.4"
+        },
+        {
+          "q": "How many years of driving jobs must you give a new employer?",
+          "a": "Ten years.",
+          "factId": "1.4.5"
+        },
+        {
+          "q": "How soon must you surrender a hazmat endorsement after a disqualifying conviction?",
+          "a": "Within 24 hours.",
+          "factId": "1.4.7"
+        },
+        {
+          "q": "What are the mobile phone rules while driving a CMV?",
+          "a": "No holding it for a call, no dialling with more than one button, and no texting.",
+          "factId": "1.4.9"
+        },
+        {
+          "q": "How much more likely is death without a safety belt if you are thrown out?",
+          "a": "Four times.",
+          "factId": "1.4.11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "1.4.e1",
+          "q": "Your licence is suspended on Monday. By when must you tell your employer?",
+          "choices": [
+            "Within 30 days",
+            "Within two business days",
+            "Within 24 hours",
+            "At the next pay day"
+          ],
+          "answer": 1,
+          "why": "A suspension, revocation, cancellation or disqualification goes to the employer within two business days.",
+          "factId": "1.4.4",
+          "page": "1-11"
+        },
+        {
+          "id": "1.4.e2",
+          "q": "You are convicted of speeding in your own car. Must you tell your employer?",
+          "choices": [
+            "No: it was not a CMV",
+            "Yes, within 30 days",
+            "Yes, within two business days",
+            "Only at renewal"
+          ],
+          "answer": 1,
+          "why": "Any traffic conviction except parking goes to the employer within 30 days, whatever the vehicle.",
+          "factId": "1.4.2",
+          "page": "1-11"
+        },
+        {
+          "id": "1.4.e3",
+          "q": "How many years of driving jobs must you report when you apply for a commercial driving job?",
+          "choices": [
+            "Three",
+            "Five",
+            "Seven",
+            "Ten"
+          ],
+          "answer": 3,
+          "why": "You must give information on all driving jobs for the past ten years.",
+          "factId": "1.4.5",
+          "page": "1-11"
+        }
+      ]
     },
     {
       "id": "1.5",
       "title": "International Registration Plan",
       "pdfPages": "19-22",
       "manualPages": "1-12 to 1-15",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "1.5.1",
+          "text": "A CDL vehicle in interstate commerce must, with few exceptions, be registered under the International Registration Plan and the International Fuel Tax Agreement.",
+          "critical": true,
+          "page": "1-12",
+          "keywords": [
+            "irp",
+            "ifta",
+            "interstate"
+          ]
+        },
+        {
+          "id": "1.5.2",
+          "text": "The two programmes cover the 48 adjoining United States and 10 Canadian provinces.",
+          "critical": false,
+          "page": "1-12",
+          "keywords": [
+            "48",
+            "10",
+            "provinces"
+          ]
+        },
+        {
+          "id": "1.5.3",
+          "text": "Under the plan a registrant must keep accurate distance records and make them available for review.",
+          "critical": false,
+          "page": "1-12",
+          "keywords": [
+            "distance records",
+            "review"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which two programmes must an interstate CDL vehicle be registered under?",
+          "a": "The International Registration Plan (IRP) and the International Fuel Tax Agreement (IFTA).",
+          "factId": "1.5.1"
+        },
+        {
+          "q": "How far do IRP and IFTA reach?",
+          "a": "The 48 adjoining states and 10 Canadian provinces.",
+          "factId": "1.5.2"
+        }
+      ],
       "exam": []
     },
     {

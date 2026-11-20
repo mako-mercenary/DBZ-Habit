@@ -176,7 +176,14 @@ def build_section(pdf, number, title, track, first, last):
 
 
 def merge(fresh, old):
-    """Keeps the facts, cards and questions that are written already."""
+    """
+    Keeps what was written by hand: the facts, the cards, the questions, a
+    corrected title, and a whole subsection that was added by hand.
+
+    The heading scan does not find every heading, because a heading can wrap or
+    sit inside a figure. So a subsection carrying "handMade": true is kept and
+    put back in manual order. Nothing written by hand is lost by a re-run.
+    """
     if not old:
         return fresh
     by_id = {sub.get("id"): sub for sub in old.get("subsections", [])}
@@ -191,6 +198,17 @@ def merge(fresh, old):
         if kept.get("titleFixed"):
             sub["title"] = kept["title"]
             sub["titleFixed"] = True
+    found = {sub["id"] for sub in fresh["subsections"]}
+    hand_made = [
+        sub for sub in old.get("subsections", [])
+        if sub.get("handMade") and sub.get("id") not in found
+    ]
+    if hand_made:
+        fresh["subsections"] = sorted(
+            fresh["subsections"] + hand_made,
+            key=lambda sub: sort_key(sub["id"]),
+        )
+
     if old.get("exam"):
         fresh["exam"] = old["exam"]
     return fresh
@@ -235,8 +253,11 @@ def main():
             json.dump(section, handle, indent=2, ensure_ascii=False)
             handle.write("\n")
         facts = sum(len(s["facts"]) for s in section["subsections"])
+        by_hand = sum(1 for s in section["subsections"] if s.get("handMade"))
+        extra = f"  ({by_hand} kept by hand)" if by_hand else ""
         print(f"  section {number:>2}  pages {first}-{last}  "
-              f"{len(section['subsections'])} subsections  {facts} facts  -> {os.path.basename(path)}")
+              f"{len(section['subsections'])} subsections  {facts} facts"
+              f"{extra}  -> {os.path.basename(path)}")
 
 
 if __name__ == "__main__":
