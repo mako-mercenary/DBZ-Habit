@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A Class A combination, side on, for the launcher icon.
+
+  The viewport is the 108 x 108 that an adaptive icon uses. A launcher may mask
+  away the outer 18 on every side, so everything here sits between 21 and 87.
+
+  The wheels and the windshield are holes, cut with evenOdd, so the background
+  color shows through them. That lets this one drawable serve as the themed
+  monochrome icon as well, where the system tints every solid pixel.
+
+  The shape was checked at 192, 108, 64 and 42 pixels, under a circle mask and
+  a rounded square. The gap between the trailer and the tractor is what makes
+  it read as a combination and not a straight truck, so keep it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- The trailer. Its roof sits above the tractor's, as a real one does. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,36 L53,36 L53,62 L21,62 Z" />
+
+    <!-- The tractor: sleeper, windshield slope and hood, with the glass cut out. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M58,62 L58,40 L69,40 L74,48 L83,48 L83,62 Z
+                          M63,44 L68,44 L71,48 L63,48 Z" />
+
+    <!-- Trailer tandem, drive axle and steer axle. Each wheel is a ring. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M21.5,66 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z
+                          M24.5,66 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z
+                          M32,66 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z
+                          M35,66 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z
+                          M57.5,66 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z
+                          M60.5,66 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z
+                          M73.5,66 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z
+                          M76.5,66 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z" />
+</vector>

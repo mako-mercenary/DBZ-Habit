@@ -1,6 +1,7 @@
-# CDL Study
+# Gateway 2 100k
 
-An offline Android app for the Utah Class A CDL with air brakes. You read the
+An offline Android app for the Utah Class A CDL with air brakes. The name is
+the point of it: the license is the gateway. You read the
 manual in the app, close it, say what you remember, mark your recall against the
 manual's facts, and export the cards to Anki. Then an exam for each track.
 
@@ -179,6 +180,17 @@ file that holds `sdk.dir=/path/to/sdk`.
 
 The build is signed with the debug key in `app/debug.keystore`, so a newer APK
 installs over an older one and keeps your study data.
+
+## Name and icon
+
+The app is **Gateway 2 100k**, with a Class A combination in white on deep blue.
+The icon is an adaptive icon drawn as a vector, so every launcher shape works
+and nothing is stored as a bitmap. `app/src/main/res/drawable/ic_launcher_foreground.xml`
+holds the drawing.
+
+The application id stays `com.cdlstudy`. A rename there would make Android treat
+this as a different app, install it beside the old one, and leave your study
+record stranded in the old one.
 
 ## Install on a phone
 

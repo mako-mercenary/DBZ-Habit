@@ -21,7 +21,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.cdlstudy.R
 import com.cdlstudy.data.PlanProgress
 import com.cdlstudy.data.ProgressEntity
 import com.cdlstudy.domain.Section
@@ -44,7 +46,7 @@ fun HomeScreen(
     val progress by repo.progress.collectAsStateWithLifecycle(emptyList())
     val pendingCards by repo.pendingCardCount.collectAsStateWithLifecycle(0)
 
-    Scaffold(topBar = { Bar("Utah Class A CDL") }) { pad ->
+    Scaffold(topBar = { Bar(stringResource(R.string.app_name)) }) { pad ->
         LazyColumn(
             modifier = Modifier.fillMaxSize().padding(pad).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -126,7 +128,7 @@ fun HomeScreen(
                         style = MaterialTheme.typography.titleMedium,
                     )
                     Text(
-                        "Class A with air brakes, no endorsements.",
+                        "Utah Class A with air brakes, no endorsements.",
                         style = MaterialTheme.typography.labelMedium,
                     )
                 }
