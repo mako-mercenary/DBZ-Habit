@@ -157,20 +157,47 @@ class ContentFilesTest {
     }
 
     @Test
-    fun `a finished section leaves no subsection with nothing in it`() {
-        // The screen showed "0 facts | 0 must memorize" for a parent heading,
-        // which reads like a fault. A section that is written must have a
-        // lesson or a checklist on every subsection, headings included.
-        val finished = setOf(1, 3, 5)
+    fun `a written section leaves nothing missing on a part`() {
+        // A heading such as 1.1 is allowed to hold nothing: the manual gives it
+        // no text of its own, and it exists to group the parts under it. The
+        // rule is about the parts, which are what you actually read.
+        val written = setOf(1, 3, 5)
         val bare = mutableListOf<String>()
         files().forEach { file ->
             val section = ContentReader.readSection(file.readText())
-            if (section.number !in finished) return@forEach
-            section.subsections
+            if (section.number !in written) return@forEach
+            section.parts
                 .filterNot { it.hasLesson || it.canRecall }
                 .forEach { bare.add("${section.number}: ${it.id} ${it.title}") }
         }
-        assertTrue("These have neither a lesson nor facts: $bare", bare.isEmpty())
+        assertTrue("These parts have neither a lesson nor facts: $bare", bare.isEmpty())
+    }
+
+    @Test
+    fun `a heading is told apart from a part`() {
+        val section = ContentReader.readSection(
+            files().first { it.name == "section01.json" }.readText()
+        )
+        val headings = section.subsections.filter { section.isHeading(it) }.map { it.id }
+        assertTrue("1.1 groups 1.1.1 to 1.1.3, so it is a heading", "1.1" in headings)
+        assertTrue("1.3 groups 1.3.1 to 1.3.7, so it is a heading", "1.3" in headings)
+        assertFalse("1.1.1 has no parts under it", "1.1.1" in headings)
+        assertFalse("1.6 has no parts under it", "1.6" in headings)
+        assertTrue(section.parts.none { section.isHeading(it) })
+        assertEquals(section.subsections.size, section.parts.size + headings.size)
+    }
+
+    @Test
+    fun `an empty heading is left empty, because that is what a heading is`() {
+        // The app showed "0 facts | 0 must memorize" on 1.1 and the first fix
+        // put an invented overview there. A heading holds nothing on purpose.
+        val section = ContentReader.readSection(
+            files().first { it.name == "section01.json" }.readText()
+        )
+        val oneOne = section.subsections.first { it.id == "1.1" }
+        assertTrue(section.isHeading(oneOne))
+        assertFalse("1.1 should carry no lesson of its own", oneOne.hasLesson)
+        assertTrue("1.1 should carry no facts of its own", oneOne.facts.isEmpty())
     }
 
     @Test

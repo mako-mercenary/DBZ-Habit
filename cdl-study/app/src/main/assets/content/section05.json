@@ -2067,27 +2067,7 @@
       "manualPages": "5-8",
       "facts": [],
       "cards": [],
-      "exam": [],
-      "reading": [
-        {
-          "p": "You know the parts and you have inspected them. This part is about using the brakes on the road."
-        },
-        {
-          "ul": [
-            "5.4.1 Normal stops.",
-            "5.4.2 Braking with antilock brakes.",
-            "5.4.3 Emergency stops: controlled braking and stab braking.",
-            "5.4.4 Stopping distance, and the brake lag that air brakes add.",
-            "5.4.5 Brake fade and brake failure.",
-            "5.4.6 Proper braking technique on a downgrade.",
-            "5.4.7 What to do when the air pressure gets low.",
-            "5.4.8 Parking brakes."
-          ]
-        },
-        {
-          "note": "This is a heading. The facts are in the parts below."
-        }
-      ]
+      "exam": []
     },
     {
       "id": "5.4.1",

@@ -270,22 +270,7 @@
       "manualPages": "1-5",
       "facts": [],
       "cards": [],
-      "exam": [],
-      "reading": [
-        {
-          "p": "This part of the manual explains what you must pass to get a CDL. There are two kinds of test, and the parts below take each one in turn."
-        },
-        {
-          "ul": [
-            "Knowledge tests: written tests, and which ones you take depends on your license class and your endorsements.",
-            "Skills tests: three parts taken in a vehicle, in order.",
-            "Utah requirements: what this state asks for on top of the federal rules."
-          ]
-        },
-        {
-          "note": "This is a heading. The facts are in 1.1.1, 1.1.2 and 1.1.3 below."
-        }
-      ]
+      "exam": []
     },
     {
       "id": "1.1.1",
@@ -1537,26 +1522,7 @@
       "manualPages": "1-10",
       "facts": [],
       "cards": [],
-      "exam": [],
-      "reading": [
-        {
-          "p": "Disqualification means you may not drive a commercial motor vehicle, whatever your license says. The parts below give the offences and how long each one costs you."
-        },
-        {
-          "ul": [
-            "1.3.1 The general rule.",
-            "1.3.2 Alcohol, leaving the scene, and felonies: the heaviest penalties.",
-            "1.3.3 Serious traffic violations, counted over three years.",
-            "1.3.4 Out-of-service order violations, counted over ten years.",
-            "1.3.5 Railroad-highway grade crossing violations.",
-            "1.3.6 Hazardous materials endorsement checks.",
-            "1.3.7 What you do in your own car."
-          ]
-        },
-        {
-          "note": "This is a heading. Learn the periods in the parts below: they are the most tested numbers in Section 1."
-        }
-      ]
+      "exam": []
     },
     {
       "id": "1.3.1",

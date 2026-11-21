@@ -41,8 +41,8 @@ fun SectionScreen(
                     Text(section.title, style = MaterialTheme.typography.titleLarge)
                     Text(
                         "${section.track.label} | ${section.readingPages} pages | " +
-                            "${section.readyToRecall} of ${section.subsections.size} " +
-                            "subsections have a fact checklist",
+                            "${section.readyToRecall} of ${section.parts.size} " +
+                            "parts have a fact checklist",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
@@ -52,7 +52,33 @@ fun SectionScreen(
             }
             items(section.subsections) { sub ->
                 val row = progress.firstOrNull { it.subsectionId == sub.id }
-                Card(onClick = { onSubsection(sub.id) }, modifier = Modifier.fillMaxWidth()) {
+
+                // A heading with nothing of its own is a label over its parts,
+                // not something to open. The manual gives it no text, and that
+                // is what a heading is for.
+                if (section.isHeading(sub) && !sub.hasLesson && !sub.canRecall) {
+                    Column(Modifier.padding(top = 8.dp)) {
+                        Text(
+                            "${sub.id} ${sub.title}",
+                            style = MaterialTheme.typography.titleSmall,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                        Text(
+                            "Heading. The parts below hold the reading.",
+                            style = MaterialTheme.typography.labelSmall,
+                        )
+                    }
+                    return@items
+                }
+
+                Card(
+                    onClick = { onSubsection(sub.id) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        // A part sits under its heading, so the shape of the
+                        // manual is visible in the list.
+                        .padding(start = (if (sub.id.count { it == '.' } > 1) 12 else 0).dp),
+                ) {
                     Column(Modifier.padding(16.dp)) {
                         Text("${sub.id} ${sub.title}", style = MaterialTheme.typography.titleMedium)
                         Text(
@@ -65,7 +91,7 @@ fun SectionScreen(
                                     }
                                     // A heading or an overview: reading only, and no
                                     // "0 facts", which reads like something is broken.
-                                    sub.hasLesson -> append("Overview to read, no recall")
+                                    sub.hasLesson -> append("Reading only, no recall")
                                     else -> append("Not written yet")
                                 }
                                 sub.manualPages?.let { append(" | pages $it") }

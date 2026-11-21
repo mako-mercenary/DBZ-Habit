@@ -111,6 +111,17 @@ data class Section(
     /** True while the content is a sample. The app shows a warning. */
     val placeholder: Boolean = false,
 ) {
+    /**
+     * True for a subsection that only groups the parts under it, such as 1.1
+     * over 1.1.1 and 1.1.2. The manual gives a heading no text of its own, so
+     * it is right for it to hold nothing. It is structure, not a lesson.
+     */
+    fun isHeading(subsection: Subsection): Boolean =
+        subsections.any { it.id.startsWith("${subsection.id}.") }
+
+    /** The subsections that hold the reading: every one that is not a heading. */
+    val parts: List<Subsection> get() = subsections.filterNot { isHeading(it) }
+
     val factCount: Int get() = subsections.sumOf { it.facts.size }
     val readyToRecall: Int get() = subsections.count { it.canRecall }
     val withLesson: Int get() = subsections.count { it.hasLesson }
