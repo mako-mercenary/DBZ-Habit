@@ -39,7 +39,7 @@ import java.time.LocalDate
  * question, tab, answer, one card per line, no header row.
  */
 @Composable
-fun CardsScreen(onBack: () -> Unit) {
+fun CardsScreen(onBack: (() -> Unit)?) {
     val repo = repository()
     val context = LocalContext.current
     val clipboard = LocalClipboardManager.current

@@ -27,7 +27,7 @@ import com.cdlstudy.domain.Track
 import java.time.LocalDate
 
 @Composable
-fun ProgressScreen(onBack: () -> Unit) {
+fun ProgressScreen(onBack: (() -> Unit)?) {
     val repo = repository()
     val clipboard = LocalClipboardManager.current
     val progress by repo.progress.collectAsStateWithLifecycle(emptyList())

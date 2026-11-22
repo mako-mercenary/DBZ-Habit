@@ -187,6 +187,25 @@ file that holds `sdk.dir=/path/to/sdk`.
 The build is signed with the debug key in `app/debug.keystore`, so a newer APK
 installs over an older one and keeps your study data.
 
+## The app, screen by screen
+
+Dark, with gold for anything that asks you to act. Gold is the only accent, so
+it means something: a gold thing is a thing to press, or a number to remember.
+
+Four tabs along the bottom:
+
+| Tab | What is on it |
+|---|---|
+| **Today** | Where you are, one big button for the next thing to do, then the Reading, Testing and Cards rows. |
+| **Progress** | Weak facts, best scores, and the progress summary to copy. |
+| **Cards** | The TSV block and the .tsv file for Anki. |
+| **Settings** | Reading, your manual, and what you must study. |
+
+The button on Today is worked out by `NextStepRules`, not by a guess: the first
+part of the first section you have not recalled; then, once the reading is
+done, any cards waiting for Anki; then the exam of each track that is not at
+90% yet. `docs/today-design.png` is the design it was built from.
+
 ## Name and icon
 
 The app is **Gateway 2 100k**, with a Class A combination in white on deep blue.

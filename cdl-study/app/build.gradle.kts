@@ -12,8 +12,8 @@ android {
         applicationId = "com.cdlstudy"
         minSdk = 26
         targetSdk = 36
-        versionCode = 8
-        versionName = "0.5.1"
+        versionCode = 9
+        versionName = "0.6.0"
     }
 
     signingConfigs {
@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.material3)
+    implementation(libs.compose.material.icons)
 
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
