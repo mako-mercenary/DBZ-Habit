@@ -6,13 +6,355 @@
   "pdfPages": "158-163",
   "subsections": [
     {
+      "id": "12.0",
+      "title": "How the Basic Control Test Works",
+      "pdfPages": "158",
+      "manualPages": "12-1",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "12.0.1",
+          "text": "The basic control skills test has four exercises: Forward Stop, Straight-Line Backing, Forward Offset Tracking, and Reverse Offset Backing.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "four",
+            "forward stop",
+            "straight line",
+            "offset"
+          ]
+        },
+        {
+          "id": "12.0.2",
+          "text": "You are scored on changing direction to gain a better position, on crossing or touching boundary lines or cones, and on your final position.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "scored",
+            "boundary",
+            "final position"
+          ]
+        },
+        {
+          "id": "12.0.3",
+          "text": "Before you leave the vehicle you must set the parking brake, put it in neutral, and get out facing the vehicle with three points of contact.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "parking brake",
+            "neutral",
+            "three points"
+          ]
+        },
+        {
+          "id": "12.0.4",
+          "text": "Opening the door, or moving from a seated position while you control the vehicle, is scored as a look.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "door",
+            "seated",
+            "look"
+          ]
+        },
+        {
+          "id": "12.0.5",
+          "text": "If the examiner raises a hand, stop and return your vehicle inside the exercise boundary lines.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "raise",
+            "hand",
+            "stop"
+          ]
+        },
+        {
+          "id": "12.0.6",
+          "text": "You must pass the basic control skills test before you can go on to the road test.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "pass",
+            "before",
+            "road test"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Name the four basic control exercises.",
+          "a": "Forward Stop, Straight-Line Backing, Forward Offset Tracking, Reverse Offset Backing.",
+          "factId": "12.0.1"
+        },
+        {
+          "q": "What must you do before stepping out of the vehicle?",
+          "a": "Set the parking brake, put it in neutral, and face the vehicle with three points of contact.",
+          "factId": "12.0.3"
+        },
+        {
+          "q": "The examiner raises a hand. What does it mean?",
+          "a": "Stop, and bring the vehicle back inside the exercise boundary.",
+          "factId": "12.0.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "12.0.e1",
+          "q": "How many exercises are in the basic control skills test?",
+          "choices": [
+            "Two",
+            "Three",
+            "Four",
+            "Five"
+          ],
+          "answer": 2,
+          "why": "Forward Stop, Straight-Line Backing, Forward Offset Tracking and Reverse Offset Backing.",
+          "factId": "12.0.1",
+          "page": "12-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "This test is about judging where your vehicle is: its front, its rear, and its path. You do it off-road, or somewhere on the street during the road test."
+        },
+        {
+          "h": "The four exercises"
+        },
+        {
+          "ul": [
+            "1. Forward Stop.",
+            "2. Straight-Line Backing.",
+            "3. Forward Offset Tracking.",
+            "4. Reverse Offset Backing."
+          ]
+        },
+        {
+          "note": "Every time you step out: set the parking brake, put it in neutral, and face the vehicle with three points of contact. Opening the door, or moving out of your seat while in control of the vehicle, is scored as a look."
+        },
+        {
+          "p": "You get instructions before each exercise and a chance to ask questions. If the examiner raises a hand, stop and bring the vehicle back inside the boundary lines. You must pass this test before the road test."
+        }
+      ]
+    },
+    {
       "id": "12.1",
       "title": "Scoring",
       "pdfPages": "158-159",
       "manualPages": "12-1 to 12-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "12.1.1",
+          "text": "A pull-up is pulling forward during a backing exercise to clear an encroachment or get a better position. Stopping without changing direction is not a pull-up.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "pull up",
+            "changing direction"
+          ]
+        },
+        {
+          "id": "12.1.2",
+          "text": "The first pull-ups are not penalized, but too many count as errors.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "not penalized",
+            "excessive"
+          ]
+        },
+        {
+          "id": "12.1.3",
+          "text": "An encroachment is touching or crossing a boundary line or cone with any part of the vehicle, other than the mirrors or parts at or above door mirror height. Each one counts as an error.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "encroachment",
+            "mirror height",
+            "error"
+          ]
+        },
+        {
+          "id": "12.1.4",
+          "text": "If you encroach, the examiner stops you and you must bring the vehicle back inside the boundaries. Stop at once when signaled.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "stop",
+            "return",
+            "immediately"
+          ]
+        },
+        {
+          "id": "12.1.5",
+          "text": "A look is leaving the vehicle to check its position. You get one free look on Exercise 2 and two free looks on Exercise 4.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "look",
+            "one",
+            "two",
+            "free"
+          ]
+        },
+        {
+          "id": "12.1.6",
+          "text": "Not securing the vehicle safely, or not getting in and out safely, may fail you for an unsafe act.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "unsafe act",
+            "automatic failure"
+          ]
+        },
+        {
+          "id": "12.1.7",
+          "text": "Opening the door while the vehicle is moving may fail you for an unsafe act.",
+          "critical": true,
+          "page": "12-1",
+          "keywords": [
+            "door",
+            "moving",
+            "failure"
+          ]
+        },
+        {
+          "id": "12.1.8",
+          "text": "Finish every exercise by setting the parking brake, shifting to neutral or park, and sounding the horn.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "parking brake",
+            "neutral",
+            "horn"
+          ]
+        },
+        {
+          "id": "12.1.9",
+          "text": "If you do not put the vehicle in the final position the examiner described, you fail the basic control skills test.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "final position",
+            "fail"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What counts as a pull-up?",
+          "a": "Pulling forward in a backing exercise to clear an encroachment or improve position. Just stopping is not one.",
+          "factId": "12.1.1"
+        },
+        {
+          "q": "What is an encroachment?",
+          "a": "Touching or crossing a boundary line or cone with any part of the vehicle below door mirror height.",
+          "factId": "12.1.3"
+        },
+        {
+          "q": "How many free looks do you get?",
+          "a": "One on Exercise 2, Straight-Line Backing. Two on Exercise 4, Reverse Offset Backing.",
+          "factId": "12.1.5"
+        },
+        {
+          "q": "How do you signal that an exercise is finished?",
+          "a": "Set the parking brake, shift to neutral or park, and sound the horn.",
+          "factId": "12.1.8"
+        },
+        {
+          "q": "What happens if you miss the final position described?",
+          "a": "You fail the basic control skills test.",
+          "factId": "12.1.9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "12.1.e1",
+          "q": "How many free looks are allowed on Reverse Offset Backing?",
+          "choices": [
+            "None",
+            "One",
+            "Two",
+            "Three"
+          ],
+          "answer": 2,
+          "why": "Two on Exercise 4. One on Exercise 2, Straight-Line Backing.",
+          "factId": "12.1.5",
+          "page": "12-2"
+        },
+        {
+          "id": "12.1.e2",
+          "q": "Your mirror crosses the boundary line. Is that an encroachment?",
+          "choices": [
+            "Yes, always",
+            "No, mirrors and parts at or above mirror height are excepted",
+            "Only when backing",
+            "Only if you stop"
+          ],
+          "answer": 1,
+          "why": "Mirrors and unique parts at or above door mirror height do not count. Parts below that height do.",
+          "factId": "12.1.3",
+          "page": "12-1"
+        },
+        {
+          "id": "12.1.e3",
+          "q": "You open the door while the vehicle is still moving. What can happen?",
+          "choices": [
+            "It counts as a look only",
+            "Automatic failure for an unsafe act",
+            "Nothing",
+            "One error point"
+          ],
+          "answer": 1,
+          "why": "Opening the door in motion may fail the test for an unsafe act.",
+          "factId": "12.1.7",
+          "page": "12-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Four things are counted against you. Know what each one is before you drive the exercise."
+        },
+        {
+          "h": "Pull-ups"
+        },
+        {
+          "p": "Pulling forward during a backing exercise to clear an encroachment or get a better position. Stopping without changing direction is NOT a pull-up. The first pull-ups are not penalized, but too many count as errors."
+        },
+        {
+          "h": "Encroachments"
+        },
+        {
+          "p": "Touching or crossing a boundary line or cone with any part of the vehicle. Mirrors, and unique parts at or above door mirror height, do not count. Parts below that height do. Each encroachment is an error, and the examiner will stop you and have you return inside the boundary."
+        },
+        {
+          "h": "Looks"
+        },
+        {
+          "p": "Leaving the vehicle to check its position while backing."
+        },
+        {
+          "numbers": [
+            {
+              "value": "1 free look",
+              "what": "Exercise 2, Straight-Line Backing"
+            },
+            {
+              "value": "2 free looks",
+              "what": "Exercise 4, Reverse Offset Backing"
+            }
+          ]
+        },
+        {
+          "note": "Opening the door, or moving out of your seat, counts as a look. Opening the door while the vehicle is MOVING may fail you for an unsafe act, as may forgetting the parking brake."
+        },
+        {
+          "h": "Final position"
+        },
+        {
+          "p": "Finish every exercise by setting the parking brake, shifting to neutral or park, and sounding the horn. If the vehicle is not in the final position the examiner described, you fail the test."
+        }
+      ]
     },
     {
       "id": "12.2",
@@ -21,7 +363,342 @@
       "manualPages": "12-2 to 12-6",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Four exercises, in order. The examiner gives you the instructions and points out the part of your vehicle that is being judged."
+        }
+      ]
+    },
+    {
+      "id": "12.2.1",
+      "title": "Exercise 1 - Forward Stop",
+      "pdfPages": "159",
+      "manualPages": "12-2",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "12.2.1.1",
+          "text": "Forward Stop: drive forward through the alley and stop with the front most part of the vehicle inside the box at the end, without going past it.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "forward stop",
+            "front most",
+            "box"
+          ]
+        },
+        {
+          "id": "12.2.1.2",
+          "text": "You may stop only once in the Forward Stop exercise.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "only once"
+          ]
+        },
+        {
+          "id": "12.2.1.3",
+          "text": "The examiner points out the front most part of your vehicle before you start.",
+          "critical": false,
+          "page": "12-2",
+          "keywords": [
+            "points out",
+            "front most"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How many times may you stop in the Forward Stop exercise?",
+          "a": "Once.",
+          "factId": "12.2.1.2"
+        },
+        {
+          "q": "What is judged in the Forward Stop?",
+          "a": "Whether the front most part of the vehicle is inside the box, without going past it.",
+          "factId": "12.2.1.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "12.2.1.e1",
+          "q": "In the Forward Stop exercise, how many stops are allowed?",
+          "choices": [
+            "One",
+            "Two",
+            "Three",
+            "As many as needed"
+          ],
+          "answer": 0,
+          "why": "You may stop only once, with the front most part inside the box.",
+          "factId": "12.2.1.2",
+          "page": "12-2"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Judging the front of your vehicle in a controlled stop."
+        },
+        {
+          "ul": [
+            "Drive forward through the alley.",
+            "Stop with the front most part of the vehicle inside the box at the end, without going past it.",
+            "You may stop ONLY ONCE.",
+            "Set the parking brake, shift to neutral or park, and sound the horn."
+          ]
+        },
+        {
+          "note": "The examiner points out the front most part of your vehicle when giving the instructions. That is the part being judged."
+        }
+      ]
+    },
+    {
+      "id": "12.2.2",
+      "title": "Exercise 2 - Straight Line Backing",
+      "pdfPages": "159-160",
+      "manualPages": "12-2",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "12.2.2.1",
+          "text": "Straight-Line Backing: back straight through the alley until the front of your vehicle has cleared the last set of cones at the far end.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "straight",
+            "cleared",
+            "last set"
+          ]
+        },
+        {
+          "id": "12.2.2.2",
+          "text": "You are scored on pull-ups, encroachments and final position, with one free pull-up and one look allowed.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "one free pull up",
+            "one look"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When is Straight-Line Backing finished?",
+          "a": "When the front of your vehicle has cleared the last set of cones at the far end of the alley.",
+          "factId": "12.2.2.1"
+        },
+        {
+          "q": "How many free pull-ups in Straight-Line Backing?",
+          "a": "One, and one look.",
+          "factId": "12.2.2.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Backing a vehicle in a straight line."
+        },
+        {
+          "ul": [
+            "From the stopped position of the previous exercise, pull forward and stop when the examiner raises a hand.",
+            "Back straight through the alley until the FRONT of your vehicle has cleared the last set of cones at the far end.",
+            "One free pull-up. You may step out once to check around the vehicle.",
+            "Scored on pull-ups, encroachments and final position.",
+            "Finish with the parking brake, neutral or park, and the horn."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12.2.3",
+      "title": "Exercise 3 - Forward Offset Tracking",
+      "pdfPages": "160",
+      "manualPages": "12-2 to 12-3",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "12.2.3.1",
+          "text": "Forward Offset Tracking: drive forward and steer left through the opening into the opposite lane, keeping the right most rear tire between the cone and the line, without stopping.",
+          "critical": true,
+          "page": "12-2",
+          "keywords": [
+            "offset",
+            "right most rear tire",
+            "without stopping"
+          ]
+        },
+        {
+          "id": "12.2.3.2",
+          "text": "You may not stop, back up or leave the vehicle during Forward Offset Tracking. If you stop, the exercise is ended.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "not allowed",
+            "stop",
+            "ended"
+          ]
+        },
+        {
+          "id": "12.2.3.3",
+          "text": "Stop when you are parallel to the outer boundary, at or before the cones at the far end.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "parallel",
+            "far end"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What must you not do in Forward Offset Tracking?",
+          "a": "Stop, back up, or leave the vehicle. Stopping ends the exercise.",
+          "factId": "12.2.3.2"
+        },
+        {
+          "q": "What is judged in Forward Offset Tracking?",
+          "a": "Encroachments, and keeping the right most rear tire between the cone and the line.",
+          "factId": "12.2.3.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "12.2.3.e1",
+          "q": "You stop halfway through Forward Offset Tracking. What happens?",
+          "choices": [
+            "Nothing",
+            "It counts as a pull-up",
+            "The exercise is ended",
+            "You get one free stop"
+          ],
+          "answer": 2,
+          "why": "Stopping, backing or exiting is not allowed. If you stop, the exercise ends.",
+          "factId": "12.2.3.2",
+          "page": "12-3"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Moving the vehicle around objects while going forward, without stopping."
+        },
+        {
+          "ul": [
+            "Drive forward and steer to the LEFT through the opening into the opposite lane.",
+            "Keep the right most rear tire between the cone and the line.",
+            "Do not stop, do not back up, do not leave the vehicle. Stopping ends the exercise.",
+            "Stop when you are parallel to the outer boundary, at or before the cones at the far end.",
+            "Finish with the parking brake, neutral or park, and the horn."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12.2.4",
+      "title": "Exercise 4 - Reverse Offset Backing",
+      "pdfPages": "160-163",
+      "manualPages": "12-3",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "12.2.4.1",
+          "text": "Reverse Offset Backing: from parallel with the outer boundary, offset back into the alley and stop with the rear most part of the vehicle inside the three foot box at the end.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "offset back",
+            "three feet",
+            "rear most"
+          ]
+        },
+        {
+          "id": "12.2.4.2",
+          "text": "If you back past the rear boundary you must pull straight forward past the alley entrance until the examiner signals you to stop, then resume.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "beyond",
+            "pull straight forward"
+          ]
+        },
+        {
+          "id": "12.2.4.3",
+          "text": "The vehicle must finish straight within the alley and completely inside the boundaries, and you may not go beyond the outer boundary line.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "straight",
+            "within",
+            "outer boundary"
+          ]
+        },
+        {
+          "id": "12.2.4.4",
+          "text": "Two free pull-ups are allowed, and you may step out twice to check around the vehicle.",
+          "critical": true,
+          "page": "12-3",
+          "keywords": [
+            "two",
+            "pull ups",
+            "twice"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How close must the rear of the vehicle finish in Reverse Offset Backing?",
+          "a": "Inside the three foot box at the end of the alley.",
+          "factId": "12.2.4.1"
+        },
+        {
+          "q": "How many free pull-ups and looks in Reverse Offset Backing?",
+          "a": "Two of each.",
+          "factId": "12.2.4.4"
+        },
+        {
+          "q": "You back past the rear boundary. What must you do?",
+          "a": "Pull straight forward past the alley entrance until the examiner signals you to stop, then resume.",
+          "factId": "12.2.4.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "12.2.4.e1",
+          "q": "Where must the rear most part of the vehicle finish in Reverse Offset Backing?",
+          "choices": [
+            "Within 10 feet of the rear",
+            "Within 3 feet of the rear",
+            "Touching the rear boundary",
+            "Anywhere in the alley"
+          ],
+          "answer": 1,
+          "why": "Inside the three foot box at the end of the alley, straight and inside the boundaries.",
+          "factId": "12.2.4.1",
+          "page": "12-3"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Offset backing and parking at the end of an alley."
+        },
+        {
+          "ul": [
+            "Start from the stopped position of the previous exercise, parallel with the outer boundary.",
+            "Offset back into the alley.",
+            "Bring the REAR most part of the vehicle within three feet of the rear of the alley, inside the three foot box.",
+            "Finish straight within the alley, completely inside the boundaries. Do not go beyond the outer boundary line.",
+            "Two free pull-ups, and you may step out twice.",
+            "Finish with the parking brake, neutral or park, and the horn."
+          ]
+        },
+        {
+          "note": "If you back past the rear boundary, pull straight forward past the alley entrance until the examiner signals you to stop, then carry on."
+        }
+      ]
     }
   ],
   "exam": []

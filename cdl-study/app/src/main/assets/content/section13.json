@@ -6,95 +6,1021 @@
   "pdfPages": "165-169",
   "subsections": [
     {
+      "id": "13.0",
+      "title": "How the Road Test Works",
+      "pdfPages": "165",
+      "manualPages": "13-1",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "13.0.1",
+          "text": "On the road test you must wear your safety belt, obey all traffic signs, signals and laws, and finish without an accident or a moving violation.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "safety belt",
+            "obey",
+            "accident",
+            "moving violation"
+          ]
+        },
+        {
+          "id": "13.0.2",
+          "text": "The examiner scores particular maneuvers and your general driving behavior, and gives directions with plenty of time to act on them.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "maneuvers",
+            "general driving"
+          ]
+        },
+        {
+          "id": "13.0.3",
+          "text": "You will never be asked to drive in an unsafe way.",
+          "critical": false,
+          "page": "13-1",
+          "keywords": [
+            "unsafe",
+            "never"
+          ]
+        },
+        {
+          "id": "13.0.4",
+          "text": "If the route has no such situation, you may be asked to simulate one by telling the examiner what you are doing or would do.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "simulate",
+            "telling"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What three things must you do on the road test?",
+          "a": "Wear the safety belt, obey all signs, signals and laws, and finish with no accident or moving violation.",
+          "factId": "13.0.1"
+        },
+        {
+          "q": "The route has no railroad crossing. What happens?",
+          "a": "You may be asked to simulate it by telling the examiner what you would do.",
+          "factId": "13.0.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.0.e1",
+          "q": "Your test route has no railroad crossing. What should you expect?",
+          "choices": [
+            "The item is skipped",
+            "To simulate it and explain what you would do",
+            "To fail that item",
+            "To drive to another route"
+          ],
+          "answer": 1,
+          "why": "Where the route lacks a situation, you simulate it by telling the examiner what you are or would be doing.",
+          "factId": "13.0.4",
+          "page": "13-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "You drive a route with a variety of traffic situations. Throughout, you must drive safely and responsibly."
+        },
+        {
+          "ul": [
+            "Wear your safety belt.",
+            "Obey all traffic signs, signals and laws.",
+            "Finish without an accident or a moving violation."
+          ]
+        },
+        {
+          "note": "If the route has no railroad crossing, bridge or other situation, you may be asked to SIMULATE it: tell the examiner what you are doing, or would do. Say it out loud."
+        }
+      ]
+    },
+    {
       "id": "13.1",
       "title": "How You Will Be Tested",
       "pdfPages": "165",
       "manualPages": "13-1",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "What the examiner scores, maneuver by maneuver, and then your general driving behavior across the whole route."
+        }
+      ]
     },
     {
       "id": "13.1.1",
       "title": "Turns",
       "pdfPages": "165",
       "manualPages": "13-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.1.1",
+          "text": "Before a turn, check traffic in all directions, signal, and get into the lane you need safely.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "check traffic",
+            "signal",
+            "lane"
+          ]
+        },
+        {
+          "id": "13.1.1.2",
+          "text": "Approaching the turn, slow smoothly and change gears as needed to keep power, without coasting unsafely.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "slow smoothly",
+            "keep power"
+          ]
+        },
+        {
+          "id": "13.1.1.3",
+          "text": "Unsafe coasting is having the vehicle out of gear, with the clutch down or in neutral, for more than the length of your vehicle.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "unsafe coasting",
+            "length of your vehicle"
+          ]
+        },
+        {
+          "id": "13.1.1.4",
+          "text": "If you stop before the turn, stop smoothly without skidding, completely behind the stop line, crosswalk or stop sign, and do not let the vehicle roll.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "behind",
+            "stop line",
+            "roll"
+          ]
+        },
+        {
+          "id": "13.1.1.5",
+          "text": "Stopping behind another vehicle, leave a gap where you can still see its rear tires.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "rear tires",
+            "safe gap"
+          ]
+        },
+        {
+          "id": "13.1.1.6",
+          "text": "Keep the front wheels aimed straight ahead while stopped.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "front wheels",
+            "straight ahead"
+          ]
+        },
+        {
+          "id": "13.1.1.7",
+          "text": "During the turn keep both hands on the wheel, keep checking the mirror so the vehicle does not hit anything on the inside of the turn, stay out of oncoming traffic, and finish in the correct lane.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "both hands",
+            "inside of the turn",
+            "correct lane"
+          ]
+        },
+        {
+          "id": "13.1.1.8",
+          "text": "After the turn, cancel the signal, get up to the speed of traffic, and move to the right-most lane when it is safe.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "cancel",
+            "right most lane"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is unsafe coasting?",
+          "a": "Being out of gear, clutch down or in neutral, for more than the length of your vehicle.",
+          "factId": "13.1.1.3"
+        },
+        {
+          "q": "How far back do you stop behind another vehicle?",
+          "a": "Far enough to see its rear tires.",
+          "factId": "13.1.1.5"
+        },
+        {
+          "q": "Where do the front wheels point while you wait to turn?",
+          "a": "Straight ahead.",
+          "factId": "13.1.1.6"
+        },
+        {
+          "q": "Where are your hands during a turn?",
+          "a": "Both on the steering wheel.",
+          "factId": "13.1.1.7"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.1.e1",
+          "q": "How much coasting is unsafe coasting?",
+          "choices": [
+            "Any at all",
+            "More than the length of your vehicle",
+            "More than 100 feet",
+            "More than five seconds"
+          ],
+          "answer": 1,
+          "why": "Out of gear, clutch down or in neutral, for more than the length of your vehicle.",
+          "factId": "13.1.1.3",
+          "page": "13-1"
+        },
+        {
+          "id": "13.1.1.e2",
+          "q": "How far behind the vehicle ahead should you stop?",
+          "choices": [
+            "One vehicle length",
+            "Where you can see its rear tires",
+            "Three feet",
+            "At the crosswalk"
+          ],
+          "answer": 1,
+          "why": "Keep a gap where its rear tires are still visible.",
+          "factId": "13.1.1.5",
+          "page": "13-1"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Before the turn"
+        },
+        {
+          "ul": [
+            "Check traffic in all directions.",
+            "Signal, and get safely into the lane you need."
+          ]
+        },
+        {
+          "h": "Approaching"
+        },
+        {
+          "ul": [
+            "Signal to warn others.",
+            "Slow smoothly, changing gears as needed to keep power."
+          ]
+        },
+        {
+          "note": "Unsafe coasting is being out of gear, clutch down or in neutral, for more than the LENGTH OF YOUR VEHICLE."
+        },
+        {
+          "h": "If you must stop"
+        },
+        {
+          "ul": [
+            "Stop smoothly, without skidding, completely behind the stop line, crosswalk or stop sign.",
+            "Behind another vehicle, stop where you can still see its rear tires.",
+            "Do not let the vehicle roll.",
+            "Keep the front wheels aimed straight ahead."
+          ]
+        },
+        {
+          "h": "Turning"
+        },
+        {
+          "ul": [
+            "Check traffic in all directions.",
+            "Both hands on the wheel.",
+            "Keep checking the mirror so nothing is struck on the inside of the turn.",
+            "Do not move into oncoming traffic. Finish in the correct lane."
+          ]
+        },
+        {
+          "h": "After"
+        },
+        {
+          "ul": [
+            "Cancel the signal.",
+            "Get up to the speed of traffic and move to the right-most lane when safe.",
+            "Check mirrors and traffic."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.2",
       "title": "Intersections",
       "pdfPages": "165-166",
       "manualPages": "13-1 to 13-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.2.1",
+          "text": "Approaching an intersection, check traffic thoroughly in all directions, slow gently, brake smoothly and change gears if needed.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "intersection",
+            "thoroughly",
+            "gently"
+          ]
+        },
+        {
+          "id": "13.1.2.2",
+          "text": "Stop completely, without coasting, behind any stop sign, signal, sidewalk or stop line, keeping a safe gap behind the vehicle ahead, and do not roll forward or backward.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "complete stop",
+            "no coasting",
+            "roll"
+          ]
+        },
+        {
+          "id": "13.1.2.3",
+          "text": "Going through the intersection, yield to pedestrians and traffic, do not change lanes, and keep your hands on the wheel.",
+          "critical": true,
+          "page": "13-1",
+          "keywords": [
+            "yield",
+            "do not change lanes",
+            "hands"
+          ]
+        },
+        {
+          "id": "13.1.2.4",
+          "text": "Once through, keep checking mirrors and traffic, and accelerate smoothly.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "through",
+            "accelerate smoothly"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "May you change lanes in an intersection?",
+          "a": "No.",
+          "factId": "13.1.2.3"
+        },
+        {
+          "q": "What must you not do while stopped at an intersection?",
+          "a": "Roll forward or backward, or coast to the stop.",
+          "factId": "13.1.2.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.2.e1",
+          "q": "Which is correct while driving through an intersection?",
+          "choices": [
+            "Change lanes to keep moving",
+            "Yield to pedestrians and keep your lane",
+            "Coast through in neutral",
+            "Shift gears mid-intersection"
+          ],
+          "answer": 1,
+          "why": "Yield to pedestrians and traffic, do not change lanes, and keep your hands on the wheel.",
+          "factId": "13.1.2.3",
+          "page": "13-1"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Approaching"
+        },
+        {
+          "ul": [
+            "Check traffic thoroughly in all directions.",
+            "Slow gently, brake smoothly, change gears if needed.",
+            "Stop completely, without coasting, behind any stop sign, signal, sidewalk or stop line.",
+            "Keep a safe gap behind the vehicle ahead. Do not roll forward or backward."
+          ]
+        },
+        {
+          "h": "Through"
+        },
+        {
+          "ul": [
+            "Check traffic in all directions again.",
+            "Slow and yield to pedestrians and traffic in the intersection.",
+            "Do NOT change lanes while in the intersection.",
+            "Keep your hands on the wheel."
+          ]
+        },
+        {
+          "h": "Out"
+        },
+        {
+          "ul": [
+            "Keep checking mirrors and traffic.",
+            "Accelerate smoothly, changing gears as needed."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.3",
       "title": "Urban Business",
       "pdfPages": "166",
       "manualPages": "13-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.3.1",
+          "text": "In urban business driving, make regular traffic checks, keep a safe following distance, stay centered in the right-most lane, and keep up with traffic without exceeding the speed limit.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "urban",
+            "centered",
+            "right most",
+            "speed limit"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which lane in urban business driving?",
+          "a": "The right-most lane, centered in it.",
+          "factId": "13.1.3.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Make regular traffic checks.",
+            "Keep a safe following distance.",
+            "Stay centered in the proper lane, which is the right-most lane.",
+            "Keep up with the flow of traffic, but never exceed the posted limit."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.4",
       "title": "Lane Changes",
       "pdfPages": "166",
       "manualPages": "13-2",
-      "facts": [],
-      "cards": [],
+      "facts": [
+        {
+          "id": "13.1.4.1",
+          "text": "For a lane change, make the traffic checks first, then signal, then change lanes smoothly when it is safe.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "checks first",
+            "signal",
+            "smoothly"
+          ]
+        },
+        {
+          "id": "13.1.4.2",
+          "text": "On a multiple lane part of the test you will be asked to change left and then back to the right.",
+          "critical": false,
+          "page": "13-2",
+          "keywords": [
+            "left",
+            "back to the right"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the order for a lane change?",
+          "a": "Traffic checks, then signal, then move when it is safe.",
+          "factId": "13.1.4.1"
+        }
+      ],
       "exam": [],
-      "titleFixed": true
+      "titleFixed": true,
+      "reading": [
+        {
+          "p": "You will be asked to change lanes to the left, then back to the right."
+        },
+        {
+          "ul": [
+            "Make the necessary traffic checks FIRST.",
+            "Use the proper signal.",
+            "Change lanes smoothly, when it is safe to do so."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.5",
       "title": "Expressway or Rural/Limited Access",
       "pdfPages": "166",
       "manualPages": "13-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.5.1",
+          "text": "Before entering an expressway, check traffic, signal, and merge smoothly into the proper lane.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "merge",
+            "smoothly",
+            "signal"
+          ]
+        },
+        {
+          "id": "13.1.5.2",
+          "text": "On the expressway, hold your lane position, vehicle spacing and speed, and keep checking traffic in all directions.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "lane positioning",
+            "spacing",
+            "speed"
+          ]
+        },
+        {
+          "id": "13.1.5.3",
+          "text": "Leaving the expressway, check traffic, signal, slow smoothly in the exit lane, and keep slowing within the lane markings on the ramp with enough space around you.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "exit lane",
+            "lane markings",
+            "spacing"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Where do you slow down when leaving an expressway?",
+          "a": "In the exit lane, and then on the ramp within the lane markings.",
+          "factId": "13.1.5.3"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "h": "Entering"
+        },
+        {
+          "ul": [
+            "Check traffic.",
+            "Use the proper signal.",
+            "Merge smoothly into the proper lane."
+          ]
+        },
+        {
+          "h": "On it"
+        },
+        {
+          "ul": [
+            "Hold your lane position, your spacing and your speed.",
+            "Keep checking traffic in all directions."
+          ]
+        },
+        {
+          "h": "Exiting"
+        },
+        {
+          "ul": [
+            "Make the traffic checks.",
+            "Signal.",
+            "Slow smoothly in the exit lane, not before it.",
+            "On the ramp, keep slowing within the lane markings and keep space around you."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.6",
       "title": "Stop/Start",
       "pdfPages": "166",
       "manualPages": "13-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.6.1",
+          "text": "For the stop and start, check traffic in all directions, move to the right-most lane or the shoulder, signal right, slow smoothly and stop fully without coasting.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "right most",
+            "signal",
+            "without coasting"
+          ]
+        },
+        {
+          "id": "13.1.6.2",
+          "text": "Stopped, the vehicle must be parallel to the curb or shoulder, out of the traffic flow, and not blocking a driveway, hydrant, intersection or sign.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "parallel",
+            "blocking",
+            "hydrant"
+          ]
+        },
+        {
+          "id": "13.1.6.3",
+          "text": "Once stopped: cancel the turn signal, switch on the four-way flashers, set the parking brake, shift to neutral or park, and take your feet off the brake and clutch.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "four way",
+            "parking brake",
+            "feet off"
+          ]
+        },
+        {
+          "id": "13.1.6.4",
+          "text": "To resume: check traffic and mirrors in all directions, turn the flashers off, signal left, release the parking brake and pull straight ahead.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "resume",
+            "flashers off",
+            "signal left"
+          ]
+        },
+        {
+          "id": "13.1.6.5",
+          "text": "Do not turn the wheel before the vehicle moves, and check traffic from all directions, especially to the left.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "do not turn",
+            "before",
+            "left"
+          ]
+        },
+        {
+          "id": "13.1.6.6",
+          "text": "Once back in the flow of traffic, cancel the left turn signal.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "cancel"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the order once you have stopped at the roadside?",
+          "a": "Cancel the signal, four-way flashers on, parking brake, neutral or park, feet off the pedals.",
+          "factId": "13.1.6.3"
+        },
+        {
+          "q": "What must you not do when pulling away from the roadside?",
+          "a": "Turn the wheel before the vehicle moves.",
+          "factId": "13.1.6.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.6.e1",
+          "q": "You have stopped at the roadside. What comes next?",
+          "choices": [
+            "Open the door",
+            "Cancel the signal, flashers on, parking brake, neutral, feet off the pedals",
+            "Leave it in gear with the clutch down",
+            "Switch the engine off"
+          ],
+          "answer": 1,
+          "why": "Cancel the turn signal, four-ways on, parking brake set, neutral or park, and feet off the brake and clutch.",
+          "factId": "13.1.6.3",
+          "page": "13-2"
+        }
+      ],
+      "reading": [
+        {
+          "p": "You are asked to pull over and stop, as if you were getting out to check something."
+        },
+        {
+          "h": "Pulling over"
+        },
+        {
+          "ul": [
+            "Check traffic thoroughly in all directions.",
+            "Move to the right-most lane or the shoulder.",
+            "Signal right.",
+            "Slow smoothly, brake evenly, change gears as needed.",
+            "Come to a full stop without coasting."
+          ]
+        },
+        {
+          "h": "Stopped"
+        },
+        {
+          "ul": [
+            "Parallel to the curb or shoulder, safely out of the traffic flow.",
+            "Not blocking a driveway, hydrant, intersection or sign.",
+            "Cancel the turn signal.",
+            "Four-way flashers on.",
+            "Parking brake on.",
+            "Neutral or park.",
+            "Feet off the brake and clutch."
+          ]
+        },
+        {
+          "h": "Resuming"
+        },
+        {
+          "ul": [
+            "Check traffic and mirrors in all directions.",
+            "Flashers off, left signal on.",
+            "Release the parking brake and pull STRAIGHT ahead. Do not turn the wheel before the vehicle moves.",
+            "Check again, especially to the left.",
+            "Steer and accelerate smoothly into the lane, then cancel the signal."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.7",
       "title": "Curve",
       "pdfPages": "166-167",
       "manualPages": "13-2 to 13-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.7.1",
+          "text": "Before a curve, check traffic in all directions and reduce speed enough that no further braking or shifting is needed in the curve.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "before",
+            "reduce speed",
+            "no further braking"
+          ]
+        },
+        {
+          "id": "13.1.7.2",
+          "text": "Keep the vehicle in its lane through the curve and keep checking traffic.",
+          "critical": true,
+          "page": "13-2",
+          "keywords": [
+            "in the lane"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When do you slow for a curve?",
+          "a": "Before you enter it, enough that no braking or shifting is needed inside it.",
+          "factId": "13.1.7.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.7.e1",
+          "q": "Where should your braking and shifting for a curve be finished?",
+          "choices": [
+            "Halfway through",
+            "Before entering the curve",
+            "At the apex",
+            "On the way out"
+          ],
+          "answer": 1,
+          "why": "Reduce speed before the curve so no further braking or shifting is needed in it.",
+          "factId": "13.1.7.1",
+          "page": "13-2"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Check traffic thoroughly in all directions.",
+            "Before you ENTER the curve, reduce speed enough that no further braking or shifting is needed inside it.",
+            "Keep the vehicle in its lane.",
+            "Keep checking traffic in all directions."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.8",
       "title": "Railroad Crossing",
       "pdfPages": "167",
       "manualPages": "13-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.8.1",
+          "text": "At every railroad crossing, slow down, brake smoothly, shift as needed, look and listen for trains, and check traffic in all directions.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "look",
+            "listen",
+            "trains"
+          ]
+        },
+        {
+          "id": "13.1.8.2",
+          "text": "Never stop, change gears, pass another vehicle or change lanes while any part of your vehicle is on the crossing.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "never",
+            "any part",
+            "crossing"
+          ]
+        },
+        {
+          "id": "13.1.8.3",
+          "text": "A bus, a school bus or a placarded vehicle must switch on the four-way flashers on the approach.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "placards",
+            "four way flashers"
+          ]
+        },
+        {
+          "id": "13.1.8.4",
+          "text": "A bus, school bus or placarded vehicle must stop within 50 feet of the nearest rail, and no closer than 15 feet.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "50 feet",
+            "15 feet",
+            "nearest rail"
+          ]
+        },
+        {
+          "id": "13.1.8.5",
+          "text": "Keep both hands on the wheel as you cross, and switch the four-way flashers off after you are over.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "hands",
+            "after"
+          ]
+        },
+        {
+          "id": "13.1.8.6",
+          "text": "If the route has no crossing, you may be asked to explain and demonstrate the procedure at a simulated location.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "simulated"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Where must a placarded vehicle stop at a railroad crossing?",
+          "a": "Within 50 feet of the nearest rail, and not less than 15 feet.",
+          "factId": "13.1.8.4"
+        },
+        {
+          "q": "What must you never do with part of the vehicle on a crossing?",
+          "a": "Stop, change gears, pass, or change lanes.",
+          "factId": "13.1.8.2"
+        },
+        {
+          "q": "What do the four-way flashers do at a crossing?",
+          "a": "They go on during the approach for a bus or placarded vehicle, and off once you are across.",
+          "factId": "13.1.8.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.8.e1",
+          "q": "A placarded vehicle must stop how far from the nearest rail?",
+          "choices": [
+            "Within 100 feet, no closer than 25",
+            "Within 50 feet, no closer than 15",
+            "Within 25 feet, no closer than 5",
+            "Anywhere before the tracks"
+          ],
+          "answer": 1,
+          "why": "Within 50 feet but not less than 15 feet from the nearest rail.",
+          "factId": "13.1.8.4",
+          "page": "13-3"
+        },
+        {
+          "id": "13.1.8.e2",
+          "q": "Your trailer is still on the tracks and you need a lower gear. What do you do?",
+          "choices": [
+            "Shift now",
+            "Do not change gears until fully across",
+            "Stop and restart",
+            "Change lanes"
+          ],
+          "answer": 1,
+          "why": "Never stop, change gears, pass or change lanes while any part of the vehicle is on the crossing.",
+          "factId": "13.1.8.2",
+          "page": "13-3"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Every commercial driver"
+        },
+        {
+          "ul": [
+            "Slow down, brake smoothly, shift as needed.",
+            "Look and listen for trains.",
+            "Check traffic in all directions."
+          ]
+        },
+        {
+          "note": "Never stop, change gears, pass another vehicle or change lanes while ANY part of your vehicle is on the crossing."
+        },
+        {
+          "h": "A bus, school bus or placarded vehicle"
+        },
+        {
+          "numbers": [
+            {
+              "value": "50 feet",
+              "what": "stop within this distance of the nearest rail"
+            },
+            {
+              "value": "15 feet",
+              "what": "and no closer than this"
+            }
+          ]
+        },
+        {
+          "ul": [
+            "Switch the four-way flashers on as you approach.",
+            "Listen and look both ways along the track. On a bus you may also have to open the window and door.",
+            "Keep both hands on the wheel as you cross.",
+            "Switch the flashers off after you are over, and keep checking mirrors and traffic."
+          ]
+        },
+        {
+          "note": "If the route has no crossing, you may be asked to explain and demonstrate the procedure at a simulated location."
+        }
+      ]
     },
     {
       "id": "13.1.9",
       "title": "Bridge/Overpass/Sign",
       "pdfPages": "167",
       "manualPages": "13-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.9.1",
+          "text": "After driving under an overpass you may be asked what the posted clearance or height was, and after a bridge, what the posted weight limit was.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "clearance",
+            "height",
+            "weight limit"
+          ]
+        },
+        {
+          "id": "13.1.9.2",
+          "text": "Be ready to identify and explain any traffic sign on the route.",
+          "critical": true,
+          "page": "13-3",
+          "keywords": [
+            "identify",
+            "any traffic sign"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What might the examiner ask after an overpass or a bridge?",
+          "a": "The posted clearance or height, or the posted weight limit. Read the signs as you pass them.",
+          "factId": "13.1.9.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.9.e1",
+          "q": "You have just driven under an overpass. What may the examiner ask?",
+          "choices": [
+            "Nothing",
+            "The posted clearance or height",
+            "The road number",
+            "The speed limit"
+          ],
+          "answer": 1,
+          "why": "Read the signs as you pass. You may be asked the clearance after an overpass, or the weight limit after a bridge.",
+          "factId": "13.1.9.1",
+          "page": "13-3"
+        }
+      ],
+      "reading": [
+        {
+          "p": "The examiner is checking that you read the signs as you pass them, not just that you drive past."
+        },
+        {
+          "ul": [
+            "After an overpass: what was the posted clearance or height?",
+            "After a bridge: what was the posted weight limit?",
+            "If the route has neither, expect to be asked about another sign on the route."
+          ]
+        },
+        {
+          "note": "Be ready to identify and explain any traffic sign on the route."
+        }
+      ]
     },
     {
       "id": "13.1.10",
@@ -103,43 +1029,399 @@
       "manualPages": "13-3",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "note": "Not in your plan. The student discharge is demonstrated only by applicants for the school bus (S) endorsement, and it is covered in Section 10."
+        }
+      ]
     },
     {
       "id": "13.1.11",
-      "title": "General Driving Behaviors",
+      "title": "Clutch Usage",
       "pdfPages": "167-168",
       "manualPages": "13-3 to 13-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.11.1",
+          "text": "Always use the clutch to shift, and double-clutch if the transmission is unsynchronized.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "always",
+            "clutch",
+            "double clutch"
+          ]
+        },
+        {
+          "id": "13.1.11.2",
+          "text": "Do not rev or lug the engine, do not ride the clutch to control speed, do not coast with the clutch down, and do not pop the clutch.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "rev",
+            "lug",
+            "ride",
+            "pop"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When must you double-clutch?",
+          "a": "With an unsynchronized manual transmission, on every shift.",
+          "factId": "13.1.11.1"
+        },
+        {
+          "q": "Name four clutch faults the examiner scores.",
+          "a": "Revving or lugging, riding the clutch, coasting with it down, and popping it.",
+          "factId": "13.1.11.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.11.e1",
+          "q": "Your truck has an unsynchronized manual transmission. How do you shift?",
+          "choices": [
+            "Float the gears",
+            "Double-clutch every shift",
+            "Use the clutch only to start",
+            "Shift without the clutch"
+          ],
+          "answer": 1,
+          "why": "Always use the clutch, and double-clutch on an unsynchronized transmission.",
+          "factId": "13.1.11.1",
+          "page": "13-4"
+        }
+      ],
+      "titleFixed": true,
+      "reading": [
+        {
+          "p": "Your general driving behavior is scored across the whole route. The first category is the clutch."
+        },
+        {
+          "ul": [
+            "Always use the clutch to shift.",
+            "Double-clutch if the transmission is unsynchronized.",
+            "Do not rev or lug the engine.",
+            "Do not ride the clutch to control speed.",
+            "Do not coast with the clutch depressed.",
+            "Do not pop the clutch."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13.1.12",
+      "title": "Gear Usage",
+      "pdfPages": "168",
+      "manualPages": "13-4",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "13.1.12.1",
+          "text": "Do not grind or clash the gears, and pick a gear that does not rev or lug the engine.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "grind",
+            "clash",
+            "rev",
+            "lug"
+          ]
+        },
+        {
+          "id": "13.1.12.2",
+          "text": "Do not shift in turns or in intersections.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "do not shift",
+            "turns",
+            "intersections"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Where must you not shift gears?",
+          "a": "In turns and in intersections.",
+          "factId": "13.1.12.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.12.e1",
+          "q": "Where is shifting not allowed on the road test?",
+          "choices": [
+            "On grades",
+            "In turns and intersections",
+            "On the expressway",
+            "At railroad crossings only"
+          ],
+          "answer": 1,
+          "why": "Do not shift in turns or intersections, and never on a railroad crossing either.",
+          "factId": "13.1.12.2",
+          "page": "13-4"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Do not grind or clash the gears.",
+            "Select a gear that does not rev or lug the engine.",
+            "Do not shift in turns or in intersections."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13.1.13",
+      "title": "Brake Usage",
+      "pdfPages": "168",
+      "manualPages": "13-4",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "13.1.13.1",
+          "text": "Do not ride or pump the brake, and do not brake harshly. Brake smoothly with steady pressure.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "ride",
+            "pump",
+            "harshly",
+            "steady"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How should you brake on the road test?",
+          "a": "Smoothly, with steady pressure. No riding, pumping or harsh braking.",
+          "factId": "13.1.13.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Do not ride the brake.",
+            "Do not pump the brake.",
+            "Do not brake harshly. Brake smoothly, with steady pressure."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13.1.14",
+      "title": "Lane Usage",
+      "pdfPages": "168",
+      "manualPages": "13-4",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "13.1.14.1",
+          "text": "Keep the vehicle off curbs, sidewalks and lane markings, and stop behind stop lines, crosswalks and stop signs.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "curbs",
+            "sidewalks",
+            "behind"
+          ]
+        },
+        {
+          "id": "13.1.14.2",
+          "text": "Finish a left turn in the lane directly to the right of the center line, and a right turn in the right-most curb lane.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "left turn",
+            "right of the center line",
+            "curb lane"
+          ]
+        },
+        {
+          "id": "13.1.14.3",
+          "text": "Move to, or stay in, the right-most lane unless it is blocked.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "right most lane",
+            "blocked"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which lane should a left turn finish in?",
+          "a": "The lane directly to the right of the center line.",
+          "factId": "13.1.14.2"
+        },
+        {
+          "q": "Which lane should a right turn finish in?",
+          "a": "The right-most, curb lane.",
+          "factId": "13.1.14.2"
+        },
+        {
+          "q": "Which lane do you travel in by default?",
+          "a": "The right-most lane, unless it is blocked.",
+          "factId": "13.1.14.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "13.1.14.e1",
+          "q": "On a multiple lane road, where should a left turn finish?",
+          "choices": [
+            "Any lane",
+            "The lane directly right of the center line",
+            "The right-most lane",
+            "The center lane"
+          ],
+          "answer": 1,
+          "why": "A left turn finishes in the lane directly to the right of the center line. A right turn finishes in the curb lane.",
+          "factId": "13.1.14.2",
+          "page": "13-4"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Keep the vehicle off curbs, sidewalks and lane markings.",
+            "Stop behind stop lines, crosswalks and stop signs.",
+            "Finish a left turn in the lane directly to the RIGHT of the center line.",
+            "Finish a right turn in the RIGHT-MOST curb lane.",
+            "Move to, or stay in, the right-most lane unless it is blocked."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.15",
       "title": "Steering",
       "pdfPages": "168",
       "manualPages": "13-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.15.1",
+          "text": "Do not over steer or under steer, and keep both hands on the wheel at all times except while shifting. Put both hands back as soon as the shift is done.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "both hands",
+            "except",
+            "shifting"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When may one hand leave the wheel?",
+          "a": "Only while shifting. Both hands go back as soon as the shift is finished.",
+          "factId": "13.1.15.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Do not over steer or under steer.",
+            "Keep BOTH hands on the wheel at all times, except while shifting.",
+            "Return both hands as soon as the shift is complete."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.16",
       "title": "Regular Traffic Checks",
       "pdfPages": "168",
       "manualPages": "13-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.16.1",
+          "text": "Check traffic and mirrors regularly, and check both before, during and after an intersection.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "regularly",
+            "before",
+            "after",
+            "intersection"
+          ]
+        },
+        {
+          "id": "13.1.16.2",
+          "text": "Scan and check traffic in high volume areas and anywhere pedestrians are expected.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "scan",
+            "high volume",
+            "pedestrians"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When do you check mirrors at an intersection?",
+          "a": "Before it, while in it, and after it.",
+          "factId": "13.1.16.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Check traffic regularly.",
+            "Check mirrors regularly.",
+            "Check mirrors and traffic before, while in, and after an intersection.",
+            "Scan and check traffic in high volume areas, and anywhere pedestrians are expected."
+          ]
+        }
+      ]
     },
     {
       "id": "13.1.17",
       "title": "Use of Turn Signals",
       "pdfPages": "168-169",
       "manualPages": "13-4 to 13-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "13.1.17.1",
+          "text": "Use turn signals properly: activate them when required and at the right time, and cancel them once the turn or lane change is finished.",
+          "critical": true,
+          "page": "13-4",
+          "keywords": [
+            "activate",
+            "cancel",
+            "turn signals"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What happens to the signal after a turn or lane change?",
+          "a": "Cancel it.",
+          "factId": "13.1.17.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Use turn signals properly.",
+            "Activate them when required.",
+            "Activate them at the right time: with enough warning, not too early.",
+            "Cancel them when the turn or lane change is complete."
+          ]
+        }
+      ]
     }
   ],
   "exam": []

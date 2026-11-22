@@ -6,31 +6,736 @@
   "pdfPages": "143-157",
   "subsections": [
     {
+      "id": "11.0",
+      "title": "How the Inspection Test Works",
+      "pdfPages": "143",
+      "manualPages": "11-1",
+      "titleFixed": true,
+      "handMade": true,
+      "facts": [
+        {
+          "id": "11.0.1",
+          "text": "You must name the item, point to or touch it, and fully explain to the examiner WHAT you are inspecting it for. Leave any of that out and you get no credit for the item.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "name",
+            "point",
+            "touch",
+            "explain"
+          ]
+        },
+        {
+          "id": "11.0.2",
+          "text": "You only have to inspect one vehicle axle during the test, but be ready to inspect them all.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "one axle",
+            "all"
+          ]
+        },
+        {
+          "id": "11.0.3",
+          "text": "You will NOT have to crawl under the vehicle.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "crawl",
+            "under"
+          ]
+        },
+        {
+          "id": "11.0.4",
+          "text": "When you leave the vehicle you must set the parking brakes and put it in neutral.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "parking brake",
+            "neutral",
+            "exit"
+          ]
+        },
+        {
+          "id": "11.0.5",
+          "text": "Enter and leave the vehicle facing it, with three points of contact at all times.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "three points of contact",
+            "facing"
+          ]
+        },
+        {
+          "id": "11.0.6",
+          "text": "Use wheel chocks during the inspection test, for safety.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "wheel chocks"
+          ]
+        },
+        {
+          "id": "11.0.7",
+          "text": "A vehicle with components marked or labeled by anyone but the manufacturer cannot be used for the test.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "marked",
+            "labeled",
+            "cannot"
+          ]
+        },
+        {
+          "id": "11.0.8",
+          "text": "You may use the checklist in the manual during the test, but no extra markings or writing may be on it beforehand.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "checklist",
+            "no additional markings"
+          ]
+        },
+        {
+          "id": "11.0.9",
+          "text": "Failing to follow the examiner's instructions may fail you on the spot, and the examiner may end the test.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "instructions",
+            "automatic failure"
+          ]
+        },
+        {
+          "id": "11.0.10",
+          "text": "An unsafe act, such as forgetting to set the parking brake, may fail you on the spot.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "unsafe act",
+            "parking brake"
+          ]
+        },
+        {
+          "id": "11.0.11",
+          "text": "If you do not understand an instruction, ask the examiner to explain it.",
+          "critical": false,
+          "page": "11-1",
+          "keywords": [
+            "ask",
+            "clarification"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What must you do at every item in the inspection test?",
+          "a": "Name it, point to or touch it, and explain what you are inspecting it for.",
+          "factId": "11.0.1"
+        },
+        {
+          "q": "How many axles must you inspect during the test?",
+          "a": "One, but be ready for all of them.",
+          "factId": "11.0.2"
+        },
+        {
+          "q": "What must you do each time you leave the cab during the test?",
+          "a": "Set the parking brakes and put the vehicle in neutral.",
+          "factId": "11.0.4"
+        },
+        {
+          "q": "How do you get in and out of the vehicle?",
+          "a": "Facing the vehicle, with three points of contact at all times.",
+          "factId": "11.0.5"
+        },
+        {
+          "q": "Name two things that can fail you on the spot.",
+          "a": "Not following the examiner's instructions, and an unsafe act such as forgetting the parking brake.",
+          "factId": "11.0.9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.0.e1",
+          "q": "You point at the steering linkage and name it, but say nothing more. What happens?",
+          "choices": [
+            "Full credit",
+            "No credit for that item",
+            "Half credit",
+            "The examiner prompts you"
+          ],
+          "answer": 1,
+          "why": "You must name it, point to or touch it, AND explain what you are inspecting it for.",
+          "factId": "11.0.1",
+          "page": "11-1"
+        },
+        {
+          "id": "11.0.e2",
+          "q": "How many points of contact when entering or leaving the vehicle?",
+          "choices": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "answer": 2,
+          "why": "Three points of contact at all times, facing the vehicle.",
+          "factId": "11.0.5",
+          "page": "11-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "This is the part of the skills test you talk your way through. The examiner is not only watching what you touch: they are listening to what you say about it."
+        },
+        {
+          "h": "The rule that decides your score"
+        },
+        {
+          "note": "At every item you must NAME it, POINT to or TOUCH it, and fully EXPLAIN what you are inspecting it for. Miss any of the three and you get no credit for that item."
+        },
+        {
+          "h": "How the test runs"
+        },
+        {
+          "ul": [
+            "You inspect one axle only, but be ready to inspect them all.",
+            "You will not have to crawl under the vehicle.",
+            "Use wheel chocks, for safety.",
+            "Every time you leave the cab: set the parking brakes and put it in neutral.",
+            "Get in and out facing the vehicle, with three points of contact at all times.",
+            "You may carry the manual's checklist, but nothing may be written on it beforehand.",
+            "A vehicle with parts marked or labeled by anyone but the maker cannot be used."
+          ]
+        },
+        {
+          "note": "Two things end the test on the spot: not following the examiner's instructions, and an unsafe act, such as forgetting to set the parking brake. If you do not understand an instruction, ask."
+        }
+      ]
+    },
+    {
       "id": "11.1",
       "title": "Internal Inspection (All Vehicles)",
       "pdfPages": "143",
       "manualPages": "11-1",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Everything you check from inside the cab, and the brake checks you perform before you move. Learn the parts on the vehicle you will test in, so you can name each one and say what you are looking for."
+        }
+      ]
     },
     {
       "id": "11.1.1",
       "title": "In-Vehicle/Engine Start",
       "pdfPages": "143-145",
       "manualPages": "11-1 to 11-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.1.1.1",
+          "text": "Check the dash indicators work: left turn, right turn, four-way flashers, high beam, ABS, and the diesel exhaust fluid light if fitted.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "dash indicators",
+            "four way",
+            "high beam"
+          ]
+        },
+        {
+          "id": "11.1.1.2",
+          "text": "On a combination, the trailer ABS light on the rear driver's side should come on and then go off.",
+          "critical": true,
+          "page": "11-1",
+          "keywords": [
+            "trailer abs",
+            "on then off"
+          ]
+        },
+        {
+          "id": "11.1.1.3",
+          "text": "Emergency equipment: spare electrical fuses, or identify the circuit breakers if the vehicle has no fuses.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "spare fuses",
+            "circuit breakers"
+          ]
+        },
+        {
+          "id": "11.1.1.4",
+          "text": "Emergency equipment: a fire extinguisher that is properly charged and secured.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "fire extinguisher",
+            "charged",
+            "secured"
+          ]
+        },
+        {
+          "id": "11.1.1.5",
+          "text": "Emergency equipment: three red reflective triangles, or six fusee flares, or three liquid burning flares.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "three",
+            "triangles",
+            "six",
+            "flares"
+          ]
+        },
+        {
+          "id": "11.1.1.6",
+          "text": "The windshield must be clean with no obstruction except an inspection sticker, and no cracks or flaws in the glass.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "windshield",
+            "inspection sticker",
+            "cracks"
+          ]
+        },
+        {
+          "id": "11.1.1.7",
+          "text": "Mirrors must be clean and adjusted from the inside. A camera system must be clean, working, and its display operable and adjusted.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "mirrors",
+            "clean",
+            "adjusted"
+          ]
+        },
+        {
+          "id": "11.1.1.8",
+          "text": "Wiper arms and blades must be secure and undamaged, and you must switch the wipers on and off to show they work.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "wipers",
+            "demonstrate"
+          ]
+        },
+        {
+          "id": "11.1.1.9",
+          "text": "Check there is washer fluid, and work the washers to show they operate.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "washer fluid"
+          ]
+        },
+        {
+          "id": "11.1.1.10",
+          "text": "Identify, describe and demonstrate the heater and defroster by working the controls.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "heater",
+            "defroster",
+            "demonstrate"
+          ]
+        },
+        {
+          "id": "11.1.1.11",
+          "text": "Check the air horn and the electric horn work.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "horn"
+          ]
+        },
+        {
+          "id": "11.1.1.12",
+          "text": "Parking brake check: with the parking brake on and your foot off the service brake, pull gently forward to show it holds the vehicle.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "parking brake",
+            "pull gently"
+          ]
+        },
+        {
+          "id": "11.1.1.13",
+          "text": "Trailer brake check: with the parking brake released and the trailer parking brake on, pull gently forward to show it holds. It also checks the coupling.",
+          "critical": true,
+          "page": "11-2",
+          "keywords": [
+            "trailer brake",
+            "coupling"
+          ]
+        },
+        {
+          "id": "11.1.1.14",
+          "text": "Service brake check: pull forward at 5 mph, apply the foot brake and stop completely. The vehicle must not pull to either side.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "5 mph",
+            "does not pull"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What emergency equipment must be on board?",
+          "a": "Spare fuses or identified circuit breakers, a charged and secured fire extinguisher, and three red triangles or six fusee flares or three liquid burning flares.",
+          "factId": "11.1.1.5"
+        },
+        {
+          "q": "What is allowed on the windshield?",
+          "a": "An inspection sticker only. No cracks, flaws or other obstructions.",
+          "factId": "11.1.1.6"
+        },
+        {
+          "q": "How do you check the parking brake?",
+          "a": "Set it, take your foot off the service brake, and pull gently forward to see that it holds.",
+          "factId": "11.1.1.12"
+        },
+        {
+          "q": "How do you check the service brakes?",
+          "a": "Pull forward at 5 mph, apply the foot brake, stop fully, and check it does not pull to either side.",
+          "factId": "11.1.1.14"
+        },
+        {
+          "q": "Which dash indicators do you check?",
+          "a": "Left turn, right turn, four-way flashers, high beam, ABS, and DEF if fitted.",
+          "factId": "11.1.1.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.1.1.e1",
+          "q": "Which set of warning devices satisfies the requirement?",
+          "choices": [
+            "Two red triangles",
+            "Three red reflective triangles",
+            "Four fusee flares",
+            "One liquid burning flare"
+          ],
+          "answer": 1,
+          "why": "Three red reflective triangles, or six fusee flares, or three liquid burning flares.",
+          "factId": "11.1.1.5",
+          "page": "11-2"
+        },
+        {
+          "id": "11.1.1.e2",
+          "q": "At what speed do you test the service brakes?",
+          "choices": [
+            "2 mph",
+            "5 mph",
+            "10 mph",
+            "15 mph"
+          ],
+          "answer": 1,
+          "why": "Pull forward at 5 mph, apply the foot brake, and check it stops without pulling to either side.",
+          "factId": "11.1.1.14",
+          "page": "11-3"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Lighting indicators"
+        },
+        {
+          "p": "Start the vehicle and check the dash indicators work: left turn, right turn, four-way flashers, high beam, ABS, and the diesel exhaust fluid light if fitted. On a combination, the trailer ABS light on the rear driver's side should come on and then go off."
+        },
+        {
+          "note": "The lights themselves are checked later, from outside, in 11.4."
+        },
+        {
+          "h": "Emergency equipment"
+        },
+        {
+          "ul": [
+            "Spare electrical fuses. If the vehicle has none, say so and identify the circuit breakers.",
+            "A fire extinguisher, properly charged and secured.",
+            "Three red reflective triangles, OR six fusee flares, OR three liquid burning flares."
+          ]
+        },
+        {
+          "h": "What you can see through"
+        },
+        {
+          "ul": [
+            "Windshield: clean, no cracks or flaws, nothing on it but an inspection sticker.",
+            "Mirrors: clean, adjusted from the inside, brackets sound. A camera system must be clean and working, with the display operable and adjusted.",
+            "Wipers: arms and blades secure and undamaged. Switch them on and off.",
+            "Washers: fluid in the bottle, and work them to show they spray.",
+            "Heater and defroster: identify, describe and demonstrate with the controls.",
+            "Horn: air horn and electric horn both work."
+          ]
+        },
+        {
+          "h": "The three brake checks from the seat"
+        },
+        {
+          "ul": [
+            "Parking brake: set it, foot off the service brake, pull gently forward. It must hold.",
+            "Trailer parking brake, on a combination: parking brake released, trailer brake set, pull gently forward. It must hold, and it checks the coupling too.",
+            "Service brake: pull forward at 5 mph, apply the foot brake, stop completely. It must not pull to either side."
+          ]
+        }
+      ]
     },
     {
       "id": "11.1.2",
       "title": "Air Brake or Hydraulic Brake",
       "pdfPages": "145-146",
       "manualPages": "11-3 to 11-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.1.2.1",
+          "text": "Failing to explain and demonstrate all four parts of the air brake check correctly is an automatic failure of the inspection test.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "four",
+            "automatic failure"
+          ]
+        },
+        {
+          "id": "11.1.2.2",
+          "text": "Part 1, air gauge and governor cutout: chock the wheels, start the engine, check the gauge works, build to governor cutout and name the range, about 120 to 140 psi or the maker's figure.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "governor cutout",
+            "120",
+            "140"
+          ]
+        },
+        {
+          "id": "11.1.2.3",
+          "text": "Part 2, air leakage rate: engine off, key on, parking brake released and the tractor protection valve released on a combination, foot brake fully applied. After the gauge settles, hold one minute.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "leakage",
+            "key on",
+            "one minute"
+          ]
+        },
+        {
+          "id": "11.1.2.4",
+          "text": "The air pressure may drop no more than 3 psi in one minute on a single vehicle, or 4 psi in one minute on a combination.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "3",
+            "4",
+            "one minute"
+          ]
+        },
+        {
+          "id": "11.1.2.5",
+          "text": "Part 3, air warning devices: without restarting, fan the air off with the foot brake. The buzzer, light and flag must come on before the pressure drops below 55 psi.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "warning",
+            "before",
+            "55"
+          ]
+        },
+        {
+          "id": "11.1.2.6",
+          "text": "Part 4, emergency brakes: keep fanning. The parking or emergency brake valve must close, popping out, between 20 and 45 psi: no less than 20 and no more than 45.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "pop out",
+            "20",
+            "45"
+          ]
+        },
+        {
+          "id": "11.1.2.7",
+          "text": "On an air operated trailer, the tractor protection valve and the trailer parking brake valve should close at the same time as, or before, the valve for the truck or tractor.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "same time",
+            "before"
+          ]
+        },
+        {
+          "id": "11.1.2.8",
+          "text": "If the valves are not built to pop out, listen for air discharging, which shows the parking brakes have applied.",
+          "critical": false,
+          "page": "11-3",
+          "keywords": [
+            "listen",
+            "discharging"
+          ]
+        },
+        {
+          "id": "11.1.2.9",
+          "text": "The hydraulic brake check: with the transmission in park, identify the normal pedal height, pump the pedal three times, then hold it down for five seconds. The pedal must not move and must feel firm.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "three times",
+            "five seconds",
+            "not move"
+          ]
+        },
+        {
+          "id": "11.1.2.10",
+          "text": "Failing to explain and demonstrate the hydraulic brake check correctly is also an automatic failure.",
+          "critical": true,
+          "page": "11-3",
+          "keywords": [
+            "hydraulic",
+            "automatic failure"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How many parts has the air brake check, and what happens if you miss one?",
+          "a": "Four. Getting any of them wrong is an automatic failure of the inspection test.",
+          "factId": "11.1.2.1"
+        },
+        {
+          "q": "What is the governor cutout range you must name?",
+          "a": "About 120 to 140 psi, or the figure the maker specifies.",
+          "factId": "11.1.2.2"
+        },
+        {
+          "q": "What is the allowed air leakage in one minute?",
+          "a": "3 psi on a single vehicle, 4 psi on a combination.",
+          "factId": "11.1.2.4"
+        },
+        {
+          "q": "When must the low air warning devices come on?",
+          "a": "Before the pressure drops below 55 psi.",
+          "factId": "11.1.2.5"
+        },
+        {
+          "q": "When must the parking brake valve pop out?",
+          "a": "Between 20 and 45 psi: no less than 20, no more than 45.",
+          "factId": "11.1.2.6"
+        },
+        {
+          "q": "How do you check hydraulic brakes?",
+          "a": "In park, pump the pedal three times and hold it five seconds. It must not move and must feel firm.",
+          "factId": "11.1.2.9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.1.2.e1",
+          "q": "You explain three of the four parts of the air brake check. What is the result?",
+          "choices": [
+            "You lose one item",
+            "Automatic failure of the inspection test",
+            "The examiner repeats the step",
+            "Nothing, if the brakes pass"
+          ],
+          "answer": 1,
+          "why": "All four parts must be explained and demonstrated correctly, or the test is failed.",
+          "factId": "11.1.2.1",
+          "page": "11-3"
+        },
+        {
+          "id": "11.1.2.e2",
+          "q": "During the leakage test on a combination, what drop is allowed in one minute?",
+          "choices": [
+            "2 psi",
+            "3 psi",
+            "4 psi",
+            "6 psi"
+          ],
+          "answer": 2,
+          "why": "Four psi for a combination, three for a single vehicle.",
+          "factId": "11.1.2.4",
+          "page": "11-3"
+        },
+        {
+          "id": "11.1.2.e3",
+          "q": "The parking brake valve must pop out in which range?",
+          "choices": [
+            "55 to 75 psi",
+            "45 to 60 psi",
+            "20 to 45 psi",
+            "10 to 20 psi"
+          ],
+          "answer": 2,
+          "why": "No less than 20 psi and no more than 45, or the maker's stated level.",
+          "factId": "11.1.2.6",
+          "page": "11-3"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Get any of the four parts of the air brake check wrong and you fail the inspection test on the spot. Learn them in order, with the numbers."
+        },
+        {
+          "h": "1. Air gauge and governor cutout"
+        },
+        {
+          "p": "Chock the wheels. Start the vehicle and check the air gauge works. Build the pressure to governor cutout and name the range: about 120 to 140 psi, or the level the maker specifies."
+        },
+        {
+          "h": "2. Air leakage rate"
+        },
+        {
+          "p": "Shut the engine off, turn the key back to on or battery charge, release the parking brake, and on a combination the tractor protection valve too. Apply the foot brake fully. Let the gauge settle after the first drop, then hold for one minute."
+        },
+        {
+          "numbers": [
+            {
+              "value": "3 psi",
+              "what": "the most it may drop in one minute, single vehicle"
+            },
+            {
+              "value": "4 psi",
+              "what": "the most it may drop in one minute, combination"
+            }
+          ]
+        },
+        {
+          "h": "3. Air warning devices"
+        },
+        {
+          "p": "Without restarting, with the key on, fan the air off with the foot brake. Name the level where the buzzer, light and flag come on."
+        },
+        {
+          "numbers": [
+            {
+              "value": "55 psi",
+              "what": "the warning devices must come on BEFORE the pressure falls below this"
+            }
+          ]
+        },
+        {
+          "h": "4. Emergency brakes"
+        },
+        {
+          "p": "Keep fanning the air off. The parking or emergency brake valve must close and pop out."
+        },
+        {
+          "numbers": [
+            {
+              "value": "20 to 45 psi",
+              "what": "no less than 20, no more than 45, or the maker's level"
+            }
+          ]
+        },
+        {
+          "note": "On an air operated trailer, the tractor protection valve and the trailer parking brake valve should pop at the same time as the truck's, or before it. If the valves do not pop out by design, listen for air discharging instead."
+        },
+        {
+          "h": "Hydraulic brakes instead"
+        },
+        {
+          "p": "With the transmission in park, identify the normal pedal height, pump the pedal three times, then hold it down for five seconds. The pedal must not move after the first application, and it must feel firm with reserve left. Getting this wrong is an automatic failure too."
+        }
+      ]
     },
     {
       "id": "11.2",
@@ -39,7 +744,15 @@
       "manualPages": "11-4",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "note": "Not in your plan. These checks belong to the passenger (P) endorsement and the school bus (S) endorsement, which a Class A with air brakes does not need."
+        },
+        {
+          "p": "If you add one of those endorsements later, this part covers the entry door and lift, the emergency exits, passenger seating and the passenger mirrors."
+        }
+      ]
     },
     {
       "id": "11.3",
@@ -48,17 +761,135 @@
       "manualPages": "11-4 to 11-5",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "note": "Not in your plan. This part is for the school bus (S) endorsement only."
+        },
+        {
+          "p": "It covers the student lights, the stop arm, the crossing gate, and the first aid and body fluid cleanup kits."
+        }
+      ]
     },
     {
       "id": "11.4",
       "title": "Lights Operations Check (All Vehicles)",
       "pdfPages": "147",
       "manualPages": "11-5",
-      "facts": [],
-      "cards": [],
-      "exam": [],
-      "titleFixed": true
+      "facts": [
+        {
+          "id": "11.4.1",
+          "text": "Check that every light on the front, the sides and the rear works: left and right turn signals, four-way flashers, low beams, high beams, clearance or marker lights, taillights and brake lights.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "front",
+            "sides",
+            "rear",
+            "clearance"
+          ]
+        },
+        {
+          "id": "11.4.2",
+          "text": "Check the brake lights come on when the brakes are applied and go off when they are released.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "brake lights",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "id": "11.4.3",
+          "text": "On a combination vehicle you need only inspect the rear of the trailer.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "combination",
+            "rear of the trailer"
+          ]
+        },
+        {
+          "id": "11.4.4",
+          "text": "Every external light must be inspected from outside the vehicle, and you may ask the examiner to help.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "outside",
+            "examiner"
+          ]
+        },
+        {
+          "id": "11.4.5",
+          "text": "You must tell the examiner exactly which lights to look at as you switch them on, with the window down and loud enough to be heard. Leave a light out and you get no credit for it.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "tell the examiner",
+            "window down",
+            "no credit"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "From where must the external lights be inspected?",
+          "a": "From outside the vehicle. The examiner can help if you direct them.",
+          "factId": "11.4.4"
+        },
+        {
+          "q": "Which lights do you check on a combination?",
+          "a": "All of them, but at the back you need only inspect the rear of the trailer.",
+          "factId": "11.4.3"
+        },
+        {
+          "q": "What loses you credit in the lights check?",
+          "a": "Forgetting to name a light. You must say exactly which lights the examiner should look at.",
+          "factId": "11.4.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.4.e1",
+          "q": "How are the external lights inspected?",
+          "choices": [
+            "From the driver's seat",
+            "From outside the vehicle",
+            "By the examiner alone",
+            "With the engine off only"
+          ],
+          "answer": 1,
+          "why": "They must be inspected from outside. You may direct the examiner, naming each light as you switch it on.",
+          "factId": "11.4.4",
+          "page": "11-5"
+        }
+      ],
+      "titleFixed": true,
+      "reading": [
+        {
+          "p": "This is the one part of the test where you are mostly talking. You sit in the cab working the switches, and the examiner walks the vehicle looking at the lights you name."
+        },
+        {
+          "h": "What must work"
+        },
+        {
+          "ul": [
+            "Left and right turn signals.",
+            "Four-way flashers.",
+            "Low beam headlights, then high beams.",
+            "Clearance or marker lights.",
+            "Taillights.",
+            "Brake lights: on when applied, off when released."
+          ]
+        },
+        {
+          "note": "Every external light is inspected from OUTSIDE the vehicle. Roll the window down, speak up, and tell the examiner exactly which lights to look at. If you forget a light, you get no credit for it."
+        },
+        {
+          "p": "On a combination vehicle, you need only inspect the rear of the trailer."
+        }
+      ]
     },
     {
       "id": "11.5",
@@ -67,43 +898,635 @@
       "manualPages": "11-5",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "The walk-around, with the engine off. Four stops: the front and engine area, the axle you are asked to inspect, the side of the vehicle, and the rear."
+        }
+      ]
     },
     {
       "id": "11.5.1",
       "title": "Front of Vehicle / Engine Area",
       "pdfPages": "147-148",
       "manualPages": "11-5 to 11-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.5.1.1",
+          "text": "Light lenses and covers at the front must be the proper color, clean, not broken and not missing.",
+          "critical": true,
+          "page": "11-5",
+          "keywords": [
+            "lenses",
+            "proper color"
+          ]
+        },
+        {
+          "id": "11.5.1.2",
+          "text": "With the engine off, say that you would check the engine oil, the coolant, the power steering fluid, and the brake fluid on a hydraulic system.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "engine oil",
+            "coolant",
+            "power steering",
+            "brake fluid"
+          ]
+        },
+        {
+          "id": "11.5.1.3",
+          "text": "Say where the dipstick or sight glass is, and that the level must be between the add and the full marks.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "dipstick",
+            "add",
+            "full"
+          ]
+        },
+        {
+          "id": "11.5.1.4",
+          "text": "Never remove the radiator cap when the engine is hot.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "radiator cap",
+            "hot"
+          ]
+        },
+        {
+          "id": "11.5.1.5",
+          "text": "Look for puddles on the ground, dripping fluid under the engine and transmission, and check hoses and air lines for condition and leaks.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "puddles",
+            "dripping",
+            "hoses"
+          ]
+        },
+        {
+          "id": "11.5.1.6",
+          "text": "Steering: the power steering box securely mounted and not leaking, hoses and connections not cracked, worn or leaking.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "steering box",
+            "mounted",
+            "leaking"
+          ]
+        },
+        {
+          "id": "11.5.1.7",
+          "text": "Steering: the links, arms and rods from the box to the wheel not worn or cracked, and the joints and sockets not worn or loose.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "links",
+            "arms",
+            "rods",
+            "joints"
+          ]
+        },
+        {
+          "id": "11.5.1.8",
+          "text": "Steering: no missing nuts, bolts or cotter keys in the steering connections.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "nuts",
+            "bolts",
+            "cotter"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which four fluids do you name at the front of the vehicle?",
+          "a": "Engine oil, coolant, power steering fluid, and brake fluid on hydraulic brakes.",
+          "factId": "11.5.1.2"
+        },
+        {
+          "q": "Where must a fluid level be?",
+          "a": "Between the add and the full marks.",
+          "factId": "11.5.1.3"
+        },
+        {
+          "q": "What do you never do with a hot engine?",
+          "a": "Remove the radiator cap.",
+          "factId": "11.5.1.4"
+        },
+        {
+          "q": "What are you looking for in the steering system?",
+          "a": "A securely mounted box that is not leaking, and links, arms, rods and joints that are not worn, cracked or loose, with no missing nuts, bolts or cotter keys.",
+          "factId": "11.5.1.7"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.5.1.e1",
+          "q": "Where must the engine oil level be?",
+          "choices": [
+            "Above the full mark",
+            "Between the add and full marks",
+            "At the add mark",
+            "Anywhere on the dipstick"
+          ],
+          "answer": 1,
+          "why": "Between the add and the full marks, and you must say so to get credit.",
+          "factId": "11.5.1.3",
+          "page": "11-6"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Lenses"
+        },
+        {
+          "p": "Light lenses and covers at the front: proper color, clean, not broken, not missing."
+        },
+        {
+          "h": "Critical fluid levels"
+        },
+        {
+          "p": "With the engine off, say you would check each one, and point to where you would look."
+        },
+        {
+          "ul": [
+            "Engine oil.",
+            "Cooling system coolant.",
+            "Power steering fluid.",
+            "Brake fluid, on hydraulic brakes only."
+          ]
+        },
+        {
+          "note": "Say where the dipstick or sight glass is, and that the level must be between the ADD and the FULL marks. Never remove the radiator cap when the engine is hot."
+        },
+        {
+          "h": "Fluid and air leaks"
+        },
+        {
+          "ul": [
+            "Puddles on the ground.",
+            "Dripping fluid around and under the engine and transmission.",
+            "Hoses and air lines: condition and leaks."
+          ]
+        },
+        {
+          "h": "Steering system"
+        },
+        {
+          "ul": [
+            "Power steering box securely mounted and not leaking.",
+            "Hoses and connections not cracked, worn or leaking.",
+            "Links, arms and rods from the box to the wheel not worn or cracked. Joints and sockets not worn or loose.",
+            "No missing nuts, bolts or cotter keys in the steering connections."
+          ]
+        }
+      ]
     },
     {
       "id": "11.5.2",
       "title": "Axle Components/Steering Axle",
       "pdfPages": "148-150",
       "manualPages": "11-6 to 11-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.5.2.1",
+          "text": "Check tire inflation with a tire gauge, and say so. Kicking the tire or using a mallet gets no credit.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "tire gauge",
+            "no credit",
+            "kick"
+          ]
+        },
+        {
+          "id": "11.5.2.2",
+          "text": "Minimum tread depth is 4/32 of an inch on steering axle tires and 2/32 on all other tires, measured with a tread depth gauge in the major grooves.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "4/32",
+            "2/32",
+            "tread depth"
+          ]
+        },
+        {
+          "id": "11.5.2.3",
+          "text": "Tire condition: no cuts or damage exposing the body plies in tread or sidewall, no missing valve caps, no damaged valve stems, no bumps or bulges, and no mismatched diameters in dual tires.",
+          "critical": true,
+          "page": "11-6",
+          "keywords": [
+            "cuts",
+            "bulges",
+            "mismatched"
+          ]
+        },
+        {
+          "id": "11.5.2.4",
+          "text": "Rims must not be damaged, cracked or bent, must carry no welding repairs, and the bolt holes must not be elongated. Rust trails can show a loose rim.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "welding repairs",
+            "elongated",
+            "rust trails"
+          ]
+        },
+        {
+          "id": "11.5.2.5",
+          "text": "Every lug nut must be present and tight. Rust trails or shiny threads show looseness, and no stud may be bent, broken or missing.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "lug nuts",
+            "rust trails",
+            "shiny threads"
+          ]
+        },
+        {
+          "id": "11.5.2.6",
+          "text": "Springs: no missing, shifted, cracked or broken leaf springs, no broken or distorted coils, and mounts not cracked, broken or missing parts.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "leaf springs",
+            "shifted",
+            "mounts"
+          ]
+        },
+        {
+          "id": "11.5.2.7",
+          "text": "U-bolts and mounting bolts must not be broken, missing or loose. Air ride suspension and shock absorbers must be secure, undamaged and not leaking.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "u bolts",
+            "air ride",
+            "shocks"
+          ]
+        },
+        {
+          "id": "11.5.2.8",
+          "text": "Check the vehicle is sitting level, front to rear and side to side. A lean can mean a suspension fault.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "sitting level",
+            "lean"
+          ]
+        },
+        {
+          "id": "11.5.2.9",
+          "text": "Brake lines and hoses must be able to supply the brakes, not leaking, not cracked, worn or frayed, with couplings and fittings secure.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "brake lines",
+            "frayed",
+            "fittings"
+          ]
+        },
+        {
+          "id": "11.5.2.10",
+          "text": "Check the brake lining or pads and the drum or disc for contaminants such as grease or oil, which cut braking friction and can start a fire.",
+          "critical": true,
+          "page": "11-7",
+          "keywords": [
+            "contaminants",
+            "grease",
+            "oil"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the minimum tread depth?",
+          "a": "4/32 of an inch on steering axle tires, 2/32 on all others.",
+          "factId": "11.5.2.2"
+        },
+        {
+          "q": "How must tire inflation be checked?",
+          "a": "With a tire gauge, and you must say so. Kicking the tire gets no credit.",
+          "factId": "11.5.2.1"
+        },
+        {
+          "q": "What is forbidden on a rim?",
+          "a": "Welding repairs. Also no cracks, bends or elongated bolt holes.",
+          "factId": "11.5.2.4"
+        },
+        {
+          "q": "What shows a lug nut is loose?",
+          "a": "Rust trails or shiny threads around it.",
+          "factId": "11.5.2.5"
+        },
+        {
+          "q": "Why check the vehicle is sitting level?",
+          "a": "A lean can mean a suspension fault.",
+          "factId": "11.5.2.8"
+        },
+        {
+          "q": "What are brake contaminants and why do they matter?",
+          "a": "Grease or oil on the lining, pads, drum or disc. They cut braking friction and are a fire hazard.",
+          "factId": "11.5.2.10"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.5.2.e1",
+          "q": "What is the minimum tread depth on a steering axle tire?",
+          "choices": [
+            "2/32 inch",
+            "4/32 inch",
+            "6/32 inch",
+            "8/32 inch"
+          ],
+          "answer": 1,
+          "why": "4/32 on the steering axle, 2/32 on every other tire.",
+          "factId": "11.5.2.2",
+          "page": "11-6"
+        },
+        {
+          "id": "11.5.2.e2",
+          "q": "How do you check tire inflation on the test?",
+          "choices": [
+            "Kick the tire",
+            "Strike it with a mallet",
+            "Use a tire gauge",
+            "Look at the sidewall"
+          ],
+          "answer": 2,
+          "why": "You must use, and mention, a tire gauge. Kicking or using a mallet gets no credit.",
+          "factId": "11.5.2.1",
+          "page": "11-6"
+        },
+        {
+          "id": "11.5.2.e3",
+          "q": "Which rim condition is never allowed?",
+          "choices": [
+            "A painted rim",
+            "A welding repair",
+            "A clean rim",
+            "A steel rim"
+          ],
+          "answer": 1,
+          "why": "Rims cannot have welding repairs.",
+          "factId": "11.5.2.4",
+          "page": "11-7"
+        }
+      ],
+      "reading": [
+        {
+          "p": "This is the axle the examiner points at. You inspect one, but you should be able to do any of them."
+        },
+        {
+          "h": "Tires"
+        },
+        {
+          "numbers": [
+            {
+              "value": "4/32 inch",
+              "what": "minimum tread depth, steering axle tires"
+            },
+            {
+              "value": "2/32 inch",
+              "what": "minimum tread depth, all other tires"
+            }
+          ]
+        },
+        {
+          "note": "Check inflation with a TIRE GAUGE and say so. Kicking the tire or hitting it with a mallet gets no credit."
+        },
+        {
+          "ul": [
+            "No cuts or damage exposing the body plies, in tread or sidewall.",
+            "Valve caps present, valve stems undamaged and reachable.",
+            "No bumps or bulges in the sidewall.",
+            "No mismatched diameters in dual tires."
+          ]
+        },
+        {
+          "h": "Rims"
+        },
+        {
+          "ul": [
+            "Not damaged, cracked or bent.",
+            "NO welding repairs.",
+            "Bolt holes not elongated, not out of round.",
+            "Rust trails can mean the rim is loose."
+          ]
+        },
+        {
+          "h": "Lug nuts"
+        },
+        {
+          "ul": [
+            "All present.",
+            "None loose: look for rust trails or shiny threads.",
+            "No bent, broken or missing studs."
+          ]
+        },
+        {
+          "h": "Suspension"
+        },
+        {
+          "ul": [
+            "Leaf springs: none missing, shifted, cracked or broken. Mounts not cracked, broken or missing parts.",
+            "Coil springs: not broken or distorted.",
+            "U-bolts and mounting bolts: not broken, missing or loose.",
+            "Air ride suspension and shock absorbers: secure, undamaged, not leaking.",
+            "The vehicle sitting level, front to rear and side to side."
+          ]
+        },
+        {
+          "h": "Brakes at that wheel"
+        },
+        {
+          "ul": [
+            "Lines and hoses able to supply the brakes, not leaking, not cracked, worn or frayed, couplings and fittings secure.",
+            "No contaminants such as grease or oil on the lining, pads, drum or disc."
+          ]
+        }
+      ]
     },
     {
       "id": "11.5.3",
       "title": "Side of Vehicle",
       "pdfPages": "150",
       "manualPages": "11-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.5.3.1",
+          "text": "Light lenses and reflectors on the sides must be the proper color, clean, not broken and not missing.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "side",
+            "lenses",
+            "reflectors"
+          ]
+        },
+        {
+          "id": "11.5.3.2",
+          "text": "Side mirrors must be clean and uncracked, with brackets not bent and mounted securely with no missing parts.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "mirrors",
+            "brackets"
+          ]
+        },
+        {
+          "id": "11.5.3.3",
+          "text": "Batteries must be secure, connections tight and free of heavy corrosion, cables not cracked or worn, and the battery box, cover or door secure.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "batteries",
+            "corrosion",
+            "box"
+          ]
+        },
+        {
+          "id": "11.5.3.4",
+          "text": "If the batteries are not visible or reachable, tell the examiner and describe what you would be inspecting.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "not visible",
+            "describe"
+          ]
+        },
+        {
+          "id": "11.5.3.5",
+          "text": "The fuel tank, and the diesel exhaust fluid tank if fitted, must be securely mounted with the cap tight and no leaks from tank or line.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "fuel tank",
+            "cap",
+            "leaks"
+          ]
+        },
+        {
+          "id": "11.5.3.6",
+          "text": "The frame must have no cracks, broken welds, holes or other damage, and the cargo area or floor no cracks, breaks or holes.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "frame",
+            "broken welds",
+            "holes"
+          ]
+        },
+        {
+          "id": "11.5.3.7",
+          "text": "Check the trailer tandem release lever and pins are secure, if the vehicle has them.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "tandem release",
+            "pins"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you check on the batteries?",
+          "a": "Secure, connections tight without heavy corrosion, cables sound, and the box or cover secure.",
+          "factId": "11.5.3.3"
+        },
+        {
+          "q": "What do you check on the fuel tank?",
+          "a": "Securely mounted, cap tight, no leaks from the tank or the line.",
+          "factId": "11.5.3.5"
+        },
+        {
+          "q": "What are you looking for on the frame?",
+          "a": "Cracks, broken welds, holes or other damage, and the same in the cargo floor.",
+          "factId": "11.5.3.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.5.3.e1",
+          "q": "The batteries are not visible on your vehicle. What do you do?",
+          "choices": [
+            "Skip the item",
+            "Tell the examiner and describe what you would inspect",
+            "Open the battery box with a tool",
+            "Guess at their condition"
+          ],
+          "answer": 1,
+          "why": "Say they are not visible or accessible, then describe what you would be inspecting.",
+          "factId": "11.5.3.4",
+          "page": "11-8"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Lenses and reflectors on the sides, and on the trailer: proper color, clean, not broken, not missing.",
+            "Side mirrors: clean, not cracked, brackets not bent, mounted securely with nothing missing. A camera must be clean and viewable from inside.",
+            "Batteries, wherever they are: secure, connections tight with no heavy corrosion, cables and lines secure and not cracked or worn, battery box, cover or door secure.",
+            "Fuel tank, and the DEF tank if fitted: securely mounted, cap tight, no leaks from tank or line.",
+            "Frame: no cracks, broken welds, holes or damage, including the trailer. No cracks, breaks or holes in the cargo area or floor. Trailer tandem release lever and pins secure."
+          ]
+        },
+        {
+          "note": "If the batteries are not visible or reachable, say so to the examiner and describe what you would be inspecting. That earns the credit."
+        }
+      ]
     },
     {
       "id": "11.5.4",
       "title": "Rear of Vehicle or Trailer",
       "pdfPages": "150-151",
       "manualPages": "11-8 to 11-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.5.4.1",
+          "text": "Light lenses, covers and reflectors at the rear must be the proper color, clean, not broken and not missing.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "rear",
+            "lenses",
+            "reflectors"
+          ]
+        },
+        {
+          "id": "11.5.4.2",
+          "text": "On a combination vehicle you need only inspect the rear of the trailer.",
+          "critical": true,
+          "page": "11-8",
+          "keywords": [
+            "combination",
+            "rear of the trailer"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you inspect at the rear?",
+          "a": "Light lenses, covers and reflectors: proper color, clean, not broken, not missing.",
+          "factId": "11.5.4.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Light lenses and covers: proper color, clean, not broken, not missing.",
+            "Reflectors: proper color, clean, not broken, not missing."
+          ]
+        },
+        {
+          "note": "On a combination vehicle, you need only inspect the rear of the trailer."
+        }
+      ]
     },
     {
       "id": "11.6",
@@ -112,25 +1535,308 @@
       "manualPages": "11-9",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "What a combination adds: the lines between the units, the coupling itself, and the trailer's own items. Learn the coupling system your test vehicle has, whether that is a fifth wheel, a pintle hook, or something else."
+        }
+      ]
     },
     {
       "id": "11.6.1",
       "title": "Combination Vehicles Only",
       "pdfPages": "151-152",
       "manualPages": "11-9 to 11-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.6.1.1",
+          "text": "Air and electric connectors on the power unit and the trailer must be seated, sealed, free of damage and locked in place. You must inspect BOTH ends to get credit.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "connectors",
+            "seated",
+            "both"
+          ]
+        },
+        {
+          "id": "11.6.1.2",
+          "text": "Air hoses and electrical lines must not be cut, cracked, chafed, spliced, taped or worn, with no steel braid or conductor showing. Listen for air leaks.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "chafed",
+            "spliced",
+            "steel braid"
+          ]
+        },
+        {
+          "id": "11.6.1.3",
+          "text": "Lines must not be tangled, crimped, pinched, or dragging on vehicle parts or the ground.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "tangled",
+            "crimped",
+            "dragging"
+          ]
+        },
+        {
+          "id": "11.6.1.4",
+          "text": "Fifth wheel skid plate: securely mounted by the fifth wheel platform, no cracks, breaks or heavy wear, and properly lubricated.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "skid plate",
+            "lubrication"
+          ]
+        },
+        {
+          "id": "11.6.1.5",
+          "text": "Kingpin in place and not bent, damaged or worn. The visible part of the apron not bent, cracked or broken.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "kingpin",
+            "apron"
+          ]
+        },
+        {
+          "id": "11.6.1.6",
+          "text": "The trailer must lie flat on the fifth wheel skid plate with no space between the apron and the fifth wheel: no gap.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "flat",
+            "no gap",
+            "no space"
+          ]
+        },
+        {
+          "id": "11.6.1.7",
+          "text": "Look into the fifth wheel gap: the locking jaws or lever fully secured around the kingpin, with no play between them.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "locking jaws",
+            "play"
+          ]
+        },
+        {
+          "id": "11.6.1.8",
+          "text": "The release arm must be in the engaged position with the safety latch or lock in place, and sliding fifth wheel locking pins undamaged and fully engaged.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "release arm",
+            "safety latch",
+            "locking pins"
+          ]
+        },
+        {
+          "id": "11.6.1.9",
+          "text": "On a pintle hook: securely mounted to the frame, no loose or missing bolts, nuts, pins, brackets or clamps, and no cracks, breaks or heavy wear.",
+          "critical": true,
+          "page": "11-9",
+          "keywords": [
+            "pintle hook",
+            "mounted"
+          ]
+        },
+        {
+          "id": "11.6.1.10",
+          "text": "On other couplings, safety cables or chains must be secure, crossed, free of kinks and excessive slack, and breakaway cables must be engaged.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "chains",
+            "crossed",
+            "breakaway"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How much gap is allowed between the trailer apron and the fifth wheel?",
+          "a": "None. The trailer must lie flat on the skid plate.",
+          "factId": "11.6.1.6"
+        },
+        {
+          "q": "What must you inspect at both ends to get credit?",
+          "a": "The air and electric connectors, on the power unit AND the trailer.",
+          "factId": "11.6.1.1"
+        },
+        {
+          "q": "What are you looking for in the fifth wheel gap?",
+          "a": "The locking jaws or lever fully secured around the kingpin, with no play.",
+          "factId": "11.6.1.7"
+        },
+        {
+          "q": "How must safety chains be arranged?",
+          "a": "Secure, crossed, free of kinks and excessive slack, with breakaway cables engaged.",
+          "factId": "11.6.1.10"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.6.1.e1",
+          "q": "You check the air connectors on the trailer only. What happens?",
+          "choices": [
+            "Full credit",
+            "No credit, both ends must be inspected",
+            "Half credit",
+            "The examiner checks the other end"
+          ],
+          "answer": 1,
+          "why": "You must inspect the connections on both the power unit and the trailer.",
+          "factId": "11.6.1.1",
+          "page": "11-9"
+        },
+        {
+          "id": "11.6.1.e2",
+          "q": "How should safety chains be fitted?",
+          "choices": [
+            "Straight and slack",
+            "Crossed, secure and without excessive slack",
+            "Looped over the hitch",
+            "Attached to the bumper"
+          ],
+          "answer": 1,
+          "why": "Crossed, secure, free of kinks and excessive slack, with breakaway cables engaged.",
+          "factId": "11.6.1.10",
+          "page": "11-10"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Air and electric lines"
+        },
+        {
+          "ul": [
+            "Connectors on the power unit AND the trailer: seated, sealed, undamaged, locked in place.",
+            "Hoses and lines: not cut, cracked, chafed, spliced, taped or worn, with no steel braid or conductor showing. Listen for air leaks.",
+            "Nothing tangled, crimped, pinched, or dragging on vehicle parts or the ground."
+          ]
+        },
+        {
+          "note": "You must inspect the connections at BOTH ends to get credit."
+        },
+        {
+          "h": "Fifth wheel coupling"
+        },
+        {
+          "ul": [
+            "Skid plate securely mounted by the fifth wheel platform, no cracks, breaks or heavy wear, properly lubricated.",
+            "Kingpin in place, not bent, damaged or worn. Visible part of the apron not bent, cracked or broken.",
+            "Trailer lying flat on the skid plate with NO gap between apron and fifth wheel.",
+            "Look into the gap: locking jaws or lever fully secured around the kingpin, with no play.",
+            "Release arm engaged, safety latch or lock in place. Sliding fifth wheel locking pins undamaged and fully engaged."
+          ]
+        },
+        {
+          "h": "Pintle hook or other coupling"
+        },
+        {
+          "ul": [
+            "Hook securely mounted to the frame, nothing loose or missing, no cracks, breaks or heavy wear.",
+            "Drawbar ring or coupler not bent, twisted or worn, secured to the tongue with no loose bolts, broken welds or cracks.",
+            "Tongue free of dents, twists, cracks and broken welds, and able to carry the load.",
+            "Locking mechanism or latch locked in place, safety and cotter pins present.",
+            "Safety cables or chains secure, CROSSED, free of kinks and excessive slack. Breakaway cables engaged."
+          ]
+        }
+      ]
     },
     {
       "id": "11.6.2",
       "title": "Trailers Only",
       "pdfPages": "152-157",
       "manualPages": "11-10 to 11-14",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "11.6.2.1",
+          "text": "Landing gear must be fully raised, with no missing parts, the crank handle secure, and the support frame and landing pads undamaged.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "landing gear",
+            "fully raised",
+            "crank handle"
+          ]
+        },
+        {
+          "id": "11.6.2.2",
+          "text": "If the landing gear is power operated, check for air or hydraulic leaks.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "power operated",
+            "leaks"
+          ]
+        },
+        {
+          "id": "11.6.2.3",
+          "text": "On a tractor semi-trailer, check the fifth wheel is positioned so the tractor frame clears the landing gear during turns.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "positioned",
+            "clear",
+            "turns"
+          ]
+        },
+        {
+          "id": "11.6.2.4",
+          "text": "Reflective tape on the sides and rear of the trailer must be present and firmly attached. Reflective tape is required on trailers.",
+          "critical": true,
+          "page": "11-10",
+          "keywords": [
+            "reflective tape",
+            "sides",
+            "rear"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you check on the landing gear?",
+          "a": "Fully raised, nothing missing, crank handle secure, frame and pads undamaged, and no leaks if powered.",
+          "factId": "11.6.2.1"
+        },
+        {
+          "q": "Where must reflective tape be on a trailer?",
+          "a": "On the sides and the rear, present and firmly attached.",
+          "factId": "11.6.2.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "11.6.2.e1",
+          "q": "Which vehicles require reflective tape?",
+          "choices": [
+            "All commercial vehicles",
+            "Trailers",
+            "Tractors only",
+            "Buses only"
+          ],
+          "answer": 1,
+          "why": "Reflective tape is required for trailers. Some jurisdictions also require it on school buses.",
+          "factId": "11.6.2.4",
+          "page": "11-10"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Landing gear fully raised, no missing parts, crank handle secure, support frame and landing pads undamaged. If power operated, no air or hydraulic leaks.",
+            "On a tractor semi-trailer, the fifth wheel positioned so the tractor frame clears the landing gear during turns.",
+            "Reflective tape on the sides and rear of the trailer, present and firmly attached."
+          ]
+        },
+        {
+          "note": "Reflective tape is required on trailers. Some jurisdictions also require it on school buses."
+        }
+      ]
     }
   ],
   "exam": []
