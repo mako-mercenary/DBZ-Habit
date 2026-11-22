@@ -12,70 +12,801 @@
       "manualPages": "6-1",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A combination vehicle is heavier and longer than a single vehicle, and it takes more skill. This part covers the safety that belongs to combinations alone."
+        },
+        {
+          "ul": [
+            "Rollover risks.",
+            "Steering gently.",
+            "Braking early.",
+            "Railroad crossings.",
+            "Trailer skids.",
+            "Turning wide.",
+            "Backing with a trailer."
+          ]
+        }
+      ]
     },
     {
       "id": "6.1.1",
       "title": "Rollover Risks",
       "pdfPages": "87",
       "manualPages": "6-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.1.1",
+          "text": "More than half of the truck drivers killed in crashes die in a rollover.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "more than half",
+            "rollover"
+          ]
+        },
+        {
+          "id": "6.1.1.2",
+          "text": "A fully loaded rig is ten times more likely to roll over in a crash than an empty one.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "ten times",
+            "fully loaded"
+          ]
+        },
+        {
+          "id": "6.1.1.3",
+          "text": "Two things prevent a rollover: keep the cargo as close to the ground as you can, and drive slowly around turns.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "cargo",
+            "ground",
+            "slowly",
+            "turns"
+          ]
+        },
+        {
+          "id": "6.1.1.4",
+          "text": "Keep the load centered. A load to one side makes the trailer lean, and a rollover is more likely.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "centered",
+            "lean"
+          ]
+        },
+        {
+          "id": "6.1.1.5",
+          "text": "Rollovers happen when you turn too fast, so go slowly round corners, on-ramps and off-ramps, and avoid quick lane changes when loaded.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "too fast",
+            "ramps",
+            "quick lane changes"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What share of truck driver deaths are rollovers?",
+          "a": "More than half.",
+          "factId": "6.1.1.1"
+        },
+        {
+          "q": "How much more likely is a loaded rig to roll over than an empty one?",
+          "a": "Ten times.",
+          "factId": "6.1.1.2"
+        },
+        {
+          "q": "What two things prevent a rollover?",
+          "a": "Keep the cargo low, and drive slowly around turns.",
+          "factId": "6.1.1.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.1.e1",
+          "q": "A fully loaded rig compared with an empty one is how much more likely to roll over?",
+          "choices": [
+            "Twice",
+            "Five times",
+            "Ten times",
+            "The same"
+          ],
+          "answer": 2,
+          "why": "Fully loaded rigs are ten times more likely to roll over in a crash.",
+          "factId": "6.1.1.2",
+          "page": "6-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Rollover is the way most truck drivers die. Loading cargo high lifts the center of gravity, and the rig turns over more easily."
+        },
+        {
+          "numbers": [
+            {
+              "value": "More than half",
+              "what": "of truck driver deaths in crashes are rollovers"
+            },
+            {
+              "value": "10 times",
+              "what": "how much likelier a loaded rig is to roll than an empty one"
+            }
+          ]
+        },
+        {
+          "h": "The two things that prevent it"
+        },
+        {
+          "ul": [
+            "Keep the cargo as close to the ground as you can. This matters more in a combination than in a straight truck.",
+            "Drive slowly around turns."
+          ]
+        },
+        {
+          "note": "Keep the load centered. A load to one side makes the trailer lean, and that is how a rollover starts. Rollovers happen when you turn too fast: corners, on-ramps and off-ramps."
+        }
+      ]
     },
     {
       "id": "6.1.2",
       "title": "Steer Gently",
       "pdfPages": "87",
       "manualPages": "6-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.2.1",
+          "text": "A quick lane change makes a crack-the-whip effect that can turn the trailer over on its own. The cause is rearward amplification.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "crack the whip",
+            "rearward amplification"
+          ]
+        },
+        {
+          "id": "6.1.2.2",
+          "text": "Rearward amplification of 2.0 means the rear trailer is twice as likely to turn over as the tractor.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "2.0",
+            "twice"
+          ]
+        },
+        {
+          "id": "6.1.2.3",
+          "text": "Triples have a rearward amplification of 3.5, so the last trailer rolls 3.5 times as easily as a five-axle tractor.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "3.5",
+            "triples"
+          ]
+        },
+        {
+          "id": "6.1.2.4",
+          "text": "Follow at least one second for every ten feet of your vehicle length, and add another second above 40 mph.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "1 second",
+            "10 feet",
+            "40 mph"
+          ]
+        },
+        {
+          "id": "6.1.2.5",
+          "text": "Steer gently and smoothly with a trailer, and slow to a safe speed before you enter a turn.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "gently",
+            "smoothly",
+            "before"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the crack-the-whip effect?",
+          "a": "Rearward amplification: a quick lane change swings the trailer hard enough to roll it.",
+          "factId": "6.1.2.1"
+        },
+        {
+          "q": "What is the rearward amplification of triples?",
+          "a": "3.5, so the last trailer rolls 3.5 times as easily as a five-axle tractor.",
+          "factId": "6.1.2.3"
+        },
+        {
+          "q": "What following distance does a combination need?",
+          "a": "One second per ten feet of length, plus one more above 40 mph.",
+          "factId": "6.1.2.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.2.e1",
+          "q": "Your rig is 60 feet long and you are doing 55 mph. What is the least following distance?",
+          "choices": [
+            "Four seconds",
+            "Six seconds",
+            "Seven seconds",
+            "Ten seconds"
+          ],
+          "answer": 2,
+          "why": "One second per ten feet is six, plus one more above 40 mph, so seven.",
+          "factId": "6.1.2.4",
+          "page": "6-1"
+        },
+        {
+          "id": "6.1.2.e2",
+          "q": "Which combination rolls its rear trailer most easily in a quick lane change?",
+          "choices": [
+            "A five-axle tractor-semitrailer",
+            "Doubles",
+            "Triples",
+            "A straight truck with a trailer"
+          ],
+          "answer": 2,
+          "why": "Triples have a rearward amplification of 3.5, the highest in the manual's chart.",
+          "factId": "6.1.2.3",
+          "page": "6-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A trailer does not follow your steering exactly. It swings wider and later, and a sudden movement at the wheel can tip it over on its own. There are crashes where only the trailer overturned."
+        },
+        {
+          "h": "Rearward amplification"
+        },
+        {
+          "p": "That swing is called rearward amplification, or the crack-the-whip effect. The longer the rig, the worse it gets."
+        },
+        {
+          "numbers": [
+            {
+              "value": "2.0",
+              "what": "the rear trailer is twice as likely to roll as the tractor"
+            },
+            {
+              "value": "3.5",
+              "what": "triples: the last trailer rolls 3.5 times as easily as a five-axle tractor"
+            }
+          ]
+        },
+        {
+          "h": "What to do"
+        },
+        {
+          "ul": [
+            "Steer gently and smoothly.",
+            "Follow at least one second for every ten feet of length, plus one more second above 40 mph.",
+            "Look far enough ahead that you are never surprised into a sudden lane change.",
+            "At night, drive slowly enough to see an obstacle in your headlights in time.",
+            "Slow to a safe speed before the turn, not in it."
+          ]
+        }
+      ]
     },
     {
       "id": "6.1.3",
       "title": "Brake Early",
       "pdfPages": "87-88",
       "manualPages": "6-1 to 6-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.3.1",
+          "text": "A large combination takes longer to stop empty than fully loaded.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "longer",
+            "empty",
+            "loaded"
+          ]
+        },
+        {
+          "id": "6.1.3.2",
+          "text": "Lightly loaded, the stiff springs and strong brakes give poor traction, so the wheels lock easily, the trailer can swing out and the tractor can jackknife quickly.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "stiff",
+            "traction",
+            "lock up"
+          ]
+        },
+        {
+          "id": "6.1.3.3",
+          "text": "A bobtail tractor, which is a tractor with no semitrailer, is very hard to stop smoothly and takes longer to stop than a loaded tractor-semitrailer.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "bobtail",
+            "longer"
+          ]
+        },
+        {
+          "id": "6.1.3.4",
+          "text": "Allow plenty of following distance and look far ahead, so you brake early instead of making a panic stop.",
+          "critical": true,
+          "page": "6-1",
+          "keywords": [
+            "following distance",
+            "brake early"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Does an empty combination stop sooner than a loaded one?",
+          "a": "No. Empty takes longer to stop.",
+          "factId": "6.1.3.1"
+        },
+        {
+          "q": "Why is a bobtail tractor dangerous?",
+          "a": "It is hard to stop smoothly, and it takes longer to stop than a loaded tractor-semitrailer.",
+          "factId": "6.1.3.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.3.e1",
+          "q": "Which stops in the shortest distance?",
+          "choices": [
+            "An empty combination",
+            "A bobtail tractor",
+            "A fully loaded combination",
+            "They are the same"
+          ],
+          "answer": 2,
+          "why": "Empty rigs and bobtails lock their wheels easily and take longer to stop than a loaded combination.",
+          "factId": "6.1.3.1",
+          "page": "6-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Empty is not easier. A lightly loaded rig has stiff suspension springs and strong brakes with little weight on them, so the wheels lock, the trailer swings out and the tractor jackknifes."
+        },
+        {
+          "note": "A large combination takes LONGER to stop empty than fully loaded. A bobtail tractor, with no semitrailer, is worse again: it takes longer to stop than a loaded tractor-semitrailer."
+        },
+        {
+          "p": "So in any combination, leave plenty of following distance and look far ahead. Brake early, and never be surprised into a panic stop."
+        }
+      ]
     },
     {
       "id": "6.1.4",
       "title": "Railroad-highway Crossings",
       "pdfPages": "88",
       "manualPages": "6-2",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.4.1",
+          "text": "A trailer with low underneath clearance can get stuck on a raised railroad crossing: a lowboy, a car carrier, a moving van, or a possum-belly livestock trailer.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "low clearance",
+            "lowboy",
+            "car carrier"
+          ]
+        },
+        {
+          "id": "6.1.4.2",
+          "text": "A single-axle tractor pulling a long trailer whose landing gear is set for a tandem-axle tractor can also get stuck.",
+          "critical": false,
+          "page": "6-2",
+          "keywords": [
+            "single axle",
+            "landing gear"
+          ]
+        },
+        {
+          "id": "6.1.4.3",
+          "text": "If you get stuck on the tracks, get out of the vehicle and away from the tracks at once.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "get out",
+            "away"
+          ]
+        },
+        {
+          "id": "6.1.4.4",
+          "text": "Check the signpost or the signal housing for the emergency number, call 911, and give the crossing location with the DOT number if it is posted.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "911",
+            "dot number"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which trailers can get stuck on a raised crossing?",
+          "a": "Low-slung ones: lowboy, car carrier, moving van, possum-belly livestock trailer.",
+          "factId": "6.1.4.1"
+        },
+        {
+          "q": "You are stuck on the tracks. What do you do first?",
+          "a": "Get out and away from the tracks, then call for help with the DOT crossing number.",
+          "factId": "6.1.4.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.4.e1",
+          "q": "Your trailer is hung up on a raised crossing. What do you do first?",
+          "choices": [
+            "Try to rock the rig free",
+            "Get out and away from the tracks",
+            "Call your dispatcher",
+            "Set out warning devices"
+          ],
+          "answer": 1,
+          "why": "Get out and away first, then call 911 and give the crossing's DOT number.",
+          "factId": "6.1.4.3",
+          "page": "6-2"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A crossing that is humped can leave a low trailer resting on its belly with the wheels off the ground."
+        },
+        {
+          "h": "The ones that get stuck"
+        },
+        {
+          "ul": [
+            "Low-slung units: a lowboy, a car carrier, a moving van, a possum-belly livestock trailer.",
+            "A single-axle tractor pulling a long trailer whose landing gear is set for a tandem-axle tractor."
+          ]
+        },
+        {
+          "note": "If you get stuck: get out of the vehicle and away from the tracks. Then find the emergency number on the signpost or the signal housing, call 911, and give the location with the DOT crossing number if it is posted."
+        }
+      ]
     },
     {
       "id": "6.1.5",
       "title": "Prevent Trailer Skids",
       "pdfPages": "88-89",
       "manualPages": "6-2 to 6-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.5.1",
+          "text": "When the trailer wheels lock, the trailer swings around. That is a trailer jackknife, and it happens most when the trailer is empty or lightly loaded.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "lock up",
+            "swing",
+            "jackknife"
+          ]
+        },
+        {
+          "id": "6.1.5.2",
+          "text": "The earliest way to see a trailer skid is in your mirrors, so check them every time you brake hard.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "mirrors",
+            "check"
+          ]
+        },
+        {
+          "id": "6.1.5.3",
+          "text": "To stop a trailer skid, release the brakes to get traction back.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "release",
+            "traction"
+          ]
+        },
+        {
+          "id": "6.1.5.4",
+          "text": "Never use the trailer hand brake to straighten out a jackknifing rig: the trailer brakes caused the skid.",
+          "critical": true,
+          "page": "6-2",
+          "keywords": [
+            "hand brake",
+            "never",
+            "straighten"
+          ]
+        },
+        {
+          "id": "6.1.5.5",
+          "text": "Once the trailer swings out of your lane it is very hard to prevent the jackknife.",
+          "critical": false,
+          "page": "6-2",
+          "keywords": [
+            "out of your lane",
+            "difficult"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you see a trailer skid starting?",
+          "a": "In your mirrors. Check them whenever you brake hard.",
+          "factId": "6.1.5.2"
+        },
+        {
+          "q": "How do you stop a trailer skid?",
+          "a": "Release the brakes so the trailer wheels grip again.",
+          "factId": "6.1.5.3"
+        },
+        {
+          "q": "Why not use the trailer hand brake to straighten a jackknife?",
+          "a": "The trailer brakes caused the skid in the first place.",
+          "factId": "6.1.5.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.5.e1",
+          "q": "Your trailer begins to swing out under hard braking. What do you do?",
+          "choices": [
+            "Apply the trailer hand valve",
+            "Release the brakes",
+            "Brake harder",
+            "Steer into the trailer"
+          ],
+          "answer": 1,
+          "why": "Release the brakes so the trailer wheels get traction back. The hand valve would make it worse.",
+          "factId": "6.1.5.3",
+          "page": "6-2"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Lock the trailer wheels and the trailer swings around the tractor. That is a trailer jackknife, and an empty or lightly loaded trailer does it most readily."
+        },
+        {
+          "h": "Stopping the skid"
+        },
+        {
+          "ul": [
+            "Recognize it. The earliest sign is the trailer in your mirrors, so check them every time you brake hard.",
+            "Stop using the brake. Release them so the wheels get traction back. The trailer then follows the tractor and straightens out."
+          ]
+        },
+        {
+          "note": "Do not use the trailer hand brake to straighten the rig. The trailer brakes caused the skid. Once the trailer is out of your lane, the jackknife is very hard to stop."
+        }
+      ]
     },
     {
       "id": "6.1.6",
       "title": "Turn Wide",
       "pdfPages": "89",
       "manualPages": "6-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.6.1",
+          "text": "Going round a corner the rear wheels follow a different path from the front wheels. That is off-tracking, also called cheating.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "off tracking",
+            "cheating",
+            "different path"
+          ]
+        },
+        {
+          "id": "6.1.6.2",
+          "text": "The longer the vehicle, the more it off-tracks, and with more than one trailer the last trailer off-tracks the most.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "longer",
+            "most"
+          ]
+        },
+        {
+          "id": "6.1.6.3",
+          "text": "Steer the front end wide enough that the rear end does not run over the curb, but keep the rear of the vehicle close to the curb so nobody passes you on the right.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "front end wide",
+            "close to the curb"
+          ]
+        },
+        {
+          "id": "6.1.6.4",
+          "text": "If you cannot finish the turn without entering another lane, turn wide as you complete the turn, not before you start it.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "complete the turn",
+            "not before"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is off-tracking?",
+          "a": "The rear wheels follow a different, tighter path than the front wheels round a corner.",
+          "factId": "6.1.6.1"
+        },
+        {
+          "q": "How do you turn a combination at a corner?",
+          "a": "Swing the front wide, keep the rear close to the curb, and turn wide as you finish, not before.",
+          "factId": "6.1.6.3"
+        },
+        {
+          "q": "Why not swing wide to the left before the turn?",
+          "a": "It lets other drivers pass you on the right.",
+          "factId": "6.1.6.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.6.e1",
+          "q": "You cannot finish a right turn without using another lane. What is correct?",
+          "choices": [
+            "Swing wide left before you start",
+            "Turn wide as you complete the turn",
+            "Stop and wait for a gap",
+            "Back up and try again"
+          ],
+          "answer": 1,
+          "why": "Turning wide at the end keeps the rear near the curb, so nobody squeezes past on your right.",
+          "factId": "6.1.6.4",
+          "page": "6-3"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Round a corner the back wheels cut inside the front ones. That is off-tracking, which drivers call cheating. The longer the rig, the more it cuts in, and with two or three trailers the last one cuts in most."
+        },
+        {
+          "h": "How to take the corner"
+        },
+        {
+          "ul": [
+            "Steer the front end wide enough that the rear does not climb the curb.",
+            "Keep the rear of your vehicle close to the curb, so no one can pass you on the right.",
+            "If you cannot finish without using another lane, turn wide as you COMPLETE the turn."
+          ]
+        },
+        {
+          "note": "Do not swing wide to the left before you start. That opens a gap on your right, and a car will take it."
+        }
+      ]
     },
     {
       "id": "6.1.7",
       "title": "Backing with a Trailer.",
       "pdfPages": "89-90",
       "manualPages": "6-3 to 6-4",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.1.7.1",
+          "text": "To back a trailer, turn the steering wheel in the opposite direction from the way you want the trailer to go, then turn the wheel back the other way to follow the trailer.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "opposite direction",
+            "follow"
+          ]
+        },
+        {
+          "id": "6.1.7.2",
+          "text": "Position the vehicle so you can back in a straight line whenever you can.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "straight line"
+          ]
+        },
+        {
+          "id": "6.1.7.3",
+          "text": "If you must back on a curved path, back to the driver's side so you can see.",
+          "critical": true,
+          "page": "6-3",
+          "keywords": [
+            "driver's side",
+            "see"
+          ]
+        },
+        {
+          "id": "6.1.7.4",
+          "text": "Before you back, look at your line of travel: get out and walk around the vehicle, and check the clearance to the sides and overhead.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "walk around",
+            "clearance"
+          ]
+        },
+        {
+          "id": "6.1.7.5",
+          "text": "Use both outside mirrors, back slowly, and correct drift at once by turning the top of the steering wheel in the direction of the drift.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "both mirrors",
+            "slowly",
+            "drift"
+          ]
+        },
+        {
+          "id": "6.1.7.6",
+          "text": "Pull forward to reposition as often as you need. A pull-up is not a fault.",
+          "critical": false,
+          "page": "6-4",
+          "keywords": [
+            "pull up",
+            "reposition"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which way do you turn the wheel to back a trailer?",
+          "a": "The opposite way from the direction you want the trailer to go.",
+          "factId": "6.1.7.1"
+        },
+        {
+          "q": "Which side do you back toward on a curved path?",
+          "a": "The driver's side, so you can see.",
+          "factId": "6.1.7.3"
+        },
+        {
+          "q": "How do you correct trailer drift while backing?",
+          "a": "Turn the top of the wheel in the direction of the drift, at once.",
+          "factId": "6.1.7.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.1.7.e1",
+          "q": "You must back on a curved path. Which way should you back?",
+          "choices": [
+            "To the passenger side",
+            "To the driver's side",
+            "Either side",
+            "Straight only"
+          ],
+          "answer": 1,
+          "why": "Back to the driver's side so you can see the trailer and the path.",
+          "factId": "6.1.7.3",
+          "page": "6-3"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Backing a trailer reverses your instincts. With a car you turn the top of the wheel the way you want to go. With a trailer you turn it the opposite way, and once the trailer starts to turn you must turn the wheel back to follow it."
+        },
+        {
+          "h": "Every time you back"
+        },
+        {
+          "ul": [
+            "Position the rig so you can back in a straight line if you can.",
+            "If the path curves, back to the driver's side so you can see.",
+            "Look at your line of travel. Get out and walk around the vehicle. Check the clearance to the sides and overhead.",
+            "Use both outside mirrors, and get out again if you are unsure.",
+            "Back slowly, so you can correct before you are far off course.",
+            "Correct drift the moment you see it: turn the top of the wheel in the direction of the drift.",
+            "Pull forward and reposition as often as you need."
+          ]
+        }
+      ]
     },
     {
       "id": "6.2",
@@ -84,79 +815,819 @@
       "manualPages": "6-4",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Read Section 5, Air Brakes, before this. A combination has everything that section describes, and these extra parts to work the trailer brakes."
+        },
+        {
+          "ul": [
+            "The trailer hand valve.",
+            "The tractor protection valve.",
+            "The trailer air supply control.",
+            "The service and emergency air-lines, and their glad hands.",
+            "Trailer air tanks and shut-off valves."
+          ]
+        }
+      ]
     },
     {
       "id": "6.2.1",
       "title": "Trailer Hand Valve",
       "pdfPages": "90-91",
       "manualPages": "6-4 to 6-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.1.1",
+          "text": "The trailer hand valve, also called the trolley valve or Johnson bar, works the trailer brakes alone.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "hand valve",
+            "trolley",
+            "johnson bar"
+          ]
+        },
+        {
+          "id": "6.2.1.2",
+          "text": "Use the trailer hand valve only to test the trailer brakes. Do not use it while driving, because it can make the trailer skid.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "only to test",
+            "skid"
+          ]
+        },
+        {
+          "id": "6.2.1.3",
+          "text": "The foot brake sends air to every brake on the rig, including the trailer, so there is much less danger of a skid or a jackknife.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "foot brake",
+            "all"
+          ]
+        },
+        {
+          "id": "6.2.1.4",
+          "text": "Never use the hand valve for parking. The air can leak away and unlock the brakes. Use the parking brakes, and chock the wheels if the trailer has no spring brakes.",
+          "critical": true,
+          "page": "6-4",
+          "keywords": [
+            "never",
+            "parking",
+            "chocks"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the trailer hand valve for?",
+          "a": "Testing the trailer brakes only. Never for driving or parking.",
+          "factId": "6.2.1.2"
+        },
+        {
+          "q": "Why not drive on the trailer hand valve?",
+          "a": "It brakes the trailer alone, which can make it skid.",
+          "factId": "6.2.1.2"
+        },
+        {
+          "q": "What are the other names for the trailer hand valve?",
+          "a": "The trolley valve, or the Johnson bar.",
+          "factId": "6.2.1.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.1.e1",
+          "q": "When may you use the trailer hand valve?",
+          "choices": [
+            "Any time you slow down",
+            "To test the trailer brakes",
+            "To park the rig",
+            "On downgrades"
+          ],
+          "answer": 1,
+          "why": "It is for testing the trailer brakes. Using it in driving can skid the trailer, and it must never park the rig.",
+          "factId": "6.2.1.2",
+          "page": "6-4"
+        }
+      ],
+      "reading": [
+        {
+          "p": "The trailer hand valve, which drivers call the trolley valve or the Johnson bar, brakes the trailer and nothing else."
+        },
+        {
+          "note": "Use it ONLY to test the trailer brakes. Braking the trailer alone is how a trailer skid starts."
+        },
+        {
+          "p": "The foot brake sends air to every brake on the rig, trailer included, so it is far less likely to skid or jackknife. Never park on the hand valve either: the air can leak away and release the brakes. Use the parking brakes, and chock the wheels if the trailer has no spring brakes."
+        }
+      ]
     },
     {
       "id": "6.2.2",
       "title": "Tractor Protection Valve",
       "pdfPages": "91",
       "manualPages": "6-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.2.1",
+          "text": "The tractor protection valve keeps air in the tractor's brake system if the trailer breaks away or springs a bad leak.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "tractor protection",
+            "breaks away"
+          ]
+        },
+        {
+          "id": "6.2.2.2",
+          "text": "The trailer air supply control in the cab opens and shuts the tractor protection valve.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "air supply control",
+            "opens",
+            "shuts"
+          ]
+        },
+        {
+          "id": "6.2.2.3",
+          "text": "The tractor protection valve closes by itself when the air pressure falls into the range of 20 to 45 psi.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "20",
+            "45",
+            "automatically"
+          ]
+        },
+        {
+          "id": "6.2.2.4",
+          "text": "When it closes it stops air leaving the tractor and lets the air out of the trailer emergency line, which puts the trailer emergency brakes on.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "emergency line",
+            "emergency brakes"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the tractor protection valve do?",
+          "a": "It keeps air in the tractor if the trailer breaks away or leaks badly.",
+          "factId": "6.2.2.1"
+        },
+        {
+          "q": "At what pressure does the tractor protection valve close by itself?",
+          "a": "Between 20 and 45 psi.",
+          "factId": "6.2.2.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.2.e1",
+          "q": "At what pressure does the tractor protection valve close automatically?",
+          "choices": [
+            "55 to 75 psi",
+            "45 to 60 psi",
+            "20 to 45 psi",
+            "10 to 15 psi"
+          ],
+          "answer": 2,
+          "why": "It closes in the 20 to 45 psi range, which also puts the trailer emergency brakes on.",
+          "factId": "6.2.2.3",
+          "page": "6-5"
+        }
+      ],
+      "reading": [
+        {
+          "p": "If the trailer tears away or bursts a line, the tractor must keep its own air. That is the tractor protection valve's job, and the trailer air supply control in the cab opens and shuts it."
+        },
+        {
+          "numbers": [
+            {
+              "value": "20 to 45 psi",
+              "what": "where the tractor protection valve closes by itself"
+            }
+          ]
+        },
+        {
+          "note": "When it closes it stops air leaving the tractor AND lets the air out of the trailer emergency line, so the trailer emergency brakes come on. You can lose control, so stop before it gets that far."
+        }
+      ]
     },
     {
       "id": "6.2.3",
       "title": "Trailer Air Supply Control",
       "pdfPages": "91",
       "manualPages": "6-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.3.1",
+          "text": "On a newer vehicle the trailer air supply control is a red eight-sided knob.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "red",
+            "eight sided",
+            "knob"
+          ]
+        },
+        {
+          "id": "6.2.3.2",
+          "text": "Push the knob in to supply the trailer with air. Pull it out to shut the air off and put the trailer emergency brakes on.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "push in",
+            "pull out"
+          ]
+        },
+        {
+          "id": "6.2.3.3",
+          "text": "The knob pops out by itself, closing the tractor protection valve, when the pressure drops into the 20 to 45 psi range.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "pops out",
+            "20",
+            "45"
+          ]
+        },
+        {
+          "id": "6.2.3.4",
+          "text": "An older vehicle may have a lever instead, with a normal position for pulling a trailer and an emergency position that shuts the air off.",
+          "critical": false,
+          "page": "6-5",
+          "keywords": [
+            "lever",
+            "normal",
+            "emergency"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the trailer air supply control look like?",
+          "a": "A red eight-sided knob on a newer vehicle.",
+          "factId": "6.2.3.1"
+        },
+        {
+          "q": "Push in or pull out to supply the trailer with air?",
+          "a": "Push in to supply air. Pull out to shut it off and set the trailer emergency brakes.",
+          "factId": "6.2.3.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.3.e1",
+          "q": "What color and shape is the trailer air supply control?",
+          "choices": [
+            "A yellow diamond knob",
+            "A red eight-sided knob",
+            "A blue round knob",
+            "A black lever"
+          ],
+          "answer": 1,
+          "why": "Red and eight-sided. The yellow diamond is the parking brake control.",
+          "factId": "6.2.3.1",
+          "page": "6-5"
+        }
+      ],
+      "reading": [
+        {
+          "p": "The trailer air supply control is the red, eight-sided knob. Do not confuse it with the yellow diamond parking brake knob beside it."
+        },
+        {
+          "ul": [
+            "Push it IN to supply the trailer with air.",
+            "Pull it OUT to shut the air off and put the trailer emergency brakes on."
+          ]
+        },
+        {
+          "note": "It pops out by itself, closing the tractor protection valve, when the pressure drops into the 20 to 45 psi range. An older vehicle may use a lever marked normal and emergency instead."
+        }
+      ]
     },
     {
       "id": "6.2.4",
       "title": "Trailer Air-lines",
       "pdfPages": "91",
       "manualPages": "6-5",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.4.1",
+          "text": "Every combination has two air-lines between the units: the service line and the emergency line.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "two",
+            "service",
+            "emergency"
+          ]
+        },
+        {
+          "id": "6.2.4.2",
+          "text": "The service line, also called the control or signal line, carries the air that the foot brake or the hand valve controls, and its pressure rises with how hard you press.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "service line",
+            "control line",
+            "signal"
+          ]
+        },
+        {
+          "id": "6.2.4.3",
+          "text": "The service line feeds relay valves, which let the trailer brakes come on faster than they otherwise could.",
+          "critical": false,
+          "page": "6-5",
+          "keywords": [
+            "relay valves",
+            "faster"
+          ]
+        },
+        {
+          "id": "6.2.4.4",
+          "text": "The emergency line, also called the supply line, does two things: it fills the trailer air tanks, and it controls the emergency brakes.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "emergency line",
+            "supply line",
+            "two"
+          ]
+        },
+        {
+          "id": "6.2.4.5",
+          "text": "Losing pressure in the emergency line puts the trailer emergency brakes on and makes the tractor protection valve close, so the air supply knob pops out.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "loss of air",
+            "emergency brakes",
+            "pops out"
+          ]
+        },
+        {
+          "id": "6.2.4.6",
+          "text": "The emergency line is coded red and the service line blue, so they are not mixed up.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "red",
+            "blue"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the two air-lines in a combination?",
+          "a": "The service line and the emergency line.",
+          "factId": "6.2.4.1"
+        },
+        {
+          "q": "What does the emergency line do?",
+          "a": "It fills the trailer air tanks and controls the trailer emergency brakes.",
+          "factId": "6.2.4.4"
+        },
+        {
+          "q": "Which color is which air-line?",
+          "a": "Red for emergency (supply), blue for service.",
+          "factId": "6.2.4.6"
+        },
+        {
+          "q": "What happens when the emergency line loses pressure?",
+          "a": "The trailer emergency brakes come on and the tractor protection valve closes.",
+          "factId": "6.2.4.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.4.e1",
+          "q": "Which line supplies the trailer air tanks?",
+          "choices": [
+            "The service line",
+            "The emergency line",
+            "The control line",
+            "The signal line"
+          ],
+          "answer": 1,
+          "why": "The emergency, or supply, line fills the tanks and controls the emergency brakes. The service line carries the braking signal.",
+          "factId": "6.2.4.4",
+          "page": "6-5"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Two air-lines run between every pair of units: tractor to trailer, trailer to dolly, dolly to second trailer."
+        },
+        {
+          "h": "Service line"
+        },
+        {
+          "p": "Also called the control line or the signal line. It carries the air the foot brake and the hand valve control, and the harder you press, the higher its pressure. It feeds relay valves, which bring the trailer brakes on faster."
+        },
+        {
+          "h": "Emergency line"
+        },
+        {
+          "p": "Also called the supply line. It does two jobs: it fills the trailer air tanks, and it controls the emergency brakes."
+        },
+        {
+          "note": "Lose pressure in the emergency line, from a trailer breaking loose or a hose letting go, and the trailer emergency brakes come on and the tractor protection valve closes. The emergency line is coded red, the service line blue."
+        }
+      ]
     },
     {
       "id": "6.2.5",
       "title": "Hose Couplers (Glad Hands)",
       "pdfPages": "91-92",
       "manualPages": "6-5 to 6-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.5.1",
+          "text": "Glad hands are the couplers that join the service and emergency lines from the tractor to the trailer, and they have a rubber seal that keeps the air in.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "glad hands",
+            "rubber seal"
+          ]
+        },
+        {
+          "id": "6.2.5.2",
+          "text": "Clean the couplers and the rubber seals before you connect them.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "clean",
+            "before"
+          ]
+        },
+        {
+          "id": "6.2.5.3",
+          "text": "To connect a glad hand, press the two seals together with the couplers at a 90 degree angle to each other, then turn the glad hand to lock it.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "90 degree",
+            "turn",
+            "lock"
+          ]
+        },
+        {
+          "id": "6.2.5.4",
+          "text": "Blue is the service line and red is the emergency line, and some lines carry metal tags stamped service and emergency.",
+          "critical": true,
+          "page": "6-5",
+          "keywords": [
+            "blue",
+            "red",
+            "tags"
+          ]
+        },
+        {
+          "id": "6.2.5.5",
+          "text": "Cross the air-lines and supply air goes to the service line instead of the tanks, so the trailer spring brakes will not release. If they do not release when you push the air supply knob, check the connections.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "crossed",
+            "will not release",
+            "check"
+          ]
+        },
+        {
+          "id": "6.2.5.6",
+          "text": "An older trailer has no spring brakes. With the air leaked away and the lines crossed you could drive off with no trailer brakes at all, so always test the trailer brakes before you drive.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "older",
+            "no trailer brakes",
+            "test"
+          ]
+        },
+        {
+          "id": "6.2.5.7",
+          "text": "Put the hoses on the dummy couplers when they are not connected to a trailer, so water and dirt stay out of the air lines.",
+          "critical": false,
+          "page": "6-6",
+          "keywords": [
+            "dummy couplers",
+            "dirt"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you connect glad hands?",
+          "a": "Clean the seals, press them together with the couplers at 90 degrees, and turn to lock.",
+          "factId": "6.2.5.3"
+        },
+        {
+          "q": "What happens if you cross the air-lines?",
+          "a": "Supply air goes to the service line, the tanks do not fill, and the spring brakes will not release.",
+          "factId": "6.2.5.5"
+        },
+        {
+          "q": "The trailer spring brakes will not release. What do you check?",
+          "a": "The air-line connections, for crossed glad hands.",
+          "factId": "6.2.5.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.5.e1",
+          "q": "At what angle are the glad hand couplers held when you press the seals together?",
+          "choices": [
+            "Flat against each other",
+            "45 degrees",
+            "90 degrees",
+            "180 degrees"
+          ],
+          "answer": 2,
+          "why": "Press the seals together with the couplers at 90 degrees, then turn to lock.",
+          "factId": "6.2.5.3",
+          "page": "6-5"
+        },
+        {
+          "id": "6.2.5.e2",
+          "q": "You push the air supply knob in and the trailer spring brakes do not release. What is likely?",
+          "choices": [
+            "The tanks are full",
+            "The air-lines are crossed",
+            "The parking brake is off",
+            "The hand valve is on"
+          ],
+          "answer": 1,
+          "why": "Crossed lines send supply air to the service line, so no air reaches the tanks to release the spring brakes.",
+          "factId": "6.2.5.5",
+          "page": "6-6"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Glad hands are the couplers that join the air-lines between tractor and trailer. A rubber seal inside each one keeps the air in."
+        },
+        {
+          "h": "Connecting them"
+        },
+        {
+          "ul": [
+            "Clean the couplers and the rubber seals first.",
+            "Press the two seals together with the couplers at a 90 degree angle to each other.",
+            "Turn the glad hand on the hose to join and lock them.",
+            "Couple like to like: blue is service, red is emergency. Some lines carry metal tags stamped service and emergency."
+          ]
+        },
+        {
+          "note": "Cross the lines and supply air goes to the service line instead of the tanks. No air reaches the trailer spring brakes, so they will not release. If they do not release when you push the air supply knob in, check the connections."
+        },
+        {
+          "p": "On an older trailer with no spring brakes, crossed lines are worse: if the tank air has leaked away you could drive off with no trailer brakes at all. Always test the trailer brakes before you drive, by pulling gently against them in a low gear. Put unused hoses on the dummy couplers to keep dirt and water out."
+        }
+      ]
     },
     {
       "id": "6.2.6",
       "title": "Trailer Air Tanks",
       "pdfPages": "92",
       "manualPages": "6-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.6.1",
+          "text": "Each trailer and converter dolly has one or more air tanks, filled by the emergency line from the tractor.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "air tanks",
+            "emergency line"
+          ]
+        },
+        {
+          "id": "6.2.6.2",
+          "text": "Relay valves send air from the tanks to the brakes, and the service line pressure tells them how much to send.",
+          "critical": false,
+          "page": "6-6",
+          "keywords": [
+            "relay valves",
+            "service line"
+          ]
+        },
+        {
+          "id": "6.2.6.3",
+          "text": "Drain each trailer air tank every day. Water and oil build-up stops the brakes working correctly.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "drain",
+            "every day"
+          ]
+        },
+        {
+          "id": "6.2.6.4",
+          "text": "If the tanks have automatic drains, still open the drains to be sure.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "automatic",
+            "still open"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How often do you drain the trailer air tanks?",
+          "a": "Every day, each tank.",
+          "factId": "6.2.6.3"
+        },
+        {
+          "q": "What fills the trailer air tanks?",
+          "a": "The emergency, or supply, line from the tractor.",
+          "factId": "6.2.6.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Every trailer and converter dolly carries one or more air tanks, filled through the emergency line from the tractor. Relay valves send that air to the brakes, and the service line pressure tells them how much."
+        },
+        {
+          "note": "Drain each tank every day. Water and oil in a tank stop the brakes working correctly. Automatic drains keep most moisture out, but open the drains anyway to be sure."
+        }
+      ]
     },
     {
       "id": "6.2.7",
       "title": "Shut-off Valves",
       "pdfPages": "92",
       "manualPages": "6-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.7.1",
+          "text": "Shut-off valves, also called cut-out cocks, sit in the service and supply lines at the back of a trailer that can tow another trailer.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "shut off valves",
+            "cut out cocks",
+            "back"
+          ]
+        },
+        {
+          "id": "6.2.7.2",
+          "text": "Every shut-off valve must be open, except the ones at the back of the last trailer, which must be closed.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "open",
+            "last trailer",
+            "closed"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which shut-off valves are open and which closed?",
+          "a": "All open, except the ones at the back of the last trailer, which are closed.",
+          "factId": "6.2.7.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.7.e1",
+          "q": "In a set of doubles, which shut-off valves must be closed?",
+          "choices": [
+            "All of them",
+            "None of them",
+            "Those at the back of the last trailer",
+            "Those on the tractor"
+          ],
+          "answer": 2,
+          "why": "Every valve is open except the ones at the rear of the last trailer.",
+          "factId": "6.2.7.2",
+          "page": "6-6"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A trailer that can tow another trailer has shut-off valves, which drivers call cut-out cocks, in the service and supply lines at its rear. They close the lines when nothing is coupled behind."
+        },
+        {
+          "note": "Every shut-off valve must be OPEN, except the ones at the back of the LAST trailer, which must be CLOSED."
+        }
+      ]
     },
     {
       "id": "6.2.8",
-      "title": "Trailer Service, Parking and Emergency",
+      "title": "Trailer Service, Parking and Emergency Brakes",
       "pdfPages": "92",
       "manualPages": "6-6",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.2.8.1",
+          "text": "A newer trailer has spring brakes like a truck or tractor, but a converter dolly or a trailer built before 1975 is not required to have them.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "1975",
+            "spring brakes",
+            "not required"
+          ]
+        },
+        {
+          "id": "6.2.8.2",
+          "text": "A trailer without spring brakes has emergency brakes that work from the air stored in its own tank, and it has no parking brake at all.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "emergency brakes",
+            "no parking brake"
+          ]
+        },
+        {
+          "id": "6.2.8.3",
+          "text": "Those emergency brakes come on whenever the emergency line loses air, the air supply knob is pulled out, or the trailer is disconnected.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "come on",
+            "disconnected"
+          ]
+        },
+        {
+          "id": "6.2.8.4",
+          "text": "They hold only while air remains in the trailer tank. The air leaks away in time, and then there are no brakes, so always chock the wheels of a trailer without spring brakes.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "leak away",
+            "chocks"
+          ]
+        },
+        {
+          "id": "6.2.8.5",
+          "text": "You may not notice a big leak in the service line until you put the brakes on, and then the tank pressure drops fast enough to set the emergency brakes.",
+          "critical": false,
+          "page": "6-6",
+          "keywords": [
+            "service line",
+            "until"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which trailers need not have spring brakes?",
+          "a": "Converter dollies and trailers built before 1975.",
+          "factId": "6.2.8.1"
+        },
+        {
+          "q": "Why chock a trailer with no spring brakes?",
+          "a": "Its emergency brakes hold only while tank air lasts. The air leaks away and the trailer can roll.",
+          "factId": "6.2.8.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.2.8.e1",
+          "q": "You park a trailer built before 1975 with no spring brakes. What must you do?",
+          "choices": [
+            "Nothing, the emergency brakes hold",
+            "Chock the wheels",
+            "Leave the hand valve applied",
+            "Leave the engine running"
+          ],
+          "answer": 1,
+          "why": "Its emergency brakes hold only while tank air lasts, so chock the wheels.",
+          "factId": "6.2.8.4",
+          "page": "6-6"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A newer trailer has spring brakes, held off by air and applied by springs, just as a tractor does. A converter dolly, or a trailer built before 1975, need not have them."
+        },
+        {
+          "h": "A trailer without spring brakes"
+        },
+        {
+          "ul": [
+            "Its emergency brakes run on the air stored in its own tank.",
+            "It has no parking brake at all.",
+            "The emergency brakes come on when the emergency line loses air, when the air supply knob is pulled out, or when the trailer is disconnected."
+          ]
+        },
+        {
+          "note": "Those brakes hold only while there is air in the tank. The air leaks away, and then the trailer has no brakes. Always chock the wheels when you park a trailer without spring brakes."
+        }
+      ],
+      "titleFixed": true
     },
     {
       "id": "6.3",
@@ -165,25 +1636,200 @@
       "manualPages": "6-6",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Antilock brakes on a combination work as Section 5 describes. Two things are specific to trailers: which ones must have them, and how to brake when only one unit has them."
+        }
+      ]
     },
     {
       "id": "6.3.1",
       "title": "Trailers Required to Have ABS",
       "pdfPages": "92-93",
       "manualPages": "6-6 to 6-7",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.3.1.1",
+          "text": "Every trailer and converter dolly built on or after 1 March 1998 must have antilock brakes.",
+          "critical": true,
+          "page": "6-6",
+          "keywords": [
+            "march 1 1998",
+            "trailers",
+            "dollies"
+          ]
+        },
+        {
+          "id": "6.3.1.2",
+          "text": "A trailer's yellow ABS malfunction lamp is on the left side, at the front or the rear corner.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "yellow",
+            "left side"
+          ]
+        },
+        {
+          "id": "6.3.1.3",
+          "text": "On an older unit, look underneath for the electronic control unit and the wheel speed sensor wires at the back of the brakes.",
+          "critical": false,
+          "page": "6-7",
+          "keywords": [
+            "electronic control unit",
+            "wheel speed sensor"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "From what date must trailers have ABS?",
+          "a": "1 March 1998, trailers and converter dollies alike.",
+          "factId": "6.3.1.1"
+        },
+        {
+          "q": "Where is a trailer's ABS malfunction lamp?",
+          "a": "On the left side, front or rear corner, and it is yellow.",
+          "factId": "6.3.1.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.3.1.e1",
+          "q": "Where do you look for a trailer's ABS malfunction lamp?",
+          "choices": [
+            "On the dash",
+            "On the left side of the trailer",
+            "On the right rear corner",
+            "Inside the trailer"
+          ],
+          "answer": 1,
+          "why": "A trailer's yellow ABS lamp is on the left side, at the front or rear corner.",
+          "factId": "6.3.1.2",
+          "page": "6-7"
+        }
+      ],
+      "reading": [
+        {
+          "numbers": [
+            {
+              "value": "1 March 1998",
+              "what": "every trailer and converter dolly built on or after this date must have ABS"
+            }
+          ]
+        },
+        {
+          "p": "Many built earlier were given it anyway. A trailer's ABS malfunction lamp is yellow and sits on the LEFT side, at the front or the rear corner."
+        },
+        {
+          "note": "On an older unit you may have to look underneath for the electronic control unit and the wheel speed sensor wires at the back of the brakes."
+        }
+      ]
     },
     {
       "id": "6.3.2",
       "title": "Braking with ABS",
       "pdfPages": "93",
       "manualPages": "6-7",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.3.2.1",
+          "text": "ABS is an addition to your normal brakes. It does not change your normal braking, and it works only when a wheel is about to lock.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "addition",
+            "about to lock"
+          ]
+        },
+        {
+          "id": "6.3.2.2",
+          "text": "Brake as you always have: only the force you need to stop safely and stay in control, whether the ABS is on the tractor, the trailer or both.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "as you always have",
+            "only the force"
+          ]
+        },
+        {
+          "id": "6.3.2.3",
+          "text": "With ABS on the trailer only, the trailer is less likely to swing out. If you lose steering control or start a tractor jackknife, ease off the brakes until you have control.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "trailer only",
+            "ease off"
+          ]
+        },
+        {
+          "id": "6.3.2.4",
+          "text": "If the ABS fails you still have your normal brakes. Drive normally and get it serviced soon.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "malfunctions",
+            "normal brakes"
+          ]
+        },
+        {
+          "id": "6.3.2.5",
+          "text": "ABS does not let you drive faster, follow more closely, or drive less carefully.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "not",
+            "faster",
+            "closely"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Does ABS let you follow more closely?",
+          "a": "No. It does not let you drive faster, follow closer, or drive less carefully.",
+          "factId": "6.3.2.5"
+        },
+        {
+          "q": "Only the trailer has ABS and the tractor starts to jackknife. What do you do?",
+          "a": "Ease off the brakes, if it is safe, until you have control.",
+          "factId": "6.3.2.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.3.2.e1",
+          "q": "What does ABS let you do that you could not before?",
+          "choices": [
+            "Follow more closely",
+            "Drive faster in rain",
+            "Keep control in hard braking",
+            "Shorten every stop"
+          ],
+          "answer": 2,
+          "why": "It keeps the wheels from locking so you stay in control. It is no licence to drive faster or follow closer.",
+          "factId": "6.3.2.5",
+          "page": "6-7"
+        }
+      ],
+      "reading": [
+        {
+          "p": "ABS is an addition to your normal brakes. It changes nothing until a wheel is about to lock, and then it drops the pressure to a safe level so you keep control."
+        },
+        {
+          "h": "How to brake"
+        },
+        {
+          "ul": [
+            "Use only the braking force you need to stop safely and stay in control.",
+            "Brake the same way whether the ABS is on the tractor, the trailer or both.",
+            "As you slow, watch both units and ease off the brakes, if it is safe, to stay in control."
+          ]
+        },
+        {
+          "note": "With ABS on the trailer only, the trailer is less likely to swing out, but a tractor jackknife is still possible: ease off the brakes until you have control. If the ABS fails you still have normal brakes. And ABS never lets you drive faster, follow closer, or drive less carefully."
+        }
+      ]
     },
     {
       "id": "6.4",
@@ -192,79 +1838,720 @@
       "manualPages": "6-7",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Coupling and uncoupling wrongly is dangerous. The steps below are the general ones. Rigs differ, so learn the details of the truck you drive."
+        },
+        {
+          "ul": [
+            "6.4.1 Coupling a tractor-semitrailer, in 16 steps.",
+            "6.4.2 Uncoupling a tractor-semitrailer, in 10 steps.",
+            "6.4.3 to 6.4.8 Pintle hook, drawbar and gooseneck hitch."
+          ]
+        }
+      ]
     },
     {
       "id": "6.4.1",
       "title": "Coupling Tractor-Semitrailers",
       "pdfPages": "93-95",
       "manualPages": "6-7 to 6-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.1.1",
+          "text": "Before coupling, the fifth wheel must be tilted down toward the rear of the tractor, the jaws open, and the safety unlocking handle in the automatic lock position.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "tilted down",
+            "jaws open",
+            "automatic lock"
+          ]
+        },
+        {
+          "id": "6.4.1.2",
+          "text": "The fifth wheel plate must be greased. Without grease the friction between tractor and trailer causes steering problems.",
+          "critical": true,
+          "page": "6-7",
+          "keywords": [
+            "greased",
+            "steering problems"
+          ]
+        },
+        {
+          "id": "6.4.1.3",
+          "text": "Chock the trailer wheels or set its spring brakes before you back under.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "chock",
+            "spring brakes"
+          ]
+        },
+        {
+          "id": "6.4.1.4",
+          "text": "Put the tractor directly in front of the trailer. Never back under at an angle, because you can push the trailer sideways and break the landing gear.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "directly in front",
+            "never",
+            "angle"
+          ]
+        },
+        {
+          "id": "6.4.1.5",
+          "text": "The trailer must be low enough that the tractor raises it slightly as it backs under. Too low and you strike the trailer nose, too high and it will not couple correctly.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "raised slightly",
+            "too low",
+            "too high"
+          ]
+        },
+        {
+          "id": "6.4.1.6",
+          "text": "Connect the air-lines, supply air to the trailer, then shut the engine off and listen to the trailer brakes apply and release, to check for crossed lines.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "listen",
+            "crossed"
+          ]
+        },
+        {
+          "id": "6.4.1.7",
+          "text": "Lock the trailer brakes by pulling the air supply knob out before you back under.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "lock",
+            "pull out"
+          ]
+        },
+        {
+          "id": "6.4.1.8",
+          "text": "Back under in the lowest reverse gear, slowly, so you do not hit the kingpin hard.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "lowest reverse",
+            "slowly"
+          ]
+        },
+        {
+          "id": "6.4.1.9",
+          "text": "Check the coupling by raising the landing gear slightly and pulling gently forward against the locked trailer brakes.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "pull gently",
+            "locked"
+          ]
+        },
+        {
+          "id": "6.4.1.10",
+          "text": "Before you go under the rig, put the transmission in neutral, set the parking brakes, shut the engine off and take the key with you.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "key",
+            "neutral",
+            "parking brakes"
+          ]
+        },
+        {
+          "id": "6.4.1.11",
+          "text": "There must be no space between the upper and lower fifth wheel. A space means the kingpin may be sitting on top of the closed jaws, and the trailer could come loose.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "no space",
+            "on top"
+          ]
+        },
+        {
+          "id": "6.4.1.12",
+          "text": "Look into the back of the fifth wheel and check that the jaws have closed around the shank of the kingpin, not the head, with the locking lever locked and the safety latch over it.",
+          "critical": true,
+          "page": "6-8",
+          "keywords": [
+            "shank",
+            "not the head",
+            "safety latch"
+          ]
+        },
+        {
+          "id": "6.4.1.13",
+          "text": "Raise the landing gear all the way up. Never drive with it part way up, because it can catch on railroad tracks.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "all the way",
+            "railroad tracks"
+          ]
+        },
+        {
+          "id": "6.4.1.14",
+          "text": "With the trailer weight on the tractor, check the clearance between the tractor frame and the landing gear, and between the tractor tires and the trailer nose.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "clearance",
+            "landing gear",
+            "nose"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How must the fifth wheel sit before coupling?",
+          "a": "Tilted down toward the rear of the tractor, jaws open, safety unlocking handle in automatic lock position.",
+          "factId": "6.4.1.1"
+        },
+        {
+          "q": "Why never back under a trailer at an angle?",
+          "a": "You can push the trailer sideways and break the landing gear.",
+          "factId": "6.4.1.4"
+        },
+        {
+          "q": "How high should the trailer be before you back under?",
+          "a": "Low enough that the tractor raises it slightly.",
+          "factId": "6.4.1.5"
+        },
+        {
+          "q": "How much space is allowed between the upper and lower fifth wheel?",
+          "a": "None. A space means the kingpin may be on top of the jaws.",
+          "factId": "6.4.1.11"
+        },
+        {
+          "q": "What must the fifth wheel jaws close around?",
+          "a": "The shank of the kingpin, not the head.",
+          "factId": "6.4.1.12"
+        },
+        {
+          "q": "How far do you raise the landing gear?",
+          "a": "All the way up.",
+          "factId": "6.4.1.13"
+        },
+        {
+          "q": "Which gear do you use to back under the trailer?",
+          "a": "The lowest reverse gear.",
+          "factId": "6.4.1.8"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.4.1.e1",
+          "q": "After coupling, how much space should there be between the upper and lower fifth wheel?",
+          "choices": [
+            "About an inch",
+            "None at all",
+            "Half an inch",
+            "Enough to see daylight"
+          ],
+          "answer": 1,
+          "why": "Any space means the kingpin may be resting on top of the closed jaws, and the trailer could come loose.",
+          "factId": "6.4.1.11",
+          "page": "6-8"
+        },
+        {
+          "id": "6.4.1.e2",
+          "q": "The trailer is too high when you back under. What can happen?",
+          "choices": [
+            "Nothing",
+            "It will not couple correctly",
+            "The landing gear retracts",
+            "The kingpin bends"
+          ],
+          "answer": 1,
+          "why": "Too high and it will not couple correctly. Too low and the tractor strikes the trailer nose.",
+          "factId": "6.4.1.5",
+          "page": "6-8"
+        },
+        {
+          "id": "6.4.1.e3",
+          "q": "How far must the landing gear be raised before you drive?",
+          "choices": [
+            "Just off the pavement",
+            "Half way",
+            "All the way up",
+            "Until the crank is free"
+          ],
+          "answer": 2,
+          "why": "All the way up, or it can catch on railroad tracks and other things.",
+          "factId": "6.4.1.13",
+          "page": "6-9"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Sixteen steps. Work them in order, every time."
+        },
+        {
+          "h": "Get ready"
+        },
+        {
+          "ul": [
+            "1. Inspect the fifth wheel: no damaged or missing parts, securely mounted, plate greased. It must be tilted down toward the rear, jaws open, safety unlocking handle in the automatic lock position, sliding fifth wheel locked, kingpin not bent or broken.",
+            "2. Inspect the area and chock the trailer wheels, or set its spring brakes. Check the cargo is secure.",
+            "3. Position the tractor directly in front of the trailer, checking both sides in the mirrors."
+          ]
+        },
+        {
+          "note": "Never back under at an angle. You can push the trailer sideways and break the landing gear."
+        },
+        {
+          "h": "Connect"
+        },
+        {
+          "ul": [
+            "4. Back slowly until the fifth wheel just touches the trailer. Do not hit it.",
+            "5. Secure the tractor: parking brake on, transmission in neutral.",
+            "6. Check the trailer height. It should be low enough that backing under raises it slightly. Check the kingpin and fifth wheel line up.",
+            "7. Connect the emergency and then the service air-lines, checking the glad hand seals, and support the lines so they are not crushed.",
+            "8. Supply air to the trailer, wait for normal pressure, shut the engine off and LISTEN to the brakes apply and release. That is your check for crossed lines.",
+            "9. Lock the trailer brakes: pull the air supply knob out.",
+            "10. Back under in the lowest reverse gear, slowly, until the kingpin locks into the fifth wheel."
+          ]
+        },
+        {
+          "h": "Check it before you trust it"
+        },
+        {
+          "ul": [
+            "11. Raise the landing gear slightly and pull gently forward against the locked trailer brakes.",
+            "12. Secure the vehicle: neutral, parking brakes on, engine off, and take the key with you so nobody moves the truck while you are underneath.",
+            "13. Inspect the coupling with a flashlight. No space between upper and lower fifth wheel. The jaws closed around the SHANK of the kingpin, not the head. Locking lever in the lock position, safety latch over it."
+          ]
+        },
+        {
+          "note": "If the coupling is not right, do not drive it. Get it fixed."
+        },
+        {
+          "h": "Finish"
+        },
+        {
+          "ul": [
+            "14. Plug in the electrical cord, fasten the safety catch, and check the lines for damage and for anything they could catch on.",
+            "15. Raise the landing gear ALL the way up and secure the crank handle. Check the clearance between the tractor frame and the landing gear, and between the tires and the trailer nose.",
+            "16. Remove the wheel chocks and store them safely."
+          ]
+        }
+      ]
     },
     {
       "id": "6.4.2",
       "title": "Uncoupling Tractor-Semitrailers",
       "pdfPages": "95-96",
       "manualPages": "6-9 to 6-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.2.1",
+          "text": "Park on a surface that can carry the trailer's weight, with the tractor lined up straight. Pulling out at an angle damages the landing gear.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "support",
+            "lined up",
+            "angle"
+          ]
+        },
+        {
+          "id": "6.4.2.2",
+          "text": "Ease the pressure on the locking jaws by backing up gently, then set the parking brakes while the tractor is still pushing against the kingpin.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "ease pressure",
+            "backing gently"
+          ]
+        },
+        {
+          "id": "6.4.2.3",
+          "text": "Chock the trailer wheels if it has no spring brakes, or if you are not sure.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "chock",
+            "not sure"
+          ]
+        },
+        {
+          "id": "6.4.2.4",
+          "text": "Lower the landing gear until it contacts the ground firmly. With a loaded trailer, turn the crank a few extra turns in low gear to take some weight off the tractor, but do not lift the trailer off the fifth wheel.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "firm contact",
+            "extra turns",
+            "do not lift"
+          ]
+        },
+        {
+          "id": "6.4.2.5",
+          "text": "Disconnect the air-lines and put the glad hands on the dummy couplers, and hang the electrical cable with the plug down to keep moisture out.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "dummy couplers",
+            "plug down"
+          ]
+        },
+        {
+          "id": "6.4.2.6",
+          "text": "Keep your legs and feet clear of the rear tractor wheels when you pull the release handle, in case the vehicle moves.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "legs",
+            "feet",
+            "clear"
+          ]
+        },
+        {
+          "id": "6.4.2.7",
+          "text": "Pull the tractor forward until the fifth wheel comes out from under the trailer, then stop with the tractor frame still under the trailer, so it cannot fall if the landing gear collapses.",
+          "critical": true,
+          "page": "6-9",
+          "keywords": [
+            "partially clear",
+            "frame under"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why line the tractor up straight before uncoupling?",
+          "a": "Pulling out at an angle can damage the landing gear.",
+          "factId": "6.4.2.1"
+        },
+        {
+          "q": "Why stop with the tractor frame still under the trailer?",
+          "a": "So the trailer cannot fall to the ground if the landing gear collapses or sinks.",
+          "factId": "6.4.2.7"
+        },
+        {
+          "q": "How do you ease pressure on the fifth wheel locking jaws?",
+          "a": "Back up gently, then set the parking brakes while the tractor pushes the kingpin.",
+          "factId": "6.4.2.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.4.2.e1",
+          "q": "Why do you stop with the tractor frame under the trailer when uncoupling?",
+          "choices": [
+            "To save time",
+            "So the trailer cannot fall if the landing gear gives way",
+            "To keep the air-lines connected",
+            "To hold the brakes on"
+          ],
+          "answer": 1,
+          "why": "The frame catches the trailer if the landing gear collapses or sinks.",
+          "factId": "6.4.2.7",
+          "page": "6-9"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Ten steps"
+        },
+        {
+          "ul": [
+            "1. Position the rig: a surface that can carry the weight, tractor lined up straight with the trailer.",
+            "2. Ease the pressure on the locking jaws: shut off the trailer air supply to lock the trailer brakes, back up gently, then set the parking brakes while the tractor is pushing against the kingpin.",
+            "3. Chock the trailer wheels if it has no spring brakes, or if you are not sure.",
+            "4. Lower the landing gear to firm contact. If the trailer is loaded, crank a few extra turns in low gear to take some weight off the tractor, but do not lift the trailer off the fifth wheel.",
+            "5. Disconnect the air-lines to the dummy couplers, and hang the electrical cable plug down to keep moisture out.",
+            "6. Unlock the fifth wheel: raise the release handle lock and pull the handle open. Keep your legs and feet clear of the rear tractor wheels.",
+            "7. Pull the tractor partially clear, stopping with the frame still under the trailer.",
+            "8. Secure the tractor: parking brake on, transmission in neutral.",
+            "9. Inspect the trailer supports: the ground is holding it, the landing gear is not damaged.",
+            "10. Pull the tractor clear."
+          ]
+        },
+        {
+          "note": "Step 7 matters: the frame under the trailer catches it if the landing gear collapses or sinks."
+        }
+      ]
     },
     {
       "id": "6.4.3",
       "title": "Coupling a Pintle Hook",
       "pdfPages": "96-97",
       "manualPages": "6-10 to 6-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.3.1",
+          "text": "Before you use a pintle hook, check for worn, damaged or missing parts and make sure the mount is secure. A pintle hook that is not secured can separate from the vehicle.",
+          "critical": true,
+          "page": "6-10",
+          "keywords": [
+            "pintle hook",
+            "secure",
+            "separate"
+          ]
+        },
+        {
+          "id": "6.4.3.2",
+          "text": "Lower the drawbar eye over the horn of the pintle hook, push the latch closed, and insert the tethered lock pin. Locked correctly, the lock handle sits flush with the top of the latch.",
+          "critical": true,
+          "page": "6-10",
+          "keywords": [
+            "drawbar eye",
+            "lock pin",
+            "flush"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you know a pintle hook is locked?",
+          "a": "The lock handle rotates up until it is flush with the top of the latch, and the lock pin is in.",
+          "factId": "6.4.3.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Inspect the pintle hook for worn, damaged or missing parts, and check the mount is secure.",
+            "2. Unlock and remove the tethered lock pin, lift the lock handle clear of the lock seat, and rotate the latch up until it stands upright.",
+            "3. Lower the drawbar eye over the horn of the hook.",
+            "4. Push the latch closed. Locked correctly, the lock handle sits flush with the top of the latch. Insert the tethered lock pin."
+          ]
+        },
+        {
+          "note": "A hook that is not secured to the mount, or a latch that is not correctly locked, can separate the trailer from the vehicle."
+        }
+      ]
     },
     {
       "id": "6.4.4",
       "title": "Uncoupling a Pintle Hook",
       "pdfPages": "97",
       "manualPages": "6-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.4.1",
+          "text": "To uncouple a pintle hook, park on a firm level surface, block the trailer tires, and disconnect the electrical connector, the breakaway brake switch lanyard and the safety chains before you unlock the coupler.",
+          "critical": true,
+          "page": "6-11",
+          "keywords": [
+            "level",
+            "block",
+            "breakaway",
+            "safety chains"
+          ]
+        },
+        {
+          "id": "6.4.4.2",
+          "text": "Check the ground will carry the tongue load before you extend the jack.",
+          "critical": true,
+          "page": "6-11",
+          "keywords": [
+            "ground",
+            "jack",
+            "tongue load"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What comes off before you unlock a pintle hook?",
+          "a": "The electrical connector, the breakaway brake switch lanyard and the safety chains.",
+          "factId": "6.4.4.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Park the trailer on a firm level surface and block the tires.",
+            "2. Disconnect the electrical connector, the breakaway brake switch lanyard and the safety chains.",
+            "3. Unlock the coupler and open it.",
+            "4. Check the ground under the jack pad will carry the tongue load.",
+            "5. Extend the jack to take the weight of the tongue.",
+            "6. Raise the coupler above the hitch.",
+            "7. Drive the tow vehicle forward."
+          ]
+        }
+      ]
     },
     {
       "id": "6.4.5",
       "title": "Coupling a Drawbar",
       "pdfPages": "97-98",
       "manualPages": "6-11 to 6-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.5.1",
+          "text": "On a drawbar coupling, reverse very slowly until the ball cup sits exactly above the coupling ball, then lower the drawbeam so the cup covers the ball completely.",
+          "critical": true,
+          "page": "6-11",
+          "keywords": [
+            "slowly",
+            "exactly above",
+            "covers"
+          ]
+        },
+        {
+          "id": "6.4.5.2",
+          "text": "If the safety cover bar will not seat properly in its housing, travel is strictly forbidden.",
+          "critical": true,
+          "page": "6-12",
+          "keywords": [
+            "safety cover bar",
+            "forbidden"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "The drawbar safety cover bar will not seat. May you drive?",
+          "a": "No. Travel is strictly forbidden until it seats properly.",
+          "factId": "6.4.5.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Remove the safety lock screw, loosen the second lock screw and turn the adjustment screw out at least five turns, then rotate the safety cover bar fully open.",
+            "2. Reverse very slowly until the ball cup drawbar eye is exactly above the coupling ball.",
+            "3. Lower the drawbeam until the cup completely covers the ball.",
+            "4. Rotate the safety cover bar back in and fit the lock screws with their self-locking nuts, tightened to 350 to 400 Nm.",
+            "5. Adjust the adjustment screw for 0.3 to 0.5 mm vertical clearance between the guard disk and the ball cup, and lock it with the counter nut.",
+            "6. Fit the rubber bellows cover over the visible part of the ball.",
+            "7. Lubricate the inside of the ball cup through the grease nipple."
+          ]
+        },
+        {
+          "note": "If the safety cover bar will not lodge properly in its seating, travel is strictly forbidden."
+        }
+      ]
     },
     {
       "id": "6.4.6",
       "title": "Uncoupling a Drawbar",
       "pdfPages": "98",
       "manualPages": "6-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.6.1",
+          "text": "Before uncoupling a drawbar, make sure the trailer brake is on.",
+          "critical": true,
+          "page": "6-12",
+          "keywords": [
+            "trailer brake",
+            "on"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the first step in uncoupling a drawbar?",
+          "a": "Make sure the trailer brake is on.",
+          "factId": "6.4.6.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Make sure the trailer brake is on.",
+            "2. Remove the rubber bellows cover, loosen the adjustment screw and counter nut, and remove the safety lock screws.",
+            "3. Rotate the safety cover bar fully open, lift the drawbeam until the ball is fully visible, then move forward very slowly and rotate the cover bar back into its housing.",
+            "4. Fit the safety lock screw and tighten its self-locking nut."
+          ]
+        }
+      ]
     },
     {
       "id": "6.4.7",
       "title": "Coupling a Gooseneck Hitch",
       "pdfPages": "98",
       "manualPages": "6-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.7.1",
+          "text": "Every trailer is required by law to have safety chains, and they are attached when you couple a gooseneck hitch.",
+          "critical": true,
+          "page": "6-12",
+          "keywords": [
+            "safety chains",
+            "law"
+          ]
+        },
+        {
+          "id": "6.4.7.2",
+          "text": "Check all the lights, brake lights included, after you connect the trailer light wiring.",
+          "critical": true,
+          "page": "6-12",
+          "keywords": [
+            "lights",
+            "brake lights"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Are safety chains optional on a trailer?",
+          "a": "No. All trailers are required by law to have them.",
+          "factId": "6.4.7.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Open the clamp latch on the gooseneck coupler and check the ball is properly lubricated.",
+            "2. Position the coupler directly over the ball, lower the trailer into place and latch the clamp.",
+            "3. Attach the safety chains. Every trailer is required by law to have them.",
+            "4. Connect the trailer light wiring and check all the lights, including the brake lights.",
+            "5. Lower and stow the trailer jacks, letting the weight settle onto the tow vehicle."
+          ]
+        }
+      ]
     },
     {
       "id": "6.4.8",
       "title": "Uncoupling a Gooseneck Hitch",
       "pdfPages": "98",
       "manualPages": "6-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.4.8.1",
+          "text": "To uncouple a gooseneck hitch, remove the safety pin and clip, rotate the handle, raise the trailer off the ball, then install the safety pin and clip again.",
+          "critical": true,
+          "page": "6-12",
+          "keywords": [
+            "safety pin",
+            "clip",
+            "raise"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you do with the safety pin after lifting a gooseneck off the ball?",
+          "a": "Install the safety pin and clip again.",
+          "factId": "6.4.8.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "1. Remove the safety pin and clip.",
+            "2. Rotate the handle and raise the trailer off the ball. The coupler returns to the load position by itself.",
+            "3. Install the safety pin and clip."
+          ]
+        }
+      ]
     },
     {
       "id": "6.5",
@@ -273,26 +2560,327 @@
       "manualPages": "6-12 to 6-13",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Inspect a combination with the same seven-step method as any vehicle. There is more of everything to check, tires, wheels, lights and reflectors, and these new things as well."
+        }
+      ]
     },
     {
       "id": "6.5.1",
       "title": "Additional Things to Check during a Walk-around Inspection",
       "pdfPages": "99",
       "manualPages": "6-13",
-      "facts": [],
-      "cards": [],
-      "exam": [],
-      "titleFixed": true
+      "facts": [
+        {
+          "id": "6.5.1.1",
+          "text": "Check the lower fifth wheel: securely mounted to the frame, no missing or damaged parts, enough grease, no visible space between the upper and lower fifth wheel.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "lower fifth wheel",
+            "no visible space",
+            "grease"
+          ]
+        },
+        {
+          "id": "6.5.1.2",
+          "text": "Check the locking jaws are around the shank of the kingpin, not the head, with the release arm properly seated and the safety latch engaged.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "shank",
+            "release arm",
+            "safety latch"
+          ]
+        },
+        {
+          "id": "6.5.1.3",
+          "text": "Check the upper fifth wheel: glide plate securely mounted to the trailer frame, kingpin not damaged.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "glide plate",
+            "kingpin"
+          ]
+        },
+        {
+          "id": "6.5.1.4",
+          "text": "Check the air and electric lines: cord firmly plugged in and secured, air-lines properly connected to the glad hands, no leaks, enough slack for turns, no damage.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "electrical cord",
+            "slack",
+            "leaks"
+          ]
+        },
+        {
+          "id": "6.5.1.5",
+          "text": "On a sliding fifth wheel, check the slide is undamaged, properly greased, all locking pins present and locked, and no air leaks if it is air powered.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "sliding",
+            "locking pins"
+          ]
+        },
+        {
+          "id": "6.5.1.6",
+          "text": "Check the fifth wheel is not so far forward that the tractor frame hits the landing gear or the cab hits the trailer in a turn.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "too far forward",
+            "landing gear"
+          ]
+        },
+        {
+          "id": "6.5.1.7",
+          "text": "Check the landing gear: fully raised, no missing parts, not bent or damaged, crank handle in place and secured, and no air or hydraulic leaks if it is power operated.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "landing gear",
+            "fully raised",
+            "crank handle"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you check about the fifth wheel jaws in a walk-around?",
+          "a": "They are locked around the shank of the kingpin, not the head, with the safety latch engaged.",
+          "factId": "6.5.1.2"
+        },
+        {
+          "q": "What does the landing gear check cover?",
+          "a": "Fully raised, nothing missing or bent, crank handle in place and secured, no leaks if powered.",
+          "factId": "6.5.1.7"
+        },
+        {
+          "q": "Why check how far forward a sliding fifth wheel is?",
+          "a": "So the tractor frame cannot hit the landing gear, or the cab hit the trailer, in a sharp turn.",
+          "factId": "6.5.1.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.5.1.e1",
+          "q": "In a combination walk-around, the fifth wheel jaws must be locked around what?",
+          "choices": [
+            "The head of the kingpin",
+            "The shank of the kingpin",
+            "The glide plate",
+            "The release arm"
+          ],
+          "answer": 1,
+          "why": "Around the shank, not the head. Jaws on the head let the trailer come loose.",
+          "factId": "6.5.1.2",
+          "page": "6-13"
+        }
+      ],
+      "titleFixed": true,
+      "reading": [
+        {
+          "h": "Coupling system"
+        },
+        {
+          "ul": [
+            "Lower fifth wheel: securely mounted to the frame, nothing missing or damaged, enough grease, NO visible space between upper and lower fifth wheel.",
+            "Locking jaws around the SHANK of the kingpin, not the head. Release arm properly seated, safety latch engaged.",
+            "Upper fifth wheel: glide plate securely mounted to the trailer frame, kingpin undamaged.",
+            "Air and electric lines: cord firmly plugged in and secured, air-lines connected to the glad hands with no leaks, enough slack for turns, nothing damaged.",
+            "Sliding fifth wheel: slide undamaged, properly greased, all locking pins present and locked, no air leaks if air powered. Not so far forward that the tractor frame hits the landing gear or the cab hits the trailer in a turn."
+          ]
+        },
+        {
+          "h": "Landing gear"
+        },
+        {
+          "ul": [
+            "Fully raised, nothing missing, not bent or damaged.",
+            "Crank handle in place and secured.",
+            "No air or hydraulic leaks if it is power operated."
+          ]
+        }
+      ]
     },
     {
       "id": "6.5.2",
       "title": "Combination Vehicle Brake Check",
       "pdfPages": "99-100",
       "manualPages": "6-13 to 6-14",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "6.5.2.1",
+          "text": "To check air flows to all trailers: hold the rig with the tractor parking brake or chocks, build normal pressure, push the red trailer air supply knob in, then open the emergency line shut-off valve at the rear of the last trailer. Escaping air shows the system is charged.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "air flows",
+            "last trailer",
+            "escaping"
+          ]
+        },
+        {
+          "id": "6.5.2.2",
+          "text": "Then close the emergency valve and open the service line valve, with the hand brake or brake pedal applied, to check service pressure reaches all the trailers.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "service line valve",
+            "all the trailers"
+          ]
+        },
+        {
+          "id": "6.5.2.3",
+          "text": "If you hear no air escaping from either line, check that the shut-off valves on the trailers and dollies are open. You must have air all the way to the back for the brakes to work.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "no air",
+            "shut off valves",
+            "all the way"
+          ]
+        },
+        {
+          "id": "6.5.2.4",
+          "text": "To test the tractor protection valve: charge the system, shut the engine off, and fan the brake pedal. The trailer air supply control should pop out in the 20 to 45 psi range.",
+          "critical": true,
+          "page": "6-13",
+          "keywords": [
+            "tractor protection",
+            "pop out",
+            "20",
+            "45"
+          ]
+        },
+        {
+          "id": "6.5.2.5",
+          "text": "To test the trailer emergency brakes: charge the system, check the trailer rolls freely, then pull the trailer air supply control out and pull gently against the trailer with the tractor.",
+          "critical": true,
+          "page": "6-14",
+          "keywords": [
+            "emergency brakes",
+            "pull gently"
+          ]
+        },
+        {
+          "id": "6.5.2.6",
+          "text": "To test the trailer service brakes: at normal pressure with the parking brakes released, move forward slowly and apply the trailer brakes with the hand valve. You should feel them come on.",
+          "critical": true,
+          "page": "6-14",
+          "keywords": [
+            "service brakes",
+            "hand valve",
+            "feel"
+          ]
+        },
+        {
+          "id": "6.5.2.7",
+          "text": "Test the trailer brakes with the hand valve, but control them in normal driving with the foot pedal, which brakes every wheel.",
+          "critical": true,
+          "page": "6-14",
+          "keywords": [
+            "hand valve",
+            "foot pedal"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you check air reaches all the trailers?",
+          "a": "Open the emergency line shut-off valve at the rear of the last trailer and listen for escaping air.",
+          "factId": "6.5.2.1"
+        },
+        {
+          "q": "How do you test the tractor protection valve?",
+          "a": "Charge up, engine off, fan the pedal. The air supply control should pop out between 20 and 45 psi.",
+          "factId": "6.5.2.4"
+        },
+        {
+          "q": "How do you test the trailer emergency brakes?",
+          "a": "Charge up, check it rolls free, pull the air supply control out, then pull gently against the trailer.",
+          "factId": "6.5.2.5"
+        },
+        {
+          "q": "How do you test the trailer service brakes?",
+          "a": "Roll forward slowly at normal pressure and apply the hand valve. You should feel them come on.",
+          "factId": "6.5.2.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "6.5.2.e1",
+          "q": "You hear no air escaping when you open the line valves at the rear of the last trailer. What do you check?",
+          "choices": [
+            "The governor",
+            "That the shut-off valves on the trailers are open",
+            "The alcohol evaporator",
+            "The fifth wheel grease"
+          ],
+          "answer": 1,
+          "why": "A closed shut-off valve stops air reaching the back. You must have air all the way to the rear.",
+          "factId": "6.5.2.3",
+          "page": "6-13"
+        },
+        {
+          "id": "6.5.2.e2",
+          "q": "Which control do you use to TEST the trailer brakes?",
+          "choices": [
+            "The foot pedal",
+            "The hand valve",
+            "The parking brake",
+            "The clutch"
+          ],
+          "answer": 1,
+          "why": "Test with the hand valve, but in normal driving use the foot pedal, which brakes every wheel.",
+          "factId": "6.5.2.7",
+          "page": "6-14"
+        }
+      ],
+      "reading": [
+        {
+          "p": "These come on top of the air brake checks in 5.3. Check a double or a triple exactly as you would any combination."
+        },
+        {
+          "h": "Air flows to all trailers"
+        },
+        {
+          "ul": [
+            "Hold the rig with the tractor parking brake, or chock the wheels.",
+            "Wait for normal pressure, push the red trailer air supply knob in, and apply the trailer hand brake to charge the service line.",
+            "Go to the rear of the rig. Open the emergency line shut-off valve at the back of the LAST trailer. You should hear air escaping. Close it.",
+            "Open the service line valve the same way, then close it."
+          ]
+        },
+        {
+          "note": "If you hear no air from either line, check that the shut-off valves on the trailers and dollies are OPEN. You must have air all the way to the back for the brakes to work."
+        },
+        {
+          "h": "Tractor protection valve"
+        },
+        {
+          "p": "Charge the system, push the air supply knob in, shut the engine off, and step on and off the brake pedal. The trailer air supply control should pop out in the range the maker specifies, usually 20 to 45 psi."
+        },
+        {
+          "h": "Trailer emergency brakes"
+        },
+        {
+          "p": "Charge the system and check the trailer rolls freely. Stop, pull the trailer air supply control out, and pull gently against the trailer with the tractor."
+        },
+        {
+          "h": "Trailer service brakes"
+        },
+        {
+          "p": "At normal pressure with the parking brakes released, move forward slowly and apply the trailer brakes with the hand valve. You should feel them come on."
+        },
+        {
+          "note": "Test with the hand valve. Drive with the foot pedal, which applies air to the service brakes at every wheel."
+        }
+      ]
     }
   ],
   "exam": []
