@@ -1,5 +1,6 @@
 package com.cdlstudy.data
 
+import com.cdlstudy.domain.Backup
 import com.cdlstudy.domain.Card
 import com.cdlstudy.domain.Content
 import com.cdlstudy.domain.ExamItem
@@ -19,6 +20,10 @@ class StudyRepository(
     private val db: AppDatabase,
     val content: Content,
 ) {
+
+    /** The whole record, for backup and restore. */
+    val record: RecordStore = RecordStore(db)
+
 
     val pendingCards: Flow<List<CardEntity>> get() = db.cards().pending()
     val pendingCardCount: Flow<Int> get() = db.cards().pendingCount()
@@ -191,3 +196,107 @@ data class PlanProgress(
     val subsectionsRecalled: Int,
     val subsectionsMastered: Int,
 )
+
+/** Reads and writes the whole study record, for backup and restore. */
+class RecordStore(private val db: AppDatabase) {
+
+    /** Everything you have done, ready to write to a file. */
+    suspend fun export(appVersion: String, now: Long = System.currentTimeMillis()): Backup.Record {
+        val recalls = db.recalls().allNow().map { recall ->
+            Backup.Recall(
+                subsectionId = recall.subsectionId,
+                gradedAt = recall.gradedAt,
+                blurt = recall.blurt,
+                overall = recall.overall,
+                critical = recall.critical,
+                factCount = recall.factCount,
+                criticalCount = recall.criticalCount,
+                marks = db.recalls().marksOf(recall.id).associate { it.factId to it.mark },
+            )
+        }
+        val cards = db.cards().allNow().map {
+            Backup.Card(it.subsectionId, it.factId, it.question, it.answer, it.createdAt, it.exportedAt, it.source)
+        }
+        val attempts = db.exams().allAttemptsNow().map { attempt ->
+            Backup.Attempt(
+                track = attempt.track,
+                finishedAt = attempt.finishedAt,
+                total = attempt.total,
+                correct = attempt.correct,
+                percent = attempt.percent,
+                answers = db.exams().answersOf(attempt.id).map {
+                    Backup.Answer(it.itemId, it.chosen, it.wasCorrect, it.factId)
+                },
+            )
+        }
+        val progress = db.progress().allNow().map {
+            Backup.Progress(it.subsectionId, it.status, it.bestOverall, it.bestCritical, it.timesRecalled, it.lastStudiedAt)
+        }
+        return Backup.Record(Backup.FORMAT, appVersion, now, recalls, cards, attempts, progress)
+    }
+
+    /**
+     * Puts a record back, replacing everything that is here now.
+     *
+     * Replace, not merge. Merging two records would double every card and every
+     * recall, and there is no honest way to tell a repeat recall from a copy of
+     * one. The screen warns before it does this.
+     */
+    suspend fun import(record: Backup.Record) {
+        db.recalls().deleteAllMarks()
+        db.recalls().deleteAll()
+        db.cards().deleteAll()
+        db.exams().deleteAllAnswers()
+        db.exams().deleteAllAttempts()
+        db.progress().deleteAll()
+
+        record.recalls.forEach { recall ->
+            val id = db.recalls().insert(
+                RecallEntity(
+                    subsectionId = recall.subsectionId,
+                    gradedAt = recall.gradedAt,
+                    blurt = recall.blurt,
+                    overall = recall.overall,
+                    critical = recall.critical,
+                    factCount = recall.factCount,
+                    criticalCount = recall.criticalCount,
+                )
+            )
+            db.recalls().insertMarks(recall.marks.map { FactMarkEntity(id, it.key, it.value) })
+        }
+        if (record.cards.isNotEmpty()) {
+            db.cards().insert(
+                record.cards.map {
+                    CardEntity(
+                        subsectionId = it.subsectionId,
+                        factId = it.factId,
+                        question = it.question,
+                        answer = it.answer,
+                        createdAt = it.createdAt,
+                        exportedAt = it.exportedAt,
+                        source = it.source,
+                    )
+                }
+            )
+        }
+        record.attempts.forEach { attempt ->
+            val id = db.exams().insert(
+                ExamAttemptEntity(
+                    track = attempt.track,
+                    finishedAt = attempt.finishedAt,
+                    total = attempt.total,
+                    correct = attempt.correct,
+                    percent = attempt.percent,
+                )
+            )
+            db.exams().insertAnswers(
+                attempt.answers.map { ExamAnswerEntity(id, it.itemId, it.chosen, it.wasCorrect, it.factId) }
+            )
+        }
+        record.progress.forEach {
+            db.progress().upsert(
+                ProgressEntity(it.subsectionId, it.status, it.bestOverall, it.bestCritical, it.timesRecalled, it.lastStudiedAt)
+            )
+        }
+    }
+}

@@ -1042,8 +1042,8 @@
           "critical": true,
           "page": "6-5",
           "keywords": [
-            "push in",
-            "pull out"
+            "push the knob in|push in",
+            "pull it out|pull out"
           ]
         },
         {
@@ -1807,7 +1807,7 @@
             "Shorten every stop"
           ],
           "answer": 2,
-          "why": "It keeps the wheels from locking so you stay in control. It is no licence to drive faster or follow closer.",
+          "why": "It keeps the wheels from locking so you stay in control. It is no license to drive faster or follow closer.",
           "factId": "6.3.2.5",
           "page": "6-7"
         }
@@ -2165,8 +2165,9 @@
           "critical": true,
           "page": "6-9",
           "keywords": [
-            "ease pressure",
-            "backing gently"
+            "ease the pressure|ease pressure",
+            "backing up gently|backing gently",
+            "kingpin"
           ]
         },
         {
@@ -2217,8 +2218,9 @@
           "critical": true,
           "page": "6-9",
           "keywords": [
-            "partially clear",
-            "frame under"
+            "fifth wheel comes out",
+            "frame still under|frame under",
+            "landing gear"
           ]
         }
       ],

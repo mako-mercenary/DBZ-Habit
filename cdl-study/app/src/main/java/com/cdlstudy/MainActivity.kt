@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.cdlstudy.ui.BackupScreen
 import com.cdlstudy.ui.CardsScreen
 import com.cdlstudy.ui.CdlTheme
 import com.cdlstudy.ui.ExamScreen
@@ -90,6 +91,7 @@ private fun AppNav() {
                     onReading = { nav.navigate("reading") },
                     onManual = { nav.navigate("manual") },
                     onPlan = { nav.navigate("plan") },
+                    onBackup = { nav.navigate("backup") },
                 )
             }
 
@@ -118,6 +120,7 @@ private fun AppNav() {
             composable("manual") { ManualScreen(onBack = { nav.popBackStack() }) }
             composable("plan") { PlanScreen(onBack = { nav.popBackStack() }) }
             composable("reading") { ReadingScreen(onBack = { nav.popBackStack() }) }
+        composable("backup") { BackupScreen(onBack = { nav.popBackStack() }) }
         }
     }
 }

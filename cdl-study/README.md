@@ -149,24 +149,35 @@ have written are kept, and only the titles and page numbers are refreshed.
 **Fact checklists are written by hand**, section by section, because the facts
 must be accurate and in plain words.
 
-| Section | Subsections | Lessons | With a checklist | Facts | Cards | Questions |
-|---|---|---|---|---|---|---|
-| 1 Introduction | 23 | 20 | 20 | 101 | 77 | 21 |
-| 2 Driving Safely | 116 | 0 | 0 | 0 | 0 | 0 |
-| 3 Transporting Cargo Safely | 18 | 18 | 15 | 44 | 31 | 13 |
-| 5 Air Brakes | 31 | 30 | 30 | 105 | 80 | 27 |
-| 6 Combination Vehicles | 32 | 0 | 0 | 0 | 0 | 0 |
-| 11 Vehicle Inspection | 14 | 0 | 0 | 0 | 0 | 0 |
-| 12 Basic Vehicle Control | 2 | 0 | 0 | 0 | 0 | 0 |
-| 13 On-Road Driving | 15 | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **251** | **68** | **65** | **250** | **188** | **61** |
+| Section | Subsections | Lessons | Facts | Cards | Questions |
+|---|---|---|---|---|---|
+| 1 Introduction | 23 | 21 | 101 | 77 | 21 |
+| 2 Driving Safely | 116 | 116 | 427 | 234 | 90 |
+| 3 Transporting Cargo Safely | 18 | 18 | 44 | 31 | 13 |
+| 5 Air Brakes | 31 | 30 | 105 | 80 | 27 |
+| 6 Combination Vehicles | 32 | 32 | 122 | 65 | 25 |
+| 11 Vehicle Inspection | 15 | 15 | 81 | 39 | 16 |
+| 12 Basic Vehicle Control | 7 | 7 | 27 | 17 | 7 |
+| 13 On-Road Driving | 19 | 19 | 50 | 28 | 12 |
+| **Total** | **261** | **258** | **957** | **571** | **211** |
 
-That is about 7,500 words of lesson text. A subsection with facts but no lesson
-falls back to reading its fact list, and says so. A subsection with neither
-tells you to switch on the book pages. A parent heading with no text of its own,
-such as 5.4, needs neither.
+**All eight sections are written.** Every subsection that holds anything has a
+lesson. The three that do not are headings: 1.1, 1.3 and 5.4, which the manual
+gives no text of their own.
 
-The Air Brakes exam can run at its full 25 questions now.
+Exam pools against their default lengths:
+
+| Track | Questions | Default exam | |
+|---|---|---|---|
+| General Knowledge | 124 | 50 | full length |
+| Air Brakes | 27 | 25 | full length |
+| Combination Vehicles | 25 | 20 | full length |
+| Vehicle Inspection | 16 | 25 | runs at 16 |
+| Basic Vehicle Control | 7 | 20 | runs at 7 |
+| On-Road Driving | 12 | 20 | runs at 12 |
+
+An exam never asks for more questions than its pool holds, so the three skills
+tracks simply run shorter until more are written.
 
 `ContentFilesTest` reads every content file on each build. A file that will not
 parse, a repeated fact id, a card that points at a fact that is not there, or a
@@ -227,10 +238,22 @@ record stranded in the old one.
 With a USB cable and developer mode on:
 `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
 
+## Backing up your record
+
+Your recalls, the mark you gave every fact, your cards, exam results and
+progress live only on this phone. **Settings, then Back up your record** writes
+them to a JSON file you can keep anywhere, and reads one back.
+
+Putting a record back REPLACES what is on the phone. It does not merge, and the
+screen says so before it does it: merging two records would double every card
+and every recall, with no honest way to tell a repeat recall from a copy of one.
+
+The file holds your work only. The lessons come with the app, and your manual
+stays where you imported it.
+
 ## Still to do
 
-- Lessons and fact checklists for sections 2, 6, 11, 12 and 13. Section 2 is the
-  large job, at 45 pages and 116 subsections.
+- More exam questions for Vehicle Inspection, Basic Vehicle Control and
+  On-Road Driving, so those three exams run at full length.
 - AI grading of a recall, on demand, with your own API key.
 - A daily reminder, and a streak for days with a recall.
-- Export and import of the study record.

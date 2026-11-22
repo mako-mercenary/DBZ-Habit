@@ -18,6 +18,7 @@ fun SettingsScreen(
     onReading: () -> Unit,
     onManual: () -> Unit,
     onPlan: () -> Unit,
+    onBackup: () -> Unit,
 ) {
     val store = manualStore()
     val settings = readingSettings()
@@ -55,6 +56,13 @@ fun SettingsScreen(
                 "What you must study",
                 "The eight sections Utah requires, and what is left out",
                 onPlan,
+            )
+        }
+        item {
+            Entry(
+                "Back up your record",
+                "Save your recalls, cards and scores to a file, or put one back",
+                onBackup,
             )
         }
         item {

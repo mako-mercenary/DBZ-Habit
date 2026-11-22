@@ -21,6 +21,18 @@ interface RecallDao {
     @Query("SELECT * FROM recalls ORDER BY gradedAt DESC LIMIT :limit")
     fun recent(limit: Int): Flow<List<RecallEntity>>
 
+    @Query("SELECT * FROM recalls ORDER BY gradedAt")
+    suspend fun allNow(): List<RecallEntity>
+
+    @Query("SELECT * FROM fact_marks WHERE recallId = :recallId")
+    suspend fun marksOf(recallId: Long): List<FactMarkEntity>
+
+    @Query("DELETE FROM recalls")
+    suspend fun deleteAll()
+
+    @Query("DELETE FROM fact_marks")
+    suspend fun deleteAllMarks()
+
     /**
      * The facts you get wrong most often. A miss counts 2 and a part miss 1,
      * so a fact you keep missing comes first.
@@ -63,6 +75,12 @@ interface CardDao {
 
     @Query("UPDATE cards SET exportedAt = :at WHERE id IN (:ids)")
     suspend fun markExported(ids: List<Long>, at: Long)
+
+    @Query("SELECT * FROM cards ORDER BY createdAt")
+    suspend fun allNow(): List<CardEntity>
+
+    @Query("DELETE FROM cards")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -96,6 +114,18 @@ interface ExamDao {
 
     @Query("SELECT factId FROM exam_answers WHERE wasCorrect = 0 AND factId IS NOT NULL")
     suspend fun allMissedFactIds(): List<String>
+
+    @Query("SELECT * FROM exam_attempts ORDER BY finishedAt")
+    suspend fun allAttemptsNow(): List<ExamAttemptEntity>
+
+    @Query("SELECT * FROM exam_answers WHERE attemptId = :attemptId")
+    suspend fun answersOf(attemptId: Long): List<ExamAnswerEntity>
+
+    @Query("DELETE FROM exam_attempts")
+    suspend fun deleteAllAttempts()
+
+    @Query("DELETE FROM exam_answers")
+    suspend fun deleteAllAnswers()
 }
 
 @Dao
@@ -108,4 +138,10 @@ interface ProgressDao {
 
     @Query("SELECT * FROM progress WHERE subsectionId = :id")
     suspend fun get(id: String): ProgressEntity?
+
+    @Query("SELECT * FROM progress")
+    suspend fun allNow(): List<ProgressEntity>
+
+    @Query("DELETE FROM progress")
+    suspend fun deleteAll()
 }

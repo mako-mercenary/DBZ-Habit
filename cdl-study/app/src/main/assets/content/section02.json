@@ -1433,7 +1433,7 @@
         {
           "id": "2.3.2.1",
           "text": "Multi-speed rear axles and auxiliary transmissions add gears, usually controlled by a selector knob or switch on the gearshift lever. Shift patterns differ, so learn the one in your vehicle.",
-          "critical": false,
+          "critical": true,
           "page": "2-10",
           "keywords": [
             "multi speed",
@@ -3088,8 +3088,9 @@
           "critical": true,
           "page": "2-16",
           "keywords": [
-            "slow further",
-            "worker close"
+            "slow down further",
+            "bad weather",
+            "worker"
           ]
         }
       ],
@@ -3746,8 +3747,9 @@
           "critical": true,
           "page": "2-18",
           "keywords": [
-            "two turning lanes",
-            "right turn lane"
+            "two left turn lanes|two turning lanes",
+            "right hand|right-hand",
+            "inside lane"
           ]
         }
       ],
@@ -3841,8 +3843,8 @@
           "critical": true,
           "page": "2-19",
           "keywords": [
-            "slow acceleration",
-            "larger gap"
+            "accelerates slowly|slow acceleration",
+            "bigger gap|larger gap"
           ]
         },
         {
@@ -4588,9 +4590,9 @@
           "critical": true,
           "page": "2-22",
           "keywords": [
-            "slowed perception",
-            "delayed",
-            "improper action"
+            "slows your perception|slowed perception",
+            "delays",
+            "wrong inputs"
           ]
         }
       ],
@@ -5168,18 +5170,7 @@
       "title": "Aggressive Drivers/Road Rage",
       "pdfPages": "47",
       "manualPages": "2-24",
-      "facts": [
-        {
-          "id": "2.10.0.1",
-          "text": "Crowded roads leave little room for error, which breeds suspicion and hostility, and makes drivers take other people's mistakes personally.",
-          "critical": false,
-          "page": "2-24",
-          "keywords": [
-            "crowded",
-            "hostility"
-          ]
-        }
-      ],
+      "facts": [],
       "cards": [],
       "exam": [],
       "reading": [
@@ -6017,8 +6008,9 @@
           "critical": true,
           "page": "2-27",
           "keywords": [
-            "get back at them",
-            "increases glare"
+            "never answer|get back at them",
+            "raises glare|increases glare",
+            "high beams"
           ]
         },
         {
@@ -7534,8 +7526,9 @@
           "critical": true,
           "page": "2-33",
           "keywords": [
-            "principal",
-            "save your brakes"
+            "braking effect of the engine",
+            "main way|principal",
+            "saving the brakes|save your brakes"
           ]
         }
       ],
@@ -7831,8 +7824,9 @@
           "critical": true,
           "page": "2-34",
           "keywords": [
-            "no more than needed",
-            "sharply"
+            "more than you need|no more than needed",
+            "sharper|sharply",
+            "rollover"
           ]
         },
         {
@@ -9137,8 +9131,9 @@
           "critical": true,
           "page": "2-38",
           "keywords": [
-            "straight line",
-            "regardless"
+            "straight on|straight line",
+            "however much|regardless",
+            "steer round|steer around"
           ]
         },
         {
