@@ -12,70 +12,902 @@
       "manualPages": "2-1",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Safety is the reason you inspect: yours and everyone else's. A defect found in the yard is time and money. The same defect found on the road is a breakdown, or a crash."
+        },
+        {
+          "note": "Federal and state law require you to inspect. Inspectors may also inspect your vehicle, and if they judge it unsafe they put it OUT OF SERVICE until it is fixed."
+        }
+      ]
     },
     {
       "id": "2.1.1",
       "title": "Why Inspect",
       "pdfPages": "24",
       "manualPages": "2-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.1.1",
+          "text": "Safety is the most important reason to inspect your vehicle: your safety and that of other road users.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "safety",
+            "most important"
+          ]
+        },
+        {
+          "id": "2.1.1.2",
+          "text": "Federal and state law require drivers to inspect their vehicles, and inspectors can put an unsafe vehicle out of service until it is fixed.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "law",
+            "out of service"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the most important reason for a vehicle inspection?",
+          "a": "Safety: yours and other road users'.",
+          "factId": "2.1.1.1"
+        },
+        {
+          "q": "What happens if an inspector judges your vehicle unsafe?",
+          "a": "It goes out of service until it is fixed.",
+          "factId": "2.1.1.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.1.1.e1",
+          "q": "What is the most important reason to inspect your vehicle?",
+          "choices": [
+            "To save fuel",
+            "Safety",
+            "To satisfy your employer",
+            "To keep the warranty"
+          ],
+          "answer": 1,
+          "why": "Safety, for yourself and for other road users, is the reason the manual gives first.",
+          "factId": "2.1.1.1",
+          "page": "2-1"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A defect found during an inspection saves you trouble later: a breakdown that costs time and money, or worse, a crash caused by that defect."
+        },
+        {
+          "note": "Federal and state law require the inspection. An inspector who judges your vehicle unsafe will put it out of service until it is fixed."
+        }
+      ]
     },
     {
       "id": "2.1.2",
       "title": "Types of Vehicle Inspection",
       "pdfPages": "24",
       "manualPages": "2-1",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.2.1",
+          "text": "During a trip, watch the gauges for trouble and use your senses: look, listen, smell and feel.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "gauges",
+            "look",
+            "listen",
+            "smell",
+            "feel"
+          ]
+        },
+        {
+          "id": "2.1.2.2",
+          "text": "Check these critical items when you stop: tires, wheels and rims; brakes; lights and reflectors; brake and electrical connections to the trailer; trailer coupling devices; and cargo securement devices.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "tires",
+            "brakes",
+            "lights",
+            "coupling",
+            "cargo"
+          ]
+        },
+        {
+          "id": "2.1.2.3",
+          "text": "Do an after-trip inspection at the end of the trip, the day or the tour of duty on every vehicle you drove, and it may include a written vehicle condition report.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "after trip",
+            "condition report"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which senses do you use to check for problems on a trip?",
+          "a": "Look, listen, smell and feel.",
+          "factId": "2.1.2.1"
+        },
+        {
+          "q": "Which critical items do you check at a stop?",
+          "a": "Tires, wheels and rims; brakes; lights and reflectors; brake and electrical connections; coupling devices; cargo securement.",
+          "factId": "2.1.2.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "h": "During a trip"
+        },
+        {
+          "ul": [
+            "Watch the gauges for signs of trouble.",
+            "Use your senses: look, listen, smell, feel."
+          ]
+        },
+        {
+          "h": "Critical items at every stop"
+        },
+        {
+          "ul": [
+            "Tires, wheels and rims.",
+            "Brakes.",
+            "Lights and reflectors.",
+            "Brake and electrical connections to the trailer.",
+            "Trailer coupling devices.",
+            "Cargo securement devices."
+          ]
+        },
+        {
+          "h": "After the trip"
+        },
+        {
+          "p": "At the end of the trip, the day or the tour of duty, inspect every vehicle you drove. You may have to fill in a vehicle condition report, which tells the carrier what needs repair."
+        }
+      ]
     },
     {
       "id": "2.1.3",
       "title": "What to Look For",
       "pdfPages": "24-26",
       "manualPages": "2-1 to 2-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.3.1",
+          "text": "You need at least 4/32 inch of tread depth in every major groove on front tires, and 2/32 inch on other tires.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "4/32",
+            "2/32",
+            "tread depth"
+          ]
+        },
+        {
+          "id": "2.1.3.2",
+          "text": "No fabric may show through the tread or the sidewall.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "fabric",
+            "sidewall"
+          ]
+        },
+        {
+          "id": "2.1.3.3",
+          "text": "Radial and bias-ply tires must not be used together, and tire sizes must not be mismatched.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "radial",
+            "bias ply",
+            "mismatched"
+          ]
+        },
+        {
+          "id": "2.1.3.4",
+          "text": "Re-grooved, recapped or retreaded tires are prohibited on the front wheels of a bus.",
+          "critical": true,
+          "page": "2-1",
+          "keywords": [
+            "re grooved",
+            "recapped",
+            "bus"
+          ]
+        },
+        {
+          "id": "2.1.3.5",
+          "text": "Rust around the wheel nuts may mean they are loose. After a tire is changed, stop a short while later and re-check the tightness of the nuts.",
+          "critical": true,
+          "page": "2-2",
+          "keywords": [
+            "rust",
+            "loose",
+            "re check"
+          ]
+        },
+        {
+          "id": "2.1.3.6",
+          "text": "Wheels or rims that have had welding repairs are not safe, and mismatched, bent or cracked lock rings are dangerous.",
+          "critical": true,
+          "page": "2-2",
+          "keywords": [
+            "welding repairs",
+            "lock rings"
+          ]
+        },
+        {
+          "id": "2.1.3.7",
+          "text": "Steering wheel play of more than 10 degrees, which is about 2 inches of movement at the rim of a 20 inch wheel, makes the vehicle hard to steer.",
+          "critical": true,
+          "page": "2-2",
+          "keywords": [
+            "10 degrees",
+            "2 inches",
+            "20 inch"
+          ]
+        },
+        {
+          "id": "2.1.3.8",
+          "text": "If one fourth or more of the leaves in a leaf spring are missing or broken, the vehicle goes out of service, but any such defect is dangerous.",
+          "critical": true,
+          "page": "2-2",
+          "keywords": [
+            "one fourth",
+            "leaf spring",
+            "out of service"
+          ]
+        },
+        {
+          "id": "2.1.3.9",
+          "text": "A broken exhaust system can let poison fumes into the cab or the sleeper berth.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "exhaust",
+            "poison fumes"
+          ]
+        },
+        {
+          "id": "2.1.3.10",
+          "text": "Emergency equipment: a fire extinguisher, spare electrical fuses unless the vehicle has circuit breakers, and warning devices, which are three reflective triangles or at least six fuses or three liquid burning flares.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "fire extinguisher",
+            "three",
+            "triangles",
+            "six"
+          ]
+        },
+        {
+          "id": "2.1.3.11",
+          "text": "Bad brake drums or shoes: cracked drums, shoes or pads with oil, grease or brake fluid on them, and shoes worn dangerously thin, missing or broken.",
+          "critical": true,
+          "page": "2-2",
+          "keywords": [
+            "cracked drums",
+            "grease",
+            "thin"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the minimum tread depth on front tires? On other tires?",
+          "a": "4/32 inch on front tires, 2/32 inch on the others.",
+          "factId": "2.1.3.1"
+        },
+        {
+          "q": "How much steering wheel play is too much?",
+          "a": "More than 10 degrees, about 2 inches at the rim of a 20 inch wheel.",
+          "factId": "2.1.3.7"
+        },
+        {
+          "q": "How many missing leaf spring leaves put a vehicle out of service?",
+          "a": "One fourth or more.",
+          "factId": "2.1.3.8"
+        },
+        {
+          "q": "What three kinds of emergency equipment must you carry?",
+          "a": "A fire extinguisher, spare fuses unless it has circuit breakers, and warning devices.",
+          "factId": "2.1.3.10"
+        },
+        {
+          "q": "What does rust around the wheel nuts suggest?",
+          "a": "The nuts may be loose. Check their tightness.",
+          "factId": "2.1.3.5"
+        },
+        {
+          "q": "Why is a broken exhaust system dangerous?",
+          "a": "It can let poison fumes into the cab or sleeper berth.",
+          "factId": "2.1.3.9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.1.3.e1",
+          "q": "Minimum tread depth on a front tire is:",
+          "choices": [
+            "2/32 inch",
+            "4/32 inch",
+            "6/32 inch",
+            "1/8 inch"
+          ],
+          "answer": 1,
+          "why": "4/32 inch on front tires, 2/32 on all others, in every major groove.",
+          "factId": "2.1.3.1",
+          "page": "2-1"
+        },
+        {
+          "id": "2.1.3.e2",
+          "q": "How much steering wheel play is too much?",
+          "choices": [
+            "More than 5 degrees",
+            "More than 10 degrees",
+            "More than 20 degrees",
+            "Any play at all"
+          ],
+          "answer": 1,
+          "why": "More than 10 degrees, which is about two inches at the rim of a twenty inch wheel.",
+          "factId": "2.1.3.7",
+          "page": "2-2"
+        },
+        {
+          "id": "2.1.3.e3",
+          "q": "How many leaf spring leaves missing puts a vehicle out of service?",
+          "choices": [
+            "Any one",
+            "One fourth or more",
+            "Half or more",
+            "All of them"
+          ],
+          "answer": 1,
+          "why": "One fourth or more, though any such defect is dangerous.",
+          "factId": "2.1.3.8",
+          "page": "2-2"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Tires"
+        },
+        {
+          "numbers": [
+            {
+              "value": "4/32 inch",
+              "what": "minimum tread depth, front tires"
+            },
+            {
+              "value": "2/32 inch",
+              "what": "minimum tread depth, all other tires"
+            }
+          ]
+        },
+        {
+          "ul": [
+            "Too much or too little air pressure.",
+            "Bad wear, cuts, damage, or tread separation. No fabric showing through tread or sidewall.",
+            "Dual tires touching each other or part of the vehicle.",
+            "Mismatched sizes, or radial and bias-ply used together.",
+            "Cut or cracked valve stems.",
+            "Re-grooved, recapped or retreaded tires are prohibited on the front wheels of a BUS."
+          ]
+        },
+        {
+          "h": "Wheels and rims"
+        },
+        {
+          "ul": [
+            "Damaged rims.",
+            "Rust around the wheel nuts may mean they are loose. After changing a tire, stop a short while later and re-check them.",
+            "Missing clamps, spacers, studs or lugs.",
+            "Mismatched, bent or cracked lock rings.",
+            "Wheels or rims with welding repairs are NOT safe."
+          ]
+        },
+        {
+          "h": "Brakes, steering, suspension"
+        },
+        {
+          "ul": [
+            "Cracked drums. Shoes or pads with oil, grease or brake fluid on them. Shoes worn dangerously thin, missing or broken.",
+            "Steering: missing nuts, bolts or cotter keys. Bent, loose or broken column, gear box or tie rods. Power steering hoses, pump and fluid level.",
+            "Steering wheel play over 10 degrees, about 2 inches at the rim of a 20 inch wheel, makes it hard to steer.",
+            "Suspension: cracked or broken spring hangers, missing or broken spring leaves, leaking shocks, damaged or leaking air suspension."
+          ]
+        },
+        {
+          "note": "If one fourth or more of the leaves in a leaf spring are missing, the vehicle goes OUT OF SERVICE. Any such defect is dangerous."
+        },
+        {
+          "h": "Exhaust and emergency equipment"
+        },
+        {
+          "p": "A broken exhaust system can let poison fumes into the cab or the sleeper berth. Look for loose, broken or missing pipes, mufflers, stacks, brackets and clamps, and for parts rubbing or leaking."
+        },
+        {
+          "ul": [
+            "Fire extinguisher.",
+            "Spare electrical fuses, unless the vehicle has circuit breakers.",
+            "Warning devices: three reflective triangles, or at least six fuses, or three liquid burning flares."
+          ]
+        }
+      ]
     },
     {
       "id": "2.1.4",
       "title": "CDL Vehicle Inspection Test",
       "pdfPages": "26",
       "manualPages": "2-3",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.4.1",
+          "text": "In the CDL vehicle inspection test you must point to or touch and name the item, and explain to the examiner what you would inspect and why.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "point",
+            "touch",
+            "name",
+            "explain"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What must you do for each item in the inspection test?",
+          "a": "Point to or touch it, name it, and explain what you would inspect and why.",
+          "factId": "2.1.4.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "To get a CDL you must pass a vehicle inspection test. You will be asked to inspect your vehicle and show that you know whether it is safe to drive."
+        },
+        {
+          "note": "You must point to or touch the item, name it, and explain to the examiner what you would inspect and why. Section 11 covers this test in detail."
+        }
+      ]
     },
     {
       "id": "2.1.5",
       "title": "Seven-step Inspection Method",
       "pdfPages": "26-30",
       "manualPages": "2-3 to 2-7",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.5.1",
+          "text": "Inspect the same way every time, so you learn all the steps and are less likely to forget one.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "same way",
+            "every time"
+          ]
+        },
+        {
+          "id": "2.1.5.2",
+          "text": "Step 1 is the vehicle overview: review the last vehicle inspection report, and sign it only if defects were noted and certified as repaired or not needing repair.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "step 1",
+            "last report",
+            "sign"
+          ]
+        },
+        {
+          "id": "2.1.5.3",
+          "text": "Step 2 is the engine compartment, with the parking brakes on or the wheels chocked: oil, coolant, power steering fluid, washer fluid, battery, transmission fluid, belts, leaks and wiring.",
+          "critical": true,
+          "page": "2-3",
+          "keywords": [
+            "step 2",
+            "engine compartment",
+            "belts"
+          ]
+        },
+        {
+          "id": "2.1.5.4",
+          "text": "Step 3 is starting the engine and inspecting the cab. Oil pressure should come up to normal within seconds.",
+          "critical": true,
+          "page": "2-4",
+          "keywords": [
+            "step 3",
+            "oil pressure",
+            "seconds"
+          ]
+        },
+        {
+          "id": "2.1.5.5",
+          "text": "Air pressure should build from 50 to 90 psi within 3 minutes, and up to governor cutout at about 120 to 140 psi.",
+          "critical": true,
+          "page": "2-4",
+          "keywords": [
+            "50",
+            "90",
+            "3 minutes",
+            "120",
+            "140"
+          ]
+        },
+        {
+          "id": "2.1.5.6",
+          "text": "The ABS light on the dash should come on and then go out. If it stays on, the ABS is not working. On a trailer, the yellow light on the left rear tells you the same.",
+          "critical": true,
+          "page": "2-4",
+          "keywords": [
+            "abs",
+            "stays on",
+            "left rear"
+          ]
+        },
+        {
+          "id": "2.1.5.7",
+          "text": "Step 4: set the parking brake, turn off the engine and take the key with you, so nobody can move the vehicle while you are inspecting it.",
+          "critical": true,
+          "page": "2-4",
+          "keywords": [
+            "step 4",
+            "take the key"
+          ]
+        },
+        {
+          "id": "2.1.5.8",
+          "text": "Step 5 is the walk-around inspection, done in a fixed order: left front, front, right side, right rear, rear, left side.",
+          "critical": true,
+          "page": "2-5",
+          "keywords": [
+            "step 5",
+            "walk around"
+          ]
+        },
+        {
+          "id": "2.1.5.9",
+          "text": "Lights and reflectors are amber at the front and red at the rear.",
+          "critical": true,
+          "page": "2-5",
+          "keywords": [
+            "amber",
+            "front",
+            "red",
+            "rear"
+          ]
+        },
+        {
+          "id": "2.1.5.10",
+          "text": "Use a wrench to test rust-streaked lug nuts, and grab the steering mechanism to test it for looseness.",
+          "critical": true,
+          "page": "2-5",
+          "keywords": [
+            "wrench",
+            "grab",
+            "looseness"
+          ]
+        },
+        {
+          "id": "2.1.5.11",
+          "text": "Step 6 is the signal light check: stop lights, left turn signal, and their color and operation.",
+          "critical": true,
+          "page": "2-6",
+          "keywords": [
+            "step 6",
+            "signal lights"
+          ]
+        },
+        {
+          "id": "2.1.5.12",
+          "text": "Step 7 is the brake check. For hydraulic brakes, pump the pedal three times, then hold firm pressure for five seconds. The pedal must not move.",
+          "critical": true,
+          "page": "2-6",
+          "keywords": [
+            "step 7",
+            "three times",
+            "five seconds"
+          ]
+        },
+        {
+          "id": "2.1.5.13",
+          "text": "Test the parking brake by fastening the safety belt, setting it, and gently pulling forward in a low gear to see that it holds.",
+          "critical": true,
+          "page": "2-7",
+          "keywords": [
+            "parking brake",
+            "pull forward",
+            "low gear"
+          ]
+        },
+        {
+          "id": "2.1.5.14",
+          "text": "Test the service brakes at about five miles per hour, pushing the pedal firmly. Pulling to one side, an odd feel or a delayed stop means trouble.",
+          "critical": true,
+          "page": "2-7",
+          "keywords": [
+            "five miles per hour",
+            "pulling",
+            "delayed"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How fast must air pressure build?",
+          "a": "From 50 to 90 psi within 3 minutes, then up to governor cutout at about 120 to 140 psi.",
+          "factId": "2.1.5.5"
+        },
+        {
+          "q": "How do you test hydraulic brakes for leaks?",
+          "a": "Pump the pedal three times, then hold firm pressure for five seconds. It must not move.",
+          "factId": "2.1.5.12"
+        },
+        {
+          "q": "Why take the key with you during the inspection?",
+          "a": "So nobody can move the vehicle while you are inspecting it.",
+          "factId": "2.1.5.7"
+        },
+        {
+          "q": "What color are lights and reflectors front and rear?",
+          "a": "Amber at the front, red at the rear.",
+          "factId": "2.1.5.9"
+        },
+        {
+          "q": "How do you test the parking brake?",
+          "a": "Belt on, parking brake set, low gear, pull gently forward to see it holds.",
+          "factId": "2.1.5.13"
+        },
+        {
+          "q": "What does an ABS light that stays on mean?",
+          "a": "The ABS is not working properly.",
+          "factId": "2.1.5.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.1.5.e1",
+          "q": "How do you test hydraulic brakes for a leak?",
+          "choices": [
+            "Pump once and hold ten seconds",
+            "Pump three times, hold firm five seconds",
+            "Hold the pedal one minute",
+            "Pull against it in gear"
+          ],
+          "answer": 1,
+          "why": "Pump three times, then hold firm pressure for five seconds. The pedal should not move.",
+          "factId": "2.1.5.12",
+          "page": "2-6"
+        },
+        {
+          "id": "2.1.5.e2",
+          "q": "Air pressure should build from 50 to 90 psi in how long?",
+          "choices": [
+            "45 seconds",
+            "1 minute",
+            "3 minutes",
+            "5 minutes"
+          ],
+          "answer": 2,
+          "why": "Within three minutes, then on up to governor cutout.",
+          "factId": "2.1.5.5",
+          "page": "2-4"
+        },
+        {
+          "id": "2.1.5.e3",
+          "q": "Why put the starter key in your pocket during the inspection?",
+          "choices": [
+            "To keep it clean",
+            "So nobody can move the vehicle while you are under or beside it",
+            "It is a legal requirement",
+            "To stop the battery draining"
+          ],
+          "answer": 1,
+          "why": "Taking the key means nobody moves the truck while you are inspecting it.",
+          "factId": "2.1.5.7",
+          "page": "2-4"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Inspect the same way every time. That is the whole point of a method: you stop relying on memory."
+        },
+        {
+          "p": "Approaching the vehicle, notice its general condition. Look for damage, a lean to one side, and fresh oil, coolant, grease or fuel under it. Check the area for hazards to vehicle movement."
+        },
+        {
+          "h": "Step 1: vehicle overview"
+        },
+        {
+          "p": "Review the last vehicle inspection report. The carrier must repair anything affecting safety and certify it. Sign it only if defects were noted and certified repaired, or certified as not needing repair."
+        },
+        {
+          "h": "Step 2: engine compartment"
+        },
+        {
+          "p": "Parking brakes on, or wheels chocked. Check engine oil, radiator coolant and hoses, power steering fluid, washer fluid, battery fluid and connections, automatic transmission fluid, belt tightness and wear, leaks of any kind, and cracked or worn wiring insulation. Then lower and secure the hood."
+        },
+        {
+          "h": "Step 3: start the engine and inspect the cab"
+        },
+        {
+          "ul": [
+            "Parking brake on, gearshift in neutral or park, start, and listen for unusual noises.",
+            "The ABS light should come on and go out. If it stays on, the ABS is not working. Same for the yellow light at a trailer's left rear.",
+            "Oil pressure up to normal within seconds."
+          ]
+        },
+        {
+          "numbers": [
+            {
+              "value": "50 to 90 psi",
+              "what": "air pressure must build within 3 minutes"
+            },
+            {
+              "value": "120 to 140 psi",
+              "what": "the usual governor cutout"
+            }
+          ]
+        },
+        {
+          "p": "Check the controls for looseness, sticking or damage: steering wheel, clutch, accelerator, brakes, parking brake, retarder, transmission, horn, wipers and every light switch. Check mirrors and windshield. Check emergency equipment and the safety belt."
+        },
+        {
+          "h": "Step 4: turn off the engine and check lights"
+        },
+        {
+          "p": "Set the parking brake, turn the engine off and TAKE THE KEY WITH YOU. Turn on low beams and four-way flashers, then get out."
+        },
+        {
+          "h": "Step 5: the walk-around"
+        },
+        {
+          "p": "Front, left front, right side, right rear, rear, left side, in the same order every time. Clean every light, reflector and glass as you go. Use a wrench on rust-streaked lug nuts. GRAB the steering mechanism to test for looseness."
+        },
+        {
+          "note": "Lights and reflectors are AMBER at the front and RED at the rear."
+        },
+        {
+          "h": "Step 6: signal lights"
+        },
+        {
+          "p": "Turn everything off, then the stop lights and left turn signal, and check each from outside for operation and color."
+        },
+        {
+          "h": "Step 7: start the engine and check the brakes"
+        },
+        {
+          "ul": [
+            "Hydraulic brakes: pump the pedal three times, then hold firm pressure for five seconds. The pedal must not move.",
+            "Air brakes: do the checks in Sections 5 and 6.",
+            "Parking brake: safety belt on, parking brake set, low gear, pull gently forward. It must hold.",
+            "Service brakes: at about five mph, push the pedal firmly. Pulling to one side, an odd feel or a delayed stop means trouble."
+          ]
+        }
+      ]
     },
     {
       "id": "2.1.6",
       "title": "Inspection during a Trip",
       "pdfPages": "30-31",
       "manualPages": "2-7 to 2-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.6.1",
+          "text": "Check the instruments, gauges, mirrors, tires, cargo and lights regularly while you drive, and check out anything you see, hear, smell or feel that might mean trouble.",
+          "critical": true,
+          "page": "2-7",
+          "keywords": [
+            "regularly",
+            "check it out"
+          ]
+        },
+        {
+          "id": "2.1.6.2",
+          "text": "Carrying cargo, inspect the securement within the first 50 miles of a trip, and then every 150 miles or every three hours, whichever comes first.",
+          "critical": true,
+          "page": "2-7",
+          "keywords": [
+            "50 miles",
+            "150 miles",
+            "three hours"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How often must cargo securement be inspected?",
+          "a": "Within the first 50 miles, then every 150 miles or 3 hours, whichever comes first.",
+          "factId": "2.1.6.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.1.6.e1",
+          "q": "After the first 50 miles, how often do you re-inspect cargo securement?",
+          "choices": [
+            "Every 100 miles or 2 hours",
+            "Every 150 miles or 3 hours",
+            "Every 200 miles or 4 hours",
+            "Only at the destination"
+          ],
+          "answer": 1,
+          "why": "Every 150 miles or three hours, whichever comes first.",
+          "factId": "2.1.6.2",
+          "page": "2-7"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Check regularly as you drive: instruments, the air pressure gauge, temperature and pressure gauges, ammeter or voltmeter, mirrors, tires, cargo and covers, and lights."
+        },
+        {
+          "note": "If you see, hear, smell or feel anything that might mean trouble, check it out."
+        },
+        {
+          "numbers": [
+            {
+              "value": "50 miles",
+              "what": "first cargo securement check after starting"
+            },
+            {
+              "value": "150 miles or 3 hours",
+              "what": "then re-check, whichever comes first"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "2.1.7",
       "title": "After-trip Inspection and Report",
       "pdfPages": "31",
       "manualPages": "2-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.1.7.1",
+          "text": "You may have to make a written report each day on the condition of every vehicle you drove, reporting anything affecting safety or likely to cause a breakdown.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "written report",
+            "each day"
+          ]
+        },
+        {
+          "id": "2.1.7.2",
+          "text": "Keep a copy of the report in the vehicle for one day, so the next driver learns about the problems you found.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "copy",
+            "one day",
+            "next driver"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why keep a copy of the inspection report in the vehicle?",
+          "a": "So the next driver learns about the problems you found. Keep it for one day.",
+          "factId": "2.1.7.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "You may have to make a written report each day on every vehicle you drove. Report anything that affects safety or could lead to a mechanical breakdown."
+        },
+        {
+          "note": "Keep a copy in the vehicle for one day, so the next driver learns what you found."
+        }
+      ]
     },
     {
       "id": "2.2",
@@ -84,43 +916,312 @@
       "manualPages": "2-8",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Controlling a vehicle safely means controlling its speed and its direction. Four skills: accelerating, steering, stopping and backing."
+        },
+        {
+          "note": "Fasten your safety belt on the road. Set the parking brake whenever you leave the vehicle."
+        }
+      ]
     },
     {
       "id": "2.2.1",
       "title": "Accelerating",
       "pdfPages": "31",
       "manualPages": "2-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.2.1.1",
+          "text": "Do not roll back when you start. With a manual transmission, partly engage the clutch before you take your right foot off the brake.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "roll back",
+            "partly engage"
+          ]
+        },
+        {
+          "id": "2.2.1.2",
+          "text": "Release the parking brake only once you have applied enough engine power to keep from rolling back. On a tractor-trailer with a hand valve, the hand valve can hold you.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "release",
+            "enough engine power"
+          ]
+        },
+        {
+          "id": "2.2.1.3",
+          "text": "Speed up smoothly and gradually. Rough acceleration causes mechanical damage, and with a trailer it can damage the coupling.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "smoothly",
+            "coupling"
+          ]
+        },
+        {
+          "id": "2.2.1.4",
+          "text": "When traction is poor, speed up very gradually. If the drive wheels start to spin, take your foot off the accelerator.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "poor traction",
+            "spin",
+            "foot off"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How do you start on a hill without rolling back?",
+          "a": "Partly engage the clutch before you release the brake, and release the parking brake only when you have enough power.",
+          "factId": "2.2.1.2"
+        },
+        {
+          "q": "The drive wheels start to spin. What do you do?",
+          "a": "Take your foot off the accelerator.",
+          "factId": "2.2.1.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.2.1.e1",
+          "q": "Your drive wheels begin to spin as you pull away on snow. What do you do?",
+          "choices": [
+            "Add power",
+            "Take your foot off the accelerator",
+            "Brake hard",
+            "Shift up"
+          ],
+          "answer": 1,
+          "why": "Ease off the accelerator so the wheels regain traction.",
+          "factId": "2.2.1.4",
+          "page": "2-8"
+        }
+      ],
+      "reading": [
+        {
+          "ul": [
+            "Do not roll back when you start: you may hit someone behind you.",
+            "With a manual transmission, partly engage the clutch before your right foot leaves the brake.",
+            "Use the parking brake if you need it, and release it only once you have enough engine power to hold.",
+            "On a tractor-trailer with a hand valve, the hand valve can hold you against rolling back.",
+            "Speed up smoothly. Rough acceleration damages machinery, and with a trailer it damages the coupling.",
+            "When traction is poor, speed up very gradually. If the drive wheels spin, take your foot off the accelerator."
+          ]
+        }
+      ]
     },
     {
       "id": "2.2.2",
       "title": "Steering",
       "pdfPages": "31",
       "manualPages": "2-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.2.2.1",
+          "text": "Hold the steering wheel firmly with both hands, on opposite sides of the wheel. A curb or a pothole can pull the wheel out of a loose grip.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "both hands",
+            "opposite sides",
+            "firmly"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Where do your hands go on the steering wheel?",
+          "a": "Firmly, both of them, on opposite sides of the wheel.",
+          "factId": "2.2.2.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Hold the wheel firmly with BOTH hands, on opposite sides of it. Hit a curb or a pothole with a loose grip and the wheel can be pulled out of your hands."
+        }
+      ]
     },
     {
       "id": "2.2.3",
       "title": "Stopping",
       "pdfPages": "31",
       "manualPages": "2-8",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.2.3.1",
+          "text": "Push the brake pedal down gradually and control the pressure for a smooth, safe stop. With a manual transmission, push the clutch in when the engine is close to idle.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "gradually",
+            "clutch",
+            "idle"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When do you push the clutch in when stopping?",
+          "a": "When the engine is close to idle.",
+          "factId": "2.2.3.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Push the pedal down gradually. How much pressure depends on your speed and how quickly you must stop. Control it so the stop is smooth and safe. With a manual transmission, push the clutch in when the engine is close to idle."
+        }
+      ]
     },
     {
       "id": "2.2.4",
       "title": "Backing Safely",
       "pdfPages": "31-32",
       "manualPages": "2-8 to 2-9",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.2.4.1",
+          "text": "Backing is always dangerous because you cannot see everything behind you. Avoid it when you can, and park so you can pull forward when you leave.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "always dangerous",
+            "avoid",
+            "pull forward"
+          ]
+        },
+        {
+          "id": "2.2.4.2",
+          "text": "The backing rules: start in the proper position, look at your path, use both mirrors, back slowly, back and turn toward the driver's side, and use a helper.",
+          "critical": true,
+          "page": "2-8",
+          "keywords": [
+            "proper position",
+            "mirrors",
+            "slowly",
+            "driver's side",
+            "helper"
+          ]
+        },
+        {
+          "id": "2.2.4.3",
+          "text": "Get out and walk around the vehicle before backing, checking clearance to the sides and overhead.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "walk around",
+            "clearance"
+          ]
+        },
+        {
+          "id": "2.2.4.4",
+          "text": "Back as slowly as possible, in the lowest reverse gear, so you can correct steering errors and stop quickly.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "lowest reverse",
+            "slowly"
+          ]
+        },
+        {
+          "id": "2.2.4.5",
+          "text": "Back toward the driver's side so you can see. Backing to the right is very dangerous because you cannot see as well. Use driver-side backing even if it means going around the block.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "driver's side",
+            "right side",
+            "around the block"
+          ]
+        },
+        {
+          "id": "2.2.4.6",
+          "text": "A helper should stand near the back of the vehicle where you can see them, and you must agree on hand signals first, above all a signal for stop.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "helper",
+            "hand signals",
+            "stop"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why back toward the driver's side?",
+          "a": "You can see better. Backing to the right is very dangerous.",
+          "factId": "2.2.4.5"
+        },
+        {
+          "q": "Which gear do you back in?",
+          "a": "The lowest reverse gear, as slowly as possible.",
+          "factId": "2.2.4.4"
+        },
+        {
+          "q": "What is the most important hand signal to agree with a helper?",
+          "a": "The signal for stop.",
+          "factId": "2.2.4.6"
+        },
+        {
+          "q": "What do you do before you start backing?",
+          "a": "Get out and walk around the vehicle, checking the path, the sides and overhead.",
+          "factId": "2.2.4.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.2.4.e1",
+          "q": "Why should you back toward the driver's side?",
+          "choices": [
+            "It is faster",
+            "You can see better",
+            "It is required by law",
+            "The mirrors are bigger"
+          ],
+          "answer": 1,
+          "why": "Driver-side backing lets you watch the rear of the vehicle out of the side window.",
+          "factId": "2.2.4.5",
+          "page": "2-9"
+        },
+        {
+          "id": "2.2.4.e2",
+          "q": "What is the single most important signal to agree with a helper?",
+          "choices": [
+            "Turn left",
+            "Turn right",
+            "Stop",
+            "Keep going"
+          ],
+          "answer": 2,
+          "why": "Agree on a signal for STOP before you begin.",
+          "factId": "2.2.4.6",
+          "page": "2-9"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Backing is ALWAYS dangerous, because you cannot see everything behind you. Avoid it when you can. Park so you can pull forward when you leave."
+        },
+        {
+          "h": "The six rules"
+        },
+        {
+          "ul": [
+            "Start in the proper position for the kind of backing you must do.",
+            "Look at your path. Get out and walk around the vehicle. Check clearance to the sides and overhead.",
+            "Use the mirrors on BOTH sides, often. Get out and look again if you are unsure.",
+            "Back slowly, in the lowest reverse gear, so you can correct errors and stop quickly.",
+            "Back and turn toward the DRIVER'S side, even if it means going round the block. Backing right is very dangerous, because you cannot see.",
+            "Use a helper. They stand near the back where you can see them, and you agree hand signals first, above all a signal for STOP."
+          ]
+        }
+      ]
     },
     {
       "id": "2.3",
@@ -129,43 +1230,367 @@
       "manualPages": "2-9",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Getting the right gear while driving is control. Miss it and you have less of it."
+        }
+      ]
     },
     {
       "id": "2.3.1",
       "title": "Manual Transmissions",
       "pdfPages": "32-33",
       "manualPages": "2-9 to 2-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.3.1.1",
+          "text": "Most heavy vehicles with unsynchronized manual transmissions need double clutching. A synchronized transmission does not.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "double clutching",
+            "unsynchronized",
+            "synchronized"
+          ]
+        },
+        {
+          "id": "2.3.1.2",
+          "text": "Shifting up: release the accelerator, push in the clutch and shift to neutral together; release the clutch; let the engine and gears slow to the rpm for the next gear; push in the clutch and shift up together; release the clutch and press the accelerator together.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "shift up",
+            "neutral",
+            "rpm"
+          ]
+        },
+        {
+          "id": "2.3.1.3",
+          "text": "Shifting down is the same, except you press the accelerator in neutral to raise the engine and gear speed to the rpm the lower gear needs.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "shift down",
+            "increase",
+            "rpm"
+          ]
+        },
+        {
+          "id": "2.3.1.4",
+          "text": "If you stay too long in neutral you may not get the next gear. Do not force it: return to neutral, release the clutch, match engine speed to road speed, and try again.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "too long",
+            "do not force",
+            "try again"
+          ]
+        },
+        {
+          "id": "2.3.1.5",
+          "text": "There are two ways to know when to shift: engine speed on the tachometer, and road speed on the speedometer.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "two ways",
+            "tachometer",
+            "speedometer"
+          ]
+        },
+        {
+          "id": "2.3.1.6",
+          "text": "Downshift before starting down a hill, into a gear usually lower than the one needed to climb the same hill.",
+          "critical": true,
+          "page": "2-9",
+          "keywords": [
+            "before",
+            "down a hill",
+            "lower"
+          ]
+        },
+        {
+          "id": "2.3.1.7",
+          "text": "Downshift before entering a curve, not in it, so you can use some power through the curve and accelerate out of it.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "before",
+            "curve",
+            "power"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Which transmissions need double clutching?",
+          "a": "Unsynchronized manual transmissions. Synchronized ones do not.",
+          "factId": "2.3.1.1"
+        },
+        {
+          "q": "What are the two special conditions where you must downshift?",
+          "a": "Before starting down a hill, and before entering a curve.",
+          "factId": "2.3.1.6"
+        },
+        {
+          "q": "What gear for going down a hill?",
+          "a": "Usually lower than the gear you would need to climb the same hill.",
+          "factId": "2.3.1.6"
+        },
+        {
+          "q": "You cannot get the next gear. What do you do?",
+          "a": "Do not force it. Return to neutral, release the clutch, match engine speed to road speed, and try again.",
+          "factId": "2.3.1.4"
+        },
+        {
+          "q": "What are the two ways to know when to shift?",
+          "a": "Engine speed on the tachometer, and road speed on the speedometer.",
+          "factId": "2.3.1.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.3.1.e1",
+          "q": "When should you downshift for a hill?",
+          "choices": [
+            "At the top, while descending",
+            "Before you start down",
+            "Halfway down",
+            "Only if the brakes fade"
+          ],
+          "answer": 1,
+          "why": "Downshift BEFORE starting down, into a gear usually lower than you would need to climb it.",
+          "factId": "2.3.1.6",
+          "page": "2-9"
+        },
+        {
+          "id": "2.3.1.e2",
+          "q": "Which needs double clutching?",
+          "choices": [
+            "A synchronized manual",
+            "An unsynchronized manual",
+            "An automatic",
+            "All of them"
+          ],
+          "answer": 1,
+          "why": "Most heavy vehicles with unsynchronized manual transmissions require double clutching.",
+          "factId": "2.3.1.1",
+          "page": "2-9"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Most heavy vehicles with UNSYNCHRONIZED manual transmissions need double clutching. A synchronized one does not."
+        },
+        {
+          "h": "Shifting up"
+        },
+        {
+          "ul": [
+            "Release the accelerator, push in the clutch and shift to neutral, all together.",
+            "Release the clutch.",
+            "Let the engine and gears slow to the rpm the next gear needs.",
+            "Push in the clutch and shift to the higher gear together.",
+            "Release the clutch and press the accelerator together."
+          ]
+        },
+        {
+          "h": "Shifting down"
+        },
+        {
+          "p": "The same, except that in neutral you PRESS the accelerator to raise the engine and gear speed to the rpm the lower gear needs."
+        },
+        {
+          "note": "If you stay too long in neutral you may not get the gear. Do not force it. Return to neutral, release the clutch, bring engine speed up to match road speed, and try again."
+        },
+        {
+          "h": "Knowing when"
+        },
+        {
+          "ul": [
+            "Engine speed: watch the tachometer and shift at the top of the operating range. Some newer vehicles use progressive shifting, where the shift rpm rises as you go up the gears.",
+            "Road speed: learn what speeds each gear is good for, and use the speedometer.",
+            "With either, you will learn the engine sounds."
+          ]
+        },
+        {
+          "h": "Two times you must downshift"
+        },
+        {
+          "ul": [
+            "Before starting down a hill. Get into a gear usually LOWER than the one needed to climb the same hill, so the brakes do not overheat.",
+            "Before entering a curve. Slow to a safe speed and downshift first, so you can use some power through the curve and accelerate out of it."
+          ]
+        }
+      ]
     },
     {
       "id": "2.3.2",
       "title": "Multi-speed Rear Axles and Auxiliary",
       "pdfPages": "33",
       "manualPages": "2-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.3.2.1",
+          "text": "Multi-speed rear axles and auxiliary transmissions add gears, usually controlled by a selector knob or switch on the gearshift lever. Shift patterns differ, so learn the one in your vehicle.",
+          "critical": false,
+          "page": "2-10",
+          "keywords": [
+            "multi speed",
+            "selector knob"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How are multi-speed rear axles controlled?",
+          "a": "By a selector knob or switch on the gearshift lever of the main transmission.",
+          "factId": "2.3.2.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Many vehicles use multi-speed rear axles and auxiliary transmissions to add gears. You control them with a selector knob or switch on the gearshift lever. Patterns differ a great deal, so learn the right way for the vehicle you drive."
+        }
+      ]
     },
     {
       "id": "2.3.3",
       "title": "Automatic Transmissions",
       "pdfPages": "33",
       "manualPages": "2-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.3.3.1",
+          "text": "With an automatic transmission, select a low range on a downgrade to get greater engine braking. The low range stops the transmission shifting up beyond the gear you chose.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "low range",
+            "engine braking",
+            "downgrade"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Why select a low range in an automatic on a downgrade?",
+          "a": "It gives greater engine braking and stops the transmission shifting up.",
+          "factId": "2.3.3.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "You can select a low range to get greater engine braking going down a grade. The low range stops the transmission shifting up past the gear you chose, unless governor rpm is exceeded."
+        },
+        {
+          "note": "Using that braking effect on a downgrade is very important."
+        }
+      ]
     },
     {
       "id": "2.3.4",
       "title": "Retarders",
       "pdfPages": "33",
       "manualPages": "2-10",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.3.4.1",
+          "text": "Retarders help slow the vehicle, which saves the brakes. The four types are exhaust, engine, hydraulic and electric.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "retarders",
+            "four",
+            "exhaust",
+            "engine",
+            "hydraulic",
+            "electric"
+          ]
+        },
+        {
+          "id": "2.3.4.2",
+          "text": "When switched on, a retarder applies braking power to the drive wheels only, whenever you let the accelerator all the way up.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "drive wheels only",
+            "accelerator"
+          ]
+        },
+        {
+          "id": "2.3.4.3",
+          "text": "Turn the retarder OFF when the road is wet, icy or snow covered, because with poor traction it can make the drive wheels skid.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "turn off",
+            "wet",
+            "icy",
+            "skid"
+          ]
+        },
+        {
+          "id": "2.3.4.4",
+          "text": "Retarders can be noisy, so know where their use is permitted.",
+          "critical": false,
+          "page": "2-10",
+          "keywords": [
+            "noisy",
+            "permitted"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the four types of retarder?",
+          "a": "Exhaust, engine, hydraulic and electric.",
+          "factId": "2.3.4.1"
+        },
+        {
+          "q": "When must you turn the retarder off?",
+          "a": "When the road is wet, icy or snow covered. It can skid the drive wheels.",
+          "factId": "2.3.4.3"
+        },
+        {
+          "q": "Which wheels does a retarder brake?",
+          "a": "The drive wheels only.",
+          "factId": "2.3.4.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.3.4.e1",
+          "q": "The road is icy. What should you do with the retarder?",
+          "choices": [
+            "Turn it on for extra braking",
+            "Turn it off",
+            "Set it to low",
+            "It makes no difference"
+          ],
+          "answer": 1,
+          "why": "With poor traction a retarder can skid the drive wheels. Turn it off on wet, icy or snowy roads.",
+          "factId": "2.3.4.3",
+          "page": "2-10"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Retarders slow the vehicle without the brakes, which saves brake wear and gives you another way to slow down. The four types are exhaust, engine, hydraulic and electric."
+        },
+        {
+          "ul": [
+            "The driver can switch any retarder on or off, and on some vehicles adjust its power.",
+            "Switched on, it brakes the DRIVE WHEELS ONLY, whenever you lift right off the accelerator.",
+            "They can be noisy, so know where their use is permitted."
+          ]
+        },
+        {
+          "note": "Turn the retarder OFF when the road is wet, icy or snow covered. With poor traction it can skid the drive wheels."
+        }
+      ]
     },
     {
       "id": "2.4",
@@ -174,25 +1599,259 @@
       "manualPages": "2-10",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Safe driving means knowing what is happening all around the vehicle. Not looking properly is a major cause of crashes."
+        }
+      ]
     },
     {
       "id": "2.4.1",
       "title": "Seeing Ahead",
       "pdfPages": "33-34",
       "manualPages": "2-10 to 2-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.4.1.1",
+          "text": "Good drivers look at least 12 to 15 seconds ahead: about one block at low speed, about a quarter of a mile at highway speed.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "12",
+            "15",
+            "seconds",
+            "one block",
+            "quarter of a mile"
+          ]
+        },
+        {
+          "id": "2.4.1.2",
+          "text": "Looking far ahead does not mean ignoring what is close. Shift your attention back and forth, near and far.",
+          "critical": true,
+          "page": "2-10",
+          "keywords": [
+            "back and forth",
+            "near",
+            "far"
+          ]
+        },
+        {
+          "id": "2.4.1.3",
+          "text": "Look for vehicles coming onto the highway, into your lane or turning, and for brake lights from slowing vehicles.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "coming onto",
+            "brake lights"
+          ]
+        },
+        {
+          "id": "2.4.1.4",
+          "text": "A traffic light that has been green a long time will probably change before you reach it, so slow down and be ready to stop.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "green",
+            "long time",
+            "ready to stop"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How far ahead should you look?",
+          "a": "12 to 15 seconds: about a block in town, a quarter mile on the highway.",
+          "factId": "2.4.1.1"
+        },
+        {
+          "q": "A light has been green a long time. What do you do?",
+          "a": "Expect it to change. Start slowing and be ready to stop.",
+          "factId": "2.4.1.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.4.1.e1",
+          "q": "How far ahead does the manual say to look?",
+          "choices": [
+            "4 to 6 seconds",
+            "8 to 10 seconds",
+            "12 to 15 seconds",
+            "20 to 25 seconds"
+          ],
+          "answer": 2,
+          "why": "12 to 15 seconds: about one block at low speed, a quarter of a mile at highway speed.",
+          "factId": "2.4.1.1",
+          "page": "2-10"
+        }
+      ],
+      "reading": [
+        {
+          "numbers": [
+            {
+              "value": "12 to 15 seconds",
+              "what": "how far ahead good drivers look"
+            },
+            {
+              "value": "1 block",
+              "what": "that distance at low speed"
+            },
+            {
+              "value": "1/4 mile",
+              "what": "that distance at highway speed"
+            }
+          ]
+        },
+        {
+          "p": "Stopping or changing lanes takes a lot of distance, so you must know what the traffic is doing well before you reach it. Looking far ahead does not mean ignoring what is close: shift your attention back and forth, near and far."
+        },
+        {
+          "note": "A traffic light that has been green a long time will probably change before you get there. Start slowing down and be ready to stop."
+        }
+      ]
     },
     {
       "id": "2.4.2",
       "title": "Seeing to the Sides and Rear",
       "pdfPages": "34",
       "manualPages": "2-11",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.4.2.1",
+          "text": "Check mirror adjustment before every trip, and it can only be checked accurately when the trailers are straight. Each mirror should show some part of the vehicle, as a reference point.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "adjustment",
+            "straight",
+            "reference point"
+          ]
+        },
+        {
+          "id": "2.4.2.2",
+          "text": "Check your mirrors regularly for traffic beside and behind you, and to see whether anyone has moved into your blind spots.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "regularly",
+            "blind spots"
+          ]
+        },
+        {
+          "id": "2.4.2.3",
+          "text": "Use the mirrors to watch your own vehicle too: the tires, to spot a tire fire, and open cargo for loose straps or a flapping tarp.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "tires",
+            "tire fire",
+            "tarp"
+          ]
+        },
+        {
+          "id": "2.4.2.4",
+          "text": "Check mirrors four times for a lane change: before, after signaling, right after starting the change, and after completing it.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "before",
+            "after you have signaled",
+            "right after",
+            "after you complete"
+          ]
+        },
+        {
+          "id": "2.4.2.5",
+          "text": "Check quickly, looking back and forth between the mirrors and the road ahead. Focus on a mirror too long and you travel a long way blind.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "quickly",
+            "back and forth"
+          ]
+        },
+        {
+          "id": "2.4.2.6",
+          "text": "In a convex mirror everything looks smaller and farther away than it really is.",
+          "critical": true,
+          "page": "2-11",
+          "keywords": [
+            "convex",
+            "smaller",
+            "farther away"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "When can mirror adjustment be checked accurately?",
+          "a": "Before the trip, with the trailers straight.",
+          "factId": "2.4.2.1"
+        },
+        {
+          "q": "When do you check mirrors for a lane change?",
+          "a": "Before it, after signaling, just after starting it, and after completing it.",
+          "factId": "2.4.2.4"
+        },
+        {
+          "q": "How do things look in a convex mirror?",
+          "a": "Smaller, and farther away than they really are.",
+          "factId": "2.4.2.6"
+        },
+        {
+          "q": "What can mirrors tell you about your own vehicle?",
+          "a": "Tire trouble, including a tire fire, and loose straps or a flapping tarp on open cargo.",
+          "factId": "2.4.2.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.4.2.e1",
+          "q": "How do objects appear in a convex mirror?",
+          "choices": [
+            "Larger and closer",
+            "Smaller and farther away",
+            "The same as a flat mirror",
+            "Larger and farther away"
+          ],
+          "answer": 1,
+          "why": "A convex mirror shows a wider area, but everything looks smaller and farther away than it is.",
+          "factId": "2.4.2.6",
+          "page": "2-11"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Adjustment"
+        },
+        {
+          "p": "Check mirror adjustment before any trip, and only when the trailers are straight. Each mirror should show some part of your vehicle: that gives you a reference point for judging everything else."
+        },
+        {
+          "h": "What to check for"
+        },
+        {
+          "ul": [
+            "Traffic beside and behind you, and anyone moving into your blind spots.",
+            "Your own vehicle: the tires, which is one way to spot a tire fire, and open cargo for loose straps, ropes or chains, and a flapping or ballooning tarp."
+          ]
+        },
+        {
+          "h": "Four checks for a lane change"
+        },
+        {
+          "ul": [
+            "Before you change, to see there is room.",
+            "After you signal, to see no one has moved into your blind spot.",
+            "Right after you start, to double-check the path is clear.",
+            "After you complete the change."
+          ]
+        },
+        {
+          "note": "Check QUICKLY, looking back and forth between the mirrors and the road ahead. Stare into a mirror and you travel a long way without knowing what is in front. In a convex mirror everything looks smaller and farther away than it is."
+        }
+      ]
     },
     {
       "id": "2.5",
@@ -201,25 +1860,377 @@
       "manualPages": "2-11",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Other drivers cannot know what you are going to do until you tell them. Communicating means signaling your intentions, and making sure you are seen."
+        }
+      ]
     },
     {
       "id": "2.5.1",
       "title": "Signal Your Intentions",
       "pdfPages": "34-35",
       "manualPages": "2-11 to 2-12",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.5.1.1",
+          "text": "Three rules for turn signals: signal early, signal continuously, and cancel the signal after the turn.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "early",
+            "continuously",
+            "cancel"
+          ]
+        },
+        {
+          "id": "2.5.1.2",
+          "text": "Signal well before you turn. It is the best way to keep others from trying to pass you.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "well before",
+            "pass"
+          ]
+        },
+        {
+          "id": "2.5.1.3",
+          "text": "Do not cancel the signal until the turn is complete, because you need both hands on the wheel to turn safely.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "do not cancel",
+            "both hands"
+          ]
+        },
+        {
+          "id": "2.5.1.4",
+          "text": "Warn drivers behind you by tapping the brake pedal lightly to flash the brake lights, when there is trouble ahead, a tight turn, a stop on the road, or you are driving slowly.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "tap",
+            "flash",
+            "warn"
+          ]
+        },
+        {
+          "id": "2.5.1.5",
+          "text": "Use the four-way flashers when you are driving very slowly or are stopped, where it is legal.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "four way flashers",
+            "slowly",
+            "stopped"
+          ]
+        },
+        {
+          "id": "2.5.1.6",
+          "text": "Never direct traffic by signaling others that it is safe to pass. You could cause a crash and be blamed for it.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "do not direct",
+            "safe to pass",
+            "blamed"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the three rules for turn signals?",
+          "a": "Signal early, signal continuously, and cancel it afterwards.",
+          "factId": "2.5.1.1"
+        },
+        {
+          "q": "How do you warn drivers behind you of a hazard ahead?",
+          "a": "Tap the brake pedal lightly to flash the brake lights.",
+          "factId": "2.5.1.4"
+        },
+        {
+          "q": "Should you wave another driver past?",
+          "a": "No. Never direct traffic. You could cause a crash and be blamed.",
+          "factId": "2.5.1.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.5.1.e1",
+          "q": "A car behind wants to pass and the way looks clear. What should you do?",
+          "choices": [
+            "Wave them past",
+            "Flash your lights",
+            "Nothing: never direct traffic",
+            "Signal left"
+          ],
+          "answer": 2,
+          "why": "Do not direct traffic. If you are wrong you could cause a crash and be blamed for it.",
+          "factId": "2.5.1.6",
+          "page": "2-12"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Turns: three rules"
+        },
+        {
+          "ul": [
+            "Signal EARLY, well before the turn. It is the best way to stop others passing you.",
+            "Signal CONTINUOUSLY. You need both hands on the wheel, so do not cancel until the turn is done.",
+            "CANCEL the signal afterwards, if it does not cancel itself."
+          ]
+        },
+        {
+          "h": "Lane changes"
+        },
+        {
+          "p": "Signal before you change, and change slowly and smoothly, so a driver you did not see has a chance to sound the horn or get out of the way."
+        },
+        {
+          "h": "Slowing down"
+        },
+        {
+          "p": "A few light taps on the brake pedal, enough to flash the brake lights, warn the drivers behind. Use the four-way flashers when you are going very slowly or are stopped, where that is legal. Warn them when:"
+        },
+        {
+          "ul": [
+            "There is trouble ahead they cannot see past you.",
+            "You must take a tight turn slowly: brake early and slow gradually.",
+            "You are stopping on the road to unload or at a railroad crossing. Do not stop suddenly.",
+            "You must drive slowly."
+          ]
+        },
+        {
+          "note": "Do NOT direct traffic. Signaling another driver that it is safe to pass can cause a crash, and the blame and the cost can land on you."
+        }
+      ]
     },
     {
       "id": "2.5.2",
       "title": "Communicating Your Presence",
       "pdfPages": "35-37",
       "manualPages": "2-12 to 2-14",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.5.2.1",
+          "text": "When you pass a vehicle, a pedestrian or a bicyclist, assume they do not see you. Where legal, tap the horn lightly, or at night flash from low to high beam and back.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "assume",
+            "tap the horn",
+            "flash"
+          ]
+        },
+        {
+          "id": "2.5.2.2",
+          "text": "At dawn, dusk, in rain or snow, turn on your headlights, not just the identification or clearance lights, and use the low beams.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "headlights",
+            "low beams",
+            "dawn",
+            "dusk"
+          ]
+        },
+        {
+          "id": "2.5.2.3",
+          "text": "Parked at the roadside, turn on the four-way flashers. Do not trust the taillights: drivers have crashed into parked vehicles thinking they were moving.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "four way",
+            "taillights",
+            "parked"
+          ]
+        },
+        {
+          "id": "2.5.2.4",
+          "text": "If you must stop on a road or its shoulder, put out your emergency warning devices within ten minutes.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "ten minutes",
+            "warning devices"
+          ]
+        },
+        {
+          "id": "2.5.2.5",
+          "text": "On a one-way or divided highway, place the warning devices 10 feet, 100 feet and 200 feet toward the approaching traffic.",
+          "critical": true,
+          "page": "2-12",
+          "keywords": [
+            "10",
+            "100",
+            "200",
+            "one way",
+            "divided"
+          ]
+        },
+        {
+          "id": "2.5.2.6",
+          "text": "On a two-lane road carrying traffic both ways, or an undivided highway, place them within 10 feet of the front or rear corners, and 100 feet behind and 100 feet ahead of the vehicle.",
+          "critical": true,
+          "page": "2-13",
+          "keywords": [
+            "10 feet",
+            "100 feet",
+            "both directions"
+          ]
+        },
+        {
+          "id": "2.5.2.7",
+          "text": "If a hill, a curve or another obstruction hides your vehicle, move the rear-most triangle back down the road so drivers get warning within 500 feet.",
+          "critical": true,
+          "page": "2-13",
+          "keywords": [
+            "500 feet",
+            "hill",
+            "curve"
+          ]
+        },
+        {
+          "id": "2.5.2.8",
+          "text": "Hold the triangles between yourself and the oncoming traffic as you put them out, so drivers can see you.",
+          "critical": true,
+          "page": "2-13",
+          "keywords": [
+            "hold",
+            "between",
+            "oncoming"
+          ]
+        },
+        {
+          "id": "2.5.2.9",
+          "text": "Use the horn when it is needed, but not unnecessarily: it can startle other drivers and that can be dangerous.",
+          "critical": true,
+          "page": "2-13",
+          "keywords": [
+            "horn",
+            "startle"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How soon must warning devices be out after you stop on the road?",
+          "a": "Within ten minutes.",
+          "factId": "2.5.2.4"
+        },
+        {
+          "q": "Where do the warning devices go on a divided highway?",
+          "a": "10 feet, 100 feet and 200 feet toward the approaching traffic.",
+          "factId": "2.5.2.5"
+        },
+        {
+          "q": "Where do they go on a two-lane two-way road?",
+          "a": "Within 10 feet of the corners, and 100 feet both behind and ahead.",
+          "factId": "2.5.2.6"
+        },
+        {
+          "q": "A hill hides your stopped vehicle. What do you do?",
+          "a": "Move the rear-most triangle back down the road so there is warning within 500 feet.",
+          "factId": "2.5.2.7"
+        },
+        {
+          "q": "How do you carry the triangles out?",
+          "a": "Held between you and the oncoming traffic, so drivers see you.",
+          "factId": "2.5.2.8"
+        },
+        {
+          "q": "You are parked at the roadside. What must be on?",
+          "a": "The four-way flashers. Do not rely on the taillights.",
+          "factId": "2.5.2.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.5.2.e1",
+          "q": "You stop on a divided highway. Where do the three warning devices go?",
+          "choices": [
+            "10, 50 and 100 feet",
+            "10, 100 and 200 feet",
+            "25, 100 and 200 feet",
+            "100, 200 and 300 feet"
+          ],
+          "answer": 1,
+          "why": "10 feet, 100 feet and 200 feet toward the approaching traffic.",
+          "factId": "2.5.2.5",
+          "page": "2-12"
+        },
+        {
+          "id": "2.5.2.e2",
+          "q": "How long do you have to put out warning devices?",
+          "choices": [
+            "Immediately",
+            "Within 5 minutes",
+            "Within 10 minutes",
+            "Within 30 minutes"
+          ],
+          "answer": 2,
+          "why": "Within ten minutes of stopping.",
+          "factId": "2.5.2.4",
+          "page": "2-12"
+        },
+        {
+          "id": "2.5.2.e3",
+          "q": "Your stopped vehicle is hidden by a curve. What do you do with the rear triangle?",
+          "choices": [
+            "Leave it at 100 feet",
+            "Move it back so there is warning within 500 feet",
+            "Put it on the vehicle",
+            "Skip it"
+          ],
+          "answer": 1,
+          "why": "Move it back beyond the obstruction so drivers are warned within 500 feet.",
+          "factId": "2.5.2.7",
+          "page": "2-13"
+        }
+      ],
+      "reading": [
+        {
+          "h": "When passing"
+        },
+        {
+          "p": "Assume the vehicle, pedestrian or bicyclist does not see you: they could move in front of you. Where it is legal, tap the horn lightly, or at night flash from low to high beam and back. Then drive so you avoid a crash even if they never notice you."
+        },
+        {
+          "h": "When it is hard to see"
+        },
+        {
+          "p": "At dawn, dusk, in rain or snow, turn on your HEADLIGHTS, not just the identification or clearance lights. Use the low beams: high beams bother people by day as well as by night."
+        },
+        {
+          "h": "Parked at the roadside"
+        },
+        {
+          "p": "Turn on the four-way flashers. Do not trust the taillights: drivers have driven into the back of a parked vehicle believing it was moving."
+        },
+        {
+          "numbers": [
+            {
+              "value": "10 minutes",
+              "what": "the time you have to put out warning devices after stopping"
+            }
+          ]
+        },
+        {
+          "h": "Where the devices go"
+        },
+        {
+          "ul": [
+            "One-way or divided highway: 10 feet, 100 feet and 200 feet toward the approaching traffic.",
+            "Two-lane road with traffic both ways, or an undivided highway: within 10 feet of the front or rear corners, and 100 feet behind and 100 feet ahead, on the shoulder or in the lane you stopped in.",
+            "Hill, curve or other obstruction: move the rear-most triangle back down the road so drivers are warned within 500 feet."
+          ]
+        },
+        {
+          "note": "Hold the triangles between yourself and the oncoming traffic as you walk them out, so other drivers can see you. Use the horn when it is needed, but an unnecessary blast startles people, and that can be dangerous."
+        }
+      ]
     },
     {
       "id": "2.6",
@@ -228,70 +2239,901 @@
       "manualPages": "2-14",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Driving too fast is a major cause of fatal crashes. Your speed must suit the traction, the curves, the visibility, the traffic and the hills."
+        }
+      ]
     },
     {
       "id": "2.6.1",
       "title": "Stopping Distance",
       "pdfPages": "37-38",
       "manualPages": "2-14 to 2-15",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.1.1",
+          "text": "Total stopping distance is perception distance plus reaction distance plus braking distance.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "perception",
+            "reaction",
+            "braking",
+            "total"
+          ]
+        },
+        {
+          "id": "2.6.1.2",
+          "text": "Perception time for an alert driver averages 1.75 seconds, which is 142 feet at 55 mph.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "1.75",
+            "142",
+            "perception"
+          ]
+        },
+        {
+          "id": "2.6.1.3",
+          "text": "Reaction time averages three quarters of a second to one second, which is 61 feet at 55 mph.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "reaction",
+            "61"
+          ]
+        },
+        {
+          "id": "2.6.1.4",
+          "text": "Braking distance at 55 mph on dry pavement with good brakes is about 216 feet.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "216",
+            "braking distance"
+          ]
+        },
+        {
+          "id": "2.6.1.5",
+          "text": "Total stopping distance at 55 mph is a minimum of 419 feet.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "419",
+            "total stopping"
+          ]
+        },
+        {
+          "id": "2.6.1.6",
+          "text": "Double the speed from 20 to 40 mph and the impact and the braking distance are four times greater.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "double",
+            "20",
+            "40",
+            "four times"
+          ]
+        },
+        {
+          "id": "2.6.1.7",
+          "text": "Triple the speed from 20 to 60 mph and they are nine times greater. At 60 mph your stopping distance is longer than a football field.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "60",
+            "nine times",
+            "football field"
+          ]
+        },
+        {
+          "id": "2.6.1.8",
+          "text": "At 80 mph the impact and braking distance are 16 times greater than at 20 mph.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "80",
+            "16 times"
+          ]
+        },
+        {
+          "id": "2.6.1.9",
+          "text": "An empty truck needs a GREATER stopping distance than a loaded one, because it has less traction.",
+          "critical": true,
+          "page": "2-14",
+          "keywords": [
+            "empty",
+            "greater",
+            "less traction"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What three distances add up to total stopping distance?",
+          "a": "Perception, reaction and braking distance.",
+          "factId": "2.6.1.1"
+        },
+        {
+          "q": "What is total stopping distance at 55 mph?",
+          "a": "At least 419 feet.",
+          "factId": "2.6.1.5"
+        },
+        {
+          "q": "Double your speed. What happens to braking distance?",
+          "a": "It becomes four times longer, and the impact four times greater.",
+          "factId": "2.6.1.6"
+        },
+        {
+          "q": "Do empty trucks stop in less distance?",
+          "a": "No. Empty trucks need greater stopping distance, because they have less traction.",
+          "factId": "2.6.1.9"
+        },
+        {
+          "q": "What is the average perception time, and how far at 55 mph?",
+          "a": "1.75 seconds, about 142 feet.",
+          "factId": "2.6.1.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.6.1.e1",
+          "q": "You double your speed from 20 to 40 mph. Braking distance becomes:",
+          "choices": [
+            "Twice as long",
+            "Three times as long",
+            "Four times as long",
+            "The same"
+          ],
+          "answer": 2,
+          "why": "Impact and braking distance are four times greater. Triple the speed and they are nine times greater.",
+          "factId": "2.6.1.6",
+          "page": "2-14"
+        },
+        {
+          "id": "2.6.1.e2",
+          "q": "Which stops in the shorter distance, loaded or empty?",
+          "choices": [
+            "Empty, it is lighter",
+            "Loaded, it has more traction",
+            "They are identical",
+            "It depends on the gear"
+          ],
+          "answer": 1,
+          "why": "Brakes, tires and springs work best loaded. An empty truck has less traction and needs more distance.",
+          "factId": "2.6.1.9",
+          "page": "2-14"
+        },
+        {
+          "id": "2.6.1.e3",
+          "q": "Total stopping distance at 55 mph is about:",
+          "choices": [
+            "200 feet",
+            "300 feet",
+            "419 feet",
+            "600 feet"
+          ],
+          "answer": 2,
+          "why": "142 feet perception, 61 reaction and 216 braking: a minimum of 419 feet.",
+          "factId": "2.6.1.5",
+          "page": "2-14"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Perception distance, plus reaction distance, plus braking distance, is your total stopping distance."
+        },
+        {
+          "numbers": [
+            {
+              "value": "142 feet",
+              "what": "perception distance at 55 mph, from 1.75 seconds"
+            },
+            {
+              "value": "61 feet",
+              "what": "reaction distance at 55 mph, from 0.75 to 1 second"
+            },
+            {
+              "value": "216 feet",
+              "what": "braking distance at 55 mph, dry pavement, good brakes"
+            },
+            {
+              "value": "419 feet",
+              "what": "total stopping distance at 55 mph, minimum"
+            }
+          ]
+        },
+        {
+          "h": "What speed does to it"
+        },
+        {
+          "numbers": [
+            {
+              "value": "4 times",
+              "what": "impact and braking distance, 20 mph to 40 mph"
+            },
+            {
+              "value": "9 times",
+              "what": "20 mph to 60 mph"
+            },
+            {
+              "value": "16 times",
+              "what": "20 mph to 80 mph"
+            }
+          ]
+        },
+        {
+          "note": "At 60 mph your stopping distance is longer than a football field."
+        },
+        {
+          "h": "What weight does to it"
+        },
+        {
+          "p": "The heavier the vehicle, the more work the brakes do and the more heat they take. But brakes, tires, springs and shocks are designed to work best FULLY LOADED."
+        },
+        {
+          "note": "An EMPTY truck needs a GREATER stopping distance, because it has less traction. This catches people out."
+        }
+      ]
     },
     {
       "id": "2.6.2",
       "title": "Matching Speed to the Road Surface",
       "pdfPages": "38",
       "manualPages": "2-15",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.2.1",
+          "text": "Traction is the friction between the tires and the road. Without it you can neither steer nor brake.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "traction",
+            "friction"
+          ]
+        },
+        {
+          "id": "2.6.2.2",
+          "text": "A wet road can double your stopping distance, so reduce speed by about one third: from 55 to about 35 mph.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "wet",
+            "double",
+            "one third",
+            "35"
+          ]
+        },
+        {
+          "id": "2.6.2.3",
+          "text": "On packed snow, reduce speed by a half or more. On ice, reduce to a crawl and stop driving as soon as you safely can.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "packed snow",
+            "half",
+            "ice",
+            "crawl"
+          ]
+        },
+        {
+          "id": "2.6.2.4",
+          "text": "Shaded parts of the road stay icy long after open areas have melted.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "shaded",
+            "icy"
+          ]
+        },
+        {
+          "id": "2.6.2.5",
+          "text": "Bridges freeze before the road does. Take care when the temperature is near 32 degrees Fahrenheit.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "bridges",
+            "freeze",
+            "32"
+          ]
+        },
+        {
+          "id": "2.6.2.6",
+          "text": "Wet ice is much more slippery than ice that is not wet.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "wet ice",
+            "more slippery"
+          ]
+        },
+        {
+          "id": "2.6.2.7",
+          "text": "Black ice is a thin clear layer that makes the road look merely wet. Watch for it whenever the temperature is below freezing and the road looks wet.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "black ice",
+            "thin",
+            "looks wet"
+          ]
+        },
+        {
+          "id": "2.6.2.8",
+          "text": "To check for icing, open the window and feel the front of the mirror, the mirror support or the antenna. Ice there means the road is probably icing too.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "mirror",
+            "antenna",
+            "feel"
+          ]
+        },
+        {
+          "id": "2.6.2.9",
+          "text": "Just after rain begins the water mixes with oil on the road and it becomes very slippery. Continued rain washes the oil away.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "just after",
+            "oil",
+            "slippery"
+          ]
+        },
+        {
+          "id": "2.6.2.10",
+          "text": "Hydroplaning can happen at speeds as low as 30 mph when there is a lot of water, and it is more likely with low tire pressure or worn tread.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "hydroplaning",
+            "30 mph",
+            "low pressure",
+            "worn"
+          ]
+        },
+        {
+          "id": "2.6.2.11",
+          "text": "If you hydroplane, release the accelerator and push in the clutch. Do not use the brakes.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "release",
+            "clutch",
+            "do not use the brakes"
+          ]
+        },
+        {
+          "id": "2.6.2.12",
+          "text": "Clear reflections, tire splashes and raindrops on the road all show standing water.",
+          "critical": false,
+          "page": "2-15",
+          "keywords": [
+            "reflections",
+            "splashes",
+            "standing water"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "How much do you slow on a wet road?",
+          "a": "By about one third: 55 mph down to about 35.",
+          "factId": "2.6.2.2"
+        },
+        {
+          "q": "How much on packed snow? On ice?",
+          "a": "By a half or more on packed snow. To a crawl on ice, then stop as soon as safe.",
+          "factId": "2.6.2.3"
+        },
+        {
+          "q": "What is black ice?",
+          "a": "A thin, clear layer that makes the road look only wet.",
+          "factId": "2.6.2.7"
+        },
+        {
+          "q": "How do you check whether the road is icing?",
+          "a": "Open the window and feel the front of the mirror, its support, or the antenna.",
+          "factId": "2.6.2.8"
+        },
+        {
+          "q": "At what speed can hydroplaning start?",
+          "a": "As low as 30 mph where there is a lot of water.",
+          "factId": "2.6.2.10"
+        },
+        {
+          "q": "What do you do if you hydroplane?",
+          "a": "Release the accelerator and push in the clutch. Do not brake.",
+          "factId": "2.6.2.11"
+        },
+        {
+          "q": "Why is the road most slippery just after rain starts?",
+          "a": "The water mixes with the oil left by vehicles. Continued rain washes it away.",
+          "factId": "2.6.2.9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.6.2.e1",
+          "q": "You are doing 55 mph and the road is wet. What speed is right?",
+          "choices": [
+            "About 50",
+            "About 45",
+            "About 35",
+            "About 25"
+          ],
+          "answer": 2,
+          "why": "Reduce by about one third on a wet road: 55 down to about 35.",
+          "factId": "2.6.2.2",
+          "page": "2-15"
+        },
+        {
+          "id": "2.6.2.e2",
+          "q": "Your vehicle starts to hydroplane. What do you do?",
+          "choices": [
+            "Brake firmly",
+            "Release the accelerator and push in the clutch",
+            "Accelerate gently",
+            "Steer hard"
+          ],
+          "answer": 1,
+          "why": "Let the wheels turn freely: release the accelerator and push in the clutch. Do not brake.",
+          "factId": "2.6.2.11",
+          "page": "2-15"
+        },
+        {
+          "id": "2.6.2.e3",
+          "q": "Which freezes first?",
+          "choices": [
+            "The open road",
+            "Bridges",
+            "Shaded curves",
+            "Hilltops"
+          ],
+          "answer": 1,
+          "why": "Bridges freeze before the road does. Watch out near 32 degrees Fahrenheit.",
+          "factId": "2.6.2.5",
+          "page": "2-15"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Traction is the friction between the tires and the road. Without it you cannot steer and you cannot brake."
+        },
+        {
+          "numbers": [
+            {
+              "value": "one third",
+              "what": "slow by this much on a wet road: 55 to about 35"
+            },
+            {
+              "value": "one half or more",
+              "what": "slow by this much on packed snow"
+            },
+            {
+              "value": "a crawl",
+              "what": "on ice, then stop as soon as you safely can"
+            }
+          ]
+        },
+        {
+          "h": "Spotting a slippery road"
+        },
+        {
+          "ul": [
+            "Shaded areas stay icy long after open road has melted.",
+            "Bridges freeze BEFORE the road. Watch out near 32 degrees Fahrenheit.",
+            "Melting makes ice wet, and wet ice is far more slippery than dry ice.",
+            "Black ice is a thin clear layer that makes the road look merely wet. Below freezing, a wet-looking road may be black ice.",
+            "Feel the front of the mirror, the mirror support or the antenna. Ice there means the road is icing.",
+            "Just after rain starts, water mixes with road oil and it gets very slippery. More rain washes the oil away."
+          ]
+        },
+        {
+          "h": "Hydroplaning"
+        },
+        {
+          "numbers": [
+            {
+              "value": "30 mph",
+              "what": "hydroplaning can start this low where there is a lot of water"
+            }
+          ]
+        },
+        {
+          "p": "The tires lose contact with the road and ride on water. You may not be able to steer or brake. It is likelier with low tire pressure or worn tread, because the grooves carry the water away."
+        },
+        {
+          "note": "To recover: release the accelerator and push in the clutch, so the wheels turn freely and the vehicle slows. Do NOT use the brakes."
+        }
+      ]
     },
     {
       "id": "2.6.3",
       "title": "Speed and Curves",
       "pdfPages": "38",
       "manualPages": "2-15",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.3.1",
+          "text": "Take a curve too fast and either the tires lose traction and you skid off the road, or they hold and the vehicle rolls over.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "too fast",
+            "skid",
+            "rolls over"
+          ]
+        },
+        {
+          "id": "2.6.3.2",
+          "text": "Tests show that a truck with a high center of gravity can roll over at the posted speed limit for a curve.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "posted speed limit",
+            "high center of gravity"
+          ]
+        },
+        {
+          "id": "2.6.3.3",
+          "text": "Slow to a safe speed BEFORE you enter the curve. Braking in a curve is dangerous, because it is easier to lock the wheels and skid.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "before",
+            "braking in a curve",
+            "lock"
+          ]
+        },
+        {
+          "id": "2.6.3.4",
+          "text": "Be in a gear that lets you accelerate slightly in the curve, which helps you keep control.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "gear",
+            "accelerate slightly"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Can a truck roll over at the posted speed for a curve?",
+          "a": "Yes, if it has a high center of gravity.",
+          "factId": "2.6.3.2"
+        },
+        {
+          "q": "Where do you slow for a curve?",
+          "a": "Before you enter it. Braking in the curve can lock the wheels.",
+          "factId": "2.6.3.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.6.3.e1",
+          "q": "The posted speed for a curve is 40 mph. Is that always safe for your truck?",
+          "choices": [
+            "Yes, it is the legal limit",
+            "No, a high center of gravity can roll over at the posted speed",
+            "Only when loaded",
+            "Only when empty"
+          ],
+          "answer": 1,
+          "why": "Tests show trucks with a high center of gravity can roll at the posted speed for a curve.",
+          "factId": "2.6.3.2",
+          "page": "2-15"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Take a curve too fast and one of two things happens. The tires lose traction and you carry straight on, off the road. Or the tires hold and the vehicle rolls over."
+        },
+        {
+          "note": "A truck with a high center of gravity can roll over AT the posted speed limit for a curve. The posted speed is not a promise."
+        },
+        {
+          "ul": [
+            "Slow to a safe speed BEFORE you enter the curve.",
+            "Do not brake in the curve: it is easier to lock the wheels and skid.",
+            "Never exceed the posted speed for the curve.",
+            "Be in a gear that lets you accelerate slightly through it. That helps you keep control."
+          ]
+        }
+      ]
     },
     {
       "id": "2.6.4",
       "title": "Speed and Distance Ahead",
       "pdfPages": "38",
       "manualPages": "2-15",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.4.1",
+          "text": "You must always be able to stop within the distance you can see ahead. Fog, rain or darkness may mean slowing down to do that.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "stop",
+            "distance you can see"
+          ]
+        },
+        {
+          "id": "2.6.4.2",
+          "text": "You cannot see as far on low beams as on high beams, so slow down when you must use low beams.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "low beams",
+            "slow down"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the rule about speed and the distance you can see?",
+          "a": "You must be able to stop within the distance you can see ahead.",
+          "factId": "2.6.4.1"
+        },
+        {
+          "q": "Why slow down on low beams?",
+          "a": "You cannot see as far, so you must be able to stop in the shorter distance.",
+          "factId": "2.6.4.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "note": "You must always be able to stop within the distance you can see ahead."
+        },
+        {
+          "p": "Fog, rain and other conditions shorten that distance, so they must shorten your speed too. At night you cannot see as far on low beams as on high beams. When you must use low beams, slow down."
+        }
+      ]
     },
     {
       "id": "2.6.5",
       "title": "Speed and Traffic Flow",
       "pdfPages": "38-39",
       "manualPages": "2-15 to 2-16",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.5.1",
+          "text": "In heavy traffic the safest speed is the speed of the other vehicles, because vehicles going the same way at the same speed rarely hit each other.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "safest speed",
+            "same direction"
+          ]
+        },
+        {
+          "id": "2.6.5.2",
+          "text": "In many states the speed limit is lower for trucks and buses than for cars, by as much as 15 mph. Take extra care changing lanes or passing on those roads.",
+          "critical": true,
+          "page": "2-15",
+          "keywords": [
+            "lower",
+            "15 mph",
+            "extra caution"
+          ]
+        },
+        {
+          "id": "2.6.5.3",
+          "text": "Driving faster than the flow saves little time, means constant passing, raises the chance of a crash, and is more tiring, and fatigue raises the chance of a crash again.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "faster",
+            "save much time",
+            "fatigue"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the safest speed in heavy traffic?",
+          "a": "The speed of the other traffic, without exceeding a legal or safe speed.",
+          "factId": "2.6.5.1"
+        },
+        {
+          "q": "How much lower can truck speed limits be than car limits?",
+          "a": "As much as 15 mph in some states.",
+          "factId": "2.6.5.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "In heavy traffic the safest speed is the speed of the other vehicles. Vehicles going the same way at the same speed rarely run into one another."
+        },
+        {
+          "note": "In many states the limit for trucks and buses is lower than for cars, by as much as 15 mph. Use extra care when you change lanes or pass on those roads."
+        },
+        {
+          "p": "Driving faster than the flow saves little time. You must keep passing, which raises the chance of a crash and tires you out, and fatigue raises the chance again."
+        }
+      ]
     },
     {
       "id": "2.6.6",
       "title": "Speed on Downgrades",
       "pdfPages": "39",
       "manualPages": "2-16",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.6.1",
+          "text": "Gravity increases your speed on a downgrade. Choose a speed that suits the total weight, the length and steepness of the grade, the road conditions and the weather.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "gravity",
+            "total weight",
+            "length",
+            "steepness"
+          ]
+        },
+        {
+          "id": "2.6.6.2",
+          "text": "Never exceed a posted speed limit or a Maximum Safe Speed sign on a grade.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "maximum safe speed",
+            "never exceed"
+          ]
+        },
+        {
+          "id": "2.6.6.3",
+          "text": "The braking effect of the engine must be your main way of controlling speed on a downgrade, and it is greatest near the governed rpm with the transmission in a low gear.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "engine",
+            "principal",
+            "governed rpm"
+          ]
+        },
+        {
+          "id": "2.6.6.4",
+          "text": "Shift to a low gear BEFORE starting down the grade, and save the brakes for slowing or stopping as traffic requires.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "before starting down",
+            "save your brakes"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is your main way of controlling speed on a downgrade?",
+          "a": "The braking effect of the engine, in a low gear near governed rpm.",
+          "factId": "2.6.6.3"
+        },
+        {
+          "q": "When do you shift to a low gear for a downgrade?",
+          "a": "Before you start down it.",
+          "factId": "2.6.6.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.6.6.e1",
+          "q": "What is the principal way to control speed on a long downgrade?",
+          "choices": [
+            "The service brakes",
+            "The braking effect of the engine",
+            "The parking brake",
+            "Coasting in neutral"
+          ],
+          "answer": 1,
+          "why": "The engine does the work in a low gear. The brakes are there to slow or stop as traffic requires.",
+          "factId": "2.6.6.3",
+          "page": "2-16"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Gravity increases your speed going down. Your job is to pick a speed that is not too fast for:"
+        },
+        {
+          "ul": [
+            "The total weight of the vehicle and cargo.",
+            "The length of the grade.",
+            "The steepness of the grade.",
+            "The road conditions.",
+            "The weather."
+          ]
+        },
+        {
+          "note": "Never exceed a posted speed limit or a Maximum Safe Speed sign. Heed the signs that give the length and steepness of the grade."
+        },
+        {
+          "p": "The braking effect of the ENGINE must be your main way of controlling speed. It is greatest near the governed rpm with the transmission in a low gear. Shift down BEFORE you start down, and save the brakes for slowing and stopping as the road and traffic require."
+        }
+      ]
     },
     {
       "id": "2.6.7",
       "title": "Roadway Work Zones",
       "pdfPages": "39",
       "manualPages": "2-16",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.6.7.1",
+          "text": "Speeding traffic is the number one cause of injury and death in roadway work zones.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "number one",
+            "work zones"
+          ]
+        },
+        {
+          "id": "2.6.7.2",
+          "text": "Obey the posted limits approaching and inside a work zone, and watch the speedometer so your speed does not creep up through long sections.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "posted",
+            "creep up"
+          ]
+        },
+        {
+          "id": "2.6.7.3",
+          "text": "Slow down further in bad weather or poor road conditions, and further again when a worker is close to the roadway.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "slow further",
+            "worker close"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What causes most injury and death in work zones?",
+          "a": "Speeding traffic.",
+          "factId": "2.6.7.1"
+        },
+        {
+          "q": "When do you slow down even more in a work zone?",
+          "a": "In bad weather or poor conditions, and when a worker is close to the road.",
+          "factId": "2.6.7.3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.6.7.e1",
+          "q": "What is the number one cause of injury and death in roadway work zones?",
+          "choices": [
+            "Falling equipment",
+            "Speeding traffic",
+            "Poor lighting",
+            "Narrow lanes"
+          ],
+          "answer": 1,
+          "why": "Speeding traffic.",
+          "factId": "2.6.7.1",
+          "page": "2-16"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Speeding traffic is the NUMBER ONE cause of injury and death in roadway work zones."
+        },
+        {
+          "ul": [
+            "Obey the posted limits approaching and driving through.",
+            "Watch your speedometer. Through a long section of roadworks your speed creeps up without you noticing.",
+            "Slow further for bad weather or poor road conditions.",
+            "Slow further again when a worker is close to the roadway."
+          ]
+        }
+      ]
     },
     {
       "id": "2.7",
@@ -300,70 +3142,747 @@
       "manualPages": "2-16",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "Space is time. When something goes wrong, space gives you room to think and to act. A large vehicle takes up more of it and needs more of it, for stopping and for turning."
+        }
+      ]
     },
     {
       "id": "2.7.1",
       "title": "Space Ahead",
       "pdfPages": "39-40",
       "manualPages": "2-16 to 2-17",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.1.1",
+          "text": "The vehicle trucks and buses most often run into is the one in front, and the most frequent cause is following too closely.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "most often",
+            "in front",
+            "following too closely"
+          ]
+        },
+        {
+          "id": "2.7.1.2",
+          "text": "Leave at least one second of following distance for every 10 feet of vehicle length at speeds below 40 mph.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "one second",
+            "10 feet",
+            "below 40"
+          ]
+        },
+        {
+          "id": "2.7.1.3",
+          "text": "Above 40 mph, add one more second. A 40 foot vehicle needs 4 seconds below 40 mph and 5 above it; a 60 foot rig needs 6 and 7.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "add 1 second",
+            "40 foot",
+            "60 foot"
+          ]
+        },
+        {
+          "id": "2.7.1.4",
+          "text": "To measure it, wait until the vehicle ahead passes a landmark, then count the seconds until you reach the same spot.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "count",
+            "landmark",
+            "seconds"
+          ]
+        },
+        {
+          "id": "2.7.1.5",
+          "text": "A vehicle smaller than yours can probably stop faster than you can, so following it closely can put you into it.",
+          "critical": true,
+          "page": "2-16",
+          "keywords": [
+            "smaller",
+            "stop faster"
+          ]
+        },
+        {
+          "id": "2.7.1.6",
+          "text": "On a slippery road you need much more space to stop.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "slippery",
+            "much more space"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is the following distance rule?",
+          "a": "One second per 10 feet of vehicle length below 40 mph, plus one more second above 40.",
+          "factId": "2.7.1.2"
+        },
+        {
+          "q": "How many seconds for a 60 foot rig at 55 mph?",
+          "a": "Seven. Six for the length, plus one for being over 40 mph.",
+          "factId": "2.7.1.3"
+        },
+        {
+          "q": "What do trucks and buses most often run into?",
+          "a": "The vehicle in front, usually from following too closely.",
+          "factId": "2.7.1.1"
+        },
+        {
+          "q": "How do you measure your following distance?",
+          "a": "Count the seconds from when the vehicle ahead passes a landmark until you reach it.",
+          "factId": "2.7.1.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.7.1.e1",
+          "q": "You drive a 40 foot vehicle at 35 mph. What is the least following distance?",
+          "choices": [
+            "2 seconds",
+            "3 seconds",
+            "4 seconds",
+            "5 seconds"
+          ],
+          "answer": 2,
+          "why": "One second per ten feet below 40 mph, so four seconds. Above 40 mph it would be five.",
+          "factId": "2.7.1.2",
+          "page": "2-16"
+        },
+        {
+          "id": "2.7.1.e2",
+          "q": "You drive a 60 foot rig at 55 mph. What is the least following distance?",
+          "choices": [
+            "5 seconds",
+            "6 seconds",
+            "7 seconds",
+            "8 seconds"
+          ],
+          "answer": 2,
+          "why": "Six for the length, plus one above 40 mph.",
+          "factId": "2.7.1.3",
+          "page": "2-16"
+        }
+      ],
+      "reading": [
+        {
+          "note": "The vehicle that trucks and buses most often run into is the one IN FRONT of them, and the most frequent cause is following too closely."
+        },
+        {
+          "numbers": [
+            {
+              "value": "1 second",
+              "what": "per 10 feet of vehicle length, below 40 mph"
+            },
+            {
+              "value": "+1 second",
+              "what": "added above 40 mph"
+            }
+          ]
+        },
+        {
+          "ul": [
+            "A 40 foot vehicle: 4 seconds below 40 mph, 5 seconds above.",
+            "A 60 foot rig: 6 seconds below 40 mph, 7 seconds above."
+          ]
+        },
+        {
+          "p": "To measure it, wait until the vehicle ahead passes a shadow, a pavement marking or another clear landmark, then count: one thousand and one, one thousand and two, until you reach the same spot."
+        },
+        {
+          "note": "A vehicle smaller than yours can probably stop faster than you can. And on a slippery road you need much more space than the rule gives."
+        }
+      ]
     },
     {
       "id": "2.7.2",
       "title": "Space Behind",
       "pdfPages": "40",
       "manualPages": "2-17",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.2.1",
+          "text": "If a heavy load slows you down, stay in the right lane, and going uphill do not pass another slow vehicle unless you can get around quickly and safely.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "right lane",
+            "uphill",
+            "pass"
+          ]
+        },
+        {
+          "id": "2.7.2.2",
+          "text": "You are most likely to be tailgated when you are travelling slowly, and in bad weather.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "tailgated",
+            "slowly",
+            "bad weather"
+          ]
+        },
+        {
+          "id": "2.7.2.3",
+          "text": "Dealing with a tailgater: avoid quick changes, signal early and slow very gradually.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "quick changes",
+            "signal early",
+            "gradually"
+          ]
+        },
+        {
+          "id": "2.7.2.4",
+          "text": "Increase your following distance, which opens room ahead and makes it easier for the tailgater to get around you.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "increase",
+            "following distance",
+            "get around"
+          ]
+        },
+        {
+          "id": "2.7.2.5",
+          "text": "Do not speed up. It is safer to be tailgated at a low speed than at a high one.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "do not speed up",
+            "safer"
+          ]
+        },
+        {
+          "id": "2.7.2.6",
+          "text": "Avoid tricks. Do not turn on your taillights or flash your brake lights at a tailgater.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "tricks",
+            "taillights",
+            "flash"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Someone is tailgating you. What do you do?",
+          "a": "Avoid quick changes, increase your following distance, and do not speed up.",
+          "factId": "2.7.2.4"
+        },
+        {
+          "q": "Should you flash your brake lights at a tailgater?",
+          "a": "No. Avoid tricks of that kind.",
+          "factId": "2.7.2.6"
+        },
+        {
+          "q": "Why not speed up when tailgated?",
+          "a": "It is safer to be tailgated at a low speed than a high one.",
+          "factId": "2.7.2.5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.7.2.e1",
+          "q": "A car is tailgating you. What is the right response?",
+          "choices": [
+            "Speed up to get away",
+            "Flash your brake lights",
+            "Increase your following distance",
+            "Move onto the shoulder"
+          ],
+          "answer": 2,
+          "why": "Open up room ahead, so you need no sudden changes and the tailgater can get around you.",
+          "factId": "2.7.2.4",
+          "page": "2-17"
+        }
+      ],
+      "reading": [
+        {
+          "p": "You cannot stop others following too closely, but you can make it safer. Stay in the right lane if a heavy load is slowing you, and going uphill do not pass another slow vehicle unless you can do it quickly and safely."
+        },
+        {
+          "h": "When you will be tailgated"
+        },
+        {
+          "ul": [
+            "When you are travelling slowly.",
+            "In bad weather, when car drivers follow large vehicles closely because they cannot see ahead."
+          ]
+        },
+        {
+          "h": "What to do"
+        },
+        {
+          "ul": [
+            "Avoid quick changes. Signal early and slow very gradually.",
+            "Increase your following distance, so you never need a sudden change, and so the tailgater can get past.",
+            "Do NOT speed up. Being tailgated at a low speed is safer than at a high one.",
+            "Avoid tricks. Do not turn on your taillights or flash your brake lights."
+          ]
+        }
+      ]
     },
     {
       "id": "2.7.3",
       "title": "Space to the Sides",
       "pdfPages": "40-41",
       "manualPages": "2-17 to 2-18",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.3.1",
+          "text": "Keep the vehicle centered in your lane. A wide vehicle leaves little room to spare on either side.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "centered",
+            "clearance"
+          ]
+        },
+        {
+          "id": "2.7.3.2",
+          "text": "Travelling alongside another vehicle has two dangers: the other driver may turn into you, and you may be trapped when you need to change lanes.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "alongside",
+            "two dangers",
+            "trapped"
+          ]
+        },
+        {
+          "id": "2.7.3.3",
+          "text": "Find an open spot away from other traffic. If you must be near others, keep as much space as you can and drop back or pull forward so the other driver can see you.",
+          "critical": true,
+          "page": "2-17",
+          "keywords": [
+            "open spot",
+            "drop back",
+            "see you"
+          ]
+        },
+        {
+          "id": "2.7.3.4",
+          "text": "Strong winds make it hard to stay in your lane, worse for a lighter vehicle, and the problem is especially bad coming out of tunnels.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "strong winds",
+            "lighter",
+            "tunnels"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What are the two dangers of driving alongside another vehicle?",
+          "a": "They may turn into you, and you may be trapped when you need to change lanes.",
+          "factId": "2.7.3.2"
+        },
+        {
+          "q": "Where are strong winds especially bad?",
+          "a": "Coming out of tunnels, and for lighter vehicles.",
+          "factId": "2.7.3.4"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "A commercial vehicle takes up most of its lane, so the space to the sides is what little you have. Keep the vehicle centered in the lane."
+        },
+        {
+          "h": "Two dangers alongside others"
+        },
+        {
+          "ul": [
+            "Another driver changes lanes suddenly and turns into you.",
+            "You are trapped when you need to change lanes yourself."
+          ]
+        },
+        {
+          "p": "Find an open spot away from other traffic. Where you cannot, keep as much space as possible, and drop back or pull forward so the other driver can certainly see you."
+        },
+        {
+          "note": "Strong winds make it hard to hold your lane, and the problem is worse for lighter vehicles and especially bad coming out of a tunnel."
+        }
+      ]
     },
     {
       "id": "2.7.4",
       "title": "Space Overhead",
       "pdfPages": "41",
       "manualPages": "2-18",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.4.1",
+          "text": "Do not assume a posted bridge or overpass height is correct: repaving or packed snow may have reduced the clearance since it was posted.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "do not assume",
+            "repaving",
+            "packed snow"
+          ]
+        },
+        {
+          "id": "2.7.4.2",
+          "text": "An EMPTY van is HIGHER than a loaded one, so getting under a bridge loaded does not mean you will fit empty.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "empty",
+            "higher",
+            "loaded"
+          ]
+        },
+        {
+          "id": "2.7.4.3",
+          "text": "If you doubt the clearance, go slowly, and if you are not sure you will fit, take another route.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "doubt",
+            "another route"
+          ]
+        },
+        {
+          "id": "2.7.4.4",
+          "text": "Where the road slopes, drive a little closer to the center to clear signs, trees and bridge supports at the edge.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "tilt",
+            "closer to the center"
+          ]
+        },
+        {
+          "id": "2.7.4.5",
+          "text": "Before backing into an area, get out and check for overhanging objects such as branches and electric wires.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "backing",
+            "overhanging",
+            "wires"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Is an empty van higher or lower than a loaded one?",
+          "a": "Higher. Clearing a bridge loaded does not mean you clear it empty.",
+          "factId": "2.7.4.2"
+        },
+        {
+          "q": "Can you trust a posted bridge clearance?",
+          "a": "No. Repaving or packed snow may have reduced it.",
+          "factId": "2.7.4.1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.7.4.e1",
+          "q": "You cleared a bridge yesterday with a loaded van. Today it is empty. What has changed?",
+          "choices": [
+            "Nothing",
+            "The van is higher now",
+            "The van is lower now",
+            "Only the weight"
+          ],
+          "answer": 1,
+          "why": "An empty van is HIGHER than a loaded one, so the clearance you had may be gone.",
+          "factId": "2.7.4.2",
+          "page": "2-18"
+        }
+      ],
+      "reading": [
+        {
+          "note": "Do not assume a posted height is correct. Repaving or packed snow may have reduced the clearance since the sign went up."
+        },
+        {
+          "note": "An EMPTY van is HIGHER than a loaded one. Fitting under a bridge loaded does not mean you will fit empty."
+        },
+        {
+          "ul": [
+            "If you doubt the space, go slowly. If you are not sure you will fit, take another route.",
+            "Some roads make a vehicle tilt, which can bring you into signs, trees or bridge supports at the edge. Drive a little closer to the center there.",
+            "Before backing into an area, get out and check for overhanging branches and electric wires."
+          ]
+        }
+      ]
     },
     {
       "id": "2.7.5",
       "title": "Space Below",
       "pdfPages": "41",
       "manualPages": "2-18",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.5.1",
+          "text": "The space under a heavily loaded vehicle can be very small, which is a problem on dirt roads and unpaved yards.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "space below",
+            "dirt roads"
+          ]
+        },
+        {
+          "id": "2.7.5.2",
+          "text": "Drainage channels across a road can make the ends of some vehicles drag, so cross such dips carefully.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "drainage",
+            "drag",
+            "carefully"
+          ]
+        },
+        {
+          "id": "2.7.5.3",
+          "text": "Railroad tracks can hang up a trailer with low clearance. Never take a chance on getting stuck halfway across.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "railroad",
+            "hung up",
+            "halfway"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What can make the ends of a vehicle drag?",
+          "a": "Drainage channels across the road. Cross them carefully.",
+          "factId": "2.7.5.2"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Drivers forget the space under the vehicle. Loaded heavily, there may be very little, and dirt roads and unpaved yards are where it runs out."
+        },
+        {
+          "ul": [
+            "Drainage channels across a road can make the ends of some vehicles drag. Cross such dips carefully.",
+            "Railroad tracks can hang up a trailer with low clearance."
+          ]
+        },
+        {
+          "note": "Never take a chance on getting hung up halfway across a crossing."
+        }
+      ]
     },
     {
       "id": "2.7.6",
       "title": "Space for Turns",
       "pdfPages": "41-42",
       "manualPages": "2-18 to 2-19",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.6.1",
+          "text": "Turn slowly, to give yourself and others more time to avoid trouble.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "turn slowly",
+            "time"
+          ]
+        },
+        {
+          "id": "2.7.6.2",
+          "text": "On a right turn you cannot complete in one lane, turn wide as you COMPLETE the turn, keeping the rear close to the curb so nobody passes you on the right.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "complete",
+            "close to the curb"
+          ]
+        },
+        {
+          "id": "2.7.6.3",
+          "text": "Do not turn wide to the LEFT as you start a right turn. A following driver may think you are turning left and try to pass on your right.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "do not",
+            "wide to the left",
+            "pass on the right"
+          ]
+        },
+        {
+          "id": "2.7.6.4",
+          "text": "If you must cross into the oncoming lane to turn, watch for oncoming vehicles and give them room, but do not back up for them: you might hit someone behind you.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "oncoming",
+            "do not back up"
+          ]
+        },
+        {
+          "id": "2.7.6.5",
+          "text": "On a left turn, reach the CENTER of the intersection before you start to turn. Turn too soon and off-tracking can put your left side into another vehicle.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "center of the intersection",
+            "too soon"
+          ]
+        },
+        {
+          "id": "2.7.6.6",
+          "text": "With two left turn lanes, always take the RIGHT-hand one, because starting in the inside lane may force you to swing right to make the turn.",
+          "critical": true,
+          "page": "2-18",
+          "keywords": [
+            "two turning lanes",
+            "right turn lane"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "Where must you be before starting a left turn?",
+          "a": "At the center of the intersection.",
+          "factId": "2.7.6.5"
+        },
+        {
+          "q": "Which of two left turn lanes do you take?",
+          "a": "The right-hand one.",
+          "factId": "2.7.6.6"
+        },
+        {
+          "q": "How do you make a right turn too tight for one lane?",
+          "a": "Turn wide as you complete it, keeping the rear near the curb. Never swing left first.",
+          "factId": "2.7.6.2"
+        },
+        {
+          "q": "An oncoming vehicle blocks your turn. Should you back up?",
+          "a": "No. You might hit someone behind you. Give them room to pass or stop.",
+          "factId": "2.7.6.4"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.7.6.e1",
+          "q": "You face two left turn lanes. Which do you use?",
+          "choices": [
+            "The inside, left lane",
+            "The right-hand turn lane",
+            "Either",
+            "Whichever is shorter"
+          ],
+          "answer": 1,
+          "why": "Take the right-hand turn lane. Starting inside may force you to swing right to make the turn.",
+          "factId": "2.7.6.6",
+          "page": "2-18"
+        },
+        {
+          "id": "2.7.6.e2",
+          "q": "When do you start a left turn?",
+          "choices": [
+            "As soon as you enter the intersection",
+            "After reaching the center of the intersection",
+            "Before the intersection",
+            "When the light turns green"
+          ],
+          "answer": 1,
+          "why": "Reach the center first. Turning too soon can put your left side into another vehicle through off-tracking.",
+          "factId": "2.7.6.5",
+          "page": "2-18"
+        }
+      ],
+      "reading": [
+        {
+          "p": "Wide turning and off-tracking mean a large vehicle can strike another vehicle or an object during a turn."
+        },
+        {
+          "h": "Right turns"
+        },
+        {
+          "ul": [
+            "Turn slowly, for your own time and everyone else's.",
+            "If you cannot make it without using another lane, turn wide as you COMPLETE the turn, keeping the rear of the vehicle close to the curb.",
+            "Do NOT turn wide to the left as you start. A following driver may read that as a left turn and try to pass you on the right.",
+            "If you must cross into the oncoming lane, watch for oncoming vehicles and give them room. Do not back up for them: you might hit someone behind you."
+          ]
+        },
+        {
+          "h": "Left turns"
+        },
+        {
+          "ul": [
+            "Reach the CENTER of the intersection before you start the turn. Turn too soon and off-tracking puts your left side into another vehicle.",
+            "With two turning lanes, always take the RIGHT-hand one. Starting inside may force you to swing right to make the turn, and drivers on your left are easier to see."
+          ]
+        }
+      ]
     },
     {
       "id": "2.7.7",
       "title": "Space Needed to Cross or Enter Traffic",
       "pdfPages": "42",
       "manualPages": "2-19",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.7.7.1",
+          "text": "Because a large vehicle accelerates slowly and needs more room, you need a much bigger gap to enter traffic than you would in a car.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "slow acceleration",
+            "larger gap"
+          ]
+        },
+        {
+          "id": "2.7.7.2",
+          "text": "Acceleration varies with the load, so allow more room when you are heavily loaded.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "load",
+            "more room"
+          ]
+        },
+        {
+          "id": "2.7.7.3",
+          "text": "Before you start across a road, make sure you can get ALL the way across before traffic reaches you.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "all the way across",
+            "before"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What must you be sure of before crossing a road?",
+          "a": "That you can get all the way across before traffic reaches you.",
+          "factId": "2.7.7.3"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "ul": [
+            "Slow acceleration and sheer size mean you need a much larger gap than a car does.",
+            "Acceleration varies with the load: heavily loaded, allow more room again.",
+            "Before you start across, make sure you can get ALL the way across before traffic reaches you."
+          ]
+        }
+      ]
     },
     {
       "id": "2.8",
@@ -372,43 +3891,541 @@
       "manualPages": "2-19",
       "facts": [],
       "cards": [],
-      "exam": []
+      "exam": [],
+      "reading": [
+        {
+          "p": "A hazard is anything that could become an emergency. Seeing it early is the difference between a lane change and a crash."
+        }
+      ]
     },
     {
       "id": "2.8.1",
       "title": "Importance of Seeing Hazards",
       "pdfPages": "42",
       "manualPages": "2-19",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.8.1.1",
+          "text": "A hazard is any road condition or road user, driver, bicyclist or pedestrian, that is a possible danger.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "hazard",
+            "possible danger"
+          ]
+        },
+        {
+          "id": "2.8.1.2",
+          "text": "A hazard becomes an emergency when it acts: the car that might cut in front of you is a hazard, and the car that does is an emergency.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "emergency",
+            "cuts in front"
+          ]
+        },
+        {
+          "id": "2.8.1.3",
+          "text": "Seeing a hazard early gives you time to check mirrors, signal and change speed or lane. Sudden braking or a quick lane change is much more likely to lead to a crash.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "time",
+            "sudden braking",
+            "quick lane change"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What is a hazard?",
+          "a": "Any road condition or road user that is a possible danger.",
+          "factId": "2.8.1.1"
+        },
+        {
+          "q": "When does a hazard become an emergency?",
+          "a": "When it acts: the car that might cut in is a hazard, the car that does is an emergency.",
+          "factId": "2.8.1.2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.8.1.e1",
+          "q": "Why does seeing hazards early matter?",
+          "choices": [
+            "It saves fuel",
+            "It gives time to act gently instead of suddenly",
+            "It is required by law",
+            "It shortens the trip"
+          ],
+          "answer": 1,
+          "why": "Time lets you check, signal and adjust. Sudden braking or a quick lane change is far likelier to cause a crash.",
+          "factId": "2.8.1.3",
+          "page": "2-19"
+        }
+      ],
+      "reading": [
+        {
+          "p": "A hazard is any road condition or road user, a driver, a bicyclist, a pedestrian, that is a possible danger."
+        },
+        {
+          "p": "A car ahead brakes hard near a freeway exit. The driver may be unsure, and may swing back onto the highway. That car is a HAZARD. If it cuts in front of you, it is no longer a hazard: it is an EMERGENCY."
+        },
+        {
+          "note": "Seeing it early buys you the time to check your mirrors, signal and change lane or speed. A driver who sees it late must brake hard or swerve, and that is what causes crashes."
+        }
+      ]
     },
     {
       "id": "2.8.2",
       "title": "Hazardous Roads",
       "pdfPages": "42-43",
       "manualPages": "2-19 to 2-20",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.8.2.1",
+          "text": "Move-over laws require drivers to slow and change lanes when approaching a roadside incident or an emergency vehicle.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "move over",
+            "slow",
+            "change lanes"
+          ]
+        },
+        {
+          "id": "2.8.2.2",
+          "text": "Approaching a stopped emergency vehicle or a work zone, move into a lane not next to it if that is safe. If a lane change is unsafe, slow down and go by with care.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "not next to",
+            "unsafe",
+            "slow down"
+          ]
+        },
+        {
+          "id": "2.8.2.3",
+          "text": "A work zone may have narrower lanes, sharp turns and uneven surfaces, and other drivers are often distracted there.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "work zone",
+            "narrower",
+            "distracted"
+          ]
+        },
+        {
+          "id": "2.8.2.4",
+          "text": "A sharp pavement drop off near the edge tilts the vehicle toward the side of the road, which can bring the top into signs and tree limbs, and makes steering hard as you cross it.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "drop off",
+            "tilt",
+            "steering"
+          ]
+        },
+        {
+          "id": "2.8.2.5",
+          "text": "Objects on the road can damage tires, rims, and electrical and brake lines. A cardboard box may be empty or may hold something heavy, so stay alert and see them early.",
+          "critical": true,
+          "page": "2-19",
+          "keywords": [
+            "foreign objects",
+            "cardboard",
+            "early"
+          ]
+        },
+        {
+          "id": "2.8.2.6",
+          "text": "Ramp speed limits may be safe for cars but not for a large or heavily loaded vehicle, and an exit that goes downhill and turns at the same time is especially dangerous.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "ramps",
+            "downhill",
+            "turn"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do move-over laws require?",
+          "a": "Slow down and change into a lane not next to the incident, if it is safe. Otherwise slow and pass with care.",
+          "factId": "2.8.2.2"
+        },
+        {
+          "q": "Why is a drop off at the road edge dangerous?",
+          "a": "It tilts the vehicle toward the roadside and makes steering hard as you cross it.",
+          "factId": "2.8.2.4"
+        },
+        {
+          "q": "Are posted ramp speeds safe for your truck?",
+          "a": "Not necessarily. They may suit cars but not a large or loaded vehicle.",
+          "factId": "2.8.2.6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.8.2.e1",
+          "q": "You approach a police car stopped on the shoulder. What does the move-over law require?",
+          "choices": [
+            "Sound your horn",
+            "Move into a lane not next to it if safe, or slow down",
+            "Stop behind it",
+            "Speed past quickly"
+          ],
+          "answer": 1,
+          "why": "Slow and yield by changing to a lane not next to the incident. If that is unsafe, slow down and pass with care.",
+          "factId": "2.8.2.2",
+          "page": "2-19"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Move-over laws"
+        },
+        {
+          "p": "People working at the roadside, police, medics, firefighters and road crews, are being struck at a frightening rate. Move-over laws require you to slow and change lanes when approaching a roadside incident or emergency vehicle."
+        },
+        {
+          "note": "Move into a lane NOT next to the emergency vehicle or work zone, if safety and traffic allow. If a lane change is unsafe, slow down and go by with care."
+        },
+        {
+          "h": "Road hazards"
+        },
+        {
+          "ul": [
+            "Work zones: narrower lanes, sharp turns, uneven surfaces, distracted drivers, and workers and machines in the way. Use four-way flashers or brake lights to warn those behind.",
+            "Drop off: pavement that falls away at the edge tilts your vehicle toward the roadside, so the top can hit signs and limbs, and steering is hard as you cross it.",
+            "Foreign objects: they damage tires, rims and brake and electrical lines, and can wedge between dual tires. A cardboard box may be empty or may be full of something solid, so see them early and avoid them without a sudden move.",
+            "Off ramps and on ramps: posted speeds may suit cars but not a large or loaded vehicle. An exit that goes downhill AND turns is especially dangerous, because the grade fights your braking and braking in the turn is dangerous. Be slow enough BEFORE the curved part."
+          ]
+        }
+      ]
     },
     {
       "id": "2.8.3",
       "title": "Drivers Who Are Hazards",
       "pdfPages": "43-44",
       "manualPages": "2-20 to 2-21",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.8.3.1",
+          "text": "A driver who cannot see you is a hazard: vans, loaded station wagons, rental trucks, and vehicles with frosted or snow-covered windows.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "blocked vision",
+            "rental",
+            "frosted"
+          ]
+        },
+        {
+          "id": "2.8.3.2",
+          "text": "If you can see only the front or rear of a vehicle but not the driver, the driver cannot see you. Be ready to stop.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "cannot see you",
+            "ready to stop"
+          ]
+        },
+        {
+          "id": "2.8.3.3",
+          "text": "Delivery drivers are often in a hurry and may step out or pull into the lane suddenly, and packages or doors block their view.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "delivery",
+            "in a hurry"
+          ]
+        },
+        {
+          "id": "2.8.3.4",
+          "text": "Parked vehicles are hazards. Watch for movement inside, brake lights, backup lights and exhaust, which show someone is about to move.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "parked",
+            "movement",
+            "exhaust"
+          ]
+        },
+        {
+          "id": "2.8.3.5",
+          "text": "Be careful of a stopped bus: passengers may cross in front of it or behind it and cannot see you.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "stopped bus",
+            "cross"
+          ]
+        },
+        {
+          "id": "2.8.3.6",
+          "text": "Hazard clues among people on foot: children acting without checking, talkers, workers, shoppers, and anyone with headsets, hats or umbrellas who cannot see or hear you.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "children",
+            "talkers",
+            "headsets"
+          ]
+        },
+        {
+          "id": "2.8.3.7",
+          "text": "An ice cream truck is a hazard clue, because children may be nearby and may not see you.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "ice cream",
+            "children"
+          ]
+        },
+        {
+          "id": "2.8.3.8",
+          "text": "A disabled vehicle, with a jacked up wheel or a raised hood, is a hazard clue: the people fixing it are often careless of traffic.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "disabled",
+            "jacked up",
+            "raised hood"
+          ]
+        },
+        {
+          "id": "2.8.3.9",
+          "text": "At an accident scene, people run across the road, passing drivers stare, and vehicles slow or stop suddenly.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "accident",
+            "run across",
+            "suddenly"
+          ]
+        },
+        {
+          "id": "2.8.3.10",
+          "text": "Clues to a confused driver: changing direction suddenly, stopping without warning, hesitation, driving very slowly, frequent braking, and looking at signs or maps. Out-of-state plates and car-top luggage mark a tourist.",
+          "critical": true,
+          "page": "2-20",
+          "keywords": [
+            "confused",
+            "hesitation",
+            "out of state"
+          ]
+        },
+        {
+          "id": "2.8.3.11",
+          "text": "The slow moving vehicle symbol is a red triangle with an orange center.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "slow moving vehicle",
+            "red triangle",
+            "orange center"
+          ]
+        },
+        {
+          "id": "2.8.3.12",
+          "text": "Clues to an impaired driver: weaving or drifting, leaving the road, stopping at the wrong time, an open window in cold weather, and sudden changes of speed. Be alert for drunk and sleepy drivers late at night.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "weaving",
+            "wrong time",
+            "open window",
+            "late at night"
+          ]
+        },
+        {
+          "id": "2.8.3.13",
+          "text": "Drivers look where they are going to turn, so head and body movement can warn you of a turn before the signal does.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "body movement",
+            "head",
+            "clue"
+          ]
+        },
+        {
+          "id": "2.8.3.14",
+          "text": "You are in conflict when you must change speed or direction to avoid hitting someone. Conflicts happen at intersections, merges, lane endings, and accident scenes.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "conflict",
+            "change speed",
+            "merges"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What does the slow moving vehicle symbol look like?",
+          "a": "A red triangle with an orange center.",
+          "factId": "2.8.3.11"
+        },
+        {
+          "q": "Name four clues to an impaired driver.",
+          "a": "Weaving or drifting, leaving the road, stopping at the wrong time, an open window in cold weather.",
+          "factId": "2.8.3.12"
+        },
+        {
+          "q": "You can see a vehicle's front but not its driver. What does that mean?",
+          "a": "They cannot see you either. Be ready to stop.",
+          "factId": "2.8.3.2"
+        },
+        {
+          "q": "Why is a stopped bus a hazard?",
+          "a": "Passengers may cross in front of or behind it, and they cannot see you.",
+          "factId": "2.8.3.5"
+        },
+        {
+          "q": "What is a conflict?",
+          "a": "Any situation where you must change speed or direction to avoid hitting someone.",
+          "factId": "2.8.3.14"
+        },
+        {
+          "q": "What warns you of a turn before the signal does?",
+          "a": "The driver's head and body movement: they look where they are going.",
+          "factId": "2.8.3.13"
+        }
+      ],
+      "exam": [
+        {
+          "id": "2.8.3.e1",
+          "q": "What is the slow moving vehicle symbol?",
+          "choices": [
+            "An orange square",
+            "A red triangle with an orange center",
+            "A yellow diamond",
+            "A white circle"
+          ],
+          "answer": 1,
+          "why": "A red triangle with an orange center.",
+          "factId": "2.8.3.11",
+          "page": "2-21"
+        },
+        {
+          "id": "2.8.3.e2",
+          "q": "Which is a clue to an impaired driver?",
+          "choices": [
+            "Driving at the speed limit",
+            "An open window in cold weather",
+            "Signaling early",
+            "Staying in lane"
+          ],
+          "answer": 1,
+          "why": "Weaving, leaving the road, stopping at the wrong time and an open window in cold weather are all clues.",
+          "factId": "2.8.3.12",
+          "page": "2-21"
+        }
+      ],
+      "reading": [
+        {
+          "h": "Drivers who cannot see"
+        },
+        {
+          "p": "A person who cannot see others is a dangerous hazard: vans, loaded station wagons, cars with the rear window blocked, rental trucks whose drivers are not used to them, and in winter any vehicle with frosted or snow-covered windows."
+        },
+        {
+          "note": "If you can see only the front or the rear of a vehicle but not the driver, the driver cannot see you. Be ready to stop."
+        },
+        {
+          "h": "Hazard clues"
+        },
+        {
+          "ul": [
+            "Delivery trucks: packages and doors block the view, and the drivers are in a hurry and may step out or pull away suddenly.",
+            "Parked vehicles: watch for movement inside, brake lights, backup lights and exhaust.",
+            "A stopped bus: passengers cross in front of it and behind it, and cannot see you.",
+            "Pedestrians and bicyclists with their backs to traffic, headsets on, or hats and umbrellas up in the rain.",
+            "Children, who act without checking. Talkers. Workers. Shoppers looking at windows, not traffic.",
+            "An ice cream truck, because children will be near it.",
+            "Disabled vehicles: a jacked up wheel or a raised hood, and people careless of the traffic beside them.",
+            "Accidents: people run across the road, passing drivers stare, vehicles slow and stop suddenly.",
+            "Confused drivers: sudden direction changes, stopping without warning, hesitation, frequent braking, looking at signs or maps. Out-of-state plates and car-top luggage mark a tourist."
+          ]
+        },
+        {
+          "numbers": [
+            {
+              "value": "Red triangle, orange center",
+              "what": "the slow moving vehicle symbol"
+            }
+          ]
+        },
+        {
+          "h": "Impaired drivers"
+        },
+        {
+          "ul": [
+            "Weaving across the road or drifting from side to side.",
+            "Leaving the road: right wheels on the shoulder, bumping a curb in a turn.",
+            "Stopping at the wrong time: at a green light, or waiting far too long.",
+            "An open window in cold weather.",
+            "Speeding up or slowing suddenly, driving much too fast or too slow."
+          ]
+        },
+        {
+          "note": "Be alert for drunk and sleepy drivers late at night. And watch body movement: drivers look where they are going to turn, so the head gives the turn away before the signal does."
+        },
+        {
+          "h": "Conflicts"
+        },
+        {
+          "p": "You are in conflict when you must change speed or direction to avoid hitting someone: at intersections, at merges, where a lane ends, in slow or stalled traffic, and at accident scenes."
+        }
+      ]
     },
     {
       "id": "2.8.4",
       "title": "Always Have a Plan",
       "pdfPages": "44",
       "manualPages": "2-21",
-      "facts": [],
-      "cards": [],
-      "exam": []
+      "facts": [
+        {
+          "id": "2.8.4.1",
+          "text": "When you see a hazard, think about the emergency it could become and have a plan for it.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "plan",
+            "emergency",
+            "could become"
+          ]
+        },
+        {
+          "id": "2.8.4.2",
+          "text": "Always be prepared to take action based on your plan, so you are ready if the worst happens.",
+          "critical": true,
+          "page": "2-21",
+          "keywords": [
+            "prepared",
+            "action"
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "q": "What do you do when you see a hazard?",
+          "a": "Think what emergency it could become, make a plan, and be ready to act on it.",
+          "factId": "2.8.4.1"
+        }
+      ],
+      "exam": [],
+      "reading": [
+        {
+          "p": "Seeing the hazard is only half of it. When you see one, think about the emergency it could turn into, and decide now what you would do."
+        },
+        {
+          "note": "Always be prepared to act on that plan. The driver who has already decided does not have to think when the moment comes."
+        }
+      ]
     },
     {
       "id": "2.9",
