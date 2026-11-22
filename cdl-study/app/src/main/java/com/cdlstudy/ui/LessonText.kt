@@ -34,18 +34,25 @@ data class ReadStyle(
     val wideSpacing: Boolean,
 )
 
-/** Puts the first letters of each word in bold, the bionic-style effect. */
+/**
+ * Puts the first letters of each word in bold, the bionic-style effect.
+ *
+ * Nothing returns early here. A remember behind an early return changes what
+ * the screen holds when focus is switched on and off, and that is a fault
+ * waiting for the moment somebody uses the switch.
+ */
 @Composable
-fun focusAnnotated(text: String, style: ReadStyle): AnnotatedString {
-    if (!style.focus) return AnnotatedString(text)
-    val ranges = remember(text, style.strength) { FocusText.boldRanges(text, style.strength) }
-    return buildAnnotatedString {
-        append(text)
-        ranges.forEach { span ->
-            addStyle(SpanStyle(fontWeight = FontWeight.Bold), span.start, span.end)
+fun focusAnnotated(text: String, style: ReadStyle): AnnotatedString =
+    remember(text, style.focus, style.strength) {
+        val ranges =
+            if (style.focus) FocusText.boldRanges(text, style.strength) else emptyList()
+        buildAnnotatedString {
+            append(text)
+            ranges.forEach { span ->
+                addStyle(SpanStyle(fontWeight = FontWeight.Bold), span.start, span.end)
+            }
         }
     }
-}
 
 @Composable
 fun Lesson(blocks: List<ReadBlock>, style: ReadStyle, modifier: Modifier = Modifier) {

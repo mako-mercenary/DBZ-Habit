@@ -36,6 +36,7 @@ fun HomeScreen(
     onProgress: () -> Unit,
     onManual: () -> Unit,
     onPlan: () -> Unit,
+    onReading: () -> Unit,
 ) {
     val repo = repository()
     val store = manualStore()
@@ -116,6 +117,7 @@ fun HomeScreen(
             }
             item {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedButton(onClick = onReading) { Text("Reading") }
                     OutlinedButton(onClick = onPlan) { Text("What you must study") }
                     OutlinedButton(onClick = onManual) { Text("Your manual") }
                 }

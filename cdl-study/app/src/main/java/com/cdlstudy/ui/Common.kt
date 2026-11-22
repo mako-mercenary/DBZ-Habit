@@ -25,6 +25,10 @@ fun repository(): StudyRepository =
     (LocalContext.current.applicationContext as CdlApp).repository
 
 @Composable
+fun readingSettings(): ReadingSettings =
+    (LocalContext.current.applicationContext as CdlApp).reading
+
+@Composable
 fun contentErrors(): List<String> =
     (LocalContext.current.applicationContext as CdlApp).contentErrors
 

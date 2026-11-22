@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.cdlstudy.data.SavedRecall
 import com.cdlstudy.data.StudyRepository
 import com.cdlstudy.domain.BlurtMatcher
+import com.cdlstudy.domain.FocusText
 import com.cdlstudy.domain.Fact
 import com.cdlstudy.domain.Mark
 import com.cdlstudy.domain.Subsection
@@ -24,7 +25,7 @@ enum class Stage { READ, BLURT, GRADE, RESULT }
  */
 class StudyViewModel(
     private val repo: StudyRepository,
-    private val prefs: ReadPrefs,
+    private val settings: ReadingSettings,
     val subsectionId: String,
 ) : ViewModel() {
 
@@ -47,13 +48,11 @@ class StudyViewModel(
     var zoom by mutableStateOf(1f)
         private set
 
-    /** How the lesson is drawn. Kept between sessions. */
-    var readStyle by mutableStateOf(prefs.style())
-        private set
+    /** How the lesson is drawn. One shared setting, so a change shows at once. */
+    val readStyle: ReadStyle get() = settings.style
 
     /** The pages of your own book instead of the lesson in the app. */
-    var showManualPages by mutableStateOf(prefs.showManualPages)
-        private set
+    val showManualPages: Boolean get() = settings.showManualPages
 
     var readMarked by mutableStateOf(false)
         private set
@@ -62,35 +61,17 @@ class StudyViewModel(
         zoom = value
     }
 
-    fun toggleFocus() {
-        prefs.focus = !readStyle.focus
-        readStyle = prefs.style()
-    }
+    fun toggleFocus() = settings.toggleFocus()
 
-    fun chooseStrength(strength: com.cdlstudy.domain.FocusText.Strength) {
-        prefs.strength = strength
-        readStyle = prefs.style()
-    }
+    fun chooseStrength(strength: FocusText.Strength) = settings.chooseStrength(strength)
 
-    fun bigger() {
-        prefs.scale = readStyle.scale + ReadPrefs.SCALE_STEP
-        readStyle = prefs.style()
-    }
+    fun bigger() = settings.bigger()
 
-    fun smaller() {
-        prefs.scale = readStyle.scale - ReadPrefs.SCALE_STEP
-        readStyle = prefs.style()
-    }
+    fun smaller() = settings.smaller()
 
-    fun toggleSpacing() {
-        prefs.wideSpacing = !readStyle.wideSpacing
-        readStyle = prefs.style()
-    }
+    fun toggleSpacing() = settings.toggleSpacing()
 
-    fun toggleManualPages() {
-        prefs.showManualPages = !showManualPages
-        showManualPages = prefs.showManualPages
-    }
+    fun toggleManualPages() = settings.toggleManualPages()
 
     /**
      * For a subsection whose fact checklist is not written yet. You can still

@@ -43,11 +43,11 @@ fun StudyScreen(
     onManual: () -> Unit,
 ) {
     val repo = repository()
-    val context = androidx.compose.ui.platform.LocalContext.current
+    val settings = readingSettings()
     val vm: StudyViewModel = viewModel(
         key = "study-$subsectionId",
         factory = viewModelFactory {
-            initializer { StudyViewModel(repo, ReadPrefs(context), subsectionId) }
+            initializer { StudyViewModel(repo, settings, subsectionId) }
         },
     )
     val sub = vm.subsection

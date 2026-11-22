@@ -67,6 +67,12 @@ The reader also has text size, airy line spacing, and a **Book pages** switch,
 which shows the real pages of your own manual instead of the lesson. Use it to
 check a correction against the book.
 
+The controls sit at the top of every lesson, and on the **Reading** screen from
+the home screen, which shows a sample that changes as you set it.
+`docs/focus-text-preview.png` shows the three strengths beside focus switched
+off. One setting serves the whole app, so a change shows at once in a lesson
+that is already open.
+
 ## Where the lesson text comes from
 
 The lessons are **written by hand for this app**, in plain words, with every
