@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
  *
  * The app is one dark theme, whatever the system is set to. Gold is the only
  * accent: a gold thing is a thing to press or a number to remember. Everything
- * else is grey, so the gold means something.
+ * else is gray, so the gold means something.
  */
 
 val Gold = Color(0xFFE3B341)

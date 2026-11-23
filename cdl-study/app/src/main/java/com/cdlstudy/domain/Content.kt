@@ -3,7 +3,7 @@ package com.cdlstudy.domain
 /**
  * The study content: the manual turned into data.
  *
- * One file per section, in assets/content. The facts are the centre of it.
+ * One file per section, in assets/content. The facts are the center of it.
  * A fact is the checklist item you grade your recall against, the source of a
  * flashcard, and the tag that an exam question points back to. That tag is how
  * the app finds a weak area.

@@ -3,7 +3,7 @@
 One JSON file per manual section, in `app/src/main/assets/content`. The file
 name does not matter. The `section` number inside it sets the order.
 
-The **fact** is the centre of the format. One fact does three jobs:
+The **fact** is the center of the format. One fact does three jobs:
 
 - it is a checklist item you grade your recall against;
 - it is the source of a flashcard;
