@@ -82,6 +82,20 @@
           "why": "Where the route lacks a situation, you simulate it by telling the examiner what you are or would be doing.",
           "factId": "13.0.4",
           "page": "13-1"
+        },
+        {
+          "id": "13.0.e2",
+          "q": "Which three things must you do throughout the road test?",
+          "choices": [
+            "Wear the belt, obey signs and laws, finish without accident or violation",
+            "Keep both hands on the wheel, use the mirrors, stay under the limit",
+            "Signal, shift smoothly, stop behind lines",
+            "Use the horn, brake early, follow far back"
+          ],
+          "answer": 0,
+          "why": "Wear your safety belt, obey all signs signals and laws, and finish with no accident or moving violation.",
+          "factId": "13.0.1",
+          "page": "13-1"
         }
       ],
       "reading": [
@@ -254,6 +268,34 @@
           "why": "Keep a gap where its rear tires are still visible.",
           "factId": "13.1.1.5",
           "page": "13-1"
+        },
+        {
+          "id": "13.1.1.e3",
+          "q": "Where should your front wheels point while you wait to make a turn?",
+          "choices": [
+            "Angled into the turn",
+            "Straight ahead",
+            "Toward the curb",
+            "It does not matter"
+          ],
+          "answer": 1,
+          "why": "Keep the front wheels aimed straight ahead, so a shunt from behind does not push you into traffic.",
+          "factId": "13.1.1.6",
+          "page": "13-1"
+        },
+        {
+          "id": "13.1.1.e4",
+          "q": "What do you do with the turn signal after the turn?",
+          "choices": [
+            "Leave it on until the next turn",
+            "Cancel it",
+            "Switch to flashers",
+            "Signal the other way"
+          ],
+          "answer": 1,
+          "why": "Cancel the signal, then get up to the speed of traffic and move right when safe.",
+          "factId": "13.1.1.8",
+          "page": "13-1"
         }
       ],
       "reading": [
@@ -388,6 +430,20 @@
           "why": "Yield to pedestrians and traffic, do not change lanes, and keep your hands on the wheel.",
           "factId": "13.1.2.3",
           "page": "13-1"
+        },
+        {
+          "id": "13.1.2.e2",
+          "q": "You are stopped at an intersection on a slight slope. What must not happen?",
+          "choices": [
+            "The engine idling",
+            "The vehicle rolling forward or backward",
+            "Checking the mirrors",
+            "Keeping it in gear"
+          ],
+          "answer": 1,
+          "why": "The vehicle must not roll forward or backward while stopped.",
+          "factId": "13.1.2.2",
+          "page": "13-1"
         }
       ],
       "reading": [
@@ -450,7 +506,22 @@
           "factId": "13.1.3.1"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.3.e1",
+          "q": "Which lane should you use in the urban business part of the test?",
+          "choices": [
+            "The left lane",
+            "The right-most lane, centered",
+            "The middle lane",
+            "Any lane with space"
+          ],
+          "answer": 1,
+          "why": "Stay centered in the right-most lane, keeping up with traffic without exceeding the limit.",
+          "factId": "13.1.3.1",
+          "page": "13-2"
+        }
+      ],
       "reading": [
         {
           "ul": [
@@ -497,7 +568,22 @@
           "factId": "13.1.4.1"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.4.e1",
+          "q": "What is the correct order for a lane change?",
+          "choices": [
+            "Signal, then check traffic",
+            "Check traffic, then signal, then move when safe",
+            "Move, then signal",
+            "Signal and move together"
+          ],
+          "answer": 1,
+          "why": "Traffic checks first, then the signal, then the move when it is safe.",
+          "factId": "13.1.4.1",
+          "page": "13-2"
+        }
+      ],
       "titleFixed": true,
       "reading": [
         {
@@ -559,7 +645,22 @@
           "factId": "13.1.5.3"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.5.e1",
+          "q": "Where should you slow down when leaving an expressway?",
+          "choices": [
+            "In the through lane before the exit",
+            "In the exit lane and on the ramp",
+            "Only on the ramp",
+            "After the ramp"
+          ],
+          "answer": 1,
+          "why": "Slow smoothly in the exit lane, then keep slowing within the lane markings on the ramp.",
+          "factId": "13.1.5.3",
+          "page": "13-2"
+        }
+      ],
       "reading": [
         {
           "h": "Entering"
@@ -689,6 +790,20 @@
           "answer": 1,
           "why": "Cancel the turn signal, four-ways on, parking brake set, neutral or park, and feet off the brake and clutch.",
           "factId": "13.1.6.3",
+          "page": "13-2"
+        },
+        {
+          "id": "13.1.6.e2",
+          "q": "You are told to pull away from the roadside. What must you not do?",
+          "choices": [
+            "Check your mirrors",
+            "Turn the wheel before the vehicle moves",
+            "Signal left",
+            "Release the parking brake"
+          ],
+          "answer": 1,
+          "why": "Do not turn the wheel before the vehicle moves. Pull straight ahead first.",
+          "factId": "13.1.6.5",
           "page": "13-2"
         }
       ],
@@ -1093,6 +1208,20 @@
           "why": "Always use the clutch, and double-clutch on an unsynchronized transmission.",
           "factId": "13.1.11.1",
           "page": "13-4"
+        },
+        {
+          "id": "13.1.11.e2",
+          "q": "Which clutch faults are scored?",
+          "choices": [
+            "Using the clutch to shift",
+            "Riding it, coasting with it down, popping it, revving or lugging",
+            "Double-clutching",
+            "Pressing it to stop"
+          ],
+          "answer": 1,
+          "why": "Do not ride the clutch, coast with it down, pop it, or rev or lug the engine.",
+          "factId": "13.1.11.2",
+          "page": "13-4"
         }
       ],
       "titleFixed": true,
@@ -1288,6 +1417,20 @@
           "why": "A left turn finishes in the lane directly to the right of the center line. A right turn finishes in the curb lane.",
           "factId": "13.1.14.2",
           "page": "13-4"
+        },
+        {
+          "id": "13.1.14.e2",
+          "q": "Which lane should a right turn finish in?",
+          "choices": [
+            "Any lane",
+            "The right-most curb lane",
+            "The second lane",
+            "The center lane"
+          ],
+          "answer": 1,
+          "why": "A right turn finishes in the right-most curb lane. A left turn finishes just right of the center line.",
+          "factId": "13.1.14.2",
+          "page": "13-4"
         }
       ],
       "reading": [
@@ -1327,7 +1470,22 @@
           "factId": "13.1.15.1"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.15.e1",
+          "q": "When may a hand leave the steering wheel on the road test?",
+          "choices": [
+            "Never",
+            "Only while shifting",
+            "When signaling",
+            "On straight roads"
+          ],
+          "answer": 1,
+          "why": "Keep both hands on the wheel at all times except while shifting, and return them at once.",
+          "factId": "13.1.15.1",
+          "page": "13-4"
+        }
+      ],
       "reading": [
         {
           "ul": [
@@ -1375,7 +1533,22 @@
           "factId": "13.1.16.1"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.16.e1",
+          "q": "When do you check mirrors at an intersection?",
+          "choices": [
+            "Before it only",
+            "Before, during and after it",
+            "After it only",
+            "Only if turning"
+          ],
+          "answer": 1,
+          "why": "Check mirrors and traffic before, while in, and after an intersection.",
+          "factId": "13.1.16.1",
+          "page": "13-4"
+        }
+      ],
       "reading": [
         {
           "ul": [
@@ -1412,7 +1585,22 @@
           "factId": "13.1.17.1"
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          "id": "13.1.17.e1",
+          "q": "What happens to a turn signal once the lane change is done?",
+          "choices": [
+            "Leave it on",
+            "Cancel it",
+            "Switch to flashers",
+            "Signal the other way"
+          ],
+          "answer": 1,
+          "why": "Cancel the signal when the turn or lane change is complete.",
+          "factId": "13.1.17.1",
+          "page": "13-4"
+        }
+      ],
       "reading": [
         {
           "ul": [

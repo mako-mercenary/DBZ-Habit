@@ -124,7 +124,7 @@
         {
           "ul": [
             "Inspecting your cargo.",
-            "Recognising an overload and badly balanced weight.",
+            "Recognizing an overload and badly balanced weight.",
             "Knowing the cargo is secured and does not block your view ahead or to the sides.",
             "Knowing the cargo does not block your way to the emergency equipment."
           ]
@@ -510,7 +510,7 @@
       "facts": [
         {
           "id": "3.2.3.1",
-          "text": "A high centre of gravity, from cargo piled high or heavy cargo on top, makes a rollover more likely, and the danger is worst in a curve or a swerve.",
+          "text": "A high center of gravity, from cargo piled high or heavy cargo on top, makes a rollover more likely, and the danger is worst in a curve or a swerve.",
           "critical": true,
           "page": "3-2",
           "keywords": [
@@ -533,7 +533,7 @@
       ],
       "cards": [
         {
-          "q": "What does a high centre of gravity do?",
+          "q": "What does a high center of gravity do?",
           "a": "It makes the vehicle more likely to tip over, above all in curves or a swerve.",
           "factId": "3.2.3.1"
         },
@@ -554,17 +554,17 @@
             "At the rear doors"
           ],
           "answer": 1,
-          "why": "Keep the centre of gravity low: the heaviest parts go under the lightest parts.",
+          "why": "Keep the center of gravity low: the heaviest parts go under the lightest parts.",
           "factId": "3.2.3.2",
           "page": "3-2"
         }
       ],
       "reading": [
         {
-          "p": "The height of the centre of gravity decides how the vehicle handles. Pile the cargo high, or put the heavy cargo on top, and the centre of gravity goes up with it."
+          "p": "The height of the center of gravity decides how the vehicle handles. Pile the cargo high, or put the heavy cargo on top, and the center of gravity goes up with it."
         },
         {
-          "note": "A high centre of gravity makes a rollover more likely, and the danger is worst in a curve or when you swerve to miss something."
+          "note": "A high center of gravity makes a rollover more likely, and the danger is worst in a curve or when you swerve to miss something."
         },
         {
           "p": "Spread the load as low as you can, and put the heaviest parts under the lightest parts."
@@ -1092,7 +1092,7 @@
       "facts": [
         {
           "id": "3.4.1.1",
-          "text": "A dry bulk tank has a high centre of gravity and the load can shift, so go slowly and carefully through curves and sharp turns.",
+          "text": "A dry bulk tank has a high center of gravity and the load can shift, so go slowly and carefully through curves and sharp turns.",
           "critical": true,
           "page": "3-3",
           "keywords": [
@@ -1105,14 +1105,14 @@
       "cards": [
         {
           "q": "Why do dry bulk tanks need special care?",
-          "a": "High centre of gravity and a load that can shift. Go slowly in curves and sharp turns.",
+          "a": "High center of gravity and a load that can shift. Go slowly in curves and sharp turns.",
           "factId": "3.4.1.1"
         }
       ],
       "exam": [],
       "reading": [
         {
-          "p": "A dry bulk tank carries a high centre of gravity, and the load can shift inside."
+          "p": "A dry bulk tank carries a high center of gravity, and the load can shift inside."
         },
         {
           "note": "Be slow and careful through curves and sharp turns."
@@ -1127,7 +1127,7 @@
       "facts": [
         {
           "id": "3.4.2.1",
-          "text": "Hanging meat is an unstable load with a high centre of gravity, so take special care and go slowly on sharp curves such as on-ramps and off-ramps.",
+          "text": "Hanging meat is an unstable load with a high center of gravity, so take special care and go slowly on sharp curves such as on-ramps and off-ramps.",
           "critical": true,
           "page": "3-3",
           "keywords": [
@@ -1140,14 +1140,14 @@
       "cards": [
         {
           "q": "Why is hanging meat a difficult load?",
-          "a": "It is unstable with a high centre of gravity, so ramps and sharp curves need slow speed.",
+          "a": "It is unstable with a high center of gravity, so ramps and sharp curves need slow speed.",
           "factId": "3.4.2.1"
         }
       ],
       "exam": [],
       "reading": [
         {
-          "p": "Hanging meat, which is suspended beef, pork or lamb in a refrigerated truck, is a very unstable load with a high centre of gravity."
+          "p": "Hanging meat, which is suspended beef, pork or lamb in a refrigerated truck, is a very unstable load with a high center of gravity."
         },
         {
           "note": "Take particular care on sharp curves such as on-ramps and off-ramps. Go slowly."
@@ -1173,7 +1173,7 @@
         },
         {
           "id": "3.4.3.2",
-          "text": "Even bunched together, livestock can lean on a curve, which shifts the centre of gravity and makes a rollover more likely.",
+          "text": "Even bunched together, livestock can lean on a curve, which shifts the center of gravity and makes a rollover more likely.",
           "critical": true,
           "page": "3-3",
           "keywords": [
@@ -1190,7 +1190,7 @@
         },
         {
           "q": "Why is livestock still risky when bunched?",
-          "a": "The animals lean in curves, which shifts the centre of gravity.",
+          "a": "The animals lean in curves, which shifts the center of gravity.",
           "factId": "3.4.3.2"
         }
       ],
@@ -1217,7 +1217,7 @@
         {
           "ul": [
             "With less than a full load, use false bulkheads to keep the animals bunched together.",
-            "Even bunched, take special care: animals lean on a curve, which shifts the centre of gravity and makes a rollover more likely."
+            "Even bunched, take special care: animals lean on a curve, which shifts the center of gravity and makes a rollover more likely."
           ]
         }
       ]

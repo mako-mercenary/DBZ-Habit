@@ -3322,7 +3322,7 @@
         },
         {
           "id": "2.7.2.2",
-          "text": "You are most likely to be tailgated when you are travelling slowly, and in bad weather.",
+          "text": "You are most likely to be tailgated when you are traveling slowly, and in bad weather.",
           "critical": true,
           "page": "2-17",
           "keywords": [
@@ -3417,7 +3417,7 @@
         },
         {
           "ul": [
-            "When you are travelling slowly.",
+            "When you are traveling slowly.",
             "In bad weather, when car drivers follow large vehicles closely because they cannot see ahead."
           ]
         },
@@ -3452,7 +3452,7 @@
         },
         {
           "id": "2.7.3.2",
-          "text": "Travelling alongside another vehicle has two dangers: the other driver may turn into you, and you may be trapped when you need to change lanes.",
+          "text": "Traveling alongside another vehicle has two dangers: the other driver may turn into you, and you may be trapped when you need to change lanes.",
           "critical": true,
           "page": "2-17",
           "keywords": [
@@ -5155,7 +5155,7 @@
         {
           "ul": [
             "Vehicles drifting over the lane lines, or wandering within their own lane.",
-            "Vehicles travelling at inconsistent speeds.",
+            "Vehicles traveling at inconsistent speeds.",
             "Drivers busy with maps, food, cigarettes, phones or other objects.",
             "Drivers deep in conversation with passengers."
           ]
@@ -7943,7 +7943,7 @@
             "Either way"
           ],
           "answer": 1,
-          "why": "Move right: if they realise, their natural response is to return to their own lane.",
+          "why": "Move right: if they realize, their natural response is to return to their own lane.",
           "factId": "2.17.1.7",
           "page": "2-34"
         },
@@ -8370,7 +8370,7 @@
       ],
       "reading": [
         {
-          "h": "Recognising it"
+          "h": "Recognizing it"
         },
         {
           "ul": [

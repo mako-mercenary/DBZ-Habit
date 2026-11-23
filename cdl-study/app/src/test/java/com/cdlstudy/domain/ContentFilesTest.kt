@@ -222,8 +222,16 @@ class ContentFilesTest {
 
     @Test
     fun `the content is written in American spelling, as a US exam needs`() {
+        // The list grew every time one slipped through: centre and colour after
+        // Section 11, cancelled and travelling after Section 2. Add to it rather
+        // than fixing one and waiting for the next.
         val british = Regex(
-            "\\b(licence|licences|tyre|tyres|colour|programme|programmes|recognise|recognised|manoeuvre)\\b",
+            "\\b(licence|licences|tyre|tyres|colour\\w*|programme|programmes|recognis\\w+|" +
+                "organis(e|ed|ing|ation)|realis(e|ed|ing)|manoeuvr\\w*|centre|centres|" +
+                "metre|metres|litre|litres|" +
+                "defence|behaviour\\w*|travell(ed|ing|er|ers)|signall(ed|ing)|" +
+                "labell(ed|ing)|cancell(ed|ing)|" +
+                "practis\\w+|judgement|kerb\\w*|grey)\\b",
             RegexOption.IGNORE_CASE,
         )
         val found = mutableListOf<String>()
