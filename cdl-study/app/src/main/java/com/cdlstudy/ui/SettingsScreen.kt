@@ -19,9 +19,13 @@ fun SettingsScreen(
     onManual: () -> Unit,
     onPlan: () -> Unit,
     onBackup: () -> Unit,
+    onReminder: () -> Unit,
+    onAi: () -> Unit,
 ) {
     val store = manualStore()
     val settings = readingSettings()
+    val reminder = reminderSettings()
+    val ai = aiSettings()
     val repo = repository()
 
     LazyColumn(
@@ -60,6 +64,24 @@ fun SettingsScreen(
         }
         item {
             Entry(
+                "Daily reminder",
+                if (reminder.enabled) "On, at ${reminder.label}" else "Off",
+                onReminder,
+            )
+        }
+        item {
+            Entry(
+                "AI grading",
+                if (ai.ready) {
+                    "On, with your key · ${com.cdlstudy.ai.AiSettings.Models.label(ai.model)}"
+                } else {
+                    "Off. Needs your own API key"
+                },
+                onAi,
+            )
+        }
+        item {
+            Entry(
                 "Back up your record",
                 "Save your recalls, cards and scores to a file, or put one back",
                 onBackup,
@@ -75,8 +97,13 @@ fun SettingsScreen(
         }
         item {
             Text(
-                "Offline. No account, no network, no analytics. Your record stays on " +
-                    "this phone.",
+                if (ai.ready) {
+                    "No account, no analytics. Your record stays on this phone. AI grading " +
+                        "is the one thing that uses the network, and only when you press it."
+                } else {
+                    "Offline. No account, no network, no analytics. Your record stays on " +
+                        "this phone."
+                },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

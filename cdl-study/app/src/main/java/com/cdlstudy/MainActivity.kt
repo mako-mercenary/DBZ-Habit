@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.cdlstudy.ui.AiScreen
 import com.cdlstudy.ui.BackupScreen
 import com.cdlstudy.ui.CardsScreen
 import com.cdlstudy.ui.CdlTheme
@@ -37,6 +38,7 @@ import com.cdlstudy.ui.ManualScreen
 import com.cdlstudy.ui.PlanScreen
 import com.cdlstudy.ui.ProgressScreen
 import com.cdlstudy.ui.ReadingScreen
+import com.cdlstudy.ui.ReminderScreen
 import com.cdlstudy.ui.SectionScreen
 import com.cdlstudy.ui.SettingsScreen
 import com.cdlstudy.ui.StudyScreen
@@ -92,6 +94,8 @@ private fun AppNav() {
                     onManual = { nav.navigate("manual") },
                     onPlan = { nav.navigate("plan") },
                     onBackup = { nav.navigate("backup") },
+                    onReminder = { nav.navigate("reminder") },
+                    onAi = { nav.navigate("ai") },
                 )
             }
 
@@ -121,6 +125,8 @@ private fun AppNav() {
             composable("plan") { PlanScreen(onBack = { nav.popBackStack() }) }
             composable("reading") { ReadingScreen(onBack = { nav.popBackStack() }) }
         composable("backup") { BackupScreen(onBack = { nav.popBackStack() }) }
+        composable("reminder") { ReminderScreen(onBack = { nav.popBackStack() }) }
+        composable("ai") { AiScreen(onBack = { nav.popBackStack() }) }
         }
     }
 }

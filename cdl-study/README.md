@@ -8,7 +8,9 @@ manual's facts, and export the cards to Anki. Then an exam for each track.
 It covers the eight sections Utah requires for a Class A with air brakes and no
 endorsements, and nothing else.
 
-No accounts, no backend, no ads, no network. Your study record stays on the phone.
+No accounts, no backend, no ads. Your study record stays on the phone. One
+feature uses the network: AI grading, which is off until you put in your own
+API key, and which only sends anything when you press its button.
 
 ## What it does, and what it does not do
 
@@ -20,6 +22,8 @@ No accounts, no backend, no ads, no network. Your study record stays on the phon
 | Flashcards | The app makes them and exports TSV. **Anki** keeps the schedule. |
 | Six exams | In the app. Each track is graded on its own. |
 | Progress | In the app. It also copies a summary you can paste into any chat. |
+| Daily reminder | In the app, at a time you choose, with your streak. |
+| A second opinion on a recall | Claude, with your own API key. Off by default. |
 
 The app does not replace Anki, and it does not replace practice behind the wheel.
 
@@ -111,6 +115,33 @@ PDF. It copies no manual text into the repository.
 6. **Export.** The Cards screen gives you the TSV block to copy, or a `.tsv`
    file to save. The format is one Basic card per line: question, tab, answer,
    no header row.
+
+### The second opinion
+
+The keyword suggestion has one blind spot it cannot fix: it cannot tell you
+that a number was backwards. "Cut-in is 125" holds the keyword 125 and is
+wrong.
+
+So the correct step has one more button, which appears once you put an API key
+in Settings. It sends the words you typed and this app's own fact list to
+Claude, and asks for a mark on every fact, a reason for each, and a list of
+anything you said that is wrong. The last part is the useful part: a checklist
+cannot catch a wrong statement, and a person grading their own recall at 10 at
+night will not catch it either.
+
+It advises. Your own marks are what gets saved and what makes the cards. A
+"Take its marks" button is there if you agree with it.
+
+What is sent: your recall, and the fact text this repository wrote. What is not
+sent: the manual (the app does not hold it), your name, your scores, your
+history. Each request is billed to your own API account. The key is kept in the
+app's private storage, where no other app can read it.
+
+## The daily reminder and the streak
+
+Settings has a daily reminder at a time you choose. It names the next thing to
+do, so the notification is useful on its own. A day counts toward the streak
+when you record a recall. Today never breaks the streak until it is over.
 
 ## Exams
 
@@ -210,7 +241,7 @@ Four tabs along the bottom:
 | **Today** | Where you are, one big button for the next thing to do, then the Reading, Testing and Cards rows. |
 | **Progress** | Weak facts, best scores, and the progress summary to copy. |
 | **Cards** | The TSV block and the .tsv file for Anki. |
-| **Settings** | Reading, your manual, and what you must study. |
+| **Settings** | Reading, your manual, what you must study, the daily reminder, AI grading, and the backup. |
 
 The button on Today is worked out by `NextStepRules`, not by a guess: the first
 part of the first section you have not recalled; then, once the reading is
@@ -253,7 +284,12 @@ stays where you imported it.
 
 ## Still to do
 
-- More exam questions for Vehicle Inspection, Basic Vehicle Control and
-  On-Road Driving, so those three exams run at full length.
-- AI grading of a recall, on demand, with your own API key.
-- A daily reminder, and a streak for days with a recall.
+- Try every screen on a real phone. There is no emulator in the build
+  environment, so the screens are compile-checked and the logic is unit-tested,
+  but nothing here has been seen running except in screenshots you send back.
+- A written lesson for the subsections that are still a page reference only.
+- The AI grading request has not been sent against the live API from this
+  repository: there is no API key here to send it with. The request is built
+  with the official SDK, the schema hand-off is unit-tested, and every failure
+  turns into a sentence on the screen instead of a crash. The first real call
+  will be yours.

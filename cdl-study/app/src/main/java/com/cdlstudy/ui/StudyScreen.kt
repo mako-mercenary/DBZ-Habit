@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.AssistChip
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -25,12 +26,14 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.cdlstudy.domain.AiGrading
 import com.cdlstudy.domain.Fact
 import com.cdlstudy.domain.FocusText
 import com.cdlstudy.domain.Mark
@@ -44,10 +47,11 @@ fun StudyScreen(
 ) {
     val repo = repository()
     val settings = readingSettings()
+    val ai = aiSettings()
     val vm: StudyViewModel = viewModel(
         key = "study-$subsectionId",
         factory = viewModelFactory {
-            initializer { StudyViewModel(repo, settings, subsectionId) }
+            initializer { StudyViewModel(repo, settings, ai, subsectionId) }
         },
     )
     val sub = vm.subsection
@@ -161,7 +165,7 @@ private fun ReaderControls(vm: StudyViewModel) {
     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(6.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             FilterChip(
                 selected = vm.readStyle.focus,
@@ -180,7 +184,7 @@ private fun ReaderControls(vm: StudyViewModel) {
         }
         Row(
             horizontalArrangement = Arrangement.spacedBy(6.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             OutlinedButton(onClick = { vm.smaller() }) { Text("A-") }
             OutlinedButton(onClick = { vm.bigger() }) { Text("A+") }
@@ -249,6 +253,7 @@ private fun GradeStep(vm: StudyViewModel) {
                 }
             }
         }
+        item { AiCard(vm) }
         items(sub.facts, key = { it.id }) { fact ->
             FactRow(vm, fact)
         }
@@ -258,6 +263,87 @@ private fun GradeStep(vm: StudyViewModel) {
             }
         }
     }
+}
+
+/**
+ * The second opinion. It is the only thing in the app that uses the network,
+ * and it does nothing until you press it.
+ */
+@Composable
+private fun AiCard(vm: StudyViewModel) {
+    if (!vm.aiReady) return
+    Card(
+        Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+    ) {
+        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            when (val state = vm.aiState) {
+                is AiState.Idle -> {
+                    Text(
+                        "A keyword cannot tell you that a number was backwards. " +
+                            "${vm.aiModel} can read what you wrote and say.",
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                    OutlinedButton(onClick = vm::askAi, modifier = Modifier.fillMaxWidth()) {
+                        Text("Ask ${vm.aiModel} to check my recall")
+                    }
+                }
+
+                is AiState.Asking -> Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    CircularProgressIndicator(Modifier.height(18.dp))
+                    Text("Reading your words...", style = MaterialTheme.typography.bodyMedium)
+                }
+
+                is AiState.Failed -> {
+                    Text(state.message, style = MaterialTheme.typography.bodyMedium)
+                    OutlinedButton(onClick = vm::askAi, modifier = Modifier.fillMaxWidth()) {
+                        Text("Try again")
+                    }
+                }
+
+                is AiState.Done -> AiOpinion(vm, state.opinion)
+            }
+        }
+    }
+}
+
+@Composable
+private fun AiOpinion(vm: StudyViewModel, opinion: AiGrading.Opinion) {
+    val differs = opinion.disagreements(vm.marks)
+    Text("${vm.aiModel} says", style = MaterialTheme.typography.labelLarge)
+    if (opinion.note.isNotEmpty()) {
+        Text(opinion.note, style = MaterialTheme.typography.bodyMedium)
+    }
+    if (opinion.errors.isNotEmpty()) {
+        Text(
+            "Wrong in what you wrote",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.error,
+        )
+        opinion.errors.forEach { error ->
+            Text("- " + error, style = MaterialTheme.typography.bodyMedium)
+        }
+    }
+    Text(
+        if (differs.isEmpty()) {
+            "It marked every fact the same way you did."
+        } else {
+            "It marks ${differs.size} fact(s) differently. Each one is noted below."
+        },
+        style = MaterialTheme.typography.bodySmall,
+    )
+    if (differs.isNotEmpty()) {
+        OutlinedButton(onClick = vm::takeAiMarks, modifier = Modifier.fillMaxWidth()) {
+            Text("Take its marks")
+        }
+    }
+    Text(
+        "It is a second opinion, not the grader. Your marks are what gets saved.",
+        style = MaterialTheme.typography.labelSmall,
+    )
 }
 
 @Composable
@@ -277,6 +363,29 @@ private fun FactRow(vm: StudyViewModel, fact: Fact) {
             Text(fact.text, style = MaterialTheme.typography.bodyLarge)
             fact.page?.let {
                 Text("Manual page $it", style = MaterialTheme.typography.labelSmall)
+            }
+            val aiMark = vm.aiMarkOf(fact.id)
+            if (aiMark != null) {
+                val agrees = aiMark == mark
+                Text(
+                    buildString {
+                        append(if (agrees) "AI agrees: " else "AI says ")
+                        append(
+                            when (aiMark) {
+                                Mark.HIT -> "you said it"
+                                Mark.PARTIAL -> "you said part of it"
+                                Mark.MISS -> "you missed it"
+                            }
+                        )
+                        vm.aiWhyOf(fact.id)?.takeIf { it.isNotEmpty() }?.let { append(". " + it) }
+                    },
+                    style = MaterialTheme.typography.labelMedium,
+                    color = if (agrees) {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    } else {
+                        MaterialTheme.colorScheme.primary
+                    },
+                )
             }
             if (suggestion != null && suggestion.hasKeywords) {
                 val found = suggestion.found.joinToString(", ").ifBlank { "none" }

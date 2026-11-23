@@ -8,6 +8,7 @@ import com.cdlstudy.domain.ExamResult
 import com.cdlstudy.domain.Grading
 import com.cdlstudy.domain.Mark
 import com.cdlstudy.domain.RecallScore
+import com.cdlstudy.domain.Streak
 import com.cdlstudy.domain.Subsection
 import com.cdlstudy.domain.Track
 import com.cdlstudy.domain.Tsv
@@ -135,6 +136,21 @@ class StudyRepository(
     }
 
     suspend fun weakFactIdsNow(): Set<String> = db.exams().allMissedFactIds().toSet()
+
+    // Plain reads for the reminder worker, which has no screen to collect a flow.
+    suspend fun progressNow(): List<ProgressEntity> = db.progress().allNow()
+
+    suspend fun bestPercentNow(track: Track): Int? = db.exams().bestPercentNow(track.id)
+
+    suspend fun pendingCardCountNow(): Int = db.cards().pendingNow().size
+
+    suspend fun recallTimesNow(): List<Long> = db.recalls().allNow().map { it.gradedAt }
+
+    /** The streak of days with at least one recall. */
+    val streak: Flow<Streak.Result>
+        get() = db.recalls().recent(5000).map { recalls ->
+            Streak.of(recalls.map { it.gradedAt }, java.time.LocalDate.now())
+        }
 
     /** Adds cards, and leaves out a question that is in the queue already. */
     private suspend fun queueCards(

@@ -25,6 +25,7 @@ import com.cdlstudy.domain.ExamStandards
 import com.cdlstudy.domain.NextStep
 import com.cdlstudy.domain.NextStepRules
 import com.cdlstudy.domain.Section
+import com.cdlstudy.domain.Streak
 import com.cdlstudy.domain.Track
 
 /**
@@ -45,6 +46,7 @@ fun TodayScreen(
     val plan by repo.planProgress.collectAsStateWithLifecycle(PlanProgress(0, 0, 0))
     val progress by repo.progress.collectAsStateWithLifecycle(emptyList())
     val pendingCards by repo.pendingCardCount.collectAsStateWithLifecycle(0)
+    val streak by repo.streak.collectAsStateWithLifecycle(Streak.Result(0, 0, false, emptyList()))
     val bests = Track.entries.associateWith {
         repo.bestPercent(it).collectAsStateWithLifecycle(null).value
     }

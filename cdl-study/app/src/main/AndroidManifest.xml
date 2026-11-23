@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- The daily study reminder. Asked for when you first switch it on. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- AI grading, and nothing else. It is off until you put in your own
+         API key. Every other part of the app works with no network. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".CdlApp"
         android:icon="@mipmap/ic_launcher"

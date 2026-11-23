@@ -5,8 +5,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.cdlstudy.ai.AiSettings
+import com.cdlstudy.ai.Claude
 import com.cdlstudy.data.SavedRecall
 import com.cdlstudy.data.StudyRepository
+import com.cdlstudy.domain.AiGrading
 import com.cdlstudy.domain.BlurtMatcher
 import com.cdlstudy.domain.FocusText
 import com.cdlstudy.domain.Fact
@@ -17,6 +20,15 @@ import kotlinx.coroutines.launch
 /** The four steps of one subsection. */
 enum class Stage { READ, BLURT, GRADE, RESULT }
 
+/** Where the second opinion is up to. */
+sealed interface AiState {
+    /** Not asked. */
+    data object Idle : AiState
+    data object Asking : AiState
+    data class Done(val opinion: AiGrading.Opinion) : AiState
+    data class Failed(val message: String) : AiState
+}
+
 /**
  * Holds one turn of the study loop.
  *
@@ -26,6 +38,7 @@ enum class Stage { READ, BLURT, GRADE, RESULT }
 class StudyViewModel(
     private val repo: StudyRepository,
     private val settings: ReadingSettings,
+    private val ai: AiSettings,
     val subsectionId: String,
 ) : ViewModel() {
 
@@ -43,6 +56,14 @@ class StudyViewModel(
         private set
     var saved by mutableStateOf<SavedRecall?>(null)
         private set
+
+    var aiState by mutableStateOf<AiState>(AiState.Idle)
+        private set
+
+    /** Whether there is a key, so the button is worth showing. */
+    val aiReady: Boolean get() = ai.ready
+
+    val aiModel: String get() = AiSettings.Models.label(ai.model)
 
     /** 1x fits the page to the screen. 2x needs a sideways scroll. */
     var zoom by mutableStateOf(1f)
@@ -108,6 +129,35 @@ class StudyViewModel(
         marks = marks + (factId to mark)
     }
 
+    /**
+     * Asks for a second opinion. Your marks do not change until you say so:
+     * the model advises, you still grade.
+     */
+    fun askAi() {
+        val sub = subsection ?: return
+        if (aiState is AiState.Asking) return
+        aiState = AiState.Asking
+        viewModelScope.launch {
+            aiState = try {
+                AiState.Done(Claude.grade(ai, sub, blurt))
+            } catch (e: Claude.Failed) {
+                AiState.Failed(e.message ?: "That did not work.")
+            }
+        }
+    }
+
+    /** Takes every mark the model gave, over the ones you have. */
+    fun takeAiMarks() {
+        val opinion = (aiState as? AiState.Done)?.opinion ?: return
+        marks = marks + opinion.marks.associate { it.factId to it.mark }
+    }
+
+    fun aiMarkOf(factId: String): Mark? =
+        (aiState as? AiState.Done)?.opinion?.markOf(factId)
+
+    fun aiWhyOf(factId: String): String? =
+        (aiState as? AiState.Done)?.opinion?.whyOf(factId)
+
     fun save() {
         val sub = subsection ?: return
         viewModelScope.launch {
@@ -121,6 +171,7 @@ class StudyViewModel(
         marks = emptyMap()
         suggestions = emptyMap()
         saved = null
+        aiState = AiState.Idle
         stage = Stage.READ
     }
 

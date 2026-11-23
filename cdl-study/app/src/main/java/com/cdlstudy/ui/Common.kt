@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
 import com.cdlstudy.CdlApp
+import com.cdlstudy.ai.AiSettings
 import com.cdlstudy.data.StudyRepository
 
 @Composable
@@ -27,6 +28,14 @@ fun repository(): StudyRepository =
 @Composable
 fun readingSettings(): ReadingSettings =
     (LocalContext.current.applicationContext as CdlApp).reading
+
+@Composable
+fun reminderSettings(): ReminderSettings =
+    (LocalContext.current.applicationContext as CdlApp).reminder
+
+@Composable
+fun aiSettings(): AiSettings =
+    (LocalContext.current.applicationContext as CdlApp).ai
 
 @Composable
 fun contentErrors(): List<String> =
