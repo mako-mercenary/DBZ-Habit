@@ -108,6 +108,8 @@ data class Section(
     val subsections: List<Subsection> = emptyList(),
     /** Questions that test the whole section, not one subsection. */
     val exam: List<ExamItem> = emptyList(),
+    /** Procedures the test scores in order, such as the air brake check. */
+    val procedures: List<Procedure> = emptyList(),
     /** True while the content is a sample. The app shows a warning. */
     val placeholder: Boolean = false,
 ) {
@@ -154,6 +156,11 @@ class Content(val sections: List<Section>) {
         sections.filter { it.track == track }
             .flatMap { it.exam + it.subsections.flatMap { sub -> sub.exam } }
 
+    /** Every procedure in the app, in section order. */
+    val procedures: List<Procedure> get() = sections.flatMap { it.procedures }
+
+    fun procedure(id: String): Procedure? = procedures.firstOrNull { it.id == id }
+
     fun fact(factId: String): Fact? =
         sections.firstNotNullOfOrNull { s ->
             s.subsections.firstNotNullOfOrNull { it.fact(factId) }
@@ -176,12 +183,33 @@ object ContentReader {
             exam = root.list("exam").mapIndexed { i, item ->
                 readExamItem(item, "s${root.int("section")}.e${i + 1}")
             },
+            procedures = root.list("procedures").map { readProcedure(it) },
             placeholder = root.boolOrNull("placeholder") ?: false,
         )
     }
 
     fun readAll(files: List<String>): Content =
         Content(files.map { readSection(it) }.sortedBy { it.number })
+
+    private fun readProcedure(raw: Any?): Procedure {
+        val map = raw as? Map<*, *>
+            ?: throw IllegalArgumentException("A procedure must be a JSON object")
+        val steps = map.list("steps").map { step ->
+            val s = step as? Map<*, *>
+                ?: throw IllegalArgumentException("A step must be a JSON object")
+            Step(text = s.str("text"), factId = s.strOrNull("factId"))
+        }
+        if (steps.size < 2) {
+            throw IllegalArgumentException("Procedure ${map.str("id")} needs at least two steps")
+        }
+        return Procedure(
+            id = map.str("id"),
+            title = map.str("title"),
+            why = map.str("why"),
+            steps = steps,
+            subsectionId = map.strOrNull("subsectionId"),
+        )
+    }
 
     private fun readSubsection(raw: Any?): Subsection {
         val map = raw as? Map<*, *>

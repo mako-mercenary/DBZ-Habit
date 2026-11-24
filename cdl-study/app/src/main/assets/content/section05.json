@@ -2904,5 +2904,43 @@
       ]
     }
   ],
-  "exam": []
+  "exam": [],
+  "procedures": [
+    {
+      "id": "final-air-brake-check",
+      "title": "The final air brake check, step 7",
+      "why": "Seven tests in a fixed order, each one setting up the next. The pressure has to be falling for the warning and spring brake tests to mean anything.",
+      "subsectionId": "5.3.3",
+      "steps": [
+        {
+          "text": "Governor: pumping starts at about 100 psi, stops at about 125 psi",
+          "factId": "5.3.3.1"
+        },
+        {
+          "text": "Leakage with the brakes released",
+          "factId": "5.3.3.2"
+        },
+        {
+          "text": "Leakage with the foot brake fully applied",
+          "factId": "5.3.3.3"
+        },
+        {
+          "text": "Low pressure warning: must come on before 55 psi",
+          "factId": "5.3.3.5"
+        },
+        {
+          "text": "Spring brakes: the valve pops out between 20 and 45 psi",
+          "factId": "5.3.3.6"
+        },
+        {
+          "text": "Parking brake: pull gently against it in a low gear",
+          "factId": "5.3.3.9"
+        },
+        {
+          "text": "Service brake: roll at about 5 mph and apply firmly",
+          "factId": "5.3.3.10"
+        }
+      ]
+    }
+  ]
 }

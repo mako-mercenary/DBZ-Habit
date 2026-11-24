@@ -22,6 +22,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cdlstudy.data.PlanProgress
 import com.cdlstudy.data.ProgressEntity
 import com.cdlstudy.domain.ExamStandards
+import com.cdlstudy.domain.NumberDrill
 import com.cdlstudy.domain.NextStep
 import com.cdlstudy.domain.NextStepRules
 import com.cdlstudy.domain.Section
@@ -39,6 +40,7 @@ fun TodayScreen(
     onCards: () -> Unit,
     onProgress: () -> Unit,
     onManual: () -> Unit,
+    onDrills: () -> Unit,
 ) {
     val repo = repository()
     val store = manualStore()
@@ -198,6 +200,15 @@ fun TodayScreen(
                         title = "Your progress",
                         meta = "scores and weak facts",
                         onClick = onProgress,
+                    )
+                }
+                item {
+                    Tile(
+                        tag = "Drills",
+                        number = "${NumberDrill.pool(repo.content).size}",
+                        title = "Numbers and order",
+                        meta = "short, hard, one at a time",
+                        onClick = onDrills,
                     )
                 }
                 item {

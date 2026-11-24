@@ -32,9 +32,14 @@ import com.cdlstudy.ui.AiScreen
 import com.cdlstudy.ui.BackupScreen
 import com.cdlstudy.ui.CardsScreen
 import com.cdlstudy.ui.CdlTheme
+import com.cdlstudy.ui.DrillsScreen
+import com.cdlstudy.ui.InspectionWalkScreen
+import com.cdlstudy.ui.ProcedureListScreen
+import com.cdlstudy.ui.ProcedureScreen
 import com.cdlstudy.ui.ExamScreen
 import com.cdlstudy.ui.Gold
 import com.cdlstudy.ui.ManualScreen
+import com.cdlstudy.ui.NumberDrillScreen
 import com.cdlstudy.ui.PlanScreen
 import com.cdlstudy.ui.ProgressScreen
 import com.cdlstudy.ui.ReadingScreen
@@ -84,6 +89,7 @@ private fun AppNav() {
                     onCards = { nav.switchTab(Tab.CARDS) },
                     onProgress = { nav.switchTab(Tab.PROGRESS) },
                     onManual = { nav.navigate("manual") },
+                    onDrills = { nav.navigate("drills") },
                 )
             }
             composable(Tab.PROGRESS.route) { ProgressScreen(onBack = null) }
@@ -127,6 +133,42 @@ private fun AppNav() {
         composable("backup") { BackupScreen(onBack = { nav.popBackStack() }) }
         composable("reminder") { ReminderScreen(onBack = { nav.popBackStack() }) }
         composable("ai") { AiScreen(onBack = { nav.popBackStack() }) }
+        composable("drills") {
+            DrillsScreen(
+                onBack = { nav.popBackStack() },
+                onNumbers = { nav.navigate("drill-numbers") },
+                onProcedures = { nav.navigate("drill-order") },
+                onWalk = { nav.navigate("drill-walk") },
+            )
+        }
+        composable("drill-numbers") {
+            NumberDrillScreen(
+                onBack = { nav.popBackStack() },
+                onCards = { nav.switchTab(Tab.CARDS) },
+            )
+        }
+        composable("drill-order") {
+            ProcedureListScreen(
+                onBack = { nav.popBackStack() },
+                onProcedure = { nav.navigate("procedure/$it") },
+            )
+        }
+        composable(
+            "procedure/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.StringType }),
+        ) { backStack ->
+            ProcedureScreen(
+                procedureId = backStack.arguments!!.getString("id")!!,
+                onBack = { nav.popBackStack() },
+                onStudy = { nav.navigate("study/$it") },
+            )
+        }
+        composable("drill-walk") {
+            InspectionWalkScreen(
+                onBack = { nav.popBackStack() },
+                onArea = { nav.navigate("study/$it") },
+            )
+        }
         }
     }
 }

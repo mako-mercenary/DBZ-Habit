@@ -10421,5 +10421,75 @@
       ]
     }
   ],
-  "exam": []
+  "exam": [],
+  "procedures": [
+    {
+      "id": "seven-step-inspection",
+      "title": "The seven-step inspection method",
+      "why": "Inspect the same way every time and you stop forgetting steps. The order is the method.",
+      "subsectionId": "2.1.5",
+      "steps": [
+        {
+          "text": "Vehicle overview: read the last inspection report",
+          "factId": "2.1.5.2"
+        },
+        {
+          "text": "Engine compartment, with the wheels chocked",
+          "factId": "2.1.5.3"
+        },
+        {
+          "text": "Start the engine and inspect the cab",
+          "factId": "2.1.5.4"
+        },
+        {
+          "text": "Set the parking brake, switch off, take the key",
+          "factId": "2.1.5.7"
+        },
+        {
+          "text": "Walk-around inspection",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Signal light check",
+          "factId": "2.1.5.11"
+        },
+        {
+          "text": "Brake check",
+          "factId": "2.1.5.12"
+        }
+      ]
+    },
+    {
+      "id": "walk-around-order",
+      "title": "The walk-around order",
+      "why": "Step 5 has its own fixed route. Wander off it and you miss a side of the vehicle.",
+      "subsectionId": "2.1.5",
+      "steps": [
+        {
+          "text": "Left front",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Front",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Right side",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Right rear",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Rear",
+          "factId": "2.1.5.8"
+        },
+        {
+          "text": "Left side",
+          "factId": "2.1.5.8"
+        }
+      ]
+    }
+  ]
 }

@@ -2063,5 +2063,51 @@
       ]
     }
   ],
-  "exam": []
+  "exam": [],
+  "procedures": [
+    {
+      "id": "air-brake-check-four-parts",
+      "title": "The four-part air brake check",
+      "why": "Fail to explain and demonstrate all four parts correctly and you fail the inspection test on the spot.",
+      "subsectionId": "11.1.2",
+      "steps": [
+        {
+          "text": "Part 1: air gauge and governor cutout",
+          "factId": "11.1.2.2"
+        },
+        {
+          "text": "Part 2: air leakage rate",
+          "factId": "11.1.2.3"
+        },
+        {
+          "text": "Part 3: air warning devices",
+          "factId": "11.1.2.5"
+        },
+        {
+          "text": "Part 4: emergency brakes",
+          "factId": "11.1.2.6"
+        }
+      ]
+    },
+    {
+      "id": "in-cab-brake-checks",
+      "title": "The three in-cab brake checks",
+      "why": "Three separate checks, each with its own setup. Run them out of order and you are testing the wrong brake.",
+      "subsectionId": "11.1.1",
+      "steps": [
+        {
+          "text": "Parking brake: parking brake on, foot off the service brake, pull gently",
+          "factId": "11.1.1.12"
+        },
+        {
+          "text": "Trailer brake: parking brake released, trailer parking brake on, pull gently",
+          "factId": "11.1.1.13"
+        },
+        {
+          "text": "Service brake: roll at 5 mph, apply the foot brake, stop completely",
+          "factId": "11.1.1.14"
+        }
+      ]
+    }
+  ]
 }

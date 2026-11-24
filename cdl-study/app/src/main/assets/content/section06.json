@@ -2885,5 +2885,99 @@
       ]
     }
   ],
-  "exam": []
+  "exam": [],
+  "procedures": [
+    {
+      "id": "coupling",
+      "title": "Coupling a tractor-semitrailer",
+      "why": "Back under before the trailer brakes are locked and you push the trailer away. Raise the landing gear before the coupling is checked and you drop the trailer.",
+      "subsectionId": "6.4.1",
+      "steps": [
+        {
+          "text": "Inspect the fifth wheel: tilted down, jaws open, handle in automatic lock",
+          "factId": "6.4.1.1"
+        },
+        {
+          "text": "Chock the trailer wheels or set its spring brakes",
+          "factId": "6.4.1.3"
+        },
+        {
+          "text": "Set the trailer height so the tractor will raise it slightly",
+          "factId": "6.4.1.5"
+        },
+        {
+          "text": "Connect the air lines, supply air, and listen for the trailer brakes",
+          "factId": "6.4.1.6"
+        },
+        {
+          "text": "Lock the trailer brakes: pull the air supply knob out",
+          "factId": "6.4.1.7"
+        },
+        {
+          "text": "Back under slowly, in the lowest reverse gear",
+          "factId": "6.4.1.8"
+        },
+        {
+          "text": "Check the coupling: raise the landing gear slightly and pull forward",
+          "factId": "6.4.1.9"
+        },
+        {
+          "text": "Secure the rig: neutral, parking brakes, engine off, key with you",
+          "factId": "6.4.1.10"
+        },
+        {
+          "text": "Inspect from underneath: no space between upper and lower fifth wheel",
+          "factId": "6.4.1.11"
+        },
+        {
+          "text": "Inspect the jaws: closed around the shank, lever locked, safety latch over it",
+          "factId": "6.4.1.12"
+        },
+        {
+          "text": "Raise the landing gear all the way up",
+          "factId": "6.4.1.13"
+        },
+        {
+          "text": "Check the clearance between the tractor frame and the landing gear",
+          "factId": "6.4.1.14"
+        }
+      ]
+    },
+    {
+      "id": "uncoupling",
+      "title": "Uncoupling a tractor-semitrailer",
+      "why": "Pull the release handle before the landing gear is down and the trailer nose goes to the ground.",
+      "subsectionId": "6.4.2",
+      "steps": [
+        {
+          "text": "Park lined up straight, on ground that will carry the weight",
+          "factId": "6.4.2.1"
+        },
+        {
+          "text": "Ease the pressure on the locking jaws, then set the parking brakes",
+          "factId": "6.4.2.2"
+        },
+        {
+          "text": "Chock the trailer wheels if it has no spring brakes",
+          "factId": "6.4.2.3"
+        },
+        {
+          "text": "Lower the landing gear until it contacts the ground firmly",
+          "factId": "6.4.2.4"
+        },
+        {
+          "text": "Disconnect the air lines and hang the electrical cable",
+          "factId": "6.4.2.5"
+        },
+        {
+          "text": "Keep clear of the rear wheels and pull the release handle",
+          "factId": "6.4.2.6"
+        },
+        {
+          "text": "Pull forward until the fifth wheel is clear, stopping under the trailer",
+          "factId": "6.4.2.7"
+        }
+      ]
+    }
+  ]
 }

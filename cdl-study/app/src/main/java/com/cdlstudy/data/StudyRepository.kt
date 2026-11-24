@@ -152,6 +152,39 @@ class StudyRepository(
             Streak.of(recalls.map { it.gradedAt }, java.time.LocalDate.now())
         }
 
+    /**
+     * Queues a card for each fact a drill caught you on.
+     *
+     * The drill does not keep its own schedule, for the same reason the recall
+     * does not: Anki keeps the schedule. A drill that catches a number you have
+     * lost puts that number in the queue and gets out of the way.
+     */
+    suspend fun queueDrillMisses(
+        factIds: Collection<String>,
+        source: String,
+        now: Long = System.currentTimeMillis(),
+    ): Int {
+        var added = 0
+        factIds.distinct().forEach { factId ->
+            val subsection = content.sections
+                .flatMap { it.subsections }
+                .firstOrNull { sub -> sub.facts.any { it.id == factId } }
+                ?: return@forEach
+            val fact = subsection.fact(factId) ?: return@forEach
+            // Use the fact's own card when it has one. Otherwise make one from
+            // the fact itself, so a drilled fact is never lost for want of a
+            // hand-written question.
+            val card = subsection.cards.firstOrNull { it.factId == factId }
+                ?: Card(
+                    question = "${subsection.id} ${subsection.title}: what is the rule?",
+                    answer = fact.text,
+                    factId = factId,
+                )
+            added += queueCards(subsection.id, listOf(card), source, now)
+        }
+        return added
+    }
+
     /** Adds cards, and leaves out a question that is in the queue already. */
     private suspend fun queueCards(
         subsectionId: String,
