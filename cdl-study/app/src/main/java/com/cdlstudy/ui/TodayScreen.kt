@@ -52,6 +52,11 @@ fun TodayScreen(
     val bests = Track.entries.associateWith {
         repo.bestPercent(it).collectAsStateWithLifecycle(null).value
     }
+    // The best from an attempt that was not weighted in your favour. It is the
+    // only score that means what it says, so the tile shows it when it exists.
+    val realBests = Track.entries.associateWith {
+        repo.bestRealPercent(it).collectAsStateWithLifecycle(null).value
+    }
 
     val statusOf: (String) -> String? = { id -> progress.firstOrNull { it.subsectionId == id }?.status }
     val step = NextStepRules.next(repo.content, statusOf, { bests[it] }, pendingCards)
@@ -153,6 +158,7 @@ fun TodayScreen(
                 items(Track.entries.toList()) { track ->
                     val pool = repo.content.examPool(track).size
                     val best = bests[track]
+                    val real = realBests[track]
                     Tile(
                         tag = track.label,
                         number = if (pool == 0) "—" else "$pool",
@@ -160,7 +166,8 @@ fun TodayScreen(
                         meta = when {
                             pool == 0 -> "no questions yet"
                             best == null -> "$pool ready · not taken"
-                            else -> "best $best% · pass ${ExamStandards.PASS_PERCENT}%"
+                            real != null -> "test-day $real% · practice $best%"
+                            else -> "practice $best% · no test-day run yet"
                         },
                         progress = (best ?: 0) / 100f,
                         badge = if (step is NextStep.TakeExam && step.track == track) "Start" else null,

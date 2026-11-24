@@ -1,6 +1,7 @@
 package com.cdlstudy.domain
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -85,7 +86,10 @@ class BackupTest {
 
     @Test
     fun `a record from a newer app is refused, instead of being half read`() {
-        val future = Backup.write(record).replace("\"formatVersion\": 1", "\"formatVersion\": 99")
+        // Written against the current format, not a hardcoded 1, so bumping
+        // the format does not quietly turn this test into a no-op.
+        val future = Backup.write(record)
+            .replace("\"formatVersion\": ${Backup.FORMAT}", "\"formatVersion\": ${Backup.FORMAT + 1}")
         val error = runCatching { Backup.read(future) }.exceptionOrNull()
         assertTrue(error is Backup.BadBackup)
         assertTrue(error!!.message!!.contains("newer version"))
@@ -99,5 +103,92 @@ class BackupTest {
     @Test
     fun `the file name carries the date`() {
         assertEquals("gateway-record-2026-11-22.json", Backup.fileName("2026-11-22"))
+    }
+}
+
+/**
+ * Format 2 added two fields to an exam attempt. A backup written before that
+ * must still read, and the fields it does not have must come back as what they
+ * were: a practice attempt with no recorded time.
+ */
+class BackupFormat2Test {
+
+    private val attempt = Backup.Attempt(
+        track = "general",
+        finishedAt = 1_700_000_000_000,
+        total = 50,
+        correct = 44,
+        percent = 88,
+        answers = listOf(Backup.Answer("q1", 0, true, "1.0.1")),
+        realConditions = true,
+        seconds = 1_432,
+    )
+
+    @Test
+    fun `the new fields survive a round trip`() {
+        val record = Backup.Record(
+            formatVersion = Backup.FORMAT,
+            appVersion = "0.9.0",
+            savedAt = 1_700_000_000_000,
+            attempts = listOf(attempt),
+        )
+        val back = Backup.read(Backup.write(record))
+        assertEquals(1, back.attempts.size)
+        assertEquals(true, back.attempts[0].realConditions)
+        assertEquals(1_432, back.attempts[0].seconds)
+        assertEquals(88, back.attempts[0].percent)
+    }
+
+    @Test
+    fun `a practice attempt round trips as a practice attempt`() {
+        val record = Backup.Record(
+            formatVersion = Backup.FORMAT,
+            appVersion = "0.9.0",
+            savedAt = 1,
+            attempts = listOf(attempt.copy(realConditions = false, seconds = null)),
+        )
+        val back = Backup.read(Backup.write(record))
+        assertEquals(false, back.attempts[0].realConditions)
+        assertNull(back.attempts[0].seconds)
+    }
+
+    @Test
+    fun `a format 1 file still reads, and its attempts are practice attempts`() {
+        val old = """
+            {
+              "formatVersion": 1,
+              "appVersion": "0.7.0",
+              "savedAt": 1700000000000,
+              "recalls": [],
+              "cards": [],
+              "attempts": [
+                {
+                  "track": "general",
+                  "finishedAt": 1700000000000,
+                  "total": 50,
+                  "correct": 44,
+                  "percent": 88,
+                  "answers": [
+                    { "itemId": "q1", "chosen": 0, "wasCorrect": true, "factId": "1.0.1" }
+                  ]
+                }
+              ],
+              "progress": []
+            }
+        """.trimIndent()
+        val back = Backup.read(old)
+        assertEquals(1, back.attempts.size)
+        assertEquals(88, back.attempts[0].percent)
+        assertEquals(false, back.attempts[0].realConditions)
+        assertNull(back.attempts[0].seconds)
+    }
+
+    @Test
+    fun `a file from a newer format is still refused rather than half read`() {
+        val future = """
+            { "formatVersion": ${Backup.FORMAT + 1}, "appVersion": "9.9.9", "savedAt": 1,
+              "recalls": [], "cards": [], "attempts": [], "progress": [] }
+        """.trimIndent()
+        assertTrue(runCatching { Backup.read(future) }.exceptionOrNull() is Backup.BadBackup)
     }
 }

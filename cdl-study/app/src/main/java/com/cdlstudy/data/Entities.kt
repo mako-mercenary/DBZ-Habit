@@ -56,6 +56,18 @@ data class ExamAttemptEntity(
     val total: Int,
     val correct: Int,
     val percent: Int,
+    /**
+     * True for an attempt run under test-day conditions: full length, and no
+     * weighting toward the facts you have missed before.
+     *
+     * A practice attempt is weighted toward your weak facts, which is right for
+     * learning and wrong for measuring. Without this column a 92% from a
+     * weighted practice run and a 92% from a straight one look the same, and
+     * the number stops meaning anything.
+     */
+    val realConditions: Boolean = false,
+    /** How long the attempt took, in seconds. Null for an older attempt. */
+    val seconds: Int? = null,
 )
 
 @Entity(

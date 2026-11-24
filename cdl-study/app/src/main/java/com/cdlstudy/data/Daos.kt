@@ -103,6 +103,15 @@ interface ExamDao {
     @Query("SELECT MAX(percent) FROM exam_attempts WHERE track = :track")
     suspend fun bestPercentNow(track: String): Int?
 
+    /** The best score from an attempt that was not weighted in your favour. */
+    @Query(
+        "SELECT MAX(percent) FROM exam_attempts WHERE track = :track AND realConditions = 1"
+    )
+    fun bestRealPercent(track: String): Flow<Int?>
+
+    @Query("SELECT COUNT(*) FROM exam_attempts WHERE track = :track AND realConditions = 1")
+    fun realAttemptCount(track: String): Flow<Int>
+
     @Query(
         """
         SELECT factId, COUNT(*) AS weight

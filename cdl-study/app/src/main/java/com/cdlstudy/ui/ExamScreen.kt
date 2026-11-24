@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.cdlstudy.domain.ExamMode
 import com.cdlstudy.domain.ExamStandards
 import com.cdlstudy.domain.Track
 
@@ -57,6 +58,24 @@ private fun PickExam(vm: ExamViewModel) {
                 style = MaterialTheme.typography.bodyMedium,
             )
         }
+        item {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    ExamMode.entries.forEach { option ->
+                        FilterChip(
+                            selected = vm.mode == option,
+                            onClick = { vm.chooseMode(option) },
+                            label = { Text(option.label) },
+                        )
+                    }
+                }
+                Text(
+                    vm.mode.detail,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
         items(Track.entries) { track ->
             val pool = vm.poolSize(track)
             Card(
@@ -89,14 +108,28 @@ private fun PickExam(vm: ExamViewModel) {
             }
         }
         item {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(10, 20, 25, 50).forEach { n ->
-                    FilterChip(
-                        selected = vm.length == n,
-                        onClick = { vm.chooseLength(n) },
-                        label = { Text("$n") },
-                    )
+            if (vm.mode.lengthIsYours) {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(10, 20, 25, 50).forEach { n ->
+                        FilterChip(
+                            selected = vm.length == n,
+                            onClick = { vm.chooseLength(n) },
+                            label = { Text("$n") },
+                        )
+                    }
                 }
+            } else if (vm.poolIsShort) {
+                WarningCard(
+                    "The pool for ${vm.track.label} holds ${vm.poolSize(vm.track)} questions " +
+                        "and a full exam is ${ExamStandards.defaultLength(vm.track)}. This " +
+                        "attempt will run short, so it will not be recorded as a test-day " +
+                        "score."
+                )
+            } else {
+                Text(
+                    "${vm.length} questions, the full length. No feedback until the end.",
+                    style = MaterialTheme.typography.bodyMedium,
+                )
             }
         }
         item {
@@ -171,6 +204,13 @@ private fun ExamDone(vm: ExamViewModel, onBack: () -> Unit) {
                         "correct" to "${result.correct}/${result.total}",
                         "new cards" to "${vm.cardsAdded}",
                     )
+                    if (vm.mode == ExamMode.TEST_DAY) {
+                        Text(
+                            if (result.passed) "PASS" else "FAIL",
+                            style = MaterialTheme.typography.headlineMedium,
+                            color = if (result.passed) Gold else MaterialTheme.colorScheme.error,
+                        )
+                    }
                     Text(
                         when {
                             result.mastered -> "Mastery level."
@@ -179,6 +219,27 @@ private fun ExamDone(vm: ExamViewModel, onBack: () -> Unit) {
                         },
                         style = MaterialTheme.typography.bodyLarge,
                     )
+                    vm.seconds?.let { seconds ->
+                        Text(
+                            "Took ${seconds / 60} min ${seconds % 60} sec" +
+                                if (vm.mode == ExamMode.TEST_DAY) {
+                                    ". The official time limit is not in this app, so the " +
+                                        "time is information, not a verdict."
+                                } else {
+                                    "."
+                                },
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    if (vm.mode == ExamMode.PRACTICE) {
+                        Text(
+                            "This was a practice run, weighted toward the facts you have " +
+                                "missed before, so it was easier than the real thing.",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                 }
             }
         }

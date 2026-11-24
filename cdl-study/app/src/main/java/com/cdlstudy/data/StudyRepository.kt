@@ -38,6 +38,11 @@ class StudyRepository(
 
     fun bestPercent(track: Track): Flow<Int?> = db.exams().bestPercent(track.id)
 
+    /** The best score from an attempt that was not weighted in your favour. */
+    fun bestRealPercent(track: Track): Flow<Int?> = db.exams().bestRealPercent(track.id)
+
+    fun realAttemptCount(track: Track): Flow<Int> = db.exams().realAttemptCount(track.id)
+
     /**
      * The weak facts, from recall marks and from missed exam questions together.
      * A fact that fails in both places gets the sum of both weights.
@@ -110,6 +115,8 @@ class StudyRepository(
         items: List<ExamItem>,
         answers: Map<String, Int>,
         now: Long = System.currentTimeMillis(),
+        realConditions: Boolean = false,
+        seconds: Int? = null,
     ): Int {
         val attemptId = db.exams().insert(
             ExamAttemptEntity(
@@ -118,6 +125,8 @@ class StudyRepository(
                 total = result.total,
                 correct = result.correct,
                 percent = result.percent,
+                realConditions = realConditions,
+                seconds = seconds,
             )
         )
         db.exams().insertAnswers(
@@ -273,6 +282,8 @@ class RecordStore(private val db: AppDatabase) {
                 total = attempt.total,
                 correct = attempt.correct,
                 percent = attempt.percent,
+                realConditions = attempt.realConditions,
+                seconds = attempt.seconds,
                 answers = db.exams().answersOf(attempt.id).map {
                     Backup.Answer(it.itemId, it.chosen, it.wasCorrect, it.factId)
                 },
@@ -336,6 +347,8 @@ class RecordStore(private val db: AppDatabase) {
                     total = attempt.total,
                     correct = attempt.correct,
                     percent = attempt.percent,
+                    realConditions = attempt.realConditions,
+                    seconds = attempt.seconds,
                 )
             )
             db.exams().insertAnswers(

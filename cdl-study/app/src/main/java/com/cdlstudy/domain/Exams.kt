@@ -97,3 +97,36 @@ object Exams {
         return cards.distinctBy { Grading.normalizeQuestion(it.question) }
     }
 }
+
+/**
+ * The two ways to sit a practice exam.
+ *
+ * [PRACTICE] is weighted toward the facts you have missed before, which is
+ * right for learning and wrong for measuring. [TEST_DAY] is not weighted and
+ * is always full length, so the score means what it says.
+ */
+enum class ExamMode {
+    PRACTICE,
+    TEST_DAY,
+    ;
+
+    /** True while a question on a weak fact should come up twice as often. */
+    val weighted: Boolean get() = this == PRACTICE
+
+    /** True while you may shorten the exam. */
+    val lengthIsYours: Boolean get() = this == PRACTICE
+
+    val label: String get() = when (this) {
+        PRACTICE -> "Practice"
+        TEST_DAY -> "Test-day conditions"
+    }
+
+    val detail: String get() = when (this) {
+        PRACTICE ->
+            "Weighted toward the facts you have missed before, and you choose the " +
+                "length. Good for learning, too kind for measuring."
+        TEST_DAY ->
+            "Full length, no weighting, and the time is recorded. One honest " +
+                "measurement is worth more than a friendly one."
+    }
+}

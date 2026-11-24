@@ -12,7 +12,16 @@ package com.cdlstudy.domain
  */
 object Backup {
 
-    const val FORMAT = 1
+    /**
+     * 1: the original.
+     * 2: an exam attempt records whether it ran under test-day conditions, and
+     *    how long it took.
+     *
+     * A version 1 file still reads: its attempts come back as practice
+     * attempts with no time, which is what they were. A file from a newer
+     * version is refused rather than read in part.
+     */
+    const val FORMAT = 2
 
     data class Record(
         val formatVersion: Int = FORMAT,
@@ -57,6 +66,10 @@ object Backup {
         val correct: Int,
         val percent: Int,
         val answers: List<Answer>,
+        /** Full length, no weighting toward your weak facts. Added in format 2. */
+        val realConditions: Boolean = false,
+        /** Seconds taken. Null for a format 1 attempt, which did not record it. */
+        val seconds: Int? = null,
     )
 
     data class Answer(
@@ -119,6 +132,8 @@ object Backup {
             append("\"total\": ${attempt.total}, ")
             append("\"correct\": ${attempt.correct}, ")
             append("\"percent\": ${attempt.percent}, ")
+            append("\"realConditions\": ${attempt.realConditions}, ")
+            attempt.seconds?.let { append("\"seconds\": $it, ") }
             append("\"answers\": [")
             append(
                 attempt.answers.joinToString(", ") { answer ->
@@ -201,6 +216,9 @@ object Backup {
                     total = map.int("total") ?: 0,
                     correct = map.int("correct") ?: 0,
                     percent = map.int("percent") ?: 0,
+                    // Absent in a format 1 file, and false is the truth there.
+                    realConditions = map["realConditions"] as? Boolean ?: false,
+                    seconds = map.int("seconds"),
                     answers = map.list("answers").map { rawAnswer ->
                         val answer = rawAnswer.asMap("an exam answer")
                         Answer(
