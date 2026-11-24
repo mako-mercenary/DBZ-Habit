@@ -32,6 +32,7 @@ import com.cdlstudy.ui.AiScreen
 import com.cdlstudy.ui.BackupScreen
 import com.cdlstudy.ui.CardsScreen
 import com.cdlstudy.ui.CdlTheme
+import com.cdlstudy.ui.DiagramsScreen
 import com.cdlstudy.ui.DrillsScreen
 import com.cdlstudy.ui.InspectionWalkScreen
 import com.cdlstudy.ui.ProcedureListScreen
@@ -142,6 +143,7 @@ private fun AppNav() {
                 onNumbers = { nav.navigate("drill-numbers") },
                 onProcedures = { nav.navigate("drill-order") },
                 onWalk = { nav.navigate("drill-walk") },
+                onDiagrams = { nav.navigate("diagrams") },
             )
         }
         composable("drill-numbers") {
@@ -166,6 +168,7 @@ private fun AppNav() {
                 onStudy = { nav.navigate("study/$it") },
             )
         }
+        composable("diagrams") { DiagramsScreen(onBack = { nav.popBackStack() }) }
         composable("drill-walk") {
             InspectionWalkScreen(
                 onBack = { nav.popBackStack() },

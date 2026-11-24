@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.cdlstudy.domain.Diagrams
 import com.cdlstudy.domain.InspectionWalk
 import com.cdlstudy.domain.NumberDrill
 
@@ -28,6 +29,7 @@ fun DrillsScreen(
     onNumbers: () -> Unit,
     onProcedures: () -> Unit,
     onWalk: () -> Unit,
+    onDiagrams: () -> Unit,
 ) {
     val repo = repository()
     val numbers = NumberDrill.pool(repo.content).size
@@ -66,6 +68,15 @@ fun DrillsScreen(
                     "$areas vehicle areas in the order you walk them, with what you must " +
                         "name in each.",
                     onWalk,
+                )
+            }
+            item {
+                Entry(
+                    "Diagrams",
+                    "${Diagrams.all.size} drawings for the parts that do not go into " +
+                        "sentences: the air brake chain, the fifth wheel, the glad hands and " +
+                        "the walk-around route.",
+                    onDiagrams,
                 )
             }
             item {

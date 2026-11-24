@@ -23,6 +23,9 @@ API key, and which only sends anything when you press its button.
 | Six exams | In the app. Each track is graded on its own. |
 | Progress | In the app. It also copies a summary you can paste into any chat. |
 | Daily reminder | In the app, at a time you choose, with your streak. |
+| Numbers, step order, the walk-around | Three drills the recall loop cannot do. |
+| Test-day conditions | An exam with no weighting and no feedback, graded pass or fail. |
+| What to take to the DLD | A checklist read off dld.utah.gov, with the page for each line. |
 | A second opinion on a recall | Claude, with your own API key. Off by default. |
 
 The app does not replace Anki, and it does not replace practice behind the wheel.
@@ -281,6 +284,38 @@ and every recall, with no honest way to tell a repeat recall from a copy of one.
 
 The file holds your work only. The lessons come with the app, and your manual
 stays where you imported it.
+
+## The drills
+
+The recall loop reads a subsection and grades what you wrote. Three things it
+cannot do:
+
+- **Numbers.** 115 must-memorize facts hold a quantity. The drill blanks the
+  number out of the fact and you type it, so it is recall and not recognition.
+  Every number must be right for a hit, and a near miss is a miss.
+- **In order.** Seven procedures, 46 steps. The steps come up shuffled and you
+  tap them back into order. No partial credit: the examiner does not give you
+  nine tenths of the air brake check.
+- **The walk-around.** Section 11's subsections are the vehicle areas, so the
+  drill walks them in order and tracks how far round you have got.
+
+A drill that catches you queues the card. Anki still keeps the schedule.
+
+## The diagrams
+
+Four drawings for the parts that do not go into sentences: the air brake chain
+end to end, the fifth wheel and kingpin in cross-section, the glad hands and
+what crossing them does, and the walk-around route. They appear in the reading
+for the subsections whose facts they draw.
+
+All four are drawn for this app. None of the manual's figures is copied, and
+the manual is not in the app at all.
+
+They are geometry, not images: a list of lines, boxes and labels in a 100 by
+100 box, in `domain/Diagrams.kt`. The app draws them on a canvas at any size in
+the theme's own colors, and a unit test renders the same coordinates to SVG in
+`docs/diagrams/`, so what shipped is what was looked at. There is no emulator
+here, so that preview is the only way to see a drawing before it goes out.
 
 ## Still to do
 

@@ -34,6 +34,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.cdlstudy.domain.AiGrading
+import com.cdlstudy.domain.Diagrams
 import com.cdlstudy.domain.Fact
 import com.cdlstudy.domain.FocusText
 import com.cdlstudy.domain.Mark
@@ -132,6 +133,18 @@ private fun ColumnScope.ReadStep(vm: StudyViewModel, onManual: () -> Unit, onDon
                 }
             }
             item { Lesson(lesson, style) }
+            // A diagram for this subsection, where one exists. It is part of
+            // the reading, so it goes before the book closes, not after.
+            val drawings = Diagrams.forSubsection(sub)
+            if (drawings.isNotEmpty()) {
+                item { Spacer(Modifier.height(16.dp)) }
+                items(drawings, key = { it.id }) { diagram ->
+                    Column {
+                        DiagramCard(diagram)
+                        Spacer(Modifier.height(12.dp))
+                    }
+                }
+            }
             item { Spacer(Modifier.height(24.dp)) }
         }
     }
