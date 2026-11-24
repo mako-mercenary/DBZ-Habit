@@ -28,7 +28,7 @@
         {
           "id": "12.0.2",
           "text": "You are scored on changing direction to gain a better position, on crossing or touching boundary lines or cones, and on your final position.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "scored",
@@ -61,7 +61,7 @@
         {
           "id": "12.0.5",
           "text": "If the examiner raises a hand, stop and return your vehicle inside the exercise boundary lines.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "raise",
@@ -72,7 +72,7 @@
         {
           "id": "12.0.6",
           "text": "You must pass the basic control skills test before you can go on to the road test.",
-          "critical": true,
+          "critical": false,
           "page": "12-3",
           "keywords": [
             "pass",
@@ -184,7 +184,7 @@
         {
           "id": "12.1.2",
           "text": "The first pull-ups are not penalized, but too many count as errors.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "not penalized",
@@ -205,7 +205,7 @@
         {
           "id": "12.1.4",
           "text": "If you encroach, the examiner stops you and you must bring the vehicle back inside the boundaries. Stop at once when signaled.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "stop",
@@ -228,7 +228,7 @@
         {
           "id": "12.1.6",
           "text": "Not securing the vehicle safely, or not getting in and out safely, may fail you for an unsafe act.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "unsafe act",
@@ -238,7 +238,7 @@
         {
           "id": "12.1.7",
           "text": "Opening the door while the vehicle is moving may fail you for an unsafe act.",
-          "critical": true,
+          "critical": false,
           "page": "12-1",
           "keywords": [
             "door",
@@ -260,7 +260,7 @@
         {
           "id": "12.1.9",
           "text": "If you do not put the vehicle in the final position the examiner described, you fail the basic control skills test.",
-          "critical": true,
+          "critical": false,
           "page": "12-2",
           "keywords": [
             "final position",
@@ -686,7 +686,7 @@
         {
           "id": "12.2.3.3",
           "text": "Stop when you are parallel to the outer boundary, at or before the cones at the far end.",
-          "critical": true,
+          "critical": false,
           "page": "12-3",
           "keywords": [
             "parallel",
@@ -773,7 +773,7 @@
         {
           "id": "12.2.4.2",
           "text": "If you back past the rear boundary you must pull straight forward past the alley entrance until the examiner signals you to stop, then resume.",
-          "critical": true,
+          "critical": false,
           "page": "12-3",
           "keywords": [
             "beyond",
@@ -783,7 +783,7 @@
         {
           "id": "12.2.4.3",
           "text": "The vehicle must finish straight within the alley and completely inside the boundaries, and you may not go beyond the outer boundary line.",
-          "critical": true,
+          "critical": false,
           "page": "12-3",
           "keywords": [
             "straight",

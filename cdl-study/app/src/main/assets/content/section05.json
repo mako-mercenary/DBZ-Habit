@@ -26,7 +26,7 @@
         {
           "id": "5.1.b",
           "text": "The service brake system puts on and releases the brakes when you use the brake pedal in normal driving.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "service brake",
@@ -36,7 +36,7 @@
         {
           "id": "5.1.c",
           "text": "The parking brake system puts on and releases the parking brakes when you use the parking brake control.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "parking brake",
@@ -46,7 +46,7 @@
         {
           "id": "5.1.d",
           "text": "The emergency brake system uses parts of the service and parking brake systems to stop the vehicle if the brake system fails.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "emergency",
@@ -113,7 +113,7 @@
         {
           "id": "5.1.1.1",
           "text": "The air compressor pumps air into the air storage tanks, and it is driven by the engine through gears or a v-belt.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "compressor",
@@ -124,7 +124,7 @@
         {
           "id": "5.1.1.2",
           "text": "If the air compressor has its own oil supply, check the oil level before you drive.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "own oil",
@@ -265,7 +265,7 @@
         {
           "id": "5.1.3.1",
           "text": "The air tanks hold enough compressed air to use the brakes several times, even after the compressor stops working.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "several times",
@@ -299,7 +299,7 @@
         {
           "id": "5.1.4.1",
           "text": "Compressed air holds water and compressor oil, and the water can freeze in cold weather and cause brake failure.",
-          "critical": true,
+          "critical": false,
           "page": "5-1",
           "keywords": [
             "water",
@@ -397,7 +397,7 @@
         {
           "id": "5.1.5.2",
           "text": "Check the alcohol container and fill it as needed every day in cold weather, and still drain the tanks daily.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "every day",
@@ -442,7 +442,7 @@
         {
           "id": "5.1.6.2",
           "text": "If the safety valve lets air out, something is wrong, and a mechanic must fix it.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "something is wrong",
@@ -509,7 +509,7 @@
         {
           "id": "5.1.7.1",
           "text": "Pushing the brake pedal harder applies more air pressure, and letting it up releases the brakes and lets air out of the system.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "harder",
@@ -519,7 +519,7 @@
         {
           "id": "5.1.7.2",
           "text": "Pressing and releasing the pedal when you do not need to lets air out faster than the compressor can replace it, and the brakes stop working if the pressure gets too low.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "faster",
@@ -579,7 +579,7 @@
         {
           "id": "5.1.8.2",
           "text": "To stop, the brake shoes and linings are pushed against the inside of the drum, which makes friction and heat, and too much heat makes the brakes stop working.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "friction",
@@ -647,7 +647,7 @@
         {
           "id": "5.1.9.1",
           "text": "Every vehicle with air brakes has a supply pressure gauge that shows how much pressure is in the air tanks, and a dual system has one for each half, or one gauge with two needles.",
-          "critical": true,
+          "critical": false,
           "page": "5-2",
           "keywords": [
             "supply pressure",
@@ -682,7 +682,7 @@
         {
           "id": "5.1.10.1",
           "text": "The application pressure gauge shows how much air pressure you are putting on the brakes.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "application",
@@ -692,7 +692,7 @@
         {
           "id": "5.1.10.2",
           "text": "If you need more and more application pressure to hold the same speed, the brakes are fading, so slow down and take a lower gear.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "fading",
@@ -755,7 +755,7 @@
         {
           "id": "5.1.11.2",
           "text": "A low air pressure warning signal is required on every vehicle with air brakes, and it is usually a red light, sometimes with a buzzer.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "required",
@@ -775,7 +775,7 @@
         {
           "id": "5.1.11.4",
           "text": "On large buses the low pressure warning often comes on at 80 to 85 psi.",
-          "critical": false,
+          "critical": true,
           "page": "5-3",
           "keywords": [
             "buses",
@@ -861,7 +861,7 @@
         {
           "id": "5.1.12.1",
           "text": "The stop light switch is an electric switch worked by air pressure, and it turns on your brake lights when you put on the air brakes.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "stop light",
@@ -914,7 +914,7 @@
         {
           "id": "5.1.13.3",
           "text": "An automatic front wheel limiting valve cuts the air to the front brakes except in a very hard application of 55 psi or more, and the driver cannot control it.",
-          "critical": false,
+          "critical": true,
           "page": "5-3",
           "keywords": [
             "automatic",
@@ -974,7 +974,7 @@
         {
           "id": "5.1.14.1",
           "text": "Every truck, truck tractor and bus must have emergency brakes and parking brakes held on by mechanical force, because air pressure leaks away, and spring brakes do that job.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "mechanical force",
@@ -984,7 +984,7 @@
         {
           "id": "5.1.14.2",
           "text": "When you drive, air pressure holds the powerful springs back. Take the air away and the springs put the brakes on.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "springs",
@@ -1006,7 +1006,7 @@
         {
           "id": "5.1.14.4",
           "text": "Do not wait for the spring brakes to come on by themselves. Stop safely as soon as the low air warning comes on, while you still control the brakes.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "do not wait",
@@ -1016,7 +1016,7 @@
         {
           "id": "5.1.14.5",
           "text": "Spring brake power depends on the brakes being in adjustment, because badly adjusted brakes make the regular, emergency and parking brakes all work poorly.",
-          "critical": true,
+          "critical": false,
           "page": "5-3",
           "keywords": [
             "adjustment"
@@ -1121,7 +1121,7 @@
         {
           "id": "5.1.15.2",
           "text": "Never push the brake pedal down while the spring brakes are on, because the springs and the air pressure together can damage the brakes.",
-          "critical": true,
+          "critical": false,
           "page": "5-4",
           "keywords": [
             "never",
@@ -1132,7 +1132,7 @@
         {
           "id": "5.1.15.3",
           "text": "A modulating control valve puts the spring brakes on gradually, so you can control them if the service brakes fail.",
-          "critical": false,
+          "critical": true,
           "page": "5-4",
           "keywords": [
             "modulating",
@@ -1226,7 +1226,7 @@
         {
           "id": "5.1.16.3",
           "text": "Check the certification label for the date of manufacture to find out whether your vehicle has ABS.",
-          "critical": true,
+          "critical": false,
           "page": "5-4",
           "keywords": [
             "certification label",
@@ -1257,7 +1257,7 @@
         {
           "id": "5.1.16.6",
           "text": "ABS is an addition to your normal brakes. It does not decrease or increase your normal braking, and it works only when the wheels are about to lock.",
-          "critical": true,
+          "critical": false,
           "page": "5-4",
           "keywords": [
             "addition",
@@ -1267,7 +1267,7 @@
         {
           "id": "5.1.16.7",
           "text": "ABS does not always shorten your stopping distance, but it helps you keep control in hard braking.",
-          "critical": true,
+          "critical": false,
           "page": "5-4",
           "keywords": [
             "does not",
@@ -1440,7 +1440,7 @@
         {
           "id": "5.2.5",
           "text": "If one air system gets very low, the front or the rear brakes will not work fully, so it takes longer to stop. Park safely and have the system fixed.",
-          "critical": true,
+          "critical": false,
           "page": "5-5",
           "keywords": [
             "very low",
@@ -1524,7 +1524,7 @@
         {
           "id": "5.3.a",
           "text": "Inspect a vehicle with air brakes with the same seven-step method as any other vehicle, and add the air brake checks in the step where each one belongs.",
-          "critical": true,
+          "critical": false,
           "page": "5-6",
           "keywords": [
             "seven step",
@@ -1562,7 +1562,7 @@
         {
           "id": "5.3.1.1",
           "text": "In step 2, the engine compartment check, look at the condition and the tightness of the air compressor drive belt if the compressor is belt-driven.",
-          "critical": true,
+          "critical": false,
           "page": "5-6",
           "keywords": [
             "drive belt",
@@ -1615,7 +1615,7 @@
         {
           "id": "5.3.2.3",
           "text": "Brakes out of adjustment are the most common fault found in roadside inspections.",
-          "critical": true,
+          "critical": false,
           "page": "5-6",
           "keywords": [
             "most common",
@@ -1647,7 +1647,7 @@
         {
           "id": "5.3.2.6",
           "text": "Linings must not be loose, soaked with oil or grease, or dangerously thin, and the air hoses to the brake chambers must not be cut or worn.",
-          "critical": true,
+          "critical": false,
           "page": "5-6",
           "keywords": [
             "linings",
@@ -1852,7 +1852,7 @@
         {
           "id": "5.3.3.8",
           "text": "In a single air system made before 1975, pressure must build from 50 to 90 psi within 3 minutes with the engine idling at 600 to 900 rpm.",
-          "critical": false,
+          "critical": true,
           "page": "5-7",
           "keywords": [
             "50",
@@ -2078,7 +2078,7 @@
         {
           "id": "5.4.1.1",
           "text": "For a normal stop, push the brake pedal down and control the pressure so the vehicle stops smoothly and safely.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "smooth",
@@ -2088,7 +2088,7 @@
         {
           "id": "5.4.1.2",
           "text": "With a manual transmission, do not push the clutch in until the engine rpm is down close to idle, and select a starting gear once you stop.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "clutch",
@@ -2123,7 +2123,7 @@
         {
           "id": "5.4.2.1",
           "text": "Without ABS, hard braking on a slippery surface can lock the wheels. Locked steering wheels take away your steering, and other locked wheels can make you skid, jackknife or spin.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "lock up",
@@ -2134,7 +2134,7 @@
         {
           "id": "5.4.2.2",
           "text": "With ABS you brake as you always have: use only the braking force you need to stop safely and stay in control.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "as you always have|brake normally",
@@ -2144,7 +2144,7 @@
         {
           "id": "5.4.2.3",
           "text": "ABS on only the tractor, only the trailer, or only one axle still gives you more control, so brake normally.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "only",
@@ -2155,7 +2155,7 @@
         {
           "id": "5.4.2.4",
           "text": "If only the tractor has ABS, watch the trailer and let up on the brakes, if it is safe, should the trailer start to swing out.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "only the tractor",
@@ -2166,7 +2166,7 @@
         {
           "id": "5.4.2.5",
           "text": "If only the trailer has ABS, let up on the brakes, if it is safe, should you lose steering control or start a tractor jackknife.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "only the trailer",
@@ -2187,7 +2187,7 @@
         {
           "id": "5.4.2.7",
           "text": "If your ABS fails you still have your normal brakes. Drive normally and get the system serviced soon.",
-          "critical": true,
+          "critical": false,
           "page": "5-8",
           "keywords": [
             "malfunctions",
@@ -2520,7 +2520,7 @@
         {
           "id": "5.4.5.1",
           "text": "Brakes fade or fail from too much heat, caused by using them too much instead of using the braking effect of the engine.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "heat",
@@ -2530,7 +2530,7 @@
         {
           "id": "5.4.5.2",
           "text": "Heat changes the brake lining chemically, which cuts friction, and it expands the drums, so the shoes must move farther and press with less force.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "lining",
@@ -2541,7 +2541,7 @@
         {
           "id": "5.4.5.3",
           "text": "Brakes out of adjustment stop doing their share first, so the others overheat and fade. Check brake adjustment often, because brakes go out of adjustment quickly when hot.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "adjustment",
@@ -2593,7 +2593,7 @@
         {
           "id": "5.4.6.1",
           "text": "On a long or steep downgrade, the brakes are only a help to the braking effect of the engine, so get into the proper low gear first.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "supplement",
@@ -2615,7 +2615,7 @@
         {
           "id": "5.4.6.3",
           "text": "Apply the brakes again once the speed comes back up to your safe speed, and repeat to the bottom of the grade.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "repeat",
@@ -2698,7 +2698,7 @@
         {
           "id": "5.4.7.1",
           "text": "If the low air pressure warning comes on, stop and park safely as soon as you can, because there may be an air leak.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "stop",
@@ -2720,7 +2720,7 @@
         {
           "id": "5.4.7.3",
           "text": "A heavily loaded vehicle takes a long way to stop on spring brakes, because the spring brakes do not work on every axle.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "heavily loaded",
@@ -2730,7 +2730,7 @@
         {
           "id": "5.4.7.4",
           "text": "A lightly loaded vehicle, or one on a slippery road, may skid out of control when the spring brakes come on.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "lightly loaded",
@@ -2777,7 +2777,7 @@
         {
           "id": "5.4.8.1",
           "text": "Use the parking brakes any time you park, except when the brakes are very hot or very wet in freezing weather.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "any time",
@@ -2789,7 +2789,7 @@
         {
           "id": "5.4.8.2",
           "text": "Very hot brakes can be damaged by the heat if you set the parking brake, so let them cool and use wheel chocks on level ground.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "hot",
@@ -2800,7 +2800,7 @@
         {
           "id": "5.4.8.3",
           "text": "Very wet brakes in freezing weather can freeze on, so drive in a low gear with light brake pressure to heat and dry them.",
-          "critical": true,
+          "critical": false,
           "page": "5-9",
           "keywords": [
             "wet",
@@ -2821,7 +2821,7 @@
         {
           "id": "5.4.8.5",
           "text": "Never leave your vehicle unattended without the parking brakes on or the wheels chocked.",
-          "critical": true,
+          "critical": false,
           "page": "5-10",
           "keywords": [
             "never",

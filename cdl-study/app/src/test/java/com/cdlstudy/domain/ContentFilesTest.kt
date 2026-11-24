@@ -63,12 +63,41 @@ class ContentFilesTest {
     }
 
     @Test
-    fun `every subsection has a must-memorize fact, because the score is graded on them`() {
+    fun `every written section has must-memorize facts, because mastery is graded on them`() {
+        // NOT per subsection. A subsection can hold nothing but advice: Driving
+        // in Fog, Don't Be an Aggressive Driver, Always Have a Plan. Requiring
+        // one there would force a behavior to be flagged as a thing to
+        // memorize, which is a lie about the content. The rule belongs at the
+        // section level, where a section with no must-memorize fact really
+        // would be a mistake.
+        val bare = files().map { ContentReader.readSection(it.readText()) }
+            .filter { it.factCount > 0 && it.subsections.none { sub -> sub.criticalFacts.isNotEmpty() } }
+            .map { it.number }
+        assertTrue("These sections have no must-memorize fact at all: $bare", bare.isEmpty())
+    }
+
+    @Test
+    fun `the must-memorize flag stays selective, or it means nothing`() {
+        // It was once 913 of 957, which made the must-memorize score the same
+        // number as the overall score and queued a card for the whole manual.
+        // tools/critical.py holds the rule that decides the flag. This is the
+        // guard that stops it drifting back.
         val sections = files().map { ContentReader.readSection(it.readText()) }
-        val bare = sections.flatMap { it.subsections }
-            .filter { it.facts.isNotEmpty() && it.criticalFacts.isEmpty() }
-            .map { it.id }
-        assertTrue("These subsections have no must-memorize fact: $bare", bare.isEmpty())
+        val facts = sections.sumOf { it.factCount }
+        val critical = sections.sumOf { section ->
+            section.subsections.sumOf { it.criticalFacts.size }
+        }
+        val percent = 100 * critical / facts
+        assertTrue(
+            "$critical of $facts facts are must-memorize ($percent%). Over 70% and the " +
+                "score stops telling you anything: re-read the rule in tools/critical.py.",
+            percent <= 70,
+        )
+        assertTrue(
+            "Only $critical of $facts facts are must-memorize ($percent%). That is too few " +
+                "for a test graded on numbers and limits.",
+            percent >= 30,
+        )
     }
 
     @Test
@@ -228,7 +257,8 @@ class ContentFilesTest {
         val british = Regex(
             "\\b(licence|licences|tyre|tyres|colour\\w*|programme|programmes|recognis\\w+|" +
                 "organis(e|ed|ing|ation)|realis(e|ed|ing)|manoeuvr\\w*|centre|centres|" +
-                "metre|metres|litre|litres|" +
+                "metre|metres|litre|litres|millimetre\\w*|centimetre\\w*|kilometre\\w*|" +
+                "offence|offences|" +
                 "defence|behaviour\\w*|travell(ed|ing|er|ers)|signall(ed|ing)|" +
                 "labell(ed|ing)|cancell(ed|ing)|" +
                 "practis\\w+|judgement|kerb\\w*|grey)\\b",

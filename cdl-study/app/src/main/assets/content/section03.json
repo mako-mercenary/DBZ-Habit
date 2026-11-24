@@ -412,7 +412,7 @@
         {
           "id": "3.2.2.2",
           "text": "Overloading hurts steering, braking and speed control. Stopping distance grows, and brakes can fail when they work too hard.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "steering",
@@ -423,7 +423,7 @@
         {
           "id": "3.2.2.3",
           "text": "An overloaded truck crawls up a grade and can gain too much speed going down.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "upgrade",
@@ -434,7 +434,7 @@
         {
           "id": "3.2.2.4",
           "text": "In bad weather or in the mountains it may be unsafe to run at the legal maximum weight, so think about that before you drive.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "bad weather",
@@ -511,7 +511,7 @@
         {
           "id": "3.2.3.1",
           "text": "A high center of gravity, from cargo piled high or heavy cargo on top, makes a rollover more likely, and the danger is worst in a curve or a swerve.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "center of gravity",
@@ -522,7 +522,7 @@
         {
           "id": "3.2.3.2",
           "text": "Spread the cargo as low as you can, and put the heaviest parts under the lightest parts.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "low",
@@ -580,7 +580,7 @@
         {
           "id": "3.2.4.1",
           "text": "Too much weight on the steering axle makes steering hard, and it can damage the steering axle and the tires.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "steering axle",
@@ -590,7 +590,7 @@
         {
           "id": "3.2.4.2",
           "text": "An under-loaded front axle, from weight pushed too far back, makes the steering axle too light to steer safely.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "under loaded",
@@ -600,7 +600,7 @@
         {
           "id": "3.2.4.3",
           "text": "Too little weight on the driving axles gives poor traction, and the drive wheels spin easily in bad weather.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "driving axles",
@@ -771,7 +771,7 @@
         {
           "id": "3.3.2.4",
           "text": "Tie-downs must be the right type and strength, and they must be attached to the vehicle correctly, by hooks, bolts, rails or rings.",
-          "critical": true,
+          "critical": false,
           "page": "3-2",
           "keywords": [
             "proper type",
@@ -945,7 +945,7 @@
         {
           "id": "3.3.4.2",
           "text": "Spill protection is a safety requirement in many states, so know the law where you drive.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "spill protection",
@@ -955,7 +955,7 @@
         {
           "id": "3.3.4.3",
           "text": "Look at your cargo covers in the mirrors from time to time, because a flapping cover can tear loose, uncover the cargo and block your view or another driver's.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "mirrors",
@@ -1019,7 +1019,7 @@
         {
           "id": "3.3.5.1",
           "text": "You cannot inspect a sealed load, but you must still check that you are inside the gross weight and axle weight limits.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "sealed",
@@ -1093,7 +1093,7 @@
         {
           "id": "3.4.1.1",
           "text": "A dry bulk tank has a high center of gravity and the load can shift, so go slowly and carefully through curves and sharp turns.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "dry bulk",
@@ -1128,7 +1128,7 @@
         {
           "id": "3.4.2.1",
           "text": "Hanging meat is an unstable load with a high center of gravity, so take special care and go slowly on sharp curves such as on-ramps and off-ramps.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "hanging meat",
@@ -1163,7 +1163,7 @@
         {
           "id": "3.4.3.1",
           "text": "Livestock can move around and make handling unsafe. With less than a full load, use false bulkheads to keep the animals bunched together.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "livestock",
@@ -1174,7 +1174,7 @@
         {
           "id": "3.4.3.2",
           "text": "Even bunched together, livestock can lean on a curve, which shifts the center of gravity and makes a rollover more likely.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "lean",
@@ -1231,7 +1231,7 @@
         {
           "id": "3.4.4.1",
           "text": "An over-length, over-width or overweight load needs a special transit permit, and driving is usually allowed only at certain times.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "permit",
@@ -1241,7 +1241,7 @@
         {
           "id": "3.4.4.2",
           "text": "An oversized load may need wide load signs, flashing lights and flags, and it may need a police escort or pilot vehicles.",
-          "critical": true,
+          "critical": false,
           "page": "3-3",
           "keywords": [
             "wide load",

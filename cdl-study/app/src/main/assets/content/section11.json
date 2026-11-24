@@ -28,7 +28,7 @@
         {
           "id": "11.0.2",
           "text": "You only have to inspect one vehicle axle during the test, but be ready to inspect them all.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "one axle",
@@ -38,7 +38,7 @@
         {
           "id": "11.0.3",
           "text": "You will NOT have to crawl under the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "crawl",
@@ -78,7 +78,7 @@
         {
           "id": "11.0.7",
           "text": "A vehicle with components marked or labeled by anyone but the manufacturer cannot be used for the test.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "marked",
@@ -89,7 +89,7 @@
         {
           "id": "11.0.8",
           "text": "You may use the checklist in the manual during the test, but no extra markings or writing may be on it beforehand.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "checklist",
@@ -99,7 +99,7 @@
         {
           "id": "11.0.9",
           "text": "Failing to follow the examiner's instructions may fail you on the spot, and the examiner may end the test.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "instructions",
@@ -109,7 +109,7 @@
         {
           "id": "11.0.10",
           "text": "An unsafe act, such as forgetting to set the parking brake, may fail you on the spot.",
-          "critical": true,
+          "critical": false,
           "page": "11-1",
           "keywords": [
             "unsafe act",
@@ -635,7 +635,7 @@
         {
           "id": "11.1.2.8",
           "text": "If the valves are not built to pop out, listen for air discharging, which shows the parking brakes have applied.",
-          "critical": false,
+          "critical": true,
           "page": "11-3",
           "keywords": [
             "listen",

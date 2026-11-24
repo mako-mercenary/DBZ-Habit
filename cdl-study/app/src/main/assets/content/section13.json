@@ -16,7 +16,7 @@
         {
           "id": "13.0.1",
           "text": "On the road test you must wear your safety belt, obey all traffic signs, signals and laws, and finish without an accident or a moving violation.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "safety belt",
@@ -28,7 +28,7 @@
         {
           "id": "13.0.2",
           "text": "The examiner scores particular maneuvers and your general driving behavior, and gives directions with plenty of time to act on them.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "maneuvers",
@@ -48,7 +48,7 @@
         {
           "id": "13.0.4",
           "text": "If the route has no such situation, you may be asked to simulate one by telling the examiner what you are doing or would do.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "simulate",
@@ -137,7 +137,7 @@
         {
           "id": "13.1.1.1",
           "text": "Before a turn, check traffic in all directions, signal, and get into the lane you need safely.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "check traffic",
@@ -148,7 +148,7 @@
         {
           "id": "13.1.1.2",
           "text": "Approaching the turn, slow smoothly and change gears as needed to keep power, without coasting unsafely.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "slow smoothly",
@@ -168,7 +168,7 @@
         {
           "id": "13.1.1.4",
           "text": "If you stop before the turn, stop smoothly without skidding, completely behind the stop line, crosswalk or stop sign, and do not let the vehicle roll.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "behind",
@@ -189,7 +189,7 @@
         {
           "id": "13.1.1.6",
           "text": "Keep the front wheels aimed straight ahead while stopped.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "front wheels",
@@ -199,7 +199,7 @@
         {
           "id": "13.1.1.7",
           "text": "During the turn keep both hands on the wheel, keep checking the mirror so the vehicle does not hit anything on the inside of the turn, stay out of oncoming traffic, and finish in the correct lane.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "both hands",
@@ -210,7 +210,7 @@
         {
           "id": "13.1.1.8",
           "text": "After the turn, cancel the signal, get up to the speed of traffic, and move to the right-most lane when it is safe.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "cancel",
@@ -363,7 +363,7 @@
         {
           "id": "13.1.2.1",
           "text": "Approaching an intersection, check traffic thoroughly in all directions, slow gently, brake smoothly and change gears if needed.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "intersection",
@@ -374,7 +374,7 @@
         {
           "id": "13.1.2.2",
           "text": "Stop completely, without coasting, behind any stop sign, signal, sidewalk or stop line, keeping a safe gap behind the vehicle ahead, and do not roll forward or backward.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "complete stop",
@@ -385,7 +385,7 @@
         {
           "id": "13.1.2.3",
           "text": "Going through the intersection, yield to pedestrians and traffic, do not change lanes, and keep your hands on the wheel.",
-          "critical": true,
+          "critical": false,
           "page": "13-1",
           "keywords": [
             "yield",
@@ -396,7 +396,7 @@
         {
           "id": "13.1.2.4",
           "text": "Once through, keep checking mirrors and traffic, and accelerate smoothly.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "through",
@@ -489,7 +489,7 @@
         {
           "id": "13.1.3.1",
           "text": "In urban business driving, make regular traffic checks, keep a safe following distance, stay centered in the right-most lane, and keep up with traffic without exceeding the speed limit.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "urban",
@@ -542,7 +542,7 @@
         {
           "id": "13.1.4.1",
           "text": "For a lane change, make the traffic checks first, then signal, then change lanes smoothly when it is safe.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "checks first",
@@ -607,7 +607,7 @@
         {
           "id": "13.1.5.1",
           "text": "Before entering an expressway, check traffic, signal, and merge smoothly into the proper lane.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "merge",
@@ -618,7 +618,7 @@
         {
           "id": "13.1.5.2",
           "text": "On the expressway, hold your lane position, vehicle spacing and speed, and keep checking traffic in all directions.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "lane positioning",
@@ -629,7 +629,7 @@
         {
           "id": "13.1.5.3",
           "text": "Leaving the expressway, check traffic, signal, slow smoothly in the exit lane, and keep slowing within the lane markings on the ramp with enough space around you.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "exit lane",
@@ -703,7 +703,7 @@
         {
           "id": "13.1.6.1",
           "text": "For the stop and start, check traffic in all directions, move to the right-most lane or the shoulder, signal right, slow smoothly and stop fully without coasting.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "right most",
@@ -714,7 +714,7 @@
         {
           "id": "13.1.6.2",
           "text": "Stopped, the vehicle must be parallel to the curb or shoulder, out of the traffic flow, and not blocking a driveway, hydrant, intersection or sign.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "parallel",
@@ -747,7 +747,7 @@
         {
           "id": "13.1.6.5",
           "text": "Do not turn the wheel before the vehicle moves, and check traffic from all directions, especially to the left.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "do not turn",
@@ -758,7 +758,7 @@
         {
           "id": "13.1.6.6",
           "text": "Once back in the flow of traffic, cancel the left turn signal.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "cancel"
@@ -860,7 +860,7 @@
         {
           "id": "13.1.7.1",
           "text": "Before a curve, check traffic in all directions and reduce speed enough that no further braking or shifting is needed in the curve.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "before",
@@ -871,7 +871,7 @@
         {
           "id": "13.1.7.2",
           "text": "Keep the vehicle in its lane through the curve and keep checking traffic.",
-          "critical": true,
+          "critical": false,
           "page": "13-2",
           "keywords": [
             "in its lane|in the lane",
@@ -975,7 +975,7 @@
         {
           "id": "13.1.8.6",
           "text": "If the route has no crossing, you may be asked to explain and demonstrate the procedure at a simulated location.",
-          "critical": true,
+          "critical": false,
           "page": "13-3",
           "keywords": [
             "simulated"
@@ -1091,7 +1091,7 @@
         {
           "id": "13.1.9.2",
           "text": "Be ready to identify and explain any traffic sign on the route.",
-          "critical": true,
+          "critical": false,
           "page": "13-3",
           "keywords": [
             "identify",
@@ -1172,7 +1172,7 @@
         {
           "id": "13.1.11.2",
           "text": "Do not rev or lug the engine, do not ride the clutch to control speed, do not coast with the clutch down, and do not pop the clutch.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "rev",
@@ -1252,7 +1252,7 @@
         {
           "id": "13.1.12.1",
           "text": "Do not grind or clash the gears, and pick a gear that does not rev or lug the engine.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "grind",
@@ -1264,7 +1264,7 @@
         {
           "id": "13.1.12.2",
           "text": "Do not shift in turns or in intersections.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "do not shift",
@@ -1317,7 +1317,7 @@
         {
           "id": "13.1.13.1",
           "text": "Do not ride or pump the brake, and do not brake harshly. Brake smoothly with steady pressure.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "ride",
@@ -1356,7 +1356,7 @@
         {
           "id": "13.1.14.1",
           "text": "Keep the vehicle off curbs, sidewalks and lane markings, and stop behind stop lines, crosswalks and stop signs.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "curbs",
@@ -1378,7 +1378,7 @@
         {
           "id": "13.1.14.3",
           "text": "Move to, or stay in, the right-most lane unless it is blocked.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "right most lane",
@@ -1454,7 +1454,7 @@
         {
           "id": "13.1.15.1",
           "text": "Do not over steer or under steer, and keep both hands on the wheel at all times except while shifting. Put both hands back as soon as the shift is done.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "both hands",
@@ -1505,7 +1505,7 @@
         {
           "id": "13.1.16.1",
           "text": "Check traffic and mirrors regularly, and check both before, during and after an intersection.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "regularly",
@@ -1517,7 +1517,7 @@
         {
           "id": "13.1.16.2",
           "text": "Scan and check traffic in high volume areas and anywhere pedestrians are expected.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "scan",
@@ -1569,7 +1569,7 @@
         {
           "id": "13.1.17.1",
           "text": "Use turn signals properly: activate them when required and at the right time, and cancel them once the turn or lane change is finished.",
-          "critical": true,
+          "critical": false,
           "page": "13-4",
           "keywords": [
             "activate",

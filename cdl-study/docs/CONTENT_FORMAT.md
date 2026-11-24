@@ -125,7 +125,7 @@ a usable lesson, not a broken screen, so facts first and prose later is fine.
 |---|---|---|
 | `text` | yes | One fact, in a full sentence. Keep it to one fact. |
 | `id` | no | A stable id. Without one, the app numbers it by position. |
-| `critical` | no | `true` for a must-memorize rule, number or procedure. |
+| `critical` | no | `true` for a must-memorize fact. The rule is below. |
 | `page` | no | The manual page, for a correction you want to check. |
 | `keywords` | no | Words that show the fact is in your recall. |
 
@@ -134,12 +134,49 @@ Rules that keep the content useful:
 - **Write a stable `id`.** Your score history points at it. If an id moves to
   another fact, your history becomes wrong.
 - **One fact per record.** Two facts in one sentence cannot be marked.
-- **Mark the numbers critical.** A number, a limit and a procedure step are
-  must-memorize facts. The score you trust is the must-memorize score.
+- **Use the must-memorize rule, below.** Do not flag a fact because it is
+  important. Almost every fact is important.
 - **Keywords are a number or a short phrase.** Write a number with no comma:
   `26001`, not `26,001`. The app takes the comma out of your recall, so both
   forms match. Matching is on whole words, so `air` does not match `airbrakes`.
-- **Every subsection needs one critical fact.** The build fails without one.
+- **A section needs must-memorize facts. A subsection does not.** Driving in
+  Fog is six facts of advice and not one of them is a thing to memorize. The
+  build checks the section, not the subsection.
+
+### The must-memorize rule
+
+`critical` drives two things: the must-memorize score, which the study plan
+treats as the number that decides mastery, and the card queue, where a critical
+fact makes a card even when you recalled it correctly. Flag everything and both
+stop working. The flag was once on 913 of 957 facts, which made the
+must-memorize score identical to the overall score and queued the whole manual
+as cards.
+
+Flag a fact `critical` only if it is one of these five:
+
+1. **A number** you must be able to state: a weight, pressure, distance, time,
+   percentage, age, fee or count. *4 psi in one minute. 26,001 pounds.*
+2. **An exact limit or threshold**: an out-of-service condition, a pass or fail
+   boundary, a legal cut-off. *4/32 inch of tread. A BAC of 0.04%.*
+3. **A named definition** the test can ask you to define. *Off-tracking.
+   Encroachment. Black ice. Rearward amplification. Glad hands. Stab braking.*
+4. **A step in an ordered procedure** where the order or completeness is
+   scored. *The seven-step inspection. The air brake check. Coupling.*
+5. **An enumerated list** you must reproduce. *The four causes of a skid. The
+   three steps at an accident. The six endorsements.*
+
+Leave it unflagged if it is a behavior you learn once and then simply do (*keep
+both hands on the wheel*, *keep the doors shut on a cargo fire*, *signal
+early*), the reason behind a rule, an example, background, a statistic quoted
+for effect, or a restatement of another fact.
+
+An unflagged fact is still a real fact. It appears in the lesson, it counts in
+the overall recall score, and it can carry an exam question. It just does not
+drag the must-memorize score and does not force a card.
+
+`tools/critical.py` holds the decision for every fact in the app, one list per
+section, and applies it. A unit test fails the build if the ratio leaves the
+30% to 70% band.
 
 ## A card
 

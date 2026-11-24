@@ -31,7 +31,7 @@
         {
           "id": "2.1.1.1",
           "text": "Safety is the most important reason to inspect your vehicle: your safety and that of other road users.",
-          "critical": true,
+          "critical": false,
           "page": "2-1",
           "keywords": [
             "safety",
@@ -41,7 +41,7 @@
         {
           "id": "2.1.1.2",
           "text": "Federal and state law require drivers to inspect their vehicles, and inspectors can put an unsafe vehicle out of service until it is fixed.",
-          "critical": true,
+          "critical": false,
           "page": "2-1",
           "keywords": [
             "law",
@@ -95,7 +95,7 @@
         {
           "id": "2.1.2.1",
           "text": "During a trip, watch the gauges for trouble and use your senses: look, listen, smell and feel.",
-          "critical": true,
+          "critical": false,
           "page": "2-1",
           "keywords": [
             "gauges",
@@ -121,7 +121,7 @@
         {
           "id": "2.1.2.3",
           "text": "Do an after-trip inspection at the end of the trip, the day or the tour of duty on every vehicle you drove, and it may include a written vehicle condition report.",
-          "critical": true,
+          "critical": false,
           "page": "2-1",
           "keywords": [
             "after trip",
@@ -225,7 +225,7 @@
         {
           "id": "2.1.3.5",
           "text": "Rust around the wheel nuts may mean they are loose. After a tire is changed, stop a short while later and re-check the tightness of the nuts.",
-          "critical": true,
+          "critical": false,
           "page": "2-2",
           "keywords": [
             "rust",
@@ -268,7 +268,7 @@
         {
           "id": "2.1.3.9",
           "text": "A broken exhaust system can let poison fumes into the cab or the sleeper berth.",
-          "critical": true,
+          "critical": false,
           "page": "2-3",
           "keywords": [
             "exhaust",
@@ -487,7 +487,7 @@
         {
           "id": "2.1.5.1",
           "text": "Inspect the same way every time, so you learn all the steps and are less likely to forget one.",
-          "critical": true,
+          "critical": false,
           "page": "2-3",
           "keywords": [
             "same way",
@@ -801,7 +801,7 @@
         {
           "id": "2.1.6.1",
           "text": "Check the instruments, gauges, mirrors, tires, cargo and lights regularly while you drive, and check out anything you see, hear, smell or feel that might mean trouble.",
-          "critical": true,
+          "critical": false,
           "page": "2-7",
           "keywords": [
             "regularly",
@@ -873,7 +873,7 @@
         {
           "id": "2.1.7.1",
           "text": "You may have to make a written report each day on the condition of every vehicle you drove, reporting anything affecting safety or likely to cause a breakdown.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "written report",
@@ -935,7 +935,7 @@
         {
           "id": "2.2.1.1",
           "text": "Do not roll back when you start. With a manual transmission, partly engage the clutch before you take your right foot off the brake.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "roll back",
@@ -945,7 +945,7 @@
         {
           "id": "2.2.1.2",
           "text": "Release the parking brake only once you have applied enough engine power to keep from rolling back. On a tractor-trailer with a hand valve, the hand valve can hold you.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "release",
@@ -955,7 +955,7 @@
         {
           "id": "2.2.1.3",
           "text": "Speed up smoothly and gradually. Rough acceleration causes mechanical damage, and with a trailer it can damage the coupling.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "smoothly",
@@ -965,7 +965,7 @@
         {
           "id": "2.2.1.4",
           "text": "When traction is poor, speed up very gradually. If the drive wheels start to spin, take your foot off the accelerator.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "poor traction",
@@ -1024,7 +1024,7 @@
         {
           "id": "2.2.2.1",
           "text": "Hold the steering wheel firmly with both hands, on opposite sides of the wheel. A curb or a pothole can pull the wheel out of a loose grip.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "both hands",
@@ -1056,7 +1056,7 @@
         {
           "id": "2.2.3.1",
           "text": "Push the brake pedal down gradually and control the pressure for a smooth, safe stop. With a manual transmission, push the clutch in when the engine is close to idle.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "gradually",
@@ -1088,7 +1088,7 @@
         {
           "id": "2.2.4.1",
           "text": "Backing is always dangerous because you cannot see everything behind you. Avoid it when you can, and park so you can pull forward when you leave.",
-          "critical": true,
+          "critical": false,
           "page": "2-8",
           "keywords": [
             "always dangerous",
@@ -1112,7 +1112,7 @@
         {
           "id": "2.2.4.3",
           "text": "Get out and walk around the vehicle before backing, checking clearance to the sides and overhead.",
-          "critical": true,
+          "critical": false,
           "page": "2-9",
           "keywords": [
             "walk around",
@@ -1122,7 +1122,7 @@
         {
           "id": "2.2.4.4",
           "text": "Back as slowly as possible, in the lowest reverse gear, so you can correct steering errors and stop quickly.",
-          "critical": true,
+          "critical": false,
           "page": "2-9",
           "keywords": [
             "lowest reverse",
@@ -1132,7 +1132,7 @@
         {
           "id": "2.2.4.5",
           "text": "Back toward the driver's side so you can see. Backing to the right is very dangerous because you cannot see as well. Use driver-side backing even if it means going around the block.",
-          "critical": true,
+          "critical": false,
           "page": "2-9",
           "keywords": [
             "driver's side",
@@ -1143,7 +1143,7 @@
         {
           "id": "2.2.4.6",
           "text": "A helper should stand near the back of the vehicle where you can see them, and you must agree on hand signals first, above all a signal for stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-9",
           "keywords": [
             "helper",
@@ -1312,7 +1312,7 @@
         {
           "id": "2.3.1.7",
           "text": "Downshift before entering a curve, not in it, so you can use some power through the curve and accelerate out of it.",
-          "critical": true,
+          "critical": false,
           "page": "2-10",
           "keywords": [
             "before",
@@ -1433,7 +1433,7 @@
         {
           "id": "2.3.2.1",
           "text": "Multi-speed rear axles and auxiliary transmissions add gears, usually controlled by a selector knob or switch on the gearshift lever. Shift patterns differ, so learn the one in your vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "2-10",
           "keywords": [
             "multi speed",
@@ -1464,7 +1464,7 @@
         {
           "id": "2.3.3.1",
           "text": "With an automatic transmission, select a low range on a downgrade to get greater engine braking. The low range stops the transmission shifting up beyond the gear you chose.",
-          "critical": true,
+          "critical": false,
           "page": "2-10",
           "keywords": [
             "low range",
@@ -1523,7 +1523,7 @@
         {
           "id": "2.3.4.3",
           "text": "Turn the retarder OFF when the road is wet, icy or snow covered, because with poor traction it can make the drive wheels skid.",
-          "critical": true,
+          "critical": false,
           "page": "2-10",
           "keywords": [
             "turn off",
@@ -1628,7 +1628,7 @@
         {
           "id": "2.4.1.2",
           "text": "Looking far ahead does not mean ignoring what is close. Shift your attention back and forth, near and far.",
-          "critical": true,
+          "critical": false,
           "page": "2-10",
           "keywords": [
             "back and forth",
@@ -1639,7 +1639,7 @@
         {
           "id": "2.4.1.3",
           "text": "Look for vehicles coming onto the highway, into your lane or turning, and for brake lights from slowing vehicles.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "coming onto",
@@ -1649,7 +1649,7 @@
         {
           "id": "2.4.1.4",
           "text": "A traffic light that has been green a long time will probably change before you reach it, so slow down and be ready to stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "green",
@@ -1720,7 +1720,7 @@
         {
           "id": "2.4.2.1",
           "text": "Check mirror adjustment before every trip, and it can only be checked accurately when the trailers are straight. Each mirror should show some part of the vehicle, as a reference point.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "adjustment",
@@ -1731,7 +1731,7 @@
         {
           "id": "2.4.2.2",
           "text": "Check your mirrors regularly for traffic beside and behind you, and to see whether anyone has moved into your blind spots.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "regularly",
@@ -1741,7 +1741,7 @@
         {
           "id": "2.4.2.3",
           "text": "Use the mirrors to watch your own vehicle too: the tires, to spot a tire fire, and open cargo for loose straps or a flapping tarp.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "tires",
@@ -1764,7 +1764,7 @@
         {
           "id": "2.4.2.5",
           "text": "Check quickly, looking back and forth between the mirrors and the road ahead. Focus on a mirror too long and you travel a long way blind.",
-          "critical": true,
+          "critical": false,
           "page": "2-11",
           "keywords": [
             "quickly",
@@ -1887,7 +1887,7 @@
         {
           "id": "2.5.1.2",
           "text": "Signal well before you turn. It is the best way to keep others from trying to pass you.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "well before",
@@ -1897,7 +1897,7 @@
         {
           "id": "2.5.1.3",
           "text": "Do not cancel the signal until the turn is complete, because you need both hands on the wheel to turn safely.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "do not cancel",
@@ -1907,7 +1907,7 @@
         {
           "id": "2.5.1.4",
           "text": "Warn drivers behind you by tapping the brake pedal lightly to flash the brake lights, when there is trouble ahead, a tight turn, a stop on the road, or you are driving slowly.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "tap",
@@ -1918,7 +1918,7 @@
         {
           "id": "2.5.1.5",
           "text": "Use the four-way flashers when you are driving very slowly or are stopped, where it is legal.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "four way flashers",
@@ -1929,7 +1929,7 @@
         {
           "id": "2.5.1.6",
           "text": "Never direct traffic by signaling others that it is safe to pass. You could cause a crash and be blamed for it.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "do not direct",
@@ -2016,7 +2016,7 @@
         {
           "id": "2.5.2.1",
           "text": "When you pass a vehicle, a pedestrian or a bicyclist, assume they do not see you. Where legal, tap the horn lightly, or at night flash from low to high beam and back.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "assume",
@@ -2027,7 +2027,7 @@
         {
           "id": "2.5.2.2",
           "text": "At dawn, dusk, in rain or snow, turn on your headlights, not just the identification or clearance lights, and use the low beams.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "headlights",
@@ -2039,7 +2039,7 @@
         {
           "id": "2.5.2.3",
           "text": "Parked at the roadside, turn on the four-way flashers. Do not trust the taillights: drivers have crashed into parked vehicles thinking they were moving.",
-          "critical": true,
+          "critical": false,
           "page": "2-12",
           "keywords": [
             "four way",
@@ -2095,7 +2095,7 @@
         {
           "id": "2.5.2.8",
           "text": "Hold the triangles between yourself and the oncoming traffic as you put them out, so drivers can see you.",
-          "critical": true,
+          "critical": false,
           "page": "2-13",
           "keywords": [
             "hold",
@@ -2106,7 +2106,7 @@
         {
           "id": "2.5.2.9",
           "text": "Use the horn when it is needed, but not unnecessarily: it can startle other drivers and that can be dangerous.",
-          "critical": true,
+          "critical": false,
           "page": "2-13",
           "keywords": [
             "horn",
@@ -2521,7 +2521,7 @@
         {
           "id": "2.6.2.4",
           "text": "Shaded parts of the road stay icy long after open areas have melted.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "shaded",
@@ -2542,7 +2542,7 @@
         {
           "id": "2.6.2.6",
           "text": "Wet ice is much more slippery than ice that is not wet.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "wet ice",
@@ -2563,7 +2563,7 @@
         {
           "id": "2.6.2.8",
           "text": "To check for icing, open the window and feel the front of the mirror, the mirror support or the antenna. Ice there means the road is probably icing too.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "mirror",
@@ -2574,7 +2574,7 @@
         {
           "id": "2.6.2.9",
           "text": "Just after rain begins the water mixes with oil on the road and it becomes very slippery. Continued rain washes the oil away.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "just after",
@@ -2759,7 +2759,7 @@
         {
           "id": "2.6.3.1",
           "text": "Take a curve too fast and either the tires lose traction and you skid off the road, or they hold and the vehicle rolls over.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "too fast",
@@ -2780,7 +2780,7 @@
         {
           "id": "2.6.3.3",
           "text": "Slow to a safe speed BEFORE you enter the curve. Braking in a curve is dangerous, because it is easier to lock the wheels and skid.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "before",
@@ -2791,7 +2791,7 @@
         {
           "id": "2.6.3.4",
           "text": "Be in a gear that lets you accelerate slightly in the curve, which helps you keep control.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "gear",
@@ -2853,7 +2853,7 @@
         {
           "id": "2.6.4.1",
           "text": "You must always be able to stop within the distance you can see ahead. Fog, rain or darkness may mean slowing down to do that.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "stop",
@@ -2863,7 +2863,7 @@
         {
           "id": "2.6.4.2",
           "text": "You cannot see as far on low beams as on high beams, so slow down when you must use low beams.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "low beams",
@@ -2902,7 +2902,7 @@
         {
           "id": "2.6.5.1",
           "text": "In heavy traffic the safest speed is the speed of the other vehicles, because vehicles going the same way at the same speed rarely hit each other.",
-          "critical": true,
+          "critical": false,
           "page": "2-15",
           "keywords": [
             "safest speed",
@@ -2923,7 +2923,7 @@
         {
           "id": "2.6.5.3",
           "text": "Driving faster than the flow saves little time, means constant passing, raises the chance of a crash, and is more tiring, and fatigue raises the chance of a crash again.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "faster",
@@ -2966,7 +2966,7 @@
         {
           "id": "2.6.6.1",
           "text": "Gravity increases your speed on a downgrade. Choose a speed that suits the total weight, the length and steepness of the grade, the road conditions and the weather.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "gravity",
@@ -2978,7 +2978,7 @@
         {
           "id": "2.6.6.2",
           "text": "Never exceed a posted speed limit or a Maximum Safe Speed sign on a grade.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "maximum safe speed",
@@ -2988,7 +2988,7 @@
         {
           "id": "2.6.6.3",
           "text": "The braking effect of the engine must be your main way of controlling speed on a downgrade, and it is greatest near the governed rpm with the transmission in a low gear.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "engine",
@@ -2999,7 +2999,7 @@
         {
           "id": "2.6.6.4",
           "text": "Shift to a low gear BEFORE starting down the grade, and save the brakes for slowing or stopping as traffic requires.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "before starting down",
@@ -3065,7 +3065,7 @@
         {
           "id": "2.6.7.1",
           "text": "Speeding traffic is the number one cause of injury and death in roadway work zones.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "number one",
@@ -3075,7 +3075,7 @@
         {
           "id": "2.6.7.2",
           "text": "Obey the posted limits approaching and inside a work zone, and watch the speedometer so your speed does not creep up through long sections.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "posted",
@@ -3085,7 +3085,7 @@
         {
           "id": "2.6.7.3",
           "text": "Slow down further in bad weather or poor road conditions, and further again when a worker is close to the roadway.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "slow down further",
@@ -3159,7 +3159,7 @@
         {
           "id": "2.7.1.1",
           "text": "The vehicle trucks and buses most often run into is the one in front, and the most frequent cause is following too closely.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "most often",
@@ -3203,7 +3203,7 @@
         {
           "id": "2.7.1.5",
           "text": "A vehicle smaller than yours can probably stop faster than you can, so following it closely can put you into it.",
-          "critical": true,
+          "critical": false,
           "page": "2-16",
           "keywords": [
             "smaller",
@@ -3213,7 +3213,7 @@
         {
           "id": "2.7.1.6",
           "text": "On a slippery road you need much more space to stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "slippery",
@@ -3312,7 +3312,7 @@
         {
           "id": "2.7.2.1",
           "text": "If a heavy load slows you down, stay in the right lane, and going uphill do not pass another slow vehicle unless you can get around quickly and safely.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "right lane",
@@ -3323,7 +3323,7 @@
         {
           "id": "2.7.2.2",
           "text": "You are most likely to be tailgated when you are traveling slowly, and in bad weather.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "tailgated",
@@ -3334,7 +3334,7 @@
         {
           "id": "2.7.2.3",
           "text": "Dealing with a tailgater: avoid quick changes, signal early and slow very gradually.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "quick changes",
@@ -3345,7 +3345,7 @@
         {
           "id": "2.7.2.4",
           "text": "Increase your following distance, which opens room ahead and makes it easier for the tailgater to get around you.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "increase",
@@ -3356,7 +3356,7 @@
         {
           "id": "2.7.2.5",
           "text": "Do not speed up. It is safer to be tailgated at a low speed than at a high one.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "do not speed up",
@@ -3366,7 +3366,7 @@
         {
           "id": "2.7.2.6",
           "text": "Avoid tricks. Do not turn on your taillights or flash your brake lights at a tailgater.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "tricks",
@@ -3443,7 +3443,7 @@
         {
           "id": "2.7.3.1",
           "text": "Keep the vehicle centered in your lane. A wide vehicle leaves little room to spare on either side.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "centered",
@@ -3453,7 +3453,7 @@
         {
           "id": "2.7.3.2",
           "text": "Traveling alongside another vehicle has two dangers: the other driver may turn into you, and you may be trapped when you need to change lanes.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "alongside",
@@ -3464,7 +3464,7 @@
         {
           "id": "2.7.3.3",
           "text": "Find an open spot away from other traffic. If you must be near others, keep as much space as you can and drop back or pull forward so the other driver can see you.",
-          "critical": true,
+          "critical": false,
           "page": "2-17",
           "keywords": [
             "open spot",
@@ -3475,7 +3475,7 @@
         {
           "id": "2.7.3.4",
           "text": "Strong winds make it hard to stay in your lane, worse for a lighter vehicle, and the problem is especially bad coming out of tunnels.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "strong winds",
@@ -3527,7 +3527,7 @@
         {
           "id": "2.7.4.1",
           "text": "Do not assume a posted bridge or overpass height is correct: repaving or packed snow may have reduced the clearance since it was posted.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "do not assume",
@@ -3549,7 +3549,7 @@
         {
           "id": "2.7.4.3",
           "text": "If you doubt the clearance, go slowly, and if you are not sure you will fit, take another route.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "doubt",
@@ -3559,7 +3559,7 @@
         {
           "id": "2.7.4.4",
           "text": "Where the road slopes, drive a little closer to the center to clear signs, trees and bridge supports at the edge.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "tilt",
@@ -3569,7 +3569,7 @@
         {
           "id": "2.7.4.5",
           "text": "Before backing into an area, get out and check for overhanging objects such as branches and electric wires.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "backing",
@@ -3631,7 +3631,7 @@
         {
           "id": "2.7.5.1",
           "text": "The space under a heavily loaded vehicle can be very small, which is a problem on dirt roads and unpaved yards.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "space below",
@@ -3641,7 +3641,7 @@
         {
           "id": "2.7.5.2",
           "text": "Drainage channels across a road can make the ends of some vehicles drag, so cross such dips carefully.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "drainage",
@@ -3652,7 +3652,7 @@
         {
           "id": "2.7.5.3",
           "text": "Railroad tracks can hang up a trailer with low clearance. Never take a chance on getting stuck halfway across.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "railroad",
@@ -3693,7 +3693,7 @@
         {
           "id": "2.7.6.1",
           "text": "Turn slowly, to give yourself and others more time to avoid trouble.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "turn slowly",
@@ -3724,7 +3724,7 @@
         {
           "id": "2.7.6.4",
           "text": "If you must cross into the oncoming lane to turn, watch for oncoming vehicles and give them room, but do not back up for them: you might hit someone behind you.",
-          "critical": true,
+          "critical": false,
           "page": "2-18",
           "keywords": [
             "oncoming",
@@ -3840,7 +3840,7 @@
         {
           "id": "2.7.7.1",
           "text": "Because a large vehicle accelerates slowly and needs more room, you need a much bigger gap to enter traffic than you would in a car.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "accelerates slowly|slow acceleration",
@@ -3850,7 +3850,7 @@
         {
           "id": "2.7.7.2",
           "text": "Acceleration varies with the load, so allow more room when you are heavily loaded.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "load",
@@ -3860,7 +3860,7 @@
         {
           "id": "2.7.7.3",
           "text": "Before you start across a road, make sure you can get ALL the way across before traffic reaches you.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "all the way across",
@@ -3929,7 +3929,7 @@
         {
           "id": "2.8.1.3",
           "text": "Seeing a hazard early gives you time to check mirrors, signal and change speed or lane. Sudden braking or a quick lane change is much more likely to lead to a crash.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "time",
@@ -3998,7 +3998,7 @@
         {
           "id": "2.8.2.2",
           "text": "Approaching a stopped emergency vehicle or a work zone, move into a lane not next to it if that is safe. If a lane change is unsafe, slow down and go by with care.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "not next to",
@@ -4009,7 +4009,7 @@
         {
           "id": "2.8.2.3",
           "text": "A work zone may have narrower lanes, sharp turns and uneven surfaces, and other drivers are often distracted there.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "work zone",
@@ -4020,7 +4020,7 @@
         {
           "id": "2.8.2.4",
           "text": "A sharp pavement drop off near the edge tilts the vehicle toward the side of the road, which can bring the top into signs and tree limbs, and makes steering hard as you cross it.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "drop off",
@@ -4031,7 +4031,7 @@
         {
           "id": "2.8.2.5",
           "text": "Objects on the road can damage tires, rims, and electrical and brake lines. A cardboard box may be empty or may hold something heavy, so stay alert and see them early.",
-          "critical": true,
+          "critical": false,
           "page": "2-19",
           "keywords": [
             "foreign objects",
@@ -4042,7 +4042,7 @@
         {
           "id": "2.8.2.6",
           "text": "Ramp speed limits may be safe for cars but not for a large or heavily loaded vehicle, and an exit that goes downhill and turns at the same time is especially dangerous.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "ramps",
@@ -4116,7 +4116,7 @@
         {
           "id": "2.8.3.1",
           "text": "A driver who cannot see you is a hazard: vans, loaded station wagons, rental trucks, and vehicles with frosted or snow-covered windows.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "blocked vision",
@@ -4127,7 +4127,7 @@
         {
           "id": "2.8.3.2",
           "text": "If you can see only the front or rear of a vehicle but not the driver, the driver cannot see you. Be ready to stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "cannot see you",
@@ -4137,7 +4137,7 @@
         {
           "id": "2.8.3.3",
           "text": "Delivery drivers are often in a hurry and may step out or pull into the lane suddenly, and packages or doors block their view.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "delivery",
@@ -4147,7 +4147,7 @@
         {
           "id": "2.8.3.4",
           "text": "Parked vehicles are hazards. Watch for movement inside, brake lights, backup lights and exhaust, which show someone is about to move.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "parked",
@@ -4158,7 +4158,7 @@
         {
           "id": "2.8.3.5",
           "text": "Be careful of a stopped bus: passengers may cross in front of it or behind it and cannot see you.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "stopped bus",
@@ -4168,7 +4168,7 @@
         {
           "id": "2.8.3.6",
           "text": "Hazard clues among people on foot: children acting without checking, talkers, workers, shoppers, and anyone with headsets, hats or umbrellas who cannot see or hear you.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "children",
@@ -4179,7 +4179,7 @@
         {
           "id": "2.8.3.7",
           "text": "An ice cream truck is a hazard clue, because children may be nearby and may not see you.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "ice cream",
@@ -4189,7 +4189,7 @@
         {
           "id": "2.8.3.8",
           "text": "A disabled vehicle, with a jacked up wheel or a raised hood, is a hazard clue: the people fixing it are often careless of traffic.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "disabled",
@@ -4200,7 +4200,7 @@
         {
           "id": "2.8.3.9",
           "text": "At an accident scene, people run across the road, passing drivers stare, and vehicles slow or stop suddenly.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "accident",
@@ -4211,7 +4211,7 @@
         {
           "id": "2.8.3.10",
           "text": "Clues to a confused driver: changing direction suddenly, stopping without warning, hesitation, driving very slowly, frequent braking, and looking at signs or maps. Out-of-state plates and car-top luggage mark a tourist.",
-          "critical": true,
+          "critical": false,
           "page": "2-20",
           "keywords": [
             "confused",
@@ -4233,7 +4233,7 @@
         {
           "id": "2.8.3.12",
           "text": "Clues to an impaired driver: weaving or drifting, leaving the road, stopping at the wrong time, an open window in cold weather, and sudden changes of speed. Be alert for drunk and sleepy drivers late at night.",
-          "critical": true,
+          "critical": false,
           "page": "2-21",
           "keywords": [
             "weaving",
@@ -4245,7 +4245,7 @@
         {
           "id": "2.8.3.13",
           "text": "Drivers look where they are going to turn, so head and body movement can warn you of a turn before the signal does.",
-          "critical": true,
+          "critical": false,
           "page": "2-21",
           "keywords": [
             "body movement",
@@ -4393,7 +4393,7 @@
         {
           "id": "2.8.4.1",
           "text": "When you see a hazard, think about the emergency it could become and have a plan for it.",
-          "critical": true,
+          "critical": false,
           "page": "2-21",
           "keywords": [
             "plan",
@@ -4404,7 +4404,7 @@
         {
           "id": "2.8.4.2",
           "text": "Always be prepared to take action based on your plan, so you are ready if the worst happens.",
-          "critical": true,
+          "critical": false,
           "page": "2-21",
           "keywords": [
             "prepared",
@@ -4438,7 +4438,7 @@
         {
           "id": "2.9.0.1",
           "text": "Distraction inside the vehicle includes talking to passengers, adjusting the radio or climate, eating, drinking, smoking, reading, picking up something dropped, phones, texting, navigation devices and daydreaming.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "inside",
@@ -4449,7 +4449,7 @@
         {
           "id": "2.9.0.2",
           "text": "Distraction outside the vehicle includes other traffic and pedestrians, a police stop or crash scene, sunlight, objects in the road, construction and billboards.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "outside",
@@ -4505,7 +4505,7 @@
         {
           "id": "2.9.1.2",
           "text": "About 5,500 people are killed and an estimated 448,000 injured each year in crashes involving distracted driving.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "5500",
@@ -4587,7 +4587,7 @@
         {
           "id": "2.9.2.1",
           "text": "Distraction slows your perception, so you notice a traffic event late or not at all, and it delays your decisions and causes wrong inputs to the steering, accelerator or brakes.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "slows your perception|slowed perception",
@@ -4644,7 +4644,7 @@
         {
           "id": "2.9.3.3",
           "text": "Some things are both at once, such as a phone call or texting, and those carry the greatest chance of a crash.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "both",
@@ -4711,7 +4711,7 @@
         {
           "id": "2.9.4.4",
           "text": "A CMV driver who dials while driving is 6 times more likely to be in a safety-critical event.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "6 times",
@@ -4731,7 +4731,7 @@
         {
           "id": "2.9.4.6",
           "text": "Hands-free devices are no less likely to distract you than hand-held ones.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "hands free",
@@ -4741,7 +4741,7 @@
         {
           "id": "2.9.4.7",
           "text": "There is an emergency exception for communicating with law enforcement or other emergency services.",
-          "critical": true,
+          "critical": false,
           "page": "2-22",
           "keywords": [
             "emergency exception"
@@ -4897,7 +4897,7 @@
         {
           "id": "2.9.5.5",
           "text": "Texting is the most alarming distraction because it is physical and mental at the same time.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "most alarming",
@@ -4991,7 +4991,7 @@
         {
           "id": "2.9.6.1",
           "text": "If a distraction makes you react half a second slower, crashes double.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "half a second",
@@ -5001,7 +5001,7 @@
         {
           "id": "2.9.6.2",
           "text": "Eliminate in-vehicle distractions before you drive: assess them, plan to remove them, expect them, and settle them with passengers beforehand.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "before driving",
@@ -5012,7 +5012,7 @@
         {
           "id": "2.9.6.3",
           "text": "Before you drive, adjust the controls and mirrors, program the route, pre-set the radio, clear and secure loose objects, and turn off communication devices.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "adjust",
@@ -5023,7 +5023,7 @@
         {
           "id": "2.9.6.4",
           "text": "Do not type or read a text while driving, and do not read or write anything else either.",
-          "critical": true,
+          "critical": false,
           "page": "2-23",
           "keywords": [
             "do not type",
@@ -5033,7 +5033,7 @@
         {
           "id": "2.9.6.5",
           "text": "Avoid smoking, eating and drinking while driving: leave early so you have time to stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "avoid",
@@ -5043,7 +5043,7 @@
         {
           "id": "2.9.6.6",
           "text": "Avoid complex or emotionally intense conversations with other occupants.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "complex",
@@ -5118,7 +5118,7 @@
         {
           "id": "2.9.7.1",
           "text": "Signs of another distracted driver: drifting over the lane lines or within the lane, inconsistent speed, and a driver busy with maps, food, cigarettes or a phone.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "drift",
@@ -5129,7 +5129,7 @@
         {
           "id": "2.9.7.2",
           "text": "Give a distracted driver plenty of room, keep your safe following distance, and take great care passing one, because they may not know you are there.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "plenty of room",
@@ -5259,7 +5259,7 @@
         {
           "id": "2.10.2.1",
           "text": "Reduce your stress before and while you drive, be realistic about travel time, and expect delays from traffic, construction and weather.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "stress",
@@ -5270,7 +5270,7 @@
         {
           "id": "2.10.2.2",
           "text": "Give other drivers the benefit of the doubt. Whatever their reason for driving that way, it has nothing to do with you.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "benefit of the doubt",
@@ -5280,7 +5280,7 @@
         {
           "id": "2.10.2.3",
           "text": "Do not drive slowly in the left lane of traffic.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "slowly",
@@ -5290,7 +5290,7 @@
         {
           "id": "2.10.2.4",
           "text": "Avoid gestures. Keep your hands on the wheel, and avoid even small signs of irritation such as shaking your head.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "gestures",
@@ -5336,7 +5336,7 @@
         {
           "id": "2.10.3.1",
           "text": "Confronted by an aggressive driver, first and foremost get out of their way.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "first",
@@ -5346,7 +5346,7 @@
         {
           "id": "2.10.3.2",
           "text": "Do not challenge them by speeding up or holding your lane, avoid eye contact, and ignore their gestures.",
-          "critical": true,
+          "critical": false,
           "page": "2-24",
           "keywords": [
             "do not challenge",
@@ -5368,7 +5368,7 @@
         {
           "id": "2.10.3.4",
           "text": "If that driver crashes farther down the road, stop a safe distance away, wait for the police, and report what you saw.",
-          "critical": true,
+          "critical": false,
           "page": "2-25",
           "keywords": [
             "crash",
@@ -5441,7 +5441,7 @@
         {
           "id": "2.11.1.1",
           "text": "You are at greater risk at night because drivers cannot see hazards as quickly as in daylight, so they have less time to respond, and a driver caught by surprise is less able to avoid a crash.",
-          "critical": true,
+          "critical": false,
           "page": "2-25",
           "keywords": [
             "greater risk",
@@ -5473,7 +5473,7 @@
         {
           "id": "2.11.2.1",
           "text": "Always wear your corrective lenses when driving. If your license requires them, it is illegal to move a vehicle without them. Carry a spare set.",
-          "critical": true,
+          "critical": false,
           "page": "2-25",
           "keywords": [
             "corrective lenses",
@@ -5484,7 +5484,7 @@
         {
           "id": "2.11.2.2",
           "text": "Avoid dark or tinted lenses at night, even for glare: they cut the light you need to see.",
-          "critical": true,
+          "critical": false,
           "page": "2-25",
           "keywords": [
             "tinted",
@@ -5506,7 +5506,7 @@
         {
           "id": "2.11.2.4",
           "text": "Fatigue impairs your vision and your judgment, just as alcohol and drugs do.",
-          "critical": true,
+          "critical": false,
           "page": "2-25",
           "keywords": [
             "fatigue",
@@ -5517,7 +5517,7 @@
         {
           "id": "2.11.2.5",
           "text": "Drowsy driving causes an estimated 100,000 police-reported crashes a year, and at least 15 percent of heavy truck crashes involve fatigue.",
-          "critical": true,
+          "critical": false,
           "page": "2-26",
           "keywords": [
             "100000",
@@ -5593,7 +5593,7 @@
         {
           "id": "2.11.2.12",
           "text": "Caffeine raises alertness for a few hours and then wears off. Do not rely on it, and do not use drugs: they may keep you awake but they will not make you alert.",
-          "critical": true,
+          "critical": false,
           "page": "2-26",
           "keywords": [
             "caffeine",
@@ -5604,7 +5604,7 @@
         {
           "id": "2.11.2.13",
           "text": "If you are drowsy, the only safe cure is to get off the road and sleep.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "only safe cure",
@@ -5778,7 +5778,7 @@
         {
           "id": "2.11.3.1",
           "text": "Drive slower where the lighting is poor or confusing, slowly enough to stop within the distance you can see ahead.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "poor lighting",
@@ -5789,7 +5789,7 @@
         {
           "id": "2.11.3.2",
           "text": "Road users without lights are hard to see at night, and many night accidents involve pedestrians, joggers, bicyclists and animals.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "without lights",
@@ -5800,7 +5800,7 @@
         {
           "id": "2.11.3.3",
           "text": "Be especially alert around the closing times of bars and taverns, and watch for drivers who wander, cannot hold a speed, or stop for no reason.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "closing times",
@@ -5851,7 +5851,7 @@
         {
           "id": "2.11.4.2",
           "text": "Adjust your speed so your stopping distance stays within the range of your headlights.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "stopping distance",
@@ -5871,7 +5871,7 @@
         {
           "id": "2.11.4.4",
           "text": "Headlights out of adjustment give you a poor view and can blind other drivers. Have a qualified person set them.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "out of adjustment",
@@ -5881,7 +5881,7 @@
         {
           "id": "2.11.4.5",
           "text": "Reflectors, marker lights, clearance lights, taillights and identification lights must all be clean and working for you to be seen.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "reflectors",
@@ -5893,7 +5893,7 @@
         {
           "id": "2.11.4.6",
           "text": "Clean the windshield inside and out. Dirt that looks harmless by day makes its own glare at night.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "windshield",
@@ -5994,7 +5994,7 @@
         {
           "id": "2.11.5.3",
           "text": "Do not look directly at oncoming headlights. Look slightly to the right, at the right lane line or edge marking.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "do not look",
@@ -6005,7 +6005,7 @@
         {
           "id": "2.11.5.4",
           "text": "Never answer a driver who leaves their high beams on by turning on your own. That raises glare for everyone and the chance of a crash.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "never answer|get back at them",
@@ -6016,7 +6016,7 @@
         {
           "id": "2.11.5.5",
           "text": "Keep the interior light off and the instrument lights as low as you can still read, because a bright cab makes it harder to see out.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "interior light",
@@ -6026,7 +6026,7 @@
         {
           "id": "2.11.5.6",
           "text": "Before driving at night, be rested, wear clean unscratched glasses, never wear sunglasses, and inspect the vehicle with attention to the lights and reflectors.",
-          "critical": true,
+          "critical": false,
           "page": "2-27",
           "keywords": [
             "rested",
@@ -6123,7 +6123,7 @@
         {
           "id": "2.12.1",
           "text": "The best advice for driving in fog is do not. Pull off into a rest area or truck stop until visibility improves.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "best advice",
@@ -6134,7 +6134,7 @@
         {
           "id": "2.12.2",
           "text": "Do not assume fog will thin out after you enter it. Slow down BEFORE you enter.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "do not assume",
@@ -6144,7 +6144,7 @@
         {
           "id": "2.12.3",
           "text": "Use low-beam headlights and fog lights in fog, even in daytime, and watch for drivers who forgot their lights.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "low beam",
@@ -6155,7 +6155,7 @@
         {
           "id": "2.12.4",
           "text": "Turn on your four-way flashers in fog, so traffic coming from behind sees you sooner.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "four way flashers",
@@ -6165,7 +6165,7 @@
         {
           "id": "2.12.5",
           "text": "Taillights or headlights ahead may not show where the road goes: that vehicle may not be on the road at all. Use the roadside reflectors as your guide.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "may not be on the road",
@@ -6175,7 +6175,7 @@
         {
           "id": "2.12.6",
           "text": "In fog, listen for traffic you cannot see, avoid passing, and do not stop at the roadside unless you must.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "listen",
@@ -6279,7 +6279,7 @@
         {
           "id": "2.13.1.1",
           "text": "Make sure the cooling system is full and has enough antifreeze to protect against freezing, which you check with a coolant tester.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "antifreeze",
@@ -6289,7 +6289,7 @@
         {
           "id": "2.13.1.2",
           "text": "Make sure the defrosters and heater work, and any mirror, battery box or fuel tank heaters you expect to need.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "defroster",
@@ -6299,7 +6299,7 @@
         {
           "id": "2.13.1.3",
           "text": "Wiper blades must press hard enough to wipe the windshield clean, or they will not sweep snow off.",
-          "critical": true,
+          "critical": false,
           "page": "2-28",
           "keywords": [
             "wiper blades",
@@ -6310,7 +6310,7 @@
         {
           "id": "2.13.1.4",
           "text": "Remove ice and snow from the windshield, windows and mirrors before starting, and from the hand holds, steps and deck plates so you do not slip.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "remove",
@@ -6322,7 +6322,7 @@
         {
           "id": "2.13.1.5",
           "text": "Remove ice from the radiator shutters, and do not close the winterfront too tightly, or the engine may overheat and stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "radiator shutters",
@@ -6333,7 +6333,7 @@
         {
           "id": "2.13.1.6",
           "text": "An exhaust leak is especially dangerous in winter, with the windows up: carbon monoxide makes you sleepy, and in large enough amounts it kills.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "exhaust",
@@ -6401,7 +6401,7 @@
         {
           "id": "2.13.2.1",
           "text": "Drive slowly and smoothly on slippery roads. If it is very slippery, do not drive at all: stop at the first safe place.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "slowly",
@@ -6412,7 +6412,7 @@
         {
           "id": "2.13.2.2",
           "text": "A lack of spray from other vehicles means ice has formed on the road.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "lack of spray",
@@ -6422,7 +6422,7 @@
         {
           "id": "2.13.2.3",
           "text": "Ice on your mirrors or wiper blades means the road is probably icy too.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "mirrors",
@@ -6444,7 +6444,7 @@
         {
           "id": "2.13.2.5",
           "text": "Take curves slower and do not brake in them. As the temperature rises and ice begins to melt, the road gets even more slippery, so slow down more.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "curves",
@@ -6455,7 +6455,7 @@
         {
           "id": "2.13.2.6",
           "text": "Keep a longer following distance, do not drive alongside others, and give snowplows and salt and sand trucks plenty of room.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "longer following",
@@ -6465,7 +6465,7 @@
         {
           "id": "2.13.2.7",
           "text": "Water in the brakes makes them weak, uneven or grabbing, which can cause wheel lockups, pulling to one side, and a jackknife with a trailer.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "wet brakes",
@@ -6488,7 +6488,7 @@
         {
           "id": "2.13.2.9",
           "text": "Do not apply heavy brake pressure and accelerator together: you can overheat the drums and linings.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "too much",
@@ -6629,7 +6629,7 @@
         {
           "id": "2.14.1.3",
           "text": "If a tire is too hot to touch, stay stopped until it cools, or it may blow out or catch fire.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "too hot to touch",
@@ -6640,7 +6640,7 @@
         {
           "id": "2.14.1.4",
           "text": "Engine oil cools as well as lubricates, so make sure there is enough, and watch the oil temperature gauge if you have one.",
-          "critical": true,
+          "critical": false,
           "page": "2-29",
           "keywords": [
             "engine oil",
@@ -6651,7 +6651,7 @@
         {
           "id": "2.14.1.5",
           "text": "Never remove the radiator cap or any part of a pressurized system until it has cooled. Steam and boiling water spray out under pressure and cause severe burns.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "never",
@@ -6662,7 +6662,7 @@
         {
           "id": "2.14.1.6",
           "text": "If you can touch the radiator cap with a bare hand, it is probably cool enough to open.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "bare hand",
@@ -6683,7 +6683,7 @@
         {
           "id": "2.14.1.8",
           "text": "Loose belts will not turn the water pump or the fan properly, which causes overheating. Check belts for tightness, cracking and wear, and hoses for condition.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "loose belts",
@@ -6782,7 +6782,7 @@
         {
           "id": "2.14.2.1",
           "text": "Tar in the pavement rises to the surface in very hot weather, and the spots where it bleeds through are very slippery.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "bleeding tar",
@@ -6792,7 +6792,7 @@
         {
           "id": "2.14.2.2",
           "text": "High speed makes more heat in the tires and the engine, which raises the chance of tire failure, fire and engine failure. Go slowly enough to prevent overheating.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "high speeds",
@@ -6827,7 +6827,7 @@
         {
           "id": "2.15.0.1",
           "text": "A railroad-highway grade crossing is a special kind of intersection, and every one of them must be approached expecting a train.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "always dangerous",
@@ -6838,7 +6838,7 @@
         {
           "id": "2.15.0.2",
           "text": "It is extremely difficult to judge both the distance and the speed of an approaching train.",
-          "critical": true,
+          "critical": false,
           "page": "2-30",
           "keywords": [
             "difficult",
@@ -6983,7 +6983,7 @@
         {
           "id": "2.15.2.7",
           "text": "When the red lights begin to flash, stop. A train is coming, and you must yield the right of way. With gates, stop before the gate lowers and stay stopped until it rises and the lights stop flashing.",
-          "critical": true,
+          "critical": false,
           "page": "2-31",
           "keywords": [
             "flash",
@@ -7101,7 +7101,7 @@
         {
           "id": "2.15.3.1",
           "text": "Never race a train to a crossing. Judging the speed of an approaching train is extremely difficult.",
-          "critical": true,
+          "critical": false,
           "page": "2-31",
           "keywords": [
             "never race",
@@ -7111,7 +7111,7 @@
         {
           "id": "2.15.3.2",
           "text": "Reduce speed to suit how far you can see along the track, and hold it to a point that lets you stop short of the tracks.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "reduce speed",
@@ -7121,7 +7121,7 @@
         {
           "id": "2.15.3.3",
           "text": "Do not expect to hear a train. Trains may not sound a horn at some crossings, and noise in your cab can hide it until the train is dangerously close.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "do not expect",
@@ -7132,7 +7132,7 @@
         {
           "id": "2.15.3.4",
           "text": "Do not rely on signals, gates or flagmen alone, and be especially alert at crossings without gates or flashing lights.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "do not rely",
@@ -7142,7 +7142,7 @@
         {
           "id": "2.15.3.5",
           "text": "A train on one track can hide a train on the other. Look both ways, and after one train has cleared, make sure no other is near before you start across.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "double tracks",
@@ -7153,7 +7153,7 @@
         {
           "id": "2.15.3.6",
           "text": "Yard areas and crossings in cities and towns are just as dangerous as rural ones.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "yard areas",
@@ -7211,7 +7211,7 @@
         {
           "id": "2.15.4.1",
           "text": "A full stop is required whenever the cargo makes it mandatory under state or federal regulation, or the law otherwise requires it.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "full stop",
@@ -7222,7 +7222,7 @@
         {
           "id": "2.15.4.2",
           "text": "When stopping at a crossing, check the traffic behind you while slowing gradually, and use a pullout lane if there is one.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "behind",
@@ -7233,7 +7233,7 @@
         {
           "id": "2.15.4.3",
           "text": "Turn on your four-way emergency flashers when you stop at a crossing.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "four way",
@@ -7271,7 +7271,7 @@
         {
           "id": "2.15.5.1",
           "text": "A crossing with steep approaches can hang your unit up on the tracks.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "steep approaches",
@@ -7281,7 +7281,7 @@
         {
           "id": "2.15.5.2",
           "text": "Never let traffic trap you where you must stop on the tracks. Be sure you can get ALL the way across before you start.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "never",
@@ -7441,7 +7441,7 @@
         {
           "id": "2.16.0.1",
           "text": "Gravity slows you on an upgrade and speeds you on a downgrade. The steeper and longer the grade, and the heavier the load, the lower the gear you need.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "gravity",
@@ -7453,7 +7453,7 @@
         {
           "id": "2.16.0.2",
           "text": "Plan ahead and find out about long steep grades on your route, and ask drivers who know them what speeds are safe.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "plan ahead",
@@ -7501,7 +7501,7 @@
         {
           "id": "2.16.1.1",
           "text": "Choose a speed that suits the total weight of vehicle and cargo, the length of the grade, its steepness, the road conditions and the weather.",
-          "critical": true,
+          "critical": false,
           "page": "2-32",
           "keywords": [
             "total weight",
@@ -7513,7 +7513,7 @@
         {
           "id": "2.16.1.2",
           "text": "Never exceed a posted speed limit or a Maximum Safe Speed sign, and heed the signs giving the length and steepness of the grade.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "never exceed",
@@ -7523,7 +7523,7 @@
         {
           "id": "2.16.1.3",
           "text": "Use the braking effect of the engine as your main way of controlling speed, saving the brakes to slow or stop as road and traffic require.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "braking effect of the engine",
@@ -7564,7 +7564,7 @@
         {
           "id": "2.16.2.1",
           "text": "Shift to a low gear BEFORE starting down. Do not try to downshift after speed has built up: you may not get the lower gear, or any gear, and then all engine braking is lost.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "before",
@@ -7575,7 +7575,7 @@
         {
           "id": "2.16.2.2",
           "text": "Forcing an automatic into a lower gear at high speed can damage the transmission and lose all engine braking.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "automatic",
@@ -7640,7 +7640,7 @@
         {
           "id": "2.16.3.1",
           "text": "Brakes fade from the heat of using them too much instead of the engine's braking effect.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "fade",
@@ -7651,7 +7651,7 @@
         {
           "id": "2.16.3.2",
           "text": "A brake out of adjustment stops doing its share, so the others overheat and fade, leaving too little braking to control the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "out of adjustment",
@@ -7662,7 +7662,7 @@
         {
           "id": "2.16.3.3",
           "text": "Brakes go out of adjustment quickly when used a lot, and linings wear faster when hot, so check the adjustment frequently.",
-          "critical": true,
+          "critical": false,
           "page": "2-33",
           "keywords": [
             "quickly",
@@ -7778,7 +7778,7 @@
         {
           "id": "2.17.1.1",
           "text": "You can almost always turn to miss an obstacle more quickly than you can stop. Stopping is not always the safest thing to do.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "turn",
@@ -7789,7 +7789,7 @@
         {
           "id": "2.17.1.2",
           "text": "A top-heavy vehicle, or a tractor with multiple trailers, may flip over in a hard turn.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "top heavy",
@@ -7800,7 +7800,7 @@
         {
           "id": "2.17.1.3",
           "text": "Keep both hands on the wheel all the time, because that is the only way to have them there when the emergency comes.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "both hands",
@@ -7810,7 +7810,7 @@
         {
           "id": "2.17.1.4",
           "text": "Do not brake while you are turning: it is very easy to lock the wheels and skid out of control.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "do not brake",
@@ -7821,7 +7821,7 @@
         {
           "id": "2.17.1.5",
           "text": "Do not turn more than you need to clear the obstacle. The sharper the turn, the greater the chance of a skid or a rollover.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "more than you need|no more than needed",
@@ -7875,7 +7875,7 @@
         {
           "id": "2.17.1.10",
           "text": "Keep one set of wheels on the pavement if you can, to help keep control, and stay on the shoulder until the vehicle has stopped.",
-          "critical": true,
+          "critical": false,
           "page": "2-34",
           "keywords": [
             "one set of wheels",
@@ -8045,7 +8045,7 @@
         {
           "id": "2.17.2.4",
           "text": "Do not jam the brakes on. Emergency braking is not pushing as hard as you can: that locks the wheels, and a skidding vehicle cannot be controlled.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "do not jam",
@@ -8120,7 +8120,7 @@
         {
           "id": "2.17.3.1",
           "text": "Most hydraulic brake failures come from loss of hydraulic pressure, or brake fade on long hills.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "two reasons",
@@ -8143,7 +8143,7 @@
         {
           "id": "2.17.3.3",
           "text": "The parking or emergency brake is separate from the hydraulic system, so it can slow you. Hold the release button or lever as you use it, so you can adjust the pressure and keep the wheels from locking.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "separate",
@@ -8154,7 +8154,7 @@
         {
           "id": "2.17.3.4",
           "text": "Look for an escape route: an open field, a side street, or an escape ramp. Turning uphill is a good way to slow and stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "escape route",
@@ -8164,7 +8164,7 @@
         {
           "id": "2.17.3.5",
           "text": "After stopping uphill, keep the vehicle from rolling back: low gear, parking brake, and if necessary roll back into something that will stop it.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "rolling backward",
@@ -8175,7 +8175,7 @@
         {
           "id": "2.17.3.6",
           "text": "Escape ramps are usually a few miles from the top of a downgrade, and signs tell you about them. Use one if your brakes fail.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "escape ramp",
@@ -8186,7 +8186,7 @@
         {
           "id": "2.17.3.7",
           "text": "If there is no escape ramp, take the least hazardous route you can, and move as soon as you know the brakes have gone. The longer you wait the faster you go.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "least hazardous",
@@ -8274,7 +8274,7 @@
         {
           "id": "2.17.4.1",
           "text": "Signs of tire failure: the loud bang of a blowout, heavy thumping or vibration, and steering that feels heavy.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "bang",
@@ -8296,7 +8296,7 @@
         {
           "id": "2.17.4.3",
           "text": "Any time you hear a tire blow, assume it is yours.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "assume",
@@ -8306,7 +8306,7 @@
         {
           "id": "2.17.4.4",
           "text": "Hold the steering wheel firmly with both hands: a failed front tire can twist the wheel out of your hands.",
-          "critical": true,
+          "critical": false,
           "page": "2-35",
           "keywords": [
             "firmly",
@@ -8326,7 +8326,7 @@
         {
           "id": "2.17.4.6",
           "text": "After stopping, get out and check all the tires, even if it felt fine. A failed dual may only be found by looking.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "check all",
@@ -8414,7 +8414,7 @@
         {
           "id": "2.18.1.1",
           "text": "Sensors detect a wheel about to lock, and an electronic control unit reduces brake pressure to prevent it, adjusting for maximum braking without lockup.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "sensors",
@@ -8425,7 +8425,7 @@
         {
           "id": "2.18.1.2",
           "text": "ABS works far faster than a driver can respond. At all other times the brakes work normally.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "far faster",
@@ -8566,7 +8566,7 @@
         {
           "id": "2.18.3.3",
           "text": "If the lamp stays on after the bulb check, or comes on while driving, you may have lost ABS control.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "stays on",
@@ -8603,7 +8603,7 @@
         {
           "id": "2.18.4.1",
           "text": "Without ABS, hard braking on a slippery surface can lock the wheels: locked steering wheels take away steering, and other locked wheels skid, jackknife or spin the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "lock up",
@@ -8614,7 +8614,7 @@
         {
           "id": "2.18.4.2",
           "text": "With ABS you may or may not stop faster, but you should be able to steer round an obstacle while braking.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "may or may not",
@@ -8648,7 +8648,7 @@
         {
           "id": "2.18.5.1",
           "text": "ABS on only the tractor, only the trailer, or even one axle still gives more control. Brake normally.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "only",
@@ -8659,7 +8659,7 @@
         {
           "id": "2.18.5.2",
           "text": "With ABS on the tractor only, you should keep steering control and a jackknife is less likely, but watch the trailer and ease off the brakes if it swings out.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "tractor only",
@@ -8669,7 +8669,7 @@
         {
           "id": "2.18.5.3",
           "text": "With ABS on the trailer only, the trailer is less likely to swing out, but ease off the brakes if you lose steering or start a tractor jackknife.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "trailer only",
@@ -8705,7 +8705,7 @@
         {
           "id": "2.18.6.1",
           "text": "Brake as you always have: use only the force you need to stop safely and stay in control, whichever units have ABS.",
-          "critical": true,
+          "critical": false,
           "page": "2-36",
           "keywords": [
             "as you always have",
@@ -8754,7 +8754,7 @@
         {
           "id": "2.18.7.1",
           "text": "If the ABS fails you still have normal brakes. Drive and brake as you always have, and get the system serviced soon.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "still have",
@@ -8786,7 +8786,7 @@
         {
           "id": "2.18.8.1",
           "text": "ABS will not let you drive faster, follow more closely, or drive less carefully.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "faster",
@@ -8817,7 +8817,7 @@
         {
           "id": "2.18.8.4",
           "text": "ABS will not compensate for bad brakes or poor maintenance.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "not compensate",
@@ -8827,7 +8827,7 @@
         {
           "id": "2.18.8.5",
           "text": "The best vehicle safety feature is still a safe driver. Drive so you never need the ABS.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "best safety feature",
@@ -8904,7 +8904,7 @@
         {
           "id": "2.19.0.2",
           "text": "Most serious skids come from driving too fast for the conditions.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "most serious",
@@ -8914,7 +8914,7 @@
         {
           "id": "2.19.0.3",
           "text": "A skid can also come from using the speed retarder when the road is slippery.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "retarder",
@@ -8973,7 +8973,7 @@
         {
           "id": "2.19.1.1",
           "text": "The most common skid by far is the rear wheels losing traction through too much braking or acceleration.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "most common",
@@ -8994,7 +8994,7 @@
         {
           "id": "2.19.1.3",
           "text": "In a rear wheel braking skid the locked rear wheels slide sideways to catch up with the front. A straight truck or bus spins out; with a trailer, the trailer pushes the tractor sideways into a sudden jackknife.",
-          "critical": true,
+          "critical": false,
           "page": "2-37",
           "keywords": [
             "locked",
@@ -9128,7 +9128,7 @@
         {
           "id": "2.19.3.2",
           "text": "In a front-wheel skid the front end goes straight on however much you turn the wheel, and on a very slippery surface you may not be able to steer round a curve at all.",
-          "critical": true,
+          "critical": false,
           "page": "2-38",
           "keywords": [
             "straight on|straight line",
@@ -9258,7 +9258,7 @@
         {
           "id": "2.20.1.1",
           "text": "The first thing at a scene is to keep a second accident from happening in the same spot.",
-          "critical": true,
+          "critical": false,
           "page": "2-38",
           "keywords": [
             "first",
@@ -9269,7 +9269,7 @@
         {
           "id": "2.20.1.2",
           "text": "If your vehicle is involved, try to get it to the side of the road, which prevents another accident and lets traffic move.",
-          "critical": true,
+          "critical": false,
           "page": "2-38",
           "keywords": [
             "side of the road",
@@ -9307,7 +9307,7 @@
         {
           "id": "2.20.2.1",
           "text": "Notify the authorities, giving the location and what has happened, before you do anything else that can wait.",
-          "critical": true,
+          "critical": false,
           "page": "2-38",
           "keywords": [
             "notify",
@@ -9332,7 +9332,7 @@
         {
           "id": "2.20.3.1",
           "text": "Do not move a badly injured person unless the danger of fire or passing traffic makes it necessary.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "do not move",
@@ -9343,7 +9343,7 @@
         {
           "id": "2.20.3.2",
           "text": "Stop heavy bleeding with direct pressure on the wound, and keep the injured person warm.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "heavy bleeding",
@@ -9512,7 +9512,7 @@
         {
           "id": "2.21.2.1",
           "text": "Inspect the electrical, fuel and exhaust systems, the tires and the cargo, and check the fire extinguisher is charged.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "inspection",
@@ -9522,7 +9522,7 @@
         {
           "id": "2.21.2.2",
           "text": "At every stop on a trip, check the tires, wheels and truck body for signs of heat.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "en route",
@@ -9532,7 +9532,7 @@
         {
           "id": "2.21.2.3",
           "text": "Check the instruments and gauges often for overheating, and use the mirrors to look for smoke from the tires or the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "gauges",
@@ -9570,7 +9570,7 @@
         {
           "id": "2.21.3.1",
           "text": "Pull off the road and park in an open area away from buildings, trees, brush and other vehicles. Do NOT pull into a service station.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "open area",
@@ -9581,7 +9581,7 @@
         {
           "id": "2.21.3.2",
           "text": "Notify emergency services of the problem and your location.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "notify",
@@ -9591,7 +9591,7 @@
         {
           "id": "2.21.3.3",
           "text": "With an engine fire, turn the engine off as soon as you can, and do not open the hood if you can avoid it. Shoot foam through the louvers, the radiator or from underneath.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "engine fire",
@@ -9602,7 +9602,7 @@
         {
           "id": "2.21.3.4",
           "text": "With a cargo fire in a van or box trailer, keep the doors SHUT. Opening them feeds the fire oxygen and it will burn very fast.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "doors shut",
@@ -9612,7 +9612,7 @@
         {
           "id": "2.21.3.5",
           "text": "Stay as far away from the fire as you can, and aim at the source or base of the fire, not up in the flames.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "far away",
@@ -9647,7 +9647,7 @@
         {
           "id": "2.21.3.8",
           "text": "A burning tire must be cooled, and that can take a great deal of water.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "burning tire",
@@ -9658,7 +9658,7 @@
         {
           "id": "2.21.3.9",
           "text": "Position yourself upwind, so the wind carries the extinguisher to the fire, and keep going until everything that burned has cooled. No smoke or flame does not mean it cannot restart.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "upwind",
@@ -9669,7 +9669,7 @@
         {
           "id": "2.21.3.10",
           "text": "If you are not sure what to use, above all on a hazardous materials fire, wait for the firefighters.",
-          "critical": true,
+          "critical": false,
           "page": "2-39",
           "keywords": [
             "not sure",
@@ -9825,7 +9825,7 @@
         {
           "id": "2.22.1.1",
           "text": "People who drink alcohol are involved in traffic accidents causing over 20,000 deaths every year.",
-          "critical": true,
+          "critical": false,
           "page": "2-40",
           "keywords": [
             "20000",
@@ -9835,7 +9835,7 @@
         {
           "id": "2.22.1.2",
           "text": "Alcohol impairs muscle coordination, reaction time, depth perception and night vision, and it affects the parts of the brain that control judgment and inhibition.",
-          "critical": true,
+          "critical": false,
           "page": "2-40",
           "keywords": [
             "coordination",
@@ -9891,7 +9891,7 @@
         {
           "id": "2.22.1.7",
           "text": "Alcohol shows in driving as straddling lanes, quick jerky starts, not signaling, running stop signs and lights, improper passing, weaving and wrong-lane driving.",
-          "critical": true,
+          "critical": false,
           "page": "2-41",
           "keywords": [
             "straddling",
@@ -9997,7 +9997,7 @@
         {
           "id": "2.22.2.1",
           "text": "The law prohibits possession or use of many drugs on duty, and being under the influence of any controlled substance, amphetamine, narcotic or other substance that makes a driver unsafe.",
-          "critical": true,
+          "critical": false,
           "page": "2-41",
           "keywords": [
             "prohibit",
@@ -10008,7 +10008,7 @@
         {
           "id": "2.22.2.2",
           "text": "That can include prescription and over-the-counter drugs, such as cold medicines, which make a driver drowsy.",
-          "critical": true,
+          "critical": false,
           "page": "2-41",
           "keywords": [
             "prescription",
@@ -10030,7 +10030,7 @@
         {
           "id": "2.22.2.4",
           "text": "Do not use any drug that hides fatigue: the only cure for fatigue is rest. Alcohol makes the effects of other drugs much worse.",
-          "critical": true,
+          "critical": false,
           "page": "2-41",
           "keywords": [
             "hides fatigue",
@@ -10088,7 +10088,7 @@
         {
           "id": "2.22.3.1",
           "text": "If you are so ill that you cannot drive safely, you must not drive. In an emergency you may drive to the nearest place where you can safely stop.",
-          "critical": true,
+          "critical": false,
           "page": "2-41",
           "keywords": [
             "ill",
@@ -10182,7 +10182,7 @@
         {
           "id": "2.23.2.2",
           "text": "The shipper communicates the risk with a shipping paper and diamond shaped hazard labels.",
-          "critical": true,
+          "critical": false,
           "page": "2-42",
           "keywords": [
             "shipping paper",
@@ -10193,7 +10193,7 @@
         {
           "id": "2.23.2.3",
           "text": "After a crash or a spill you may be injured and unable to speak, so firefighters and police must find the papers fast. Identify the hazmat shipping papers, or keep them on top of the others.",
-          "critical": true,
+          "critical": false,
           "page": "2-42",
           "keywords": [
             "injured",
@@ -10311,7 +10311,7 @@
         },
         {
           "id": "2.23.3.3",
-          "text": "Placards must be at least 9.84 inches, which is 250 millimetres, square, turned upright on a point in a diamond shape.",
+          "text": "Placards must be at least 9.84 inches, which is 250 millimeters, square, turned upright on a point in a diamond shape.",
           "critical": true,
           "page": "2-42",
           "keywords": [

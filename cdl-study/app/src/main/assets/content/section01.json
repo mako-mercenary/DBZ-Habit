@@ -92,7 +92,7 @@
         },
         {
           "id": "1.0.8",
-          "critical": false,
+          "critical": true,
           "page": "1-1",
           "keywords": [
             "class a",
@@ -125,7 +125,7 @@
         },
         {
           "id": "1.0.11",
-          "critical": false,
+          "critical": true,
           "page": "1-2",
           "keywords": [
             "119",
@@ -280,7 +280,7 @@
       "facts": [
         {
           "id": "1.1.1.1",
-          "critical": true,
+          "critical": false,
           "page": "1-5",
           "keywords": [
             "general knowledge",
@@ -309,7 +309,7 @@
         },
         {
           "id": "1.1.1.4",
-          "critical": false,
+          "critical": true,
           "page": "1-5",
           "keywords": [
             "hazardous materials",
@@ -320,7 +320,7 @@
         },
         {
           "id": "1.1.1.5",
-          "critical": true,
+          "critical": false,
           "page": "1-5",
           "keywords": [
             "1",
@@ -431,7 +431,7 @@
         },
         {
           "id": "1.1.2.3",
-          "critical": true,
+          "critical": false,
           "page": "1-5",
           "keywords": [
             "type of vehicle",
@@ -441,7 +441,7 @@
         },
         {
           "id": "1.1.2.4",
-          "critical": true,
+          "critical": false,
           "page": "1-5",
           "keywords": [
             "marked",
@@ -605,7 +605,7 @@
         },
         {
           "id": "1.1.3.3",
-          "critical": true,
+          "critical": false,
           "page": "1-6",
           "keywords": [
             "surrender",
@@ -874,7 +874,7 @@
         {
           "id": "1.2.2.2",
           "text": "Most CDL holders who drive in interstate commerce are non-excepted interstate drivers.",
-          "critical": true,
+          "critical": false,
           "page": "1-7",
           "keywords": [
             "most",
@@ -915,7 +915,7 @@
         {
           "id": "1.2.2.6",
           "text": "Excepted activities include carrying school children and staff between home and school, government work, carrying human remains or sick or injured people, and emergency fire or rescue driving.",
-          "critical": false,
+          "critical": true,
           "page": "1-6",
           "keywords": [
             "school children",
@@ -1070,7 +1070,7 @@
         {
           "id": "1.2.4.7",
           "text": "Utah does not permit modified skills tests.",
-          "critical": true,
+          "critical": false,
           "page": "1-8",
           "keywords": [
             "modified",
@@ -1080,7 +1080,7 @@
         {
           "id": "1.2.4.8",
           "text": "The B restriction means you must wear corrective lenses, and the G restriction limits you to daylight hours only.",
-          "critical": false,
+          "critical": true,
           "page": "1-8",
           "keywords": [
             "b",
@@ -1092,7 +1092,7 @@
         {
           "id": "1.2.4.9",
           "text": "The V code shows that the Federal Motor Carrier Safety Administration gave the driver a medical variance.",
-          "critical": false,
+          "critical": true,
           "page": "1-8",
           "keywords": [
             "v",
@@ -1241,7 +1241,7 @@
         {
           "id": "1.2.5.3",
           "text": "The X endorsement is the tank vehicle and hazardous materials combination.",
-          "critical": false,
+          "critical": true,
           "page": "1-9",
           "keywords": [
             "x",
@@ -1417,7 +1417,7 @@
         },
         {
           "id": "1.2.7.2",
-          "text": "A drug or alcohol offence stays on your motor vehicle record for ten years.",
+          "text": "A drug or alcohol offense stays on your motor vehicle record for ten years.",
           "critical": true,
           "page": "1-9",
           "keywords": [
@@ -1438,7 +1438,7 @@
         {
           "id": "1.2.7.4",
           "text": "A citation entered as a plea in abeyance still appears on your record, and it cannot be taken off once it is there.",
-          "critical": true,
+          "critical": false,
           "page": "1-10",
           "keywords": [
             "plea in abeyance",
@@ -1453,7 +1453,7 @@
           "factId": "1.2.7.1"
         },
         {
-          "q": "How long does a drug or alcohol offence stay on an MVR?",
+          "q": "How long does a drug or alcohol offense stay on an MVR?",
           "a": "Ten years.",
           "factId": "1.2.7.2"
         },
@@ -1471,7 +1471,7 @@
       "exam": [
         {
           "id": "1.2.7.e1",
-          "q": "How long does a drug or alcohol offence stay on your motor vehicle record?",
+          "q": "How long does a drug or alcohol offense stay on your motor vehicle record?",
           "choices": [
             "Three years",
             "Five years",
@@ -1479,7 +1479,7 @@
             "55 years"
           ],
           "answer": 2,
-          "why": "Moving violations show for three years, but a drug or alcohol offence stays ten.",
+          "why": "Moving violations show for three years, but a drug or alcohol offense stays ten.",
           "factId": "1.2.7.2",
           "page": "1-9"
         }
@@ -1496,7 +1496,7 @@
             },
             {
               "value": "10 years",
-              "what": "how long a drug or alcohol offence stays"
+              "what": "how long a drug or alcohol offense stays"
             },
             {
               "value": "55 years",
@@ -1533,7 +1533,7 @@
         {
           "id": "1.3.1.1",
           "text": "You may not drive a commercial motor vehicle while you are disqualified, for any reason.",
-          "critical": true,
+          "critical": false,
           "page": "1-10",
           "keywords": [
             "disqualified",
@@ -1583,17 +1583,17 @@
         },
         {
           "id": "1.3.2.3",
-          "text": "A first offence costs you your CDL for at least one year: a BAC of 0.04% or higher, driving under the influence of alcohol or a controlled substance, refusing a test, leaving the scene of an accident, a felony with a CMV, driving on a suspended CDL, or causing a death by negligent driving.",
+          "text": "A first offense costs you your CDL for at least one year: a BAC of 0.04% or higher, driving under the influence of alcohol or a controlled substance, refusing a test, leaving the scene of an accident, a felony with a CMV, driving on a suspended CDL, or causing a death by negligent driving.",
           "critical": true,
           "page": "1-10",
           "keywords": [
             "one year",
-            "first offence"
+            "first offense"
           ]
         },
         {
           "id": "1.3.2.4",
-          "text": "The loss is at least three years if the offence happens while you drive a CMV placarded for hazardous materials.",
+          "text": "The loss is at least three years if the offense happens while you drive a CMV placarded for hazardous materials.",
           "critical": true,
           "page": "1-10",
           "keywords": [
@@ -1603,7 +1603,7 @@
         },
         {
           "id": "1.3.2.5",
-          "text": "A second offence costs you your CDL for life.",
+          "text": "A second offense costs you your CDL for life.",
           "critical": true,
           "page": "1-10",
           "keywords": [
@@ -1641,17 +1641,17 @@
           "factId": "1.3.2.1"
         },
         {
-          "q": "How long do you lose your CDL for a first alcohol offence?",
+          "q": "How long do you lose your CDL for a first alcohol offense?",
           "a": "At least one year.",
           "factId": "1.3.2.3"
         },
         {
-          "q": "How long for a first offence while placarded for hazmat?",
+          "q": "How long for a first offense while placarded for hazmat?",
           "a": "At least three years.",
           "factId": "1.3.2.4"
         },
         {
-          "q": "What is the penalty for a second serious alcohol or drug offence?",
+          "q": "What is the penalty for a second serious alcohol or drug offense?",
           "a": "Loss of the CDL for life.",
           "factId": "1.3.2.5"
         },
@@ -1667,7 +1667,7 @@
         },
         {
           "q": "Does refusing a blood alcohol test carry a penalty?",
-          "a": "Yes. At least one year, the same as a first offence.",
+          "a": "Yes. At least one year, the same as a first offense.",
           "factId": "1.3.2.3"
         }
       ],
@@ -1682,7 +1682,7 @@
             "For life"
           ],
           "answer": 2,
-          "why": "A first offence is one year, but three years when the vehicle is placarded for hazmat.",
+          "why": "A first offense is one year, but three years when the vehicle is placarded for hazmat.",
           "factId": "1.3.2.4",
           "page": "1-10"
         },
@@ -1702,7 +1702,7 @@
         },
         {
           "id": "1.3.2.e3",
-          "q": "What is the penalty for refusing alcohol testing on a first offence?",
+          "q": "What is the penalty for refusing alcohol testing on a first offense?",
           "choices": [
             "A warning",
             "60 days",
@@ -1710,7 +1710,7 @@
             "24 hours out of service"
           ],
           "answer": 2,
-          "why": "Refusing a test is treated like the other first offences: at least one year.",
+          "why": "Refusing a test is treated like the other first offenses: at least one year.",
           "factId": "1.3.2.3",
           "page": "1-10"
         }
@@ -1728,15 +1728,15 @@
             },
             {
               "value": "1 year",
-              "what": "at least, for a first offence"
+              "what": "at least, for a first offense"
             },
             {
               "value": "3 years",
-              "what": "at least, if the offence happens while placarded for hazmat"
+              "what": "at least, if the offense happens while placarded for hazmat"
             },
             {
               "value": "Life",
-              "what": "a second offence"
+              "what": "a second offense"
             },
             {
               "value": "24 hours",
@@ -1745,7 +1745,7 @@
           ]
         },
         {
-          "h": "What counts as a first offence"
+          "h": "What counts as a first offense"
         },
         {
           "ul": [
@@ -1759,7 +1759,7 @@
           ]
         },
         {
-          "note": "By driving a CMV you are deemed to have consented to alcohol testing. Using a CMV to commit a felony involving controlled substances costs you the license for life, first offence or not."
+          "note": "By driving a CMV you are deemed to have consented to alcohol testing. Using a CMV to commit a felony involving controlled substances costs you the license for life, first offense or not."
         },
         {
           "p": "In Utah it is also unlawful to use or possess powdered alcohol for human consumption."
@@ -1784,7 +1784,7 @@
         },
         {
           "id": "1.3.3.2",
-          "text": "Serious traffic violations also include reckless driving, improper or erratic lane changes, following too closely, a traffic offence in a CMV connected with a fatal accident, driving a CMV without a CDL or without it in your possession, and driving without the right class or endorsement.",
+          "text": "Serious traffic violations also include reckless driving, improper or erratic lane changes, following too closely, a traffic offense in a CMV connected with a fatal accident, driving a CMV without a CDL or without it in your possession, and driving without the right class or endorsement.",
           "critical": true,
           "page": "1-10",
           "keywords": [
@@ -1877,7 +1877,7 @@
             "Reckless driving.",
             "Improper or erratic lane changes.",
             "Following a vehicle too closely.",
-            "A traffic offence in a CMV connected with a fatal accident.",
+            "A traffic offense in a CMV connected with a fatal accident.",
             "Driving a CMV without a CDL, or without it in your possession.",
             "Driving a CMV without the proper class of license or endorsement."
           ]
@@ -2020,7 +2020,7 @@
         },
         {
           "id": "1.3.5.4",
-          "text": "There are six railroad crossing offences, and they include not having enough space to drive all the way through the crossing without stopping, and not getting across because of too little undercarriage clearance.",
+          "text": "There are six railroad crossing offenses, and they include not having enough space to drive all the way through the crossing without stopping, and not getting across because of too little undercarriage clearance.",
           "critical": true,
           "page": "1-11",
           "keywords": [
@@ -2032,7 +2032,7 @@
         {
           "id": "1.3.5.5",
           "text": "A driver who need not always stop still must slow down, check that the tracks are clear, and stop before the crossing if they are not.",
-          "critical": true,
+          "critical": false,
           "page": "1-11",
           "keywords": [
             "slow down",
@@ -2058,7 +2058,7 @@
           "factId": "1.3.5.3"
         },
         {
-          "q": "How many railroad crossing offences are listed?",
+          "q": "How many railroad crossing offenses are listed?",
           "a": "Six.",
           "factId": "1.3.5.4"
         }
@@ -2074,7 +2074,7 @@
             "An out-of-service order"
           ],
           "answer": 1,
-          "why": "Failing to have enough space to clear the crossing without stopping is one of the six offences.",
+          "why": "Failing to have enough space to clear the crossing without stopping is one of the six offenses.",
           "factId": "1.3.5.4",
           "page": "1-11"
         }
@@ -2100,7 +2100,7 @@
           ]
         },
         {
-          "h": "The six offences"
+          "h": "The six offenses"
         },
         {
           "ul": [
@@ -2371,7 +2371,7 @@
         {
           "id": "1.4.10",
           "text": "You may not send or read text messages while driving.",
-          "critical": true,
+          "critical": false,
           "page": "1-12",
           "keywords": [
             "text messages"
@@ -2380,7 +2380,7 @@
         {
           "id": "1.4.11",
           "text": "You must wear the safety belt at all times while you drive a commercial motor vehicle. Without it you are four times more likely to be killed if you are thrown from the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "1-12",
           "keywords": [
             "safety belt",

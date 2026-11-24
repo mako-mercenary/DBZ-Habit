@@ -39,7 +39,7 @@
         {
           "id": "6.1.1.1",
           "text": "More than half of the truck drivers killed in crashes die in a rollover.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "more than half",
@@ -49,7 +49,7 @@
         {
           "id": "6.1.1.2",
           "text": "A fully loaded rig is ten times more likely to roll over in a crash than an empty one.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "ten times",
@@ -71,7 +71,7 @@
         {
           "id": "6.1.1.4",
           "text": "Keep the load centered. A load to one side makes the trailer lean, and a rollover is more likely.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "centered",
@@ -81,7 +81,7 @@
         {
           "id": "6.1.1.5",
           "text": "Rollovers happen when you turn too fast, so go slowly round corners, on-ramps and off-ramps, and avoid quick lane changes when loaded.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "too fast",
@@ -203,7 +203,7 @@
         {
           "id": "6.1.2.5",
           "text": "Steer gently and smoothly with a trailer, and slow to a safe speed before you enter a turn.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "gently",
@@ -315,7 +315,7 @@
         {
           "id": "6.1.3.2",
           "text": "Lightly loaded, the stiff springs and strong brakes give poor traction, so the wheels lock easily, the trailer can swing out and the tractor can jackknife quickly.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "stiff",
@@ -336,7 +336,7 @@
         {
           "id": "6.1.3.4",
           "text": "Allow plenty of following distance and look far ahead, so you brake early instead of making a panic stop.",
-          "critical": true,
+          "critical": false,
           "page": "6-1",
           "keywords": [
             "following distance",
@@ -404,7 +404,7 @@
         {
           "id": "6.1.4.2",
           "text": "A single-axle tractor pulling a long trailer whose landing gear is set for a tandem-axle tractor can also get stuck.",
-          "critical": false,
+          "critical": true,
           "page": "6-2",
           "keywords": [
             "single axle",
@@ -414,7 +414,7 @@
         {
           "id": "6.1.4.3",
           "text": "If you get stuck on the tracks, get out of the vehicle and away from the tracks at once.",
-          "critical": true,
+          "critical": false,
           "page": "6-2",
           "keywords": [
             "get out",
@@ -498,7 +498,7 @@
         {
           "id": "6.1.5.2",
           "text": "The earliest way to see a trailer skid is in your mirrors, so check them every time you brake hard.",
-          "critical": true,
+          "critical": false,
           "page": "6-2",
           "keywords": [
             "mirrors",
@@ -608,7 +608,7 @@
         {
           "id": "6.1.6.2",
           "text": "The longer the vehicle, the more it off-tracks, and with more than one trailer the last trailer off-tracks the most.",
-          "critical": true,
+          "critical": false,
           "page": "6-3",
           "keywords": [
             "longer",
@@ -618,7 +618,7 @@
         {
           "id": "6.1.6.3",
           "text": "Steer the front end wide enough that the rear end does not run over the curb, but keep the rear of the vehicle close to the curb so nobody passes you on the right.",
-          "critical": true,
+          "critical": false,
           "page": "6-3",
           "keywords": [
             "front end wide",
@@ -707,7 +707,7 @@
         {
           "id": "6.1.7.2",
           "text": "Position the vehicle so you can back in a straight line whenever you can.",
-          "critical": true,
+          "critical": false,
           "page": "6-3",
           "keywords": [
             "straight line"
@@ -716,7 +716,7 @@
         {
           "id": "6.1.7.3",
           "text": "If you must back on a curved path, back to the driver's side so you can see.",
-          "critical": true,
+          "critical": false,
           "page": "6-3",
           "keywords": [
             "driver's side",
@@ -726,7 +726,7 @@
         {
           "id": "6.1.7.4",
           "text": "Before you back, look at your line of travel: get out and walk around the vehicle, and check the clearance to the sides and overhead.",
-          "critical": true,
+          "critical": false,
           "page": "6-4",
           "keywords": [
             "walk around",
@@ -736,7 +736,7 @@
         {
           "id": "6.1.7.5",
           "text": "Use both outside mirrors, back slowly, and correct drift at once by turning the top of the steering wheel in the direction of the drift.",
-          "critical": true,
+          "critical": false,
           "page": "6-4",
           "keywords": [
             "both mirrors",
@@ -747,7 +747,7 @@
         {
           "id": "6.1.7.6",
           "text": "Pull forward to reposition as often as you need. A pull-up is not a fault.",
-          "critical": false,
+          "critical": true,
           "page": "6-4",
           "keywords": [
             "pull up",
@@ -861,7 +861,7 @@
         {
           "id": "6.2.1.3",
           "text": "The foot brake sends air to every brake on the rig, including the trailer, so there is much less danger of a skid or a jackknife.",
-          "critical": true,
+          "critical": false,
           "page": "6-4",
           "keywords": [
             "foot brake",
@@ -944,7 +944,7 @@
         {
           "id": "6.2.2.2",
           "text": "The trailer air supply control in the cab opens and shuts the tractor protection valve.",
-          "critical": true,
+          "critical": false,
           "page": "6-5",
           "keywords": [
             "air supply control",
@@ -966,7 +966,7 @@
         {
           "id": "6.2.2.4",
           "text": "When it closes it stops air leaving the tractor and lets the air out of the trailer emergency line, which puts the trailer emergency brakes on.",
-          "critical": true,
+          "critical": false,
           "page": "6-5",
           "keywords": [
             "emergency line",
@@ -1164,7 +1164,7 @@
         {
           "id": "6.2.4.5",
           "text": "Losing pressure in the emergency line puts the trailer emergency brakes on and makes the tractor protection valve close, so the air supply knob pops out.",
-          "critical": true,
+          "critical": false,
           "page": "6-5",
           "keywords": [
             "loss of air",
@@ -1261,7 +1261,7 @@
         {
           "id": "6.2.5.2",
           "text": "Clean the couplers and the rubber seals before you connect them.",
-          "critical": true,
+          "critical": false,
           "page": "6-5",
           "keywords": [
             "clean",
@@ -1304,7 +1304,7 @@
         {
           "id": "6.2.5.6",
           "text": "An older trailer has no spring brakes. With the air leaked away and the lines crossed you could drive off with no trailer brakes at all, so always test the trailer brakes before you drive.",
-          "critical": true,
+          "critical": false,
           "page": "6-6",
           "keywords": [
             "older",
@@ -1315,7 +1315,7 @@
         {
           "id": "6.2.5.7",
           "text": "Put the hoses on the dummy couplers when they are not connected to a trailer, so water and dirt stay out of the air lines.",
-          "critical": false,
+          "critical": true,
           "page": "6-6",
           "keywords": [
             "dummy couplers",
@@ -1402,7 +1402,7 @@
         {
           "id": "6.2.6.1",
           "text": "Each trailer and converter dolly has one or more air tanks, filled by the emergency line from the tractor.",
-          "critical": true,
+          "critical": false,
           "page": "6-6",
           "keywords": [
             "air tanks",
@@ -1432,7 +1432,7 @@
         {
           "id": "6.2.6.4",
           "text": "If the tanks have automatic drains, still open the drains to be sure.",
-          "critical": true,
+          "critical": false,
           "page": "6-6",
           "keywords": [
             "automatic",
@@ -1563,7 +1563,7 @@
         {
           "id": "6.2.8.4",
           "text": "They hold only while air remains in the trailer tank. The air leaks away in time, and then there are no brakes, so always chock the wheels of a trailer without spring brakes.",
-          "critical": true,
+          "critical": false,
           "page": "6-6",
           "keywords": [
             "leak away",
@@ -1735,7 +1735,7 @@
         {
           "id": "6.3.2.1",
           "text": "ABS is an addition to your normal brakes. It does not change your normal braking, and it works only when a wheel is about to lock.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "addition",
@@ -1745,7 +1745,7 @@
         {
           "id": "6.3.2.2",
           "text": "Brake as you always have: only the force you need to stop safely and stay in control, whether the ABS is on the tractor, the trailer or both.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "as you always have",
@@ -1755,7 +1755,7 @@
         {
           "id": "6.3.2.3",
           "text": "With ABS on the trailer only, the trailer is less likely to swing out. If you lose steering control or start a tractor jackknife, ease off the brakes until you have control.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "trailer only",
@@ -1765,7 +1765,7 @@
         {
           "id": "6.3.2.4",
           "text": "If the ABS fails you still have your normal brakes. Drive normally and get it serviced soon.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "malfunctions",
@@ -1775,7 +1775,7 @@
         {
           "id": "6.3.2.5",
           "text": "ABS does not let you drive faster, follow more closely, or drive less carefully.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "not",
@@ -1872,7 +1872,7 @@
         {
           "id": "6.4.1.2",
           "text": "The fifth wheel plate must be greased. Without grease the friction between tractor and trailer causes steering problems.",
-          "critical": true,
+          "critical": false,
           "page": "6-7",
           "keywords": [
             "greased",
@@ -1892,7 +1892,7 @@
         {
           "id": "6.4.1.4",
           "text": "Put the tractor directly in front of the trailer. Never back under at an angle, because you can push the trailer sideways and break the landing gear.",
-          "critical": true,
+          "critical": false,
           "page": "6-8",
           "keywords": [
             "directly in front",
@@ -2289,7 +2289,7 @@
         {
           "id": "6.4.3.1",
           "text": "Before you use a pintle hook, check for worn, damaged or missing parts and make sure the mount is secure. A pintle hook that is not secured can separate from the vehicle.",
-          "critical": true,
+          "critical": false,
           "page": "6-10",
           "keywords": [
             "pintle hook",
@@ -2352,7 +2352,7 @@
         {
           "id": "6.4.4.2",
           "text": "Check the ground will carry the tongue load before you extend the jack.",
-          "critical": true,
+          "critical": false,
           "page": "6-11",
           "keywords": [
             "ground",
@@ -2445,7 +2445,7 @@
         {
           "id": "6.4.6.1",
           "text": "Before uncoupling a drawbar, make sure the trailer brake is on.",
-          "critical": true,
+          "critical": false,
           "page": "6-12",
           "keywords": [
             "trailer brake",
@@ -2491,7 +2491,7 @@
         {
           "id": "6.4.7.2",
           "text": "Check all the lights, brake lights included, after you connect the trailer light wiring.",
-          "critical": true,
+          "critical": false,
           "page": "6-12",
           "keywords": [
             "lights",
