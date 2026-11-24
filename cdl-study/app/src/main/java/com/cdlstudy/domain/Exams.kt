@@ -10,10 +10,17 @@ import kotlin.random.Random
 /**
  * The default length of a full practice exam.
  *
- * WARNING: these three numbers (50, 25, 20) come from the study plan as common
- * practice targets. They are NOT verified against the Utah Driver License
- * Division. Check the current official numbers before you treat them as the
- * requirement. You can set any length in the app.
+ * The three knowledge test lengths are now verified. dld.utah.gov/cdl-written-test/
+ * on 24 November 2026: general knowledge 50 questions, combination 20, air
+ * brakes 25, and 80% to pass, closed book. TestDayTest fails the build if these
+ * three stop matching the checklist that records that reading.
+ *
+ * The other three (25, 20, 20) are NOT official lengths, and no official length
+ * exists for them. Vehicle Inspection, Basic Vehicle Control and On-Road
+ * Driving are skills tests scored in error points, not percentages: Utah passes
+ * basic control at 8 or fewer error points and the road test at 30 or fewer.
+ * Those three exams in this app test your knowledge of the rules you are scored
+ * against. They do not model the scoring, and a 90% in them is not a pass.
  */
 object ExamStandards {
     const val PASS_PERCENT = 80

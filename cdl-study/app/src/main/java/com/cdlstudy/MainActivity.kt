@@ -47,6 +47,7 @@ import com.cdlstudy.ui.ReminderScreen
 import com.cdlstudy.ui.SectionScreen
 import com.cdlstudy.ui.SettingsScreen
 import com.cdlstudy.ui.StudyScreen
+import com.cdlstudy.ui.TestDayScreen
 import com.cdlstudy.ui.TodayScreen
 
 class MainActivity : ComponentActivity() {
@@ -102,6 +103,7 @@ private fun AppNav() {
                     onBackup = { nav.navigate("backup") },
                     onReminder = { nav.navigate("reminder") },
                     onAi = { nav.navigate("ai") },
+                    onTestDay = { nav.navigate("testday") },
                 )
             }
 
@@ -133,6 +135,7 @@ private fun AppNav() {
         composable("backup") { BackupScreen(onBack = { nav.popBackStack() }) }
         composable("reminder") { ReminderScreen(onBack = { nav.popBackStack() }) }
         composable("ai") { AiScreen(onBack = { nav.popBackStack() }) }
+        composable("testday") { TestDayScreen(onBack = { nav.popBackStack() }) }
         composable("drills") {
             DrillsScreen(
                 onBack = { nav.popBackStack() },

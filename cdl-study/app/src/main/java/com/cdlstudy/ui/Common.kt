@@ -38,6 +38,10 @@ fun aiSettings(): AiSettings =
     (LocalContext.current.applicationContext as CdlApp).ai
 
 @Composable
+fun testDaySettings(): TestDaySettings =
+    (LocalContext.current.applicationContext as CdlApp).testDay
+
+@Composable
 fun contentErrors(): List<String> =
     (LocalContext.current.applicationContext as CdlApp).contentErrors
 

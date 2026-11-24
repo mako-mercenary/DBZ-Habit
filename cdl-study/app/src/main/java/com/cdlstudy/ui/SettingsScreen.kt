@@ -21,11 +21,13 @@ fun SettingsScreen(
     onBackup: () -> Unit,
     onReminder: () -> Unit,
     onAi: () -> Unit,
+    onTestDay: () -> Unit,
 ) {
     val store = manualStore()
     val settings = readingSettings()
     val reminder = reminderSettings()
     val ai = aiSettings()
+    val testDay = testDaySettings()
     val repo = repository()
 
     LazyColumn(
@@ -53,6 +55,15 @@ fun SettingsScreen(
                 "Your manual",
                 if (store.isImported) "${store.pageCount} pages imported" else "Not imported",
                 onManual,
+            )
+        }
+        item {
+            Entry(
+                "Test day",
+                "${com.cdlstudy.domain.TestDay.done(testDay.ticked)} of " +
+                    "${com.cdlstudy.domain.TestDay.tickable.size} ready · documents, fees " +
+                    "and the rules, from dld.utah.gov",
+                onTestDay,
             )
         }
         item {
