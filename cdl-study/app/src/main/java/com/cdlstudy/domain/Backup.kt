@@ -16,12 +16,14 @@ object Backup {
      * 1: the original.
      * 2: an exam attempt records whether it ran under test-day conditions, and
      *    how long it took.
+     * 3: a card carries its own schedule, because the app keeps the schedule
+     *    now instead of exporting the deck.
      *
      * A version 1 file still reads: its attempts come back as practice
      * attempts with no time, which is what they were. A file from a newer
      * version is refused rather than read in part.
      */
-    const val FORMAT = 2
+    const val FORMAT = 3
 
     data class Record(
         val formatVersion: Int = FORMAT,
@@ -55,8 +57,19 @@ object Backup {
         val question: String,
         val answer: String,
         val createdAt: Long,
+        /** Dead since format 3. Kept so an older file still reads. */
         val exportedAt: Long?,
         val source: String,
+        // The schedule. Added in format 3. A format 1 or 2 card comes back
+        // never seen and due now, which is what it was: the app had no
+        // schedule then.
+        val stage: String = "NEW",
+        val intervalMinutes: Long = 0,
+        val ease: Double = 2.5,
+        val reps: Int = 0,
+        val lapses: Int = 0,
+        val dueAt: Long = 0,
+        val lastReviewedAt: Long? = null,
     )
 
     data class Attempt(
@@ -120,7 +133,14 @@ object Backup {
             append("\"answer\": ${quote(card.answer)}, ")
             append("\"createdAt\": ${card.createdAt}, ")
             append("\"exportedAt\": ${card.exportedAt ?: "null"}, ")
-            append("\"source\": ${quote(card.source)}}")
+            append("\"source\": ${quote(card.source)}, ")
+            append("\"stage\": ${quote(card.stage)}, ")
+            append("\"intervalMinutes\": ${card.intervalMinutes}, ")
+            append("\"ease\": ${card.ease}, ")
+            append("\"reps\": ${card.reps}, ")
+            append("\"lapses\": ${card.lapses}, ")
+            append("\"dueAt\": ${card.dueAt}, ")
+            append("\"lastReviewedAt\": ${card.lastReviewedAt ?: "null"}}")
             append(if (index == record.cards.lastIndex) "\n" else ",\n")
         }
         append("  ],\n")
@@ -206,6 +226,13 @@ object Backup {
                     createdAt = map.long("createdAt") ?: 0,
                     exportedAt = map.long("exportedAt"),
                     source = map.str("source") ?: "recall",
+                    stage = map.str("stage") ?: "NEW",
+                    intervalMinutes = map.long("intervalMinutes") ?: 0,
+                    ease = (map["ease"] as? Number)?.toDouble() ?: 2.5,
+                    reps = map.int("reps") ?: 0,
+                    lapses = map.int("lapses") ?: 0,
+                    dueAt = map.long("dueAt") ?: 0,
+                    lastReviewedAt = map.long("lastReviewedAt"),
                 )
             },
             attempts = root.list("attempts").map { raw ->

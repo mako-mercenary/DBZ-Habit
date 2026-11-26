@@ -9,6 +9,7 @@ import com.cdlstudy.manual.ManualStore
 import com.cdlstudy.reminder.Reminders
 import com.cdlstudy.ui.ReadingSettings
 import com.cdlstudy.ui.ReminderSettings
+import com.cdlstudy.ui.TestDateSettings
 import com.cdlstudy.ui.TestDaySettings
 
 class CdlApp : Application() {
@@ -36,6 +37,10 @@ class CdlApp : Application() {
     lateinit var testDay: TestDaySettings
         private set
 
+    /** The day you sit the test. It caps every card's interval. */
+    lateinit var testDate: TestDateSettings
+        private set
+
     /** Content files that would not parse. The home screen shows them. */
     var contentErrors: List<String> = emptyList()
         private set
@@ -50,6 +55,7 @@ class CdlApp : Application() {
         reminder = ReminderSettings(this)
         ai = AiSettings(this)
         testDay = TestDaySettings(this)
+        testDate = TestDateSettings(this)
         Reminders.createChannel(this)
     }
 }

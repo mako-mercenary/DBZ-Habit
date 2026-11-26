@@ -16,7 +16,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         ExamAnswerEntity::class,
         ProgressEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -46,6 +46,32 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Version 3 gives every card its own schedule, because the app now
+         * keeps the schedule instead of exporting the deck.
+         *
+         * Only additions. Every card you have made keeps its question, its
+         * answer and the fact it came from, and arrives due now with a fresh
+         * ease, which is exactly right: the app has never asked you any of
+         * them. The old exportedAt column is left alone rather than dropped,
+         * because dropping it means rebuilding the table and there is no
+         * device here to test a rebuild on.
+         */
+        private val TO_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE cards ADD COLUMN stage TEXT NOT NULL DEFAULT 'NEW'")
+                db.execSQL("ALTER TABLE cards ADD COLUMN intervalMinutes INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE cards ADD COLUMN ease REAL NOT NULL DEFAULT 2.5")
+                db.execSQL("ALTER TABLE cards ADD COLUMN reps INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE cards ADD COLUMN lapses INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE cards ADD COLUMN dueAt INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE cards ADD COLUMN lastReviewedAt INTEGER")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_cards_dueAt ON cards (dueAt)")
+                // The exportedAt index goes: nothing reads it any more.
+                db.execSQL("DROP INDEX IF EXISTS index_cards_exportedAt")
+            }
+        }
+
         @Volatile
         private var instance: AppDatabase? = null
 
@@ -55,7 +81,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "cdl-study.db",
-                ).addMigrations(TO_2).build().also { instance = it }
+                ).addMigrations(TO_2, TO_3).build().also { instance = it }
             }
     }
 }

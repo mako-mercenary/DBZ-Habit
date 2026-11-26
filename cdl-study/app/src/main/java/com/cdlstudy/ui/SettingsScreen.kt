@@ -22,12 +22,14 @@ fun SettingsScreen(
     onReminder: () -> Unit,
     onAi: () -> Unit,
     onTestDay: () -> Unit,
+    onTestDate: () -> Unit,
 ) {
     val store = manualStore()
     val settings = readingSettings()
     val reminder = reminderSettings()
     val ai = aiSettings()
     val testDay = testDaySettings()
+    val testDate = testDateSettings()
     val repo = repository()
 
     LazyColumn(
@@ -55,6 +57,14 @@ fun SettingsScreen(
                 "Your manual",
                 if (store.isImported) "${store.pageCount} pages imported" else "Not imported",
                 onManual,
+            )
+        }
+        item {
+            Entry(
+                "Test date",
+                testDate.date?.let { "$it · ${testDate.label()}, and no card is booked past it" }
+                    ?: "Not set · cards are scheduled for long-term memory",
+                onTestDate,
             )
         }
         item {

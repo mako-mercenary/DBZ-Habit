@@ -3,6 +3,7 @@ package com.cdlstudy.data
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.cdlstudy.domain.Review
 
 /**
  * The study record. The content comes from the asset files, so only your own
@@ -34,7 +35,7 @@ data class FactMarkEntity(
     val mark: String,
 )
 
-@Entity(tableName = "cards", indices = [Index("subsectionId"), Index("exportedAt")])
+@Entity(tableName = "cards", indices = [Index("subsectionId"), Index("dueAt")])
 data class CardEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val subsectionId: String,
@@ -42,10 +43,33 @@ data class CardEntity(
     val question: String,
     val answer: String,
     val createdAt: Long,
-    /** Null until the card is in an export file. */
+    /**
+     * Dead since 0.10.0, when the app started keeping its own schedule instead
+     * of handing the cards to Anki.
+     *
+     * It stays because dropping a column means rebuilding the table, and a
+     * table rebuild cannot be tested in this build environment: there is no
+     * device to run an instrumented migration test on. A dead column is untidy.
+     * Moving every card you have ever made through an untested rebuild to
+     * tidy it up is worse.
+     */
     val exportedAt: Long? = null,
-    /** recall or exam: why the card exists. */
+    /** recall, exam, numbers or order: why the card exists. */
     val source: String,
+
+    // --- the schedule. See domain/Review.kt for what these mean. ---
+
+    /** NEW, LEARNING or REVIEW. */
+    val stage: String = "NEW",
+    /** Minutes from the last answer until the next one is due. */
+    val intervalMinutes: Long = 0,
+    /** SM-2's ease factor. */
+    val ease: Double = 2.5,
+    val reps: Int = 0,
+    val lapses: Int = 0,
+    /** Epoch millis when it is next due. 0 means now, which is what a new card wants. */
+    val dueAt: Long = 0,
+    val lastReviewedAt: Long? = null,
 )
 
 @Entity(tableName = "exam_attempts")
@@ -93,4 +117,14 @@ data class ProgressEntity(
     val bestCritical: Int = 0,
     val timesRecalled: Int = 0,
     val lastStudiedAt: Long? = null,
+)
+
+/** The schedule a card carries, in the form the scheduler reads. */
+fun CardEntity.state(): Review.State = Review.State(
+    stage = Review.Stage.of(stage),
+    intervalMinutes = intervalMinutes,
+    ease = ease,
+    reps = reps,
+    lapses = lapses,
+    dueAt = dueAt,
 )

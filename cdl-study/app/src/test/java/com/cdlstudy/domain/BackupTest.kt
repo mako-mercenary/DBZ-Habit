@@ -192,3 +192,67 @@ class BackupFormat2Test {
         assertTrue(runCatching { Backup.read(future) }.exceptionOrNull() is Backup.BadBackup)
     }
 }
+
+/**
+ * Format 3 gave every card a schedule. A restore that dropped it would reset
+ * every interval you had earned, which is the one thing a backup must not do.
+ */
+class BackupFormat3Test {
+
+    private val card = Backup.Card(
+        subsectionId = "5.1.2",
+        factId = "5.1.2.1",
+        question = "At what pressure does the governor cut out?",
+        answer = "About 125 psi.",
+        createdAt = 1_700_000_000_000,
+        exportedAt = null,
+        source = "recall",
+        stage = "REVIEW",
+        intervalMinutes = 8_640,
+        ease = 2.35,
+        reps = 4,
+        lapses = 1,
+        dueAt = 1_700_600_000_000,
+        lastReviewedAt = 1_700_100_000_000,
+    )
+
+    @Test
+    fun `the schedule survives a round trip`() {
+        val record = Backup.Record(
+            formatVersion = Backup.FORMAT,
+            appVersion = "0.10.0",
+            savedAt = 1,
+            cards = listOf(card),
+        )
+        val back = Backup.read(Backup.write(record)).cards.single()
+        assertEquals("REVIEW", back.stage)
+        assertEquals(8_640L, back.intervalMinutes)
+        assertEquals(2.35, back.ease, 0.0001)
+        assertEquals(4, back.reps)
+        assertEquals(1, back.lapses)
+        assertEquals(1_700_600_000_000, back.dueAt)
+        assertEquals(1_700_100_000_000L, back.lastReviewedAt)
+    }
+
+    @Test
+    fun `a card from an older file comes back never seen and due now`() {
+        val old = """
+            {
+              "formatVersion": 2, "appVersion": "0.9.0", "savedAt": 1,
+              "recalls": [],
+              "cards": [
+                { "subsectionId": "5.1.2", "factId": "5.1.2.1",
+                  "question": "Cut-out?", "answer": "125 psi.",
+                  "createdAt": 1, "exportedAt": null, "source": "recall" }
+              ],
+              "attempts": [], "progress": []
+            }
+        """.trimIndent()
+        val back = Backup.read(old).cards.single()
+        assertEquals("NEW", back.stage)
+        assertEquals(0L, back.intervalMinutes)
+        assertEquals(2.5, back.ease, 0.0001)
+        assertEquals(0L, back.dueAt)
+        assertNull(back.lastReviewedAt)
+    }
+}

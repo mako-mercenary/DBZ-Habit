@@ -158,7 +158,7 @@ private fun Finished(vm: NumberDrillViewModel, onCards: () -> Unit) {
                 if (added == 0) {
                     "No new cards: either you had them all, or they are in the queue already."
                 } else {
-                    "$added new card(s) waiting for Anki."
+                    "$added new card(s) in the deck."
                 },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

@@ -83,10 +83,18 @@ class NextStepTest {
         mapOf("1.1.1" to "recalled", "1.1.2" to "recalled", "5.1" to "mastered")
 
     @Test
-    fun `cards waiting come before an exam, because the exam adds more`() {
-        val step = next(allRecalled, pending = 7)
-        assertEquals(NextStep.ExportCards(7), step)
-        assertEquals("Next: export 7 cards to Anki", NextStepRules.label(step))
+    fun `cards that have come due come before everything, even the reading`() {
+        // A card at the edge of forgetting cannot wait a week. A subsection
+        // can wait an hour.
+        val step = next(emptyMap(), pending = 7)
+        assertEquals(NextStep.ReviewCards(7), step)
+        assertEquals("Next: 7 cards due", NextStepRules.label(step))
+        assertEquals("Next: 1 card due", NextStepRules.label(NextStep.ReviewCards(1)))
+    }
+
+    @Test
+    fun `with the reading done, due cards still come first`() {
+        assertEquals(NextStep.ReviewCards(3), next(allRecalled, pending = 3))
     }
 
     @Test

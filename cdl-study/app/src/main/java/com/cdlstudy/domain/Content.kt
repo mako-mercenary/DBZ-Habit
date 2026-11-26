@@ -41,7 +41,7 @@ data class Fact(
     val keywords: List<String> = emptyList(),
 )
 
-/** A flashcard for Anki: one question, one short answer, one fact. */
+/** A flashcard: one question, one short answer, one fact. */
 data class Card(
     val question: String,
     val answer: String,

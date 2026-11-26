@@ -15,13 +15,13 @@ class HandoffTest {
             exams = listOf(Handoff.ExamLine(Track.AIR_BRAKES, 3, 88)),
             weak = listOf(Handoff.WeakLine("5.1.2", "Governor cut-out pressure", 4)),
             cardsMade = 40,
-            cardsPending = 6,
+            cardsDue = 6,
         )
         assertTrue(text.contains("2026-11-20"))
         assertTrue(text.contains("1.1 CDL Tests - mastered, best 95%"))
         assertTrue(text.contains("Air Brakes - 3 attempts, best 88%"))
         assertTrue(text.contains("Governor cut-out pressure"))
-        assertTrue(text.contains("Waiting for export: 6"))
+        assertTrue(text.contains("In the deck: 40. Due now: 6."))
     }
 
     @Test

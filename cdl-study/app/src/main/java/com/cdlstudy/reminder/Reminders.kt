@@ -82,7 +82,8 @@ object Reminders {
         val body = when (step) {
             is NextStep.Study -> "${step.subsectionId} ${step.title}"
             is NextStep.TakeExam -> "${step.track.label} exam"
-            is NextStep.ExportCards -> "${step.count} cards to export to Anki"
+            is NextStep.ReviewCards ->
+                if (step.count == 1) "1 card is due" else "${step.count} cards are due"
             NextStep.AllDone -> "Everything is at mastery. Keep it warm."
             NextStep.NothingWritten -> "Open the app to start."
         }
@@ -128,7 +129,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) :
             repo.content,
             { progress[it] },
             { bests[it] },
-            repo.pendingCardCountNow(),
+            repo.dueReviewCountNow(),
         )
         val streak = Streak.of(repo.recallTimesNow(), LocalDate.now(ZoneId.systemDefault()))
         val (title, body) = Reminders.text(step, streak)

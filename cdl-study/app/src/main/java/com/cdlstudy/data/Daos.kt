@@ -57,24 +57,80 @@ interface CardDao {
     @Insert
     suspend fun insert(cards: List<CardEntity>)
 
-    @Query("SELECT * FROM cards WHERE exportedAt IS NULL ORDER BY createdAt")
-    fun pending(): Flow<List<CardEntity>>
+    /**
+     * What is due, oldest due first, and a new card before one that is merely
+     * late. A card you have never seen is worth more than one more sighting of
+     * a card you already know.
+     */
+    @Query(
+        """
+        SELECT * FROM cards WHERE dueAt <= :now
+        ORDER BY CASE stage WHEN 'NEW' THEN 0 ELSE 1 END, dueAt
+        """
+    )
+    fun due(now: Long): Flow<List<CardEntity>>
 
-    @Query("SELECT * FROM cards WHERE exportedAt IS NULL ORDER BY createdAt")
-    suspend fun pendingNow(): List<CardEntity>
+    @Query(
+        """
+        SELECT * FROM cards WHERE dueAt <= :now
+        ORDER BY CASE stage WHEN 'NEW' THEN 0 ELSE 1 END, dueAt
+        """
+    )
+    suspend fun dueNow(now: Long): List<CardEntity>
+
+    @Query("SELECT COUNT(*) FROM cards WHERE dueAt <= :now")
+    fun dueCount(now: Long): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM cards WHERE stage = 'NEW'")
+    fun newCount(): Flow<Int>
+
+    /**
+     * Cards you have learned and that have come round again. A card you have
+     * never seen is not counted: it is due from birth, and counting it would
+     * mean the app told you to review before you had read anything.
+     */
+    @Query("SELECT COUNT(*) FROM cards WHERE stage != 'NEW' AND dueAt <= :now")
+    fun dueReviewCount(now: Long): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM cards WHERE stage != 'NEW' AND dueAt <= :now")
+    suspend fun dueReviewCountNow(now: Long): Int
 
     @Query("SELECT * FROM cards ORDER BY createdAt DESC")
     fun all(): Flow<List<CardEntity>>
 
-    @Query("SELECT COUNT(*) FROM cards WHERE exportedAt IS NULL")
-    fun pendingCount(): Flow<Int>
+    @Query(
+        """
+        UPDATE cards SET stage = :stage, intervalMinutes = :intervalMinutes, ease = :ease,
+            reps = :reps, lapses = :lapses, dueAt = :dueAt, lastReviewedAt = :at
+        WHERE id = :id
+        """
+    )
+    suspend fun schedule(
+        id: Long,
+        stage: String,
+        intervalMinutes: Long,
+        ease: Double,
+        reps: Int,
+        lapses: Int,
+        dueAt: Long,
+        at: Long,
+    )
+
+    /** Puts one card back to never-seen, for a card you want to start over. */
+    @Query(
+        """
+        UPDATE cards SET stage = 'NEW', intervalMinutes = 0, ease = 2.5, reps = 0,
+            lapses = 0, dueAt = 0, lastReviewedAt = NULL WHERE id = :id
+        """
+    )
+    suspend fun reset(id: Long)
+
+    @Query("SELECT COUNT(*) FROM cards")
+    fun count(): Flow<Int>
 
     /** Used to keep the same question out of the queue twice. */
     @Query("SELECT question FROM cards")
     suspend fun allQuestions(): List<String>
-
-    @Query("UPDATE cards SET exportedAt = :at WHERE id IN (:ids)")
-    suspend fun markExported(ids: List<Long>, at: Long)
 
     @Query("SELECT * FROM cards ORDER BY createdAt")
     suspend fun allNow(): List<CardEntity>

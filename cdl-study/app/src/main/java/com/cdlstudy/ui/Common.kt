@@ -42,6 +42,10 @@ fun testDaySettings(): TestDaySettings =
     (LocalContext.current.applicationContext as CdlApp).testDay
 
 @Composable
+fun testDateSettings(): TestDateSettings =
+    (LocalContext.current.applicationContext as CdlApp).testDate
+
+@Composable
 fun contentErrors(): List<String> =
     (LocalContext.current.applicationContext as CdlApp).contentErrors
 
@@ -87,7 +91,7 @@ fun StatRow(vararg pairs: Pair<String, String>) {
     }
 }
 
-/** Text in a fixed-width font, for a TSV block you copy. */
+/** Text in a fixed-width font, for anything that must line up. */
 @Composable
 fun MonoText(text: String, modifier: Modifier = Modifier) {
     Text(

@@ -81,8 +81,8 @@ fun DrillsScreen(
             }
             item {
                 Text(
-                    "A drill that catches you queues the card. Anki still keeps the " +
-                        "schedule.",
+                    "A drill that catches you queues the card, and the card comes back on " +
+                        "its own schedule.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

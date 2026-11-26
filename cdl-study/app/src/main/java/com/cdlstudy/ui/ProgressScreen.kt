@@ -32,7 +32,8 @@ fun ProgressScreen(onBack: (() -> Unit)?) {
     val clipboard = LocalClipboardManager.current
     val progress by repo.progress.collectAsStateWithLifecycle(emptyList())
     val weak by repo.weakFacts().collectAsStateWithLifecycle(emptyList())
-    val pending by repo.pendingCardCount.collectAsStateWithLifecycle(0)
+    val due by repo.dueCardCount().collectAsStateWithLifecycle(0)
+    val deck by repo.cardCount.collectAsStateWithLifecycle(0)
     var copied by remember { mutableStateOf(false) }
 
     val weakLines = weak.mapNotNull { row ->
@@ -58,8 +59,8 @@ fun ProgressScreen(onBack: (() -> Unit)?) {
                         subsections = subsectionLines,
                         exams = emptyList(),
                         weak = weakLines,
-                        cardsMade = 0,
-                        cardsPending = pending,
+                        cardsMade = deck,
+                        cardsDue = due,
                     )
                     clipboard.setText(AnnotatedString(text))
                     copied = true

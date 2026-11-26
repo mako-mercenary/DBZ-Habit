@@ -25,16 +25,17 @@ object Handoff {
         exams: List<ExamLine>,
         weak: List<WeakLine>,
         cardsMade: Int,
-        cardsPending: Int,
+        cardsDue: Int,
     ): String = buildString {
         appendLine("UTAH CLASS A CDL - PROGRESS SUMMARY")
         appendLine("Date: $isoDate")
         appendLine()
         appendLine("Method: read, closed-book recall, self-grade against the manual facts,")
-        appendLine("Anki cards from the misses, then a separate exam for each of the six tracks.")
+        appendLine("cards from the misses reviewed in the app, then a separate exam for each")
+        appendLine("of the six tracks.")
         appendLine()
         appendLine("CARDS")
-        appendLine("Made: $cardsMade. Waiting for export: $cardsPending.")
+        appendLine("In the deck: $cardsMade. Due now: $cardsDue.")
         appendLine()
         appendLine("SUBSECTIONS")
         if (subsections.isEmpty()) {

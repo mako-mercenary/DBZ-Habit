@@ -21,8 +21,8 @@ sealed interface NextStep {
     /** Every part of this track is recalled. Take the exam. */
     data class TakeExam(val track: Track, val bestPercent: Int?) : NextStep
 
-    /** Cards are waiting to go to Anki. */
-    data class ExportCards(val count: Int) : NextStep
+    /** Cards you have learned have come due again. */
+    data class ReviewCards(val count: Int) : NextStep
 
     /** Nothing is written to study yet. */
     data object NothingWritten : NextStep
@@ -44,8 +44,20 @@ object NextStepRules {
         content: Content,
         statusOf: (String) -> String?,
         bestOf: (Track) -> Int?,
-        pendingCards: Int = 0,
+        dueCards: Int = 0,
     ): NextStep {
+        // Cards come first, before any new reading.
+        //
+        // A card that has come due is time-sensitive in a way a subsection is
+        // not: the whole point of the interval is that you are answering it at
+        // the edge of forgetting. Reading a new part can wait an hour. A card
+        // due today cannot wait a week.
+        //
+        // Only cards you have LEARNED count here. A card you have never seen
+        // is due the moment it is made, and if those counted you would never
+        // get past the first subsection.
+        if (dueCards > 0) return NextStep.ReviewCards(dueCards)
+
         val sections = content.sections.sortedBy { it.number }
         if (sections.all { it.readyToRecall == 0 }) return NextStep.NothingWritten
 
@@ -61,10 +73,6 @@ object NextStepRules {
                 )
             }
         }
-
-        // The reading is done. Cards earned on the way go to Anki before an exam,
-        // because the exam will add more.
-        if (pendingCards > 0) return NextStep.ExportCards(pendingCards)
 
         for (track in Track.entries) {
             val pool = content.examPool(track)
@@ -88,7 +96,8 @@ object NextStepRules {
         is NextStep.TakeExam ->
             if (step.bestPercent == null) "Next: ${step.track.label} exam"
             else "Beat ${step.bestPercent}%: ${step.track.label} exam"
-        is NextStep.ExportCards -> "Next: export ${step.count} cards to Anki"
+        is NextStep.ReviewCards ->
+            if (step.count == 1) "Next: 1 card due" else "Next: ${step.count} cards due"
         NextStep.NothingWritten -> "Nothing written to study yet"
         NextStep.AllDone -> "Everything is at mastery"
     }

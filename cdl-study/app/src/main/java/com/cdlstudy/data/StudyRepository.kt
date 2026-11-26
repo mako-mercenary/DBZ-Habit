@@ -11,7 +11,8 @@ import com.cdlstudy.domain.RecallScore
 import com.cdlstudy.domain.Streak
 import com.cdlstudy.domain.Subsection
 import com.cdlstudy.domain.Track
-import com.cdlstudy.domain.Tsv
+import com.cdlstudy.domain.Review
+import com.cdlstudy.domain.CardText
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
@@ -26,8 +27,18 @@ class StudyRepository(
     val record: RecordStore = RecordStore(db)
 
 
-    val pendingCards: Flow<List<CardEntity>> get() = db.cards().pending()
-    val pendingCardCount: Flow<Int> get() = db.cards().pendingCount()
+    /** The cards waiting for you right now. */
+    fun dueCards(now: Long = System.currentTimeMillis()): Flow<List<CardEntity>> =
+        db.cards().due(now)
+
+    fun dueCardCount(now: Long = System.currentTimeMillis()): Flow<Int> = db.cards().dueCount(now)
+
+    val newCardCount: Flow<Int> get() = db.cards().newCount()
+
+    /** Learned cards that have come due. These drive the next step. */
+    fun dueReviewCount(now: Long = System.currentTimeMillis()): Flow<Int> =
+        db.cards().dueReviewCount(now)
+    val cardCount: Flow<Int> get() = db.cards().count()
     val progress: Flow<List<ProgressEntity>> get() = db.progress().all()
 
     fun recallsFor(subsectionId: String): Flow<List<RecallEntity>> =
@@ -151,7 +162,14 @@ class StudyRepository(
 
     suspend fun bestPercentNow(track: Track): Int? = db.exams().bestPercentNow(track.id)
 
-    suspend fun pendingCardCountNow(): Int = db.cards().pendingNow().size
+    suspend fun dueCardCountNow(now: Long = System.currentTimeMillis()): Int =
+        db.cards().dueNow(now).size
+
+    suspend fun dueReviewCountNow(now: Long = System.currentTimeMillis()): Int =
+        db.cards().dueReviewCountNow(now)
+
+    suspend fun dueCardsNow(now: Long = System.currentTimeMillis()): List<CardEntity> =
+        db.cards().dueNow(now)
 
     suspend fun recallTimesNow(): List<Long> = db.recalls().allNow().map { it.gradedAt }
 
@@ -164,9 +182,8 @@ class StudyRepository(
     /**
      * Queues a card for each fact a drill caught you on.
      *
-     * The drill does not keep its own schedule, for the same reason the recall
-     * does not: Anki keeps the schedule. A drill that catches a number you have
-     * lost puts that number in the queue and gets out of the way.
+     * A drill does not keep its own schedule. It puts the card in the deck,
+     * and the deck's own schedule decides when you see it again.
      */
     suspend fun queueDrillMisses(
         factIds: Collection<String>,
@@ -210,8 +227,8 @@ class StudyRepository(
                 CardEntity(
                     subsectionId = subsectionId,
                     factId = it.factId,
-                    question = Tsv.clean(it.question),
-                    answer = Tsv.clean(it.answer),
+                    question = CardText.clean(it.question),
+                    answer = CardText.clean(it.answer),
                     createdAt = now,
                     source = source,
                 )
@@ -223,15 +240,30 @@ class StudyRepository(
     private fun subsectionOfTrack(track: Track): String =
         content.sections.firstOrNull { it.track == track }?.let { "exam-${it.number}" } ?: "exam"
 
-    /** The TSV text for every card that is not exported yet. */
-    suspend fun pendingTsv(): String = Tsv.of(
-        db.cards().pendingNow().map { Card(it.question, it.answer, it.factId) }
-    )
-
-    suspend fun markPendingExported(now: Long = System.currentTimeMillis()) {
-        val ids = db.cards().pendingNow().map { it.id }
-        if (ids.isNotEmpty()) db.cards().markExported(ids, now)
+    /** Records what you said about a card, and books the next sighting. */
+    suspend fun answerCard(
+        card: CardEntity,
+        grade: Review.Grade,
+        testDate: java.time.LocalDate?,
+        now: Long = System.currentTimeMillis(),
+    ): Review.State {
+        val next = Review.answer(card.state(), grade, now, testDate)
+        db.cards().schedule(
+            id = card.id,
+            stage = next.stage.name,
+            intervalMinutes = next.intervalMinutes,
+            ease = next.ease,
+            reps = next.reps,
+            lapses = next.lapses,
+            dueAt = next.dueAt,
+            at = now,
+        )
+        return next
     }
+
+    /** Starts one card over, as if it had never been seen. */
+    suspend fun resetCard(id: Long) = db.cards().reset(id)
+
 
     /** How far you are through the plan, for the home screen. */
     val planProgress: Flow<PlanProgress>
@@ -273,7 +305,22 @@ class RecordStore(private val db: AppDatabase) {
             )
         }
         val cards = db.cards().allNow().map {
-            Backup.Card(it.subsectionId, it.factId, it.question, it.answer, it.createdAt, it.exportedAt, it.source)
+            Backup.Card(
+                subsectionId = it.subsectionId,
+                factId = it.factId,
+                question = it.question,
+                answer = it.answer,
+                createdAt = it.createdAt,
+                exportedAt = it.exportedAt,
+                source = it.source,
+                stage = it.stage,
+                intervalMinutes = it.intervalMinutes,
+                ease = it.ease,
+                reps = it.reps,
+                lapses = it.lapses,
+                dueAt = it.dueAt,
+                lastReviewedAt = it.lastReviewedAt,
+            )
         }
         val attempts = db.exams().allAttemptsNow().map { attempt ->
             Backup.Attempt(
@@ -335,6 +382,13 @@ class RecordStore(private val db: AppDatabase) {
                         createdAt = it.createdAt,
                         exportedAt = it.exportedAt,
                         source = it.source,
+                        stage = it.stage,
+                        intervalMinutes = it.intervalMinutes,
+                        ease = it.ease,
+                        reps = it.reps,
+                        lapses = it.lapses,
+                        dueAt = it.dueAt,
+                        lastReviewedAt = it.lastReviewedAt,
                     )
                 }
             )

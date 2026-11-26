@@ -47,7 +47,9 @@ fun TodayScreen(
     val errors = contentErrors()
     val plan by repo.planProgress.collectAsStateWithLifecycle(PlanProgress(0, 0, 0))
     val progress by repo.progress.collectAsStateWithLifecycle(emptyList())
-    val pendingCards by repo.pendingCardCount.collectAsStateWithLifecycle(0)
+    val dueReviews by repo.dueReviewCount().collectAsStateWithLifecycle(0)
+    val dueCards by repo.dueCardCount().collectAsStateWithLifecycle(0)
+    val deckSize by repo.cardCount.collectAsStateWithLifecycle(0)
     val streak by repo.streak.collectAsStateWithLifecycle(Streak.Result(0, 0, false, emptyList()))
     val bests = Track.entries.associateWith {
         repo.bestPercent(it).collectAsStateWithLifecycle(null).value
@@ -59,7 +61,7 @@ fun TodayScreen(
     }
 
     val statusOf: (String) -> String? = { id -> progress.firstOrNull { it.subsectionId == id }?.status }
-    val step = NextStepRules.next(repo.content, statusOf, { bests[it] }, pendingCards)
+    val step = NextStepRules.next(repo.content, statusOf, { bests[it] }, dueReviews)
     val percent =
         if (plan.subsectionsTotal == 0) 0
         else Math.round(100f * plan.subsectionsRecalled / plan.subsectionsTotal)
@@ -94,7 +96,7 @@ fun TodayScreen(
                 when (step) {
                     is NextStep.Study -> onStudy(step.subsectionId)
                     is NextStep.TakeExam -> onExams()
-                    is NextStep.ExportCards -> onCards()
+                    is NextStep.ReviewCards -> onCards()
                     else -> Unit
                 }
             }
@@ -182,8 +184,8 @@ fun TodayScreen(
             RowHeader(
                 title = "Cards",
                 step = "Step 3",
-                subtitle = "Anki keeps your review schedule",
-                action = "Open",
+                subtitle = "Reviewed here, scheduled to your test date",
+                action = "Review",
                 onAction = onCards,
             )
             Spacer(Modifier.height(12.dp))
@@ -192,11 +194,17 @@ fun TodayScreen(
             LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 item {
                     Tile(
-                        tag = "To export",
-                        number = "$pendingCards",
-                        title = "Cards waiting",
-                        meta = if (pendingCards == 0) "nothing waiting" else "copy or save a .tsv",
-                        badge = if (pendingCards > 0) "Export" else null,
+                        tag = "Due now",
+                        number = "$dueCards",
+                        title = "Cards due",
+                        meta = if (deckSize == 0) {
+                            "none made yet"
+                        } else if (dueCards == 0) {
+                            "$deckSize in the deck, none due"
+                        } else {
+                            "of $deckSize in the deck"
+                        },
+                        badge = if (dueCards > 0) "Review" else null,
                         onClick = onCards,
                     )
                 }

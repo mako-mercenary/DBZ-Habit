@@ -3,7 +3,7 @@
 An offline Android app for the Utah Class A CDL with air brakes. The name is
 the point of it: the license is the gateway. You read the
 manual in the app, close it, say what you remember, mark your recall against the
-manual's facts, and export the cards to Anki. Then an exam for each track.
+manual's facts, and review the cards it makes. Then an exam for each track.
 
 It covers the eight sections Utah requires for a Class A with air brakes and no
 endorsements, and nothing else.
@@ -19,7 +19,7 @@ API key, and which only sends anything when you press its button.
 | Read the subsection | In the app, as a lesson written in plain words. |
 | Closed-book recall | In the app. No fact is shown until you send your recall. |
 | Correction | In the app. You mark each manual fact against your own words. |
-| Flashcards | The app makes them and exports TSV. **Anki** keeps the schedule. |
+| Flashcards | The app makes them, schedules them and reviews them. |
 | Six exams | In the app. Each track is graded on its own. |
 | Progress | In the app. It also copies a summary you can paste into any chat. |
 | Daily reminder | In the app, at a time you choose, with your streak. |
@@ -28,7 +28,7 @@ API key, and which only sends anything when you press its button.
 | What to take to the DLD | A checklist read off dld.utah.gov, with the page for each line. |
 | A second opinion on a recall | Claude, with your own API key. Off by default. |
 
-The app does not replace Anki, and it does not replace practice behind the wheel.
+The app does not replace practice behind the wheel.
 
 ## What you must study, and why
 
@@ -115,9 +115,9 @@ PDF. It copies no manual text into the repository.
    the one that matters. 80% is the pass level and 90% is mastery.
 5. **Cards.** The app queues a card for each fact you did not say, and a card
    for every must-memorize fact. The same question is never queued twice.
-6. **Export.** The Cards screen gives you the TSV block to copy, or a `.tsv`
-   file to save. The format is one Basic card per line: question, tab, answer,
-   no header row.
+6. **Review.** The cards come back on the Cards screen when they are due. You
+   see the question, tap to show the answer, and say which of Again, Hard, Good
+   or Easy it was. Each button says when the card would next appear.
 
 ### The second opinion
 
@@ -145,6 +145,34 @@ app's private storage, where no other app can read it.
 Settings has a daily reminder at a time you choose. It names the next thing to
 do, so the notification is useful on its own. A day counts toward the streak
 when you record a recall. Today never breaks the streak until it is over.
+
+## The cards
+
+The cards are the app's own. Nothing is exported and nothing leaves the phone.
+
+They make themselves: every fact you missed in a recall becomes a card, along
+with every must-memorize fact whether you missed it or not, and the exams and
+the drills add more. The same question is never queued twice.
+
+### The schedule
+
+SM-2 intervals. Get a card right and the gap to the next sighting grows by an
+ease factor; get it wrong and it starts again in ten minutes. Four buttons:
+Again, Hard, Good and Easy, each labelled with when the card would come back.
+
+What is not ordinary is the cap. **No card is ever scheduled past your test
+date.** The longest gap allowed is half the time you have left, so everything
+comes round at least once more with time left to fix it, and in the final days
+everything you are shaky on comes back daily.
+
+Set no test date in Settings and the cap does nothing: it behaves as plain
+SM-2, with intervals running into months. That is the right schedule for
+learning something for life, and the wrong one for an exam on a date.
+
+A card that has come due jumps ahead of new reading on the Today screen. A
+card at the edge of forgetting cannot wait a week; a subsection can wait an
+hour. Cards you have never seen do not jump the queue, or you would never get
+past the first subsection.
 
 ## Exams
 
@@ -243,13 +271,13 @@ Four tabs along the bottom:
 |---|---|
 | **Today** | Where you are, one big button for the next thing to do, then the Reading, Testing and Cards rows. |
 | **Progress** | Weak facts, best scores, and the progress summary to copy. |
-| **Cards** | The TSV block and the .tsv file for Anki. |
+| **Cards** | What is due now, reviewed here. |
 | **Settings** | Reading, your manual, what you must study, the daily reminder, AI grading, and the backup. |
 
 The button on Today is worked out by `NextStepRules`, not by a guess: the first
 part of the first section you have not recalled; then, once the reading is
-done, any cards waiting for Anki; then the exam of each track that is not at
-90% yet. `docs/today-design.png` is the design it was built from.
+done, the exam of each track that is not at 90% yet. Cards that have come due
+jump the queue and come before all of it. `docs/today-design.png` is the design it was built from.
 
 ## Name and icon
 
@@ -299,7 +327,8 @@ cannot do:
 - **The walk-around.** Section 11's subsections are the vehicle areas, so the
   drill walks them in order and tracks how far round you have got.
 
-A drill that catches you queues the card. Anki still keeps the schedule.
+A drill that catches you queues the card, and the card comes back on its own
+schedule.
 
 ## The diagrams
 

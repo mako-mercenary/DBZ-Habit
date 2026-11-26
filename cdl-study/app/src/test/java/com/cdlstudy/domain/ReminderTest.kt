@@ -63,8 +63,9 @@ class ReminderTest {
     @Test
     fun `with no streak it simply says it is time`() {
         val streak = Streak.Result(0, 0, false, emptyList())
-        assertEquals("Time to study", Reminders.text(NextStep.ExportCards(9), streak).first)
-        assertEquals("9 cards to export to Anki", Reminders.text(NextStep.ExportCards(9), streak).second)
+        assertEquals("Time to study", Reminders.text(NextStep.ReviewCards(9), streak).first)
+        assertEquals("9 cards are due", Reminders.text(NextStep.ReviewCards(9), streak).second)
+        assertEquals("1 card is due", Reminders.text(NextStep.ReviewCards(1), streak).second)
     }
 
     @Test
