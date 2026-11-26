@@ -85,8 +85,16 @@ object Review {
     private const val MINUTE = 60_000L
     private const val DAY = 24 * 60L
 
-    /** Ten minutes: a card you just missed comes back in this session. */
-    const val AGAIN_MINUTES = 10L
+    /**
+     * A card you just missed comes back inside this sitting.
+     *
+     * Again and Hard must not land on the same minute. On a card you have
+     * never seen they once both gave ten minutes, which made the Hard button
+     * a lie: it claimed to mean something and did nothing. Five and ten are
+     * far enough apart to be worth choosing between.
+     */
+    const val AGAIN_MINUTES = 5L
+    const val HARD_MINUTES = 10L
 
     /** The first gap after you learn a card, and the second. */
     const val FIRST_DAYS = 1L
@@ -127,12 +135,12 @@ object Review {
         Grade.HARD -> when (state.stage) {
             Stage.NEW, Stage.LEARNING -> state.copy(
                 stage = Stage.LEARNING,
-                intervalMinutes = AGAIN_MINUTES,
+                intervalMinutes = HARD_MINUTES,
                 ease = max(MIN_EASE, state.ease - 0.15),
             )
 
             Stage.REVIEW -> state.copy(
-                intervalMinutes = grow(state.intervalMinutes, 1.2),
+                intervalMinutes = hardInterval(state),
                 ease = max(MIN_EASE, state.ease - 0.15),
             )
         }
@@ -144,13 +152,7 @@ object Review {
                 intervalMinutes = max(FIRST_DAYS * DAY, state.intervalMinutes),
             )
 
-            Stage.REVIEW -> state.copy(
-                intervalMinutes = if (state.intervalMinutes <= FIRST_DAYS * DAY) {
-                    SECOND_DAYS * DAY
-                } else {
-                    grow(state.intervalMinutes, state.ease)
-                },
-            )
+            Stage.REVIEW -> state.copy(intervalMinutes = goodInterval(state))
         }
 
         Grade.EASY -> when (state.stage) {
@@ -160,11 +162,40 @@ object Review {
                 ease = state.ease + 0.15,
             )
 
+            // Built on what Good would give, never on the raw interval.
+            // Worked from the raw interval, a card still on its first day got
+            // 3 days for Easy and 6 for Good, so the better answer sent it
+            // away for less time. Easy must never be worse than Good.
             Stage.REVIEW -> state.copy(
-                intervalMinutes = grow(state.intervalMinutes, state.ease * 1.3),
+                intervalMinutes = easyInterval(state),
                 ease = state.ease + 0.15,
             )
         }
+    }
+
+    /**
+     * The three intervals on a learned card, each at least a day clear of the
+     * one below it.
+     *
+     * The gap is not decoration. A card at two days with the lowest ease gave
+     * 2.4 days for Hard and 2.6 for Good, which both show as "2 d", so the two
+     * buttons read alike and choosing between them did nothing. A better
+     * answer has to buy a longer gap, and it has to be long enough to see.
+     */
+    private fun hardInterval(state: State): Long = grow(state.intervalMinutes, 1.2)
+
+    private fun goodInterval(state: State): Long {
+        val plain = if (state.intervalMinutes <= FIRST_DAYS * DAY) {
+            SECOND_DAYS * DAY
+        } else {
+            grow(state.intervalMinutes, state.ease)
+        }
+        return max(plain, hardInterval(state) + DAY)
+    }
+
+    private fun easyInterval(state: State): Long {
+        val good = goodInterval(state)
+        return max(grow(good, 1.3), good + DAY)
     }
 
     private fun grow(minutes: Long, factor: Double): Long =
@@ -195,13 +226,24 @@ object Review {
         return minOf(minutes, half * DAY)
     }
 
-    /** How long until [dueAt], written the way a button has room for. */
+    /**
+     * How long until [dueAt], written the way a button has room for.
+     *
+     * Days, all the way up, and never months or years.
+     *
+     * Rounding to a bigger unit threw away the thing the button is for. A card
+     * at 15 days read "1 mo" for both Good and Easy, though one was 35 days
+     * and the other 45; at 90 days with a low ease, Hard and Good both read
+     * "4 mo". The scheduler keeps the grades a day apart, and a day apart is
+     * invisible once you round to months.
+     *
+     * So "117 d" rather than "4 mo". Less pretty at the far end, never wrong,
+     * and with a test date set a gap that long cannot happen anyway.
+     */
     fun gap(minutes: Long): String = when {
         minutes < 60 -> "$minutes min"
         minutes < DAY -> "${minutes / 60} hr"
-        minutes < 30 * DAY -> "${minutes / DAY} d"
-        minutes < 365 * DAY -> "${(minutes / DAY / 30.0).roundToLong()} mo"
-        else -> "${(minutes / DAY / 365.0).roundToLong()} yr"
+        else -> "${minutes / DAY} d"
     }
 
     /** What each button would do to this card, for the labels on them. */

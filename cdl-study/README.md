@@ -157,8 +157,16 @@ the drills add more. The same question is never queued twice.
 ### The schedule
 
 SM-2 intervals. Get a card right and the gap to the next sighting grows by an
-ease factor; get it wrong and it starts again in ten minutes. Four buttons:
+ease factor; get it wrong and it starts again in five minutes. Four buttons:
 Again, Hard, Good and Easy, each labelled with when the card would come back.
+
+Two rules hold that label honest, and both came from buttons that lied:
+
+- **The four are always in order, and always at least a day apart.** A better
+  answer must buy a longer gap, and a long enough one to see.
+- **The label is in days, never months.** Rounding to months threw away the
+  separation: a card at 15 days read "1 mo" for both Good and Easy, though one
+  was 35 days and the other 45.
 
 What is not ordinary is the cap. **No card is ever scheduled past your test
 date.** The longest gap allowed is half the time you have left, so everything
